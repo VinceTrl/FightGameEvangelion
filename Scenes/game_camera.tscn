@@ -1,0 +1,60 @@
+[gd_scene load_steps=17 format=3 uid="uid://diwhygl1ho1la"]
+
+[ext_resource type="Script" path="res://Scripts/Camera/GameCamera.gd" id="1_cpg4t"]
+[ext_resource type="Resource" uid="uid://cgaw0g5mdfmxf" path="res://Resources/CameraZoom/DefaultZoom.tres" id="2_e3wng"]
+[ext_resource type="Script" path="res://Scripts/Camera/ZoomParams.gd" id="2_jjh8l"]
+[ext_resource type="Texture2D" uid="uid://dum8uqc8jo8e5" path="res://icon.svg" id="2_qut7l"]
+[ext_resource type="Script" path="res://Scripts/Camera/CameraShake.gd" id="2_xo7ej"]
+[ext_resource type="Script" path="res://Scripts/Camera/ShakeParams.gd" id="3_m2yog"]
+[ext_resource type="Resource" uid="uid://du6y5q0t43v7t" path="res://Resources/CameraShakes/HitShake.tres" id="4_3bh2q"]
+[ext_resource type="Resource" uid="uid://bncgjtn60sowd" path="res://Resources/CameraZoom/MidFocusZoom.tres" id="4_45u5i"]
+[ext_resource type="Resource" uid="uid://buvt4ntvp0gmw" path="res://Resources/CameraZoom/HitZoom.tres" id="5_k8ve0"]
+[ext_resource type="Resource" uid="uid://0cqr4c4c2gjx" path="res://Resources/CameraShakes/FinalHitShake.tres" id="5_lh302"]
+[ext_resource type="Resource" uid="uid://ggln04kpqgxg" path="res://Resources/CameraZoom/DeathZoom.tres" id="6_5okmd"]
+[ext_resource type="Resource" uid="uid://ca46wpijujmka" path="res://Resources/CameraShakes/ShootShake.tres" id="6_83sxp"]
+[ext_resource type="Resource" uid="uid://brxvhmltagd5m" path="res://Resources/CameraShakes/ParryShake.tres" id="7_vrig3"]
+[ext_resource type="Resource" uid="uid://bdg7oxf5kjk3b" path="res://Resources/CameraShakes/ImpactShake.tres" id="8_yyu2d"]
+
+[sub_resource type="Curve" id="Curve_6euxo"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.315287, 0), 0.127291, 0.127291, 0, 0, Vector2(0.601911, 0.505076), 1.15116, 1.15116, 0, 0, Vector2(1, 1), 4.05407, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_t0je2"]
+_data = [Vector2(0, 1), 0.0, -2.43313, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="GameCamera" type="Node3D"]
+script = ExtResource("1_cpg4t")
+zDistCurve = SubResource("Curve_6euxo")
+defaultZoom = ExtResource("2_e3wng")
+zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource("4_45u5i"), ExtResource("5_k8ve0"), ExtResource("6_5okmd")])
+
+[node name="CameraShake" type="Node3D" parent="."]
+script = ExtResource("2_xo7ej")
+magnitudeOverTime = SubResource("Curve_t0je2")
+shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d")])
+
+[node name="Camera3D" type="Camera3D" parent="CameraShake"]
+
+[node name="CENTER_DEBUG_LABEL" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.772981)
+visible = false
+billboard = 1
+no_depth_test = true
+text = "CAM_TARGET
+"
+font_size = 16
+outline_size = 6
+
+[node name="DEBUG_VALUES" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "CACA"
+
+[node name="Cam_Center" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.11005)
+visible = false
+pixel_size = 0.001
+no_depth_test = true
+texture = ExtResource("2_qut7l")

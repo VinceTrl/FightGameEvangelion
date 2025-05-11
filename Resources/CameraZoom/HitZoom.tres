@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoomParameters" load_steps=4 format=3 uid="uid://buvt4ntvp0gmw"]
+
+[ext_resource type="Script" path="res://Scripts/Camera/ZoomParams.gd" id="1_hsbt2"]
+
+[sub_resource type="Curve" id="Curve_56qo3"]
+_data = [Vector2(0, 0), 0.0, 2.90131, 0, 0, Vector2(0.506369, 0.711294), 0.0, 0.0, 0, 0, Vector2(1, 0.711294), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_putxy"]
+_data = [Vector2(0, 0), 0.0, 6.03294, 0, 0, Vector2(0.242331, 0.794903), 0.912504, 0.912504, 0, 0, Vector2(0.834356, 0.984223), -0.0714331, -0.0714331, 0, 0]
+point_count = 3
+
+[resource]
+script = ExtResource("1_hsbt2")
+zoomName = &"HitZoom"
+zoomDuration = 0.5
+zoomDistance = 1.85
+zoomCurve = SubResource("Curve_putxy")
+translationCurve = SubResource("Curve_56qo3")

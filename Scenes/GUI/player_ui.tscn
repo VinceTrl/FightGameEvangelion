@@ -1,0 +1,321 @@
+[gd_scene load_steps=20 format=3 uid="uid://dmnmobmgdmfm"]
+
+[ext_resource type="Theme" uid="uid://c2rsfpxhsttkd" path="res://Resources/GUI/PlayerLife.tres" id="1_ddcvs"]
+[ext_resource type="Script" path="res://Scenes/GUI/PlayerUI.gd" id="1_ryh1h"]
+[ext_resource type="FontFile" uid="uid://5x8o7p2t84dl" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9-Condensed.ttf" id="2_m1jbb"]
+[ext_resource type="FontFile" uid="uid://cx3se5jqreg80" path="res://Assets/GUI/Fonts/NIS-Heisei-Kaku-Gothic-W5-Condensed.ttf" id="2_v5102"]
+[ext_resource type="FontFile" uid="uid://dv50yamm8jm86" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M5.ttf" id="3_gwtgd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1xa2"]
+bg_color = Color(0.913725, 0.0156863, 0.164706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lj5n6"]
+font = ExtResource("2_m1jbb")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_ooc87"]
+font = ExtResource("2_v5102")
+font_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwxmt"]
+bg_color = Color(0.85098, 0.423529, 0, 1)
+border_width_top = 2
+border_color = Color(0.85098, 0.423529, 0, 1)
+
+[sub_resource type="Theme" id="Theme_3k6ab"]
+HSeparator/styles/separator = SubResource("StyleBoxFlat_kwxmt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr8rb"]
+bg_color = Color(0.85098, 0.0235294, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wj31v"]
+font = ExtResource("2_v5102")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_3mee5"]
+font = ExtResource("3_gwtgd")
+font_size = 42
+shadow_size = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndsp7"]
+bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+corner_detail = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wbya"]
+bg_color = Color(0.85098, 0.423529, 0, 1)
+
+[sub_resource type="Animation" id="Animation_2ilr7"]
+resource_name = "Damaged"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/DamageEffect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(130, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/DamageEffect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-65, -80), Vector2(-60, -75), Vector2(-65, -80)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aqbk4"]
+resource_name = "Death"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/DeathPanel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_b6fmv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/DeathPanel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/DamageEffect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(130, 80)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/DamageEffect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-65, -80)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tska2"]
+_data = {
+"Damaged": SubResource("Animation_2ilr7"),
+"Death": SubResource("Animation_aqbk4"),
+"RESET": SubResource("Animation_b6fmv")
+}
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ryh1h")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DamageEffect" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -80.0
+offset_right = 65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_ddcvs")
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1xa2")
+
+[node name="InfoPanel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -80.0
+offset_right = 65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_ddcvs")
+
+[node name="LifeText" type="Label" parent="Control/InfoPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.445
+anchor_right = 0.926
+anchor_bottom = 0.5
+offset_left = 2.43187e-05
+offset_top = -3.5
+offset_right = 2.28882e-05
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LIFE: 03"
+label_settings = SubResource("LabelSettings_lj5n6")
+
+[node name="AmmoText" type="Label" parent="Control/InfoPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.655
+anchor_right = 0.926
+anchor_bottom = 0.918
+grow_horizontal = 2
+grow_vertical = 2
+text = "AMMO: 01"
+label_settings = SubResource("LabelSettings_lj5n6")
+
+[node name="NameText" type="Label" parent="Control/InfoPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.058
+anchor_right = 0.926
+anchor_bottom = 0.328
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player1"
+label_settings = SubResource("LabelSettings_ooc87")
+
+[node name="HSeparator" type="HSeparator" parent="Control/InfoPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.279
+anchor_right = 0.66
+anchor_bottom = 0.32
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 2.0
+grow_vertical = 2
+theme = SubResource("Theme_3k6ab")
+
+[node name="DeathPanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -80.0
+offset_right = 65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_ddcvs")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fr8rb")
+
+[node name="Label" type="Label" parent="Control/DeathPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Signal"
+label_settings = SubResource("LabelSettings_wj31v")
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Control/DeathPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOST"
+label_settings = SubResource("LabelSettings_3mee5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmmoReloadBar" type="ProgressBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -28.0
+offset_right = -68.0
+offset_bottom = -1.0
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ndsp7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7wbya")
+max_value = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tska2")
+}

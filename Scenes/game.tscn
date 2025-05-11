@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3o22n6bo51hk"]
+
+[ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
+[ext_resource type="AudioStream" uid="uid://bxpg0akqnuobt" path="res://Assets/Sounds/Musics/A Cruel Angel's Thesis Eurobeat Remix.mp3" id="2_nst0m"]
+[ext_resource type="PackedScene" uid="uid://demgp3gtvl6qk" path="res://Scenes/Meshes/building_large_a.tscn" id="3_xbcds"]
+[ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="4_sx5sm"]
+[ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/game_manager.tscn" id="5_r45th"]
+[ext_resource type="PackedScene" uid="uid://dmnmobmgdmfm" path="res://Scenes/GUI/player_ui.tscn" id="6_gywey"]
+[ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="6_l03ds"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
+
+[node name="Game" type="Node3D"]
+
+[node name="Area3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("WorldBoundaryShape3D_e2grd")
+
+[node name="Player" parent="." node_paths=PackedStringArray("gameManager") instance=ExtResource("1_rog66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.282095, 0)
+gameManager = NodePath("../GameManager")
+
+[node name="Player2" parent="." node_paths=PackedStringArray("gameManager") instance=ExtResource("1_rog66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.52038, 0.199497, 0)
+playerID = 2
+gameManager = NodePath("../GameManager")
+
+[node name="StageMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nst0m")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = false
+
+[node name="Meshes" type="Node" parent="."]
+
+[node name="Building_largeA" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67964, -0.484462)
+
+[node name="Building_largeA4" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03836, -0.679643, -0.484462)
+
+[node name="Building_largeA6" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02411, -1.11301, -0.484462)
+
+[node name="Building_largeA9" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6339, -2.73353, -0.484462)
+
+[node name="Building_largeA5" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03836, -2.31782, -0.484462)
+
+[node name="Building_largeA2" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0125, -1.67964, -0.484462)
+
+[node name="Building_largeA3" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03796, -1.67964, -0.484462)
+
+[node name="Building_largeA7" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05121, -0.679643, -0.484462)
+
+[node name="Building_largeA8" parent="Meshes" instance=ExtResource("3_xbcds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.04763, 0.320357, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.316347, -0.959983, -0.00598639, 0.279995, 9.06255, 6.21923, 0)
+
+[node name="GameCamera" parent="." node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 0.84, 4.5)
+player1 = NodePath("../Player")
+player2 = NodePath("../Player2")
+
+[node name="GameManager" parent="." instance=ExtResource("5_r45th")]
+unique_name_in_owner = true
+
+[node name="TimerRoot" parent="." instance=ExtResource("6_l03ds")]
+
+[node name="PlayerAnchor_01" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.2
+anchor_top = 1.0
+anchor_right = 0.2
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="PlayerUI" parent="PlayerAnchor_01" node_paths=PackedStringArray("player") instance=ExtResource("6_gywey")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+player = NodePath("../../Player")
+
+[node name="PlayerAnchor_02" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.8
+anchor_top = 1.0
+anchor_right = 0.8
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="PlayerUI" parent="PlayerAnchor_02" node_paths=PackedStringArray("player") instance=ExtResource("6_gywey")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+player = NodePath("../../Player2")
+playerName = &"Pilot:2"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShakeParameters" load_steps=3 format=3 uid="uid://ca46wpijujmka"]
+
+[ext_resource type="Script" path="res://Scripts/Camera/ShakeParams.gd" id="1_a7eca"]
+
+[sub_resource type="Curve" id="Curve_c07rw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.04669, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_a7eca")
+shakeName = &"ShootShake"
+shakeTime = 0.25
+minMagnitude = 0.001
+maxMagnitude = 0.015
+magnitudeOverTime = SubResource("Curve_c07rw")

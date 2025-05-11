@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShakeParameters" load_steps=3 format=3 uid="uid://0cqr4c4c2gjx"]
+
+[ext_resource type="Script" path="res://Scripts/Camera/ShakeParams.gd" id="1_ymrvw"]
+
+[sub_resource type="Curve" id="Curve_c07rw"]
+_data = [Vector2(0, 0.510922), 0.0, 0.0, 0, 0, Vector2(0.144172, 1), 0.0, 0.0, 0, 0, Vector2(0.254601, 0.219053), 0.0, 0.0, 0, 0, Vector2(0.386503, 0.818568), 0.0, 0.0, 0, 0, Vector2(0.5, 0.290048), 0.0, 0.0, 0, 0, Vector2(0.628834, 0.637136), 0.0, 0.0, 0, 0, Vector2(0.757669, 0.163835), 0.0, 0.0, 0, 0, Vector2(0.855828, 0.408374), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0204643, 0.0, 0, 0]
+point_count = 9
+
+[resource]
+script = ExtResource("1_ymrvw")
+shakeName = &"FinalHitShake"
+shakeTime = 1.0
+minMagnitude = 0.025
+maxMagnitude = 0.075
+magnitudeOverTime = SubResource("Curve_c07rw")

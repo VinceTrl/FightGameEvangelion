@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://coukiseb2l5lr"
+path="res://.godot/imported/FGHTBf_Anime Land 13_01.wav-5b624c0783a57f19c8abdf307bba2de6.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/FGHTBf_Anime Land 13_01.wav"
+dest_files=["res://.godot/imported/FGHTBf_Anime Land 13_01.wav-5b624c0783a57f19c8abdf307bba2de6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

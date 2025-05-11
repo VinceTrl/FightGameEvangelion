@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvq2psjwinw8e"
+path="res://.godot/imported/MAGSpel_Anime Ability Release 6_05.wav-36801588fd70c7ed45a122809e9c1814.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_05.wav"
+dest_files=["res://.godot/imported/MAGSpel_Anime Ability Release 6_05.wav-36801588fd70c7ed45a122809e9c1814.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

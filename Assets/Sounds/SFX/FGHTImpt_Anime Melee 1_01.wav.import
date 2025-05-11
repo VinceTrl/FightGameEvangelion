@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dswir8bgow46t"
+path="res://.godot/imported/FGHTImpt_Anime Melee 1_01.wav-9e95a6bd9343cab5f3031339be1c887e.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/FGHTImpt_Anime Melee 1_01.wav"
+dest_files=["res://.godot/imported/FGHTImpt_Anime Melee 1_01.wav-9e95a6bd9343cab5f3031339be1c887e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

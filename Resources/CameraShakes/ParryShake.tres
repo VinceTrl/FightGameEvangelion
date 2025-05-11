@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShakeParameters" load_steps=3 format=3 uid="uid://brxvhmltagd5m"]
+
+[ext_resource type="Script" path="res://Scripts/Camera/ShakeParams.gd" id="1_ndj2e"]
+
+[sub_resource type="Curve" id="Curve_c07rw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.83535, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_ndj2e")
+shakeName = &"HitShake"
+shakeTime = 0.5
+minMagnitude = 0.01
+maxMagnitude = 0.025
+magnitudeOverTime = SubResource("Curve_c07rw")

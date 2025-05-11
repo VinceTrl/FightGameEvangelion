@@ -1,0 +1,102 @@
+[gd_scene load_steps=21 format=3 uid="uid://difa1tbhr27vn"]
+
+[ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_imuxp"]
+[ext_resource type="Curve" uid="uid://bb47w0dbu6x4n" path="res://Scripts/Curves/projectileSpeedParry.tres" id="2_h0nys"]
+[ext_resource type="Texture2D" uid="uid://4ccslecbenaq" path="res://Assets/Sprites/All_Fire_Bullet_Pixel_16x16_05.png" id="2_t0vlr"]
+[ext_resource type="AudioStream" uid="uid://3hbnm61b4j1x" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_01.wav" id="6_ee7kf"]
+[ext_resource type="AudioStream" uid="uid://cj1ji724x2jah" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_02.wav" id="7_josyo"]
+[ext_resource type="AudioStream" uid="uid://njjtqp6a1jml" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_03.wav" id="8_0judm"]
+[ext_resource type="AudioStream" uid="uid://cvwnu4y0fxy8t" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_04.wav" id="9_72b4e"]
+[ext_resource type="Script" path="res://Scripts/Hitbox.gd" id="10_cujeu"]
+[ext_resource type="AudioStream" uid="uid://cvq2psjwinw8e" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_05.wav" id="10_o8c87"]
+[ext_resource type="AudioStream" uid="uid://cotl8qyq10vgb" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_06.wav" id="11_tc640"]
+[ext_resource type="Script" path="res://Scripts/Hurtbox.gd" id="11_w1rla"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dkyrq"]
+radius = 0.0998181
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5k0e"]
+atlas = ExtResource("2_t0vlr")
+region = Rect2(256, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lew6m"]
+atlas = ExtResource("2_t0vlr")
+region = Rect2(272, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8teqk"]
+atlas = ExtResource("2_t0vlr")
+region = Rect2(288, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yblc"]
+atlas = ExtResource("2_t0vlr")
+region = Rect2(304, 160, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lalks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5k0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lew6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8teqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yblc")
+}],
+"loop": true,
+"name": &"Shoot",
+"speed": 10.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yorw8"]
+size = Vector3(0.158264, 0.0906219, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kc145"]
+size = Vector3(0.201202, 0.132919, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xrndt"]
+streams_count = 6
+stream_0/stream = ExtResource("6_ee7kf")
+stream_1/stream = ExtResource("7_josyo")
+stream_2/stream = ExtResource("8_0judm")
+stream_3/stream = ExtResource("9_72b4e")
+stream_4/stream = ExtResource("10_o8c87")
+stream_5/stream = ExtResource("11_tc640")
+
+[node name="Projectile" type="Area3D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_imuxp")
+parrySpeedCurve = ExtResource("2_h0nys")
+
+[node name="CollisionShape2D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dkyrq")
+
+[node name="BulletSprite" type="AnimatedSprite3D" parent="."]
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_lalks")
+animation = &"Shoot"
+frame_progress = 0.526873
+
+[node name="Hitbox" type="Area3D" parent="."]
+script = ExtResource("10_cujeu")
+type = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00302124, -0.00524139, 0)
+shape = SubResource("BoxShape3D_yorw8")
+
+[node name="Hurtbox" type="Area3D" parent="."]
+script = ExtResource("11_w1rla")
+
+[node name="CollisionShape2D" type="CollisionShape3D" parent="Hurtbox"]
+shape = SubResource("BoxShape3D_kc145")
+
+[node name="Sfx" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_xrndt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="OnHit" from="Hitbox" to="." method="_on_hitbox_on_hit"]
