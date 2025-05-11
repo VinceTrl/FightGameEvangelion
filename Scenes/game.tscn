@@ -28,6 +28,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.94425, 1.3241, 0)
 playerID = 2
 gameManager = NodePath("../GameManager")
 
+[node name="Sprite2D" parent="Player2" index="0"]
+modulate = Color(0, 1, 1, 1)
+
 [node name="StageMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_nst0m")
 volume_db = -15.0
@@ -118,3 +121,5 @@ grow_horizontal = 1
 grow_vertical = 0
 player = NodePath("../../Player2")
 playerName = &"Pilot:2"
+
+[editable path="Player2"]

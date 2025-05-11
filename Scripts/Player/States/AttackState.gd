@@ -1,13 +1,15 @@
 extends PlayerState
 
 var attackInAir = false
+@onready var collision_shape_hitbox: CollisionShape3D = $"../../Hitbox/CollisionShape3D"
+
 
 func EnterState():
 	Name = "Attack"
 	
 	#Player.velocity.y = 0
 	var _attackDir = Player.GetAttackDirection()
-	Player.velocity = Player.velocity / 2
+	Player.velocity = Player.velocity / 3
 	Player.velocity += _attackDir.normalized() * Player.attackSpeed
 	
 	Player.SetSpriteOffset_Attack()
@@ -15,6 +17,7 @@ func EnterState():
 	Player.emit_signal("OnPlayerAttack")
 	
 func ExitState():
+	collision_shape_hitbox.disabled = true
 	pass
 
 func Draw():

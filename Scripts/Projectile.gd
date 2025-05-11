@@ -8,8 +8,8 @@ extends Area3D
 @onready var sfx: AudioStreamPlayer3D = $Sfx
 
 
-@export var projectileMinSpeed = 4.0
-@export var projectileMaxSpeed = 10.0
+@export var projectileMinSpeed = 5.0
+@export var projectileMaxSpeed = 11.0
 @export var maxHit = 6
 @export var parrySpeedCurve: Curve
 
@@ -84,7 +84,7 @@ func ProjectileImpact():
 func DestroyProjectile():
 	queue_free()
 
-func _on_body_entered(body: Node2D) -> void:
+func enter(body: Node2D) -> void:
 	if(body == Hitbox): return
 	
 	ProjectileImpact()
@@ -93,4 +93,10 @@ func PlaySFX():
 	sfx.play()
 
 func _on_hitbox_on_hit() -> void:
+	ProjectileImpact()
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if(body == Hitbox): return
+	
 	ProjectileImpact()

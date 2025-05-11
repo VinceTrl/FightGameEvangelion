@@ -55,7 +55,7 @@ func SpawnProjectile():
 	var _projectile = projectileScene.instantiate()
 	if(_projectile == null) : return
 	
-	_projectile.global_position = owner.global_position
+	_projectile.global_position = Player.shootPoint.global_position
 	add_child(_projectile)
 	_projectile.SetupProjectile(Player.playerID,Player.facing,Player.shootPoint.global_position)
 	

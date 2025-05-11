@@ -55,7 +55,7 @@ const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 
 
 #attack variables
-@export var attackSpeed = 0.25
+@export var attackSpeed = 0.1
 @export var attackBufferTime = 0.3
 @export var maxAirAttack = 1
 @export var attackSpeedMomentum = 0.4
@@ -130,9 +130,6 @@ func _draw():
 func _physics_process(delta: float) -> void:
 	GetInputStates()
 	
-	
-	#HandleAttack()
-	
 	#Update state
 	currentState.Update(delta)
 	
@@ -149,7 +146,7 @@ func ChangeState(nextState):
 		currentState = nextState
 		previousState.ExitState()
 		currentState.EnterState()
-		#print("State change from: "+ previousState.Name + " to: " + currentState.Name)
+		print("State change from: "+ previousState.Name + " to: " + currentState.Name)
 		return
 		
 
@@ -243,6 +240,11 @@ func HandleDash():
 		if(dashes < maxDashes) and (DashTimer.time_left <= 0):
 			DashTimer.start(dashBufferTime)
 			await DashTimer.timeout
+			
+			#cancel dash if player is damaged/dead during buffer
+			if(currentState == States.Hurt or currentState == States.Death):
+				return
+				
 			dashes += 1
 			ChangeState(States.Dash)
 		
@@ -290,7 +292,7 @@ func HandleShoot():
 		ChangeState(States.Shoot)
 
 func TakeDamage(hitboxSource: Hitbox):
-	if (currentState != States.Hurt or currentState != States.Death):
+	if (currentState != States.Hurt and currentState != States.Death):
 		currentHealthPoints -= hitboxSource.damage
 		lastHitbox = hitboxSource
 		hitboxSource.DealDamage()

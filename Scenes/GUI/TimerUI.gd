@@ -1,9 +1,5 @@
 extends Control
 
-
-#The final look of the code.
-
-@onready var label = $ContDownLabel
 @onready var timer_text: Label = $TimerText
 
 var gameManager: GameManager

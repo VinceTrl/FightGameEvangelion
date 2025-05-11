@@ -6,6 +6,9 @@ extends PlayerState
 @export var dashSpeedCurve: Curve
 @export var dashMomentum = 1.2
 
+@onready var collision_shape_hurtbox: CollisionShape3D = $"../../Hurtbox/CollisionShape3D"
+
+
 func EnterState():
 	Name = "Dash"
 	Player.dashDirection = Player.GetDashDirection()
@@ -15,7 +18,7 @@ func EnterState():
 	Player.HandleFlipH()
 	
 func ExitState():
-	pass
+	collision_shape_hurtbox.disabled = false
 
 func Draw():
 	pass
