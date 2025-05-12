@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="VibrationParameters" load_steps=4 format=3 uid="uid://bjmhqldjfsex5"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/VibrationParameters.gd" id="1_r3xsn"]
+
+[sub_resource type="Curve" id="Curve_b0h5e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.55414, 0.051396), 0.212309, 0.212309, 0, 0, Vector2(0.576433, 1), 0.0, 0.0, 0, 0, Vector2(0.66879, 0.958756), 0.0, 0.0, 0, 0, Vector2(0.783439, 0.125635), -0.751964, -0.751964, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_4d4lh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.55414, 0.051396), 0.0, 0.0, 0, 0, Vector2(0.605096, 1), 0.351004, 0.351004, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[resource]
+script = ExtResource("1_r3xsn")
+vibrationName = &"ShootVibration"
+duration = 0.7
+weakMagnitude = SubResource("Curve_4d4lh")
+strongMagnitude = SubResource("Curve_b0h5e")

@@ -13,5 +13,6 @@ func _init() -> void:
 	
 func DealDamage(damagedEntityID: int = 0):
 	emit_signal("OnHit")
+	print("HIT")
 	
 signal OnHit()

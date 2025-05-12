@@ -1,0 +1,16 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8kqnefy3vkr2"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/VibrationManager.gd" id="1_25pwv"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/VibrationParameters.gd" id="2_ni5su"]
+[ext_resource type="Resource" uid="uid://b7u5pwabdjgw" path="res://Resources/Vibrations/DefaultVibration.tres" id="3_jq854"]
+[ext_resource type="Resource" uid="uid://bpo1i0vndkc06" path="res://Resources/Vibrations/DebugVibration.tres" id="4_yl6bb"]
+[ext_resource type="Resource" uid="uid://cllb6lylnqu0r" path="res://Resources/Vibrations/HitVibration.tres" id="5_ex2lo"]
+[ext_resource type="Resource" uid="uid://cap6o7hn1f87a" path="res://Resources/Vibrations/HurtVibration.tres" id="6_3555u"]
+[ext_resource type="Resource" uid="uid://cgyhiargslct2" path="res://Resources/Vibrations/LandingVibration.tres" id="7_vrb6f"]
+[ext_resource type="Resource" uid="uid://bjmhqldjfsex5" path="res://Resources/Vibrations/ShootVibration.tres" id="8_pp122"]
+[ext_resource type="Resource" uid="uid://b03rv1pfthcso" path="res://Resources/Vibrations/JumpVibration.tres" id="9_gxe42"]
+[ext_resource type="Resource" uid="uid://dtq3b4plp6eou" path="res://Resources/Vibrations/DashVibration.tres" id="10_1s5xg"]
+
+[node name="VibrationManager" type="Node"]
+script = ExtResource("1_25pwv")
+vibrations = Array[ExtResource("2_ni5su")]([ExtResource("3_jq854"), ExtResource("4_yl6bb"), ExtResource("5_ex2lo"), ExtResource("6_3555u"), ExtResource("7_vrb6f"), ExtResource("8_pp122"), ExtResource("9_gxe42"), ExtResource("10_1s5xg")])

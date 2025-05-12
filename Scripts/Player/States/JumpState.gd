@@ -8,6 +8,7 @@ func EnterState():
 	Player.velocity.y = Player.jumpSpeed
 	Player.animator.play("JumpStart")
 	Player.emit_signal("OnPlayerJump")
+	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"JumpVibration")
 	
 func ExitState():
 	pass

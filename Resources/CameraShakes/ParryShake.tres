@@ -8,7 +8,7 @@ point_count = 2
 
 [resource]
 script = ExtResource("1_ndj2e")
-shakeName = &"HitShake"
+shakeName = &"ParryShake"
 shakeTime = 0.5
 minMagnitude = 0.01
 maxMagnitude = 0.025

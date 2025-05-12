@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c38gsdfy72awb"]
+[gd_scene load_steps=4 format=3 uid="uid://c38gsdfy72awb"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_6hf0t"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/TimeEffects.gd" id="2_c8bkv"]
+[ext_resource type="PackedScene" uid="uid://c8kqnefy3vkr2" path="res://Scenes/Managers/vibration_manager.tscn" id="3_otru3"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_6hf0t")
@@ -11,3 +12,5 @@ script = ExtResource("2_c8bkv")
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="VibrationManager" parent="." instance=ExtResource("3_otru3")]

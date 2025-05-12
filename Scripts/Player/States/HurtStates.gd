@@ -24,6 +24,7 @@ func EnterState():
 	Manager.timeManager.freezeFrame()
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	Manager.gameCamera.FocusTargetZoom(Player,Manager.gameCamera.GetZoomParamFromName("HitZoom"))
+	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"HurtVibration")
 	
 func ExitState():
 	pass

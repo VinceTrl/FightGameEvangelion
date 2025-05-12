@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://bdg7oxf5kjk3b" path="res://Resources/CameraShakes/ImpactShake.tres" id="8_yyu2d"]
 
 [sub_resource type="Curve" id="Curve_6euxo"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.315287, 0), 0.127291, 0.127291, 0, 0, Vector2(0.601911, 0.505076), 1.15116, 1.15116, 0, 0, Vector2(1, 1), 4.05407, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.321656, 0.0596447), -0.0569253, -0.0569253, 0, 0, Vector2(0.519108, 0.521574), 1.15116, 1.15116, 0, 0, Vector2(1, 1), 4.05407, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="Curve" id="Curve_t0je2"]
@@ -25,7 +25,10 @@ point_count = 2
 
 [node name="GameCamera" type="Node3D"]
 script = ExtResource("1_cpg4t")
+maxDistZ = 5.0
 zDistCurve = SubResource("Curve_6euxo")
+cameraSmoothnessX = 1.75
+cameraSmoothnessY = 0.85
 defaultZoom = ExtResource("2_e3wng")
 zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource("4_45u5i"), ExtResource("5_k8ve0"), ExtResource("6_5okmd")])
 

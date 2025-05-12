@@ -16,6 +16,8 @@ func EnterState():
 	Player.velocity = Vector3.ZERO
 	Name = "Shoot"
 	#Player.animator.play("Shoot")
+	
+	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"ShootVibration")
 	#StartRecoil()
 	
 func ExitState():

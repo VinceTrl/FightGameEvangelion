@@ -147,7 +147,7 @@ func ChangeState(nextState):
 		currentState = nextState
 		previousState.ExitState()
 		currentState.EnterState()
-		print("State change from: "+ previousState.Name + " to: " + currentState.Name)
+		#print("State change from: "+ previousState.Name + " to: " + currentState.Name)
 		return
 		
 
@@ -190,12 +190,12 @@ func HandleMaxVelocity():
 func HandleLanding():
 	if (is_on_floor()):
 		ChangeState(States.Idle)
-		sfx.stream = landingSfx
 		ResetJump()
 		ResetDash()
 		ResetAirAttack()
 		sfx.stream = landingSfx
 		sfx.play()
+		Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"LandingVibration")
 		
 func ResetDash():
 	dashes = 0
@@ -299,6 +299,8 @@ func TakeDamage(hitboxSource: Hitbox):
 		hitboxSource.DealDamage()
 		emit_signal("OnPlayerTakeDamage")
 		
+		print("SOURCE : " + str(hitboxSource.owner))
+		
 		if (currentHealthPoints > 0):
 			ChangeState(States.Hurt)
 		else:
@@ -311,3 +313,7 @@ func ApplyProjection(projectionSource : Vector3 = Vector3.ZERO):
 
 func DestroyPlayer():
 	queue_free()
+
+
+func _on_melee_hitbox_on_hit() -> void:
+	Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"HitVibration")

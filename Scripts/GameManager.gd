@@ -2,6 +2,7 @@ class_name GameManager
 
 extends Node
 
+@onready var vibrationManager: VibrationManager = $VibrationManager
 @onready var timeManager: TimeManager = $TimeManager
 @onready var game_timer: Timer = $GameTimer
 @export var fightDuration: float = 90.00

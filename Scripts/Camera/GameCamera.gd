@@ -11,8 +11,8 @@ extends Node3D
 @export var maxPlayerDist = 8
 @export var zDistCurve: Curve
 
-@export var cameraSmoothnessX = 2
-@export var cameraSmoothnessY = 1
+@export var cameraSmoothnessX = 2.0
+@export var cameraSmoothnessY = 1.0
 @export var cameraSmoothnessZ = 0.25
 
 @export var defaultZoom: ZoomParameters
@@ -49,7 +49,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	UpdatePositon_XY()
 	UpdatePositon_Z()
-	debugCamera()
+	#debugCamera()
 	
 func debugCamera() -> void:
 	if(Input.is_action_just_pressed("DebugKey")):

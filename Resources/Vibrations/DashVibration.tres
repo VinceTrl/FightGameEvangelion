@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="VibrationParameters" load_steps=4 format=3 uid="uid://dtq3b4plp6eou"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/VibrationParameters.gd" id="1_7o46m"]
+
+[sub_resource type="Curve" id="Curve_b0h5e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4d4lh"]
+_data = [Vector2(0, 0.051396), 0.0, 0.0, 0, 0, Vector2(0.375796, 0.406091), 1.98574, 1.98574, 0, 0, Vector2(0.681529, 0.381345), -2.03508, -2.03508, 0, 0, Vector2(1, 0.051396), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[resource]
+script = ExtResource("1_7o46m")
+vibrationName = &"DashVibration"
+duration = 0.4
+weakMagnitude = SubResource("Curve_4d4lh")
+strongMagnitude = SubResource("Curve_b0h5e")

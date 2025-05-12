@@ -16,6 +16,7 @@ func EnterState():
 	#Player.velocity = Player.dashDirection.normalized() * Player.dashSpeed
 	Player.animator.play("Dash")
 	Player.HandleFlipH()
+	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"DashVibration")
 	
 func ExitState():
 	collision_shape_hurtbox.disabled = false
