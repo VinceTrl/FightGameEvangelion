@@ -110,6 +110,7 @@ signal OnPlayerJump
 func _ready():
 	
 	gameManager = Manager
+	Manager.gameManager.RegisterPlayer(self)
 	
 	#init state machine
 	for state in States.get_children():

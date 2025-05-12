@@ -12,6 +12,9 @@
 
 [node name="Game" type="Node3D"]
 
+[node name="GameManager" parent="." instance=ExtResource("5_r45th")]
+unique_name_in_owner = true
+
 [node name="Area3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 collision_mask = 15
@@ -74,9 +77,6 @@ transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.31
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 0.84, 4.5)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
-
-[node name="GameManager" parent="." instance=ExtResource("5_r45th")]
-unique_name_in_owner = true
 
 [node name="TimerRoot" parent="." instance=ExtResource("6_l03ds")]
 
