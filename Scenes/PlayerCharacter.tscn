@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=50 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Texture2D" uid="uid://lfjvawnucaf5" path="res://Assets/Sprites/spr_StrikerIdle_strip.png" id="2_c2271"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
 [ext_resource type="Texture2D" uid="uid://crkbsb0rt7an7" path="res://Assets/Sprites/spr_StrikerRun_strip.png" id="3_rb07g"]
 [ext_resource type="AudioStream" uid="uid://cbot6bsug20aq" path="res://Assets/Sounds/SFX/FGHTClth_Anime Swing 1_01.wav" id="4_r2cae"]
 [ext_resource type="Texture2D" uid="uid://bmid5qjhdv65f" path="res://Assets/Sprites/spr_StrikerJump_strip.png" id="5_3awsj"]
@@ -832,6 +833,16 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_ubpar")
+
+[node name="NodeShaker" type="Node3D" parent="."]
+script = ExtResource("2_dme1j")
+
+[node name="Sprite3D" type="Sprite3D" parent="NodeShaker"]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 0
+render_priority = -1
+texture = ExtResource("6_nnhdo")
+hframes = 4
 
 [node name="Sprite2D" type="Sprite3D" parent="."]
 texture_filter = 0

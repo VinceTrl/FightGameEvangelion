@@ -25,7 +25,7 @@ const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 
 @export var playerID = 1
 
-@export var gameManager: Manager
+var gameManager: Manager
 
 #player stats variables
 @export var healthPoints = 6
@@ -313,6 +313,9 @@ func ApplyProjection(projectionSource : Vector3 = Vector3.ZERO):
 
 func DestroyPlayer():
 	queue_free()
+	
+func ChangeSpriteColor():
+	pass
 
 
 func _on_melee_hitbox_on_hit() -> void:
