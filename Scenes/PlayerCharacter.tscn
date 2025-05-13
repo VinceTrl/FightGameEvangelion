@@ -835,6 +835,9 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_ubpar")
 
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fu4u0")
+
 [node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("2_dme1j")
 nodeToShake = NodePath("../Sprite2D")
@@ -847,9 +850,6 @@ texture_filter = 0
 texture = ExtResource("2_c2271")
 hframes = 8
 script = ExtResource("4_1nn6i")
-
-[node name="Collider" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_fu4u0")
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")

@@ -11,6 +11,8 @@ extends Node3D
 @export var maxPlayerDist = 8
 @export var zDistCurve: Curve
 
+@export var cameraOffset: Vector3 = Vector3.ZERO
+
 @export var cameraSmoothnessX = 2.0
 @export var cameraSmoothnessY = 1.0
 @export var cameraSmoothnessZ = 0.25
@@ -70,7 +72,7 @@ func UpdatePositon_XY():
 	#print("update XY")
 	#var _middlePos: Vector3 = player1.global_position + player2.global_position/2
 	var _middlePos: Vector3 = 0.5 * (player1.global_position + player2.global_position)
-	var _newPos: Vector3 = Vector3(_middlePos.x,_middlePos.y,global_position.z)
+	var _newPos: Vector3 = Vector3(_middlePos.x,_middlePos.y,global_position.z) + cameraOffset
 	#global_position = _newPos
 	
 	#tween
