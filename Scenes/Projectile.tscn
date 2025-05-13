@@ -52,10 +52,10 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yorw8"]
-size = Vector3(0.158264, 0.0906219, 1)
+size = Vector3(0.0918731, 0.0906219, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kc145"]
-size = Vector3(0.201202, 0.132919, 1)
+size = Vector3(0.239748, 0.132919, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xrndt"]
 streams_count = 6
@@ -69,6 +69,8 @@ stream_5/stream = ExtResource("11_tc640")
 [node name="Projectile" type="Area3D"]
 collision_layer = 8
 script = ExtResource("1_imuxp")
+projectileMinSpeed = 4.0
+projectileMaxSpeed = 10.0
 parrySpeedCurve = ExtResource("2_h0nys")
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="."]
@@ -85,7 +87,7 @@ script = ExtResource("10_cujeu")
 type = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00302124, -0.00524139, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050583, -0.00524139, 0)
 shape = SubResource("BoxShape3D_yorw8")
 
 [node name="Hurtbox" type="Area3D" parent="."]

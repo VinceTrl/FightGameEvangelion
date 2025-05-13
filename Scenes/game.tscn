@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=10 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bxpg0akqnuobt" path="res://Assets/Sounds/Musics/A Cruel Angel's Thesis Eurobeat Remix.mp3" id="2_nst0m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="PackedScene" uid="uid://dmnmobmgdmfm" path="res://Scenes/GUI/player_ui.tscn" id="6_gywey"]
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="6_l03ds"]
+[ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -16,7 +17,7 @@
 unique_name_in_owner = true
 
 [node name="Area3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
 collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
@@ -63,10 +64,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0125, -1.67964, -0.484462)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03796, -1.67964, -0.484462)
 
 [node name="Building_largeA7" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05121, -0.679643, -0.484462)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.05121, -0.679643, -0.484462)
 
 [node name="Building_largeA8" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.04763, 0.320357, -0.382581)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.04763, 0.320357, -0.382581)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.316347, -0.959983, -0.00598639, 0.279995, 9.06255, 6.21923, 0)
@@ -75,6 +76,7 @@ transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.31
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 0.84, 4.5)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
+debugMode = true
 
 [node name="TimerRoot" parent="." instance=ExtResource("6_l03ds")]
 
@@ -119,5 +121,8 @@ grow_horizontal = 1
 grow_vertical = 0
 player = NodePath("../../Player2")
 playerName = &"Pilot:2"
+
+[node name="KillVolume" parent="." instance=ExtResource("8_u84ky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [editable path="Player2"]

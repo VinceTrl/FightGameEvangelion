@@ -3,7 +3,7 @@ extends Area3D
 
 @export var damage = 1
 @export var owner_id = 1
-enum DamageType {Melee , projectile}
+enum DamageType {Melee , projectile,Volume}
 @export var type: DamageType = DamageType.Melee
 
 	

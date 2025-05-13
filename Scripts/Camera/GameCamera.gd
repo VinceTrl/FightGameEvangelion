@@ -15,6 +15,11 @@ extends Node3D
 @export var cameraSmoothnessY = 1.0
 @export var cameraSmoothnessZ = 0.25
 
+#camera clamp
+@export var canClampPosition: bool = true
+@export var cameraClampMax: Vector2 = Vector2(5.5,1.0)
+@export var cameraClampMin: Vector2 = Vector2(-0.5,-1.0)
+
 @export var defaultZoom: ZoomParameters
 
 @export var zoomParams: Array[ZoomParameters] = []
@@ -49,6 +54,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	UpdatePositon_XY()
 	UpdatePositon_Z()
+	ClampCameraPosition()
 	#debugCamera()
 	
 func debugCamera() -> void:
@@ -90,6 +96,16 @@ func UpdatePositon_Z():
 	TweenCamZ = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	TweenCamZ.tween_property(self,"position:z",_currentZ,cameraSmoothnessZ)
 	
+	
+func ClampCameraPosition():
+	if(!canClampPosition): return
+	
+	#print("update Z")
+	var _clampPosMin = Vector3(cameraClampMin.x,cameraClampMin.y,global_position.z)
+	var _clampPosMax = Vector3(cameraClampMax.x,cameraClampMax.y,global_position.z)
+	
+	global_position = global_position.clamp(_clampPosMin,_clampPosMax)
+
 func GetZtargetPosition() -> float:
 	var _currentDistPlayers: float = player1.global_position.distance_to(player2.global_position)
 	var _playersDistRatio = _currentDistPlayers / maxPlayerDist
@@ -97,10 +113,12 @@ func GetZtargetPosition() -> float:
 	var _zPos = lerp(minDistZ,maxDistZ,_curveValue)
 	
 	if(debugMode): 
-		var debug_dist = " /player dist : " + str(_currentDistPlayers)
-		var debug_zCam = " /cam z dist : " + str(_zPos)
-		var debug_distRatio = " /player ratio dist : " + str(_playersDistRatio)
-		debug_values.text = "DEBUG : " + debug_dist + debug_distRatio + debug_zCam
+		var debug_dist = "\n /player dist : " + str(_currentDistPlayers)
+		var debug_zCam = "\n /cam z dist : " + str(_zPos)
+		var debug_distRatio = "\n /player ratio dist : " + str(_playersDistRatio)
+		var debug_posX = "\n /Cam X : " + str(global_position.x)
+		var debug_posY = "\n /Cam Y : " + str(global_position.y)
+		debug_values.text = "DEBUG : " + debug_dist + debug_distRatio + debug_zCam + debug_posX + debug_posY
 	
 	return _zPos
 	
