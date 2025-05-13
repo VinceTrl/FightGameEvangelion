@@ -1,25 +1,31 @@
 class_name NodeShaker
 extends Node3D
 
-var isShakingNode = false
-var magnitude: float = 0.05
-var shakeTime = 0.25
-var frequency = 2.00
+@export var nodeToShake: Node3D
+@export var debugMode: bool = false
+@export var magnitude: float = 0.05
+@export var shakeTime = 0.25
+@export var frequency = 2.00
 
+var isShakingNode = false
+
+
+
+func _ready():
+	pass
 
 func _process(delta: float) -> void:
 	debugShake()
 
 func debugShake() -> void:
-	if(Input.is_action_just_pressed("DebugKey")):
-		NodeShake()
-	
-	
+	if(debugMode):
+		if(Input.is_action_just_pressed("DebugKey")):
+			NodeShake()
 
 func NodeShake(_magnitude: float = magnitude ,_shakeTime: float = shakeTime):
 	if(isShakingNode): return
 	
-	var initial_transform = self.transform 
+	var initial_transform = nodeToShake.transform 
 	var elapsed_time = 0.0
 	var freq = 0.0
 	isShakingNode = true
@@ -32,10 +38,10 @@ func NodeShake(_magnitude: float = magnitude ,_shakeTime: float = shakeTime):
 		freq += 1
 		if(freq > frequency):
 			var offset = Vector3(randf_range(-magnitude, magnitude),randf_range(-magnitude, magnitude),0.0)
-			self.transform.origin = initial_transform.origin + offset
+			nodeToShake.transform.origin = initial_transform.origin + offset
 			freq = 0.0
 		
 		await get_tree().process_frame
 
 	isShakingNode = false
-	self.transform = initial_transform
+	nodeToShake.transform = initial_transform

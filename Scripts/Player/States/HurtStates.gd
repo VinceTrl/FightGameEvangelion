@@ -19,7 +19,9 @@ func EnterState():
 	hurtTime = Player.animator.current_animation_length
 	hurtTimer.start(hurtTime)
 	Player.Ammo.AddTime()
-	Manager.timeManager.freezeFrame()
+	Manager.timeManager.freezeFrame(0.001,0.2)
+	Player.sprite.HitColorEffect()
+	Player.nodeShaker.NodeShake()
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	Manager.gameCamera.FocusTargetZoom(Player,Manager.gameCamera.GetZoomParamFromName("HitZoom"))
 	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"HurtVibration")

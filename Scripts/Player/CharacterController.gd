@@ -20,6 +20,7 @@ extends CharacterBody3D
 @onready var shoot_point_root: Node3D = $ShootPointRoot
 @onready var sfx: AudioStreamPlayer = $PlayerAudio/Sfx
 @onready var Ammo: PlayerAmmo = $PlayerAmmo
+@onready var nodeShaker: NodeShaker = $NodeShaker
 
 const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 

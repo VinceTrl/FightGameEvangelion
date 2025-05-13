@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dmnmobmgdmfm"]
 
 [ext_resource type="Theme" uid="uid://c2rsfpxhsttkd" path="res://Resources/GUI/PlayerLife.tres" id="1_ddcvs"]
-[ext_resource type="Script" path="res://Scenes/GUI/PlayerUI.gd" id="1_ryh1h"]
+[ext_resource type="Script" path="res://Scripts/GUI/PlayerUI.gd" id="1_ryh1h"]
 [ext_resource type="FontFile" uid="uid://5x8o7p2t84dl" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9-Condensed.ttf" id="2_m1jbb"]
 [ext_resource type="FontFile" uid="uid://cx3se5jqreg80" path="res://Assets/GUI/Fonts/NIS-Heisei-Kaku-Gothic-W5-Condensed.ttf" id="2_v5102"]
 [ext_resource type="FontFile" uid="uid://dv50yamm8jm86" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M5.ttf" id="3_gwtgd"]

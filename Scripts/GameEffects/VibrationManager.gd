@@ -3,8 +3,9 @@ class_name  VibrationManager
 extends Node
 
 @onready var VIBRATION = preload("res://Scenes/Managers/vibration.tscn")
-
 @export var vibrations: Array[VibrationParameters] = []
+
+@export var debugVibration = false
 
 var lastVibration
 
@@ -17,6 +18,7 @@ func _process(delta: float) -> void:
 	DebugVibration()
 
 func DebugVibration() -> void:
+	if(!debugVibration): return
 	if(Input.is_action_just_pressed("DebugKey")):
 		LaunchVibration(0,"DebugVibration")
 	

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://4gyr47wo2g0o"]
 
-[ext_resource type="Script" path="res://Scenes/GUI/TimerUI.gd" id="1_uewje"]
+[ext_resource type="Script" path="res://Scripts/GUI/TimerUI.gd" id="1_uewje"]
 [ext_resource type="FontFile" uid="uid://5x8o7p2t84dl" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9-Condensed.ttf" id="2_lsmd3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_via1n"]

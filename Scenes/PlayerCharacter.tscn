@@ -1,9 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=51 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Texture2D" uid="uid://lfjvawnucaf5" path="res://Assets/Sprites/spr_StrikerIdle_strip.png" id="2_c2271"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
 [ext_resource type="Texture2D" uid="uid://crkbsb0rt7an7" path="res://Assets/Sprites/spr_StrikerRun_strip.png" id="3_rb07g"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/SpriteEffects.gd" id="4_1nn6i"]
 [ext_resource type="AudioStream" uid="uid://cbot6bsug20aq" path="res://Assets/Sounds/SFX/FGHTClth_Anime Swing 1_01.wav" id="4_r2cae"]
 [ext_resource type="Texture2D" uid="uid://bmid5qjhdv65f" path="res://Assets/Sprites/spr_StrikerJump_strip.png" id="5_3awsj"]
 [ext_resource type="Script" path="res://Scripts/Player/States/States.gd" id="5_hmp2k"]
@@ -102,13 +103,25 @@ tracks/4/keys = {
 "method": &"AttackFinished"
 }]
 }
-tracks/5/type = "audio"
+tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../PlayerAudio/Sfx")
+tracks/5/path = NodePath("../Hitbox/CollisionShape3D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../PlayerAudio/Sfx_Attack")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -116,19 +129,7 @@ tracks/5/keys = {
 }],
 "times": PackedFloat32Array(0.1)
 }
-tracks/5/use_blend = true
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Hitbox/CollisionShape3D:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.233333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
+tracks/6/use_blend = true
 
 [sub_resource type="Animation" id="Animation_lnv0j"]
 resource_name = "Dash"
@@ -169,13 +170,25 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 }
-tracks/3/type = "audio"
+tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../PlayerAudio/Sfx")
+tracks/3/path = NodePath("../Hurtbox/CollisionShape3D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PlayerAudio/Sfx_Dash")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -183,19 +196,7 @@ tracks/3/keys = {
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/3/use_blend = true
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Hurtbox/CollisionShape3D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.366667, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_su0wr"]
 resource_name = "Death"
@@ -236,28 +237,13 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 }
-tracks/3/type = "audio"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../PlayerAudio/Sfx")
+tracks/3/path = NodePath("../StateMachine/Death")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("8_tjmvd")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/3/use_blend = true
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../StateMachine/Death")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(1.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -265,6 +251,21 @@ tracks/4/keys = {
 "method": &"DestroyPlayer"
 }]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PlayerAudio/Sfx_Death")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_tjmvd")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_kla1b"]
 resource_name = "Fall"
@@ -374,7 +375,7 @@ tracks/3/keys = {
 tracks/4/type = "audio"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../PlayerAudio/Sfx")
+tracks/4/path = NodePath("../PlayerAudio/Sfx_Hurt")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -559,7 +560,7 @@ tracks/3/keys = {
 tracks/4/type = "audio"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../PlayerAudio/Sfx")
+tracks/4/path = NodePath("../PlayerAudio/Sfx_Jump")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -780,7 +781,7 @@ tracks/3/keys = {
 tracks/4/type = "audio"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../PlayerAudio/Sfx")
+tracks/4/path = NodePath("../PlayerAudio/Sfx_Shoot")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -834,20 +835,18 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_ubpar")
 
-[node name="NodeShaker" type="Node3D" parent="."]
+[node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("2_dme1j")
-
-[node name="Sprite3D" type="Sprite3D" parent="NodeShaker"]
-modulate = Color(1, 0, 0, 1)
-texture_filter = 0
-render_priority = -1
-texture = ExtResource("6_nnhdo")
-hframes = 4
+nodeToShake = NodePath("../Sprite2D")
+debugMode = true
+magnitude = 0.1
+frequency = 1.0
 
 [node name="Sprite2D" type="Sprite3D" parent="."]
 texture_filter = 0
 texture = ExtResource("2_c2271")
 hframes = 8
+script = ExtResource("4_1nn6i")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fu4u0")
@@ -954,6 +953,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199727, 0.0199942, 0)
 [node name="PlayerAudio" type="Node" parent="."]
 
 [node name="Sfx" type="AudioStreamPlayer" parent="PlayerAudio"]
+bus = &"SFX"
+
+[node name="Sfx_Attack" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+bus = &"SFX"
+
+[node name="Sfx_Jump" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+bus = &"SFX"
+
+[node name="Sfx_Shoot" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+bus = &"SFX"
+
+[node name="Sfx_Dash" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+bus = &"SFX"
+
+[node name="Sfx_Hurt" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+bus = &"SFX"
+
+[node name="Sfx_Death" type="AudioStreamPlayer3D" parent="PlayerAudio"]
 bus = &"SFX"
 
 [connection signal="timeout" from="Timers/RecoilTimer" to="StateMachine/Shoot" method="_on_recoil_timer_timeout"]
