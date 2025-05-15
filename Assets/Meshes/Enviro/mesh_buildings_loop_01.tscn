@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://j271rtxrymhf"]
+
+[ext_resource type="PackedScene" uid="uid://b5aybmfufe1cs" path="res://Assets/Meshes/Enviro/Mesh_buildingsLoop_01.fbx" id="1_pa0l2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7fbs"]
+albedo_color = Color(0.451847, 0.524043, 0.548529, 1)
+metallic = 0.3
+roughness = 0.79
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7bb5n"]
+emission_enabled = true
+emission = Color(0.882353, 0.819608, 0, 1)
+
+[node name="Mesh_buildingsLoop_01" instance=ExtResource("1_pa0l2")]
+
+[node name="building01_160" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i7fbs")
+surface_material_override/1 = SubResource("StandardMaterial3D_7bb5n")

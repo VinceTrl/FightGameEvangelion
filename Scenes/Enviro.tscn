@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://8a00sh66ihoa"]
+
+[ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="2_tsbgh"]
+[ext_resource type="PackedScene" uid="uid://gim0rktb26eh" path="res://Assets/Meshes/Enviro/robot_eva_01.tscn" id="3_hidu8"]
+[ext_resource type="PackedScene" uid="uid://j271rtxrymhf" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_01.tscn" id="3_qnf2r"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.913126, 0.407677, 0, -0.407677, 0.913126, 0.11944, 3.00859, 1.11859)
+fov = 47.7
+
+[node name="Plane_16_9" parent="Camera3D" instance=ExtResource("2_tsbgh")]
+transform = Transform3D(13.2104, 0, 0, 0, 9.53674e-07, -13.2104, 0, 13.2104, 2.38419e-06, 0, -5.84412, -18.3375)
+
+[node name="Mesh_buildingsLoop_02" parent="." instance=ExtResource("3_qnf2r")]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.501616, -0.86509, 0, 0.86509, 0.501616, 0, -2.7855, 0.746372)
+light_color = Color(1, 0.721569, 1, 1)
+light_energy = 16.0
+spot_range = 6.56372
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, -0.998144, 0.0608917, 0, -0.0608917, -0.998144, 4.76837e-07, 4.42212, -15.2089)
+light_color = Color(0.817634, 0.966187, 0.995038, 1)
+light_energy = 32.0
+spot_range = 17.5976
+spot_angle = 30.9375
+
+[node name="Robot_eva_02" parent="." instance=ExtResource("3_hidu8")]
+transform = Transform3D(0.999795, 0.0063417, 0.0191984, 0.00833893, 0.735682, -0.677277, -0.0184191, 0.677298, 0.735478, -0.0488019, -1.58392, -5.00639)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://gim0rktb26eh"]
+
+[ext_resource type="PackedScene" uid="uid://b5dfrk1d44dno" path="res://Assets/Meshes/Enviro/Robot_eva_01.fbx" id="1_mofpa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3uyw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13sr6"]
+albedo_color = Color(0.971871, 0.653199, 7.70092e-07, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5um0w"]
+albedo_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw4fq"]
+albedo_color = Color(1, 0.478431, 1, 1)
+
+[node name="Robot_eva_01" instance=ExtResource("1_mofpa")]
+
+[node name="bdef_‘•b2_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_d3uyw")
+surface_material_override/1 = SubResource("StandardMaterial3D_13sr6")
+surface_material_override/2 = SubResource("StandardMaterial3D_5um0w")
+surface_material_override/3 = SubResource("StandardMaterial3D_cw4fq")

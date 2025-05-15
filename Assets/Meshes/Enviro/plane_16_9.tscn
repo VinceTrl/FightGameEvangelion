@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://4ktf8xhcxr8f"]
+
+[ext_resource type="PackedScene" uid="uid://bau5w3txjae2k" path="res://Assets/Meshes/Enviro/Plane_16_9.fbx" id="1_o6rnh"]
+[ext_resource type="Texture2D" uid="uid://jsfqmx8lli47" path="res://Assets/Sprites/BG/BG_PlaceholderEvaWallpaper.jpg" id="2_bf8sv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6vis"]
+diffuse_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_bf8sv")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_bf8sv")
+
+[node name="Plane_16_9" instance=ExtResource("1_o6rnh")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_s6vis")
