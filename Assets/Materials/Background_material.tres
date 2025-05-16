@@ -1,7 +1,8 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://lfed143fg2ps"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://lfed143fg2ps"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/Background_shader.gdshader" id="1_6farb"]
 [ext_resource type="Texture2D" uid="uid://jsfqmx8lli47" path="res://Assets/Sprites/BG/BG_PlaceholderEvaWallpaper.jpg" id="1_b82g6"]
+[ext_resource type="Texture2D" uid="uid://c1sc27aneu8l0" path="res://Assets/Sprites/BG/BG_PlaceholderEvaWallpaper_mask.png" id="2_66mxh"]
 
 [resource]
 render_priority = 0
@@ -15,3 +16,4 @@ shader_parameter/colorBackground = Vector3(0, 0, 0)
 shader_parameter/DEBUG = 1.0
 shader_parameter/noise = ExtResource("1_b82g6")
 shader_parameter/normalmap = ExtResource("1_b82g6")
+shader_parameter/mask00 = ExtResource("2_66mxh")

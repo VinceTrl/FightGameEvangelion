@@ -202,6 +202,7 @@ transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.31
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 0.84, 4.5)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
+debugMode = false
 
 [node name="TimerRoot" parent="." instance=ExtResource("6_ijtxy")]
 
@@ -259,7 +260,7 @@ script = ExtResource("10_r1wq7")
 configuration = SubResource("Resource_6qdwo")
 
 [node name="BackgroundPlane" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.68596, 0.0832746, -15.7371)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.68596, -0.449391, -15.7371)
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("13_taw65")
