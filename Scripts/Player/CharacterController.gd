@@ -11,6 +11,7 @@ extends CharacterBody3D
 @onready var playerHurtbox: Hurtbox = $Hurtbox
 @onready var animator = $Animator
 @onready var States = $StateMachine
+@onready var debug_values: Label = $CanvasLayer/DEBUG_VALUES
 @onready var JumpBufferTimer = $Timers/JumpBuffer
 @onready var CoyoteTimer = $Timers/CoyoteTimer
 @onready var DashTimer: Timer = $Timers/DashTimer
@@ -37,14 +38,15 @@ var gameManager: Manager
 @export var deceleration = 0.15
 
 #jump variables
-@export var jumpGravity = 5
-@export var fallGravity = 10
-@export var jumpVelocity = 4
-@export var jumpVariableMultiplier = 0.5
+@export var jumpGravity = 6.0
+@export var fallGravity = 10.0
+@export var jumpVelocity = 3.6
+@export var jumpVariableMultiplier = 0.75
 @export var jumpBufferTime = 0.15
 @export var coyoteTime = 0.25
-@export var maxFallVelocity = 10
+@export var maxFallVelocity = 10.0
 @export var maxJumps = 2
+@export var fallGravityMultiplier = 1.5
 
 #Dash
 @export var maxDashes = 1
@@ -63,7 +65,7 @@ var gameManager: Manager
 @export var attackSpriteOffset = 20
 @export var attackGravity = 10
 
-
+@export var debugMode = false
 
 #movement variables
 var isMoving = false
@@ -141,6 +143,8 @@ func _physics_process(delta: float) -> void:
 	
 	#apply movements
 	move_and_slide()
+	
+	DebugPlayer()
 
 func ChangeState(nextState):
 	if(nextState != null):
@@ -174,6 +178,14 @@ func GetInputStates():
 	
 	if keyRight: facing = 1
 	if keyLeft: facing = -1
+	
+func DebugPlayer():
+	if(debugMode): 
+		var debug_currentState = "\n /player cur State : " + str(currentState)
+		var debug_previousState = "\n /player prev State : " + str(previousState)
+		var debug_velocity = "\n /player velocity: " + str(velocity)
+		
+		debug_values.text = "DEBUG : "  + debug_currentState + debug_previousState + debug_velocity
 
 func HandleGravity(delta: float, gravity: float = jumpGravity):
 	if (!is_on_floor()):

@@ -11,7 +11,7 @@ func Draw():
 	pass
 	
 func Update(delta: float):
-	Player.HandleGravity(delta,Player.fallGravity)
+	Player.HandleGravity(delta,GetFallGravity())
 	Player.HorizontalMovement()
 	Player.HandleLanding()
 	Player.HandleJumpBuffer()
@@ -26,3 +26,14 @@ func Update(delta: float):
 func HandleAnimations():
 	#Player.animator.play("Fall")
 	Player.HandleFlipH()
+	
+func HandleFallInput():
+	#Player.animator.play("Fall")
+	Player.HandleFlipH()
+	
+func GetFallGravity() -> float:
+	#Player.animator.play("Fall")
+	if(Player.keyDown):
+		return Player.fallGravity * Player.fallGravityMultiplier
+	else: 
+		return Player.fallGravity
