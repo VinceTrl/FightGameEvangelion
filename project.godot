@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 
 Manager="*res://Scripts/Manager.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/post_processing/plugin.cfg")
+
 [input]
 
 KeyJump_1={

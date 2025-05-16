@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=13 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bxpg0akqnuobt" path="res://Assets/Sounds/Musics/A Cruel Angel's Thesis Eurobeat Remix.mp3" id="2_nst0m"]
@@ -8,8 +8,98 @@
 [ext_resource type="PackedScene" uid="uid://dmnmobmgdmfm" path="res://Scenes/GUI/player_ui.tscn" id="6_gywey"]
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="6_l03ds"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
+[ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="9_nr51f"]
+[ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_a6rqb"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
+
+[sub_resource type="Resource" id="Resource_myf1k"]
+script = ExtResource("10_a6rqb")
+reload = false
+ASCII = false
+ASCIISize = Vector2(1, 2)
+ChromaticAberration = false
+StrenghtCA = 1.5
+Blur = false
+L_O_D = 0.22
+FishEye = false
+FishEyeAspect = 1.0
+FishEyeDistortion = 1.0
+FishEyeRadius = 1.0
+FishEyeAlpha = 0.835
+FishEyeCrop = 1.0
+FishEyeCropColor = Color(0, 0, 0, 1)
+Vignette = false
+VignetteIntensity = 0.4
+VignetteOpacity = 0.5
+VignetteR_G_B = Color(0, 0, 0, 1)
+Glitch = true
+GlitchRange = 0.0
+GlitchNoiseQuality = 136.0
+GlitchIntenity = 0.001
+GlitchOffset = -0.1
+GlitchColorOffset = 0.2
+Outline = false
+OutlineColor = Color(0, 0, 0, 1)
+OutlineThreshold = 0.0
+OutlineBlend = 0.01
+Grain = false
+GrainPower = 75
+CircularWaves = false
+CircularWavesAmplitude = 2.0
+CircularWavesFrequency = 12.69
+CircularWavesRippleRate = 9.2
+SpeedLines = false
+SpeedLinesColor = Color(1, 1, 1, 1)
+SpeedLinesCount = 2
+SpeedLineDensity = 0.06
+SpeedLineSpeed = 10
+particle_storm = false
+particle_storm_color = Color(0, 0, 0, 1)
+particle_storm_intensity = 0.522
+particle_storm_chaos = 4.69
+particle_storm_scale = 3.445
+particle_storm_density = 2.726
+particle_storm_wind_direction = Vector2(1, 0.2)
+particle_storm_wind_speed = 2.021
+directional_drift = false
+directional_drift_color = Color(0.76, 0.69, 0.5, 0.3)
+directional_drift_density = 0.3
+directional_drift_speed = 1.0
+directional_drift_scale = 30.0
+directional_drift_direction = Vector2(1, 0.5)
+directional_drift_layer_ratio = 1.2
+ColorCorrection = false
+ColorCorrectionTint = Color(0.99, 0, 0, 0.909804)
+ColorCorrectionBrightness = 0.0
+ColorCorrectionSaturation = 0.012
+Palette = false
+Pixelate = false
+PixelatePixelSize = 3
+CRT = false
+overlay = false
+scanlines_opacity = 0.602
+scanlines_width = 0.256
+grille_opacity = 0.092
+pixelate = false
+roll_speed = 10000.0
+roll_size = 8.0
+roll_variation = 1.8
+distort_intensity = 0.05
+noise_opacity = 0.108
+noise_speed = 5.0
+static_noise_intensity = 0.06
+aberration = 0.0
+brightness = 1.5
+discolor = true
+warp_amount = 0.5
+clip_warp = false
+vignette_intensity = 0.345
+vignette_opacity = 0.5
+AnalogMonitor = false
+AnalogMonitorResolution = Vector2(256, 256)
+ScreenShake = false
+ScreenShakePower = 0.1
 
 [node name="Game" type="Node3D"]
 
@@ -73,7 +163,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.04763, 0.320357, -0.382581)
 transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.316347, -0.959983, -0.00598639, 0.279995, 9.06255, 6.21923, 0)
 
 [node name="GameCamera" parent="." node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 0.84, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 1.66432, 4.5)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
 
@@ -123,5 +213,9 @@ playerName = &"Pilot:2"
 
 [node name="KillVolume" parent="." instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+script = ExtResource("9_nr51f")
+configuration = SubResource("Resource_myf1k")
 
 [editable path="Player2"]
