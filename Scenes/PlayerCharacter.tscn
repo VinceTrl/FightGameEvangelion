@@ -835,6 +835,19 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_ubpar")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="DEBUG_VALUES" type="Label" parent="CanvasLayer"]
+z_index = 200
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -242.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "DEBUG PLAYER"
+
 [node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_fu4u0")
 

@@ -17,7 +17,7 @@ func Draw():
 	pass
 	
 func Update(delta: float):
-	Player.HandleGravity(delta)
+	Player.HandleGravity(delta,Player.jumpGravity)
 	Player.HorizontalMovement()
 	Player.HandleJump()
 	Player.HandleDash()
@@ -28,7 +28,7 @@ func Update(delta: float):
 	HandleAnimations()
 
 func HandleJumpToFall():
-	if (Player.velocity.y >= 0):
+	if (Player.velocity.y <= 0):
 		Player.ChangeState(States.JumpPeak)
 	
 	if (!Player.keyJump):
