@@ -150,3 +150,10 @@ DebugKey={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[shader_globals]
+
+spectrum_texture={
+"type": "sampler2D",
+"value": ""
+}
