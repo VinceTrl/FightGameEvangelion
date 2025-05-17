@@ -9,6 +9,10 @@ func EnterState():
 	Name = "Attack"
 	
 	#Player.velocity.y = 0
+	Player.AdjustAttackDirection()
+	Player.HandleFlipH()
+	Player.SetSpriteOffset_Attack()
+	
 	var _attackDir = Player.GetAttackDirection()
 	Player.velocity = Player.velocity / 3
 	
@@ -16,7 +20,6 @@ func EnterState():
 	var _speed = lerp(Player.attackSpeed,Player.attackSpeedMax,_ratio)
 	Player.velocity += _attackDir.normalized() * _speed
 	
-	Player.SetSpriteOffset_Attack()
 	SetAttackByForce()
 	Player.emit_signal("OnPlayerAttack")
 	

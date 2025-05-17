@@ -22,6 +22,8 @@ extends CharacterBody3D
 @onready var sfx: AudioStreamPlayer = $PlayerAudio/Sfx
 @onready var Ammo: PlayerAmmo = $PlayerAmmo
 @onready var nodeShaker: NodeShaker = $NodeShaker
+@onready var raycastHolder: Node3D = $RaycastHolder
+@onready var backPlayerDetection: RayCast3D = $RaycastHolder/BackPlayerDetection
 
 const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 
@@ -31,7 +33,7 @@ var gameManager: Manager
 
 #player stats variables
 @export var healthPoints = 6
-
+@export var startFacingRight = true
 #run variables
 @export_group("Movement")
 @export var runSpeed = 3
@@ -153,6 +155,9 @@ func _ready():
 	playerHurtbox.owner_id = playerID
 	attackHitbox.owner_id = playerID
 	
+	if(startFacingRight): facing = 1
+	else: facing = -1
+	
 	if(gameManager == null): push_error("Game Manager is null")
 
 func _draw():
@@ -160,6 +165,7 @@ func _draw():
 
 func _physics_process(delta: float) -> void:
 	GetInputStates()
+	
 	
 	#Update state
 	currentState.Update(delta)
@@ -215,7 +221,8 @@ func DebugPlayer():
 		var debug_attackForce = "\n /air attack : " + str(airAttack)
 		
 		debug_values.text = "DEBUG : "  + debug_currentState + debug_previousState + debug_velocity + debug_attackForce
-
+		
+		
 func HandleGravity(delta: float, gravity: float = jumpGravity):
 	if (!is_on_floor()):
 		velocity.y -= gravity * delta
@@ -277,6 +284,7 @@ func HandleFlipH():
 	#hitbox flip
 	attackHitbox.scale.x = facing
 	shoot_point_root.scale.x = facing
+	raycastHolder.scale.x = facing
 	
 func HandleDash():
 	if(keyDash):
@@ -342,6 +350,19 @@ func GetAttackDirection() -> Vector3:
 	else:
 		_dir = Vector3(keyMoveAxisX,0,0)
 	return _dir
+	
+func AdjustAttackDirection():
+	if backPlayerDetection.is_colliding():
+		var _collision = backPlayerDetection.get_collider()
+		if(_collision is PlayerCharacter):
+			_collision as PlayerCharacter
+			if(_collision.playerID == playerID): return
+			ChangePlayerDirection(-facing)
+	
+func ChangePlayerDirection(_facingDir: int):
+	if(facing == 0): return
+	_facingDir = clamp(_facingDir,-1,1)
+	facing = _facingDir
 	
 func HandleAttackBuffer():
 	if (keyAttack):

@@ -1167,6 +1167,17 @@ bus = &"SFX"
 [node name="Sfx_Death" type="AudioStreamPlayer3D" parent="PlayerAudio"]
 bus = &"SFX"
 
+[node name="RaycastHolder" type="Node3D" parent="."]
+
+[node name="BackPlayerDetection" type="RayCast3D" parent="RaycastHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.148455, 0, 0)
+target_position = Vector3(-0.5, 0, 0)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.366727, 0.432952, 0.970629, 1)
+debug_shape_thickness = 1
+
 [connection signal="timeout" from="Timers/RecoilTimer" to="StateMachine/Shoot" method="_on_recoil_timer_timeout"]
 [connection signal="timeout" from="Timers/ChargeAttackTimer" to="StateMachine/ChargingAttack" method="_on_charge_attack_timer_timeout"]
 [connection signal="OnHit" from="Hitbox" to="." method="_on_melee_hitbox_on_hit"]

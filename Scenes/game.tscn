@@ -121,6 +121,7 @@ debugMode = true
 [node name="Player2" parent="." instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85789, 1.3241, 0)
 playerID = 2
+startFacingRight = false
 
 [node name="Sprite2D" parent="Player2" index="3"]
 modulate = Color(0, 1, 1, 1)
