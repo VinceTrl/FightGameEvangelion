@@ -4,6 +4,7 @@ extends PlayerState
 @export var maxHurtSpeed = 4.0
 @export var hurtDuration = 0.1 #not used
 @export var hurtSpeedCurve: Curve
+@export var damageGlitchEffect: GlitchParameters
 @onready var hurtTimer: Timer = $"../../Timers/HurtTimer"
 
 var hurtTime = 0.0
@@ -25,6 +26,7 @@ func EnterState():
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	Manager.gameCamera.FocusTargetZoom(Player,Manager.gameCamera.GetZoomParamFromName("HitZoom"))
 	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"HurtVibration")
+	Manager.postProcessEffects.GlitchEffect(damageGlitchEffect)
 	
 func ExitState():
 	pass

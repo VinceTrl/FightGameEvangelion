@@ -3,6 +3,7 @@ extends Node
 var gameManager : GameManager
 var timeManager: TimeManager
 var gameCamera: GameCamera
+var postProcessEffects: PostProcessEffects
 
 
 # Called when the node enters the scene tree for the first time.

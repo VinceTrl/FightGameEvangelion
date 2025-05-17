@@ -12,6 +12,10 @@ extends PlayerState
 func EnterState():
 	Name = "Dash"
 	Player.dashDirection = Player.GetDashDirection()
+	
+	#var stormDir: Vector2 = Vector2(Player.dashDirection.x,Player.dashDirection.y)
+	#Manager.postProcessEffects.StormEffect()
+	
 	Player.DashTimer.start(dashDuration)
 	#Player.velocity = Player.dashDirection.normalized() * Player.dashSpeed
 	Player.animator.play("Dash")

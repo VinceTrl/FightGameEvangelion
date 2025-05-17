@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="GlitchParameters" load_steps=3 format=3 uid="uid://qjkftfo6dekq"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/PostProcessAnimationParams/GlitchParameters.gd" id="1_k2mi2"]
+
+[sub_resource type="Curve" id="Curve_0823w"]
+_data = [Vector2(0, 0), 0.0, 19.6641, 0, 0, Vector2(0.147186, 1), 0.0, 0.0, 0, 0, Vector2(0.257576, 0.604302), 0.0, 0.0, 0, 0, Vector2(0.372294, 1), 0.0, 0.0, 0, 0, Vector2(0.502164, 0.51461), 0.0, 0.0, 0, 0, Vector2(0.593074, 0.936688), 0.0, 0.0, 0, 0, Vector2(0.692641, 0.335227), 0.0, 0.0, 0, 0, Vector2(0.761905, 0.910308), 0.0, 0.0, 0, 0, Vector2(0.833333, 0.113636), 0.0, 0.0, 0, 0, Vector2(0.906926, 0.815341), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[resource]
+script = ExtResource("1_k2mi2")
+glitchName = &"Default"
+glitchEffectTime = 0.35
+glitchAnimationCurve = SubResource("Curve_0823w")
+GlitchRange = 0.05
+GlitchNoiseQuality = 250.0
+GlitchIntenity = 0.0088
+GlitchOffset = 0.03
+GlitchColorOffset = 1.3

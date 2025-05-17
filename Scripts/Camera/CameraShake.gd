@@ -37,7 +37,7 @@ func SimpleCameraShake(_magnitude: float = magnitude ,_shakeTime: float = shakeT
 	var elapsed_time = 0.0
 	isShaking = true
 	
-	var shakeTimer = get_tree().create_timer(_shakeTime,true,false,false)
+	var shakeTimer = get_tree().create_timer(_shakeTime,true,false,true)
 	
 	while shakeTimer.time_left > 0.0:
 		#print(str(shakeTimer.time_left))
@@ -57,7 +57,7 @@ func AdvancedCameraShake(_minMagnitude: float = minMagnitude,_maxMagnitude: floa
 	var elapsed_time = 0.0
 	isShaking = true
 	
-	var shakeTimer = get_tree().create_timer(_time,true,false,false)
+	var shakeTimer = get_tree().create_timer(_time,true,false,true)
 	
 	while shakeTimer.time_left > 0.0:
 		#print(str(shakeTimer.time_left))

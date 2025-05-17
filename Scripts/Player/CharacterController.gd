@@ -311,8 +311,13 @@ func GetDashDirection() -> Vector3:
 
 
 func HandleAttack():
-	if(((keyAttackJustPressed) or (AttackBuffer.time_left > 0)) and (currentState != States.Attack)):
+	if(((keyAttackJustPressed)) and (currentState != States.Attack)):
 		ChangeState(States.ChargingAttack)
+		return
+		
+	if(((AttackBuffer.time_left > 0)) and (currentState != States.Attack)):
+		ChangeState(States.Attack)
+		return
 		
 		
 		

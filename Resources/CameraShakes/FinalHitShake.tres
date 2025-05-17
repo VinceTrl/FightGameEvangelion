@@ -9,7 +9,7 @@ point_count = 9
 [resource]
 script = ExtResource("1_ymrvw")
 shakeName = &"FinalHitShake"
-shakeTime = 1.0
+shakeTime = 3.0
 minMagnitude = 0.025
 maxMagnitude = 0.075
 magnitudeOverTime = SubResource("Curve_c07rw")
