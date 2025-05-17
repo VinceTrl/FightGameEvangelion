@@ -18,7 +18,7 @@ func Update(delta: float):
 	
 	Player.HandleJump()
 	Player.HandleDash()
-	Player.HandleAttack()
+	Player.HandleAirAttack()
 	Player.HandleShoot()
 	
 	HandleAnimations()

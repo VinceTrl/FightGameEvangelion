@@ -1,6 +1,7 @@
 extends PlayerState
 
 var attackInAir = false
+var inRecover = false
 @onready var collision_shape_hitbox: CollisionShape3D = $"../../Hitbox/CollisionShape3D"
 
 
@@ -10,15 +11,19 @@ func EnterState():
 	#Player.velocity.y = 0
 	var _attackDir = Player.GetAttackDirection()
 	Player.velocity = Player.velocity / 3
-	Player.velocity += _attackDir.normalized() * Player.attackSpeed
+	
+	var _ratio = Player.attackSpeedForceCurve.sample(Player.currentChargeRatio)
+	var _speed = lerp(Player.attackSpeed,Player.attackSpeedMax,_ratio)
+	Player.velocity += _attackDir.normalized() * _speed
 	
 	Player.SetSpriteOffset_Attack()
-	Player.animator.play("Attack")
+	SetAttackByForce()
 	Player.emit_signal("OnPlayerAttack")
 	
 func ExitState():
 	collision_shape_hitbox.disabled = true
-	pass
+	Player.ResetChargeAttackValue()
+	inRecover = false
 
 func Draw():
 	pass
@@ -27,12 +32,29 @@ func Update(delta: float):
 	#Player.HandleGravity(Player.attackGravity)
 	#Player.HorizontalMovement()
 	Player.HandleAttackBuffer()
+	HandleRecover()
 	HandleAnimations()
 	
 	
+func HandleRecover():
+	if(!inRecover):return
+	
+	Player.velocity *= Player.attackSpeedMomentum
+	
+func SetAttackByForce():
+	if(Player.currentAttackForce >= Player.chargedAttackForceThreshold):
+		Player.animator.play("ChargedAttack")
+		#Engine.time_scale = 0.1
+	else :
+		Player.animator.play("Attack")
+		
+		
+func StartRecovery():
+	inRecover = true
 	
 func AttackFinished():
-	Player.velocity *= Player.attackSpeedMomentum
+	#Player.velocity *= Player.attackSpeedMomentum
+	Player.velocity = Vector3.ZERO
 	
 	if(Player.is_on_floor()): 
 		Player.ChangeState(States.Idle)
@@ -41,9 +63,6 @@ func AttackFinished():
 	
 	#if (Player.is_on_floor()): Player.ChangeState(States.Idle)
 	#else: Player.ChangeState(States.Fall)
-		
-	
-	
 
 func HandleAnimations():
 	#Player.animator.play("Attack")

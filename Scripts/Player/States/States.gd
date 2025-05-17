@@ -11,3 +11,4 @@ extends Node
 @onready var Hurt = $Hurt
 @onready var Dash = $Dash
 @onready var Death = $Death
+@onready var ChargingAttack: = $ChargingAttack

@@ -33,11 +33,14 @@ var gameManager: Manager
 @export var healthPoints = 6
 
 #run variables
+@export_group("Movement")
 @export var runSpeed = 3
 @export var acceleration = 0.3
 @export var deceleration = 0.15
+@export_group("")
 
 #jump variables
+@export_group("Jump")
 @export var jumpGravity = 6.0
 @export var fallGravity = 10.0
 @export var jumpVelocity = 3.6
@@ -47,23 +50,37 @@ var gameManager: Manager
 @export var maxFallVelocity = 10.0
 @export var maxJumps = 2
 @export var fallGravityMultiplier = 1.5
+@export_group("")
 
 #Dash
+@export_group("Dash")
 @export var maxDashes = 1
 @export var dashSpeed = 6
 @export var dashAcceleration = 1.5
 @export var dashDuration = 0.4
 @export var dashBufferTime = 0.15
 @export var dashMomentum = 0.2
-
+@export_group("")
 
 #attack variables
+@export_group("Attack")
 @export var attackSpeed = 0.1
-@export var attackBufferTime = 0.3
-@export var maxAirAttack = 1
+@export var attackSpeedMax = 6.0
 @export var attackSpeedMomentum = 0.4
-@export var attackSpriteOffset = 20
+@export var attackSpeedForceCurve: Curve
+
+@export var maxAirAttack = 1
 @export var attackGravity = 10
+@export var attackBufferTime = 0.3
+
+@export var chargeAttackTime: float = 2.0
+@export var chargedAttackForceThreshold = 1.5
+@export var minAttackForce = 1.0
+@export var maxAttackForce = 3.0
+@export var attackForceCurve: Curve
+
+@export var attackSpriteOffset = 20
+@export_group("")
 
 @export var debugMode = false
 
@@ -77,6 +94,9 @@ var moveDirectionX = 0
 var jumps = 0
 var airAttack = 0
 
+var currentAttackForce = 0.0
+var currentChargeRatio = 0.0
+
 var dashes = 0
 var dashDirection: Vector3
 var facing = 1
@@ -88,18 +108,25 @@ var keyUp = false
 var keyDown = false
 var keyLeft = false
 var keyRight = false
+
 var keyJump = false
 var keyJumpPressed = false
+
 var keyAttack = false
+var keyAttackHold = false
 var keyAttackJustPressed = false
+
 var keyDash = false
+
 var keyShoot = false
+var keyShootHold = false
+
 var keyMoveAxisX = 0
 var keyMoveAxisY = 0
 
 #State Machine
-var currentState = null
-var previousState = null
+var currentState: PlayerState = null
+var previousState: PlayerState = null
 
 #endregion
 
@@ -167,11 +194,12 @@ func GetInputStates():
 	keyJumpPressed = Input.is_action_just_pressed("KeyJump_" + str(playerID))
 	
 	keyAttack = Input.is_action_just_released("KeyAttack_" + str(playerID))
+	keyAttackHold = Input.is_action_pressed("KeyAttack_" + str(playerID))
 	keyAttackJustPressed = Input.is_action_just_pressed("KeyAttack_" + str(playerID))
 	
 	keyDash = Input.is_action_pressed("KeyDash_" + str(playerID))
 	
-	keyShoot = Input.is_action_pressed("KeyShoot_" + str(playerID))
+	keyShoot = Input.is_action_just_released("KeyShoot_" + str(playerID))
 	
 	keyMoveAxisX = Input.get_axis("KeyLeft_" + str(playerID),"KeyRight_" + str(playerID))
 	keyMoveAxisY = Input.get_axis("KeyDown_" + str(playerID),"KeyUp_" + str(playerID))
@@ -181,11 +209,12 @@ func GetInputStates():
 	
 func DebugPlayer():
 	if(debugMode): 
-		var debug_currentState = "\n /player cur State : " + str(currentState)
-		var debug_previousState = "\n /player prev State : " + str(previousState)
+		var debug_currentState = "\n /player cur State : " + str(currentState.name)
+		var debug_previousState = "\n /player prev State : " + str(previousState.name)
 		var debug_velocity = "\n /player velocity: " + str(velocity)
+		var debug_attackForce = "\n /air attack : " + str(airAttack)
 		
-		debug_values.text = "DEBUG : "  + debug_currentState + debug_previousState + debug_velocity
+		debug_values.text = "DEBUG : "  + debug_currentState + debug_previousState + debug_velocity + debug_attackForce
 
 func HandleGravity(delta: float, gravity: float = jumpGravity):
 	if (!is_on_floor()):
@@ -269,17 +298,31 @@ func GetDashDirection() -> Vector3:
 	else:
 		_dir = Vector3(keyMoveAxisX,keyMoveAxisY,0)
 	return _dir
+	
+#func HandleAttack():
+	#if(((keyAttack) or (AttackBuffer.time_left > 0)) and (currentState != States.Attack)):
+		#
+		##in air no charged attack
+		#if (!is_on_floor() and (airAttack < maxAirAttack)):
+			#airAttack += 1
+			#ChangeState(States.Attack)
+		#elif (is_on_floor()):
+			#ChangeState(States.ChargingAttack)
 
 
 func HandleAttack():
+	if(((keyAttackJustPressed) or (AttackBuffer.time_left > 0)) and (currentState != States.Attack)):
+		ChangeState(States.ChargingAttack)
+		
+		
+		
+func HandleAirAttack():
 	if(((keyAttack) or (AttackBuffer.time_left > 0)) and (currentState != States.Attack)):
 		
-		#air attack
 		if (!is_on_floor() and (airAttack < maxAirAttack)):
 			airAttack += 1
 			ChangeState(States.Attack)
-		elif (is_on_floor()):
-			ChangeState(States.Attack)
+		
 		
 func SetSpriteOffset_Attack():
 	if (sprite.flip_h == true): #facing left
@@ -299,6 +342,14 @@ func HandleAttackBuffer():
 	if (keyAttack):
 		AttackBuffer.start(attackBufferTime)
 		
+		
+func SetChargeAttackValue(_charge:float,_chargeRatio:float):
+	currentAttackForce = _charge
+	currentChargeRatio = _chargeRatio
+	
+func ResetChargeAttackValue():
+	currentAttackForce = 0.0
+	currentChargeRatio = 0.0
 		
 func HandleShoot():
 	if((keyShoot) and (currentState != States.Shoot) and Ammo.currentAmmo > 0):

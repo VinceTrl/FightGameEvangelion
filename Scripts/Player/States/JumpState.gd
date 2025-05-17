@@ -21,7 +21,8 @@ func Update(delta: float):
 	Player.HorizontalMovement()
 	Player.HandleJump()
 	Player.HandleDash()
-	Player.HandleAttack()
+	#Player.HandleAttack()
+	Player.HandleAirAttack()
 	Player.HandleShoot()
 	
 	HandleJumpToFall()
