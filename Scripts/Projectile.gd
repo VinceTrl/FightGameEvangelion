@@ -7,14 +7,19 @@ extends Area3D
 @onready var sprite: AnimatedSprite3D = $BulletSprite
 @onready var sfx: AudioStreamPlayer3D = $Sfx
 
+const EXPL_DSGN_ANIME_EXPLOSION_1_01 = preload("res://Assets/Sounds/SFX/EXPLDsgn_Anime Explosion 1_01.wav")
+const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
 
 @export var projectileMinSpeed = 5.0
 @export var projectileMaxSpeed = 11.0
 @export var maxHit = 6
+@export var healthPoints = 8
 @export var parrySpeedCurve: Curve
+@export var bounceOnWall = true
 
 var hitByAttack = 0
 var facing = 1
+var moveDirection: Vector3 = Vector3(1,0,0)
 var canMove = false
 var projectileID = 1
 
@@ -32,16 +37,23 @@ func _physics_process(delta: float) -> void:
 	
 func MoveProjectile(delta:float):
 	if (!canMove): return
-	position.x += facing * (GetProjectileSpeed() * delta)
+	global_position += moveDirection * (GetProjectileSpeed() * delta)
+	#position.x += facing * (GetProjectileSpeed() * delta)
 	
 
-func SetupProjectile (id: int = 0,startFacing: int = 1,origin: Vector3 = Vector3.ZERO):
+func SetupProjectile (id: int = 0,direction: Vector3 = Vector3.ONE,origin: Vector3 = Vector3.ZERO):
 	transform.origin = origin
 	SetNewID(id)
-	facing = startFacing
-	SetSpriteFlipH()
+	moveDirection = direction
+	var _newFacing = clamp(direction.x,-1,1)
+	facing = _newFacing
+	#SetSpriteFlipH()
+	SetProjectileRotation()
 	canMove = true
 	PlaySFX()
+	
+func SetProjectileRotation():
+	global_rotation.z = lerp_angle(global_rotation.z,atan2(moveDirection.y,moveDirection.x),1)
 	
 	
 func SetNewID(newID: int):
@@ -50,38 +62,56 @@ func SetNewID(newID: int):
 	hurtbox.owner_id = newID
 	
 func GetProjectileSpeed() -> float:
-	var _speed = projectileMinSpeed
 	var _speedRatio = hitByAttack/maxHit
 	var curveRatio = parrySpeedCurve.sample(_speedRatio);
-	_speed = lerp(projectileMinSpeed,projectileMaxSpeed,curveRatio)
-	
+	var _speed = lerp(projectileMinSpeed,projectileMaxSpeed,curveRatio)
+	print("SPEED : " + str(_speed))
+	print("_speedRatio : " + str(_speedRatio))
+	print("hit : " + str(hitByAttack))
+	print("maxHit : " + str(maxHit))
 	return _speed
 	
 func TakeDamage(hitboxSource: Hitbox):
 	if(hitboxSource == null): return
 	
 	if(hitboxSource.type == hitboxSource.DamageType.Melee):
-		hitByAttack += 1
-		hitByAttack = clamp(hitByAttack,0,maxHit)
-		facing = -facing
-		SetSpriteFlipH()
 		SetNewID(hitboxSource.owner_id)
-		Manager.gameCamera.camShake.AskCamShake("ParryShake")
-		PlaySFX()
+		ProjectileBounce()
 	else:
 		ProjectileImpact()
+		
+		
+func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake"):
+	healthPoints -= 1
+	
+	if (healthPoints <= 0): 
+		ProjectileImpact()
+		return
+	
+	hitByAttack += 1
+	hitByAttack = clampf(hitByAttack,0.0,maxHit)
+	moveDirection = -moveDirection
+	SetProjectileRotation()
+	Manager.gameCamera.camShake.AskCamShake(_camShakeToAsk)
+	PlaySFX()
 	
 func SetSpriteFlipH():
 	sprite.flip_h = (facing < 0)
 	
-	
 func ProjectileImpact():
 	canMove = false
 	#animator.play("Impact")
-	Manager.gameCamera.camShake.AskCamShake("ImpactShake")
+	
+	Manager.gameCamera.camShake.AskCamShake("DestroyProjectileShake")
 	DestroyProjectile()
 	
 func DestroyProjectile():
+	var audio = AUDIO_SCENE.instantiate()
+	#add_child(audio)
+	
+	get_tree().get_root().add_child(audio)
+	audio.StartAudio(EXPL_DSGN_ANIME_EXPLOSION_1_01)
+	
 	queue_free()
 
 func enter(body: Node2D) -> void:
@@ -99,4 +129,5 @@ func _on_hitbox_on_hit() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if(body == Hitbox): return
 	
-	ProjectileImpact()
+	if(bounceOnWall): ProjectileBounce()
+	else : ProjectileImpact()

@@ -125,6 +125,7 @@ var keyShootHold = false
 
 var keyMoveAxisX = 0
 var keyMoveAxisY = 0
+var key8Direction
 
 #State Machine
 var currentState: PlayerState = null
@@ -195,6 +196,10 @@ func GetInputStates():
 	keyDown = Input.is_action_pressed("KeyDown_" + str(playerID))
 	keyRight = Input.is_action_pressed("KeyRight_" + str(playerID))
 	keyLeft = Input.is_action_pressed("KeyLeft_" + str(playerID))
+	
+	var _dirX = int(Input.is_action_pressed("KeyRight_" + str(playerID))) - int(Input.is_action_pressed("KeyLeft_" + str(playerID)))
+	var _dirY = int(Input.is_action_pressed("KeyUp_" + str(playerID))) - int(Input.is_action_pressed("KeyDown_" + str(playerID)))
+	key8Direction = Vector2(_dirX,_dirY)
 	
 	keyJump = Input.is_action_pressed("KeyJump_" + str(playerID))
 	keyJumpPressed = Input.is_action_just_pressed("KeyJump_" + str(playerID))
@@ -299,13 +304,21 @@ func HandleDash():
 			dashes += 1
 			ChangeState(States.Dash)
 		
-func GetDashDirection() -> Vector3:
+func GetDirection() -> Vector3:
 	var _dir = Vector3.ZERO
 	if(!keyDown and !keyUp and !keyLeft and !keyRight):
 		_dir = Vector3(facing,0,0)
 	else:
 		_dir = Vector3(keyMoveAxisX,keyMoveAxisY,0)
 	return _dir
+	
+func GetDirectionOn8Axis() -> Vector3:
+	var _dir = Vector3.ZERO
+	if(!keyDown and !keyUp and !keyLeft and !keyRight):
+		_dir = Vector3(facing,0,0)
+	else:
+		_dir = Vector3(key8Direction.x,key8Direction.y,0)
+	return _dir.normalized()
 	
 #func HandleAttack():
 	#if(((keyAttack) or (AttackBuffer.time_left > 0)) and (currentState != States.Attack)):

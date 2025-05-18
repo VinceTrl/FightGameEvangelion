@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShakeParameters" load_steps=3 format=3 uid="uid://dbruj4m2iyqrh"]
+
+[ext_resource type="Script" path="res://Scripts/Camera/ShakeParams.gd" id="1_8l8qa"]
+
+[sub_resource type="Curve" id="Curve_c07rw"]
+_data = [Vector2(0, 0.519886), 0.0, 5.3625, 0, 0, Vector2(0.188312, 0.994724), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.83535, 0.0, 0, 0]
+point_count = 3
+
+[resource]
+script = ExtResource("1_8l8qa")
+shakeName = &"DestroyProjectileShake"
+shakeTime = 0.25
+minMagnitude = 0.015
+maxMagnitude = 0.025
+magnitudeOverTime = SubResource("Curve_c07rw")

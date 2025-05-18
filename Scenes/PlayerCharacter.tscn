@@ -1117,6 +1117,7 @@ one_shot = true
 
 [node name="PlayerAmmo" type="Node" parent="."]
 script = ExtResource("28_oqnrj")
+reloadOverTime = false
 
 [node name="Hitbox" type="Area3D" parent="."]
 collision_layer = 4

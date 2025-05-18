@@ -4,6 +4,7 @@ extends Node
 @export var maxAmmo: int = 10
 @export var minAmmo: int = 0
 @export var startAmmo: int = 3
+@export var reloadOverTime = true
 @export var reloadTime: float = 8.0
 
 var currentAmmo = startAmmo
@@ -47,6 +48,7 @@ func StartReloadTimer():
 	isReloading = true
 	
 func ReloadTimer(_delta: float):
+	if(!reloadOverTime): return
 	if(!isReloading): return
 	if(!canReload): return
 	

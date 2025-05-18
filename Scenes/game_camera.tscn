@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://diwhygl1ho1la"]
+[gd_scene load_steps=18 format=3 uid="uid://diwhygl1ho1la"]
 
 [ext_resource type="Script" path="res://Scripts/Camera/GameCamera.gd" id="1_cpg4t"]
 [ext_resource type="Resource" uid="uid://cgaw0g5mdfmxf" path="res://Resources/CameraZoom/DefaultZoom.tres" id="2_e3wng"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://ca46wpijujmka" path="res://Resources/CameraShakes/ShootShake.tres" id="6_83sxp"]
 [ext_resource type="Resource" uid="uid://brxvhmltagd5m" path="res://Resources/CameraShakes/ParryShake.tres" id="7_vrig3"]
 [ext_resource type="Resource" uid="uid://bdg7oxf5kjk3b" path="res://Resources/CameraShakes/ImpactShake.tres" id="8_yyu2d"]
+[ext_resource type="Resource" uid="uid://dbruj4m2iyqrh" path="res://Resources/CameraShakes/DestroyProjectileShake.tres" id="14_p6ck8"]
 
 [sub_resource type="Curve" id="Curve_6euxo"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.321656, 0.0596447), -0.0569253, -0.0569253, 0, 0, Vector2(0.519108, 0.521574), 1.15116, 1.15116, 0, 0, Vector2(1, 1), 4.05407, 0.0, 0, 0]
@@ -37,7 +38,7 @@ zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource(
 [node name="CameraShake" type="Node3D" parent="."]
 script = ExtResource("2_xo7ej")
 magnitudeOverTime = SubResource("Curve_t0je2")
-shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d")])
+shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d"), ExtResource("14_p6ck8")])
 
 [node name="Camera3D" type="Camera3D" parent="CameraShake"]
 

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Audio/AudioScene.gd" id="1_b6ug0"]
 
 [node name="AudioScene" type="AudioStreamPlayer3D"]
+volume_db = -10.0
 bus = &"SFX"
 script = ExtResource("1_b6ug0")
 

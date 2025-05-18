@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=16 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bxpg0akqnuobt" path="res://Assets/Sounds/Musics/A Cruel Angel's Thesis Eurobeat Remix.mp3" id="2_nst0m"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_a6rqb"]
 [ext_resource type="PackedScene" uid="uid://bwvyar8y8lpaw" path="res://Scenes/Gameplay/post_process_effects.tscn" id="11_t6d5l"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
+[ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -129,7 +130,6 @@ modulate = Color(0, 1, 1, 1)
 [node name="StageMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_nst0m")
 volume_db = -15.0
-autoplay = true
 bus = &"Music"
 parameters/looping = false
 
@@ -225,5 +225,20 @@ configuration = SubResource("Resource_myf1k")
 
 [node name="BigHead" parent="." instance=ExtResource("12_67sdl")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 2, 1, -1.29351)
+
+[node name="AmmoItem" parent="." instance=ExtResource("13_8m82v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.51542, 1.25418, 0.113311)
+
+[node name="AmmoItem2" parent="." instance=ExtResource("13_8m82v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51542, 1.25418, 0.113311)
+
+[node name="AmmoItem3" parent="." instance=ExtResource("13_8m82v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51542, 2.25418, 0.113311)
+
+[node name="AmmoItem4" parent="." instance=ExtResource("13_8m82v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48458, 1.25418, 0.113311)
+
+[node name="AmmoItem5" parent="." instance=ExtResource("13_8m82v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48458, 1.25418, 0.113311)
 
 [editable path="Player2"]

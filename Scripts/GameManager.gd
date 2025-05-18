@@ -10,6 +10,8 @@ extends Node
 
 var players: Array[PlayerCharacter] = []
 
+signal FightEnd
+
 func _ready() -> void:
 	
 	#Register
@@ -24,11 +26,11 @@ func RegisterPlayer(_playerToAdd:PlayerCharacter):
 	if (!players.has(_playerToAdd)): 
 		players.append(_playerToAdd)
 		_playerToAdd.OnPlayerDeath.connect(OnAnyPlayerDeath)
-		
-		
+
+
 func OnAnyPlayerDeath():
-	
 	var timer = get_tree().create_timer(timeBeforeRestart,true,false,true)
+	FightEnd.emit()
 	await timer.timeout
 	
 	get_tree().reload_current_scene()

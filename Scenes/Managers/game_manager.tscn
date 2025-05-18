@@ -6,6 +6,7 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_6hf0t")
+timeBeforeRestart = 5.0
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("2_c8bkv")

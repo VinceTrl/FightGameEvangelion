@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var playerID = 200
-@export var healthPoints = 10
+@export var healthPoints = 3
 @export var hurtTime = 1.0
 @export_range(0.0, 1.0, 0.001) var slapChance = 0.25
 
@@ -44,7 +44,7 @@ func TakeDamage(hitboxSource: Hitbox):
 		SetLookTarget(hitboxSource.owner)
 	
 	#print("SOURCE : " + str(hitboxSource.owner))
-	Hurt(hitbox.damage)
+	Hurt(hitboxSource.damage)
 		
 func Hurt(_damagePoint: int = 1):
 	

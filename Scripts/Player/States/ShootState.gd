@@ -59,7 +59,9 @@ func SpawnProjectile():
 	
 	_projectile.global_position = Player.shootPoint.global_position
 	add_child(_projectile)
-	_projectile.SetupProjectile(Player.playerID,Player.facing,Player.shootPoint.global_position)
+	
+	var _shootDir = Player.GetDirectionOn8Axis()
+	_projectile.SetupProjectile(Player.playerID,_shootDir,Player.shootPoint.global_position)
 	
 	StartRecoil()
 	Player.emit_signal("OnPlayerShoot")
