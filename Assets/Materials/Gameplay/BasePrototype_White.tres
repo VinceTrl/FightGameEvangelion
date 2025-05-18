@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://g8elc2l26ieh"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+rim_tint = 0.83
+proximity_fade_distance = 21.5

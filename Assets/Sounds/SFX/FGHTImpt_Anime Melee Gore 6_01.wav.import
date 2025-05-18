@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0el1ew7qbcsg"
+path="res://.godot/imported/FGHTImpt_Anime Melee Gore 6_01.wav-46fa8ab570eedf0cb28a91cefd78603e.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/FGHTImpt_Anime Melee Gore 6_01.wav"
+dest_files=["res://.godot/imported/FGHTImpt_Anime Melee Gore 6_01.wav-46fa8ab570eedf0cb28a91cefd78603e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

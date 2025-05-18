@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=15 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bxpg0akqnuobt" path="res://Assets/Sounds/Musics/A Cruel Angel's Thesis Eurobeat Remix.mp3" id="2_nst0m"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="9_nr51f"]
 [ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_a6rqb"]
 [ext_resource type="PackedScene" uid="uid://bwvyar8y8lpaw" path="res://Scenes/Gameplay/post_process_effects.tscn" id="11_t6d5l"]
+[ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -116,7 +117,6 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="Player" parent="." instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.282095, 0)
-debugMode = true
 
 [node name="Player2" parent="." instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85789, 1.3241, 0)
@@ -129,6 +129,7 @@ modulate = Color(0, 1, 1, 1)
 [node name="StageMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_nst0m")
 volume_db = -15.0
+autoplay = true
 bus = &"Music"
 parameters/looping = false
 
@@ -221,5 +222,8 @@ script = ExtResource("9_nr51f")
 configuration = SubResource("Resource_myf1k")
 
 [node name="PostProcessEffects" parent="." instance=ExtResource("11_t6d5l")]
+
+[node name="BigHead" parent="." instance=ExtResource("12_67sdl")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 2, 1, -1.29351)
 
 [editable path="Player2"]

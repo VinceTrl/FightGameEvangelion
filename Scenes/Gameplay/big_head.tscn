@@ -1,0 +1,479 @@
+[gd_scene load_steps=17 format=3 uid="uid://bnh4h6i2wqw74"]
+
+[ext_resource type="Material" uid="uid://g8elc2l26ieh" path="res://Assets/Materials/Gameplay/BasePrototype_White.tres" id="1_jd6iy"]
+[ext_resource type="Material" uid="uid://bns2qr6i381wl" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_01.tres" id="1_p7l6c"]
+[ext_resource type="Script" path="res://Scenes/Gameplay/big_head.gd" id="1_q0pkt"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_k37p0"]
+[ext_resource type="Material" uid="uid://dtduq68lofknr" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_04.tres" id="3_yhial"]
+[ext_resource type="Material" uid="uid://c6o2i4cwyacq8" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_03.tres" id="4_sg0no"]
+[ext_resource type="Material" uid="uid://xjwfsyh7514w" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_02.tres" id="5_4aqqg"]
+[ext_resource type="Script" path="res://Scripts/Hurtbox.gd" id="6_lux33"]
+[ext_resource type="Script" path="res://Scripts/Hitbox.gd" id="9_sic3r"]
+[ext_resource type="AudioStream" uid="uid://c0el1ew7qbcsg" path="res://Assets/Sounds/SFX/FGHTImpt_Anime Melee Gore 6_01.wav" id="10_5uti4"]
+
+[sub_resource type="Animation" id="Animation_iq1mw"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Visual/NodeShaker/Head/CSGCylinder3D/MouthControlNode:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.633333, 1.36667, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.348228, 0, 0), Vector3(0.167796, 0, 0), Vector3(0.323637, 0, 0), Vector3(0.348228, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.307104, 0.211546, 0.416779)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.288538)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.271854, 0.211546, 0.416779)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.287979)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Visual/Hand:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.52858, -3.04479, -0.300894)]
+}
+
+[sub_resource type="Animation" id="Animation_egoc8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Visual/NodeShaker/Head/CSGCylinder3D/MouthControlNode:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.348228, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Visual/Hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.13468, -0.470307, -0.429451)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Visual/Hand:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.956982, -1.25533, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Visual/Hand:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.288538)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.307104, 0.211546, 0.416779)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.271854, 0.211546, 0.416779)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D2:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.287979)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../Visual/Hand/Damage/Hitbox/CollisionShape3D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rm33i"]
+resource_name = "Slap"
+length = 2.5
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Visual/Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.383333, 1.23333, 1.36667, 1.45, 1.51667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.52858, 0.412636, -0.300894), Vector3(-1.52858, 0.847192, -0.800496), Vector3(-1.52858, 0.847192, -0.800496), Vector3(-2.90906, 0.0611055, 0.684244), Vector3(-0.521458, 0.178492, 1.54779), Vector3(2.03304, 0.178492, 1.39113)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Visual/Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.383333, 1.23333, 1.36667, 1.45, 1.51667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.510726, -2.18744, 0.541487), Vector3(-0.510726, -2.52078, 0.541487), Vector3(-0.510726, -2.52078, 0.541487), Vector3(-0.364323, -1.77023, 0.181553), Vector3(-0.364323, -0.522392, 0.181553), Vector3(-0.0239297, 0.5918, -0.385502)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Visual/Hand:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.383333, 1.23333, 1.36667, 1.45, 1.51667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 1.91667, 2.11667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.288538), Vector3(0, 0, 0.519358), Vector3(0, 0, 0.519358), Vector3(0, 0, -0.288538)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15, 1.91667, 2.11667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.307104, 0.211546, 0.416779), Vector3(0.24022, 0.154789, 0.416779), Vector3(0.24022, 0.154789, 0.416779), Vector3(0.307104, 0.211546, 0.416779)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.15, 1.88333, 2.11667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.271854, 0.211546, 0.416779), Vector3(-0.228474, 0.157587, 0.416779), Vector3(-0.228474, 0.157587, 0.416779), Vector3(-0.271854, 0.211546, 0.416779)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Visual/NodeShaker/Head/Eyes/CSGBox3D2:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.15, 1.88333, 2.11667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.287979), Vector3(0, 0, -0.593482), Vector3(0, 0, -0.593482), Vector3(0, 0, 0.287979)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Visual/Hand/Damage/Hitbox/CollisionShape3D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.36667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../Visual/NodeShaker_Hand")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.5, 1.0],
+"method": &"NodeShake"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_acb6e"]
+_data = {
+"Idle": SubResource("Animation_iq1mw"),
+"RESET": SubResource("Animation_egoc8"),
+"Slap": SubResource("Animation_rm33i")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ipwe"]
+size = Vector3(0.242188, 1, 1.70004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knf2g"]
+size = Vector3(1, 1.0274, 1.98632)
+
+[node name="BigHead" type="Node3D"]
+script = ExtResource("1_q0pkt")
+healthPoints = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Hurtbox/CollisionShape3D")
+libraries = {
+"": SubResource("AnimationLibrary_acb6e")
+}
+autoplay = "Idle"
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="NodeShaker" type="Node3D" parent="Visual" node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("2_k37p0")
+nodeToShake = NodePath("Head")
+magnitude = 0.06
+shakeTime = 0.4
+frequency = 1.0
+
+[node name="Head" type="CSGSphere3D" parent="Visual/NodeShaker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+rings = 8
+material = ExtResource("1_p7l6c")
+
+[node name="Eyes" type="Node3D" parent="Visual/NodeShaker/Head"]
+
+[node name="Eye_L" type="CSGSphere3D" parent="Visual/NodeShaker/Head/Eyes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.261873, 0, 0.383726)
+radius = 0.167
+rings = 8
+material = ExtResource("1_jd6iy")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Visual/NodeShaker/Head/Eyes/Eye_L"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.73211e-09, 0.108258)
+radius = 0.076
+height = 0.126
+material = ExtResource("3_yhial")
+
+[node name="Eye_R" type="CSGSphere3D" parent="Visual/NodeShaker/Head/Eyes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.262, 0, 0.384)
+radius = 0.167
+rings = 8
+material = ExtResource("1_jd6iy")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Visual/NodeShaker/Head/Eyes/Eye_R"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.73211e-09, 0.108258)
+radius = 0.076
+height = 0.126
+material = ExtResource("3_yhial")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Visual/NodeShaker/Head/Eyes"]
+transform = Transform3D(0.958661, 0.284551, 0, -0.284551, 0.958661, 0, 0, 0, 1, 0.307104, 0.211546, 0.416779)
+size = Vector3(0.343262, 0.0698853, 0.166443)
+material = ExtResource("3_yhial")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Visual/NodeShaker/Head/Eyes"]
+transform = Transform3D(0.95882, -0.284015, 0, 0.284015, 0.95882, 0, 0, 0, 1, -0.271854, 0.211546, 0.416779)
+size = Vector3(0.343262, 0.0698853, 0.166443)
+material = ExtResource("3_yhial")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Visual/NodeShaker/Head"]
+transform = Transform3D(0.997355, 0, 0, 0, 0.988458, 0.132925, 0, -0.132925, 0.988458, 0, -0.177383, 0.467027)
+size = Vector3(0.169403, 0.310791, 0.232666)
+material = ExtResource("4_sg0no")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Visual/NodeShaker/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.286591, 0)
+height = 0.388138
+material = ExtResource("1_p7l6c")
+
+[node name="MouthControlNode" type="Node3D" parent="Visual/NodeShaker/Head/CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 0.939979, -0.341233, 0, 0.341233, 0.939979, 0, -0.167255, -0.454465)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Visual/NodeShaker/Head/CSGCylinder3D/MouthControlNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.503315)
+height = 0.176549
+material = ExtResource("5_4aqqg")
+
+[node name="Hand" type="CSGBox3D" parent="Visual"]
+transform = Transform3D(0.31026, 0.777117, -0.547566, 0, 0.57599, 0.817457, 0.950652, -0.253624, 0.178706, -1.13468, -0.470307, -0.429451)
+size = Vector3(0.202637, 0.711182, 0.808594)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Visual/Hand"]
+transform = Transform3D(0.986512, 0, -0.163688, 0, 1, 0, 0.163688, 0, 0.986512, -0.079431, 0.107134, 0.741586)
+size = Vector3(0.134766, 0.164185, 0.859497)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Visual/Hand/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999764, 0.0217102, 0, -0.0217102, 0.999764, 0, 0.187325, -0.0746765)
+size = Vector3(0.134766, 0.164185, 0.710144)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Visual/Hand/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.209946, -0.100067)
+size = Vector3(0.134766, 0.164185, 0.659363)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Visual/Hand/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.386308, -0.180206)
+size = Vector3(0.134766, 0.164185, 0.499084)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Visual/Hand"]
+transform = Transform3D(1, 0, 0, 0, 0.843157, 0.537668, 0, -0.537668, 0.843157, 0, 0.444692, 0.0964694)
+size = Vector3(0.134766, 0.164185, 0.569366)
+
+[node name="Damage" type="Node3D" parent="Visual/Hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.65661e-09, 0.335229)
+
+[node name="Hitbox" type="Area3D" parent="Visual/Hand/Damage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0632486, 9.31323e-10, 0)
+script = ExtResource("9_sic3r")
+damage = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual/Hand/Damage/Hitbox"]
+transform = Transform3D(1, 0, -8.9407e-08, -1.49012e-08, 1, 7.45058e-09, 1.49012e-08, -1.11759e-08, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_5ipwe")
+disabled = true
+
+[node name="NodeShaker_Hand" type="Node3D" parent="Visual" node_paths=PackedStringArray("nodeToShake")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+script = ExtResource("2_k37p0")
+nodeToShake = NodePath("..")
+debugMode = true
+magnitude = 0.1
+shakeTime = 1.0
+frequency = 1.0
+
+[node name="Hurtbox" type="Area3D" parent="."]
+script = ExtResource("6_lux33")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378326, 0.260641)
+shape = SubResource("BoxShape3D_knf2g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="DEBUG_VALUES" type="Label" parent="CanvasLayer"]
+z_index = 200
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -242.0
+offset_bottom = 23.0
+grow_horizontal = 0
+horizontal_alignment = 2
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="HurtSFX" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("10_5uti4")
