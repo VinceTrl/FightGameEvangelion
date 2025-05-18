@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="1_t6bs0"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="2_u688i"]
-[ext_resource type="AudioStream" uid="uid://bxpg0akqnuobt" path="res://Assets/Sounds/Musics/A Cruel Angel's Thesis Eurobeat Remix.mp3" id="3_uo3o5"]
+[ext_resource type="AudioStream" uid="uid://bwt4shvj2ln0p" path="res://Assets/Sounds/Musics/teknokiki v1.mp3" id="3_7mfm1"]
 [ext_resource type="PackedScene" uid="uid://demgp3gtvl6qk" path="res://Scenes/Meshes/building_large_a.tscn" id="4_dkps8"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="5_70mjh"]
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="6_ijtxy"]
@@ -153,7 +153,7 @@ playerID = 2
 modulate = Color(0, 1, 1, 1)
 
 [node name="StageMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_uo3o5")
+stream = ExtResource("3_7mfm1")
 volume_db = -15.0
 autoplay = true
 bus = &"Music"

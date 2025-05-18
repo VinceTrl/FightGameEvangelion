@@ -16,16 +16,21 @@ const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
 @export var healthPoints = 8
 @export var parrySpeedCurve: Curve
 @export var bounceOnWall = true
+@export var canBounce = true
 
 var hitByAttack = 0
 var facing = 1
 var moveDirection: Vector3 = Vector3(1,0,0)
 var canMove = false
+var chargeRatio = 0.0
 var projectileID = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#animator.play("Spawn")
+	#global_scale(Vector3(2,2,2))
+	
+	projectileID = randi_range(-100000,100000)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,9 +46,10 @@ func MoveProjectile(delta:float):
 	#position.x += facing * (GetProjectileSpeed() * delta)
 	
 
-func SetupProjectile (id: int = 0,direction: Vector3 = Vector3.ONE,origin: Vector3 = Vector3.ZERO):
-	transform.origin = origin
-	SetNewID(id)
+func SetupProjectile (id: int = 0,direction: Vector3 = Vector3.ONE,origin: Vector3 = Vector3.ZERO,_charge: float = 0.0):
+	global_position = origin
+	chargeRatio = _charge
+	#SetNewID(id)
 	moveDirection = direction
 	var _newFacing = clamp(direction.x,-1,1)
 	facing = _newFacing
@@ -75,13 +81,14 @@ func TakeDamage(hitboxSource: Hitbox):
 	if(hitboxSource == null): return
 	
 	if(hitboxSource.type == hitboxSource.DamageType.Melee):
-		SetNewID(hitboxSource.owner_id)
+		#SetNewID(hitboxSource.owner_id)
 		ProjectileBounce()
 	else:
 		ProjectileImpact()
 		
 		
 func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake"):
+	
 	healthPoints -= 1
 	
 	if (healthPoints <= 0): 

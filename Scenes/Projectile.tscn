@@ -69,8 +69,8 @@ stream_5/stream = ExtResource("11_tc640")
 [node name="Projectile" type="Area3D"]
 collision_layer = 8
 script = ExtResource("1_imuxp")
-projectileMinSpeed = 3.5
-projectileMaxSpeed = 8.0
+projectileMinSpeed = 2.5
+projectileMaxSpeed = 7.0
 parrySpeedCurve = ExtResource("2_h0nys")
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="."]

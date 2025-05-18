@@ -5,7 +5,7 @@ extends PlayerState
 
 @export var minRecoilSpeed = 0.5
 @export var maxRecoilSpeed = 6.0
-@export var recoilDuration = 0.1
+@export var recoilDuration = 0.15
 @export var recoilCurve: Curve
 @export var recoilMomentum = 0.1
 
@@ -21,6 +21,7 @@ func EnterState():
 	#StartRecoil()
 	
 func ExitState():
+	Player.ResetShootAttackValue()
 	inRecoil = false
 
 func Draw():
@@ -54,6 +55,7 @@ func StartRecoil():
 
 
 func SpawnProjectile():
+	Player.Ammo.RemoveAmmo()
 	var _projectile = projectileScene.instantiate()
 	if(_projectile == null) : return
 	

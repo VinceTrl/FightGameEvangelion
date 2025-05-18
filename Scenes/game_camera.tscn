@@ -32,6 +32,8 @@ zDistCurve = SubResource("Curve_6euxo")
 cameraOffset = Vector3(0, 0.04, 0)
 cameraSmoothnessX = 1.75
 cameraSmoothnessY = 0.85
+cameraClampMax = Vector2(10, 3)
+cameraClampMin = Vector2(-5, -1)
 defaultZoom = ExtResource("2_e3wng")
 zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource("4_45u5i"), ExtResource("5_k8ve0"), ExtResource("6_5okmd")])
 

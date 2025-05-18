@@ -9,7 +9,7 @@ extends CharacterBody3D
 @onready var collider = $Collider
 @onready var attackHitbox: Hitbox = $Hitbox
 @onready var playerHurtbox: Hurtbox = $Hurtbox
-@onready var animator = $Animator
+@onready var animator: AnimationPlayer = $Animator
 @onready var States = $StateMachine
 @onready var debug_values: Label = $CanvasLayer/DEBUG_VALUES
 @onready var JumpBufferTimer = $Timers/JumpBuffer
@@ -84,6 +84,12 @@ var gameManager: Manager
 @export var attackSpriteOffset = 20
 @export_group("")
 
+#attack variables
+@export_group("Shoot")
+@export var chargeShootTime: float = 1.0
+@export var chargedShoothreshold = 0.8
+@export_group("")
+
 @export var debugMode = false
 
 #movement variables
@@ -98,6 +104,9 @@ var airAttack = 0
 
 var currentAttackForce = 0.0
 var currentChargeRatio = 0.0
+
+var currentShootChargeForce = 0.0
+var currentShootChargeRatio = 0.0
 
 var dashes = 0
 var dashDirection: Vector3
@@ -122,6 +131,7 @@ var keyDash = false
 
 var keyShoot = false
 var keyShootHold = false
+var keyShootPressed = false
 
 var keyMoveAxisX = 0
 var keyMoveAxisY = 0
@@ -211,6 +221,8 @@ func GetInputStates():
 	keyDash = Input.is_action_pressed("KeyDash_" + str(playerID))
 	
 	keyShoot = Input.is_action_just_released("KeyShoot_" + str(playerID))
+	keyShootHold = Input.is_action_pressed("KeyShoot_" + str(playerID))
+	keyShootPressed = Input.is_action_just_pressed("KeyShoot_" + str(playerID))
 	
 	keyMoveAxisX = Input.get_axis("KeyLeft_" + str(playerID),"KeyRight_" + str(playerID))
 	keyMoveAxisY = Input.get_axis("KeyDown_" + str(playerID),"KeyUp_" + str(playerID))
@@ -389,11 +401,17 @@ func SetChargeAttackValue(_charge:float,_chargeRatio:float):
 func ResetChargeAttackValue():
 	currentAttackForce = 0.0
 	currentChargeRatio = 0.0
+	
+func SetChargeShootValue(_chargeRatio:float):
+	currentShootChargeRatio = _chargeRatio
+	
+func ResetShootAttackValue():
+	currentShootChargeRatio = 0.0
 		
 func HandleShoot():
-	if((keyShoot) and (currentState != States.Shoot) and Ammo.currentAmmo > 0):
-		Ammo.RemoveAmmo()
-		ChangeState(States.Shoot)
+	if((keyShootPressed) and (currentState != States.Shoot)):
+		if(Ammo.currentAmmo > 0):
+			ChangeState(States.ChargeShoot)
 
 func TakeDamage(hitboxSource: Hitbox):
 	if (currentState != States.Hurt and currentState != States.Death):
