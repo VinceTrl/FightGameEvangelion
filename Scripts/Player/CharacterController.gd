@@ -149,8 +149,8 @@ func _ready():
 	for state in States.get_children():
 		state.States = States
 		state.Player = self
-		previousState = States.Fall
-		currentState = States.Fall
+		previousState = States.Locked
+		currentState = States.Locked
 		
 	#set id
 	playerHurtbox.owner_id = playerID

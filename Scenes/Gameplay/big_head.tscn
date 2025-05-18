@@ -7,8 +7,8 @@
 [ext_resource type="Material" uid="uid://dtduq68lofknr" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_04.tres" id="3_yhial"]
 [ext_resource type="Material" uid="uid://c6o2i4cwyacq8" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_03.tres" id="4_sg0no"]
 [ext_resource type="Material" uid="uid://xjwfsyh7514w" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_02.tres" id="5_4aqqg"]
-[ext_resource type="Script" path="res://Scripts/Hurtbox.gd" id="6_lux33"]
-[ext_resource type="Script" path="res://Scripts/Hitbox.gd" id="9_sic3r"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="6_lux33"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="9_sic3r"]
 [ext_resource type="AudioStream" uid="uid://c0el1ew7qbcsg" path="res://Assets/Sounds/SFX/FGHTImpt_Anime Melee Gore 6_01.wav" id="10_5uti4"]
 
 [sub_resource type="Animation" id="Animation_iq1mw"]

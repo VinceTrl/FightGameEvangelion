@@ -1,16 +1,16 @@
 [gd_scene load_steps=21 format=3 uid="uid://difa1tbhr27vn"]
 
-[ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_imuxp"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Projectile.gd" id="1_imuxp"]
 [ext_resource type="Curve" uid="uid://bb47w0dbu6x4n" path="res://Scripts/Curves/projectileSpeedParry.tres" id="2_h0nys"]
 [ext_resource type="Texture2D" uid="uid://4ccslecbenaq" path="res://Assets/Sprites/All_Fire_Bullet_Pixel_16x16_05.png" id="2_t0vlr"]
 [ext_resource type="AudioStream" uid="uid://3hbnm61b4j1x" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_01.wav" id="6_ee7kf"]
 [ext_resource type="AudioStream" uid="uid://cj1ji724x2jah" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_02.wav" id="7_josyo"]
 [ext_resource type="AudioStream" uid="uid://njjtqp6a1jml" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_03.wav" id="8_0judm"]
 [ext_resource type="AudioStream" uid="uid://cvwnu4y0fxy8t" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_04.wav" id="9_72b4e"]
-[ext_resource type="Script" path="res://Scripts/Hitbox.gd" id="10_cujeu"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="10_cujeu"]
 [ext_resource type="AudioStream" uid="uid://cvq2psjwinw8e" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_05.wav" id="10_o8c87"]
 [ext_resource type="AudioStream" uid="uid://cotl8qyq10vgb" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Release 6_06.wav" id="11_tc640"]
-[ext_resource type="Script" path="res://Scripts/Hurtbox.gd" id="11_w1rla"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="11_w1rla"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dkyrq"]
 radius = 0.0998181

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5amqm6jpeons"]
+
+[ext_resource type="PackedScene" uid="uid://bus7pxl8e5mmg" path="res://Scenes/GUI/fight_text.tscn" id="1_gskd5"]
+[ext_resource type="Script" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
+[ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="3_cd8f7"]
+[ext_resource type="PackedScene" uid="uid://qofhmib4acam" path="res://Scenes/GUI/title_screen.tscn" id="4_4xesq"]
+
+[node name="MasterGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xuadb")
+
+[node name="FightText" parent="." instance=ExtResource("1_gskd5")]
+layout_mode = 1
+
+[node name="TimerRoot" parent="." instance=ExtResource("3_cd8f7")]
+layout_mode = 1
+
+[node name="TitleScreen" parent="." instance=ExtResource("4_4xesq")]
+layout_mode = 1
