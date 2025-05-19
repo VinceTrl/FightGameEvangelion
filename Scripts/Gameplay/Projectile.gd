@@ -6,6 +6,7 @@ extends Area3D
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var sprite: AnimatedSprite3D = $BulletSprite
 @onready var sfx: AudioStreamPlayer3D = $Sfx
+@onready var raycast: RayCast3D = $RayCast3D
 
 const EXPL_DSGN_ANIME_EXPLOSION_1_01 = preload("res://Assets/Sounds/SFX/EXPLDsgn_Anime Explosion 1_01.wav")
 const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
@@ -30,7 +31,7 @@ func _ready() -> void:
 	#animator.play("Spawn")
 	#global_scale(Vector3(2,2,2))
 	
-	projectileID = randi_range(-100000,100000)
+	SetNewID(randi_range(-100000,100000))
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,6 +40,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	MoveProjectile(delta)
+	var v : Vector2 = Vector2.ONE
+	
 	
 func MoveProjectile(delta:float):
 	if (!canMove): return
@@ -97,7 +100,12 @@ func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake"):
 	
 	hitByAttack += 1
 	hitByAttack = clampf(hitByAttack,0.0,maxHit)
-	moveDirection = -moveDirection
+	#moveDirection = -moveDirection
+	
+	var normal = raycast.get_collision_normal()
+	var newDir = -2*(moveDirection.dot(normal)) * normal + moveDirection
+	moveDirection = newDir
+	
 	SetProjectileRotation()
 	Manager.gameCamera.camShake.AskCamShake(_camShakeToAsk)
 	PlaySFX()
