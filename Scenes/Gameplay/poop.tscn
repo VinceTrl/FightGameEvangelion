@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch56ldgqymwtm"]
+
+[ext_resource type="PackedScene" uid="uid://b722wqbjwps3e" path="res://Assets/Meshes/Props/Poop/SM_Poop_01.fbx" id="1_c6ldi"]
+
+[node name="Poop" type="Node3D"]
+
+[node name="SM_Poop_01" parent="." instance=ExtResource("1_c6ldi")]

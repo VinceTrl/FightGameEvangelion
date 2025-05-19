@@ -326,7 +326,7 @@ _data = {
 size = Vector3(0.242188, 1, 1.70004)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_knf2g"]
-size = Vector3(1, 1.0274, 1.98632)
+size = Vector3(1.31384, 1.0274, 3.18396)
 
 [node name="BigHead" type="Node3D"]
 script = ExtResource("1_q0pkt")
@@ -348,7 +348,7 @@ shakeTime = 0.4
 frequency = 1.0
 
 [node name="Head" type="CSGSphere3D" parent="Visual/NodeShaker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.475, 0)
 rings = 8
 material = ExtResource("1_p7l6c")
 
@@ -456,7 +456,7 @@ frequency = 1.0
 script = ExtResource("6_lux33")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378326, 0.260641)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0368042, 0.378326, 0.237386)
 shape = SubResource("BoxShape3D_knf2g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

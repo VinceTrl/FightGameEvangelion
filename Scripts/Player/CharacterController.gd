@@ -26,6 +26,7 @@ extends CharacterBody3D
 @onready var backPlayerDetection: RayCast3D = $RaycastHolder/BackPlayerDetection
 
 const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
+const SD_GROUND_HIT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_GroundHit.wav")
 
 @export var playerID = 1
 
@@ -36,7 +37,7 @@ var gameManager: Manager
 @export var startFacingRight = true
 #run variables
 @export_group("Movement")
-@export var runSpeed = 3
+@export var runSpeed = 3.0
 @export var acceleration = 0.3
 @export var deceleration = 0.15
 @export_group("")
@@ -170,6 +171,10 @@ func _ready():
 	else: facing = -1
 	
 	if(gameManager == null): push_error("Game Manager is null")
+	
+	currentHealthPoints = healthPoints
+	moveSpeed = runSpeed
+	jumpSpeed = jumpVelocity
 
 func _draw():
 	currentState.Draw()
@@ -259,7 +264,7 @@ func HandleLanding():
 		ResetJump()
 		ResetDash()
 		ResetAirAttack()
-		sfx.stream = landingSfx
+		sfx.stream = SD_GROUND_HIT
 		sfx.play()
 		Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"LandingVibration")
 		

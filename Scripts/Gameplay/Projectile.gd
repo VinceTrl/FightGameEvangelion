@@ -1,6 +1,6 @@
 class_name Projectile
 
-extends Area3D
+extends RigidBody3D
 
 @onready var hitbox: Hitbox = $Hitbox
 @onready var hurtbox: Hurtbox = $Hurtbox
@@ -10,6 +10,7 @@ extends Area3D
 
 const EXPL_DSGN_ANIME_EXPLOSION_1_01 = preload("res://Assets/Sounds/SFX/EXPLDsgn_Anime Explosion 1_01.wav")
 const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
+const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
 
 @export var projectileMinSpeed = 5.0
 @export var projectileMaxSpeed = 11.0
@@ -18,6 +19,7 @@ const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
 @export var parrySpeedCurve: Curve
 @export var bounceOnWall = true
 @export var canBounce = true
+@export var explodeWhenDestroyed = true
 
 var hitByAttack = 0
 var facing = 1
@@ -28,9 +30,7 @@ var projectileID = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#animator.play("Spawn")
-	#global_scale(Vector3(2,2,2))
-	
+	self.body_entered.connect(_on_body_entered)
 	SetNewID(randi_range(-100000,100000))
 	pass
 
@@ -41,13 +41,10 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	MoveProjectile(delta)
 	var v : Vector2 = Vector2.ONE
-	
-	
+
 func MoveProjectile(delta:float):
 	if (!canMove): return
 	global_position += moveDirection * (GetProjectileSpeed() * delta)
-	#position.x += facing * (GetProjectileSpeed() * delta)
-	
 
 func SetupProjectile (id: int = 0,direction: Vector3 = Vector3.ONE,origin: Vector3 = Vector3.ZERO,_charge: float = 0.0):
 	global_position = origin
@@ -74,10 +71,10 @@ func GetProjectileSpeed() -> float:
 	var _speedRatio = hitByAttack/maxHit
 	var curveRatio = parrySpeedCurve.sample(_speedRatio);
 	var _speed = lerp(projectileMinSpeed,projectileMaxSpeed,curveRatio)
-	print("SPEED : " + str(_speed))
-	print("_speedRatio : " + str(_speedRatio))
-	print("hit : " + str(hitByAttack))
-	print("maxHit : " + str(maxHit))
+	#print("SPEED : " + str(_speed))
+	#print("_speedRatio : " + str(_speedRatio))
+	#print("hit : " + str(hitByAttack))
+	#print("maxHit : " + str(maxHit))
 	return _speed
 	
 func TakeDamage(hitboxSource: Hitbox):
@@ -89,7 +86,7 @@ func TakeDamage(hitboxSource: Hitbox):
 	else:
 		ProjectileImpact()
 		
-		
+
 func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake"):
 	
 	healthPoints -= 1
@@ -121,12 +118,16 @@ func ProjectileImpact():
 	DestroyProjectile()
 	
 func DestroyProjectile():
-	var audio = AUDIO_SCENE.instantiate()
-	#add_child(audio)
 	
-	get_tree().get_root().add_child(audio)
-	audio.StartAudio(EXPL_DSGN_ANIME_EXPLOSION_1_01)
-	
+	if(explodeWhenDestroyed):
+		var explo = EXPLOSION.instantiate()
+		get_tree().get_root().add_child(explo)
+		explo.global_position = global_position
+	else:
+		var audio = AUDIO_SCENE.instantiate()
+		get_tree().get_root().add_child(audio)
+		audio.StartAudio(EXPL_DSGN_ANIME_EXPLOSION_1_01)
+
 	queue_free()
 
 func enter(body: Node2D) -> void:
@@ -144,5 +145,6 @@ func _on_hitbox_on_hit() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if(body == Hitbox): return
 	
+	print("COL")
 	if(bounceOnWall): ProjectileBounce()
 	else : ProjectileImpact()

@@ -1,11 +1,19 @@
 extends PlayerState
 
+const SD_FOOTSTEPS = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_footsteps.wav")
+@onready var sfx_move: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Move"
+
 func EnterState():
 	Name = "Run"
 	Player.animator.play("Move")
 	
+	#Footsteps sounds
+	sfx_move.stream = SD_FOOTSTEPS
+	var ranStart = randf_range(0.0,sfx_move.stream.get_length())
+	sfx_move.play(ranStart)
+	
 func ExitState():
-	pass
+	sfx_move.stop()
 
 func Draw():
 	pass
