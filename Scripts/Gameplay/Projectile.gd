@@ -89,9 +89,11 @@ func TakeDamage(hitboxSource: Hitbox):
 
 func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake"):
 	
+	print("BOUNCE")
+	
 	healthPoints -= 1
 	
-	if (healthPoints <= 0): 
+	if (healthPoints <= 0):
 		ProjectileImpact()
 		return
 	
