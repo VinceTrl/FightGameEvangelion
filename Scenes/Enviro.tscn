@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://8a00sh66ihoa"]
+[gd_scene load_steps=13 format=3 uid="uid://8a00sh66ihoa"]
 
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="2_tsbgh"]
 [ext_resource type="PackedScene" uid="uid://gim0rktb26eh" path="res://Assets/Meshes/Enviro/robot_eva_01.tscn" id="3_hidu8"]
 [ext_resource type="PackedScene" uid="uid://j271rtxrymhf" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_01.tscn" id="3_qnf2r"]
+[ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="4_474d5"]
+[ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="5_460ml"]
 
 [sub_resource type="Animation" id="Animation_hbu4a"]
 resource_name = "CityLoop"
@@ -186,6 +188,94 @@ _data = {
 "RESET": SubResource("Animation_kwp3a")
 }
 
+[sub_resource type="Resource" id="Resource_kmets"]
+script = ExtResource("5_460ml")
+reload = false
+ASCII = false
+ASCIISize = Vector2(2, 2)
+ChromaticAberration = true
+StrenghtCA = 2.0
+Blur = true
+L_O_D = 0.31
+FishEye = false
+FishEyeAspect = 0.05
+FishEyeDistortion = 0.15
+FishEyeRadius = 1.0
+FishEyeAlpha = 1.0
+FishEyeCrop = 2.0
+FishEyeCropColor = Color(0, 0, 0, 1)
+Vignette = true
+VignetteIntensity = 0.5
+VignetteOpacity = 0.324
+VignetteR_G_B = Color(1, 0, 0.933333, 1)
+Glitch = true
+GlitchRange = 0.1
+GlitchNoiseQuality = 267.2
+GlitchIntenity = 0.001
+GlitchOffset = 0.0
+GlitchColorOffset = 0.1
+Outline = false
+OutlineColor = Color(0.510988, 0, 0.260468, 1)
+OutlineThreshold = 0.0
+OutlineBlend = 0.465
+Grain = false
+GrainPower = 62
+CircularWaves = false
+CircularWavesAmplitude = 2.0
+CircularWavesFrequency = 12.89
+CircularWavesRippleRate = 105.2
+SpeedLines = true
+SpeedLinesColor = Color(1, 1, 1, 1)
+SpeedLinesCount = 1
+SpeedLineDensity = 0.049
+SpeedLineSpeed = 40
+particle_storm = false
+particle_storm_color = Color(0.87, 0.78, 0.6, 1)
+particle_storm_intensity = 0.5
+particle_storm_chaos = 1.0
+particle_storm_scale = 1.0
+particle_storm_density = 1.0
+particle_storm_wind_direction = Vector2(1, 0.2)
+particle_storm_wind_speed = 1.0
+directional_drift = false
+directional_drift_color = Color(0.76, 0.69, 0.5, 0.3)
+directional_drift_density = 0.3
+directional_drift_speed = 1.0
+directional_drift_scale = 30.0
+directional_drift_direction = Vector2(1, 0.5)
+directional_drift_layer_ratio = 1.2
+ColorCorrection = false
+ColorCorrectionTint = Color(0, 0, 0, 1)
+ColorCorrectionBrightness = 0.0
+ColorCorrectionSaturation = 0.0
+Palette = false
+Pixelate = true
+PixelatePixelSize = 4
+CRT = false
+overlay = true
+scanlines_opacity = 0.4
+scanlines_width = 0.25
+grille_opacity = 0.3
+pixelate = true
+roll_speed = 8.0
+roll_size = 15.0
+roll_variation = 1.8
+distort_intensity = 0.05
+noise_opacity = 0.4
+noise_speed = 5.0
+static_noise_intensity = 0.06
+aberration = 0.03
+brightness = 1.4
+discolor = true
+warp_amount = 1.0
+clip_warp = false
+vignette_intensity = 0.4
+vignette_opacity = 0.5
+AnalogMonitor = false
+AnalogMonitorResolution = Vector2(256, 256)
+ScreenShake = false
+ScreenShakePower = 0.1
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -212,13 +302,30 @@ spot_angle = 30.9375
 
 [node name="Meshes" type="Node3D" parent="."]
 
-[node name="City Pivot" type="Node3D" parent="Meshes"]
+[node name="CityLeft" type="Node3D" parent="Meshes"]
+transform = Transform3D(0.972235, 0, -0.234005, 0, 1, 0, 0.234005, 0, 0.972235, -0.647267, 0, 0)
+
+[node name="City Pivot" type="Node3D" parent="Meshes/CityLeft"]
 transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
-[node name="Mesh_buildingsLoop_02" parent="Meshes/City Pivot" instance=ExtResource("3_qnf2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Mesh_buildingsLoop_02" parent="Meshes/CityLeft/City Pivot" instance=ExtResource("3_qnf2r")]
 
-[node name="Anim_CityRotation" type="AnimationPlayer" parent="Meshes/City Pivot"]
+[node name="Anim_CityRotation" type="AnimationPlayer" parent="Meshes/CityLeft/City Pivot"]
+libraries = {
+"": SubResource("AnimationLibrary_kajny")
+}
+autoplay = "CityLoop"
+
+[node name="CityRight" type="Node3D" parent="Meshes"]
+transform = Transform3D(0.957123, 0, 0.289683, 0, 1, 0, -0.289683, 0, 0.957123, 0.771507, 0, 0)
+
+[node name="City Pivot" type="Node3D" parent="Meshes/CityRight"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
+[node name="Mesh_buildingsLoop_02" parent="Meshes/CityRight/City Pivot" instance=ExtResource("3_qnf2r")]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="Anim_CityRotation" type="AnimationPlayer" parent="Meshes/CityRight/City Pivot"]
 libraries = {
 "": SubResource("AnimationLibrary_kajny")
 }
@@ -235,3 +342,7 @@ libraries = {
 "": SubResource("AnimationLibrary_eapgk")
 }
 autoplay = "Anim_Robot"
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+script = ExtResource("4_474d5")
+configuration = SubResource("Resource_kmets")
