@@ -55,7 +55,7 @@ height = 0.413314
 
 [sub_resource type="Animation" id="Animation_7hbhv"]
 resource_name = "Attack"
-length = 0.500003
+length = 0.416669
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -100,10 +100,10 @@ tracks/3/path = NodePath(".:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.233333, 0.333333, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0166667, 0.2, 0.25, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [6, 7, 8, 9]
+"values": [5, 6, 7, 8, 9]
 }
 tracks/4/type = "method"
 tracks/4/imported = false
@@ -112,7 +112,7 @@ tracks/4/path = NodePath("../StateMachine/Attack")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.433333),
+"times": PackedFloat32Array(0.366667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -126,7 +126,7 @@ tracks/5/path = NodePath("../Hitbox/CollisionShape3D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.233333),
+"times": PackedFloat32Array(0.0166667, 0.233333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -143,9 +143,26 @@ tracks/6/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("4_r2cae")
 }],
-"times": PackedFloat32Array(0.1)
+"times": PackedFloat32Array(0)
 }
 tracks/6/use_blend = true
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Hitbox")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0166667, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"ActiveHitBox"
+}, {
+"args": [],
+"method": &"InactiveHitBox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_xn4c6"]
 resource_name = "Charge"
@@ -340,6 +357,23 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/6/use_blend = true
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Hitbox")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.283333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"ActiveHitBox"
+}, {
+"args": [],
+"method": &"InactiveHitBox"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_lnv0j"]
 resource_name = "Dash"
@@ -1084,7 +1118,7 @@ _data = [Vector2(0, 1), 0.0, -2.4727, 0, 0, Vector2(1, 0), -0.0449583, 0.0, 0, 0
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_hmoe4"]
-_data = [Vector2(0, 0.873786), 0.0, 0.834033, 0, 0, Vector2(1, 0), -2.97547, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, -7.13645e-07, 0, 0, Vector2(1, 0), -3.15581, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_8vhkr"]
@@ -1092,7 +1126,7 @@ _data = [Vector2(0, 0), 0.0, 0.0324289, 0, 0, Vector2(0.493865, 0.90534), 2.6787
 point_count = 3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cr8h1"]
-size = Vector3(0.579987, 0.554581, 1)
+size = Vector3(0.616932, 0.425266, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jq5e"]
 size = Vector3(0.183346, 0.307861, 1)
@@ -1179,7 +1213,9 @@ recoilCurve = SubResource("Curve_gijy7")
 
 [node name="Hurt" type="Node" parent="StateMachine"]
 script = ExtResource("14_gm8e6")
-maxHurtSpeed = 6.0
+maxHurtSpeed = 10.0
+hurtDuration = 0.2
+useAnimationForDuration = false
 hurtSpeedCurve = SubResource("Curve_hmoe4")
 damageGlitchEffect = ExtResource("30_k65qb")
 
@@ -1237,9 +1273,10 @@ reloadOverTime = false
 [node name="Hitbox" type="Area3D" parent="."]
 collision_layer = 4
 script = ExtResource("14_fgxac")
+isActive = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.285599, -0.0378037, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198046, -0.0263424, 0)
 shape = SubResource("BoxShape3D_cr8h1")
 disabled = true
 

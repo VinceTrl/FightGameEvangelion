@@ -3,6 +3,7 @@ extends PlayerState
 var attackInAir = false
 var inRecover = false
 @onready var collision_shape_hitbox: CollisionShape3D = $"../../Hitbox/CollisionShape3D"
+@onready var hitbox: Hitbox = $"../../Hitbox"
 
 
 func EnterState():
@@ -25,6 +26,7 @@ func EnterState():
 	
 func ExitState():
 	collision_shape_hitbox.disabled = true
+	hitbox.InactiveHitBox()
 	Player.ResetChargeAttackValue()
 	inRecover = false
 
