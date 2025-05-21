@@ -1,23 +1,30 @@
-[gd_scene load_steps=13 format=3 uid="uid://8a00sh66ihoa"]
+[gd_scene load_steps=16 format=3 uid="uid://8a00sh66ihoa"]
 
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="2_tsbgh"]
 [ext_resource type="PackedScene" uid="uid://gim0rktb26eh" path="res://Assets/Meshes/Enviro/robot_eva_01.tscn" id="3_hidu8"]
 [ext_resource type="PackedScene" uid="uid://j271rtxrymhf" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_01.tscn" id="3_qnf2r"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="4_474d5"]
 [ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="5_460ml"]
+[ext_resource type="Texture2D" uid="uid://dovbwkiwlo153" path="res://addons/post_processing/assets/green_palette.png" id="5_eymg6"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_wydri"]
+density = -0.319
+albedo = Color(0, 0, 0, 1)
+emission = Color(1, 1, 1, 1)
+height_falloff = 1.0
 
 [sub_resource type="Animation" id="Animation_hbu4a"]
 resource_name = "CityLoop"
-length = 5.0
+length = 2.0
 loop_mode = 1
-step = 0.5
+step = 2.0
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 2.5, 1, 1, 0, 0, -4.37114e-08, 3.75, 1, 0.707107, 0, 0, 0.707107, 5, 1, -8.74228e-08, 0, 0, 1, 5.00005, 1, 0.00872664, 0, 0, 0.999962)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, -4.37114e-08, 1.5, 1, 0.707107, 0, 0, 0.707107, 2, 1, -8.74228e-08, 0, 0, 1, 2.00002, 1, 0.00872664, 0, 0, 0.999962)
 
 [sub_resource type="Animation" id="Animation_jpj2d"]
 length = 0.001
@@ -244,37 +251,67 @@ directional_drift_speed = 1.0
 directional_drift_scale = 30.0
 directional_drift_direction = Vector2(1, 0.5)
 directional_drift_layer_ratio = 1.2
-ColorCorrection = false
-ColorCorrectionTint = Color(0, 0, 0, 1)
-ColorCorrectionBrightness = 0.0
-ColorCorrectionSaturation = 0.0
+ColorCorrection = true
+ColorCorrectionTint = Color(0.961265, 0.799196, 0.923074, 1)
+ColorCorrectionBrightness = -0.052
+ColorCorrectionSaturation = 1.0
 Palette = false
+PalettePalette = ExtResource("5_eymg6")
 Pixelate = true
 PixelatePixelSize = 4
-CRT = false
+CRT = true
 overlay = true
-scanlines_opacity = 0.4
-scanlines_width = 0.25
-grille_opacity = 0.3
+scanlines_opacity = 0.075
+scanlines_width = 0.079
+grille_opacity = 0.055
 pixelate = true
-roll_speed = 8.0
-roll_size = 15.0
-roll_variation = 1.8
-distort_intensity = 0.05
-noise_opacity = 0.4
+roll_speed = -50.0
+roll_size = 50.615
+roll_variation = 1.24
+distort_intensity = 0.004
+noise_opacity = 0.0
 noise_speed = 5.0
-static_noise_intensity = 0.06
-aberration = 0.03
-brightness = 1.4
+static_noise_intensity = 0.091
+aberration = 0.015
+brightness = 1.5
 discolor = true
-warp_amount = 1.0
+warp_amount = 0.061
 clip_warp = false
-vignette_intensity = 0.4
+vignette_intensity = 0.3
 vignette_opacity = 0.5
 AnalogMonitor = false
-AnalogMonitorResolution = Vector2(256, 256)
-ScreenShake = false
-ScreenShakePower = 0.1
+AnalogMonitorResolution = Vector2(1024, 1024)
+ScreenShake = true
+ScreenShakePower = 0.08
+
+[sub_resource type="Environment" id="Environment_lakqy"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.12
+tonemap_white = 1.45
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 4.77
+ssao_intensity = 5.06
+ssao_power = 0.401915
+ssao_detail = 5.0
+ssao_horizon = 0.09
+ssao_sharpness = 1.0
+ssao_light_affect = 1.0
+ssil_enabled = true
+ssil_radius = 16.0
+ssil_intensity = 4.9
+ssil_normal_rejection = 0.0
+sdfgi_use_occlusion = true
+fog_mode = 1
+fog_light_color = Color(0.411539, 0.678144, 0.735421, 1)
+fog_light_energy = 0.2
+fog_density = 0.2734
+fog_sky_affect = 0.0
+fog_depth_begin = 5.0
+fog_depth_end = 15.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
 
 [node name="Node3D" type="Node3D"]
 
@@ -289,16 +326,23 @@ transform = Transform3D(13.2104, 0, 0, 0, 9.53674e-07, -13.2104, 0, 13.2104, 2.3
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 0.501616, -0.86509, 0, 0.86509, 0.501616, 0, -2.7855, 0.746372)
-light_color = Color(1, 0.721569, 1, 1)
-light_energy = 16.0
+light_color = Color(0.42, 1, 0.777667, 1)
+light_energy = 20.0
+light_volumetric_fog_energy = 50.0
 spot_range = 6.56372
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.998144, 0.0608917, 0, -0.0608917, -0.998144, 4.76837e-07, 4.42212, -15.2089)
+transform = Transform3D(1, 0, 0, 0, -0.998144, 0.0608917, 0, -0.0608917, -0.998144, -0.0131216, 4.46214, -15.2345)
 light_color = Color(0.817634, 0.966187, 0.995038, 1)
 light_energy = 32.0
+light_volumetric_fog_energy = 0.0
 spot_range = 17.5976
 spot_angle = 30.9375
+
+[node name="FogVolume" type="FogVolume" parent="Lighting"]
+transform = Transform3D(6.42964, 0, 0, 0, 6.42964, 0, 0, 0, 6.42964, -0.0162735, 0.0316439, -4.96131)
+visible = false
+material = SubResource("FogMaterial_wydri")
 
 [node name="Meshes" type="Node3D" parent="."]
 
@@ -317,7 +361,7 @@ libraries = {
 autoplay = "CityLoop"
 
 [node name="CityRight" type="Node3D" parent="Meshes"]
-transform = Transform3D(0.957123, 0, 0.289683, 0, 1, 0, -0.289683, 0, 0.957123, 0.771507, 0, 0)
+transform = Transform3D(0.932608, 0, 0.360892, 0, 1, 0, -0.360892, 0, 0.932608, 0.968478, 0, 0)
 
 [node name="City Pivot" type="Node3D" parent="Meshes/CityRight"]
 transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
@@ -335,7 +379,39 @@ autoplay = "CityLoop"
 transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
 [node name="Robot_eva_02" parent="Meshes/Robot Pivot" instance=ExtResource("3_hidu8")]
-transform = Transform3D(0.999112, -0.0375015, 0.0191984, 0.0405876, 0.734609, -0.677277, 0.0112955, 0.677454, 0.735478, 0.0776887, -3.47707, -5.00639)
+transform = Transform3D(0.998826, -0.0419434, 0.024249, 0.0472788, 0.734517, -0.676943, 0.0105819, 0.677294, 0.735637, 0.0776888, -3.47707, -5.00639)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Meshes/Robot Pivot/Robot_eva_02"]
+transform = Transform3D(0.999685, 0.0109206, -0.0226252, 0.00979678, 0.659829, 0.751351, 0.0231342, -0.751335, 0.659515, 0.41254, 0.0429149, -0.758159)
+light_color = Color(0.95, 0.8664, 0.494, 1)
+light_energy = 150.0
+light_volumetric_fog_energy = 10.0
+spot_range = 1.63342
+spot_angle = 45.3775
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Meshes/Robot Pivot/Robot_eva_02"]
+transform = Transform3D(0.849036, 0.0109208, -0.528222, 0.390801, 0.659829, 0.641794, 0.355546, -0.751335, 0.555952, -0.514993, -0.0829639, -0.646571)
+light_color = Color(0.95, 0.8664, 0.494, 1)
+light_energy = 150.0
+light_volumetric_fog_energy = 10.0
+spot_range = 1.63342
+spot_angle = 45.3775
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Meshes/Robot Pivot/Robot_eva_02"]
+transform = Transform3D(0.998469, 0.0109206, -0.0542413, 0.0335627, 0.659829, 0.750665, 0.0439879, -0.751335, 0.658453, 1.12026, 5.06949, 1.07319)
+light_color = Color(0.95, 0.8664, 0.494, 1)
+light_energy = 1500.0
+light_volumetric_fog_energy = 10.0
+spot_range = 0.787848
+spot_angle = 45.3775
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Meshes/Robot Pivot/Robot_eva_02"]
+transform = Transform3D(0.998469, 0.0109206, -0.0542413, 0.0335627, 0.659829, 0.750665, 0.0439879, -0.751335, 0.658453, -0.979472, 5.05901, 1.42991)
+light_color = Color(0.95, 0.8664, 0.494, 1)
+light_energy = 1500.0
+light_volumetric_fog_energy = 10.0
+spot_range = 0.787848
+spot_angle = 45.3775
 
 [node name="Anim_Robot" type="AnimationPlayer" parent="Meshes/Robot Pivot"]
 libraries = {
@@ -346,3 +422,6 @@ autoplay = "Anim_Robot"
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("4_474d5")
 configuration = SubResource("Resource_kmets")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lakqy")
