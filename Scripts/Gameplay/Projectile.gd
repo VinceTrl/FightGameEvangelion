@@ -82,16 +82,18 @@ func TakeDamage(hitboxSource: Hitbox):
 	
 	if(hitboxSource.type == hitboxSource.DamageType.Melee):
 		#SetNewID(hitboxSource.owner_id)
-		ProjectileBounce()
+		ProjectileBounce("ParryShake",true)
 	else:
 		ProjectileImpact()
 		
 
-func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake"):
+func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake",_isDeflected: bool = false):
+	
+	print("BOUNCE")
 	
 	healthPoints -= 1
 	
-	if (healthPoints <= 0): 
+	if (healthPoints <= 0):
 		ProjectileImpact()
 		return
 	
@@ -100,6 +102,9 @@ func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake"):
 	#moveDirection = -moveDirection
 	
 	var normal = raycast.get_collision_normal()
+	
+	if(_isDeflected): normal = -moveDirection
+	
 	var newDir = -2*(moveDirection.dot(normal)) * normal + moveDirection
 	moveDirection = newDir
 	

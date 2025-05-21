@@ -3,6 +3,7 @@ extends PlayerState
 @export var minHurtSpeed = 0.5
 @export var maxHurtSpeed = 4.0
 @export var hurtDuration = 0.1 #not used
+@export var useAnimationForDuration = true
 @export var hurtSpeedCurve: Curve
 @export var damageGlitchEffect: GlitchParameters
 @onready var hurtTimer: Timer = $"../../Timers/HurtTimer"
@@ -17,7 +18,12 @@ func EnterState():
 	Player.animator.play("Hurt")
 	if(Player.lastHitbox != null): hitbox = Player.lastHitbox
 	SetDirection()
-	hurtTime = Player.animator.current_animation_length
+	
+	if(useAnimationForDuration):
+		hurtTime = Player.animator.current_animation_length
+	else:
+		hurtTime = hurtDuration
+	
 	hurtTimer.start(hurtTime)
 	Player.Ammo.AddTime()
 	Manager.timeManager.freezeFrame(0.001,0.2)

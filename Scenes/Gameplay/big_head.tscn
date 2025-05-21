@@ -330,6 +330,7 @@ size = Vector3(1.31384, 1.0274, 3.18396)
 
 [node name="BigHead" type="Node3D"]
 script = ExtResource("1_q0pkt")
+slapChance = 0.4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Hurtbox/CollisionShape3D")

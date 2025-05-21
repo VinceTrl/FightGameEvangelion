@@ -76,7 +76,7 @@ gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_imuxp")
-projectileMinSpeed = 2.5
+projectileMinSpeed = 3.5
 projectileMaxSpeed = 7.0
 parrySpeedCurve = ExtResource("2_h0nys")
 
