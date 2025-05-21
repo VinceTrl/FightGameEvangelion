@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://8a00sh66ihoa"]
+[gd_scene load_steps=25 format=3 uid="uid://8a00sh66ihoa"]
 
+[ext_resource type="PackedScene" uid="uid://bokk03njw1g62" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_02.tscn" id="2_pmxf5"]
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="2_tsbgh"]
 [ext_resource type="PackedScene" uid="uid://gim0rktb26eh" path="res://Assets/Meshes/Enviro/robot_eva_01.tscn" id="3_hidu8"]
-[ext_resource type="PackedScene" uid="uid://j271rtxrymhf" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_01.tscn" id="3_qnf2r"]
+[ext_resource type="PackedScene" uid="uid://sqtp5dlv83tu" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_03.tscn" id="3_p20j8"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="4_474d5"]
+[ext_resource type="PackedScene" uid="uid://njq1raxq33q0" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_04.tscn" id="4_yh5vk"]
 [ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="5_460ml"]
 [ext_resource type="Texture2D" uid="uid://dovbwkiwlo153" path="res://addons/post_processing/assets/green_palette.png" id="5_eymg6"]
 
@@ -12,35 +14,6 @@ density = -0.319
 albedo = Color(0, 0, 0, 1)
 emission = Color(1, 1, 1, 1)
 height_falloff = 1.0
-
-[sub_resource type="Animation" id="Animation_hbu4a"]
-resource_name = "CityLoop"
-length = 2.0
-loop_mode = 1
-step = 2.0
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, -4.37114e-08, 1.5, 1, 0.707107, 0, 0, 0.707107, 2, 1, -8.74228e-08, 0, 0, 1, 2.00002, 1, 0.00872664, 0, 0, 0.999962)
-
-[sub_resource type="Animation" id="Animation_jpj2d"]
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.92705, 0, 0, 0.374938)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kajny"]
-_data = {
-"CityLoop": SubResource("Animation_hbu4a"),
-"RESET": SubResource("Animation_jpj2d")
-}
 
 [sub_resource type="Animation" id="Animation_xx3aq"]
 resource_name = "Anim_Robot"
@@ -195,6 +168,148 @@ _data = {
 "RESET": SubResource("Animation_kwp3a")
 }
 
+[sub_resource type="Animation" id="Animation_hbu4a"]
+resource_name = "CityLoop"
+length = 2.0
+loop_mode = 1
+step = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, -4.37114e-08, 1.5, 1, 0.707107, 0, 0, 0.707107, 2, 1, -8.74228e-08, 0, 0, 1, 2.00002, 1, 0.00872664, 0, 0, 0.999962)
+
+[sub_resource type="Animation" id="Animation_888p5"]
+resource_name = "CityLoop_2"
+length = 12.0
+loop_mode = 1
+step = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 6, 1, 1, 0, 0, -4.37114e-08, 9, 1, 0.707107, 0, 0, 0.707107, 12, 1, -8.74228e-08, 0, 0, 1, 12.0001, 1, 0.00872664, 0, 0, 0.999962)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 6, 1, 1, 0, 0, -4.37114e-08, 9, 1, 0.707107, 0, 0, 0.707107, 12, 1, -8.74228e-08, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_jpj2d"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.92705, 0, 0, 0.374938)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kajny"]
+_data = {
+"CityLoop": SubResource("Animation_hbu4a"),
+"CityLoop_2": SubResource("Animation_888p5"),
+"RESET": SubResource("Animation_jpj2d")
+}
+
+[sub_resource type="Animation" id="Animation_n1bd8"]
+resource_name = "Anim_CityRotation_Mid"
+length = 8.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-3.14159, 0, 0), Vector3(-4.71239, 0, 0), Vector3(-6.28319, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rtgsj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvgy6"]
+_data = {
+"Anim_CityRotation_Mid": SubResource("Animation_n1bd8"),
+"RESET": SubResource("Animation_rtgsj")
+}
+
+[sub_resource type="Animation" id="Animation_mb0de"]
+resource_name = "Anim_CityRotation_slow"
+length = 60.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15.2333, 30, 46, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-3.14159, 0, 0), Vector3(-4.71239, 0, 0), Vector3(-6.63225, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s22g1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vjtfl"]
+_data = {
+"Anim_CityRotation_slow": SubResource("Animation_mb0de"),
+"RESET": SubResource("Animation_s22g1")
+}
+
 [sub_resource type="Resource" id="Resource_kmets"]
 script = ExtResource("5_460ml")
 reload = false
@@ -320,7 +435,7 @@ transform = Transform3D(1, 0, 0, 0, 0.913126, 0.407677, 0, -0.407677, 0.913126, 
 fov = 47.7
 
 [node name="Plane_16_9" parent="Camera3D" instance=ExtResource("2_tsbgh")]
-transform = Transform3D(13.2104, 0, 0, 0, 9.53674e-07, -13.2104, 0, 13.2104, 2.38419e-06, 0, -5.84412, -18.3375)
+transform = Transform3D(13.9424, 0, 0, 0, 9.53674e-07, -13.9424, 0, 13.9424, 2.86102e-06, 0, -4.14303, -25.3943)
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -345,35 +460,6 @@ visible = false
 material = SubResource("FogMaterial_wydri")
 
 [node name="Meshes" type="Node3D" parent="."]
-
-[node name="CityLeft" type="Node3D" parent="Meshes"]
-transform = Transform3D(0.972235, 0, -0.234005, 0, 1, 0, 0.234005, 0, 0.972235, -0.647267, 0, 0)
-
-[node name="City Pivot" type="Node3D" parent="Meshes/CityLeft"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
-
-[node name="Mesh_buildingsLoop_02" parent="Meshes/CityLeft/City Pivot" instance=ExtResource("3_qnf2r")]
-
-[node name="Anim_CityRotation" type="AnimationPlayer" parent="Meshes/CityLeft/City Pivot"]
-libraries = {
-"": SubResource("AnimationLibrary_kajny")
-}
-autoplay = "CityLoop"
-
-[node name="CityRight" type="Node3D" parent="Meshes"]
-transform = Transform3D(0.932608, 0, 0.360892, 0, 1, 0, -0.360892, 0, 0.932608, 0.968478, 0, 0)
-
-[node name="City Pivot" type="Node3D" parent="Meshes/CityRight"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
-
-[node name="Mesh_buildingsLoop_02" parent="Meshes/CityRight/City Pivot" instance=ExtResource("3_qnf2r")]
-transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0)
-
-[node name="Anim_CityRotation" type="AnimationPlayer" parent="Meshes/CityRight/City Pivot"]
-libraries = {
-"": SubResource("AnimationLibrary_kajny")
-}
-autoplay = "CityLoop"
 
 [node name="Robot Pivot" type="Node3D" parent="Meshes"]
 transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
@@ -418,6 +504,56 @@ libraries = {
 "": SubResource("AnimationLibrary_eapgk")
 }
 autoplay = "Anim_Robot"
+
+[node name="R" type="Node3D" parent="Meshes"]
+
+[node name="CityRight" type="Node3D" parent="Meshes/R"]
+transform = Transform3D(0.932608, 0, 0.360892, 0, 1, 0, -0.360892, 0, 0.932608, -2.39097, 0, 1.30001)
+
+[node name="City Pivot" type="Node3D" parent="Meshes/R/CityRight"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
+[node name="Anim_CityRotation" type="AnimationPlayer" parent="Meshes/R/CityRight/City Pivot"]
+libraries = {
+"": SubResource("AnimationLibrary_kajny")
+}
+autoplay = "CityLoop"
+
+[node name="Mesh_buildingsLoop_04" parent="Meshes/R/CityRight/City Pivot" instance=ExtResource("2_pmxf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8795, 0, 8.9407e-08)
+
+[node name="Mesh_buildingsLoop_05" parent="Meshes/R/CityRight/City Pivot" instance=ExtResource("2_pmxf5")]
+transform = Transform3D(1, 0, 0, 0, 0.101247, 0.994861, 0, -0.994861, 0.101247, 4.89639, 0, 8.9407e-08)
+
+[node name="CityRight2" type="Node3D" parent="Meshes/R"]
+transform = Transform3D(0.810909, 0, 0.496828, 0, 0.951005, 0, -0.496828, 0, 0.810909, -0.159186, 0, 0.466248)
+
+[node name="City PivotMid" type="Node3D" parent="Meshes/R/CityRight2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.34849, 0)
+
+[node name="Mesh_buildingsLoop_05" parent="Meshes/R/CityRight2/City PivotMid" instance=ExtResource("4_yh5vk")]
+transform = Transform3D(1.26802, -9.41234e-08, -1.78814e-07, -3.13745e-08, 1.26802, -6.27489e-08, -1.19209e-07, 3.13745e-08, 1.26802, 1.7456, -1.43472e-06, -9.79114e-07)
+
+[node name="Anim_CityRotation_mid" type="AnimationPlayer" parent="Meshes/R/CityRight2/City PivotMid"]
+libraries = {
+"": SubResource("AnimationLibrary_rvgy6")
+}
+autoplay = "Anim_CityRotation_Mid"
+
+[node name="CityRight3" type="Node3D" parent="Meshes/R"]
+transform = Transform3D(1.1314, 0, 0.927197, 0, 1.46279, 0, -0.927197, 0, 1.1314, 3.9744, -0.117934, -1.63937)
+
+[node name="City PivotSlow" type="Node3D" parent="Meshes/R/CityRight3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.34849, 0)
+
+[node name="Mesh_buildingsLoop_03" parent="Meshes/R/CityRight3/City PivotSlow" instance=ExtResource("3_p20j8")]
+transform = Transform3D(1.64001, 0, 0, 0, 1.64001, 0, 0, 0, 1.64001, 0, 0, 0)
+
+[node name="Anim_CityRotation_slow" type="AnimationPlayer" parent="Meshes/R/CityRight3/City PivotSlow"]
+libraries = {
+"": SubResource("AnimationLibrary_vjtfl")
+}
+autoplay = "Anim_CityRotation_slow"
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("4_474d5")

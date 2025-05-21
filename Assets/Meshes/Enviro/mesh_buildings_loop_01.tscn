@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://j271rtxrymhf"]
 
 [ext_resource type="PackedScene" uid="uid://b5aybmfufe1cs" path="res://Assets/Meshes/Enviro/Mesh_buildingsLoop_01.fbx" id="1_pa0l2"]
-[ext_resource type="Material" uid="uid://b4ei34li2bnrh" path="res://Assets/Materials/Enviro/M_BlockOut_emissiveYellow.tres" id="2_q0st5"]
-[ext_resource type="Material" uid="uid://bknox4lsf0ikd" path="res://Assets/Materials/Enviro/M_BlockOut_gray.tres" id="3_2vwib"]
+[ext_resource type="Material" uid="uid://bknox4lsf0ikd" path="res://Assets/Materials/Enviro/M_BlockOut_emissiveYellow.tres" id="2_q0st5"]
+[ext_resource type="Material" uid="uid://bknox4lsf0ikd" path="res://Assets/Materials/Enviro/M_BlockOut_emissivreGray.tres" id="3_2vwib"]
+
 
 [node name="Mesh_buildingsLoop_01" instance=ExtResource("1_pa0l2")]
 

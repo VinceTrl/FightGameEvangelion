@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://sqtp5dlv83tu"]
+
+[ext_resource type="PackedScene" uid="uid://0raglffbpabi" path="res://Sources/Meshes/Mesh_buildingsLoop_03.fbx" id="1_8fant"]
+[ext_resource type="Material" uid="uid://voikrr6qe1x7" path="res://Assets/Materials/Enviro/M_Concrete_01.tres" id="2_xov0v"]
+[ext_resource type="Material" uid="uid://yx8eaap4x7hd" path="res://Assets/Materials/Enviro/M_Emissive_Yellow.tres" id="3_dfsgb"]
+
+[node name="Mesh_buildingsLoop_03" instance=ExtResource("1_8fant")]
+
+[node name="Cube_1589" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_xov0v")
+surface_material_override/1 = ExtResource("3_dfsgb")
