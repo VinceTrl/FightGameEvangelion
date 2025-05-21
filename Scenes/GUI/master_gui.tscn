@@ -15,7 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_xuadb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 128
+layer = 100
 
 [node name="FightText" parent="CanvasLayer" instance=ExtResource("1_gskd5")]
 
