@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=18 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bwt4shvj2ln0p" path="res://Assets/Sounds/Musics/teknokiki v1.mp3" id="3_jb8il"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="4_sx5sm"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
-[ext_resource type="PackedScene" uid="uid://dmnmobmgdmfm" path="res://Scenes/GUI/player_ui.tscn" id="6_gywey"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="9_nr51f"]
+[ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
 [ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_a6rqb"]
+[ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -155,47 +156,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="GUI" type="Node" parent="."]
 
-[node name="PlayerAnchor_01" type="Control" parent="GUI"]
-layout_mode = 3
-anchor_left = 0.2
-anchor_top = 1.0
-anchor_right = 0.2
-anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
-grow_vertical = 0
+[node name="LifeBarRoot_TopLeft" parent="GUI" instance=ExtResource("9_p25nu")]
 
-[node name="PlayerUI" parent="GUI/PlayerAnchor_01" node_paths=PackedStringArray("player") instance=ExtResource("6_gywey")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 0
-player = NodePath("../../../Gameplay/Player")
-
-[node name="PlayerAnchor_02" type="Control" parent="GUI"]
-layout_mode = 3
-anchor_left = 0.8
-anchor_top = 1.0
-anchor_right = 0.8
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="PlayerUI" parent="GUI/PlayerAnchor_02" node_paths=PackedStringArray("player") instance=ExtResource("6_gywey")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 0
-player = NodePath("../../../Gameplay/Player2")
-playerName = &"Pilot:2"
+[node name="LifeBarRoot_TopLeft2" parent="GUI" instance=ExtResource("10_sxc7j")]
 
 [node name="MasterGUI" parent="GUI" instance=ExtResource("16_cim6e")]
 

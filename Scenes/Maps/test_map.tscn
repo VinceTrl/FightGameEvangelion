@@ -45,6 +45,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0351, 2, 0.101881)
 
 [node name="Building_largeA14" parent="." instance=ExtResource("1_0ofor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0351, 2, 0.101881)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.316346, -0.959983, -0.00598617, 0.279994, 7.05005, 7.89887, 0.484462)
