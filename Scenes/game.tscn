@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bwt4shvj2ln0p" path="res://Assets/Sounds/Musics/teknokiki v1.mp3" id="3_jb8il"]
-[ext_resource type="PackedScene" uid="uid://demgp3gtvl6qk" path="res://Scenes/Meshes/building_large_a.tscn" id="3_xbcds"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="4_sx5sm"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="PackedScene" uid="uid://dmnmobmgdmfm" path="res://Scenes/GUI/player_ui.tscn" id="6_gywey"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="9_nr51f"]
+[ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
 [ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_a6rqb"]
-[ext_resource type="PackedScene" uid="uid://bwvyar8y8lpaw" path="res://Scenes/Gameplay/post_process_effects.tscn" id="11_t6d5l"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
+[ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
 [ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="15_ajbsh"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 
@@ -110,93 +110,24 @@ ScreenShakePower = 0.1
 [node name="GameManager" parent="." instance=ExtResource("5_r45th")]
 unique_name_in_owner = true
 
-[node name="Area3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
-collision_mask = 15
+[node name="Gameplay" type="Node" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("WorldBoundaryShape3D_e2grd")
+[node name="Player" parent="Gameplay" instance=ExtResource("1_rog66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 
-[node name="Player" parent="." instance=ExtResource("1_rog66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.282095, 0)
-
-[node name="Player2" parent="." instance=ExtResource("1_rog66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85789, 1.3241, 0)
+[node name="Player2" parent="Gameplay" instance=ExtResource("1_rog66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 playerID = 2
 startFacingRight = false
 
-[node name="Sprite2D" parent="Player2" index="3"]
+[node name="Sprite2D" parent="Gameplay/Player2" index="3"]
 modulate = Color(0, 1, 1, 1)
 
-[node name="StageMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_jb8il")
-volume_db = -15.0
-autoplay = true
-bus = &"Music"
-parameters/looping = false
-
-[node name="Meshes" type="Node" parent="."]
-
-[node name="Building_largeA" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67964, -0.484462)
-
-[node name="Building_largeA4" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03836, -0.679643, -0.484462)
-
-[node name="Building_largeA6" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03699, -0.11301, -0.484462)
-
-[node name="Building_largeA12" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.03699, -0.11301, -0.484462)
-
-[node name="Building_largeA9" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04114, -1.73353, -0.484462)
-
-[node name="Building_largeA5" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03836, -2.31782, -0.484462)
-
-[node name="Building_largeA2" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0125, -1.67964, -0.484462)
-
-[node name="Building_largeA3" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03796, -1.67964, -0.484462)
-
-[node name="Building_largeA7" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.05121, -0.679643, -0.484462)
-
-[node name="Building_largeA10" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.99238, -1.67964, -0.484462)
-
-[node name="Building_largeA11" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00762, -1.67964, -0.484462)
-
-[node name="Building_largeA8" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.04763, 0.320357, -0.382581)
-
-[node name="Building_largeA13" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0476, 0.320357, -0.382581)
-
-[node name="Building_largeA14" parent="Meshes" instance=ExtResource("3_xbcds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0476, 0.320357, -0.382581)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.316347, -0.959983, -0.00598639, 0.279995, 9.06255, 6.21923, 0)
-
-[node name="GameCamera" parent="." node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
+[node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 1.66432, 4.5)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
-
-[node name="KillVolume" parent="." instance=ExtResource("8_u84ky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
-
-[node name="PostProcess" type="CanvasLayer" parent="."]
-script = ExtResource("9_nr51f")
-configuration = SubResource("Resource_myf1k")
-
-[node name="PostProcessEffects" parent="." instance=ExtResource("11_t6d5l")]
-
-[node name="Gameplay" type="Node" parent="."]
+cameraClampMin = Vector2(-5, 0)
 
 [node name="BigHead" parent="Gameplay" instance=ExtResource("12_67sdl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.581178, -1.64166)
@@ -215,6 +146,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48458, 1.25418, 0.113311)
 
 [node name="AmmoItem5" parent="Gameplay" instance=ExtResource("13_8m82v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48458, 1.25418, 0.113311)
+
+[node name="Poop" parent="Gameplay" instance=ExtResource("15_ajbsh")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.13878, 0, -1.42862)
+
+[node name="KillVolume" parent="Gameplay" instance=ExtResource("8_u84ky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="GUI" type="Node" parent="."]
 
@@ -236,7 +173,7 @@ anchor_right = 1.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
-player = NodePath("../../../Player")
+player = NodePath("../../../Gameplay/Player")
 
 [node name="PlayerAnchor_02" type="Control" parent="GUI"]
 layout_mode = 3
@@ -257,12 +194,48 @@ anchor_right = 1.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
-player = NodePath("../../../Player2")
+player = NodePath("../../../Gameplay/Player2")
 playerName = &"Pilot:2"
 
 [node name="MasterGUI" parent="GUI" instance=ExtResource("16_cim6e")]
 
-[node name="Poop" parent="." instance=ExtResource("15_ajbsh")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.13878, 0, -1.42862)
+[node name="Enviro" type="Node" parent="."]
 
-[editable path="Player2"]
+[node name="TestMap" parent="Enviro" instance=ExtResource("10_55lj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68, -0.484)
+
+[node name="Node3D" parent="Enviro" instance=ExtResource("15_2shva")]
+transform = Transform3D(3, 0, 0, 0, 2.30766, -1.91695, 0, 1.91695, 2.30766, 0, -3.60763, -6.257)
+
+[node name="Camera3D" parent="Enviro/Node3D" index="0"]
+process_priority = 1
+
+[node name="City Pivot" parent="Enviro/Node3D/Meshes/CityLeft" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
+[node name="City Pivot" parent="Enviro/Node3D/Meshes/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
+[node name="Robot Pivot" parent="Enviro/Node3D/Meshes" index="2"]
+transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
+
+[node name="Boundary_Bottom" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary_Bottom"]
+shape = SubResource("WorldBoundaryShape3D_e2grd")
+
+[node name="StageMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jb8il")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = false
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+script = ExtResource("9_nr51f")
+configuration = SubResource("Resource_myf1k")
+
+[editable path="Gameplay/Player2"]
+[editable path="Enviro/Node3D"]

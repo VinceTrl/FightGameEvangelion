@@ -14,11 +14,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xuadb")
 
-[node name="FightText" parent="." instance=ExtResource("1_gskd5")]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
 
-[node name="TimerRoot" parent="." instance=ExtResource("3_cd8f7")]
-layout_mode = 1
+[node name="FightText" parent="CanvasLayer" instance=ExtResource("1_gskd5")]
 
-[node name="TitleScreen" parent="." instance=ExtResource("4_4xesq")]
-layout_mode = 1
+[node name="TimerRoot" parent="CanvasLayer" instance=ExtResource("3_cd8f7")]
+
+[node name="TitleScreen" parent="CanvasLayer" instance=ExtResource("4_4xesq")]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkkbbr0htwc5p"]
+
+[ext_resource type="PackedScene" uid="uid://demgp3gtvl6qk" path="res://Scenes/Meshes/building_large_a.tscn" id="1_0ofor"]
+
+[node name="TestMap" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0125, -1.67964, -0.484462)
+
+[node name="Building_largeA" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0125, 0, 0)
+
+[node name="Building_largeA4" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05086, 0.999997, 0)
+
+[node name="Building_largeA6" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.04949, 1.56663, 0)
+
+[node name="Building_largeA12" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.04949, 1.56663, 0)
+
+[node name="Building_largeA9" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.05364, -0.05389, 0)
+
+[node name="Building_largeA5" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05086, -0.63818, 0)
+
+[node name="Building_largeA2" parent="." instance=ExtResource("1_0ofor")]
+
+[node name="Building_largeA3" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02546, 0, 0)
+
+[node name="Building_largeA7" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03871, 0.999997, 0)
+
+[node name="Building_largeA10" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97988, 0, 0)
+
+[node name="Building_largeA11" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02012, 0, 0)
+
+[node name="Building_largeA8" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03513, 2, 0.101881)
+
+[node name="Building_largeA13" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0351, 2, 0.101881)
+
+[node name="Building_largeA14" parent="." instance=ExtResource("1_0ofor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0351, 2, 0.101881)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.266405, -0.327872, 0.906382, 0.0863765, 0.944703, 0.316346, -0.959983, -0.00598617, 0.279994, 7.05005, 7.89887, 0.484462)
