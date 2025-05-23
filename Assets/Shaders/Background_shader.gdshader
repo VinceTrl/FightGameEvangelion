@@ -1,5 +1,5 @@
 shader_type spatial;
-//render_mode unshaded;
+render_mode unshaded;
 
 //SOUND INTEGRATION
 global uniform sampler2D spectrum_texture; //global variable set up in Project Settings
@@ -13,6 +13,14 @@ varying float spectrum_value06;
 varying float spectrum_value07;
 varying float random_number;
 uniform float soundIntensity = 1.0;
+uniform float equalizer00 = 1.0;
+uniform float equalizer01 = 1.0;
+uniform float equalizer02 = 1.0;
+uniform float equalizer03 = 1.0;
+uniform float equalizer04 = 1.0;
+uniform float equalizer05 = 1.0;
+uniform float equalizer06 = 1.0;
+uniform float equalizer07 = 1.0;
 
 const float RENDER_DISTANCE = 100.0;
 const float EPSILON = 0.01;
@@ -90,14 +98,14 @@ void vertex() {
 	//vec3 nw = NODE_POSITION_WORLD;
 	//random_number = nw.x * 23.489 + nw.y * 43.2123 + nw.z * 12.961;
 	//random_number = fract(random_number);
-	spectrum_value00 = texture(spectrum_texture, vec2(0.0,0)).r;
-	spectrum_value01 = texture(spectrum_texture, vec2(0.1,0)).r;
-	spectrum_value02 = texture(spectrum_texture, vec2(0.2,0)).r;
-	spectrum_value03 = texture(spectrum_texture, vec2(0.3,0)).r;
-	spectrum_value04 = texture(spectrum_texture, vec2(0.4,0)).r;
-	spectrum_value05 = texture(spectrum_texture, vec2(0.5,0)).r;
-	spectrum_value06 = texture(spectrum_texture, vec2(0.6,0)).r;
-	spectrum_value07 = texture(spectrum_texture, vec2(0.7,0)).r;
+	spectrum_value00 = texture(spectrum_texture, vec2(0.0,0)).r * equalizer00;
+	spectrum_value01 = texture(spectrum_texture, vec2(0.1,0)).r * equalizer01;
+	spectrum_value02 = texture(spectrum_texture, vec2(0.2,0)).r * equalizer02;
+	spectrum_value03 = texture(spectrum_texture, vec2(0.3,0)).r * equalizer03;
+	spectrum_value04 = texture(spectrum_texture, vec2(0.4,0)).r * equalizer04;
+	spectrum_value05 = texture(spectrum_texture, vec2(0.5,0)).r * equalizer05;
+	spectrum_value06 = texture(spectrum_texture, vec2(0.6,0)).r * equalizer06;
+	spectrum_value07 = texture(spectrum_texture, vec2(0.7,0)).r * equalizer07;
 
 	vec2 iResolution = 1.0 / 1.0/VIEWPORT_SIZE;
 	iResolution = vec2(1.0, 1.0);
@@ -154,19 +162,23 @@ void fragment() {
 
 	//vec2 UV01 = vec2(-1.0, 1.0) * vec2(tex_position.y + 0.0 + TIME * 0.1 * speed + spectrum_value03 * 0.3, tex_position.x + TIME * 5.0 * speed + spectrum_value05 * 1.0);
 	//vec2 UV02 = vec2(1.0, 1.0) * vec2(tex_position.y + 0.0 - TIME * 0.1 * speed + spectrum_value04 * 1.0, tex_position.x - TIME * 1.0 * speed + spectrum_value06 * 1.0);
-	vec2 UV01 = vec2(UV.x + spectrum_value03 * 0.05 * sin(TIME*1.0*spectrum_value03), UV.y + spectrum_value05 * 0.1 * sin(TIME*1.0*spectrum_value05));
-	vec2 UV02 = vec2(UV.x + spectrum_value04 * 0.1 * sin(TIME*1.0*spectrum_value04), UV.y + spectrum_value06 * 0.1 * sin(TIME*1.0*spectrum_value06));
+	vec2 UV01 = vec2(UV.x + spectrum_value01 * 0.05 * sin(TIME*3.0*spectrum_value01), UV.y + spectrum_value03 * 0.1 * sin(TIME*3.0*spectrum_value03));
+	vec2 UV02 = vec2(UV.x + spectrum_value02 * 0.1 * sin(TIME*3.0*spectrum_value02), UV.y + spectrum_value00 * 0.1 * sin(TIME*3.0*spectrum_value00));
+
+	//TESTER DE WARPER LES UVS
+	//________________________
 
 	METALLIC = 1.0;
 	ROUGHNESS = 1.0;
 	// Output to screen
 	ALBEDO = vec3(b,b,b) * 0.01;
 	ALBEDO += texture(noise, vec2(UV.x, UV.y)).xyz;
-	//ALBEDO += (texture(noise, vec2(UV.x, UV.y)).xyz * 1.0-texture(mask00, vec2(UV.x, UV.y)).x) * 2.0;;
 	EMISSION = texture(noise, vec2(UV.x, UV.y)).xyz * 1.0;
-	ALBEDO += ((texture(noise, UV01).rgb * (spectrum_value03+spectrum_value05) * 10.0 + texture(noise, UV02).rgb) * (spectrum_value04+spectrum_value06) * 10.0) * texture(noise, UV01).rgb * texture(noise, UV02).rgb * 0.5;
+	ALBEDO += ((texture(noise, UV01).rgb * (spectrum_value01+spectrum_value05) * 5.0 + texture(noise, UV02).rgb) * (spectrum_value05+spectrum_value01) * 5.0) * texture(noise, UV01).rgb * texture(noise, UV02).rgb * 1.0;
+	//ALBEDO += (texture(noise, vec2(UV.x, UV.y)).xyz * 1.0-texture(mask00, vec2(UV.x, UV.y)).x) * 2.0;
+	//ALBEDO *= texture(mask00, vec2(UV.x, UV.y)).x;
 
-	EMISSION = vec3(pow(EMISSION.r, 2.0), pow(EMISSION.g, 2.0), pow(EMISSION.b, 2.0));
+	EMISSION = vec3(pow(EMISSION.r, 1.0), pow(EMISSION.g, 1.0), pow(EMISSION.b, 1.0));
 	//ALBEDO += vec3(height02)*0.2;
 	//ALBEDO += vec3(0.5 * spectrum_value05 * soundIntensity, 0.0, 0.0) * 1.0;
 	//ALBEDO = mix(vec3(-0.5, -0.5, -0.5),vec3(1.0, 1.0, 1.0),ALBEDO); //REMAP
