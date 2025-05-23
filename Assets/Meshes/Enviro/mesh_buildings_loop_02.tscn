@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bokk03njw1g62"]
 
 [ext_resource type="PackedScene" uid="uid://bos0fsxbg3bcj" path="res://Sources/Meshes/Mesh_buildingsLoop_02.fbx" id="1_e42if"]
-[ext_resource type="Material" uid="uid://voikrr6qe1x7" path="res://Assets/Materials/Enviro/M_Concrete_01.tres" id="2_qcsau"]
-[ext_resource type="Material" uid="uid://cx7pgr17y7bi8" path="res://Assets/Materials/Enviro/M_Emissive_Yellow_High.tres" id="3_1mf0k"]
+[ext_resource type="Material" uid="uid://inrdgg10wunt" path="res://Assets/Materials/Enviro/M_Building01.tres" id="2_6xwri"]
+[ext_resource type="Material" uid="uid://cx7pgr17y7bi8" path="res://Assets/Materials/Enviro/M_Emissive_Yellow_High.tres" id="3_wnsl2"]
 
 [node name="Mesh_buildingsLoop_02" instance=ExtResource("1_e42if")]
 
-[node name="Cube_1548" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_qcsau")
-surface_material_override/1 = ExtResource("3_1mf0k")
+[node name="Plane_282" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_6xwri")
+surface_material_override/1 = ExtResource("3_wnsl2")

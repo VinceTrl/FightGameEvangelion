@@ -370,10 +370,10 @@ ColorCorrection = true
 ColorCorrectionTint = Color(0.961265, 0.799196, 0.923074, 1)
 ColorCorrectionBrightness = -0.052
 ColorCorrectionSaturation = 1.0
-Palette = true
+Palette = false
 PalettePalette = ExtResource("7_qxsso")
 Pixelate = true
-PixelatePixelSize = 12
+PixelatePixelSize = 6
 CRT = true
 overlay = true
 scanlines_opacity = 0.075
@@ -509,7 +509,7 @@ autoplay = "Anim_Robot"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.041996, -1.47103)
 
 [node name="CityRight" type="Node3D" parent="Meshes/R"]
-transform = Transform3D(0.932608, 0, 0.360892, 0, 1, 0, -0.360892, 0, 0.932608, -2.39097, 0, 1.30001)
+transform = Transform3D(0.932608, 0, 0.360892, 0, 1, 0, -0.360892, 0, 0.932608, -3.26767, 0, 1.35209)
 
 [node name="City Pivot" type="Node3D" parent="Meshes/R/CityRight"]
 transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
@@ -530,10 +530,10 @@ transform = Transform3D(1, 0, 0, 0, 0.101247, 0.994861, 0, -0.994861, 0.101247, 
 transform = Transform3D(1, 0, 0, 0, 0.641436, -0.767176, 0, 0.767176, 0.641436, 6.20877, 2.28636e-08, 7.02907e-08)
 
 [node name="CityRight2" type="Node3D" parent="Meshes/R"]
-transform = Transform3D(0.810909, 0, 0.496828, 0, 0.951005, 0, -0.496828, 0, 0.810909, -0.159186, 0, 0.466248)
+transform = Transform3D(0.810909, 0, 0.496828, 0, 0.951005, 0, -0.496828, 0, 0.810909, 0.161972, 0, 0.269481)
 
 [node name="City PivotMid" type="Node3D" parent="Meshes/R/CityRight2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.34849, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.735375, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_05" parent="Meshes/R/CityRight2/City PivotMid" instance=ExtResource("4_yh5vk")]
 transform = Transform3D(1.26802, -9.41234e-08, -1.78814e-07, -3.13745e-08, 1.26802, -6.27489e-08, -1.19209e-07, 3.13745e-08, 1.26802, 1.7456, -1.43472e-06, -9.79114e-07)
@@ -563,7 +563,7 @@ autoplay = "Anim_CityRotation_slow"
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.041996, -1.47103)
 
 [node name="CityRight" type="Node3D" parent="Meshes/R2"]
-transform = Transform3D(0.932608, 0, 0.360892, 0, 1, 0, -0.360892, 0, 0.932608, -2.39097, 0, 1.30001)
+transform = Transform3D(0.932608, 0, 0.360892, 0, 1, 0, -0.360892, 0, 0.932608, -3.26015, 0.0572133, 1.46027)
 
 [node name="City Pivot" type="Node3D" parent="Meshes/R2/CityRight"]
 transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
@@ -584,7 +584,7 @@ transform = Transform3D(1, 0, 0, 0, 0.501254, -0.8653, 0, 0.8653, 0.501254, 5.85
 transform = Transform3D(1, 0, 0, 0, 0.989564, 0.144097, 0, -0.144097, 0.989564, 4.89639, 0, 8.9407e-08)
 
 [node name="CityRight2" type="Node3D" parent="Meshes/R2"]
-transform = Transform3D(0.810909, 0, 0.496828, 0, 0.951005, 0, -0.496828, 0, 0.810909, -0.159186, 0, 0.466248)
+transform = Transform3D(0.810909, 0, 0.496828, 0, 0.951005, 0, -0.496828, 0, 0.810909, 0.51588, 0, 0.0526481)
 
 [node name="City PivotMid" type="Node3D" parent="Meshes/R2/CityRight2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.34849, 0)
