@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=20 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bwt4shvj2ln0p" path="res://Assets/Sounds/Musics/teknokiki v1.mp3" id="3_jb8il"]
@@ -6,10 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="9_nr51f"]
-[ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
+[ext_resource type="PackedScene" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
-[ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_a6rqb"]
-[ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
+[ext_resource type="PackedScene" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
 [ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
@@ -18,96 +17,9 @@
 [ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="15_7m25h"]
 [ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="15_ajbsh"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
+[ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="18_em6q0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
-
-[sub_resource type="Resource" id="Resource_myf1k"]
-script = ExtResource("10_a6rqb")
-reload = false
-ASCII = false
-ASCIISize = Vector2(1, 2)
-ChromaticAberration = false
-StrenghtCA = 1.5
-Blur = false
-L_O_D = 0.22
-FishEye = false
-FishEyeAspect = 1.0
-FishEyeDistortion = 1.0
-FishEyeRadius = 1.0
-FishEyeAlpha = 0.835
-FishEyeCrop = 1.0
-FishEyeCropColor = Color(0, 0, 0, 1)
-Vignette = false
-VignetteIntensity = 0.4
-VignetteOpacity = 0.5
-VignetteR_G_B = Color(0, 0, 0, 1)
-Glitch = true
-GlitchRange = 0.0
-GlitchNoiseQuality = 136.0
-GlitchIntenity = 0.001
-GlitchOffset = -0.1
-GlitchColorOffset = 0.2
-Outline = false
-OutlineColor = Color(0, 0, 0, 1)
-OutlineThreshold = 0.0
-OutlineBlend = 0.01
-Grain = false
-GrainPower = 75
-CircularWaves = false
-CircularWavesAmplitude = 2.0
-CircularWavesFrequency = 12.69
-CircularWavesRippleRate = 9.2
-SpeedLines = false
-SpeedLinesColor = Color(1, 1, 1, 1)
-SpeedLinesCount = 2
-SpeedLineDensity = 0.06
-SpeedLineSpeed = 10
-particle_storm = false
-particle_storm_color = Color(0, 0, 0, 1)
-particle_storm_intensity = 0.522
-particle_storm_chaos = 4.69
-particle_storm_scale = 3.445
-particle_storm_density = 2.726
-particle_storm_wind_direction = Vector2(1, 0.2)
-particle_storm_wind_speed = 2.021
-directional_drift = false
-directional_drift_color = Color(0.76, 0.69, 0.5, 0.3)
-directional_drift_density = 0.3
-directional_drift_speed = 1.0
-directional_drift_scale = 30.0
-directional_drift_direction = Vector2(1, 0.5)
-directional_drift_layer_ratio = 1.2
-ColorCorrection = false
-ColorCorrectionTint = Color(0.99, 0, 0, 0.909804)
-ColorCorrectionBrightness = 0.0
-ColorCorrectionSaturation = 0.012
-Palette = false
-Pixelate = false
-PixelatePixelSize = 3
-CRT = false
-overlay = false
-scanlines_opacity = 0.602
-scanlines_width = 0.256
-grille_opacity = 0.092
-pixelate = false
-roll_speed = 10000.0
-roll_size = 8.0
-roll_variation = 1.8
-distort_intensity = 0.05
-noise_opacity = 0.108
-noise_speed = 5.0
-static_noise_intensity = 0.06
-aberration = 0.0
-brightness = 1.5
-discolor = true
-warp_amount = 0.5
-clip_warp = false
-vignette_intensity = 0.345
-vignette_opacity = 0.5
-AnalogMonitor = false
-AnalogMonitorResolution = Vector2(256, 256)
-ScreenShake = false
-ScreenShakePower = 0.1
 
 [node name="Game" type="Node3D"]
 
@@ -192,14 +104,14 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.685
 script = ExtResource("15_7m25h")
 Multiplier = 1.0
 
-[node name="Robot Pivot" parent="Enviro/Node3D/Meshes" index="0"]
-transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
+[node name="Robot Pivot" parent="Enviro/Node3D/Meshes/Node3D" index="0"]
+transform = Transform3D(0.998661, 0.0387993, 0.0342322, -0.0349868, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+[node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R/CityRight3/City PivotSlow" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R2/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+[node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R2/CityRight3/City PivotSlow" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Boundary_Bottom" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
@@ -217,7 +129,7 @@ parameters/looping = false
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("9_nr51f")
-configuration = SubResource("Resource_myf1k")
+configuration = ExtResource("18_em6q0")
 
 [editable path="Gameplay/Player2"]
 [editable path="Enviro/Node3D"]

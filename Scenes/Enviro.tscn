@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://8a00sh66ihoa"]
+[gd_scene load_steps=23 format=3 uid="uid://8a00sh66ihoa"]
 
 [ext_resource type="PackedScene" uid="uid://bokk03njw1g62" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_02.tscn" id="2_pmxf5"]
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="2_tsbgh"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://sqtp5dlv83tu" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_03.tscn" id="3_p20j8"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="4_474d5"]
 [ext_resource type="PackedScene" uid="uid://njq1raxq33q0" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_04.tscn" id="4_yh5vk"]
-[ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="5_460ml"]
-[ext_resource type="Texture2D" uid="uid://nf2dcuadvrh7" path="res://addons/post_processing/assets/interesting_palette.png" id="7_qxsso"]
+[ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="7_qbrxa"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_wydri"]
 density = -0.319
@@ -310,95 +309,6 @@ _data = {
 "RESET": SubResource("Animation_s22g1")
 }
 
-[sub_resource type="Resource" id="Resource_kmets"]
-script = ExtResource("5_460ml")
-reload = false
-ASCII = false
-ASCIISize = Vector2(2, 2)
-ChromaticAberration = true
-StrenghtCA = 2.0
-Blur = true
-L_O_D = 0.31
-FishEye = false
-FishEyeAspect = 0.05
-FishEyeDistortion = 0.15
-FishEyeRadius = 1.0
-FishEyeAlpha = 1.0
-FishEyeCrop = 2.0
-FishEyeCropColor = Color(0, 0, 0, 1)
-Vignette = true
-VignetteIntensity = 0.5
-VignetteOpacity = 0.324
-VignetteR_G_B = Color(1, 0, 0.933333, 1)
-Glitch = true
-GlitchRange = 0.1
-GlitchNoiseQuality = 267.2
-GlitchIntenity = 0.001
-GlitchOffset = 0.0
-GlitchColorOffset = 0.1
-Outline = false
-OutlineColor = Color(0.510988, 0, 0.260468, 1)
-OutlineThreshold = 0.0
-OutlineBlend = 0.465
-Grain = false
-GrainPower = 62
-CircularWaves = false
-CircularWavesAmplitude = 2.0
-CircularWavesFrequency = 12.89
-CircularWavesRippleRate = 105.2
-SpeedLines = true
-SpeedLinesColor = Color(1, 1, 1, 1)
-SpeedLinesCount = 1
-SpeedLineDensity = 0.049
-SpeedLineSpeed = 40
-particle_storm = false
-particle_storm_color = Color(0.87, 0.78, 0.6, 1)
-particle_storm_intensity = 0.5
-particle_storm_chaos = 1.0
-particle_storm_scale = 1.0
-particle_storm_density = 1.0
-particle_storm_wind_direction = Vector2(1, 0.2)
-particle_storm_wind_speed = 1.0
-directional_drift = false
-directional_drift_color = Color(0.76, 0.69, 0.5, 0.3)
-directional_drift_density = 0.3
-directional_drift_speed = 1.0
-directional_drift_scale = 30.0
-directional_drift_direction = Vector2(1, 0.5)
-directional_drift_layer_ratio = 1.2
-ColorCorrection = true
-ColorCorrectionTint = Color(0.961265, 0.799196, 0.923074, 1)
-ColorCorrectionBrightness = -0.052
-ColorCorrectionSaturation = 1.0
-Palette = false
-PalettePalette = ExtResource("7_qxsso")
-Pixelate = true
-PixelatePixelSize = 6
-CRT = true
-overlay = true
-scanlines_opacity = 0.075
-scanlines_width = 0.079
-grille_opacity = 0.055
-pixelate = true
-roll_speed = -50.0
-roll_size = 50.615
-roll_variation = 1.24
-distort_intensity = 0.004
-noise_opacity = 0.0
-noise_speed = 5.0
-static_noise_intensity = 0.091
-aberration = 0.015
-brightness = 1.5
-discolor = true
-warp_amount = 0.061
-clip_warp = false
-vignette_intensity = 0.3
-vignette_opacity = 0.5
-AnalogMonitor = false
-AnalogMonitorResolution = Vector2(1024, 1024)
-ScreenShake = true
-ScreenShakePower = 0.08
-
 [sub_resource type="Environment" id="Environment_lakqy"]
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
@@ -439,35 +349,78 @@ transform = Transform3D(13.9424, 0, 0, 0, 9.53674e-07, -13.9424, 0, 13.9424, 2.8
 
 [node name="Lighting" type="Node3D" parent="."]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 0.501616, -0.86509, 0, 0.86509, 0.501616, 0, -2.7855, 0.746372)
+[node name="SpotScat" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.501616, -0.86509, 0, 0.86509, 0.501616, 0, -2.57775, 0.625911)
 light_color = Color(0.42, 1, 0.777667, 1)
 light_energy = 20.0
 light_volumetric_fog_energy = 50.0
 spot_range = 6.56372
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, -0.998144, 0.0608917, 0, -0.0608917, -0.998144, -0.0131216, 4.46214, -15.2345)
+transform = Transform3D(1, 0, 0, 0, -0.998144, 0.0608917, 0, -0.0608917, -0.998144, -0.022521, 4.38061, -32.0591)
 light_color = Color(0.817634, 0.966187, 0.995038, 1)
-light_energy = 32.0
+light_energy = 50.0
 light_volumetric_fog_energy = 0.0
-spot_range = 17.5976
-spot_angle = 30.9375
+spot_range = 34.8259
+spot_angle = 58.657
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, -0.998144, 0.0608917, 0, -0.0608917, -0.998144, -0.022521, 0.143957, -14.7973)
+light_color = Color(0.817634, 0.966187, 0.995038, 1)
+light_energy = 50.0
+light_volumetric_fog_energy = 0.0
+spot_range = 34.8259
+spot_angle = 58.657
 
 [node name="FogVolume" type="FogVolume" parent="Lighting"]
 transform = Transform3D(6.42964, 0, 0, 0, 6.42964, 0, 0, 0, 6.42964, -0.0162735, 0.0316439, -4.96131)
 visible = false
 material = SubResource("FogMaterial_wydri")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(0.569853, -0.214484, -0.793261, -0.577298, 0.582498, -0.572209, 0.584803, 0.784024, 0.208117, 0, -5.9291, -4.49585)
+light_color = Color(0.510236, 0.861405, 0.761492, 1)
+light_energy = 14.983
+light_volumetric_fog_energy = 1.087
+spot_range = 12.2048
+spot_angle = 66.3528
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(0.691696, -0.214484, 0.689604, 0.657323, 0.582498, -0.478146, -0.299138, 0.784024, 0.543896, 0, -5.9291, -4.49585)
+light_color = Color(0.510236, 0.861405, 0.761492, 1)
+light_energy = 14.983
+light_volumetric_fog_energy = 1.087
+spot_range = 12.2048
+spot_angle = 66.3528
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(0.556236, -0.221649, 0.80092, 0.273871, 0.958826, 0.0751455, -0.784599, 0.17755, 0.594037, -4.99869, -2.47093, -5.94517)
+light_color = Color(1, 0.05, 0.160833, 1)
+light_energy = 100.0
+light_volumetric_fog_energy = 0.0
+spot_range = 19.5998
+spot_angle = 55.9153
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(0.559737, -0.0953653, -0.823164, 0.273871, 0.958826, 0.0751455, 0.782105, -0.267503, 0.562809, 5.64784, -2.47093, -5.94517)
+light_color = Color(1, 0.05, 0.160833, 1)
+light_energy = 100.0
+light_volumetric_fog_energy = 0.0
+spot_range = 19.5998
+spot_angle = 55.9153
+
 [node name="Meshes" type="Node3D" parent="."]
 
-[node name="Robot Pivot" type="Node3D" parent="Meshes"]
-transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
+[node name="Node3D" type="Node3D" parent="Meshes"]
+transform = Transform3D(0.999033, 0.039044, -0.0202136, -0.0389663, 0.999232, 0.00422383, 0.0203629, -0.00343208, 0.999787, 0.0527237, -0.20392, -0.415091)
 
-[node name="Robot_eva_02" parent="Meshes/Robot Pivot" instance=ExtResource("3_hidu8")]
+[node name="Robot Pivot" type="Node3D" parent="Meshes/Node3D"]
+transform = Transform3D(0.998661, 0.0387993, 0.0342322, -0.0349868, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
+
+[node name="Robot_eva_02" parent="Meshes/Node3D/Robot Pivot" instance=ExtResource("3_hidu8")]
 transform = Transform3D(0.998826, -0.0419434, 0.024249, 0.0472788, 0.734517, -0.676943, 0.0105819, 0.677294, 0.735637, 0.0776888, -3.47707, -5.00639)
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Meshes/Robot Pivot/Robot_eva_02"]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_02"]
 transform = Transform3D(0.999685, 0.0109206, -0.0226252, 0.00979678, 0.659829, 0.751351, 0.0231342, -0.751335, 0.659515, 0.41254, 0.0429149, -0.758159)
 light_color = Color(0.95, 0.8664, 0.494, 1)
 light_energy = 150.0
@@ -475,7 +428,7 @@ light_volumetric_fog_energy = 10.0
 spot_range = 1.63342
 spot_angle = 45.3775
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Meshes/Robot Pivot/Robot_eva_02"]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_02"]
 transform = Transform3D(0.849036, 0.0109208, -0.528222, 0.390801, 0.659829, 0.641794, 0.355546, -0.751335, 0.555952, -0.514993, -0.0829639, -0.646571)
 light_color = Color(0.95, 0.8664, 0.494, 1)
 light_energy = 150.0
@@ -483,7 +436,7 @@ light_volumetric_fog_energy = 10.0
 spot_range = 1.63342
 spot_angle = 45.3775
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Meshes/Robot Pivot/Robot_eva_02"]
+[node name="SpotLight3D5" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_02"]
 transform = Transform3D(0.998469, 0.0109206, -0.0542413, 0.0335627, 0.659829, 0.750665, 0.0439879, -0.751335, 0.658453, 1.12026, 5.06949, 1.07319)
 light_color = Color(0.95, 0.8664, 0.494, 1)
 light_energy = 1500.0
@@ -491,7 +444,7 @@ light_volumetric_fog_energy = 10.0
 spot_range = 0.787848
 spot_angle = 45.3775
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Meshes/Robot Pivot/Robot_eva_02"]
+[node name="SpotLight3D6" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_02"]
 transform = Transform3D(0.998469, 0.0109206, -0.0542413, 0.0335627, 0.659829, 0.750665, 0.0439879, -0.751335, 0.658453, -0.979472, 5.05901, 1.42991)
 light_color = Color(0.95, 0.8664, 0.494, 1)
 light_energy = 1500.0
@@ -499,7 +452,7 @@ light_volumetric_fog_energy = 10.0
 spot_range = 0.787848
 spot_angle = 45.3775
 
-[node name="Anim_Robot" type="AnimationPlayer" parent="Meshes/Robot Pivot"]
+[node name="Anim_Robot" type="AnimationPlayer" parent="Meshes/Node3D/Robot Pivot"]
 libraries = {
 "": SubResource("AnimationLibrary_eapgk")
 }
@@ -615,7 +568,7 @@ autoplay = "Anim_CityRotation_slow"
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("4_474d5")
-configuration = SubResource("Resource_kmets")
+configuration = ExtResource("7_qbrxa")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lakqy")

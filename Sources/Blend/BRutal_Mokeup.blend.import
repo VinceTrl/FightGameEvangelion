@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://me5fk7eouey7"
-path="res://.godot/imported/BRutal_Mokeup.blend-e3a8e2af1db4dbe5b184748b2db54dad.scn"
+valid=false
 
 [deps]
 
 source_file="res://Sources/Blend/BRutal_Mokeup.blend"
-dest_files=["res://.godot/imported/BRutal_Mokeup.blend-e3a8e2af1db4dbe5b184748b2db54dad.scn"]
 
 [params]
 
