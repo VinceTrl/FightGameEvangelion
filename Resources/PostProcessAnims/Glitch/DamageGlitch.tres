@@ -14,5 +14,5 @@ glitchAnimationCurve = SubResource("Curve_0823w")
 GlitchRange = 0.05
 GlitchNoiseQuality = 250.0
 GlitchIntenity = 0.0088
-GlitchOffset = 0.032
-GlitchColorOffset = 1.366
+GlitchOffset = 0.045
+GlitchColorOffset = 1.899

@@ -6,11 +6,15 @@ extends Area3D
 enum DamageType {Melee , projectile,Volume}
 @export var type: DamageType = DamageType.Melee
 @export var isActive = true
+@export var randomID = false
 
 	
 func _init() -> void:
 	collision_layer = 4
 	collision_mask = 0
+	
+	if(randomID):
+		owner_id = (randi_range(-100000,100000))
 	
 func ActiveHitBox():
 	isActive = true

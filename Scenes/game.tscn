@@ -1,16 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=21 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bwt4shvj2ln0p" path="res://Assets/Sounds/Musics/teknokiki v1.mp3" id="3_jb8il"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="4_sx5sm"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="9_nr51f"]
 [ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
 [ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
-[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -69,6 +70,12 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.13878, 0, -1.4286
 [node name="KillVolume" parent="Gameplay" instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
+[node name="Spawner" parent="Gameplay" instance=ExtResource("8_dreha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68463, 2.09018, 0)
+
+[node name="Spawner2" parent="Gameplay" instance=ExtResource("8_dreha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16873, 2.63524, -2.38419e-07)
+
 [node name="GUI" type="Node" parent="."]
 
 [node name="LifeBarRoot_TopLeft" parent="GUI" instance=ExtResource("9_p25nu")]
@@ -105,7 +112,7 @@ script = ExtResource("15_7m25h")
 Multiplier = 1.0
 
 [node name="Robot Pivot" parent="Enviro/Node3D/Meshes/Node3D" index="0"]
-transform = Transform3D(0.998661, 0.0387993, 0.0342322, -0.0349868, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
+transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993782, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
 [node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
 transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)

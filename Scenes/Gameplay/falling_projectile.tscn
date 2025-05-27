@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpi5fu0v8iids"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/falling_projectile.gd" id="1_tf2fl"]
+[ext_resource type="Texture2D" uid="uid://4ccslecbenaq" path="res://Assets/Sprites/All_Fire_Bullet_Pixel_16x16_05.png" id="2_uk7kn"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="3_iv472"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_doj7e"]
+size = Vector3(0.173447, 0.169678, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vroqg"]
+atlas = ExtResource("2_uk7kn")
+region = Rect2(256, 240, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pscs6"]
+atlas = ExtResource("2_uk7kn")
+region = Rect2(288, 240, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opcs7"]
+atlas = ExtResource("2_uk7kn")
+region = Rect2(320, 240, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7qnl"]
+atlas = ExtResource("2_uk7kn")
+region = Rect2(352, 240, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0u4xw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vroqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pscs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opcs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7qnl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8e1fr"]
+size = Vector3(0.275635, 0.225372, 1)
+
+[node name="FallingProjectile" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 3
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_tf2fl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0160751, -0.000854492, 0)
+shape = SubResource("BoxShape3D_doj7e")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_0u4xw")
+autoplay = "default"
+frame_progress = 0.01329
+
+[node name="Hurtbox" type="Area3D" parent="."]
+script = ExtResource("3_iv472")
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00622559, -0.00364685, 0)
+shape = SubResource("BoxShape3D_8e1fr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
