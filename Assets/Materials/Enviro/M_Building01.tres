@@ -1,7 +1,16 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://inrdgg10wunt"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://inrdgg10wunt"]
 
+[ext_resource type="Texture2D" uid="uid://d3i2wkybtjpe1" path="res://Sources/Textures/T_BuildingSheet_01_D-assets/T_BuildingSheet_01_D.png" id="1_gjcx5"]
 [ext_resource type="Texture2D" uid="uid://b15hwoovcamkl" path="res://Sources/Textures/T_BuildingSheet_01_D.png" id="1_hb083"]
 
 [resource]
-albedo_texture = ExtResource("1_hb083")
+albedo_texture = ExtResource("1_gjcx5")
 metallic = 1.0
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("1_gjcx5")
+rim_tint = 0.42
+rim_texture = ExtResource("1_hb083")
+clearcoat = 0.0
+clearcoat_roughness = 1.0
+grow_amount = -0.377
