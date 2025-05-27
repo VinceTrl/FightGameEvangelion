@@ -57,6 +57,8 @@ gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_tf2fl")
+moveSpeed = 1.0
+explosionScale = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0160751, -0.000854492, 0)
@@ -67,7 +69,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_0u4xw")
 autoplay = "default"
-frame_progress = 0.01329
+frame_progress = 0.499973
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("3_iv472")

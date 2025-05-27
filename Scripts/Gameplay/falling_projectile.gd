@@ -3,6 +3,7 @@ extends RigidBody3D
 @export var moveSpeed: float = 2.0
 @export var canMove = true
 @export var moveDirection : Vector3 = Vector3(0.0,-1.0,0.0)
+@export var explosionScale : float = 1.0
 
 const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
 
@@ -31,6 +32,7 @@ func DestroyProjectile():
 	var explo = EXPLOSION.instantiate()
 	get_tree().get_root().add_child(explo)
 	explo.global_position = global_position
+	explo.scale = Vector3(explosionScale,explosionScale,explosionScale)
 	queue_free()
 	
 	
