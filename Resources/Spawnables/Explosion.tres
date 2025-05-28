@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://ccccsgtkw4xgd"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_hn25t"]
+
+[resource]
+script = ExtResource("1_hn25t")
+itemName = &"EXPLOSION"
+scenePath = &"res://Scenes/Gameplay/explosion.tscn"

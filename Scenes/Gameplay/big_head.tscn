@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://g8elc2l26ieh" path="res://Assets/Materials/Gameplay/BasePrototype_White.tres" id="1_jd6iy"]
 [ext_resource type="Material" uid="uid://bns2qr6i381wl" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_01.tres" id="1_p7l6c"]
-[ext_resource type="Script" path="res://Scenes/Gameplay/big_head.gd" id="1_q0pkt"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/big_head.gd" id="1_q0pkt"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_k37p0"]
 [ext_resource type="Material" uid="uid://dtduq68lofknr" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_04.tres" id="3_yhial"]
 [ext_resource type="Material" uid="uid://c6o2i4cwyacq8" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_03.tres" id="4_sg0no"]

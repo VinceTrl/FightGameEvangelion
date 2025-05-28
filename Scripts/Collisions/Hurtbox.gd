@@ -1,12 +1,15 @@
 class_name Hurtbox
 extends Area3D
 
-
 @export var owner_id = 1
+@export var randomID = false
 
 func _init() -> void:
 	collision_layer = 0
 	collision_mask = 4
+	
+	if(randomID):
+		owner_id = (randi_range(-100000,100000))
 
 func _ready() -> void:
 	connect("area_entered",self._on_area_entered) 
