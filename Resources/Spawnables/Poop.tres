@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://cfbnv8ptsfx7i"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_5qso8"]
+
+[resource]
+script = ExtResource("1_5qso8")
+itemName = &"POOP"
+scenePath = &"res://Scenes/Gameplay/poop.tscn"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://djdb3ocf1uv0i"]
+[gd_scene load_steps=6 format=3 uid="uid://djdb3ocf1uv0i"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/spawner.gd" id="1_y2u6x"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="2_m4idx"]
 [ext_resource type="Resource" uid="uid://ccccsgtkw4xgd" path="res://Resources/Spawnables/Explosion.tres" id="3_e0bi4"]
 [ext_resource type="Resource" uid="uid://b0okcggscbndq" path="res://Resources/Spawnables/FallingProjectile.tres" id="4_14cl3"]
+[ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="5_ox188"]
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_y2u6x")
-items = Array[ExtResource("2_m4idx")]([ExtResource("3_e0bi4"), ExtResource("4_14cl3")])
+items = Array[ExtResource("2_m4idx")]([ExtResource("3_e0bi4"), ExtResource("4_14cl3"), ExtResource("5_ox188")])

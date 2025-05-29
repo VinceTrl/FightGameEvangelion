@@ -5,6 +5,7 @@ extends RigidBody3D
 @onready var left_wall_checker: RayCast3D = $Raycast/LeftWallChecker
 @onready var explosion_location: Marker3D = $ExplosionLocation
 @onready var poopMesh : Node3D = $Visual/NodeShaker/SM_Poop_01
+@onready var animation_player: AnimationPlayer = $Visual/AnimationPlayer
 
 const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
 
@@ -85,6 +86,7 @@ func TakeDamage(hitboxSource: Hitbox):
 	#canMove = true
 	
 	
+	
 	var nextDir = (global_position - hitboxSource.global_position).normalized()
 	moveDirection = Vector3(nextDir.x,0,0)
 	apply_impulse(nextDir * 5)
@@ -93,9 +95,11 @@ func TakeDamage(hitboxSource: Hitbox):
 		DestroyPoop()
 	
 	#Hit effects
-	node_shaker.NodeShake()
+	#node_shaker.NodeShake()
 	Manager.postProcessEffects.GlitchEffect()
-	Manager.timeManager.freezeFrame(0.001,0.2)
+	Manager.timeManager.freezeFrame(0.001,0.1)
+	Manager.gameCamera.camShake.AskCamShake("HitShake")
+	animation_player.play("Hurt")
 	
 func ChangeDirection():
 	moveDirection = -moveDirection #bounce direction

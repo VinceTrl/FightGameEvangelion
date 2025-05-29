@@ -16,20 +16,32 @@ point_count = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_7cei5"]
 size = Vector3(0.505371, 0.464355, 1)
 
-[sub_resource type="Animation" id="Animation_p7wsd"]
-resource_name = "Moving"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_b51si"]
+resource_name = "Hurt"
+length = 0.650003
 step = 0.0166667
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("NodeShaker/SM_Poop_01:rotation:y")
+tracks/0/path = NodePath("NodeShaker/SM_Poop_01:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(1, 1, 1, 1, 1),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 1.5708, 0, 0, 0, 0, 3.1, 0, 0, 0, 0, 4.7, 0, 0, 0, 0, 6.3, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.0666667, 0.396663, 0.25, -0.0333333, 0.172956, 0.0333333, 0.136268, 0.267558, -0.0333333, 0.151992, 0.0166667, 0.0838574, 0.26057, -0.0166667, 0.0751223, 0.0333333, 0.0436758, 0.25, -0.0333334, 0.0401817, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.433333, 0.65)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NodeShaker/SM_Poop_01:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.65),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_t8p71"]
@@ -45,10 +57,33 @@ tracks/0/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NodeShaker/SM_Poop_01:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NodeShaker/SM_Poop_01:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_28twp"]
 _data = {
-"Moving": SubResource("Animation_p7wsd"),
+"Hurt": SubResource("Animation_b51si"),
 "RESET": SubResource("Animation_t8p71")
 }
 
