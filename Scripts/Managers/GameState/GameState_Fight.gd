@@ -6,6 +6,7 @@ func _ready():
 
 func EnterState():
 	manager.gameManager.LaunchFight()
+	manager.spawnManager.TimerRandomSpawn()
 	
 func ExitState():
 	pass

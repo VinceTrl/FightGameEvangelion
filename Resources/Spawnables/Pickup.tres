@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://c0h453axwrbc1"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_2o887"]
+
+[resource]
+script = ExtResource("1_2o887")
+itemName = &"Pickup"
+scenePath = &"res://Scenes/Gameplay/pick_up.tscn"

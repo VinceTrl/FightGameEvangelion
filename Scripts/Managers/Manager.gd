@@ -8,6 +8,7 @@ var gameCamera: GameCamera
 var gameStateManager: GameStateManager
 var masterUI: MasterUI
 var postProcessEffects: PostProcessEffects
+var spawnManager: SpawnManager
 
 var previousGameState : GameStates.GameState = GameStates.GameState.TitleScreen
 var currentGameState : GameStates.GameState = GameStates.GameState.TitleScreen

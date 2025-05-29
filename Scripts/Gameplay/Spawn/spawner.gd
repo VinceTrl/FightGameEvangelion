@@ -1,9 +1,11 @@
+class_name Spawner
 extends Node3D
 
 @export var items: Array[SpawnableItem] = []
 
 func _ready() -> void:
 	PreloadResources()
+	Manager.spawnManager.RegisterSpawner(self)
 	
 func _process(delta: float) -> void:
 	DebugSpawner()
