@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=66 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Texture2D" uid="uid://lfjvawnucaf5" path="res://Assets/Sprites/spr_StrikerIdle_strip.png" id="2_c2271"]
@@ -40,6 +40,7 @@
 [ext_resource type="Resource" uid="uid://b1kr6ya4e857u" path="res://Resources/PostProcessAnims/Glitch/DeathGlitch.tres" id="33_hpf16"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ChargeShootState.gd" id="35_8paei"]
 [ext_resource type="AudioStream" uid="uid://ca3j2rm8aj6c8" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Ready 5_01.wav" id="36_tkpog"]
+[ext_resource type="Script" path="res://Scripts/Player/States/KnockbackState.gd" id="37_h0gmo"]
 
 [sub_resource type="Curve" id="Curve_qv1t1"]
 _data = [Vector2(0, 0), 0.0, 0.0342598, 0, 0, Vector2(1, 1), 0.174008, 0.0, 0, 0]
@@ -604,7 +605,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "method"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("../StateMachine/Hurt")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -1117,13 +1118,13 @@ _data = {
 _data = [Vector2(0, 1), 0.0, -2.4727, 0, 0, Vector2(1, 0), -0.0449583, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_hmoe4"]
-_data = [Vector2(0, 1), 0.0, -7.13645e-07, 0, 0, Vector2(1, 0), -3.15581, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="Curve" id="Curve_8vhkr"]
 _data = [Vector2(0, 0), 0.0, 0.0324289, 0, 0, Vector2(0.493865, 0.90534), 2.67875, 2.67875, 0, 0, Vector2(1, 0), 0.0164851, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="Curve" id="Curve_dt2x8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.01617, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cr8h1"]
 size = Vector3(0.616932, 0.425266, 1)
@@ -1213,10 +1214,7 @@ recoilCurve = SubResource("Curve_gijy7")
 
 [node name="Hurt" type="Node" parent="StateMachine"]
 script = ExtResource("14_gm8e6")
-maxHurtSpeed = 10.0
-hurtDuration = 0.2
-useAnimationForDuration = false
-hurtSpeedCurve = SubResource("Curve_hmoe4")
+hurtDuration = 0.25
 damageGlitchEffect = ExtResource("30_k65qb")
 
 [node name="Dash" type="Node" parent="StateMachine"]
@@ -1232,6 +1230,11 @@ script = ExtResource("32_r0xa3")
 
 [node name="ChargeShoot" type="Node" parent="StateMachine"]
 script = ExtResource("35_8paei")
+
+[node name="KnockBack" type="Node" parent="StateMachine"]
+script = ExtResource("37_h0gmo")
+knockbackDuration = 0.2
+knockbackSpeedCurve = SubResource("Curve_dt2x8")
 
 [node name="Timers" type="Node" parent="."]
 
@@ -1263,6 +1266,9 @@ one_shot = true
 one_shot = true
 
 [node name="ChargeShootTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="KnockbackTimer" type="Timer" parent="Timers"]
 one_shot = true
 
 [node name="PlayerAmmo" type="Node" parent="."]
