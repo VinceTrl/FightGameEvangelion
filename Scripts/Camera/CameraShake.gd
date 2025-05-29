@@ -73,6 +73,9 @@ func AdvancedCameraShake(_minMagnitude: float = minMagnitude,_maxMagnitude: floa
 		
 		#apply offset to transform
 		self.transform.origin = initial_transform.origin + offset
+		
+		if !is_instance_valid(get_tree()):
+			return
 		await get_tree().process_frame
 
 	#reset

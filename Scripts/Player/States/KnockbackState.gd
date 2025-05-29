@@ -41,7 +41,7 @@ func SetDirection():
 		direction = Vector3(-Player.facing,0,0)
 	else:
 		#print("SetDirection ")
-		direction = Player.global_position - hitbox.global_position
+		direction = Player.global_position - Player.lastHitLocation
 		direction = direction.normalized()
 	
 func HandleKnockbackSpeed():

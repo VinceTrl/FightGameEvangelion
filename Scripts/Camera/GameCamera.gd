@@ -161,6 +161,10 @@ func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = defaultZoom.zoomDis
 		var _zoomTargetZ = lerp(_initPos.z,_zoomDistance,_zoomCurveValue)
 		
 		global_position = Vector3(_zoomTargetX,_zoomTargetY,_zoomTargetZ)
+		
+		if !is_instance_valid(get_tree()):
+			return
+		
 		await get_tree().process_frame
 
 	#reset

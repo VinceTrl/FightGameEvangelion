@@ -5,10 +5,10 @@ func _ready():
 	manager = Manager
 
 func EnterState():
-	var timer = get_tree().create_timer(5,true,false,true)
+	var timer = get_tree().create_timer(1.5,true,false,true)
 	await timer.timeout
-	get_tree().reload_current_scene()
-	manager.ChangeGameState(GameState.TitleScreen)
+	#get_tree().reload_current_scene()
+	manager.ChangeGameState(GameState.FightResult)
 	
 func ExitState():
 	pass

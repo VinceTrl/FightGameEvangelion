@@ -6,8 +6,12 @@ extends Control
 
 signal titleScreenExit
 
+func SetTitleScreenVisibility(isVisible: bool):
+	visible = isVisible
+
 func AcceptTitleScreen():
 	animation_player.play("TitleExit")
 	audio_stream_player.play()
 	await  animation_player.animation_finished
 	titleScreenExit.emit()
+	SetTitleScreenVisibility(false)

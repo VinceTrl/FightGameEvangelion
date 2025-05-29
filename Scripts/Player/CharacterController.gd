@@ -116,6 +116,7 @@ var dashDirection: Vector3
 var facing = 1
 
 var lastHitbox: Hitbox = null
+var lastHitLocation
 
 #inputs variables 
 var keyUp = false
@@ -421,9 +422,10 @@ func HandleShoot():
 			ChangeState(States.ChargeShoot)
 
 func TakeDamage(hitboxSource: Hitbox):
-	if (currentState != States.Hurt and currentState != States.Death):
+	if (currentState != States.Hurt and currentState != States.Death and currentState != States.Knockback):
 		currentHealthPoints -= hitboxSource.damage
 		lastHitbox = hitboxSource
+		lastHitLocation = hitboxSource.global_position
 		hitboxSource.DealDamage()
 		emit_signal("OnPlayerTakeDamage")
 		
@@ -432,8 +434,8 @@ func TakeDamage(hitboxSource: Hitbox):
 		if (currentHealthPoints > 0):
 			ChangeState(States.Hurt)
 		else:
-			ChangeState(States.Death)
 			isDead = true
+			ChangeState(States.Death)
 	
 func ApplyProjection(projectionSource : Vector3 = Vector3.ZERO):
 	velocity = Vector3.ZERO

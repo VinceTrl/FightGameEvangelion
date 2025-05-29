@@ -50,6 +50,7 @@ func AnimPosition():
 	
 	while posTimer.time_left > 0.0:
 		
+		
 		var _timeProgress = positionTime - posTimer.time_left 
 		var _ratio = _timeProgress/positionTime
 		var _curveValueX = positionCurveX.sample(_ratio)
@@ -63,6 +64,9 @@ func AnimPosition():
 		var _currentPos = Vector3(_currentPosX,_currentPosY,_currentPosZ)
 	
 		global_position = _currentPos
+		
+		if !is_instance_valid(get_tree()):
+			return
 		
 		await get_tree().process_frame
 	

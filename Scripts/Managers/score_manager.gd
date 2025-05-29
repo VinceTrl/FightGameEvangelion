@@ -28,6 +28,8 @@ func StartFightRound():
 func FinishFightRound():
 	var player = Manager.gameManager.GetWinner()
 	
+	print("WINNER: " + str(player))
+	
 	if (player == null): return
 	
 	if(player.playerID == 1):

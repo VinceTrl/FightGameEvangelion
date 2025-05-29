@@ -38,7 +38,7 @@ func OnAnyPlayerDeath():
 	FightEnd.emit()
 	
 func GetWinner() -> PlayerCharacter:
-	var deadCount
+	var deadCount = 0
 	
 	#check equality
 	for player in players:

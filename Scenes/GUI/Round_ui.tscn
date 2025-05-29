@@ -1,0 +1,136 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcr5540fwgswj"]
+
+[ext_resource type="Texture2D" uid="uid://hnv2dg4f61e7" path="res://Assets/Sprites/GUI/00.png" id="1_b1lcn"]
+[ext_resource type="Script" path="res://Scripts/GUI/PlayerRoundUI.gd" id="2_45w5k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wojx"]
+atlas = ExtResource("1_b1lcn")
+region = Rect2(7, 135, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud26a"]
+atlas = ExtResource("1_b1lcn")
+region = Rect2(135, 135, 18, 17)
+
+[node name="Round" type="Control"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_top = -115.0
+offset_right = -139.0
+offset_bottom = -98.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_3wojx")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ud26a")
+
+[node name="IconsHolder" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 85.0
+offset_right = 20.0
+offset_bottom = 122.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IconsHolder"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -201.0
+offset_right = 202.0
+offset_bottom = 52.0
+grow_horizontal = 2
+script = ExtResource("2_45w5k")
+Icons = Array[NodePath]([NodePath("IconBackground"), NodePath("IconBackground2")])
+
+[node name="IconBackground" type="TextureRect" parent="IconsHolder/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_3wojx")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="IconsHolder/HBoxContainer/IconBackground"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ud26a")
+
+[node name="IconBackground2" type="TextureRect" parent="IconsHolder/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_3wojx")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="IconsHolder/HBoxContainer/IconBackground2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ud26a")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="IconsHolder"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -201.5
+offset_right = 201.5
+offset_bottom = 52.0
+grow_horizontal = 2
+alignment = 2
+script = ExtResource("2_45w5k")
+playerID = 2
+Icons = Array[NodePath]([NodePath("IconBackground2"), NodePath("IconBackground")])
+
+[node name="IconBackground" type="TextureRect" parent="IconsHolder/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_3wojx")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="IconsHolder/HBoxContainer2/IconBackground"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ud26a")
+
+[node name="IconBackground2" type="TextureRect" parent="IconsHolder/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_3wojx")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="IconsHolder/HBoxContainer2/IconBackground2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ud26a")
