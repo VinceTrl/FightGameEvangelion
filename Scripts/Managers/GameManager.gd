@@ -36,3 +36,20 @@ func RegisterPlayer(_playerToAdd:PlayerCharacter):
 func OnAnyPlayerDeath():
 	Manager.ChangeGameState(GameStates.GameState.FightOutro)
 	FightEnd.emit()
+	
+func GetWinner() -> PlayerCharacter:
+	var deadCount
+	
+	#check equality
+	for player in players:
+		if(player.isDead): deadCount += 1
+		
+	if(deadCount == players.size()):
+		return null
+		
+	#check who is alive
+	for player in players:
+		if(!player.isDead): 
+			return player
+	
+	return null

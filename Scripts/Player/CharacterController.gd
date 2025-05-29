@@ -35,6 +35,8 @@ var gameManager: Manager
 #player stats variables
 @export var healthPoints = 6
 @export var startFacingRight = true
+var isDead: bool = false
+
 #run variables
 @export_group("Movement")
 @export var runSpeed = 3.0
@@ -431,6 +433,7 @@ func TakeDamage(hitboxSource: Hitbox):
 			ChangeState(States.Hurt)
 		else:
 			ChangeState(States.Death)
+			isDead = true
 	
 func ApplyProjection(projectionSource : Vector3 = Vector3.ZERO):
 	velocity = Vector3.ZERO
