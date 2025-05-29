@@ -43,6 +43,7 @@ magnitudeOverTime = SubResource("Curve_t0je2")
 shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d"), ExtResource("14_p6ck8")])
 
 [node name="Camera3D" type="Camera3D" parent="CameraShake"]
+size = 4.896
 
 [node name="CENTER_DEBUG_LABEL" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.772981)

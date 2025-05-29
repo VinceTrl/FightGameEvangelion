@@ -10,7 +10,7 @@ enum DamageType {Melee , projectile,Volume}
 
 	
 func _init() -> void:
-	collision_layer = 4
+	collision_layer = 3
 	collision_mask = 0
 	
 	if(randomID):
