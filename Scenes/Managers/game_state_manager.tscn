@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://i2i6vf5nref1"]
+[gd_scene load_steps=8 format=3 uid="uid://i2i6vf5nref1"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameState/GameStateManager.gd" id="1_vyvxo"]
 [ext_resource type="Script" path="res://Scripts/Managers/GameState/GameState_TitleScreen.gd" id="2_y47o5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Managers/GameState/GameState_Fight.gd" id="4_ka06k"]
 [ext_resource type="Script" path="res://Scripts/Managers/GameState/GameState_FightOutro.gd" id="5_j4i07"]
 [ext_resource type="Script" path="res://Scripts/Managers/GameState/GameState_ResultFightScreen.gd" id="6_6utuw"]
+[ext_resource type="Script" path="res://Scripts/Managers/GameState/GameState_WinnerScreen.gd" id="7_el524"]
 
 [node name="GameStateManager" type="Node"]
 script = ExtResource("1_vyvxo")
@@ -24,3 +25,6 @@ script = ExtResource("5_j4i07")
 
 [node name="ResultScreen" type="Node" parent="."]
 script = ExtResource("6_6utuw")
+
+[node name="WinnerScreen" type="Node" parent="."]
+script = ExtResource("7_el524")

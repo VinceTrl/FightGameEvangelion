@@ -1,36 +1,34 @@
 extends GameStates
 
-var canHandleInput = true
+const WINNER_SCREEN = preload("res://Scenes/GUI/winner_screen.tscn")
+var canHandleInput = false
+var screenInstance
 
 func _ready():
-	state = GameState.FightResult
+	state = GameState.WinnerScreen
 	manager = Manager
 
 func EnterState():
-	print("enter Result state")
+	print("enter Win Screen state")
+	screenInstance = WINNER_SCREEN.instantiate()
+	add_child(screenInstance)
 	canHandleInput = true
-	Manager.masterUI.result_screen.StartResult()
 	
 func ExitState():
-	pass
+	#screenInstance as Node
+	screenInstance.queue_free()
 
 func Draw():
 	pass
 	
 func Update(delta: float):
 	if(Input.is_action_pressed("MenuAccept_Global") and canHandleInput):
-		print("INPUT")
 		canHandleInput = false
-		ExitGame()
+		RestartGame()
 		
-func ExitGame():
+func RestartGame():
 	var timer = get_tree().create_timer(0.5,true,false,true)
 	await timer.timeout
-	
-	if(manager.scoreManager.fightIsFinished):
-		#go to winner screen
-		manager.ChangeGameState(GameState.WinnerScreen)
-	else:
-		manager.ReloadGameScene() #go to fight
+	manager.LoadTitleScene()
 	#get_tree().reload_current_scene()
 	#manager.ChangeGameState(GameState.FightIntro)

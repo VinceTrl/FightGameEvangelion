@@ -8,9 +8,13 @@ func _ready():
 
 func EnterState():
 	print("enter title state")
+	if(manager.titleScreen != null):
+		manager.titleScreen.ResetTitleScreen()
+		
 	canHandleInput = true
 	
 func ExitState():
+	#manager.titleScreen.queue_free()
 	pass
 
 func Draw():

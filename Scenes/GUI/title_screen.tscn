@@ -62,7 +62,7 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 128
+layer = 126
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3

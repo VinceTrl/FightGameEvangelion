@@ -65,4 +65,5 @@ func ResetScore():
 	playerWinCount_1 = 0
 	playerWinCount_2 = 0
 	currentRound = 0
+	fightIsFinished = false
 	emit_signal("onScoreUpdated")

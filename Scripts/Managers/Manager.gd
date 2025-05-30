@@ -4,6 +4,7 @@ const GAME_STATE_MANAGER = preload("res://Scenes/Managers/game_state_manager.tsc
 const SCORE_MANAGER = preload("res://Scenes/Managers/score_manager.tscn")
 const GAME_SCENE = preload("res://Scenes/game.tscn")
 const TRANSITION_SCREEN = preload("res://Scenes/GUI/transition_screen.tscn")
+const TITLE_SCREEN = preload("res://Scenes/GUI/title_screen.tscn")
 
 var gameManager : GameManager
 var timeManager: TimeManager
@@ -15,7 +16,7 @@ var spawnManager: SpawnManager
 var scoreManager: ScoreManager
 var titleScreen: TitleScreen
 
-var previousGameState : GameStates.GameState = GameStates.GameState.TitleScreen
+var previousGameState : GameStates.GameState
 var currentGameState : GameStates.GameState = GameStates.GameState.TitleScreen
 
 signal OnGameManagerReady()
@@ -99,3 +100,38 @@ func StartTransition():
 	
 	transitionScreen.queue_free()
 	print("TRANSITION FINISHED")
+	
+	
+	
+func LoadTitleScene():
+	
+	StartTransition()
+	get_tree().current_scene.queue_free()
+	await get_tree().process_frame # attendre la suppression effective
+	#ChangeGameState(GameStates.GameState.TitleScreen)
+	
+	#StartTransition()
+	
+	await StartTransition()
+	#ChangeGameState(GameStates.GameState.TitleScreen)
+	#var title = GetGameState(currentGameState)
+	#title.canHandleInput = true
+	ChangeGameState(GameStates.GameState.TitleScreen)
+	print("GO TO TITLE SCREEN")
+
+	## Instancier la nouvelle
+	#var scene_instance = TITLE_SCREEN.instantiate()
+	#get_tree().root.add_child(scene_instance)
+	##get_tree().set_current_scene(scene_instance)
+	#
+	#if scene_instance.has_signal("OnTitleScreenReady"):
+		#scene_instance.connect("OnTitleScreenReady",OnTitleScreenReloaded)
+	#else:
+		#push_error("La scène n'a pas le signal `OnTitleScreenReady`")
+	
+func OnTitleScreenReloaded():
+	StartTransition()
+	
+	await StartTransition()
+	ChangeGameState(GameStates.GameState.TitleScreen)
+	print("GO TO TITLE SCREEN")

@@ -1,7 +1,7 @@
 class_name GameStates
 extends Node
 
-enum GameState {TitleScreen,CharacterSelection,LoadingFight,FightIntro,Fight,FightOutro,FightResult}
+enum GameState {TitleScreen,CharacterSelection,LoadingFight,FightIntro,Fight,FightOutro,FightResult,WinnerScreen}
 
 var gameStateName = "Fight"
 var state: GameState = GameState.TitleScreen
