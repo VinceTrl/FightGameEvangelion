@@ -20,9 +20,10 @@ func Update(delta: float):
 	if(Input.is_action_pressed("MenuAccept_Global") and canHandleInput):
 		print("INPUT")
 		canHandleInput = false
-		manager.masterUI.title_screen.titleScreenExit.connect(ExitTitleScreen)
-		manager.masterUI.title_screen.AcceptTitleScreen()
+		manager.LoadGameScene()
+		manager.titleScreen.titleScreenExit.connect(ExitTitleScreen)
+		manager.titleScreen.AcceptTitleScreen()
 
 func ExitTitleScreen():
-	manager.masterUI.title_screen.titleScreenExit.disconnect(ExitTitleScreen)
+	manager.titleScreen.titleScreenExit.disconnect(ExitTitleScreen)
 	manager.ChangeGameState(GameState.FightIntro)

@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5amqm6jpeons"]
+[gd_scene load_steps=6 format=3 uid="uid://c5amqm6jpeons"]
 
 [ext_resource type="PackedScene" uid="uid://bus7pxl8e5mmg" path="res://Scenes/GUI/fight_text.tscn" id="1_gskd5"]
 [ext_resource type="Script" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="3_cd8f7"]
-[ext_resource type="PackedScene" uid="uid://qofhmib4acam" path="res://Scenes/GUI/title_screen.tscn" id="4_4xesq"]
 [ext_resource type="PackedScene" uid="uid://bcr5540fwgswj" path="res://Scenes/GUI/Round_ui.tscn" id="5_2w7hc"]
 [ext_resource type="PackedScene" uid="uid://cv0ukcamovfyt" path="res://Scenes/GUI/result_screen_ui.tscn" id="5_dvxp5"]
 
@@ -23,10 +22,7 @@ layer = 100
 
 [node name="TimerRoot" parent="CanvasLayer" instance=ExtResource("3_cd8f7")]
 
-[node name="TitleScreen" parent="CanvasLayer" instance=ExtResource("4_4xesq")]
-
 [node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("5_dvxp5")]
 
-[node name="Round" parent="." instance=ExtResource("5_2w7hc")]
-layout_mode = 1
+[node name="Round" parent="CanvasLayer" instance=ExtResource("5_2w7hc")]
 anchors_preset = 5

@@ -7,9 +7,19 @@ var roundWon = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	UpdateIcons()
+	Manager.scoreManager.connect("onScoreUpdated",UpdateIcons)
+	
+
+func UpdateIcons():
+	
+	for icon in Icons:
+		var node = get_node_or_null(icon)
+		if node and node.get_child_count() > 0:
+			var first_child = node.get_child(0)
+			first_child.visible = false
 	
 	var _round
-	
 	if(playerID == 1):
 		_round = Manager.scoreManager.playerWinCount_1
 	else:
@@ -17,13 +27,9 @@ func _ready() -> void:
 		
 	roundWon = _round
 	
-	#print("round : " + str(roundWon))
-	UpdateIcons()
+	print("UPDATE ICONS ID"  + str(playerID) + " : " + str(roundWon))
 	
-
-func UpdateIcons():
 	var count = 0
-
 	for icon in Icons:
 		
 		if(count >= roundWon): return

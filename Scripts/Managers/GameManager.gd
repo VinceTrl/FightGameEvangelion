@@ -12,11 +12,13 @@ extends Node
 var players: Array[PlayerCharacter] = []
 
 signal FightEnd
+signal GameManagerReady
 
 func _ready() -> void:
 	#Register
 	Manager.gameManager = self
 	Manager.timeManager = timeManager
+	emit_signal("GameManagerReady")
 	
 func LaunchFight():
 	#await get_tree().create_timer(fightStartDelay,true,false,true).timeout
@@ -38,15 +40,6 @@ func OnAnyPlayerDeath():
 	FightEnd.emit()
 	
 func GetWinner() -> PlayerCharacter:
-	var deadCount = 0
-	
-	#check equality
-	for player in players:
-		if(player.isDead): deadCount += 1
-		
-	if(deadCount == players.size()):
-		return null
-		
 	#check who is alive
 	for player in players:
 		if(!player.isDead): 

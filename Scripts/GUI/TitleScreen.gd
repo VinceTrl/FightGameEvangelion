@@ -6,6 +6,9 @@ extends Control
 
 signal titleScreenExit
 
+func _ready() -> void:
+	Manager.titleScreen = self
+
 func SetTitleScreenVisibility(isVisible: bool):
 	visible = isVisible
 

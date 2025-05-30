@@ -13,7 +13,7 @@ func _ready() -> void:
 		for child in childrens:
 			if(child is Label):
 				win_text = child
-				print("text found")
+				#print("text found")
 		
 	node.visible = false
 	
@@ -29,8 +29,14 @@ func _process(delta: float) -> void:
 	pass
 	
 func StartResult():
-	Manager.gameManager.GetWinner()
 	
-	var winnerText = "Player" + str(Manager.gameManager.GetWinner().playerID)
-	win_text.text = winnerText + " Wins"
+	var player = Manager.gameManager.GetWinner()
+	var winnerText
+	
+	if(player == null):
+		winnerText = "DOUBLE KO"
+	else:
+		winnerText = "Player" + str(player.playerID)
+		win_text.text = winnerText + " Wins"
+		
 	self.visible = true

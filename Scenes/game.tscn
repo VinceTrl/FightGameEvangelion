@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=19 format=3 uid="uid://c3o22n6bo51hk"]
 
+[ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="AudioStream" uid="uid://bwt4shvj2ln0p" path="res://Assets/Sounds/Musics/teknokiki v1.mp3" id="3_jb8il"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="4_sx5sm"]
@@ -20,6 +21,7 @@
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_2jg1a")
 
 [node name="GameManager" parent="." instance=ExtResource("5_r45th")]
 unique_name_in_owner = true

@@ -13,6 +13,7 @@ region = Rect2(135, 135, 18, 17)
 
 [node name="Round" type="Control"]
 layout_mode = 3
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2

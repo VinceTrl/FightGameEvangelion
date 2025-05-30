@@ -26,5 +26,6 @@ func Update(delta: float):
 func ExitGame():
 	var timer = get_tree().create_timer(0.5,true,false,true)
 	await timer.timeout
-	get_tree().reload_current_scene()
-	manager.ChangeGameState(GameState.TitleScreen)
+	manager.ReloadGameScene()
+	#get_tree().reload_current_scene()
+	#manager.ChangeGameState(GameState.FightIntro)
