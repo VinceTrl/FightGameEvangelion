@@ -3,6 +3,7 @@ extends Node
 const GAME_STATE_MANAGER = preload("res://Scenes/Managers/game_state_manager.tscn")
 const SCORE_MANAGER = preload("res://Scenes/Managers/score_manager.tscn")
 const GAME_SCENE = preload("res://Scenes/game.tscn")
+const TRANSITION_SCREEN = preload("res://Scenes/GUI/transition_screen.tscn")
 
 var gameManager : GameManager
 var timeManager: TimeManager
@@ -64,6 +65,7 @@ func LoadGameScene():
 	get_tree().set_current_scene(game_scene_instance)
 	
 func ReloadGameScene():
+	
 	get_tree().current_scene.queue_free()
 	await get_tree().process_frame # attendre la suppression effective
 
@@ -82,4 +84,18 @@ func ReloadGameScene():
 	#ChangeGameState(GameStates.GameState.FightIntro)
 	
 func OnGameSceneReloaded():
+	StartTransition()
+	
+	await StartTransition()
 	ChangeGameState(GameStates.GameState.FightIntro)
+	print("GO TO INTRO")
+	
+func StartTransition():
+	var transitionScreen = TRANSITION_SCREEN.instantiate()
+	add_child(transitionScreen)
+	transitionScreen.StartTransition()
+	
+	await transitionScreen.OnTransitionEnd
+	
+	transitionScreen.queue_free()
+	print("TRANSITION FINISHED")
