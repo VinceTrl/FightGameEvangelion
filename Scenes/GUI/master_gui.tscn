@@ -25,4 +25,3 @@ layer = 100
 [node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("5_dvxp5")]
 
 [node name="Round" parent="CanvasLayer" instance=ExtResource("5_2w7hc")]
-anchors_preset = 5
