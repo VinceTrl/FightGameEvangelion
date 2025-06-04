@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=21 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -11,13 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
 [ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
-[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
 [ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="15_7m25h"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
+[ext_resource type="PackedScene" uid="uid://0v8xynlbpg3q" path="res://Scenes/Gameplay/middle_finger.tscn" id="19_oprb0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -47,7 +48,7 @@ player2 = NodePath("../Player2")
 cameraClampMin = Vector2(-5, 0)
 
 [node name="BigHead" parent="Gameplay" instance=ExtResource("12_67sdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.581178, -1.64166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.67792, -1.64166)
 
 [node name="AmmoItem" parent="Gameplay" instance=ExtResource("13_8m82v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66236, 1.25418, 0.113311)
@@ -175,6 +176,9 @@ volume_db = -15.0
 autoplay = true
 bus = &"Music"
 parameters/looping = false
+
+[node name="MiddleFinger" parent="." instance=ExtResource("19_oprb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47223, 0.487861, 0)
 
 [editable path="Gameplay/Player2"]
 [editable path="Enviro/Node3D"]
