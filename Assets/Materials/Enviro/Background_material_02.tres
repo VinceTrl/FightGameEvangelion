@@ -7,6 +7,14 @@
 render_priority = 0
 shader = ExtResource("2_mlvx7")
 shader_parameter/soundIntensity = 1.0
+shader_parameter/equalizer00 = 1.0
+shader_parameter/equalizer01 = 1.0
+shader_parameter/equalizer02 = 1.0
+shader_parameter/equalizer03 = 1.0
+shader_parameter/equalizer04 = 1.0
+shader_parameter/equalizer05 = 1.0
+shader_parameter/equalizer06 = 1.0
+shader_parameter/equalizer07 = 1.0
 shader_parameter/height_scale = 1.0
 shader_parameter/speed = 1.0
 shader_parameter/tiling = Vector2(20, 20)
