@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdv55byodmt2m"]
+
+[ext_resource type="PackedScene" uid="uid://cjuhbvaggbelq" path="res://Assets/Meshes/Characters/Shrek/Shrek.fbx" id="1_x48c5"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="2_7avlx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iv1e3"]
+size = Vector3(0.00369263, 0.0109558, 0.00534058)
+
+[node name="Shrek" instance=ExtResource("1_x48c5")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/position = Vector3(-0.000293774, 0.00796885, -0.000437736)
+bones/0/rotation = Quaternion(-0.0632147, 0.0307189, -0.0857713, 0.993833)
+bones/1/rotation = Quaternion(0.0726871, -0.0808169, -0.00898446, 0.994035)
+bones/2/rotation = Quaternion(0.0389382, -0.0122816, 0.067338, 0.996894)
+bones/3/rotation = Quaternion(0.0401406, -0.0116833, 0.0667342, 0.996895)
+bones/4/rotation = Quaternion(0.00316457, -0.0387848, 0.0141302, 0.999143)
+bones/5/rotation = Quaternion(-0.0632893, -0.0842834, -0.127152, 0.986267)
+bones/7/rotation = Quaternion(0.606207, 0.400852, -0.496016, 0.475184)
+bones/8/rotation = Quaternion(0.241064, 0.455837, 0.0312149, 0.856228)
+bones/9/rotation = Quaternion(-0.0242699, 4.49137e-05, 0.387748, 0.921446)
+bones/10/rotation = Quaternion(-0.0508073, 0.1102, 0.00173884, 0.992608)
+bones/11/rotation = Quaternion(0.00446915, 0.997422, 0.0428746, 0.0573779)
+bones/12/rotation = Quaternion(0.176344, 0.00147309, -0.000544263, 0.984327)
+bones/13/rotation = Quaternion(0.0279059, 0.0160421, 0.0267732, 0.999123)
+bones/15/rotation = Quaternion(0.657886, -0.345446, 0.500627, 0.444101)
+bones/16/rotation = Quaternion(0.228362, -0.16069, 0.109744, 0.953932)
+bones/17/rotation = Quaternion(-0.0252624, -5.34676e-05, -0.45527, 0.889995)
+bones/18/rotation = Quaternion(-0.0341503, -0.111608, 0.0607859, 0.991303)
+bones/19/rotation = Quaternion(0.0311059, 0.96855, 0.0557185, -0.240496)
+bones/20/rotation = Quaternion(0.136459, -0.0123331, -0.182322, 0.973646)
+bones/21/rotation = Quaternion(-0.0461753, 0.014105, 0.0618107, 0.99692)
+bones/23/rotation = Quaternion(0.0463699, 0.251873, 0.903423, -0.343855)
+bones/24/rotation = Quaternion(-0.723587, 0.137973, -0.033491, 0.675473)
+bones/25/rotation = Quaternion(0.834393, -0.076189, -0.161003, 0.521595)
+bones/26/rotation = Quaternion(0.315657, -0.0244767, 0.00494139, 0.948545)
+bones/28/rotation = Quaternion(-0.139293, 0.160972, 0.971824, 0.101207)
+bones/29/rotation = Quaternion(-0.675573, -0.020018, -0.00191498, 0.737018)
+bones/30/rotation = Quaternion(0.820751, 0.038501, 0.144609, 0.551338)
+bones/31/rotation = Quaternion(0.328098, 0.0244024, -0.00453228, 0.944318)
+
+[node name="HandR" type="BoneAttachment3D" parent="Skeleton3D" index="5"]
+transform = Transform3D(0.699615, -0.409976, 0.585199, 0.0567092, -0.784567, -0.617445, 0.712266, 0.46516, -0.525646, -0.0085528, 0.00715865, 0.000413942)
+bone_name = "mixamorig_RightHand"
+bone_idx = 18
+
+[node name="Hitbox" type="Area3D" parent="Skeleton3D/HandR" index="0"]
+script = ExtResource("2_7avlx")
+owner_id = 500
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/HandR/Hitbox" index="0"]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999999, 0, 0, 0, 0.999991, 0, 0, 0)
+shape = SubResource("BoxShape3D_iv1e3")
+
+[node name="HandL" type="BoneAttachment3D" parent="Skeleton3D" index="6"]
+transform = Transform3D(0.970681, 0.201476, 0.131094, 0.234772, -0.911694, -0.33719, 0.0515821, 0.358081, -0.932264, 0.00998646, 0.00856819, 0.00247159)
+bone_name = "mixamorig_LeftHand"
+bone_idx = 10
+
+[node name="Hitbox" type="Area3D" parent="Skeleton3D/HandL" index="0"]
+script = ExtResource("2_7avlx")
+owner_id = 500
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/HandL/Hitbox" index="0"]
+transform = Transform3D(1, -1.49012e-07, -1.49012e-07, 1.49012e-08, 1, -2.68221e-07, 1.49012e-08, 2.98023e-08, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_iv1e3")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "mixamo_com"

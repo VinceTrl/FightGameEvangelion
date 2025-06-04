@@ -22,5 +22,5 @@ one_shot = true
 
 [node name="SpawnManager" type="Node" parent="."]
 script = ExtResource("5_u6occ")
-randomSpawnDelayMin = 10.0
-randomSpawnDelayMax = 20.0
+randomSpawnDelayMin = 5.0
+randomSpawnDelayMax = 10.0

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://bi5grxooavn04"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_ktipc"]
+
+[resource]
+script = ExtResource("1_ktipc")
+itemName = &"SHREK"
+scenePath = &"res://Scenes/Gameplay/shrek_item.tscn"

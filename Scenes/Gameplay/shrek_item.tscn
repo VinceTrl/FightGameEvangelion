@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvqhlk4l25sd3"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="1_ats3x"]
+[ext_resource type="PackedScene" uid="uid://cdv55byodmt2m" path="res://Assets/Meshes/Characters/Shrek/shrek.tscn" id="2_j27qo"]
+
+[node name="ShrekItem" type="Node3D"]
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="NodeShaker" type="Node3D" parent="Visual"]
+script = ExtResource("1_ats3x")
+
+[node name="Shrek" parent="Visual/NodeShaker" instance=ExtResource("2_j27qo")]
