@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
 [ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
-[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -106,7 +106,7 @@ transform = Transform3D(13.9424, 0, 0, 0, 9.53674e-07, -13.9424, 0, 13.9424, 4.2
 visible = false
 
 [node name="BackgroundPlane" type="MeshInstance3D" parent="Enviro/Node3D/Camera3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, -2.98023e-08, -1, 0, 1, -2.98023e-08, 0, -1.20723, -33.6961)
+transform = Transform3D(2.48788, 0, 0, 0, -1.19209e-07, -2.48788, 0, 2.48788, -1.19209e-07, 0, -10.6007, -70.6949)
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("13_3v2jh")
@@ -116,6 +116,33 @@ surface_material_override/0 = ExtResource("14_u3ss6")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.68596, 15.7371, 0.0832739)
 script = ExtResource("15_7m25h")
 Multiplier = 1.0
+
+[node name="SpotScat" parent="Enviro/Node3D/Lighting" index="0"]
+spot_range = 18.4922
+
+[node name="SpotLight3D2" parent="Enviro/Node3D/Lighting" index="1"]
+light_energy = 150.0
+spot_range = 160.315
+
+[node name="SpotLight3D6" parent="Enviro/Node3D/Lighting" index="2"]
+light_energy = 150.0
+spot_range = 63.5884
+
+[node name="SpotLight3D" parent="Enviro/Node3D/Lighting" index="4"]
+light_energy = 45.0
+spot_range = 56.6485
+
+[node name="SpotLight3D3" parent="Enviro/Node3D/Lighting" index="5"]
+light_energy = 45.0
+spot_range = 80.4352
+
+[node name="SpotLight3D4" parent="Enviro/Node3D/Lighting" index="6"]
+transform = Transform3D(0.185412, -0.073883, 0.266973, 0.0912904, 0.319609, 0.0250487, -0.261533, 0.0591833, 0.198013, -4.99869, -2.47093, -5.94517)
+light_energy = 300.0
+spot_range = 45.5801
+
+[node name="SpotLight3D5" parent="Enviro/Node3D/Lighting" index="7"]
+spot_range = 49.3115
 
 [node name="Robot Pivot" parent="Enviro/Node3D/Meshes/Node3D" index="0"]
 transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993782, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
