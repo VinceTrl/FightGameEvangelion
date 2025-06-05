@@ -35,7 +35,7 @@ func RandomSpawn():
 	print(str(spawner))
 	var _itemToSpawn = PickRandomItem()
 	spawner.SpawnExternalItem(_itemToSpawn)
-	print("spawning : " + str(_itemToSpawn))
+	print("spawning : " + str(_itemToSpawn.resource_name))
 	
 func PickRandomSpawner() -> Spawner:
 	var ranIndex = randi_range(0,spawners.size()-1)

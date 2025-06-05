@@ -13,58 +13,70 @@ script = ExtResource("1_s1fp1")
 [node name="Spawner" type="Node3D" parent="."]
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner7" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner8" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner9" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner10" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner11" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner12" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner5" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false
 
 [node name="Spawner6" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 script = ExtResource("1_y5e68")
 items = Array[ExtResource("2_bdksg")]([ExtResource("3_05b8r")])
+registerOnManager = false

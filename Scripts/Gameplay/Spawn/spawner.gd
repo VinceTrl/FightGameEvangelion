@@ -2,13 +2,16 @@ class_name Spawner
 extends Node3D
 
 @export var items: Array[SpawnableItem] = []
-@onready var ray_cast_3d: RayCast3D = $RayCast3D
+@export var registerOnManager = true
+@onready var ground_raycast: RayCast3D = $GroundRaycast
 
 func _ready() -> void:
 	PreloadResources()
-	Manager.spawnManager.RegisterSpawner(self)
-	if(ray_cast_3d == null):
-		push_error("NULL RAYCAST")
+	
+	if(registerOnManager):
+		Manager.spawnManager.RegisterSpawner(self)
+		if(ground_raycast == null):
+			push_error("NULL RAYCAST")
 	
 func _process(delta: float) -> void:
 	#DebugSpawner()
@@ -30,8 +33,8 @@ func SpawnItem(_itemToSpawn: StringName = "EXPLOSION"):
 	
 	var _spawnPos = global_position
 	
-	if(_item.spawnOnGround and ray_cast_3d.is_colliding()):
-		_spawnPos = ray_cast_3d.get_collision_point()
+	if(_item.spawnOnGround and ground_raycast.is_colliding()):
+		_spawnPos = ground_raycast.get_collision_point()
 		_spawnPos = _spawnPos + _item.groundOffset
 		
 	
@@ -47,8 +50,8 @@ func SpawnExternalItem(_itemToSpawn: SpawnableItem):
 	
 	var _spawnPos = global_position
 	
-	if(_itemToSpawn.spawnOnGround and ray_cast_3d.get_collider() != null):
-		_spawnPos = ray_cast_3d.get_collision_point()
+	if(_itemToSpawn.spawnOnGround and ground_raycast.get_collider() != null):
+		_spawnPos = ground_raycast.get_collision_point()
 		_spawnPos = _spawnPos + _itemToSpawn.groundOffset
 		
 	

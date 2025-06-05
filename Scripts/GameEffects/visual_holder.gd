@@ -28,8 +28,8 @@ var isAnimatingRotation = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	initPosition = global_position
-	initRotation = global_rotation
+	initPosition = position
+	initRotation = rotation
 	targetPos = initPosition + positionTarget
 	targetRot = initRotation + rotationTarget
 	Manager.gameManager.FightEnd.connect(StopAnimation)
@@ -63,7 +63,7 @@ func AnimPosition():
 		
 		var _currentPos = Vector3(_currentPosX,_currentPosY,_currentPosZ)
 	
-		global_position = _currentPos
+		position = _currentPos
 		
 		if !is_instance_valid(get_tree()):
 			return
@@ -71,7 +71,7 @@ func AnimPosition():
 		await get_tree().process_frame
 	
 	isAnimatingPosition = false
-	global_position = initPosition
+	position = initPosition
 	
 func AnimRotation():
 	pass

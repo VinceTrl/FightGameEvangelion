@@ -7,4 +7,4 @@ script = ExtResource("1_2o887")
 itemName = &"Pickup"
 scenePath = &"res://Scenes/Gameplay/pick_up.tscn"
 spawnOnGround = true
-groundOffset = Vector3(0, 0.5, 0)
+groundOffset = Vector3(0, 0.3, 0)
