@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdvwx0kkjddp"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="1_dwokd"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/heart.gd" id="1_jef0d"]
+[ext_resource type="PackedScene" uid="uid://2whp7jbymhuk" path="res://Assets/Meshes/Props/Heart/ItemHeartContainer.fbx" id="2_0yx3e"]
+
+[sub_resource type="Curve" id="Curve_h76pr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_r0w6q"]
+min_value = -1.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25058, 1), 0.0, 0.0, 0, 0, Vector2(0.75406, -1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_kdd56"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iumn5"]
+size = Vector3(0.396851, 0.326416, 0.374512)
+
+[node name="Heart" type="Node3D"]
+script = ExtResource("1_jef0d")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="Animation" type="Node3D" parent="Visual"]
+script = ExtResource("1_dwokd")
+positionTime = 5.0
+positionTarget = Vector3(0, 0.1, 0)
+positionCurveX = SubResource("Curve_h76pr")
+positionCurveY = SubResource("Curve_r0w6q")
+positionCurveZ = SubResource("Curve_kdd56")
+
+[node name="ItemHeartContainer" parent="Visual/Animation" instance=ExtResource("2_0yx3e")]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_iumn5")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_entered"]

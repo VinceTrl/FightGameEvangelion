@@ -153,6 +153,7 @@ signal OnPlayerDeath
 signal OnPlayerShoot
 signal OnPlayerAttack
 signal OnPlayerJump
+signal OnPlayerLifeChanged
 
 func _ready():
 	
@@ -420,10 +421,21 @@ func HandleShoot():
 	if((keyShootPressed) and (currentState != States.Shoot)):
 		if(Ammo.currentAmmo > 0):
 			ChangeState(States.ChargeShoot)
+			
+func AddHealth(_points: int):
+	currentHealthPoints += _points
+	currentHealthPoints = clampi(currentHealthPoints,0,healthPoints)
+	emit_signal("OnPlayerLifeChanged")
+	
+func RemoveHealth(_points: int):
+	currentHealthPoints -= _points
+	currentHealthPoints = clampi(currentHealthPoints,0,healthPoints)
+	emit_signal("OnPlayerLifeChanged")
 
 func TakeDamage(hitboxSource: Hitbox):
 	if (currentState != States.Hurt and currentState != States.Death and currentState != States.Knockback):
-		currentHealthPoints -= hitboxSource.damage
+		#currentHealthPoints -= hitboxSource.damage
+		RemoveHealth(hitboxSource.damage)
 		lastHitbox = hitboxSource
 		lastHitLocation = hitboxSource.global_position
 		hitboxSource.DealDamage()
@@ -447,7 +459,6 @@ func DestroyPlayer():
 	
 func ChangeSpriteColor():
 	pass
-
 
 func _on_melee_hitbox_on_hit() -> void:
 	Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"HitVibration")

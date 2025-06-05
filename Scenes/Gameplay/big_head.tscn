@@ -314,6 +314,20 @@ tracks/8/keys = {
 "method": &"NodeShake"
 }]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../..")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"StopMoveToTarget"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_acb6e"]
 _data = {
@@ -438,6 +452,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.65661e-09, 0.335229)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0632486, 9.31323e-10, 0)
 script = ExtResource("9_sic3r")
 damage = 3
+randomID = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visual/Hand/Damage/Hitbox"]
 transform = Transform3D(1, 0, -8.9407e-08, -1.49012e-08, 1, 7.45058e-09, 1.49012e-08, -1.11759e-08, 1, 0, 0, 0)

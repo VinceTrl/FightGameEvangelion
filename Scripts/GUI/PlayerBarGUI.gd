@@ -27,6 +27,7 @@ func _ready() -> void:
 		
 	player.OnPlayerTakeDamage.connect(UpdateLifeBar)
 	player.OnPlayerDeath.connect(UpdateLifeBar)
+	player.OnPlayerLifeChanged.connect(UpdateLifeBar)
 	
 	player.OnPlayerShoot.connect(UpdateAmmo)
 	player.Ammo.OnAmmoAdded.connect(UpdateAmmo)

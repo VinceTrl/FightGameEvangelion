@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xwgg0ijyksjl"
+path="res://.godot/imported/002.Synth_MLT_menu_Menu Select.wav-cc49b0a011c88ec2ff0e843a3e0a0480.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/Sonic/002.Synth_MLT_menu_Menu Select.wav"
+dest_files=["res://.godot/imported/002.Synth_MLT_menu_Menu Select.wav-cc49b0a011c88ec2ff0e843a3e0a0480.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

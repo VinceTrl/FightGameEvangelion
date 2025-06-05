@@ -6,3 +6,5 @@
 script = ExtResource("1_hn25t")
 itemName = &"EXPLOSION"
 scenePath = &"res://Scenes/Gameplay/explosion.tscn"
+spawnOnGround = false
+groundOffset = Vector3(0, 0, 0)

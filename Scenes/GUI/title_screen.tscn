@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b3mth673b81vv" path="res://Assets/GUI/Images/BSA-Title.png" id="1_ordgo"]
 [ext_resource type="Script" path="res://Scripts/GUI/TitleScreen.gd" id="1_q3f6b"]
-[ext_resource type="AudioStream" uid="uid://4e47k78nu4pd" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Ready 7_01.wav" id="3_lcwfg"]
+[ext_resource type="AudioStream" uid="uid://xwgg0ijyksjl" path="res://Assets/Sounds/SFX/Sonic/002.Synth_MLT_menu_Menu Select.wav" id="3_uv7k6"]
 
 [sub_resource type="Animation" id="Animation_vdg6d"]
 length = 0.001
@@ -92,4 +92,4 @@ texture = ExtResource("1_ordgo")
 expand_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_lcwfg")
+stream = ExtResource("3_uv7k6")

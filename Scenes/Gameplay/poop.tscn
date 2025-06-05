@@ -107,6 +107,7 @@ max_contacts_reported = 1
 script = ExtResource("1_g0msx")
 moveSpeed = 300.0
 scalingCurve = SubResource("Curve_icfqe")
+exploScaleMultiplier = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000732422, 0.237862, 0)
