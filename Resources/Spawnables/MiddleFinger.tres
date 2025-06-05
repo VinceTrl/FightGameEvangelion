@@ -4,5 +4,7 @@
 
 [resource]
 script = ExtResource("1_84047")
-itemName = &"POOP"
+itemName = &"MIDDLE_FINGER"
 scenePath = &"res://Scenes/Gameplay/poop.tscn"
+spawnOnGround = true
+groundOffset = Vector3(0, 0.25, 0)

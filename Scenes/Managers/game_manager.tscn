@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://c38gsdfy72awb"]
+[gd_scene load_steps=12 format=3 uid="uid://c38gsdfy72awb"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameManager.gd" id="1_6hf0t"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/TimeEffects.gd" id="2_c8bkv"]
 [ext_resource type="PackedScene" uid="uid://c8kqnefy3vkr2" path="res://Scenes/Managers/vibration_manager.tscn" id="3_otru3"]
 [ext_resource type="PackedScene" uid="uid://bwvyar8y8lpaw" path="res://Scenes/Gameplay/post_process_effects.tscn" id="4_fa6t8"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/spawn_manager.gd" id="5_u6occ"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="6_ar45l"]
+[ext_resource type="Resource" uid="uid://b0okcggscbndq" path="res://Resources/Spawnables/FallingProjectile.tres" id="7_2at6g"]
+[ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="8_qwwg1"]
+[ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="9_s7kaf"]
+[ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="10_6w68r"]
+[ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="11_qg3go"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_6hf0t")
@@ -22,5 +28,4 @@ one_shot = true
 
 [node name="SpawnManager" type="Node" parent="."]
 script = ExtResource("5_u6occ")
-randomSpawnDelayMin = 5.0
-randomSpawnDelayMax = 10.0
+items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("11_qg3go")])

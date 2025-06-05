@@ -11,3 +11,6 @@
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_y2u6x")
 items = Array[ExtResource("2_m4idx")]([ExtResource("4_14cl3"), ExtResource("5_ox188"), ExtResource("5_3if13"), ExtResource("6_ntebu"), ExtResource("7_jr222")])
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -10, 0)

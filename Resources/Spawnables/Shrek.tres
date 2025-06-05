@@ -6,3 +6,5 @@
 script = ExtResource("1_ktipc")
 itemName = &"SHREK"
 scenePath = &"res://Scenes/Gameplay/shrek_item.tscn"
+spawnOnGround = true
+groundOffset = Vector3(0, 0, 0)

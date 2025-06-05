@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c10s4jr67srmp"
-valid=false
+path="res://.godot/imported/SlapBros_Cafou.blend-aff1a3bd75f75aedfbec603ea8713018.scn"
 
 [deps]
 
 source_file="res://Sources/Blend/SlapBros_Cafou.blend"
+dest_files=["res://.godot/imported/SlapBros_Cafou.blend-aff1a3bd75f75aedfbec603ea8713018.scn"]
 
 [params]
 
