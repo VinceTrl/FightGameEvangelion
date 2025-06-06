@@ -7,7 +7,9 @@ extends PlayerState
 @export var dashMomentum = 1.2
 
 @onready var collision_shape_hurtbox: CollisionShape3D = $"../../Hurtbox/CollisionShape3D"
+@onready var ground_location: Marker3D = $"../../GroundLocation"
 
+const VFX_2D_DASH_SMOKE = preload("res://Scenes/VFX/VFX2D/vfx_2d_dash_smoke.tscn")
 
 func EnterState():
 	Name = "Dash"
@@ -21,6 +23,10 @@ func EnterState():
 	Player.animator.play("Dash")
 	Player.HandleFlipH()
 	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"DashVibration")
+	
+	var vfx = VFX_2D_DASH_SMOKE.instantiate()
+	vfx.global_position = ground_location.global_position
+	get_tree().current_scene.add_child(vfx)
 	
 func ExitState():
 	collision_shape_hurtbox.disabled = false

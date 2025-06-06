@@ -75,8 +75,8 @@ func FollowCharacter():
 		TweenPosition.kill()
 		
 	TweenPosition = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD).set_parallel(true)
-	TweenPosition.tween_property(self,"position:x",_targetPos.x,posSmoothX)
-	TweenPosition.tween_property(self,"position:y",_targetPos.y,posSmoothY)
+	TweenPosition.tween_property(self,"global_position:x",_targetPos.x,posSmoothX)
+	TweenPosition.tween_property(self,"global_position:y",_targetPos.y,posSmoothY)
 	
 func Destroy():
 	isFollowingCharacter = false

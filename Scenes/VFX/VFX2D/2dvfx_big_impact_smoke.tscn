@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://c3we8840pvurs"]
+
+[ext_resource type="Texture2D" uid="uid://dmrlp03hmfkfi" path="res://Assets/Sprites/Vfx/Smoke/BIG IMPACT SMOKE.png" id="1_xlr3c"]
+[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="2_jivd8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmgy1"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(0, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is4g6"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(176, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xedqx"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(352, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vixkw"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(528, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohyvn"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(704, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgq27"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(880, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75cfm"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(1056, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmtr2"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(1232, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7h62"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(1408, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixrpm"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(1584, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7ed4"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(1760, 0, 176, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmlc6"]
+atlas = ExtResource("1_xlr3c")
+region = Rect2(1936, 0, 176, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kowy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmgy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is4g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xedqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vixkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohyvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgq27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75cfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmtr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7h62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixrpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7ed4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmlc6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="2DVFX_BigImpactSmoke" type="AnimatedSprite3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_kowy6")
+autoplay = "default"
+frame = 11
+frame_progress = 1.0
+script = ExtResource("2_jivd8")
+instanceScale = Vector3(0.35, 0.35, 0.35)
+instanceOffset = Vector3(0, 0.05, 0)

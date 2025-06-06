@@ -20,6 +20,6 @@ func _on_area_entered(hitbox : Hitbox) -> void:
 	if (hitbox.owner == owner): return
 	if (hitbox.owner_id == owner_id): return
 	if (!hitbox.isActive):return
-	
+
 	if owner.has_method("TakeDamage"):
 		owner.TakeDamage(hitbox)

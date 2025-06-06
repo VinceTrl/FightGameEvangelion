@@ -1340,6 +1340,10 @@ collide_with_areas = true
 debug_shape_custom_color = Color(0.366727, 0.432952, 0.970629, 1)
 debug_shape_thickness = 1
 
+[node name="GroundLocation" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.200597, 0)
+gizmo_extents = 0.38
+
 [connection signal="timeout" from="Timers/RecoilTimer" to="StateMachine/Shoot" method="_on_recoil_timer_timeout"]
 [connection signal="timeout" from="Timers/ChargeAttackTimer" to="StateMachine/ChargingAttack" method="_on_charge_attack_timer_timeout"]
 [connection signal="OnHit" from="Hitbox" to="." method="_on_melee_hitbox_on_hit"]

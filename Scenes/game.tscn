@@ -7,12 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
-[ext_resource type="PackedScene" uid="uid://bdvwx0kkjddp" path="res://Scenes/Gameplay/heart.tscn" id="9_nmthy"]
 [ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
 [ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
-[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -20,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
 [ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="18_87cti"]
+[ext_resource type="PackedScene" uid="uid://0v8xynlbpg3q" path="res://Scenes/Gameplay/middle_finger.tscn" id="18_sg1if"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -61,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2757, 1.25418, 0.113311)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2662, 2.25418, 0.113311)
 
 [node name="AmmoItem4" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 0)
 
 [node name="AmmoItem5" parent="Gameplay" instance=ExtResource("13_8m82v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48458, 1.25418, 0.113311)
@@ -76,16 +76,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Spawner2" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0)
 
 [node name="Spawner3" parent="Gameplay" instance=ExtResource("8_dreha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0)
 
 [node name="Spawner4" parent="Gameplay" instance=ExtResource("8_dreha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
-
-[node name="Heart" parent="Gameplay" instance=ExtResource("9_nmthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.35, 0)
 
 [node name="GUI" type="Node" parent="."]
 
@@ -186,6 +183,9 @@ spot_angle = 47.6542
 
 [node name="Poop" parent="Enviro" instance=ExtResource("18_87cti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60528, 1.10266, 0)
+
+[node name="MiddleFinger" parent="Enviro" instance=ExtResource("18_sg1if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501634, 0)
 
 [node name="TimerOutSpawners" parent="." instance=ExtResource("17_avc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

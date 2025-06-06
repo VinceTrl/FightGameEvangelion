@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://dh5mbu3e335y5"]
+
+[ext_resource type="Texture2D" uid="uid://brmaylobfulfh" path="res://Assets/Sprites/Vfx/Smoke/MEDIUM SMOKE.png" id="1_tu2st"]
+[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="2_i44g1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnuog"]
+atlas = ExtResource("1_tu2st")
+region = Rect2(0, 0, 39, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g4c4"]
+atlas = ExtResource("1_tu2st")
+region = Rect2(39, 0, 39, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmj5i"]
+atlas = ExtResource("1_tu2st")
+region = Rect2(78, 0, 39, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p45uo"]
+atlas = ExtResource("1_tu2st")
+region = Rect2(117, 0, 39, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he2e3"]
+atlas = ExtResource("1_tu2st")
+region = Rect2(156, 0, 39, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhdvl"]
+atlas = ExtResource("1_tu2st")
+region = Rect2(195, 0, 39, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1fup"]
+atlas = ExtResource("1_tu2st")
+region = Rect2(234, 0, 39, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcbtf"]
+atlas = ExtResource("1_tu2st")
+region = Rect2(273, 0, 39, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smx0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnuog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g4c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmj5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p45uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he2e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhdvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1fup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcbtf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Vfx2D_MediumSmoke" type="AnimatedSprite3D"]
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_smx0s")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+script = ExtResource("2_i44g1")

@@ -99,6 +99,7 @@ func SetLookTarget(_target:Node3D):
 	
 func LookAtTarget():
 	if(!canLookAtTarget): return
+	if(lookTarget == null): return
 
 	eye_l.look_at(lookTarget.global_position,Vector3.UP,true)
 	eye_r.global_rotation = eye_l.global_rotation

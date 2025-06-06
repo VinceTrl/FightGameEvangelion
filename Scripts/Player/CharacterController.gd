@@ -24,9 +24,11 @@ extends CharacterBody3D
 @onready var nodeShaker: NodeShaker = $NodeShaker
 @onready var raycastHolder: Node3D = $RaycastHolder
 @onready var backPlayerDetection: RayCast3D = $RaycastHolder/BackPlayerDetection
+@onready var ground_location: Marker3D = $GroundLocation
 
 const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 const SD_GROUND_HIT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_GroundHit.wav")
+const VFX_2D_LANDING = preload("res://Scenes/VFX/VFX2D/vfx_2d_landing.tscn")
 
 @export var playerID = 1
 
@@ -271,7 +273,10 @@ func HandleLanding():
 		sfx.stream = SD_GROUND_HIT
 		sfx.play()
 		Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"LandingVibration")
-		
+		var vfx = VFX_2D_LANDING.instantiate()
+		vfx.global_position = ground_location.global_position
+		get_tree().current_scene.add_child(vfx)
+			
 func ResetDash():
 	dashes = 0
 	
@@ -462,3 +467,7 @@ func ChangeSpriteColor():
 
 func _on_melee_hitbox_on_hit() -> void:
 	Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"HitVibration")
+
+
+func _on_hurtbox_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.

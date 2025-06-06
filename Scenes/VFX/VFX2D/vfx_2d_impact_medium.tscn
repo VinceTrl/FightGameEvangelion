@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1ect6ccjmigm"]
+
+[ext_resource type="Texture2D" uid="uid://dykar3hxwibxl" path="res://Assets/Sprites/Vfx/Smoke/ImpactMedium1.png" id="1_1xffe"]
+[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="2_60tkm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn6tm"]
+atlas = ExtResource("1_1xffe")
+region = Rect2(0, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnopk"]
+atlas = ExtResource("1_1xffe")
+region = Rect2(48, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6wc8"]
+atlas = ExtResource("1_1xffe")
+region = Rect2(96, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srhwe"]
+atlas = ExtResource("1_1xffe")
+region = Rect2(144, 0, 48, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6drh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn6tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnopk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6wc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srhwe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Vfx2D_ImpactMedium" type="AnimatedSprite3D"]
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_6drh8")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_60tkm")

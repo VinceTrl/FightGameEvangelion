@@ -19,13 +19,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02546, -3.13538, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03871, 0.999997, 0)
 
 [node name="Building_largeA10" parent="." instance=ExtResource("1_0ofor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97988, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4269, 0, 0)
 
 [node name="Building_largeA8" parent="." instance=ExtResource("1_0ofor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03513, 2, 0.101881)
 
 [node name="Mesh_Plateforme_01" parent="." instance=ExtResource("2_wsm1i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24315, 1.11842, 0.0375027)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243, 1.118, 0.2)
 
 [node name="Mesh_Plateforme_02" parent="." instance=ExtResource("2_wsm1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49955, 2.14989, 0.0375027)

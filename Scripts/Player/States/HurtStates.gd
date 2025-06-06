@@ -4,6 +4,9 @@ extends PlayerState
 @export var hurtDuration = 0.1
 @export var damageGlitchEffect: GlitchParameters
 @onready var hurtTimer: Timer = $"../../Timers/HurtTimer"
+@onready var ground_location: Marker3D = $"../../GroundLocation"
+
+const VFX_2D_IMPACT_MEDIUM = preload("res://Scenes/VFX/VFX2D/vfx_2d_impact_medium.tscn")
 
 var hurtTime = 0.0
 var direction = Vector3.ZERO
@@ -18,6 +21,10 @@ func EnterState():
 	hurtTimer.start(hurtTime)
 	Player.Ammo.AddTime()
 	
+	var vfx = VFX_2D_IMPACT_MEDIUM.instantiate()
+	vfx.global_position = Player.global_position
+	get_tree().current_scene.add_child(vfx)
+	
 	#Hurt effects
 	Manager.timeManager.freezeFrame(0.001,0.2)
 	Player.sprite.HitColorEffect()
@@ -26,6 +33,8 @@ func EnterState():
 	Manager.gameCamera.FocusTargetZoom(Player,Manager.gameCamera.GetZoomParamFromName("HitZoom"))
 	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"HurtVibration")
 	Manager.postProcessEffects.GlitchEffect(damageGlitchEffect)
+	
+	
 	
 func ExitState():
 	pass

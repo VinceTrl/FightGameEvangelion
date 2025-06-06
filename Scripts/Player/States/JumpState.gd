@@ -1,7 +1,9 @@
 extends PlayerState
 
 @onready var animator: AnimationPlayer = $"../../Animator"
+@onready var ground_location: Marker3D = $"../../GroundLocation"
 
+const JUMP_VFX = preload("res://Scenes/VFX/VFX2D/2dvfx_big_impact_smoke.tscn")
 
 func EnterState():
 	Name = "Jump"
@@ -9,6 +11,12 @@ func EnterState():
 	Player.animator.play("JumpStart")
 	Player.emit_signal("OnPlayerJump")
 	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"JumpVibration")
+	
+	var jumpVfx = JUMP_VFX.instantiate()
+	jumpVfx.global_position = ground_location.global_position
+	get_tree().current_scene.add_child(jumpVfx)
+
+	
 	
 func ExitState():
 	pass
