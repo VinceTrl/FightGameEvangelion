@@ -32,10 +32,10 @@ func RegisterSpawner(_spawnerToAdd: Spawner):
 	
 func RandomSpawn():
 	var spawner: Spawner = PickRandomSpawner()
-	print(str(spawner))
+	#print(str(spawner))
 	var _itemToSpawn = PickRandomItem()
 	spawner.SpawnExternalItem(_itemToSpawn)
-	print("spawning : " + str(_itemToSpawn.resource_name))
+	#print("spawning : " + str(_itemToSpawn.resource_name))
 	
 func PickRandomSpawner() -> Spawner:
 	var ranIndex = randi_range(0,spawners.size()-1)
@@ -44,13 +44,13 @@ func PickRandomSpawner() -> Spawner:
 func PickRandomItemOnSpawner(_spawner : Spawner) -> StringName:
 	randomize()
 	var ranIndex = randi_range(0,_spawner.items.size()-1)
-	print("items max range : " + str(_spawner.items.size()-1))
-	print("index : " + str(ranIndex))
+	#print("items max range : " + str(_spawner.items.size()-1))
+	#print("index : " + str(ranIndex))
 	return _spawner.items[ranIndex].itemName
 	
 func PickRandomItem() -> SpawnableItem:
 	randomize()
 	var ranIndex = randi_range(0,items.size()-1)
-	print("items max range : " + str(items.size()-1))
-	print("index : " + str(ranIndex))
+	#print("items max range : " + str(items.size()-1))
+	#print("index : " + str(ranIndex))
 	return items[ranIndex]

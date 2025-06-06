@@ -83,6 +83,7 @@ func _ready() -> void:
 	init_glitchIntensity = gameplay_post_process.configuration.GlitchIntenity
 	init_glitchOffset = gameplay_post_process.configuration.GlitchOffset
 	init_glitchColorOffset = gameplay_post_process.configuration.GlitchColorOffset
+	print("INIT GLITCH")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -95,6 +96,13 @@ func DebugPostProcess() -> void:
 		#ChromaticAberrationEffect()
 		#GrainEffect()
 		GlitchEffect()
+		
+func ResetAll():
+	ResetSpeedLines()
+	ResetGrain()
+	ResetChromaticAberration()
+	ResetStorm()
+	ResetGlitch()
 	
 	
 # SPEED LINES
@@ -240,12 +248,14 @@ func GlitchEffect(_params: GlitchParameters = glitchParams, _timer: Timer = glit
 	
 	#Reset Anim if it's already animating
 	if(inAnimGlitch):
+		print("RESET GLITCH")
 		_timer.stop()
 		ResetGlitch()
 		
 	#Start animation
 	inAnimGlitch = true
 	_timer.start(_time)
+	print("START GLITCH")
 	
 	#Animation frame update
 	while _timer.time_left > 0.0:

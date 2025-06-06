@@ -27,6 +27,8 @@ func ExitGame():
 	var timer = get_tree().create_timer(0.5,true,false,true)
 	await timer.timeout
 	
+	Manager.postProcessEffects.ResetAll()
+	
 	if(manager.scoreManager.fightIsFinished):
 		#go to winner screen
 		manager.ChangeGameState(GameState.WinnerScreen)

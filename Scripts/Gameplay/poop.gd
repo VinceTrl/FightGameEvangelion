@@ -12,13 +12,18 @@ const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
 @export var healthPoints = 6
 @export var gravity : float = 9.8
 @export var moveSpeed = 100.0
+@export var rotation_factor = 2.0
+@export var impulseForce = 10.0
+
+@export_group("SCALE VARIABLES")
 @export var scaleMin = 0.25
 @export var scaleMax = 2.0
 @export var scalingCurve : Curve
 @export var maxDistanceForScale = 20.0
 @export var exploScaleMultiplier : float = 2.0
+@export_group("")
 
-@export var rotation_factor = 2.0
+
 
 var moveDirection: Vector3 = Vector3(1,0,0)
 var canMove = false
@@ -89,7 +94,7 @@ func TakeDamage(hitboxSource: Hitbox):
 	
 	var nextDir = (global_position - hitboxSource.global_position).normalized()
 	moveDirection = Vector3(nextDir.x,0,0)
-	apply_impulse(nextDir * 5)
+	apply_impulse(nextDir * impulseForce)
 	
 	if(hitboxSource.type == hitboxSource.DamageType.projectile):
 		DestroyPoop()

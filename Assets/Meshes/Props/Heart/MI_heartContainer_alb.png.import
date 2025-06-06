@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdbkvq68uscka"
-path="res://.godot/imported/mi_heartcontainer_alb.png-19a5905846ad2ca086e455a44a363ec6.ctex"
+path.s3tc="res://.godot/imported/mi_heartcontainer_alb.png-19a5905846ad2ca086e455a44a363ec6.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Meshes/Props/Heart/mi_heartcontainer_alb.png"
-dest_files=["res://.godot/imported/mi_heartcontainer_alb.png-19a5905846ad2ca086e455a44a363ec6.ctex"]
+dest_files=["res://.godot/imported/mi_heartcontainer_alb.png-19a5905846ad2ca086e455a44a363ec6.s3tc.ctex"]
 
 [params]
 
