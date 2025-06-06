@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://brmxgb6qr55p2"]
+
+[ext_resource type="Script" path="res://Scripts/VFX/ShootVFX.gd" id="1_keg2v"]
+[ext_resource type="Texture2D" uid="uid://cwi3hqlu0non7" path="res://Assets/Sprites/Vfx/Hit Effect 01 1.png" id="2_e0xx1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmocq"]
+atlas = ExtResource("2_e0xx1")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crunq"]
+atlas = ExtResource("2_e0xx1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x8sq"]
+atlas = ExtResource("2_e0xx1")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq66n"]
+atlas = ExtResource("2_e0xx1")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rub2m"]
+atlas = ExtResource("2_e0xx1")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7l8p"]
+atlas = ExtResource("2_e0xx1")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i57xr"]
+atlas = ExtResource("2_e0xx1")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cvmj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmocq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crunq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x8sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iq66n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rub2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7l8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i57xr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="ShootVFX" type="Node3D"]
+script = ExtResource("1_keg2v")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Visual"]
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_2cvmj")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0

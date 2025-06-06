@@ -3,6 +3,8 @@ extends PlayerState
 @onready var projectileScene = preload("res://Scenes/Projectile.tscn")
 @onready var recoil_timer: Timer = $"../../Timers/RecoilTimer"
 
+const SHOOT_VFX = preload("res://Scenes/VFX/shoot_vfx.tscn")
+
 @export var minRecoilSpeed = 0.5
 @export var maxRecoilSpeed = 6.0
 @export var recoilDuration = 0.15
@@ -57,10 +59,14 @@ func StartRecoil():
 func SpawnProjectile():
 	Player.Ammo.RemoveAmmo()
 	var _projectile = projectileScene.instantiate()
+	var _shootFx = SHOOT_VFX.instantiate()
 	if(_projectile == null) : return
 	
 	_projectile.global_position = Player.shootPoint.global_position
 	add_child(_projectile)
+	
+	_shootFx.global_position = Player.shootPoint.global_position
+	add_child(_shootFx)
 	
 	var _shootDir = Player.GetDirectionOn8Axis()
 	_projectile.SetupProjectile(Player.playerID,_shootDir,Player.shootPoint.global_position)

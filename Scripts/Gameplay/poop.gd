@@ -12,8 +12,10 @@ const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
 @export var healthPoints = 6
 @export var gravity : float = 9.8
 @export var moveSpeed = 100.0
-@export var rotation_factor = 2.0
 @export var impulseForce = 10.0
+@export var rotateWhileMoving = true
+@export var rotation_factor = 2.0
+
 
 @export_group("SCALE VARIABLES")
 @export var scaleMin = 0.25
@@ -68,6 +70,8 @@ func growUpPoop():
 	scale.z = GetTargetScale()
 	
 func poopRotation(_delta : float):
+	if(!rotateWhileMoving): return
+	
 	var velocity = linear_velocity
 	var speed = velocity.length()
 	var rotation_amount = speed * rotation_factor
@@ -106,11 +110,31 @@ func TakeDamage(hitboxSource: Hitbox):
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	animation_player.play("Hurt")
 	
+	#HurtAnim()
+	
 func ChangeDirection():
 	moveDirection = -moveDirection #bounce direction
+	
+	
+func HurtAnim(_animDuration: float = 0.6,_scaleToAdd: float = 0.25):
+	
+	var initScale = poopMesh.scale
+	var tweenScale = get_tree().create_tween()
+	tweenScale.set_ease(Tween.EASE_OUT)
+	tweenScale.set_trans(Tween.TRANS_BOUNCE)
+	tweenScale.set_parallel(true)
+	
+	var targetScale = initScale.x + _scaleToAdd
+	
+	tweenScale.tween_property(poopMesh,"scale:x",targetScale,_animDuration)
+	tweenScale.tween_property(poopMesh,"scale:y",targetScale,_animDuration)
+	await tweenScale.tween_property(poopMesh,"scale:z",targetScale,_animDuration).finished
+	
+	poopMesh.scale = initScale
+	
 
 func _on_body_entered(body: Node) -> void:
-	print("COL POOP")
+	#print("COL POOP")
 	
 	#check wall
 	if(left_wall_checker.get_collider()):

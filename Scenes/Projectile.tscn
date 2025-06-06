@@ -84,10 +84,12 @@ parrySpeedCurve = ExtResource("2_h0nys")
 shape = SubResource("SphereShape3D_dkyrq")
 
 [node name="BulletSprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_lalks")
 animation = &"Shoot"
-frame_progress = 0.526873
+autoplay = "Shoot"
+frame_progress = 0.37397
 
 [node name="Hitbox" type="Area3D" parent="."]
 script = ExtResource("10_cujeu")
