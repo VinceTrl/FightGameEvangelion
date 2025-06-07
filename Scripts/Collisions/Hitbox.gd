@@ -15,6 +15,10 @@ func _init() -> void:
 	
 	if(randomID):
 		owner_id = (randi_range(-100000,100000))
+		
+func _ready() -> void:
+	if(randomID):
+		owner_id = (randi_range(-100000,100000))
 	
 func ActiveHitBox():
 	isActive = true

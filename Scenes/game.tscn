@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=23 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
 [ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="18_87cti"]
 [ext_resource type="PackedScene" uid="uid://0v8xynlbpg3q" path="res://Scenes/Gameplay/middle_finger.tscn" id="18_sg1if"]
+[ext_resource type="PackedScene" uid="uid://cngp7x80lhlug" path="res://Scenes/Gameplay/sasuke.tscn" id="21_0xmmj"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -203,6 +204,9 @@ volume_db = -15.0
 autoplay = true
 bus = &"Music"
 parameters/looping = false
+
+[node name="Sasuke" parent="." instance=ExtResource("21_0xmmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06309, 0, 0)
 
 [editable path="Gameplay/Player2"]
 [editable path="Enviro/Node3D"]
