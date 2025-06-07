@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://c2le3his51l3c"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_phbkn"]
+
+[resource]
+script = ExtResource("1_phbkn")
+itemName = &"SASUKE"
+scenePath = &"res://Scenes/Gameplay/sasuke.tscn"
+spawnOnGround = true
+groundOffset = Vector3(0, 0, 0)
