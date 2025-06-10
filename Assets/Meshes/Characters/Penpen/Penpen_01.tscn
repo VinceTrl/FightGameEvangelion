@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://kqpbwnd4vdet"]
+
+[ext_resource type="PackedScene" uid="uid://dcta1ht6h4p3y" path="res://Sources/Meshes/Mesh_Penpen_01.fbx" id="1_jk6xu"]
+
+[node name="Mesh_Penpen_01" instance=ExtResource("1_jk6xu")]
+
+[node name="Skeleton3D" parent="Armature" index="1"]
+bones/1/rotation = Quaternion(-5.45837e-05, -0.0565723, 0.998301, -0.0139507)
+bones/2/rotation = Quaternion(0.194213, 0.02582, -0.402663, 0.894135)
+bones/5/rotation = Quaternion(-0.0837378, -0.028975, 0.381601, 0.92007)
+bones/6/rotation = Quaternion(0.240254, -0.170593, -0.0765593, 0.952531)
+bones/9/rotation = Quaternion(2.95611e-08, 2.8113e-08, 0.0966036, 0.995323)
+bones/10/rotation = Quaternion(7.73213e-08, 9.45423e-09, 0.0906717, 0.995881)
+bones/14/rotation = Quaternion(-0.0173512, -0.0937832, 0.884855, -0.455999)
+bones/17/rotation = Quaternion(-0.0172515, 0.00903874, 0.933776, 0.357328)
+bones/20/position = Vector3(0.000260292, -0.0268545, 0.00127372)
+bones/20/rotation = Quaternion(0.198005, 0.00896586, -0.00507387, 0.980147)
