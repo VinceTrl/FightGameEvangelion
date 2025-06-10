@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://4kux6idtqvus"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_ia26c"]
+
+[resource]
+script = ExtResource("1_ia26c")
+itemName = &"HEART"
+scenePath = &"res://Scenes/Gameplay/trap_heart.tscn"
+spawnOnGround = true
+groundOffset = Vector3(0, 0.35, 0)
