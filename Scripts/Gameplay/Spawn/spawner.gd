@@ -5,6 +5,8 @@ extends Node3D
 @export var registerOnManager = true
 @onready var ground_raycast: RayCast3D = $GroundRaycast
 
+const VFX_2D_SPAWN_SMOKE = preload("res://Scenes/VFX/VFX2D/vfx_2d_spawn_smoke.tscn")
+
 func _ready() -> void:
 	PreloadResources()
 	
@@ -53,6 +55,11 @@ func SpawnExternalItem(_itemToSpawn: SpawnableItem):
 	if(_itemToSpawn.spawnOnGround and ground_raycast.get_collider() != null):
 		_spawnPos = ground_raycast.get_collision_point()
 		_spawnPos = _spawnPos + _itemToSpawn.groundOffset
+		
+		
+	var vfx = VFX_2D_SPAWN_SMOKE.instantiate()
+	vfx.global_position = _spawnPos
+	get_tree().current_scene.add_child(vfx)
 		
 	
 	var _itemInstance = _itemToSpawn.resource.instantiate()

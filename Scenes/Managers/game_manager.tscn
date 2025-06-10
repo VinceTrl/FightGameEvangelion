@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="10_6w68r"]
 [ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="11_qg3go"]
 [ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="12_2b18o"]
-[ext_resource type="Resource" uid="uid://c2le3his51l3c" path="res://Resources/Spawnables/Sasuke.tres" id="13_ikaak"]
+[ext_resource type="Resource" uid="uid://4kux6idtqvus" path="res://Resources/Spawnables/TrapHeart.tres" id="13_h0apr"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_6hf0t")
@@ -30,6 +30,6 @@ one_shot = true
 
 [node name="SpawnManager" type="Node" parent="."]
 script = ExtResource("5_u6occ")
-randomSpawnDelayMin = 10.0
-randomSpawnDelayMax = 20.0
-items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("11_qg3go"), ExtResource("12_2b18o"), ExtResource("13_ikaak")])
+randomSpawnDelayMin = 5.0
+randomSpawnDelayMax = 10.0
+items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("12_2b18o"), ExtResource("11_qg3go"), ExtResource("13_h0apr")])

@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7qdjreebkuml"]
+
+[ext_resource type="Texture2D" uid="uid://buyd07g4rxlr1" path="res://Assets/Sprites/Vfx/Smoke/SMALL SIDE PUFF 2.png" id="1_sqhk5"]
+[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="2_2a60s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ltc5"]
+atlas = ExtResource("1_sqhk5")
+region = Rect2(0, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc4gb"]
+atlas = ExtResource("1_sqhk5")
+region = Rect2(25, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xebn"]
+atlas = ExtResource("1_sqhk5")
+region = Rect2(50, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v274"]
+atlas = ExtResource("1_sqhk5")
+region = Rect2(75, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdr4q"]
+atlas = ExtResource("1_sqhk5")
+region = Rect2(100, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oek18"]
+atlas = ExtResource("1_sqhk5")
+region = Rect2(125, 0, 25, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouger"]
+atlas = ExtResource("1_sqhk5")
+region = Rect2(150, 0, 25, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2fmm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ltc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc4gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc4gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xebn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xebn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v274")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v274")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdr4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oek18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouger")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouger")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Vfx2DSpawnSmoke" type="AnimatedSprite3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+render_priority = 2
+sprite_frames = SubResource("SpriteFrames_a2fmm")
+autoplay = "default"
+frame = 10
+frame_progress = 1.0
+script = ExtResource("2_2a60s")
+instanceScale = Vector3(5, 5, 5)
