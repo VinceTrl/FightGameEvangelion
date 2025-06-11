@@ -170,6 +170,7 @@ spot_angle = 35.4299
 
 [node name="BackgroundMesh" type="MeshInstance3D" parent="Enviro/Lighting"]
 transform = Transform3D(-0.0794317, 0.0450254, 0.547176, 0.0994026, 0.51173, -0.0236528, -0.41578, 0.11374, -0.110189, -0.182486, -1.39818, -13.1081)
+visible = false
 material_override = ExtResource("14_u3ss6")
 mesh = ExtResource("13_3v2jh")
 
