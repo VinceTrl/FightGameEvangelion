@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnh4h6i2wqw74"]
+[gd_scene load_steps=18 format=3 uid="uid://bnh4h6i2wqw74"]
 
 [ext_resource type="Material" uid="uid://g8elc2l26ieh" path="res://Assets/Materials/Gameplay/BasePrototype_White.tres" id="1_jd6iy"]
 [ext_resource type="Material" uid="uid://bns2qr6i381wl" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_01.tres" id="1_p7l6c"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/big_head.gd" id="1_q0pkt"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_k37p0"]
+[ext_resource type="PackedScene" uid="uid://kqpbwnd4vdet" path="res://Assets/Meshes/Characters/Penpen/Penpen_01.tscn" id="3_qqkg7"]
 [ext_resource type="Material" uid="uid://dtduq68lofknr" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_04.tres" id="3_yhial"]
 [ext_resource type="Material" uid="uid://c6o2i4cwyacq8" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_03.tres" id="4_sg0no"]
 [ext_resource type="Material" uid="uid://xjwfsyh7514w" path="res://Assets/Materials/Gameplay/BasePrototype_Grey_02.tres" id="5_4aqqg"]
@@ -357,10 +358,13 @@ autoplay = "Idle"
 
 [node name="NodeShaker" type="Node3D" parent="Visual" node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("2_k37p0")
-nodeToShake = NodePath("Head")
+nodeToShake = NodePath(".")
 magnitude = 0.06
 shakeTime = 0.4
 frequency = 1.0
+
+[node name="Mesh_Penpen_01" parent="Visual/NodeShaker" instance=ExtResource("3_qqkg7")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.262771, 0.440141, 0.489599)
 
 [node name="Head" type="CSGSphere3D" parent="Visual/NodeShaker"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.475, 0)

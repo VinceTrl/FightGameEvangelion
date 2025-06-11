@@ -5,4 +5,6 @@ class_name SpawnableItem
 @export var scenePath: StringName = "res://Scenes/Gameplay/heart.tscn"
 @export var spawnOnGround = false
 @export var groundOffset: Vector3
+@export var spawnOncePerGame: bool = false
+@export var isUniqueInstance: bool = false
 var resource

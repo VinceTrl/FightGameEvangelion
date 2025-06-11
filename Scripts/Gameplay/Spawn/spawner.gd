@@ -67,6 +67,7 @@ func SpawnExternalItem(_itemToSpawn: SpawnableItem):
 	
 	add_child(_itemInstance)
 	_itemInstance.global_position = _spawnPos
+	return _itemInstance
 	
 	
 func GetItemFromName(_name: StringName) -> SpawnableItem:

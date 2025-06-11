@@ -184,6 +184,12 @@ spot_angle = 47.6542
 [node name="Poop" parent="Enviro" instance=ExtResource("18_87cti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60528, 1.10266, 0)
 
+[node name="Poop2" parent="Enviro" instance=ExtResource("18_87cti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21292, 0.873709, 0)
+
+[node name="Poop3" parent="Enviro" instance=ExtResource("18_87cti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78708, 0.873709, 0)
+
 [node name="TimerOutSpawners" parent="." instance=ExtResource("17_avc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 

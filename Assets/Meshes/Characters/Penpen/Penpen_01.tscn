@@ -19,3 +19,6 @@ bones/14/rotation = Quaternion(-3.09423e-05, -0.102936, 0.74308, -0.661238)
 bones/17/rotation = Quaternion(-0.0135587, 0.0139812, 0.775157, 0.631469)
 bones/20/position = Vector3(0.000260292, -0.025726, 0.00127372)
 bones/20/rotation = Quaternion(0.235983, 0.00913819, -0.00473901, 0.971703)
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "Armature|Iddle"

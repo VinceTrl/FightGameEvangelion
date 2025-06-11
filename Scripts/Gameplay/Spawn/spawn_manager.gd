@@ -6,10 +6,13 @@ extends Node
 @export var items: Array[SpawnableItem] = []
 
 var spawners: Array[Spawner] = []
+var spawnableItems: Array[SpawnableItem] = []
+var uniqueInstances: Array[SpawnableItem] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Manager.spawnManager = self
+	spawnableItems = items
 	PreloadResources()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,12 +32,28 @@ func TimerRandomSpawn():
 func RegisterSpawner(_spawnerToAdd: Spawner):
 	if(spawners.has(_spawnerToAdd)): return
 	spawners.append(_spawnerToAdd)
+	print("SPAWNER REGISTERED")
 	
 func RandomSpawn():
 	var spawner: Spawner = PickRandomSpawner()
 	#print(str(spawner))
 	var _itemToSpawn = PickRandomItem()
-	spawner.SpawnExternalItem(_itemToSpawn)
+	
+	#check if it's an unique instance already spawned
+	if(_itemToSpawn.isUniqueInstance and uniqueInstances.has(_itemToSpawn)):
+		#restart spawn and cancel current function
+		RandomSpawn() 
+		return
+	elif (_itemToSpawn.isUniqueInstance):
+		uniqueInstances.append(_itemToSpawn)
+		
+	var instance = spawner.SpawnExternalItem(_itemToSpawn)
+	
+	if(instance is Node):
+		instance as Node
+		#instance.tree_exited.connect(remove)
+		
+	
 	#print("spawning : " + str(_itemToSpawn.resource_name))
 	
 func PickRandomSpawner() -> Spawner:

@@ -8,3 +8,5 @@ itemName = &"HEART"
 scenePath = &"res://Scenes/Gameplay/trap_heart.tscn"
 spawnOnGround = true
 groundOffset = Vector3(0, 0.35, 0)
+spawnOncePerGame = false
+isUniqueInstance = true

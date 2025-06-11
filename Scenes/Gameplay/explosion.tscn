@@ -105,7 +105,7 @@ script = ExtResource("1_f6h8d")
 [node name="Hitbox" type="Area3D" parent="."]
 script = ExtResource("2_mvvmk")
 owner_id = 1000
-type = 2
+type = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("SphereShape3D_srisn")
