@@ -9,6 +9,8 @@ var spawners: Array[Spawner] = []
 var spawnableItems: Array[SpawnableItem] = []
 var uniqueInstances: Array[SpawnableItem] = []
 
+var spawned_instances = {} # Dictionnary of unique instances
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Manager.spawnManager = self
@@ -40,19 +42,23 @@ func RandomSpawn():
 	var _itemToSpawn = PickRandomItem()
 	
 	#check if it's an unique instance already spawned
-	if(_itemToSpawn.isUniqueInstance and uniqueInstances.has(_itemToSpawn)):
-		#restart spawn and cancel current function
-		RandomSpawn() 
-		return
-	elif (_itemToSpawn.isUniqueInstance):
-		uniqueInstances.append(_itemToSpawn)
+	if(_itemToSpawn.isUniqueInstance):
+		for spawnable_item in spawned_instances.keys():
+			if spawned_instances[spawnable_item] == _itemToSpawn:
+				#it's already spawned >>> restart spawn and cancel current function
+				RandomSpawn() 
+				return
+				
+	#check if it's an unique spawn
+	if(_itemToSpawn.spawnOncePerGame):
+		spawnableItems.erase(_itemToSpawn)
 		
 	var instance = spawner.SpawnExternalItem(_itemToSpawn)
 	
-	if(instance is Node):
+	if(instance is Node and _itemToSpawn.isUniqueInstance):
 		instance as Node
-		#instance.tree_exited.connect(remove)
-		
+		spawned_instances[instance] = _itemToSpawn
+		instance.tree_exited.connect(Callable(self, "RemoveUniqueInstance").bind(instance))
 	
 	#print("spawning : " + str(_itemToSpawn.resource_name))
 	
@@ -69,7 +75,21 @@ func PickRandomItemOnSpawner(_spawner : Spawner) -> StringName:
 	
 func PickRandomItem() -> SpawnableItem:
 	randomize()
-	var ranIndex = randi_range(0,items.size()-1)
+	var ranIndex = randi_range(0,spawnableItems.size()-1)
 	#print("items max range : " + str(items.size()-1))
 	#print("index : " + str(ranIndex))
-	return items[ranIndex]
+	return spawnableItems[ranIndex]
+	
+func RemoveUniqueInstance(_instance: Node):
+	if(spawned_instances.has(_instance)):
+		var itemLinked: SpawnableItem = spawned_instances.get(_instance,null)
+		
+		spawned_instances.erase(_instance)
+		print("REMOVED : " + str(_instance))
+		
+		
+func get_spawnable_item_from_instance(instance: Node) -> SpawnableItem:
+	for spawnable_item in spawned_instances.keys():
+		if spawned_instances[spawnable_item] == instance:
+			return spawnable_item
+	return null  # pas trouvé 
