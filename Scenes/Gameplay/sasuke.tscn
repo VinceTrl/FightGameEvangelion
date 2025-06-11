@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cngp7x80lhlug"]
+[gd_scene load_steps=19 format=3 uid="uid://cngp7x80lhlug"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/sasuke.gd" id="1_8n61w"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="1_gascv"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cxy2a5u3qqohb" path="res://Assets/Sprites/BG/SasukeBackground/fanfiction-animes-naruto-okaeri-sasuke-495017,311220120147.png" id="11_27iyr"]
 [ext_resource type="Texture2D" uid="uid://6olh54cjymb1" path="res://Assets/Sprites/BG/SasukeBackground/08095702c9c8411ce00af033bce90cc3.png" id="12_qunxe"]
 [ext_resource type="Texture2D" uid="uid://uy8xpo70cnqf" path="res://Assets/Sprites/BG/SasukeBackground/sns_kiss_under_mistletoe_beso_debajo_del_muerdago_by_arisu_artnfics_dauj5r0-350t.png" id="13_cqu0a"]
+[ext_resource type="PackedScene" uid="uid://c7qdjreebkuml" path="res://Scenes/VFX/VFX2D/vfx_2d_spawn_smoke.tscn" id="17_n0cej"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8sp8s"]
 size = Vector3(0.00668335, 0.0221252, 0.0149536)
@@ -242,5 +243,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_sjsqs")
 expand_mode = 1
+
+[node name="Vfx2DSpawnSmoke" parent="." instance=ExtResource("17_n0cej")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.366921, 0.0605105)
 
 [editable path="Sasuke"]

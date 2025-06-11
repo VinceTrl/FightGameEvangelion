@@ -28,6 +28,7 @@ func DestroyItem():
 	#audio heal
 	var sasuke = SASUKE.instantiate()
 	get_tree().get_root().add_child(sasuke)
+	sasuke.global_position = global_position
 	
 	await get_tree().create_timer(destroyDelay,true,false,false).timeout
 	queue_free()
