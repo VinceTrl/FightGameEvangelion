@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://kqpbwnd4vdet"]
+[gd_scene load_steps=9 format=3 uid="uid://kqpbwnd4vdet"]
 
 [ext_resource type="PackedScene" uid="uid://dcta1ht6h4p3y" path="res://Sources/Meshes/Mesh_Penpen_01.fbx" id="1_jk6xu"]
+[ext_resource type="Material" uid="uid://dokiesf32ocl2" path="res://Assets/Materials/Enviro/M_penpen_White.tres" id="2_o00kr"]
+[ext_resource type="Material" uid="uid://clgc6oj6jxrut" path="res://Assets/Materials/Enviro/M_penpen_black.tres" id="3_l41ax"]
+[ext_resource type="Material" uid="uid://by7ilubgkx0tj" path="res://Assets/Materials/Enviro/M_penpen_Green.tres" id="4_3pajp"]
+[ext_resource type="Material" uid="uid://d2bvupxdhi7hm" path="res://Assets/Materials/Enviro/M_penpen_Bec.tres" id="4_05nk7"]
+[ext_resource type="Material" uid="uid://dnqk1ekx8qx5n" path="res://Assets/Materials/Enviro/M_Emissive_Red.tres" id="5_kp1ej"]
+[ext_resource type="Material" uid="uid://31jg1icsear4" path="res://Assets/Materials/Enviro/M_Chrome.tres" id="6_30wdb"]
+[ext_resource type="Material" uid="uid://ycx6lpvbaa07" path="res://Assets/Materials/Enviro/M_MetalRough.tres" id="7_jjfg4"]
 
 [node name="Mesh_Penpen_01" instance=ExtResource("1_jk6xu")]
 
@@ -19,6 +26,55 @@ bones/14/rotation = Quaternion(-3.09423e-05, -0.102936, 0.74308, -0.661238)
 bones/17/rotation = Quaternion(-0.0135587, 0.0139812, 0.775157, 0.631469)
 bones/20/position = Vector3(0.000260292, -0.025726, 0.00127372)
 bones/20/rotation = Quaternion(0.235983, 0.00913819, -0.00473901, 0.971703)
+
+[node name="Head2" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_o00kr")
+surface_material_override/1 = ExtResource("3_l41ax")
+
+[node name="eyes" parent="Armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_l41ax")
+surface_material_override/1 = ExtResource("4_3pajp")
+surface_material_override/2 = ExtResource("3_l41ax")
+
+[node name="Bec_Top" parent="Armature/Skeleton3D" index="2"]
+surface_material_override/0 = ExtResource("3_l41ax")
+surface_material_override/1 = ExtResource("4_05nk7")
+
+[node name="Haris" parent="Armature/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("5_kp1ej")
+
+[node name="Bec_Bot" parent="Armature/Skeleton3D" index="4"]
+surface_material_override/0 = ExtResource("4_05nk7")
+
+[node name="Body" parent="Armature/Skeleton3D" index="5"]
+surface_material_override/0 = ExtResource("2_o00kr")
+surface_material_override/1 = ExtResource("3_l41ax")
+
+[node name="Chaines" parent="Armature/Skeleton3D" index="6"]
+surface_material_override/0 = ExtResource("6_30wdb")
+surface_material_override/1 = ExtResource("6_30wdb")
+
+[node name="Pattes" parent="Armature/Skeleton3D" index="7"]
+surface_material_override/0 = ExtResource("3_l41ax")
+
+[node name="Clope" parent="Armature/Skeleton3D" index="8"]
+surface_material_override/0 = ExtResource("2_o00kr")
+
+[node name="JetPack2" parent="Armature/Skeleton3D" index="9"]
+surface_material_override/0 = ExtResource("7_jjfg4")
+
+[node name="Antenne" parent="Armature/Skeleton3D" index="10"]
+surface_material_override/0 = ExtResource("7_jjfg4")
+surface_material_override/1 = ExtResource("5_kp1ej")
+
+[node name="Dent_Top" parent="Armature/Skeleton3D" index="11"]
+surface_material_override/0 = ExtResource("2_o00kr")
+
+[node name="Dent_Bot" parent="Armature/Skeleton3D" index="12"]
+surface_material_override/0 = ExtResource("2_o00kr")
+
+[node name="Grillz" parent="Armature/Skeleton3D" index="13"]
+surface_material_override/0 = ExtResource("6_30wdb")
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "Armature|Iddle"
