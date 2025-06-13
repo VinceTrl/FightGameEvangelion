@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://wtlsgiqjnk3q"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/Building_shader.gdshader" id="1_3nfh1"]
+[ext_resource type="Texture2D" uid="uid://d3i2wkybtjpe1" path="res://Sources/Textures/T_BuildingSheet_01_D-assets/T_BuildingSheet_01_D.png" id="2_ryatp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3nfh1")
+shader_parameter/soundIntensity = 0.1
+shader_parameter/equalizer00 = 1.0
+shader_parameter/equalizer01 = 1.0
+shader_parameter/equalizer02 = 1.0
+shader_parameter/equalizer03 = 1.0
+shader_parameter/equalizer04 = 1.0
+shader_parameter/equalizer05 = 1.0
+shader_parameter/equalizer06 = 1.0
+shader_parameter/equalizer07 = 1.0
+shader_parameter/height_scale = 0.001
+shader_parameter/speed = 0.0
+shader_parameter/tiling = Vector2(2, 2)
+shader_parameter/colorForeground = Vector3(1, 1, 1)
+shader_parameter/colorBackground = Vector3(0, 0, 0)
+shader_parameter/DEBUG = 1.0
+shader_parameter/noise = ExtResource("2_ryatp")
+shader_parameter/normalmap = ExtResource("2_ryatp")
+shader_parameter/mask00 = ExtResource("2_ryatp")
