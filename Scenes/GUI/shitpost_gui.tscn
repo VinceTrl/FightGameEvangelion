@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dyqrd26u8lp8x"]
+[gd_scene load_steps=22 format=3 uid="uid://dyqrd26u8lp8x"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/shitpost_gui.gd" id="1_fljbo"]
 [ext_resource type="Texture2D" uid="uid://dadgh4re6vb6m" path="res://Assets/Shitpost/Evangelion/Screenshot_2025-06-10-03-23-13-35_1c337646f29875672b5a61192b9010f9.jpg" id="2_1ir7k"]
@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://bp7s74dy4xfak" path="res://Assets/Shitpost/Evangelion/5ab1a7fdea1892e1557bca2d07a47959.jpg" id="15_apco7"]
 [ext_resource type="Texture2D" uid="uid://byixbvm7drv3m" path="res://Assets/Shitpost/Evangelion/3e440885303fce3bcb594379a46be7d9.jpg" id="16_wvwx1"]
 [ext_resource type="Texture2D" uid="uid://clpovbtbsboyr" path="res://Assets/Shitpost/Evangelion/2d0972b6f170a744aa3aea4732e832e3.jpg" id="17_rqudw"]
+[ext_resource type="Texture2D" uid="uid://cc7jh3ef2whjb" path="res://Assets/Shitpost/Evangelion/5355f0b8ac14db00d19bad4e6e8daaba.jpg" id="18_oljaw"]
+[ext_resource type="Texture2D" uid="uid://bawt8suh22o0q" path="res://Assets/Shitpost/Evangelion/EEoXGIjUwAALgAh.jpg" id="19_fee6v"]
+[ext_resource type="Texture2D" uid="uid://ddpn7aoun25an" path="res://Assets/Shitpost/Evangelion/010952.jpg" id="20_och3k"]
+[ext_resource type="Texture2D" uid="uid://c3buiivhr7wkf" path="res://Assets/Shitpost/Evangelion/011133.jpg" id="21_qxrgh"]
 
 [node name="ShitpostGUI" type="Control"]
 layout_mode = 3
@@ -27,21 +31,400 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fljbo")
 textureScale = Vector2(0.5, 0.5)
-textures = Array[CompressedTexture2D]([ExtResource("2_1ir7k"), ExtResource("3_fwi6f"), ExtResource("4_cagmx"), ExtResource("5_h5u70"), ExtResource("6_joa1k"), ExtResource("7_tyv51"), ExtResource("8_cv82v"), ExtResource("9_2rng2"), ExtResource("10_d4ak8"), ExtResource("11_54yhn"), ExtResource("12_s2bre"), ExtResource("13_0pp8o"), ExtResource("14_a16vh"), ExtResource("15_apco7"), ExtResource("16_wvwx1"), ExtResource("17_rqudw")])
+textures = Array[CompressedTexture2D]([ExtResource("2_1ir7k"), ExtResource("3_fwi6f"), ExtResource("4_cagmx"), ExtResource("5_h5u70"), ExtResource("6_joa1k"), ExtResource("7_tyv51"), ExtResource("8_cv82v"), ExtResource("9_2rng2"), ExtResource("10_d4ak8"), ExtResource("11_54yhn"), ExtResource("12_s2bre"), ExtResource("13_0pp8o"), ExtResource("14_a16vh"), ExtResource("15_apco7"), ExtResource("16_wvwx1"), ExtResource("17_rqudw"), ExtResource("18_oljaw"), ExtResource("19_fee6v"), ExtResource("20_och3k"), ExtResource("21_qxrgh")])
+debugMode = true
+
+[node name="TextureHolder" type="TextureRect" parent="."]
+stretch_mode = 5
+
+[node name="TextureHolder2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -540.0
+offset_bottom = -540.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder4" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder5" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder6" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder7" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder8" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder9" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder10" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder11" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder12" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder13" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder14" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder15" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder16" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder17" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder18" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder19" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder20" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder21" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder22" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder23" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder24" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder25" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder26" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder27" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder28" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder29" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder30" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder31" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder32" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder33" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder34" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder35" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder36" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder37" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder38" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder39" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder40" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="StaticTexture" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_a16vh")
-stretch_mode = 5
