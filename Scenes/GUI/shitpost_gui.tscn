@@ -32,9 +32,11 @@ grow_vertical = 2
 script = ExtResource("1_fljbo")
 textureScale = Vector2(0.5, 0.5)
 textures = Array[CompressedTexture2D]([ExtResource("2_1ir7k"), ExtResource("3_fwi6f"), ExtResource("4_cagmx"), ExtResource("5_h5u70"), ExtResource("6_joa1k"), ExtResource("7_tyv51"), ExtResource("8_cv82v"), ExtResource("9_2rng2"), ExtResource("10_d4ak8"), ExtResource("11_54yhn"), ExtResource("12_s2bre"), ExtResource("13_0pp8o"), ExtResource("14_a16vh"), ExtResource("15_apco7"), ExtResource("16_wvwx1"), ExtResource("17_rqudw"), ExtResource("18_oljaw"), ExtResource("19_fee6v"), ExtResource("20_och3k"), ExtResource("21_qxrgh")])
+imageSize = 0.3
 debugMode = true
 
 [node name="TextureHolder" type="TextureRect" parent="."]
+layout_mode = 0
 stretch_mode = 5
 
 [node name="TextureHolder2" type="TextureRect" parent="."]

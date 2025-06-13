@@ -108,6 +108,7 @@ func TakeDamage(hitboxSource: Hitbox):
 	Manager.postProcessEffects.GlitchEffect()
 	Manager.timeManager.freezeFrame(0.001,0.1)
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
+	Manager.gameManager.shitpost_gui.ShowRandomImage()
 	animation_player.play("Hurt")
 	
 	#HurtAnim()

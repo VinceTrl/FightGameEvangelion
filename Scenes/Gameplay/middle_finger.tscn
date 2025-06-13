@@ -11,7 +11,7 @@ size = Vector3(0.546387, 0.52356, 1)
 [node name="MiddleFinger" type="Node3D"]
 script = ExtResource("1_4e5qu")
 lifeTime = 20.0
-followScale = Vector3(20, 20, 20)
+followScale = Vector3(10, 10, 10)
 
 [node name="Visual" type="Node3D" parent="."]
 

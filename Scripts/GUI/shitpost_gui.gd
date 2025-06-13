@@ -1,3 +1,5 @@
+class_name ShitpostGUI
+
 extends Control
 
 @export var textureScale: Vector2 = Vector2.ONE
