@@ -8,3 +8,6 @@ itemName = &"MIDDLE_FINGER"
 scenePath = &"res://Scenes/Gameplay/middle_finger.tscn"
 spawnOnGround = true
 groundOffset = Vector3(0, 0.25, 0)
+spawnOncePerGame = false
+isUniqueInstance = false
+spawnChance = 2

@@ -14,8 +14,10 @@ var spawned_instances = {} # Dictionnary of unique instances
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Manager.spawnManager = self
-	spawnableItems = items
+	#spawnableItems = items
 	PreloadResources()
+	SetSpawnArray()
+	print("SIZE : " + str(spawnableItems.size()))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,9 +25,11 @@ func _process(delta: float) -> void:
 	
 func SetSpawnArray():
 	for item in items:
-		var count = 0
-		#while: count != item.spawnChance
-		
+		print("Item: " + str(item.itemName))
+		print("Spawn chance: " + str(item.spawnChance))
+		for i in range(item.spawnChance):
+			AddItemInSpawnArray(item)
+
 func AddItemInSpawnArray(itemToAdd : SpawnableItem):
 	spawnableItems.append(itemToAdd)
 	

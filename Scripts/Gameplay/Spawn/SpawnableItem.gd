@@ -7,5 +7,5 @@ class_name SpawnableItem
 @export var groundOffset: Vector3
 @export var spawnOncePerGame: bool = false
 @export var isUniqueInstance: bool = false
-@export var spawnChance: int = 1
+@export var spawnChance: int = 3
 var resource

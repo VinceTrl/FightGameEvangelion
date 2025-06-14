@@ -8,3 +8,6 @@ itemName = &"Pickup"
 scenePath = &"res://Scenes/Gameplay/pick_up.tscn"
 spawnOnGround = true
 groundOffset = Vector3(0, 0.3, 0)
+spawnOncePerGame = false
+isUniqueInstance = false
+spawnChance = 5
