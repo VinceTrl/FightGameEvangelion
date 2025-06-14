@@ -1,20 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://w5jpce2kyimj"]
+[gd_scene load_steps=9 format=3 uid="uid://w5jpce2kyimj"]
 
 [ext_resource type="PackedScene" uid="uid://i08d75by6ohj" path="res://Sources/Meshes/Mesh_Plateforme_01.fbx" id="1_a533a"]
 [ext_resource type="Material" uid="uid://dh3itiecirk2e" path="res://Assets/Materials/Enviro/M_PurpleMetal.tres" id="2_g4kf8"]
 [ext_resource type="Material" uid="uid://b3yrf7e0nua60" path="res://Assets/Materials/Enviro/M_Red.tres" id="3_lkboy"]
 [ext_resource type="Material" uid="uid://dnqk1ekx8qx5n" path="res://Assets/Materials/Enviro/M_Emissive_Red.tres" id="4_2nlh3"]
 [ext_resource type="Material" uid="uid://31jg1icsear4" path="res://Assets/Materials/Enviro/M_Chrome.tres" id="4_l5ppx"]
+[ext_resource type="PackedScene" uid="uid://xdx0hyltny5r" path="res://Assets/Meshes/Enviro/mesh_plateforme_02.tscn" id="6_58qkk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1r4ai"]
-size = Vector3(5.25563, 0.385779, 2.35387)
+size = Vector3(5.25563, 0.276189, 2.35387)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dtq3w"]
-size = Vector3(2.5808, 2.57251, 3.24561)
+size = Vector3(4.69021, 1.09082, 3.24561)
 
 [node name="Mesh_Plateforme_01" instance=ExtResource("1_a533a")]
 
 [node name="Cube_002" parent="." index="0"]
+visible = false
 material_override = ExtResource("2_g4kf8")
 
 [node name="Cube_004" parent="Cube_002" index="0"]
@@ -50,12 +52,15 @@ material_override = ExtResource("3_lkboy")
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00204969, 0.396163, 0.187828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00204969, 0.341368, 0.187828)
 shape = SubResource("BoxShape3D_1r4ai")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00204969, 0.396163, 0.187828)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00215912, -1.42834, -0.697998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214443, -0.687495, -0.697998)
 shape = SubResource("BoxShape3D_dtq3w")
+
+[node name="SM_Plateforme_Big_01" parent="." index="3" instance=ExtResource("6_58qkk")]
+transform = Transform3D(0.914831, 0, 0, 0, 0.914831, 0, 0, 0, 0.914831, 0.00204969, -0.436997, -0.248296)
