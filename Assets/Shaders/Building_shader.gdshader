@@ -32,9 +32,7 @@ uniform float height_scale = 1.0;
 uniform float speed = 1.0;
 uniform vec2 tiling = vec2(20.0, 20.0);
 varying vec2 tex_position;
-uniform sampler2D noise;
-uniform sampler2D normalmap;
-uniform sampler2D mask00;
+uniform sampler2D Diffuse;
 uniform vec3 colorForeground = vec3(1.0);
 uniform vec3 colorBackground = vec3(1.0);
 uniform float DEBUG = 1.0;
@@ -119,7 +117,7 @@ void vertex() {
 	int steps;
 
 	tex_position = (vec2(VERTEX.z / tiling.x, -VERTEX.x / tiling.y)  + 0.5) ;
-	float height02 = (texture(noise, vec2(tex_position.x + TIME * 0.1 * speed + spectrum_value04 * 1.0, tex_position.y + TIME * 5.0 * speed + spectrum_value06 * 3.0)).r + texture(noise, vec2(tex_position.x - TIME * 0.1 * speed + spectrum_value04 * 3.0, tex_position.y - TIME * 1.0 * speed + spectrum_value06 * 3.0)).r) / 2.0;
+	float height02 = (texture(Diffuse, vec2(tex_position.x + TIME * 0.1 * speed + spectrum_value04 * 1.0, tex_position.y + TIME * 5.0 * speed + spectrum_value06 * 3.0)).r + texture(Diffuse, vec2(tex_position.x - TIME * 0.1 * speed + spectrum_value04 * 3.0, tex_position.y - TIME * 1.0 * speed + spectrum_value06 * 3.0)).r) / 2.0;
 	float height = (spectrum_value04 * height02 * 5.0) + (height02 * 2.0 + spectrum_value03 * 5.0);
 	VERTEX.y += height * height_scale;
 }
@@ -131,7 +129,7 @@ void fragment() {
 	vec2 uv = (UV/iResolution.xy*2.-vec2(1.0,1.0)) * vec2(1.0,iResolution.y/iResolution.x);
 
 	vec2 UV00 = (vec2(UV.x / tiling.x, UV.y / tiling.y)) * 20.0 ;
-	float height02 = (texture(noise, vec2(UV00.y + TIME * 1.0 * speed, UV00.x + TIME * 20.0 * speed)).r + texture(noise, vec2(UV00.y - TIME * 1.5 * speed, UV00.x - TIME * 20.0 * speed)).r) / 2.0;
+	float height02 = (texture(Diffuse, vec2(UV00.y + TIME * 1.0 * speed, UV00.x + TIME * 20.0 * speed)).r + texture(Diffuse, vec2(UV00.y - TIME * 1.5 * speed, UV00.x - TIME * 20.0 * speed)).r) / 2.0;
 
 	vec2 UV01 = vec2(UV.x + spectrum_value01 * 0.05 * sin(TIME*3.0*spectrum_value01), UV.y + spectrum_value03 * 0.1 * sin(TIME*3.0*spectrum_value03));
 	vec2 UV02 = vec2(UV.x + spectrum_value02 * 0.1 * sin(TIME*3.0*spectrum_value02), UV.y + spectrum_value00 * 0.1 * sin(TIME*3.0*spectrum_value00));
@@ -140,13 +138,14 @@ void fragment() {
 	//________________________
 
 	// Output to screen
-	ALBEDO = texture(noise, vec2(UV.x, UV.y)).xyz;
-	EMISSION = texture(noise, vec2(UV.x, UV.y)).xyz * 1.0;
-	ALBEDO += ((texture(noise, UV01).rgb * (spectrum_value01+spectrum_value05) * 5.0 + texture(noise, UV02).rgb) * (spectrum_value05+spectrum_value01) * 5.0) * texture(noise, UV01).rgb * texture(noise, UV02).rgb * 1.0;
+	ALBEDO = texture(Diffuse, vec2(UV.x, UV.y)).xyz;
+	EMISSION = texture(Diffuse, vec2(UV.x, UV.y)).xyz * 1.0;
+	ALBEDO += ((texture(Diffuse, UV01).rgb * (spectrum_value01+spectrum_value05) * 5.0 + texture(Diffuse, UV02).rgb) * (spectrum_value05+spectrum_value01) * 5.0) * texture(Diffuse, UV01).rgb * texture(Diffuse, UV02).rgb * 1.0;
 
 	EMISSION = vec3(pow(EMISSION.r, 1.0), pow(EMISSION.g, 1.0), pow(EMISSION.b, 1.0));
-	EMISSION *= 0.1;
+	EMISSION *= 0.01;
 	
+	NORMAL = estimateNormal(texture(Diffuse, vec2(UV.x, UV.y)).xyz) * vec3(0.0, 0.0, 0.0001);
 	METALLIC = 1.0;
 	ROUGHNESS = 1.0;
 }

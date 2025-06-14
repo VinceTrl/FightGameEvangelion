@@ -21,6 +21,4 @@ shader_parameter/tiling = Vector2(2, 2)
 shader_parameter/colorForeground = Vector3(1, 1, 1)
 shader_parameter/colorBackground = Vector3(0, 0, 0)
 shader_parameter/DEBUG = 1.0
-shader_parameter/noise = ExtResource("2_ryatp")
-shader_parameter/normalmap = ExtResource("2_ryatp")
-shader_parameter/mask00 = ExtResource("2_ryatp")
+shader_parameter/Diffuse = ExtResource("2_ryatp")
