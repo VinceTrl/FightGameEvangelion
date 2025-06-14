@@ -13,3 +13,4 @@ script = ExtResource("1_xekkg")
 script = ExtResource("1_ats3x")
 
 [node name="Shrek" parent="Visual/NodeShaker" instance=ExtResource("2_j27qo")]
+transform = Transform3D(35, 0, 0, 0, 35, 0, 0, 0, 35, 0, 0, 0)

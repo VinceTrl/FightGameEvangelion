@@ -5,25 +5,24 @@
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
 [ext_resource type="Texture2D" uid="uid://crkbsb0rt7an7" path="res://Assets/Sprites/spr_StrikerRun_strip.png" id="3_rb07g"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/SpriteEffects.gd" id="4_1nn6i"]
-[ext_resource type="AudioStream" uid="uid://cbot6bsug20aq" path="res://Assets/Sounds/SFX/FGHTClth_Anime Swing 1_01.wav" id="4_r2cae"]
 [ext_resource type="Texture2D" uid="uid://bmid5qjhdv65f" path="res://Assets/Sprites/spr_StrikerJump_strip.png" id="5_3awsj"]
 [ext_resource type="Script" path="res://Scripts/Player/States/States.gd" id="5_hmp2k"]
 [ext_resource type="Texture2D" uid="uid://q4o1y3w60tli" path="res://Assets/Sprites/spr_StrikerSlash_stripWithEffect.png" id="5_o2jil"]
-[ext_resource type="AudioStream" uid="uid://pwfke1f704lt" path="res://Assets/Sounds/SFX/FGHTMisc_Anime Dodge 7_01.wav" id="6_5q787"]
 [ext_resource type="Script" path="res://Scripts/Player/States/IdleState.gd" id="6_726n8"]
 [ext_resource type="Script" path="res://Scripts/Player/States/LockedState.gd" id="6_85275"]
 [ext_resource type="Texture2D" uid="uid://cya4e8okl6gth" path="res://Assets/Sprites/spr_StrikerGetHit_strip.png" id="6_nnhdo"]
+[ext_resource type="AudioStream" uid="uid://b8qtxdl0qqfer" path="res://Assets/Sounds/SFX/DoudouSFX/SD_attack.wav" id="6_sqn8w"]
 [ext_resource type="Texture2D" uid="uid://v2wjwx5qcokx" path="res://Assets/Sprites/spr_StrikerSlash_stripNoEffect.png" id="7_uo32x"]
 [ext_resource type="Script" path="res://Scripts/Player/States/RunState.gd" id="7_y4pfp"]
 [ext_resource type="Script" path="res://Scripts/Player/States/JumpState.gd" id="8_g4l1g"]
 [ext_resource type="Texture2D" uid="uid://lcq1ha8p1jsa" path="res://Assets/Sprites/spr_StrikerDeath_strip.png" id="8_qtp7i"]
 [ext_resource type="AudioStream" uid="uid://dj37g28oll3hj" path="res://Assets/Sounds/SFX/EXPLDsgn_Anime Explosion 10_01.wav" id="8_tjmvd"]
+[ext_resource type="AudioStream" uid="uid://dcyeawnvw6u68" path="res://Assets/Sounds/SFX/DoudouSFX/SD_chargementdetir.wav" id="9_17uti"]
 [ext_resource type="Texture2D" uid="uid://dfilqvhviqctb" path="res://Assets/Sprites/spr_StrikerDash_strip.png" id="9_og1dr"]
 [ext_resource type="Script" path="res://Scripts/Player/States/JumpPeakState.gd" id="9_qpdmo"]
 [ext_resource type="Script" path="res://Scripts/Player/States/FallState.gd" id="10_cy8xa"]
-[ext_resource type="AudioStream" uid="uid://dswir8bgow46t" path="res://Assets/Sounds/SFX/FGHTImpt_Anime Melee 1_01.wav" id="11_n0r1v"]
+[ext_resource type="AudioStream" uid="uid://cwx36fgediwv0" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Dash.wav" id="11_bbblq"]
 [ext_resource type="AudioStream" uid="uid://jidduu8ijtog" path="res://Assets/Sounds/SFX/FGHTMisc_Anime Jump 5_01.wav" id="12_epch5"]
-[ext_resource type="AudioStream" uid="uid://dwd6gclcm5m66" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Charge 3_01.wav" id="12_scte3"]
 [ext_resource type="Script" path="res://Scripts/Player/States/AttackState.gd" id="13_utoig"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="14_fgxac"]
 [ext_resource type="Script" path="res://Scripts/Player/States/HurtStates.gd" id="14_gm8e6"]
@@ -32,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://b1ca000nfun4i" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Jump.wav" id="17_emdqr"]
 [ext_resource type="AudioStream" uid="uid://bwvfenw5lg1vq" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Charge 9_02.wav" id="18_baug7"]
 [ext_resource type="AudioStream" uid="uid://l4gky62ks1qr" path="res://Assets/Sounds/SFX/FGHTClth_Anime Swing 3_01.wav" id="19_73mbs"]
+[ext_resource type="AudioStream" uid="uid://ddlryyptq7w37" path="res://Assets/Sounds/SFX/DoudouSFX/SD_tir.wav" id="19_qmn1i"]
 [ext_resource type="Script" path="res://Scripts/Player/States/DashState.gd" id="20_t6j6y"]
 [ext_resource type="Script" path="res://Scripts/Player/States/DeathState.gd" id="27_vfu8l"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAmmo.gd" id="28_oqnrj"]
@@ -142,7 +142,7 @@ tracks/6/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("4_r2cae")
+"stream": ExtResource("6_sqn8w")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -223,7 +223,7 @@ tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ioox8"]
 resource_name = "ChargeShoot"
-length = 0.26667
+length = 0.2875
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -261,6 +261,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [10, 11, 12, 11, 10]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PlayerAudio/Sfx_ChargeShoot")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_17uti")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_tbsv0"]
 resource_name = "ChargedAttack"
@@ -379,6 +394,7 @@ tracks/7/keys = {
 [sub_resource type="Animation" id="Animation_lnv0j"]
 resource_name = "Dash"
 length = 0.400003
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -437,7 +453,7 @@ tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("6_5q787")
+"stream": ExtResource("11_bbblq")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -624,12 +640,8 @@ tracks/4/path = NodePath("../PlayerAudio/Sfx_Hurt")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("11_n0r1v")
-}],
-"times": PackedFloat32Array(0)
+"clips": [],
+"times": PackedFloat32Array()
 }
 tracks/4/use_blend = true
 
@@ -1049,9 +1061,9 @@ tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("12_scte3")
+"stream": ExtResource("19_qmn1i")
 }],
-"times": PackedFloat32Array(-0.00115299)
+"times": PackedFloat32Array(0)
 }
 tracks/4/use_blend = true
 
@@ -1119,8 +1131,8 @@ _data = [Vector2(0, 1), 0.0, -2.4727, 0, 0, Vector2(1, 0), -0.0449583, 0.0, 0, 0
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_8vhkr"]
-_data = [Vector2(0, 0), 0.0, 0.0324289, 0, 0, Vector2(0.493865, 0.90534), 2.67875, 2.67875, 0, 0, Vector2(1, 0), 0.0164851, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.12501, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_dt2x8"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.01617, 0.0, 0, 0]
@@ -1143,9 +1155,9 @@ healthPoints = 3
 runSpeed = 4.0
 deceleration = 1.0
 dashDuration = 0.3
-dashBufferTime = 0.1
 attackSpeedMax = 12.0
 attackSpeedForceCurve = SubResource("Curve_qv1t1")
+maxAirAttack = 20
 chargeAttackTime = 1.25
 attackForceCurve = SubResource("Curve_ou6xi")
 
@@ -1220,7 +1232,9 @@ damageGlitchEffect = ExtResource("30_k65qb")
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource("20_t6j6y")
+dashDuration = 0.13
 dashSpeedCurve = SubResource("Curve_8vhkr")
+dashMomentum = 0.5
 
 [node name="Death" type="Node" parent="StateMachine"]
 script = ExtResource("27_vfu8l")
@@ -1306,6 +1320,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199727, 0.0199942, 0)
 bus = &"SFX"
 
 [node name="Sfx_Attack" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+volume_db = 10.0
 bus = &"SFX"
 
 [node name="Sfx_AttackChargeReady" type="AudioStreamPlayer3D" parent="PlayerAudio"]
@@ -1316,6 +1331,9 @@ bus = &"SFX"
 bus = &"SFX"
 
 [node name="Sfx_Shoot" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+bus = &"SFX"
+
+[node name="Sfx_ChargeShoot" type="AudioStreamPlayer3D" parent="PlayerAudio"]
 bus = &"SFX"
 
 [node name="Sfx_Dash" type="AudioStreamPlayer3D" parent="PlayerAudio"]

@@ -70,6 +70,8 @@ func SpawnProjectile():
 	
 	var _shootDir = Player.GetDirectionOn8Axis()
 	_projectile.SetupProjectile(Player.playerID,_shootDir,Player.shootPoint.global_position)
+	_projectile.SetProjectileScale(Player.currentShootChargeRatio)
+	Player.ResetChargeAttackValue()
 	
 	StartRecoil()
 	Player.emit_signal("OnPlayerShoot")

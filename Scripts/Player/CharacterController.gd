@@ -320,8 +320,8 @@ func HandleFlipH():
 func HandleDash():
 	if(keyDash):
 		if(dashes < maxDashes) and (DashTimer.time_left <= 0):
-			DashTimer.start(dashBufferTime)
-			await DashTimer.timeout
+			#DashTimer.start(dashBufferTime)
+			#await DashTimer.timeout
 			
 			#cancel dash if player is damaged/dead during buffer
 			if(currentState == States.Hurt or currentState == States.Death):
@@ -448,6 +448,7 @@ func TakeDamage(hitboxSource: Hitbox):
 		emit_signal("OnPlayerTakeDamage")
 		
 		print("SOURCE : " + str(hitboxSource.owner))
+		
 		
 		if (currentHealthPoints > 0):
 			ChangeState(States.Hurt)
