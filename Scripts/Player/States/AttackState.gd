@@ -11,8 +11,9 @@ func EnterState():
 	
 	#Player.velocity.y = 0
 	Player.AdjustAttackDirection()
-	Player.HandleFlipH()
+	#Player.HandleFlipH()
 	Player.SetSpriteOffset_Attack()
+	#Player.HandleAttack()
 	
 	var _attackDir = Player.GetAttackDirection()
 	Player.velocity = Player.velocity / 3
