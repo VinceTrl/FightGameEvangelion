@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
-[ext_resource type="PackedScene" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
+[ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
-[ext_resource type="PackedScene" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
+[ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
 [ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
@@ -153,8 +153,14 @@ spot_range = 49.3115
 [node name="Robot Pivot" parent="Enviro/Node3D/Meshes/Node3D" index="0"]
 transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993782, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
+[node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="City Pivot" parent="Enviro/Node3D/Meshes/R2/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

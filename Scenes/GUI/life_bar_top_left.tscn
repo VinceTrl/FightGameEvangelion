@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://r3ads2h4cewh"]
+[gd_scene load_steps=11 format=3 uid="uid://r3ads2h4cewh"]
 
 [ext_resource type="Texture2D" uid="uid://me4rtgydnceh" path="res://Assets/Sprites/GUI/Heart&ManaUi.png" id="1_a8so3"]
 [ext_resource type="Script" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
 [ext_resource type="PackedScene" uid="uid://iedwuaubcwat" path="res://Scenes/GUI/LifeIcon.tscn" id="3_oco4d"]
+[ext_resource type="Texture2D" uid="uid://147dcgbjdv2t" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Player1.png" id="4_mdj3j"]
+[ext_resource type="Texture2D" uid="uid://faofs2mkcf5b" path="res://Assets/Sprites/GUI/KikiGUI/GUI_LifePoint_P1.png" id="5_fyu5e"]
+[ext_resource type="Texture2D" uid="uid://cxym3v1v584ej" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P1.png" id="6_fw131"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w71of"]
 atlas = ExtResource("1_a8so3")
@@ -27,6 +30,7 @@ script = ExtResource("1_m1rj3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
+visible = false
 
 [node name="LifeBar" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -259,3 +263,66 @@ layout_mode = 2
 texture = SubResource("AtlasTexture_vgpp5")
 expand_mode = 3
 stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 877.0
+offset_bottom = 268.0
+texture = ExtResource("4_mdj3j")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 51.0
+offset_right = 378.0
+offset_bottom = 163.0
+texture = ExtResource("5_fyu5e")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 51.0
+offset_right = 583.0
+offset_bottom = 163.0
+texture = ExtResource("5_fyu5e")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 51.0
+offset_right = 785.0
+offset_bottom = 163.0
+texture = ExtResource("5_fyu5e")
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 205.0
+offset_right = 289.0
+offset_bottom = 248.0
+texture = ExtResource("6_fw131")
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 205.0
+offset_right = 347.0
+offset_bottom = 248.0
+texture = ExtResource("6_fw131")
+
+[node name="TextureRect6" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 205.0
+offset_right = 403.0
+offset_bottom = 248.0
+texture = ExtResource("6_fw131")
+
+[node name="TextureRect7" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 205.0
+offset_right = 457.0
+offset_bottom = 248.0
+texture = ExtResource("6_fw131")

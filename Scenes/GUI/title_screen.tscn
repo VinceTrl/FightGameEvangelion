@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://qofhmib4acam"]
+[gd_scene load_steps=11 format=3 uid="uid://qofhmib4acam"]
 
-[ext_resource type="Texture2D" uid="uid://b3mth673b81vv" path="res://Assets/GUI/Images/BSA-Title.png" id="1_ordgo"]
 [ext_resource type="Script" path="res://Scripts/GUI/TitleScreen.gd" id="1_q3f6b"]
+[ext_resource type="Texture2D" uid="uid://bk1xdnu6hburf" path="res://Assets/Sprites/GUI/KikiGUI/GUI_StartingScreen_BG.png" id="2_nvbhf"]
 [ext_resource type="AudioStream" uid="uid://1hqlp5gehwy4" path="res://Assets/Sounds/SFX/DoudouSFX/SD_playbutton..wav" id="3_57ycc"]
+[ext_resource type="Texture2D" uid="uid://cbvuh2wk3nwxs" path="res://Assets/Sprites/GUI/KikiGUI/GUI_FIGHT.png" id="3_bid6k"]
 
 [sub_resource type="Animation" id="Animation_vdg6d"]
 length = 0.001
@@ -40,6 +41,44 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_vdg6d"),
 "TitleExit": SubResource("Animation_wofvt")
+}
+
+[sub_resource type="Animation" id="Animation_snmfp"]
+resource_name = "TitleBlink"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_00l3v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_reu31"]
+_data = {
+"RESET": SubResource("Animation_00l3v"),
+"TitleBlink": SubResource("Animation_snmfp")
 }
 
 [node name="TitleScreen" type="Control"]
@@ -88,8 +127,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ordgo")
-expand_mode = 3
+texture = ExtResource("2_nvbhf")
+
+[node name="TextureText" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.72
+anchor_right = 0.5
+anchor_bottom = 0.72
+offset_left = -359.0
+offset_top = -136.0
+offset_right = 359.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bid6k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/TextureText"]
+libraries = {
+"": SubResource("AnimationLibrary_reu31")
+}
+autoplay = "TitleBlink"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_57ycc")

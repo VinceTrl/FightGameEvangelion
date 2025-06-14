@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=67 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Texture2D" uid="uid://lfjvawnucaf5" path="res://Assets/Sprites/spr_StrikerIdle_strip.png" id="2_c2271"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/HurtStates.gd" id="14_gm8e6"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="15_3tuu1"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ShootState.gd" id="15_ow3as"]
+[ext_resource type="Texture2D" uid="uid://bdvychokc38dt" path="res://Assets/Sprites/KikiFighter/Player1/idle.png" id="17_7oodl"]
 [ext_resource type="AudioStream" uid="uid://b1ca000nfun4i" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Jump.wav" id="17_emdqr"]
 [ext_resource type="AudioStream" uid="uid://bwvfenw5lg1vq" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Charge 9_02.wav" id="18_baug7"]
 [ext_resource type="AudioStream" uid="uid://l4gky62ks1qr" path="res://Assets/Sounds/SFX/FGHTClth_Anime Swing 3_01.wav" id="19_73mbs"]
@@ -671,7 +672,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_c2271")]
+"values": [ExtResource("17_7oodl")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -683,7 +684,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [8]
+"values": [1]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
