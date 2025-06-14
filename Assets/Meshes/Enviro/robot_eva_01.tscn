@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://gim0rktb26eh"]
+[gd_scene load_steps=7 format=3 uid="uid://gim0rktb26eh"]
 
 [ext_resource type="PackedScene" uid="uid://b5dfrk1d44dno" path="res://Assets/Meshes/Enviro/Robot_eva_01.fbx" id="1_mofpa"]
+[ext_resource type="PackedScene" uid="uid://c0adcejocn12d" path="res://Scenes/VFX/vfx_fire_01_mecha.tscn" id="2_6cl87"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3uyw"]
 
@@ -20,3 +21,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d3uyw")
 surface_material_override/1 = SubResource("StandardMaterial3D_13sr6")
 surface_material_override/2 = SubResource("StandardMaterial3D_5um0w")
 surface_material_override/3 = SubResource("StandardMaterial3D_cw4fq")
+
+[node name="VFX_Fire01_mecha2" parent="." index="1" instance=ExtResource("2_6cl87")]
+transform = Transform3D(0.333201, -0.00101699, -0.00935529, 0.00678744, -0.203562, 0.263871, -0.00651819, -0.263956, -0.20346, -0.942693, 4.74217, 1.22613)
+
+[node name="VFX_Fire01_mecha3" parent="." index="2" instance=ExtResource("2_6cl87")]
+transform = Transform3D(0.333201, 0.000498386, -0.00939719, 0.00678744, -0.243291, 0.227761, -0.00651819, -0.227861, -0.243204, 1.15665, 4.79335, 0.914129)
+
+[node name="VFX_Fire01_mecha4" parent="." index="3" instance=ExtResource("2_6cl87")]
+transform = Transform3D(0.333201, -0.001017, -0.00935529, 0.00678744, -0.203562, 0.263871, -0.00651817, -0.263956, -0.20346, -0.585963, -0.214576, -0.809406)
+
+[node name="VFX_Fire01_mecha5" parent="." index="4" instance=ExtResource("2_6cl87")]
+transform = Transform3D(0.333201, 0.000498381, -0.00939719, 0.00678744, -0.243291, 0.227761, -0.00651819, -0.227861, -0.243204, 0.45354, -0.131286, -1.05909)
