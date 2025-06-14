@@ -21,9 +21,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
+func SetSpawnArray():
+	for item in items:
+		var count = 0
+		#while: count != item.spawnChance
+		
+func AddItemInSpawnArray(itemToAdd : SpawnableItem):
+	spawnableItems.append(itemToAdd)
+	
 func PreloadResources():
 	for item in items: 	
-		item.resource = load(str(item.scenePath))	
+		item.resource = load(str(item.scenePath))
 
 func TimerRandomSpawn():
 	var timerDuration = randf_range(randomSpawnDelayMin,randomSpawnDelayMax)

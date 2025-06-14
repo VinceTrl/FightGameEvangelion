@@ -7,7 +7,7 @@
 [ext_resource type="Material" uid="uid://31jg1icsear4" path="res://Assets/Materials/Enviro/M_Chrome.tres" id="4_l5ppx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1r4ai"]
-size = Vector3(5.25563, 0.385779, 2.35387)
+size = Vector3(4.70702, 0.385779, 2.35387)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dtq3w"]
 size = Vector3(2.5808, 2.57251, 3.24561)
@@ -50,7 +50,7 @@ material_override = ExtResource("3_lkboy")
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00204969, 0.396163, 0.187828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00969075, 0.396163, 0.187828)
 shape = SubResource("BoxShape3D_1r4ai")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." index="2"]

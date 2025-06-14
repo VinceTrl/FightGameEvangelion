@@ -359,7 +359,8 @@ func GetDirectionOn8Axis() -> Vector3:
 
 func HandleAttack():
 	if(((keyAttackJustPressed)) and (currentState != States.Attack)):
-		ChangeState(States.ChargingAttack)
+		#ChangeState(States.ChargingAttack)
+		ChangeState(States.Attack)
 		return
 		
 	if(((AttackBuffer.time_left > 0)) and (currentState != States.Attack)):
@@ -404,7 +405,7 @@ func ChangePlayerDirection(_facingDir: int):
 	facing = _facingDir
 	
 func HandleAttackBuffer():
-	if (keyAttack):
+	if (keyAttackJustPressed):
 		AttackBuffer.start(attackBufferTime)
 		
 		
