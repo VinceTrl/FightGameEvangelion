@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
-[ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
+[ext_resource type="PackedScene" path="res://Scenes/GUI/life_bar_top_left.tscn" id="9_p25nu"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
-[ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
+[ext_resource type="PackedScene" path="res://Scenes/GUI/life_bar_top_right.tscn" id="10_sxc7j"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
 [ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
@@ -120,47 +120,57 @@ script = ExtResource("15_7m25h")
 Multiplier = 1.0
 
 [node name="SpotScat" parent="Enviro/Node3D/Lighting" index="0"]
+visible = false
 light_energy = 60.0
 light_volumetric_fog_energy = 20.0
 spot_range = 21.5625
 
 [node name="SpotLight3D2" parent="Enviro/Node3D/Lighting" index="1"]
+visible = false
 light_energy = 150.0
 shadow_enabled = true
 spot_range = 160.315
 
 [node name="SpotLight3D6" parent="Enviro/Node3D/Lighting" index="2"]
+visible = false
 light_energy = 150.0
-shadow_enabled = true
-spot_range = 63.5884
+spot_range = 36.2965
+spot_angle = 12.9636
 
 [node name="SpotLight3D" parent="Enviro/Node3D/Lighting" index="4"]
+visible = false
 light_energy = 45.0
 spot_range = 56.6485
+spot_angle = 50.291
 
 [node name="SpotLight3D3" parent="Enviro/Node3D/Lighting" index="5"]
+transform = Transform3D(0.691696, 0.147006, 0.707069, 0.657323, 0.277386, -0.700703, -0.299138, 0.949446, 0.0952352, 0, -5.9291, -4.49585)
+visible = false
 light_energy = 45.0
 spot_range = 80.4352
+spot_angle = 38.4962
 
 [node name="SpotLight3D4" parent="Enviro/Node3D/Lighting" index="6"]
 transform = Transform3D(0.185412, -0.073883, 0.266973, 0.0912904, 0.319609, 0.0250487, -0.261533, 0.0591833, 0.198013, -4.99869, -2.47093, -5.94517)
+visible = false
 light_energy = 300.0
 spot_range = 45.5801
 
 [node name="SpotLight3D5" parent="Enviro/Node3D/Lighting" index="7"]
+visible = false
 spot_range = 49.3115
 
 [node name="Robot Pivot" parent="Enviro/Node3D/Meshes/Node3D" index="0"]
 transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993782, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+[node name="SpotLight3D3" parent="Enviro/Node3D/Meshes/Node3D/Robot Pivot/Robot_eva_02" index="1"]
+transform = Transform3D(0.999685, 0.0109206, -0.0226252, 0.00979678, 0.659829, 0.751351, 0.0231342, -0.751335, 0.659515, 0.417745, -0.0908117, -0.92647)
+
+[node name="SpotLight3D4" parent="Enviro/Node3D/Meshes/Node3D/Robot Pivot/Robot_eva_02" index="2"]
+transform = Transform3D(0.849036, 0.0109208, -0.528222, 0.390801, 0.659829, 0.641794, 0.355546, -0.751335, 0.555952, -0.642689, -0.141741, -0.700045)
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R2/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -170,13 +180,6 @@ transform = Transform3D(1.11943, 0, 0, 0, 1.11943, 0, 0, 0, 1.11943, 0, -4.54701
 
 [node name="Lighting" type="Node3D" parent="Enviro"]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Enviro/Lighting"]
-transform = Transform3D(1, 0, 0, 0, 0.543908, 0.839145, 0, -0.839145, 0.543908, 0, 5.95437, 3.9963)
-light_energy = 10.215
-shadow_enabled = true
-spot_range = 9.96887
-spot_angle = 35.4299
-
 [node name="BackgroundMesh" type="MeshInstance3D" parent="Enviro/Lighting"]
 transform = Transform3D(-0.0794317, 0.0450254, 0.547176, 0.0994026, 0.51173, -0.0236528, -0.41578, 0.11374, -0.110189, -0.182486, -1.39818, -13.1081)
 visible = false
@@ -184,11 +187,35 @@ material_override = ExtResource("14_u3ss6")
 mesh = ExtResource("13_3v2jh")
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Enviro/Lighting"]
-transform = Transform3D(1, 0, 0, 0, 0.905443, 0.424468, 0, -0.424468, 0.905443, 0, 7.71837, 1.41065)
+transform = Transform3D(1, 0, 0, 0, 0.888585, 0.458712, 0, -0.458712, 0.888585, 0, 9.1072, 3.70326)
 light_energy = 50.0
 shadow_enabled = true
-spot_range = 16.6424
+spot_range = 15.2065
 spot_angle = 47.6542
+
+[node name="SpotBuildingsRight" type="SpotLight3D" parent="Enviro/Lighting"]
+transform = Transform3D(-0.0636048, 0.206663, -0.976343, 0.960705, 0.277543, -0.00383842, 0.270184, -0.938222, -0.216195, -5.67032, 4.90765, -29.3489)
+light_color = Color(0.510236, 0.861405, 0.761492, 1)
+light_energy = 200.0
+light_volumetric_fog_energy = 1.087
+spot_range = 49.2912
+spot_angle = 50.291
+
+[node name="SpotBuildingsLeft" type="SpotLight3D" parent="Enviro/Lighting"]
+transform = Transform3D(0.550074, -0.571854, 0.608607, 0.596174, -0.241436, -0.765691, 0.584803, 0.784023, 0.208117, 0, -5.9291, -4.49585)
+light_color = Color(0.510236, 0.861405, 0.761492, 1)
+light_energy = 200.0
+light_volumetric_fog_energy = 1.087
+spot_range = 56.6485
+spot_angle = 50.291
+
+[node name="SpotScat" type="SpotLight3D" parent="Enviro/Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.469009, -0.883193, 0, 0.883193, 0.469009, 0, -6.92803, -2.7011)
+light_color = Color(0.42, 1, 0.777667, 1)
+light_energy = 60.0
+light_volumetric_fog_energy = 30.0
+spot_range = 21.5625
+spot_angle = 54.9228
 
 [node name="Poop" parent="Enviro" instance=ExtResource("18_87cti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60528, 1.10266, 0)
