@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djdb3ocf1uv0i"]
+[gd_scene load_steps=9 format=3 uid="uid://djdb3ocf1uv0i"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/spawner.gd" id="1_y2u6x"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="2_m4idx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="5_ox188"]
 [ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="6_ntebu"]
 [ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="7_jr222"]
+[ext_resource type="AudioStream" uid="uid://bstoo00pyxy2s" path="res://Assets/Sounds/SFX/DoudouSFX/SD_item.wav" id="8_xlcjj"]
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_y2u6x")
@@ -16,3 +17,6 @@ items = Array[ExtResource("2_m4idx")]([ExtResource("4_14cl3"), ExtResource("5_ox
 target_position = Vector3(0, -10, 0)
 debug_shape_custom_color = Color(0, 0.945098, 0, 1)
 debug_shape_thickness = 3
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_xlcjj")
