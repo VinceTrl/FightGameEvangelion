@@ -6,7 +6,11 @@ extends PlayerState
 @onready var hurtTimer: Timer = $"../../Timers/HurtTimer"
 @onready var ground_location: Marker3D = $"../../GroundLocation"
 
+@onready var sfx_hurt: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Hurt"
+
 const VFX_2D_IMPACT_MEDIUM = preload("res://Scenes/VFX/VFX2D/vfx_2d_impact_medium.tscn")
+const SD_ATTACK_IMPACT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_attackIMPACT.wav")
+const SD_IMPACTPROJECTILE = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_impactprojectile.wav")
 
 var hurtTime = 0.0
 var direction = Vector3.ZERO
@@ -34,7 +38,14 @@ func EnterState():
 	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"HurtVibration")
 	Manager.postProcessEffects.GlitchEffect(damageGlitchEffect)
 	
+	#Hurt audio
+	if (Player.lastHitbox != null):
+		if(Player.lastHitbox.type == Hitbox.DamageType.Melee):
+			sfx_hurt.stream = SD_ATTACK_IMPACT
+		else:
+			sfx_hurt.stream = SD_IMPACTPROJECTILE
 	
+	sfx_hurt.play()
 	
 func ExitState():
 	pass

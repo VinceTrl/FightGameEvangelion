@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://du634q0hso88d"
-valid=false
+path="res://.godot/imported/SlapBros_Eva_Env_01.blend-6fc4e2aa981384141274eb4df47c00e2.scn"
 
 [deps]
 
 source_file="res://Sources/Blend/SlapBros_Eva_Env_01.blend"
+dest_files=["res://.godot/imported/SlapBros_Eva_Env_01.blend-6fc4e2aa981384141274eb4df47c00e2.scn"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends PlayerState
 
-@export var minDashSpeed = 1
-@export var maxDashSpeed = 8
+@export var minDashSpeed: float = 1
+@export var maxDashSpeed: float = 8
 @export var dashDuration = 0.4
 @export var dashSpeedCurve: Curve
 @export var dashMomentum = 1.2
@@ -35,7 +35,7 @@ func Draw():
 	pass
 	
 func Update(delta: float):
-	Player.HandleGravity(delta)
+	#Player.HandleGravity(delta)
 	Player.HandleAttackBuffer()
 	DashEnd()
 	HandleDashSpeed()
@@ -45,6 +45,7 @@ func Update(delta: float):
 func HandleDashSpeed():
 	if Player.DashTimer.time_left <= 0: return
 	Player.velocity = Player.dashDirection.normalized() * GetDashSpeed()
+	print("DASH VEL : " + str(Player.dashDirection.normalized() * GetDashSpeed()))
 	
 func GetDashSpeed() -> float:
 
@@ -61,7 +62,8 @@ func HandleAnimations():
 func DashEnd():
 	if Player.DashTimer.time_left <= 0:
 		Player.DashTimer.stop()
-		Player.velocity *= dashMomentum
+		#Player.velocity *= dashMomentum
+		#Player.velocity = Vector3.ZERO
 		
 		if(Player.is_on_floor()): 
 			Player.ChangeState(States.Idle)
