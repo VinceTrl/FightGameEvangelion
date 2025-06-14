@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://8a00sh66ihoa"]
+[gd_scene load_steps=24 format=3 uid="uid://8a00sh66ihoa"]
 
 [ext_resource type="PackedScene" uid="uid://bokk03njw1g62" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_02.tscn" id="2_pmxf5"]
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="2_tsbgh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://sqtp5dlv83tu" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_03.tscn" id="3_p20j8"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="4_474d5"]
 [ext_resource type="PackedScene" uid="uid://njq1raxq33q0" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_04.tscn" id="4_yh5vk"]
+[ext_resource type="PackedScene" uid="uid://ccriwcheek0fp" path="res://Assets/Meshes/Enviro/Mesh_road.tscn" id="6_j67yi"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="7_qbrxa"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_wydri"]
@@ -564,6 +565,9 @@ libraries = {
 "": SubResource("AnimationLibrary_vjtfl")
 }
 autoplay = "Anim_CityRotation_slow"
+
+[node name="SM_Road" parent="Meshes" instance=ExtResource("6_j67yi")]
+transform = Transform3D(0.801734, 0, 0, 0, 0.801734, 0, 0, 0, 0.801734, 0, -4.69539, -2.58847)
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("4_474d5")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5amqm6jpeons"]
+[gd_scene load_steps=8 format=3 uid="uid://c5amqm6jpeons"]
 
 [ext_resource type="PackedScene" uid="uid://bus7pxl8e5mmg" path="res://Scenes/GUI/fight_text.tscn" id="1_gskd5"]
 [ext_resource type="Script" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bcr5540fwgswj" path="res://Scenes/GUI/Round_ui.tscn" id="5_2w7hc"]
 [ext_resource type="PackedScene" uid="uid://cv0ukcamovfyt" path="res://Scenes/GUI/result_screen_ui.tscn" id="5_dvxp5"]
 [ext_resource type="Texture2D" uid="uid://dv6u3t40a0f0x" path="res://Assets/GUI/Test/test_ui_copie.png" id="6_8ak8g"]
+[ext_resource type="Texture2D" uid="uid://ijbpiebcm62y" path="res://Assets/Sprites/GUI/KikiGUI/GUI_TopBanner.png" id="6_s0lox"]
 
 [node name="MasterGUI" type="Control"]
 layout_mode = 3
@@ -19,15 +20,30 @@ grow_vertical = 2
 script = ExtResource("1_xuadb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 100
+layer = 99
 
 [node name="FightText" parent="CanvasLayer" instance=ExtResource("1_gskd5")]
 
 [node name="TimerRoot" parent="CanvasLayer" instance=ExtResource("3_cd8f7")]
+offset_top = 33.635
+offset_bottom = 73.635
 
 [node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("5_dvxp5")]
 
 [node name="Round" parent="CanvasLayer" instance=ExtResource("5_2w7hc")]
+offset_top = -23.09
+offset_bottom = -23.09
+
+[node name="TopBanner" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1143.0
+offset_top = -46.05
+offset_right = 1143.0
+offset_bottom = 43.95
+grow_horizontal = 2
+texture = ExtResource("6_s0lox")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false

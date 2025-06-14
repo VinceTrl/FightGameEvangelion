@@ -4,6 +4,7 @@ extends Node3D
 @export var items: Array[SpawnableItem] = []
 @export var registerOnManager = true
 @onready var ground_raycast: RayCast3D = $GroundRaycast
+@onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 const VFX_2D_SPAWN_SMOKE = preload("res://Scenes/VFX/VFX2D/vfx_2d_spawn_smoke.tscn")
 
@@ -60,7 +61,9 @@ func SpawnExternalItem(_itemToSpawn: SpawnableItem):
 	var vfx = VFX_2D_SPAWN_SMOKE.instantiate()
 	vfx.global_position = _spawnPos
 	get_tree().current_scene.add_child(vfx)
-		
+	
+	audio.global_position = _spawnPos
+	audio.play()
 	
 	var _itemInstance = _itemToSpawn.resource.instantiate()
 	if(_itemInstance == null) : return
