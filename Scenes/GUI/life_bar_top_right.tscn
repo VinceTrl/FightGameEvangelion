@@ -1,24 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccq8u40edk25l"]
+[gd_scene load_steps=6 format=3 uid="uid://ccq8u40edk25l"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_umlfk"]
-[ext_resource type="Texture2D" uid="uid://me4rtgydnceh" path="res://Assets/Sprites/GUI/Heart&ManaUi.png" id="2_n54l7"]
-[ext_resource type="PackedScene" uid="uid://iedwuaubcwat" path="res://Scenes/GUI/LifeIcon.tscn" id="3_wibn4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w71of"]
-atlas = ExtResource("2_n54l7")
-region = Rect2(2, 2, 16, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wrvh1"]
-atlas = ExtResource("2_n54l7")
-region = Rect2(33, 13, 10, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y2kif"]
-atlas = ExtResource("2_n54l7")
-region = Rect2(33, 38, 10, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vgpp5"]
-atlas = ExtResource("2_n54l7")
-region = Rect2(21, 38, 10, 10)
+[ext_resource type="Texture2D" uid="uid://bka1ws4dgcnly" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Player2.png" id="4_gpk2l"]
+[ext_resource type="PackedScene" uid="uid://dbx10gs5u8elq" path="res://Scenes/GUI/texture_hp_Left.tscn" id="5_egxum"]
+[ext_resource type="Texture2D" uid="uid://bn84gnnew58sp" path="res://Assets/Sprites/GUI/KikiGUI/GUI_LifePoint_P2.png" id="6_4w5sj"]
+[ext_resource type="Texture2D" uid="uid://d134wtncuty64" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P2.png" id="7_7j4th"]
 
 [node name="LifeBarRoot_TopRight" type="Control"]
 layout_mode = 3
@@ -29,250 +15,106 @@ grow_horizontal = 0
 script = ExtResource("1_umlfk")
 playerIndex = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 100
-
-[node name="LifeBar" type="Control" parent="CanvasLayer"]
-layout_mode = 3
+[node name="TextureBackgroundHP" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -543.0
-offset_top = 30.0
-offset_right = -212.0
-offset_bottom = 69.0
+offset_left = -873.0
+offset_right = -15.0
+offset_bottom = 268.0
 grow_horizontal = 0
-scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_gpk2l")
 
-[node name="HP" type="TextureRect" parent="CanvasLayer/LifeBar"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -62.4
-grow_horizontal = 0
-grow_vertical = 2
-texture = SubResource("AtlasTexture_w71of")
-expand_mode = 3
-
-[node name="LifeBackground" type="HBoxContainer" parent="CanvasLayer/LifeBar"]
-layout_direction = 3
+[node name="ControlHP" type="Control" parent="TextureBackgroundHP"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 64.0
-offset_right = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LifeBG" type="TextureRect" parent="CanvasLayer/LifeBar/LifeBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_wrvh1")
-expand_mode = 3
-
-[node name="LifeBG2" type="TextureRect" parent="CanvasLayer/LifeBar/LifeBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_wrvh1")
-expand_mode = 3
-
-[node name="LifeBG3" type="TextureRect" parent="CanvasLayer/LifeBar/LifeBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_wrvh1")
-expand_mode = 3
-
-[node name="LifeBG4" type="TextureRect" parent="CanvasLayer/LifeBar/LifeBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_wrvh1")
-expand_mode = 3
-
-[node name="LifeBG5" type="TextureRect" parent="CanvasLayer/LifeBar/LifeBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_wrvh1")
-expand_mode = 3
-
-[node name="LifeBG6" type="TextureRect" parent="CanvasLayer/LifeBar/LifeBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_wrvh1")
-expand_mode = 3
-
-[node name="Life" type="HBoxContainer" parent="CanvasLayer/LifeBar"]
-layout_direction = 3
+[node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 64.0
-offset_right = 15.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Life" parent="CanvasLayer/LifeBar/Life" instance=ExtResource("3_wibn4")]
-layout_mode = 2
-
-[node name="Life2" parent="CanvasLayer/LifeBar/Life" instance=ExtResource("3_wibn4")]
-layout_mode = 2
-
-[node name="Life3" parent="CanvasLayer/LifeBar/Life" instance=ExtResource("3_wibn4")]
-layout_mode = 2
-
-[node name="Life4" parent="CanvasLayer/LifeBar/Life" instance=ExtResource("3_wibn4")]
-layout_mode = 2
-
-[node name="Life5" parent="CanvasLayer/LifeBar/Life" instance=ExtResource("3_wibn4")]
-layout_mode = 2
-
-[node name="Life6" parent="CanvasLayer/LifeBar/Life" instance=ExtResource("3_wibn4")]
-layout_mode = 2
-
-[node name="AmmoBar" type="Control" parent="CanvasLayer"]
-layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -324.0
-offset_top = 80.0
-offset_right = -60.0
-offset_bottom = 104.0
+offset_left = -376.0
+offset_top = 52.0
+offset_right = -98.0
+offset_bottom = 164.0
 grow_horizontal = 0
+texture = ExtResource("6_4w5sj")
 
-[node name="AmmoBackground" type="HBoxContainer" parent="CanvasLayer/AmmoBar"]
-layout_direction = 3
+[node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 86.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -581.0
+offset_top = 52.0
+offset_right = -303.0
+offset_bottom = 164.0
+grow_horizontal = 0
+texture = ExtResource("6_4w5sj")
 
-[node name="Ammo_BG" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG2" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG3" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG4" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG5" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG6" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG7" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG8" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG9" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG10" type="TextureRect" parent="CanvasLayer/AmmoBar/AmmoBackground"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_y2kif")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo" type="HBoxContainer" parent="CanvasLayer/AmmoBar"]
-layout_direction = 3
+[node name="TextureHP3" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 86.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -783.0
+offset_top = 52.0
+offset_right = -505.0
+offset_bottom = 164.0
+grow_horizontal = 0
+texture = ExtResource("6_4w5sj")
 
-[node name="Ammo_BG" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+[node name="AmmoContainer" type="HBoxContainer" parent="TextureBackgroundHP"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 196.0
+offset_right = 618.0
+offset_bottom = 255.0
+theme_override_constants/separation = 12
+alignment = 2
 
-[node name="Ammo_BG2" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
+[node name="TextureAmmo" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+texture = ExtResource("7_7j4th")
+stretch_mode = 5
 
-[node name="Ammo_BG3" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
+[node name="TextureAmmo2" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+texture = ExtResource("7_7j4th")
+stretch_mode = 5
 
-[node name="Ammo_BG4" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
+[node name="TextureAmmo3" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+texture = ExtResource("7_7j4th")
+stretch_mode = 5
 
-[node name="Ammo_BG5" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
+[node name="TextureAmmo4" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+texture = ExtResource("7_7j4th")
+stretch_mode = 5
 
-[node name="Ammo_BG6" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
+[node name="TextureAmmo5" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+texture = ExtResource("7_7j4th")
+stretch_mode = 5
 
-[node name="Ammo_BG7" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
+[node name="TextureAmmo6" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+texture = ExtResource("7_7j4th")
+stretch_mode = 5
 
-[node name="Ammo_BG8" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
+[node name="TextureAmmo7" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+texture = ExtResource("7_7j4th")
+stretch_mode = 5
 
-[node name="Ammo_BG9" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
+[node name="TextureAmmo8" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
-
-[node name="Ammo_BG10" type="TextureRect" parent="CanvasLayer/AmmoBar/Ammo"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_vgpp5")
-expand_mode = 3
-stretch_mode = 1
+texture = ExtResource("7_7j4th")
+stretch_mode = 5
