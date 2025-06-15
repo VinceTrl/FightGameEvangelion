@@ -8,6 +8,8 @@ extends CharacterBody3D
 @onready var sprite = $Sprite2D
 @onready var collider = $Collider
 @onready var attackHitbox: Hitbox = $Hitbox
+@onready var hitbox_up: Hitbox = $HitboxUp
+@onready var hitbox_down: Hitbox = $HitboxDown
 @onready var playerHurtbox: Hurtbox = $Hurtbox
 @onready var animator: AnimationPlayer = $Animator
 @onready var States = $StateMachine
@@ -172,6 +174,8 @@ func _ready():
 	#set id
 	playerHurtbox.owner_id = playerID
 	attackHitbox.owner_id = playerID
+	hitbox_up.owner_id = playerID
+	hitbox_down.owner_id = playerID
 	
 	if(startFacingRight): facing = 1
 	else: facing = -1
