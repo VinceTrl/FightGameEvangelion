@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsqs7dq8s1j1c"]
+
+[ext_resource type="Shader" uid="uid://8ft5wamw1t47" path="res://Assets/Shaders/FX_Projectile_shader.res" id="1_cq42d"]
+[ext_resource type="Texture2D" uid="uid://yekos3w2s0ft" path="res://Assets/Sprites/Vfx/Fire/Voronoi01.png" id="2_3twga"]
+[ext_resource type="Texture2D" uid="uid://rtbvltn3ylkd" path="res://Assets/Sprites/Vfx/T_VFX_Projectile.png" id="3_5xds0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ge3p"]
+render_priority = 0
+shader = ExtResource("1_cq42d")
+shader_parameter/DissolveTiling = Vector2(0.25, 0.2)
+shader_parameter/DissolveSpeed = Vector2(0, 0.2)
+shader_parameter/DissolveAmount = 0.5
+shader_parameter/MainTex = ExtResource("3_5xds0")
+shader_parameter/DissolveTexture = ExtResource("2_3twga")
+
+[sub_resource type="Gradient" id="Gradient_ipnen"]
+offsets = PackedFloat32Array(0, 0.233871, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0b16o"]
+gradient = SubResource("Gradient_ipnen")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ggvc5"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, -5, 0)
+linear_accel_min = 10.0
+linear_accel_max = 10.0
+radial_accel_min = 5.0
+radial_accel_max = 5.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = -2.23517e-06
+damping_min = 0.1
+damping_max = 0.5
+scale_min = 0.05
+scale_max = 0.1
+scale_over_velocity_max = 100.0
+color = Color(2, 0.616, 3, 1)
+color_ramp = SubResource("GradientTexture1D_0b16o")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ft1fj"]
+
+[node name="VFX_Projectile_Impact" type="Node3D"]
+
+[node name="Projectiles" type="GPUParticles3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_7ge3p")
+emitting = false
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ggvc5")
+draw_pass_1 = SubResource("QuadMesh_ft1fj")
