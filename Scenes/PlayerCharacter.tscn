@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/RunState.gd" id="7_y4pfp"]
 [ext_resource type="Script" path="res://Scripts/Player/States/JumpState.gd" id="8_g4l1g"]
 [ext_resource type="Texture2D" uid="uid://lcq1ha8p1jsa" path="res://Assets/Sprites/spr_StrikerDeath_strip.png" id="8_qtp7i"]
-[ext_resource type="AudioStream" uid="uid://dj37g28oll3hj" path="res://Assets/Sounds/SFX/EXPLDsgn_Anime Explosion 10_01.wav" id="8_tjmvd"]
 [ext_resource type="AudioStream" uid="uid://dcyeawnvw6u68" path="res://Assets/Sounds/SFX/DoudouSFX/SD_chargementdetir.wav" id="9_17uti"]
 [ext_resource type="Texture2D" uid="uid://dfilqvhviqctb" path="res://Assets/Sprites/spr_StrikerDash_strip.png" id="9_og1dr"]
 [ext_resource type="Script" path="res://Scripts/Player/States/JumpPeakState.gd" id="9_qpdmo"]
@@ -26,6 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/HurtStates.gd" id="14_gm8e6"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="15_3tuu1"]
 [ext_resource type="Texture2D" uid="uid://3dmxehnoxtxx" path="res://Assets/Sprites/KikiFighter/Player1/Fall.png" id="15_3wub7"]
+[ext_resource type="AudioStream" uid="uid://cvi58k73u0kas" path="res://Assets/Sounds/SFX/DoudouSFX/SD_LastHit.wav" id="15_km73h"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ShootState.gd" id="15_ow3as"]
 [ext_resource type="Texture2D" uid="uid://bdvychokc38dt" path="res://Assets/Sprites/KikiFighter/Player1/idle.png" id="17_7oodl"]
 [ext_resource type="AudioStream" uid="uid://b1ca000nfun4i" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Jump.wav" id="17_emdqr"]
@@ -524,7 +524,7 @@ tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("8_tjmvd")
+"stream": ExtResource("15_km73h")
 }],
 "times": PackedFloat32Array(0)
 }
