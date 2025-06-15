@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
 [ext_resource type="PackedScene" uid="uid://bnh4h6i2wqw74" path="res://Scenes/Gameplay/big_head.tscn" id="12_67sdl"]
-[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -156,12 +156,6 @@ spot_range = 49.3115
 
 [node name="Robot Pivot" parent="Enviro/Node3D/Meshes/Node3D" index="0"]
 transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993782, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
-
-[node name="SpotLight3D3" parent="Enviro/Node3D/Meshes/Node3D/Robot Pivot/Robot_eva_02" index="5"]
-transform = Transform3D(0.999685, 0.0109206, -0.0226252, 0.00979678, 0.659829, 0.751351, 0.0231342, -0.751335, 0.659515, 0.417745, -0.0908117, -0.92647)
-
-[node name="SpotLight3D4" parent="Enviro/Node3D/Meshes/Node3D/Robot Pivot/Robot_eva_02" index="6"]
-transform = Transform3D(0.849036, 0.0109208, -0.528222, 0.390801, 0.659829, 0.641794, 0.355546, -0.751335, 0.555952, -0.642689, -0.141741, -0.700045)
 
 [node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
 transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
