@@ -1,13 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://xdx0hyltny5r"]
+[gd_scene load_steps=6 format=3 uid="uid://xdx0hyltny5r"]
 
 [ext_resource type="PackedScene" uid="uid://cuv0ymymfo1jy" path="res://Sources/Meshes/SM_Plateforme_Big_01.fbx" id="1_g8mij"]
 [ext_resource type="Material" uid="uid://22e74ahvsye" path="res://Assets/Materials/Enviro/M_Bu_Plateforme.tres" id="2_tdpba"]
 [ext_resource type="Material" uid="uid://73puxoy3c30t" path="res://Assets/Materials/Enviro/M_PubPanel.tres" id="3_j0j0y"]
 [ext_resource type="Material" uid="uid://dnqk1ekx8qx5n" path="res://Assets/Materials/Enviro/M_Emissive_Red.tres" id="4_uuufu"]
+[ext_resource type="Material" uid="uid://bjbvhljdgfk67" path="res://Assets/Materials/Enviro/M_Bu_PlateformDark.tres" id="5_gl13t"]
 
 [node name="SM_Plateforme_Big_01" instance=ExtResource("1_g8mij")]
 
 [node name="SM_Plateforme_Big_01" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, -0.0666895, -0.276305, -0.00923014)
 surface_material_override/0 = ExtResource("2_tdpba")
 surface_material_override/1 = ExtResource("3_j0j0y")
 surface_material_override/2 = ExtResource("4_uuufu")
+surface_material_override/3 = ExtResource("5_gl13t")
+
+[node name="BézierCurve" parent="SM_Plateforme_Big_01" index="0"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="BézierCurve_001" parent="SM_Plateforme_Big_01" index="1"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="BézierCurve_002" parent="SM_Plateforme_Big_01" index="2"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="BézierCurve_003" parent="SM_Plateforme_Big_01" index="3"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="BézierCurve_004" parent="SM_Plateforme_Big_01" index="4"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="BézierCurve_005" parent="SM_Plateforme_Big_01" index="5"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="BézierCurve_006" parent="SM_Plateforme_Big_01" index="6"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="BézierCurve_007" parent="SM_Plateforme_Big_01" index="7"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="BézierCurve_010" parent="SM_Plateforme_Big_01" index="8"]
+surface_material_override/0 = ExtResource("2_tdpba")
+
+[node name="SM_Plateforme_Big_01_002" parent="SM_Plateforme_Big_01" index="9"]
+surface_material_override/0 = ExtResource("5_gl13t")
+
+[node name="SM_Plateforme_Big_01_004" parent="SM_Plateforme_Big_01" index="10"]
+surface_material_override/0 = ExtResource("5_gl13t")
+
+[node name="SM_Plateforme_Big_01_003" parent="SM_Plateforme_Big_01" index="11"]
+surface_material_override/0 = ExtResource("5_gl13t")
+
+[node name="SM_Plateforme_Big_01_006" parent="SM_Plateforme_Big_01" index="12"]
+surface_material_override/0 = ExtResource("5_gl13t")
