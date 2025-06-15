@@ -1,6 +1,7 @@
 class_name Hurtbox
 extends Area3D
 
+@onready var collision_shape: CollisionShape3D = $CollisionShape2D
 @export var owner_id = 1
 @export var randomID = false
 

@@ -7,6 +7,8 @@ extends RigidBody3D
 @onready var sprite: AnimatedSprite3D = $BulletSprite
 @onready var sfx: AudioStreamPlayer3D = $Sfx
 @onready var raycast: RayCast3D = $RayCast3D
+@onready var collision_shape: CollisionShape3D = $CollisionShape2D
+
 
 const EXPL_DSGN_ANIME_EXPLOSION_1_01 = preload("res://Assets/Sounds/SFX/EXPLDsgn_Anime Explosion 1_01.wav")
 const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
@@ -152,9 +154,36 @@ func _on_hitbox_on_hit() -> void:
 
 
 func SetProjectileScale(scaleRatio: float):
+	
 	var targetScale = lerp(iniScale,maxScale,scaleRatio)
-	scale = Vector3(targetScale,targetScale,targetScale)
-	print("SCALE : " + str(scale))
+	
+	sprite.scale = Vector3(targetScale,targetScale,targetScale)
+	hitbox.scale = Vector3(targetScale,targetScale,targetScale)
+	hurtbox.scale = Vector3(targetScale,targetScale,targetScale)
+	raycast.scale = Vector3(targetScale,targetScale,targetScale)
+	
+	#ScaleShape(collision_shape.shape,targetScale)
+	#ScaleShape(hitbox.collision_shape.shape,targetScale)
+	#ScaleShape(hurtbox.collision_shape.shape,targetScale)
+	#scale = Vector3(targetScale,targetScale,targetScale)
+	
+	print("SET SCALE TO : " + str(scale))
+	
+	
+func ScaleShape(shape: Shape3D,target_size: float):
+	
+	if shape is BoxShape3D:
+		var x = shape.size.x * target_size
+		var y = shape.size.y * target_size
+		var z = shape.size.z * target_size
+		shape.size = Vector3(x, y, z)
+
+	elif shape is SphereShape3D:
+		shape.radius = shape.radius * target_size
+
+	elif shape is CapsuleShape3D:
+		shape.radius = target_size
+		shape.height = target_size * 2.0
 
 func _on_body_entered(body: Node3D) -> void:
 	if(body == Hitbox): return
