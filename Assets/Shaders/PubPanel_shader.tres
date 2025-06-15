@@ -5,11 +5,11 @@ default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
 op_type = 0
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_17vhp"]
-default_input_values = [0, 0.0, 1, 10.0]
+default_input_values = [0, 0.0, 1, 20.0]
 operator = 2
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_nsba6"]
-default_input_values = [0, 0.0, 1, 0.01]
+default_input_values = [0, 0.0, 1, 0.005]
 operator = 2
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_8fsyj"]
@@ -123,9 +123,31 @@ void fragment() {
 	vec2 n_out6p0 = n_out5p0 + n_out20p0;
 
 
+// Input:9
+	float n_out9p0 = TIME;
+
+
+// FloatOp:11
+	float n_in11p1 = 20.00000;
+	float n_out11p0 = n_out9p0 * n_in11p1;
+
+
+// VectorFunc:8
+	vec2 n_out8p0 = sin(vec2(n_out11p0));
+
+
+// FloatOp:12
+	float n_in12p1 = 0.00500;
+	float n_out12p0 = n_out8p0.x * n_in12p1;
+
+
+// VectorCompose:13
+	float n_in13p0 = 0.00000;
+	vec2 n_out13p0 = vec2(n_in13p0, n_out12p0);
+
+
 // VectorOp:10
-	vec2 n_in10p1 = vec2(0.00000, 0.00000);
-	vec2 n_out10p0 = n_out6p0 + n_in10p1;
+	vec2 n_out10p0 = n_out6p0 + n_out13p0;
 
 
 // UVFunc:4
@@ -144,6 +166,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-789.131, -147.855)
 modes/diffuse = 3
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_bvvjs")
 nodes/fragment/2/position = Vector2(-260, 360)
@@ -183,4 +206,4 @@ nodes/fragment/22/node = SubResource("VisualShaderNodeInput_axau2")
 nodes/fragment/22/position = Vector2(-1100, -500)
 nodes/fragment/23/node = SubResource("VisualShaderNodeVectorOp_n1jqg")
 nodes/fragment/23/position = Vector2(-780, -460)
-nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 0, 0, 4, 0, 3, 0, 6, 0, 10, 0, 10, 0, 4, 2, 9, 0, 11, 0, 11, 0, 8, 0, 8, 0, 12, 0, 12, 0, 13, 1, 18, 0, 15, 0, 19, 0, 14, 0, 15, 0, 20, 0, 14, 0, 20, 1, 5, 0, 6, 0, 20, 0, 6, 1, 22, 0, 23, 0, 21, 0, 23, 1, 23, 0, 4, 0)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 0, 0, 4, 0, 3, 0, 6, 0, 10, 0, 10, 0, 4, 2, 9, 0, 11, 0, 11, 0, 8, 0, 8, 0, 12, 0, 12, 0, 13, 1, 18, 0, 15, 0, 19, 0, 14, 0, 15, 0, 20, 0, 14, 0, 20, 1, 5, 0, 6, 0, 20, 0, 6, 1, 22, 0, 23, 0, 21, 0, 23, 1, 23, 0, 4, 0, 13, 0, 10, 1)
