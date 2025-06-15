@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ylkj7x5lr578"
-path="res://.godot/imported/SlapBros_Penpen.blend-ee5068762c3c02e82cbde0c1f95245bb.scn"
+valid=false
 
 [deps]
 
 source_file="res://Sources/Blend/SlapBros_Penpen.blend"
-dest_files=["res://.godot/imported/SlapBros_Penpen.blend-ee5068762c3c02e82cbde0c1f95245bb.scn"]
 
 [params]
 
