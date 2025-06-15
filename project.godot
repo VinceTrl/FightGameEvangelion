@@ -29,6 +29,10 @@ window/size/viewport_height=540
 
 enabled=PackedStringArray("res://addons/post_processing/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 KeyJump_1={
