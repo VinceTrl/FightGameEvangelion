@@ -12,10 +12,12 @@ func EnterState():
 	print("enter Win Screen state")
 	screenInstance = WINNER_SCREEN.instantiate()
 	add_child(screenInstance)
+	Manager.gameStateManager.OnWinnerScreenStart.emit()
 	canHandleInput = true
 	
 func ExitState():
 	#screenInstance as Node
+	Manager.gameStateManager.OnWinnerScreenEnd.emit()
 	screenInstance.queue_free()
 
 func Draw():

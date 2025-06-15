@@ -14,7 +14,9 @@ var fightIsFinished = false
 signal onScoreUpdated
 
 func _ready() -> void:
+	print("i'm the SCORE manager")
 	Manager.OnGameStateChanged.connect(OnGameStateChanged)
+	Manager.gameStateManager.OnTitleScreenStart.connect(ResetScore)
 	
 func OnGameStateChanged(_state: GameStates.GameState):
 	#fight begin

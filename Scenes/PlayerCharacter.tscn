@@ -26,12 +26,12 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/HurtStates.gd" id="14_gm8e6"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="15_3tuu1"]
 [ext_resource type="Texture2D" uid="uid://3dmxehnoxtxx" path="res://Assets/Sprites/KikiFighter/Player1/Fall.png" id="15_3wub7"]
-[ext_resource type="AudioStream" uid="uid://cvi58k73u0kas" path="res://Assets/Sounds/SFX/DoudouSFX/SD_LastHit.wav" id="15_km73h"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ShootState.gd" id="15_ow3as"]
 [ext_resource type="Texture2D" uid="uid://bdvychokc38dt" path="res://Assets/Sprites/KikiFighter/Player1/idle.png" id="17_7oodl"]
 [ext_resource type="AudioStream" uid="uid://b1ca000nfun4i" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Jump.wav" id="17_emdqr"]
 [ext_resource type="AudioStream" uid="uid://bwvfenw5lg1vq" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Charge 9_02.wav" id="18_baug7"]
 [ext_resource type="Texture2D" uid="uid://db4w6766oss3i" path="res://Assets/Sprites/KikiFighter/Player1/Jump.png" id="18_xmdxu"]
+[ext_resource type="AudioStream" uid="uid://deqfnd83roy6" path="res://Assets/Sounds/SFX/DoudouSFX/SD_attackIMPACT.wav" id="19_7oodu"]
 [ext_resource type="AudioStream" uid="uid://l4gky62ks1qr" path="res://Assets/Sounds/SFX/FGHTClth_Anime Swing 3_01.wav" id="19_73mbs"]
 [ext_resource type="AudioStream" uid="uid://ddlryyptq7w37" path="res://Assets/Sounds/SFX/DoudouSFX/SD_tir.wav" id="19_qmn1i"]
 [ext_resource type="Texture2D" uid="uid://c7t42lft2owik" path="res://Assets/Sprites/KikiFighter/Player1/Run.png" id="20_4a108"]
@@ -749,7 +749,7 @@ tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("15_km73h")
+"stream": ExtResource("19_7oodu")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -1598,6 +1598,7 @@ bus = &"SFX"
 bus = &"SFX"
 
 [node name="Sfx_Shoot" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+volume_db = -2.0
 bus = &"SFX"
 
 [node name="Sfx_ChargeShoot" type="AudioStreamPlayer3D" parent="PlayerAudio"]
@@ -1607,6 +1608,7 @@ bus = &"SFX"
 bus = &"SFX"
 
 [node name="Sfx_Hurt" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="Sfx_Death" type="AudioStreamPlayer3D" parent="PlayerAudio"]

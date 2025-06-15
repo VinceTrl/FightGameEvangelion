@@ -3,6 +3,7 @@ extends Control
 
 @onready var win_text: Label = $ColorRect/WinText
 @onready var score_text: Label = $ScoreText
+@export var scoreDisplayDelay: float = 0.75
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 		
 	node.visible = false
 	Manager.gameStateManager.OnResultScreenEnd.connect(ExitResult)
+	SetScoreText()
 	
 func get_all_descendants(node: Node) -> Array:
 	var result: Array = []
@@ -41,6 +43,10 @@ func StartResult():
 		winnerText = "Player" + str(player.playerID)
 		win_text.text = winnerText + " Wins"
 		
+	self.visible = true	
+	
+	await get_tree().create_timer(scoreDisplayDelay,true,false,false).timeout
+	
 	SetScoreText()
 		
 	self.visible = true
