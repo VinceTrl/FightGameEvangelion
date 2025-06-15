@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cngp7x80lhlug"]
+[gd_scene load_steps=15 format=3 uid="uid://cngp7x80lhlug"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/sasuke.gd" id="1_8n61w"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="1_gascv"]
@@ -8,13 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://drcx445ykbudn" path="res://Assets/Sprites/BG/SasukeBackground/EYeiKRLU8AAACf4.png" id="4_o8mf6"]
 [ext_resource type="Texture2D" uid="uid://b4b1exq4y3a2e" path="res://Assets/Sprites/BG/SasukeBackground/Ejvtd4vWkAIxlEH.png" id="5_3uvk7"]
 [ext_resource type="Texture2D" uid="uid://b2rsly7uy0oj1" path="res://Assets/Sprites/BG/SasukeBackground/ee447f27-2c1c-4c25-88e3-b428dc1be0d7.png" id="6_oqirl"]
-[ext_resource type="Texture2D" uid="uid://wyawvoeq8l35" path="res://Assets/Sprites/BG/SasukeBackground/ec37059c1f80388558b21434e28a5f9f.png" id="7_pclme"]
-[ext_resource type="Texture2D" uid="uid://djcvxc6wnq1om" path="res://Assets/Sprites/BG/SasukeBackground/772-7723573_sticker-kikoojap-sasuke-dark-okamari-no-suzoki-sombre.png" id="8_20t1s"]
 [ext_resource type="Texture2D" uid="uid://ckgwc2w22f7ej" path="res://Assets/Sprites/BG/SasukeBackground/55pa4jetiw2e1.png" id="9_biljc"]
-[ext_resource type="Texture2D" uid="uid://s4ntpw5hx6k4" path="res://Assets/Sprites/BG/SasukeBackground/095b95952eba60d.png" id="10_3nebt"]
 [ext_resource type="Texture2D" uid="uid://cgcdg6mtk6sep" path="res://Assets/Sprites/BG/SasukeBackground/3226528_edouchida_naruto-shippuden-sasuke-uchiha.png" id="11_1pbvk"]
-[ext_resource type="Texture2D" uid="uid://cxy2a5u3qqohb" path="res://Assets/Sprites/BG/SasukeBackground/fanfiction-animes-naruto-okaeri-sasuke-495017,311220120147.png" id="11_27iyr"]
-[ext_resource type="Texture2D" uid="uid://6olh54cjymb1" path="res://Assets/Sprites/BG/SasukeBackground/08095702c9c8411ce00af033bce90cc3.png" id="12_qunxe"]
 [ext_resource type="Texture2D" uid="uid://uy8xpo70cnqf" path="res://Assets/Sprites/BG/SasukeBackground/sns_kiss_under_mistletoe_beso_debajo_del_muerdago_by_arisu_artnfics_dauj5r0-350t.png" id="13_cqu0a"]
 [ext_resource type="PackedScene" uid="uid://c7qdjreebkuml" path="res://Scenes/VFX/VFX2D/vfx_2d_spawn_smoke.tscn" id="17_n0cej"]
 [ext_resource type="AudioStream" uid="uid://dlkw15ct1bsvu" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Sasuke.wav" id="18_h33u1"]
@@ -96,7 +91,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = 93.0
+offset_top = 145.0
+offset_right = -469.0
+offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_o8mf6")
@@ -108,8 +106,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 135.0
-offset_top = 173.0
+offset_left = 83.0
+offset_top = 109.0
+offset_right = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_3uvk7")
@@ -123,92 +122,41 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -495.0
-offset_top = -267.568
-offset_right = -83.0
-offset_bottom = 267.568
+offset_left = -617.0
+offset_top = -368.0
+offset_right = -50.0
+offset_bottom = 406.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("6_oqirl")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="TextureRect5" type="TextureRect" parent="Control/CanvasLayer/Textures"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_pclme")
-stretch_mode = 5
-
 [node name="TextureRect7" type="TextureRect" parent="Control/CanvasLayer/Textures"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 540.0
+offset_left = 169.0
+offset_right = 671.0
 grow_vertical = 2
 texture = ExtResource("9_biljc")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect8" type="TextureRect" parent="Control/CanvasLayer/Textures"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 169.0
-offset_top = -575.0
-offset_right = 574.0
-offset_bottom = -157.0
-grow_vertical = 0
-texture = ExtResource("10_3nebt")
-expand_mode = 1
-
-[node name="TextureRect12" type="TextureRect" parent="Control/CanvasLayer/Textures"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -200.0
-offset_right = 200.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_27iyr")
-stretch_mode = 4
-
 [node name="TextureRect9" type="TextureRect" parent="Control/CanvasLayer/Textures"]
 layout_mode = 1
-anchors_preset = 9
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 248.0
-offset_top = -55.0
-offset_right = 679.0
-offset_bottom = 79.0
+offset_left = 506.0
+offset_top = 152.0
+offset_right = -91.0
+offset_bottom = -5.0
+grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_1pbvk")
 expand_mode = 1
-
-[node name="TextureRect10" type="TextureRect" parent="Control/CanvasLayer/Textures"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 69.0
-offset_top = -237.0
-offset_right = 355.0
-offset_bottom = 195.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_qunxe")
-expand_mode = 1
+stretch_mode = 4
 
 [node name="TextureRect11" type="TextureRect" parent="Control/CanvasLayer/Textures"]
 layout_mode = 1
@@ -218,22 +166,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -311.0
-offset_top = -495.0
-offset_right = 456.0
+offset_top = -552.0
+offset_right = 538.0
 offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("13_cqu0a")
-
-[node name="TextureRect6" type="TextureRect" parent="Control/CanvasLayer/Textures"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_20t1s")
-expand_mode = 1
 
 [node name="Background" type="TextureRect" parent="Control/CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
