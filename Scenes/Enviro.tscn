@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://8a00sh66ihoa"]
 
+[ext_resource type="PackedScene" uid="uid://2f6atne80lb0" path="res://Assets/Meshes/Characters/Eva/robot_Eva_Rigged.tscn" id="2_hwe4f"]
 [ext_resource type="PackedScene" uid="uid://bokk03njw1g62" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_02.tscn" id="2_pmxf5"]
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="2_tsbgh"]
-[ext_resource type="PackedScene" uid="uid://gim0rktb26eh" path="res://Assets/Meshes/Enviro/robot_eva_01.tscn" id="3_hidu8"]
 [ext_resource type="PackedScene" uid="uid://sqtp5dlv83tu" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_03.tscn" id="3_p20j8"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="4_474d5"]
 [ext_resource type="PackedScene" uid="uid://njq1raxq33q0" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_04.tscn" id="4_yh5vk"]
@@ -417,35 +417,35 @@ transform = Transform3D(0.999033, 0.039044, -0.0202136, -0.0389663, 0.999232, 0.
 [node name="Robot Pivot" type="Node3D" parent="Meshes/Node3D"]
 transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
-[node name="Robot_eva_02" parent="Meshes/Node3D/Robot Pivot" instance=ExtResource("3_hidu8")]
-transform = Transform3D(0.998826, -0.0419434, 0.024249, 0.0472788, 0.734517, -0.676943, 0.0105819, 0.677294, 0.735637, 0.0776888, -3.47707, -5.00639)
+[node name="Robot_eva_03" parent="Meshes/Node3D/Robot Pivot" instance=ExtResource("2_hwe4f")]
+transform = Transform3D(0.999127, -0.0417438, -0.00193136, 0.0300053, 0.748803, -0.662113, 0.0290853, 0.661476, 0.749402, 0.00796632, -3.76792, -5.05475)
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_02"]
-transform = Transform3D(0.999685, 0.0109206, -0.0226252, 0.00979678, 0.659829, 0.751351, 0.0231342, -0.751335, 0.659515, 0.41254, 0.0429149, -0.758159)
+[node name="SpotLight3D3" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_03"]
+transform = Transform3D(0.999948, -0.00821157, -0.00605043, 0.0100089, 0.675693, 0.737115, -0.00196457, -0.737137, 0.67574, 0.473005, 0.30621, -0.923737)
 light_color = Color(0.95, 0.8664, 0.494, 1)
 light_energy = 150.0
 light_volumetric_fog_energy = 10.0
 spot_range = 1.63342
 spot_angle = 45.3775
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_02"]
-transform = Transform3D(0.849036, 0.0109208, -0.528222, 0.390801, 0.659829, 0.641794, 0.355546, -0.751335, 0.555952, -0.514993, -0.0829639, -0.646571)
+[node name="SpotLight3D4" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_03"]
+transform = Transform3D(0.857698, -0.00821157, -0.514089, 0.383739, 0.675692, 0.629431, 0.342198, -0.737137, 0.582691, -0.451385, 0.177326, -0.791424)
 light_color = Color(0.95, 0.8664, 0.494, 1)
 light_energy = 150.0
 light_volumetric_fog_energy = 10.0
 spot_range = 1.63342
 spot_angle = 45.3775
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_02"]
-transform = Transform3D(0.998469, 0.0109206, -0.0542413, 0.0335627, 0.659829, 0.750665, 0.0439879, -0.751335, 0.658453, 1.12026, 5.06949, 1.07319)
+[node name="SpotLight3D5" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_03"]
+transform = Transform3D(0.999256, -0.00821163, -0.0376832, 0.0333243, 0.675693, 0.73643, 0.019415, -0.737137, 0.675464, 1.22601, 5.29314, 0.995835)
 light_color = Color(0.95, 0.8664, 0.494, 1)
 light_energy = 1500.0
 light_volumetric_fog_energy = 10.0
 spot_range = 0.787848
 spot_angle = 45.3775
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_02"]
-transform = Transform3D(0.998469, 0.0109206, -0.0542413, 0.0335627, 0.659829, 0.750665, 0.0439879, -0.751335, 0.658453, -0.979472, 5.05901, 1.42991)
+[node name="SpotLight3D6" type="SpotLight3D" parent="Meshes/Node3D/Robot Pivot/Robot_eva_03"]
+transform = Transform3D(0.999256, -0.00821163, -0.0376832, 0.0333243, 0.675693, 0.73643, 0.019415, -0.737137, 0.675464, -0.864019, 5.27357, 1.40527)
 light_color = Color(0.95, 0.8664, 0.494, 1)
 light_energy = 1500.0
 light_volumetric_fog_energy = 10.0

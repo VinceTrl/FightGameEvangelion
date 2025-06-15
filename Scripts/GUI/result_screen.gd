@@ -17,6 +17,7 @@ func _ready() -> void:
 				##print("text found")
 		
 	node.visible = false
+	Manager.gameStateManager.OnResultScreenEnd.connect(ExitResult)
 	
 func get_all_descendants(node: Node) -> Array:
 	var result: Array = []
@@ -51,3 +52,6 @@ func SetScoreText():
 	var scoreString = str(player1Score) + " - " + str(player2Score)
 	
 	score_text.text = scoreString
+	
+func ExitResult():
+	visible = false
