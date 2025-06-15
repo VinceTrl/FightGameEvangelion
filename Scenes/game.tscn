@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=19 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 [ext_resource type="AudioStream" uid="uid://nqx3ft62tmu0" path="res://Assets/Sounds/Musics/teknokiki LOOP LONGUE.mp3" id="17_7gvmf"]
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
-[ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="18_87cti"]
 [ext_resource type="PackedScene" uid="uid://bdvwx0kkjddp" path="res://Scenes/Gameplay/heart.tscn" id="20_slsbe"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
@@ -30,15 +29,15 @@ unique_name_in_owner = true
 [node name="Gameplay" type="Node" parent="."]
 
 [node name="Player" parent="Gameplay" instance=ExtResource("1_rog66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42786, 1.71459, 0)
 
 [node name="Player2" parent="Gameplay" instance=ExtResource("1_rog66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2585, 1.63538, 0)
 playerID = 2
 startFacingRight = false
 
 [node name="Sprite2D" parent="Gameplay/Player2" index="3"]
-modulate = Color(0, 1, 1, 1)
+modulate = Color(0.860261, 0.836131, 0, 1)
 
 [node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 1.66432, 4.5)
@@ -47,40 +46,37 @@ player2 = NodePath("../Player2")
 cameraClampMin = Vector2(-5, 0)
 
 [node name="BigHead" parent="Gameplay" instance=ExtResource("12_67sdl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24842, 1.0664, -1.37892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179624, 2.0213, -1.37892)
 
 [node name="AmmoItem" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66236, 1.25418, 0.113311)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3916, 1.25418, 0.113311)
 
 [node name="AmmoItem2" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2757, 1.25418, 0.113311)
-
-[node name="AmmoItem3" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2662, 2.25418, 0.113311)
-
-[node name="AmmoItem4" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 0)
-
-[node name="AmmoItem5" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48458, 1.25418, 0.113311)
-
-[node name="AmmoItem6" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79976, 1.78345, 0.113311)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33764, 1.25418, 0.113311)
 
 [node name="KillVolume" parent="Gameplay" instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="Spawner" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97922, -0.145446)
 
 [node name="Spawner2" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.97922, -0.145446)
 
 [node name="Spawner3" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.97922, -0.145446)
 
 [node name="Spawner4" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.97922, -0.145446)
+
+[node name="Spawner5" parent="Gameplay" instance=ExtResource("8_dreha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.97922, -0.145446)
+
+[node name="Heart" parent="Gameplay" instance=ExtResource("20_slsbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33219, -0.325578, 2.38419e-07)
+
+[node name="Heart2" parent="Gameplay" instance=ExtResource("20_slsbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66781, -0.325578, 2.38419e-07)
 
 [node name="GUI" type="Node" parent="."]
 
@@ -217,15 +213,6 @@ light_volumetric_fog_energy = 10.0
 spot_range = 21.5625
 spot_angle = 54.9228
 
-[node name="Poop" parent="Enviro" instance=ExtResource("18_87cti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60528, 1.10266, 0)
-
-[node name="Poop2" parent="Enviro" instance=ExtResource("18_87cti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21292, 0.873709, 0)
-
-[node name="Poop3" parent="Enviro" instance=ExtResource("18_87cti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78708, 0.873709, 0)
-
 [node name="TimerOutSpawners" parent="." instance=ExtResource("17_avc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
@@ -241,9 +228,6 @@ stream = ExtResource("17_7gvmf")
 volume_db = -15.0
 bus = &"Music"
 parameters/looping = false
-
-[node name="Heart" parent="." instance=ExtResource("20_slsbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326908, 0)
 
 [editable path="Gameplay/Player2"]
 [editable path="Enviro/Node3D"]
