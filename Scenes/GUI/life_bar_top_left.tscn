@@ -8,12 +8,13 @@
 [node name="LifeBarRoot_TopLeft" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_m1rj3")
 
 [node name="TextureBackgroundHP" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 15.0
-offset_right = 872.0
+offset_left = 30.0
+offset_right = 887.0
 offset_bottom = 268.0
 texture = ExtResource("4_mdj3j")
 
