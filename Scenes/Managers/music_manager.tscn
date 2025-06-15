@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://w7nmihk4qbnm"]
+
+[ext_resource type="AudioStream" uid="uid://nqx3ft62tmu0" path="res://Assets/Sounds/Musics/teknokiki LOOP LONGUE.mp3" id="1_0a7po"]
+[ext_resource type="Script" path="res://Scenes/Managers/music_manager.gd" id="1_v26d1"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_v26d1")
+
+[node name="StageMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_0a7po")
+volume_db = -20.0
+bus = &"Music"
