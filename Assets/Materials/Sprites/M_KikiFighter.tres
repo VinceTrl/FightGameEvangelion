@@ -6,7 +6,7 @@
 [resource]
 render_priority = -1
 shader = ExtResource("1_wkg1k")
-shader_parameter/additiveColor = Color(0, 0, 0.780392, 1)
+shader_parameter/additiveColor = Color(0, 0, 0, 1)
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/glowSize = 0.0
 shader_parameter/glowDensity = 0
