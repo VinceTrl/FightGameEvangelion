@@ -382,10 +382,11 @@ func HandleAirAttack():
 		
 		
 func SetSpriteOffset_Attack():
-	if (sprite.flip_h == true): #facing left
-		sprite.offset.x = -attackSpriteOffset
-	else: #facing right
-		sprite.offset.x = attackSpriteOffset
+	pass
+	#if (sprite.flip_h == true): #facing left
+		#sprite.offset.x = -attackSpriteOffset
+	#else: #facing right
+		#sprite.offset.x = attackSpriteOffset
 		
 func GetAttackDirection() -> Vector3:
 	var _dir = Vector3.ZERO
