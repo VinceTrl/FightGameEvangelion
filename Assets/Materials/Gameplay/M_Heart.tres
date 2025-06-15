@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://da2n15d3vo6uv"]
+
+[ext_resource type="Texture2D" uid="uid://cdbkvq68uscka" path="res://Assets/Meshes/Props/Heart/mi_heartcontainer_alb.png" id="1_cpi62"]
+[ext_resource type="Texture2D" uid="uid://du3vipq4gbr11" path="res://Assets/Meshes/Props/Heart/mi_heartcontainer_mtl.png" id="2_yyjhb"]
+[ext_resource type="Texture2D" uid="uid://e1grtcgcdstl" path="res://Assets/Meshes/Props/Heart/mi_heartcontainer_nml.png" id="3_ikew6"]
+[ext_resource type="Texture2D" uid="uid://bnj4biwa03s86" path="res://Assets/Meshes/Props/Heart/mi_heartcontainer_smt.png" id="4_kerrb"]
+
+[resource]
+albedo_texture = ExtResource("1_cpi62")
+metallic = 1.0
+metallic_texture = ExtResource("2_yyjhb")
+roughness = 0.5
+roughness_texture = ExtResource("4_kerrb")
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("1_cpi62")
+normal_enabled = true
+normal_texture = ExtResource("3_ikew6")
