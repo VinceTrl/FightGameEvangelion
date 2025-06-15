@@ -8,6 +8,7 @@ extends PlayerState
 
 @onready var collision_shape_hurtbox: CollisionShape3D = $"../../Hurtbox/CollisionShape3D"
 @onready var ground_location: Marker3D = $"../../GroundLocation"
+@onready var collider: CollisionShape3D = $"../../Collider"
 
 const VFX_2D_DASH_SMOKE = preload("res://Scenes/VFX/VFX2D/vfx_2d_dash_smoke.tscn")
 
@@ -27,9 +28,12 @@ func EnterState():
 	var vfx = VFX_2D_DASH_SMOKE.instantiate()
 	vfx.global_position = ground_location.global_position
 	get_tree().current_scene.add_child(vfx)
+	collision_shape_hurtbox.disabled = true
+	#collider.disabled = true
 	
 func ExitState():
 	collision_shape_hurtbox.disabled = false
+	#collider.disabled = false
 
 func Draw():
 	pass
