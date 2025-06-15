@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbx10gs5u8elq"]
+
+[ext_resource type="Texture2D" uid="uid://faofs2mkcf5b" path="res://Assets/Sprites/GUI/KikiGUI/GUI_LifePoint_P1.png" id="1_2ur86"]
+[ext_resource type="Script" path="res://Scripts/GUI/texture_hp.gd" id="2_x84f7"]
+
+[node name="TextureHP" type="TextureRect"]
+offset_left = 100.0
+offset_top = 51.0
+offset_right = 378.0
+offset_bottom = 163.0
+texture = ExtResource("1_2ur86")
+script = ExtResource("2_x84f7")
