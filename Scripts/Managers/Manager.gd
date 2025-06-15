@@ -5,6 +5,7 @@ const SCORE_MANAGER = preload("res://Scenes/Managers/score_manager.tscn")
 const GAME_SCENE = preload("res://Scenes/game.tscn")
 const TRANSITION_SCREEN = preload("res://Scenes/GUI/transition_screen.tscn")
 const TITLE_SCREEN = preload("res://Scenes/GUI/title_screen.tscn")
+const MUSIC_MANAGER = preload("res://Scenes/Managers/music_manager.tscn")
 
 var gameManager : GameManager
 var timeManager: TimeManager
@@ -15,6 +16,7 @@ var postProcessEffects: PostProcessEffects
 var spawnManager: SpawnManager
 var scoreManager: ScoreManager
 var titleScreen: TitleScreen
+var musicManager
 
 var previousGameState : GameStates.GameState
 var currentGameState : GameStates.GameState = GameStates.GameState.TitleScreen
@@ -35,6 +37,11 @@ func _ready() -> void:
 	var _scoreManager = SCORE_MANAGER.instantiate()
 	add_child(_scoreManager)
 	scoreManager = _scoreManager
+	
+	var _musicManager = MUSIC_MANAGER.instantiate()
+	add_child(_musicManager)
+	musicManager = _musicManager
+	musicManager.StartStageMusic()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

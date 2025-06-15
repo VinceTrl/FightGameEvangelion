@@ -2,6 +2,7 @@ extends GameStates
 
 var canHandleInput = true
 
+
 func _ready():
 	state = GameState.TitleScreen
 	manager = Manager
@@ -12,6 +13,7 @@ func EnterState():
 		manager.titleScreen.ResetTitleScreen()
 		
 	canHandleInput = true
+	manager.gameStateManager.OnTitleScreenStart.emit()
 	
 func ExitState():
 	#manager.titleScreen.queue_free()
