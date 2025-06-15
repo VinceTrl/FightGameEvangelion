@@ -1,11 +1,10 @@
-[gd_scene load_steps=67 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=68 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Texture2D" uid="uid://lfjvawnucaf5" path="res://Assets/Sprites/spr_StrikerIdle_strip.png" id="2_c2271"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
-[ext_resource type="Texture2D" uid="uid://crkbsb0rt7an7" path="res://Assets/Sprites/spr_StrikerRun_strip.png" id="3_rb07g"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/SpriteEffects.gd" id="4_1nn6i"]
-[ext_resource type="Texture2D" uid="uid://bmid5qjhdv65f" path="res://Assets/Sprites/spr_StrikerJump_strip.png" id="5_3awsj"]
+[ext_resource type="Texture2D" uid="uid://bobgjw0avjl1h" path="res://Assets/Sprites/KikiFighter/Player1/Atak Side .png" id="5_77e1d"]
 [ext_resource type="Script" path="res://Scripts/Player/States/States.gd" id="5_hmp2k"]
 [ext_resource type="Texture2D" uid="uid://q4o1y3w60tli" path="res://Assets/Sprites/spr_StrikerSlash_stripWithEffect.png" id="5_o2jil"]
 [ext_resource type="Script" path="res://Scripts/Player/States/IdleState.gd" id="6_726n8"]
@@ -22,17 +21,19 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/JumpPeakState.gd" id="9_qpdmo"]
 [ext_resource type="Script" path="res://Scripts/Player/States/FallState.gd" id="10_cy8xa"]
 [ext_resource type="AudioStream" uid="uid://cwx36fgediwv0" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Dash.wav" id="11_bbblq"]
-[ext_resource type="AudioStream" uid="uid://jidduu8ijtog" path="res://Assets/Sounds/SFX/FGHTMisc_Anime Jump 5_01.wav" id="12_epch5"]
 [ext_resource type="Script" path="res://Scripts/Player/States/AttackState.gd" id="13_utoig"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="14_fgxac"]
 [ext_resource type="Script" path="res://Scripts/Player/States/HurtStates.gd" id="14_gm8e6"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="15_3tuu1"]
+[ext_resource type="Texture2D" uid="uid://3dmxehnoxtxx" path="res://Assets/Sprites/KikiFighter/Player1/Fall.png" id="15_3wub7"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ShootState.gd" id="15_ow3as"]
 [ext_resource type="Texture2D" uid="uid://bdvychokc38dt" path="res://Assets/Sprites/KikiFighter/Player1/idle.png" id="17_7oodl"]
 [ext_resource type="AudioStream" uid="uid://b1ca000nfun4i" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Jump.wav" id="17_emdqr"]
 [ext_resource type="AudioStream" uid="uid://bwvfenw5lg1vq" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Charge 9_02.wav" id="18_baug7"]
+[ext_resource type="Texture2D" uid="uid://db4w6766oss3i" path="res://Assets/Sprites/KikiFighter/Player1/Jump.png" id="18_xmdxu"]
 [ext_resource type="AudioStream" uid="uid://l4gky62ks1qr" path="res://Assets/Sounds/SFX/FGHTClth_Anime Swing 3_01.wav" id="19_73mbs"]
 [ext_resource type="AudioStream" uid="uid://ddlryyptq7w37" path="res://Assets/Sounds/SFX/DoudouSFX/SD_tir.wav" id="19_qmn1i"]
+[ext_resource type="Texture2D" uid="uid://c7t42lft2owik" path="res://Assets/Sprites/KikiFighter/Player1/Run.png" id="20_4a108"]
 [ext_resource type="Script" path="res://Scripts/Player/States/DashState.gd" id="20_t6j6y"]
 [ext_resource type="Script" path="res://Scripts/Player/States/DeathState.gd" id="27_vfu8l"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAmmo.gd" id="28_oqnrj"]
@@ -69,7 +70,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_o2jil")]
+"values": [ExtResource("5_77e1d")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -81,7 +82,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [16]
+"values": [3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -102,10 +103,10 @@ tracks/3/path = NodePath(".:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0166667, 0.2, 0.25, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 0.166667, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [5, 6, 7, 8, 9]
+"values": [0, 1, 1, 2]
 }
 tracks/4/type = "method"
 tracks/4/imported = false
@@ -114,7 +115,7 @@ tracks/4/path = NodePath("../StateMachine/Attack")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.3),
+"times": PackedFloat32Array(0.266667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -542,7 +543,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_3awsj")]
+"values": [ExtResource("15_3wub7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -554,7 +555,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [12]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -566,7 +567,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [6, 7, 8]
+"values": [1, 7, 8]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -725,7 +726,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_3awsj")]
+"values": [ExtResource("18_xmdxu")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -737,7 +738,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [12]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -777,7 +778,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_3awsj")]
+"values": [ExtResource("18_xmdxu")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -789,7 +790,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [12]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -826,18 +827,14 @@ tracks/4/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("17_emdqr")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("12_epch5")
 }],
-"times": PackedFloat32Array(0, 3.06667)
+"times": PackedFloat32Array(0)
 }
 tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ltgkn"]
 resource_name = "Move"
-length = 0.46667
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -849,7 +846,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_rb07g")]
+"values": [ExtResource("20_4a108")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -858,10 +855,10 @@ tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6]
+"values": [0, 1, 2, 3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -885,7 +882,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [8]
+"values": [4]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -1184,6 +1181,7 @@ magnitude = 0.1
 frequency = 1.0
 
 [node name="Sprite2D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0757936, 0)
 texture_filter = 0
 texture = ExtResource("2_c2271")
 hframes = 8
