@@ -213,7 +213,7 @@ spot_angle = 50.291
 transform = Transform3D(1, 0, 0, 0, 0.469009, -0.883193, 0, 0.883193, 0.469009, 0, -6.92803, -2.7011)
 light_color = Color(0.42, 1, 0.777667, 1)
 light_energy = 60.0
-light_volumetric_fog_energy = 30.0
+light_volumetric_fog_energy = 10.0
 spot_range = 21.5625
 spot_angle = 54.9228
 
