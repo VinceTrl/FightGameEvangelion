@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cuv0ymymfo1jy" path="res://Sources/Meshes/SM_Plateforme_Big_01.fbx" id="1_g8mij"]
 [ext_resource type="Material" uid="uid://22e74ahvsye" path="res://Assets/Materials/Enviro/M_Bu_Plateforme.tres" id="2_tdpba"]
-[ext_resource type="Material" uid="uid://cx7pgr17y7bi8" path="res://Assets/Materials/Enviro/M_Emissive_Yellow_High.tres" id="3_gkqfl"]
+[ext_resource type="Material" uid="uid://73puxoy3c30t" path="res://Assets/Materials/Enviro/M_PubPanel.tres" id="3_j0j0y"]
 [ext_resource type="Material" uid="uid://dnqk1ekx8qx5n" path="res://Assets/Materials/Enviro/M_Emissive_Red.tres" id="4_uuufu"]
 
 [node name="SM_Plateforme_Big_01" instance=ExtResource("1_g8mij")]
 
 [node name="SM_Plateforme_Big_01" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_tdpba")
-surface_material_override/1 = ExtResource("3_gkqfl")
+surface_material_override/1 = ExtResource("3_j0j0y")
 surface_material_override/2 = ExtResource("4_uuufu")
