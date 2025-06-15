@@ -70,3 +70,4 @@ shape = SubResource("BoxShape3D_iv1e3")
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "mixamo_com"
+speed_scale = 2.378
