@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkkbbr0htwc5p"]
+[gd_scene load_steps=8 format=3 uid="uid://bkkbbr0htwc5p"]
 
 [ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="2_s4too"]
 [ext_resource type="PackedScene" uid="uid://w5jpce2kyimj" path="res://Assets/Meshes/Enviro/mesh_plateforme_01.tscn" id="2_wsm1i"]
+[ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="3_v2yl4"]
+[ext_resource type="PackedScene" uid="uid://dtndx3uhsdsnl" path="res://Assets/Meshes/Enviro/mesh_plateforme_04.tscn" id="4_gx84v"]
 
 [sub_resource type="Curve" id="Curve_yl5bl"]
 
@@ -14,9 +16,6 @@ point_count = 3
 [node name="TestMap" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0125, -1.67964, -0.484462)
 
-[node name="Mesh_Plateforme_01" parent="." instance=ExtResource("2_wsm1i")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.243, 1.118, 0.2)
-
 [node name="Mesh_Plateforme_02" parent="." instance=ExtResource("2_wsm1i")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.49955, 2.14989, 0.0375027)
 script = ExtResource("2_s4too")
@@ -26,5 +25,8 @@ positionCurveX = SubResource("Curve_yl5bl")
 positionCurveY = SubResource("Curve_1yb6r")
 positionCurveZ = SubResource("Curve_koqfe")
 
-[node name="Mesh_Plateforme_03" parent="." instance=ExtResource("2_wsm1i")]
+[node name="Mesh_Plateforme_01" parent="." instance=ExtResource("3_v2yl4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.243, 1.118, 0.2)
+
+[node name="Mesh_Plateforme_03" parent="." instance=ExtResource("4_gx84v")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.50045, 2.14989, 0.0375027)

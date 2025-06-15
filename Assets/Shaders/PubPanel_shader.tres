@@ -144,7 +144,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-852.005, -161.068)
 modes/diffuse = 3
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_bvvjs")
 nodes/fragment/2/position = Vector2(-260, 360)
