@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://btyojimllct1t"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="1_wkg1k"]
+[ext_resource type="Texture2D" uid="uid://lfjvawnucaf5" path="res://Assets/Sprites/spr_StrikerIdle_strip.png" id="2_0anek"]
+
+[resource]
+render_priority = -1
+shader = ExtResource("1_wkg1k")
+shader_parameter/additiveColor = Color(0, 0, 0.780392, 1)
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/glowSize = 0.0
+shader_parameter/glowDensity = 0
+shader_parameter/glowRadialCoverage = 0
+shader_parameter/glowAngle = 0.0
+shader_parameter/glowSharpness = 0.0
+shader_parameter/alphaThreshold = 0.031
+shader_parameter/sprite_texture = ExtResource("2_0anek")
