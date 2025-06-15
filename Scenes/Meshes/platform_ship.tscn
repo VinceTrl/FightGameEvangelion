@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bciapmt83r2n4"]
+[gd_scene load_steps=3 format=3 uid="uid://bciapmt83r2n4"]
 
+[ext_resource type="Script" path="res://Scenes/Meshes/MovingPlatform.gd" id="1_vuq4s"]
 [ext_resource type="PackedScene" uid="uid://datj05j6lj0no" path="res://Assets/Meshes/Props/EvaAeroCarrier/eva_aerocarrier.fbx" id="1_y8umf"]
 
 [node name="PlatformShip" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_vuq4s")
 
 [node name="eva_aerocarrier" parent="." instance=ExtResource("1_y8umf")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

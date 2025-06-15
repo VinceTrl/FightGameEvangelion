@@ -1,6 +1,6 @@
 shader_type spatial;
 render_mode unshaded,blend_mix,depth_prepass_alpha,cull_disabled,specular_disabled;
-uniform sampler2D sprite_texture : source_color, filter_linear;
+uniform sampler2D sprite_texture : source_color, filter_nearest;
 uniform vec4 additiveColor : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 uniform vec4 line_color : source_color = vec4(1.0,1.0,1.0,1.0); // Glow or outline color

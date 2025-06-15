@@ -13,6 +13,7 @@ extends RigidBody3D
 const EXPL_DSGN_ANIME_EXPLOSION_1_01 = preload("res://Assets/Sounds/SFX/EXPLDsgn_Anime Explosion 1_01.wav")
 const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
 const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
+const VFX_PROJECTILE_IMPACT = preload("res://Scenes/VFX/vfx_projectile_impact.tscn")
 
 @export var projectileMinSpeed = 5.0
 @export var projectileMaxSpeed = 11.0
@@ -65,6 +66,10 @@ func SetupProjectile (id: int = 0,direction: Vector3 = Vector3.ONE,origin: Vecto
 	
 func SetProjectileRotation():
 	global_rotation.z = lerp_angle(global_rotation.z,atan2(moveDirection.y,moveDirection.x),1)
+	
+	
+func GetProjectileRotation() -> float :
+	return lerp_angle(global_rotation.z,atan2(moveDirection.y,moveDirection.x),1)
 	
 	
 func SetNewID(newID: int):
@@ -148,6 +153,16 @@ func enter(body: Node2D) -> void:
 	
 func PlaySFX():
 	sfx.play()
+	PlayVFXImpact()
+	
+
+func PlayVFXImpact():
+	var impact = VFX_PROJECTILE_IMPACT.instantiate()
+	get_tree().current_scene.add_child(impact)
+	impact.global_position = global_position
+	impact.global_rotation.z = -GetProjectileRotation()
+	impact.EmitAllParticles()
+	print("VFX INSTANCE CREATED")
 
 func _on_hitbox_on_hit() -> void:
 	ProjectileImpact()
