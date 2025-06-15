@@ -67,3 +67,10 @@ func ResetScore():
 	currentRound = 0
 	fightIsFinished = false
 	emit_signal("onScoreUpdated")
+	
+func GetWinner() -> int:
+	if(playerWinCount_1 > playerWinCount_2):
+		return 0
+	else:
+		return 1
+	
