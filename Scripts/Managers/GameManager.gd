@@ -6,6 +6,8 @@ extends Node
 @onready var timeManager: TimeManager = $TimeManager
 @onready var game_timer: Timer = $GameTimer
 @onready var shitpost_gui: ShitpostGUI = $ShitpostGUI
+@onready var platform_manager: Node = $PlatformManager
+
 @export var fightStartDelay = 3.0
 @export var fightDuration: float = 90.00
 @export var timeBeforeRestart = 6.0

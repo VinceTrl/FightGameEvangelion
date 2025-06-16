@@ -1,3 +1,4 @@
+class_name MovingPlatform
 extends Node3D
 
 @export var targetNode: Node3D
@@ -7,11 +8,15 @@ extends Node3D
 @export var lifeTimeMax: float = 15
 var iniPosition
 
+signal OnPlatformEnter
+signal OnPlatformExit
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	iniPosition = global_position
-	await get_tree().create_timer(10,true,false,false).timeout
-	EnterArena()
+	Manager.gameManager.platform_manager.RegisterPlatform(self)
+	#await get_tree().create_timer(10,true,false,false).timeout
+	#EnterArena()
 
 func GoTowardsPosition(targetPosition: Vector3,travelTime: float = 1.0):
 	
@@ -30,6 +35,11 @@ func _process(delta: float) -> void:
 	
 func EnterArena():
 	GoTowardsPosition(targetNode.global_position,enterAreraTime)
+	emit_signal("OnPlatformEnter")
 	var lifeTime = randf_range(lifeTimeMin,lifeTimeMax)
 	await get_tree().create_timer(lifeTime,true,false,false).timeout
+	ExitArena()
+	
+func ExitArena():
 	GoTowardsPosition(iniPosition,exitAreraTime)
+	emit_signal("OnPlatformExit")

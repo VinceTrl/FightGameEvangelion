@@ -35,6 +35,20 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3, 2, 0)
 [node name="ShipTargetPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.0195308, 3.23973, 0.0914814)
 
+[node name="ShipTargetPosition2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -5.01953, 3.23973, 0.0914814)
+
+[node name="ShipTargetPosition3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 5.98047, 3.23973, 0.0914814)
+
 [node name="PlatformShip" parent="." node_paths=PackedStringArray("targetNode") instance=ExtResource("5_nls0s")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.0195308, 3.23973, -20.8016)
 targetNode = NodePath("../ShipTargetPosition")
+
+[node name="PlatformShip2" parent="." node_paths=PackedStringArray("targetNode") instance=ExtResource("5_nls0s")]
+transform = Transform3D(0.0312712, 1.49927, 0, -0.999511, 0.0469068, 0, 0, 0, 1, -6.50168, 3.23973, -20.8016)
+targetNode = NodePath("../ShipTargetPosition2")
+
+[node name="PlatformShip3" parent="." node_paths=PackedStringArray("targetNode") instance=ExtResource("5_nls0s")]
+transform = Transform3D(0.0387889, -1.49887, 0, 0.999247, 0.0581834, 0, 0, 0, 1, 7.05043, 3.23973, -20.8016)
+targetNode = NodePath("../ShipTargetPosition3")
