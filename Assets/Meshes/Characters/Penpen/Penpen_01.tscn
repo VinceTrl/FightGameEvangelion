@@ -51,7 +51,6 @@ bones/17/rotation = Quaternion(-0.0172515, 0.00903874, 0.933776, 0.357328)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/position = Vector3(-3.17656e-09, 0.00592314, 6.18752e-12)
 bones/18/rotation = Quaternion(1.20167e-07, 3.70871e-07, -0.101322, 0.994854)
-bones/18/scale = Vector3(1, 1, 1)
 bones/20/position = Vector3(0.000260292, -0.0264784, 0.00127372)
 bones/20/rotation = Quaternion(0.198005, 0.00896586, -0.00507387, 0.980147)
 bones/20/scale = Vector3(1, 1, 1)
@@ -60,7 +59,7 @@ bones/21/rotation = Quaternion(0.760765, 5.4117e-07, 6.34055e-07, 0.649028)
 bones/21/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.999844, -0.0176561, -0.000606227, 0.00174795, 0.133014, -0.991113, 0.0175798, 0.990957, 0.133024, -0.00720805, 0.0329256, 0.000662273)
+transform = Transform3D(0.999844, -0.0176562, -0.000606233, 0.00174795, 0.133014, -0.991113, 0.0175799, 0.990957, 0.133024, -0.00720805, 0.0329256, 0.000662262)
 bone_name = "JetPack"
 bone_idx = 8
 

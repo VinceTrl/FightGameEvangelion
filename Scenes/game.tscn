@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=22 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
-[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 [ext_resource type="AudioStream" uid="uid://nqx3ft62tmu0" path="res://Assets/Sounds/Musics/teknokiki LOOP LONGUE.mp3" id="17_7gvmf"]
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
+[ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="17_tjwxa"]
 [ext_resource type="PackedScene" uid="uid://bdvwx0kkjddp" path="res://Scenes/Gameplay/heart.tscn" id="20_slsbe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rfxrm"]
@@ -161,25 +162,13 @@ spot_range = 45.5801
 visible = false
 spot_range = 49.3115
 
-[node name="Robot Pivot" parent="Enviro/Node3D/Meshes/Node3D" index="0"]
-transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993782, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
-
-[node name="Robot_eva_03" parent="Enviro/Node3D/Meshes/Node3D/Robot Pivot" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
-
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R2/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="SM_Road" parent="Enviro/Node3D/Meshes" index="3"]
+[node name="SM_Road" parent="Enviro/Node3D/Meshes" index="2"]
 transform = Transform3D(1.11943, 0, 0, 0, 1.11943, 0, 0, 0, 1.11943, 0, -4.54701, -2.59207)
 
 [node name="Lighting" type="Node3D" parent="Enviro"]
@@ -220,6 +209,9 @@ light_energy = 60.0
 light_volumetric_fog_energy = 10.0
 spot_range = 21.5625
 spot_angle = 54.9228
+
+[node name="EVA" parent="Enviro" instance=ExtResource("17_tjwxa")]
+transform = Transform3D(3.98309, 0.0749004, -0.158483, -0.155357, 3.1779, -2.40262, 0.0811858, 2.40648, 3.17774, 0.058358, -5.89616, -11.5841)
 
 [node name="TimerOutSpawners" parent="." instance=ExtResource("17_avc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

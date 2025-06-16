@@ -27,10 +27,10 @@ positionCurveY = SubResource("Curve_1yb6r")
 positionCurveZ = SubResource("Curve_koqfe")
 
 [node name="Mesh_Plateforme_01" parent="." instance=ExtResource("3_v2yl4")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0.226004)
 
 [node name="Mesh_Plateforme_03" parent="." instance=ExtResource("4_gx84v")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3, 2, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3, 2, 0.241589)
 
 [node name="ShipTargetPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.0195308, 3.23973, 0.0914814)

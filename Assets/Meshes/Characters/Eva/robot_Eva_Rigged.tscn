@@ -28,6 +28,7 @@ bones/5/rotation = Quaternion(-0.602827, -0.0882762, 0.0103784, 0.792905)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/position = Vector3(4.76837e-09, 0.612545, 0.349281)
 bones/6/rotation = Quaternion(-6.51926e-09, -9.31323e-10, -1.36788e-09, 1)
+bones/6/scale = Vector3(1, 1, 1)
 bones/8/position = Vector3(0.245605, 0.398181, -0.00590657)
 bones/8/rotation = Quaternion(-0.485564, -0.557564, 0.480523, -0.471644)
 bones/8/scale = Vector3(1, 1, 1)
@@ -75,7 +76,6 @@ bones/24/rotation = Quaternion(0.185925, -4.2879e-05, -0.0324976, 0.982026)
 bones/24/scale = Vector3(1, 1, 1)
 bones/25/position = Vector3(-0.000530319, 0.157498, -5.72205e-08)
 bones/25/rotation = Quaternion(6.51926e-09, 2.67733e-09, -6.62749e-09, 1)
-bones/25/scale = Vector3(1, 1, 1)
 bones/27/position = Vector3(0.0570814, 0.394576, 0.0151634)
 bones/27/rotation = Quaternion(0.209046, 0.0173679, -0.0219368, 0.977506)
 bones/27/scale = Vector3(1, 1, 1)
@@ -202,11 +202,12 @@ bones/76/position = Vector3(-3.57628e-08, 0.307799, 0)
 bones/76/rotation = Quaternion(1.11759e-08, -5.4948e-08, 4.88944e-08, 1)
 bones/76/scale = Vector3(1, 1, 1)
 
-[node name="bdef_‘•b2" parent="Armature/Skeleton3D" index="0"]
-surface_material_override/1 = ExtResource("2_tpkj1")
-
-[node name="bdef_‘•b1_001" parent="Armature/Skeleton3D" index="1"]
+[node name="bdef_‘•b1_001" parent="Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("2_tpkj1")
+
+[node name="bdef_‘•b2" parent="Armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("2_tpkj1")
+surface_material_override/1 = ExtResource("2_tpkj1")
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "Armature|Slap"
