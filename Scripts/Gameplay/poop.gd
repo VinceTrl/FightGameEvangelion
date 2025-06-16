@@ -7,7 +7,7 @@ extends RigidBody3D
 @onready var poopMesh : Node3D = $Visual/NodeShaker/SM_Poop_01
 @onready var animation_player: AnimationPlayer = $Visual/AnimationPlayer
 
-const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
+const EXPLOSION_POOP = preload("res://Scenes/Gameplay/explosionPoop.tscn")
 
 @export var healthPoints = 6
 @export var gravity : float = 9.8
@@ -108,6 +108,7 @@ func TakeDamage(hitboxSource: Hitbox):
 	Manager.postProcessEffects.GlitchEffect()
 	Manager.timeManager.freezeFrame(0.001,0.1)
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
+	Manager.gameManager.shitpost_gui.ShowRandomImage()
 	animation_player.play("Hurt")
 	
 	#HurtAnim()
@@ -145,7 +146,7 @@ func _on_body_entered(body: Node) -> void:
 		print("GO LEFT")
 	
 func DestroyPoop():
-	var explo = EXPLOSION.instantiate()
+	var explo = EXPLOSION_POOP.instantiate()
 	get_tree().get_root().add_child(explo)
 	explo.global_position = explosion_location.global_position
 	var _exploScale = GetTargetScale() * exploScaleMultiplier

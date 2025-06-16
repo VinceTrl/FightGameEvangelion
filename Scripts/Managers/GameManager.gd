@@ -5,6 +5,7 @@ extends Node
 @onready var vibrationManager: VibrationManager = $VibrationManager
 @onready var timeManager: TimeManager = $TimeManager
 @onready var game_timer: Timer = $GameTimer
+@onready var shitpost_gui: ShitpostGUI = $ShitpostGUI
 @export var fightStartDelay = 3.0
 @export var fightDuration: float = 90.00
 @export var timeBeforeRestart = 6.0

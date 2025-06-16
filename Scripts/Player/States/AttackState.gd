@@ -4,6 +4,8 @@ var attackInAir = false
 var inRecover = false
 @onready var collision_shape_hitbox: CollisionShape3D = $"../../Hitbox/CollisionShape3D"
 @onready var hitbox: Hitbox = $"../../Hitbox"
+@onready var hitbox_up: Hitbox = $"../../HitboxUp"
+@onready var hitbox_down: Hitbox = $"../../HitboxDown"
 
 
 func EnterState():
@@ -11,8 +13,9 @@ func EnterState():
 	
 	#Player.velocity.y = 0
 	Player.AdjustAttackDirection()
-	Player.HandleFlipH()
+	#Player.HandleFlipH()
 	Player.SetSpriteOffset_Attack()
+	#Player.HandleAttack()
 	
 	var _attackDir = Player.GetAttackDirection()
 	Player.velocity = Player.velocity / 3
@@ -21,12 +24,15 @@ func EnterState():
 	var _speed = lerp(Player.attackSpeed,Player.attackSpeedMax,_ratio)
 	Player.velocity += _attackDir.normalized() * _speed
 	
-	SetAttackByForce()
+	#SetAttackByForce()
+	SetAttackDirection(Player.GetDirection())
 	Player.emit_signal("OnPlayerAttack")
 	
 func ExitState():
 	collision_shape_hitbox.disabled = true
 	hitbox.InactiveHitBox()
+	hitbox_up.InactiveHitBox()
+	hitbox_down.InactiveHitBox()
 	Player.ResetChargeAttackValue()
 	inRecover = false
 
@@ -73,3 +79,20 @@ func HandleAnimations():
 	#Player.animator.play("Attack")
 	Player.HandleFlipH()
 	
+func SetAttackDirection(direction: Vector3):
+	direction = direction.normalized()
+
+	var anim_name := ""
+
+	if abs(direction.x) > abs(direction.y):
+		if direction.x > 0 : #attack Right
+			anim_name = "Attack"
+		else: #attack Left
+			anim_name = "Attack"
+	else:
+		if direction.y > 0 : #attack Up
+			anim_name = "AttackUp" 
+		else: #attack Down
+			anim_name = "AttackDown" 
+
+	Player.animator.play(anim_name)

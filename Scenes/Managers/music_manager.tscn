@@ -1,0 +1,39 @@
+[gd_scene load_steps=12 format=3 uid="uid://w7nmihk4qbnm"]
+
+[ext_resource type="AudioStream" uid="uid://nqx3ft62tmu0" path="res://Assets/Sounds/Musics/teknokiki LOOP LONGUE.mp3" id="1_0a7po"]
+[ext_resource type="Script" path="res://Scenes/Managers/music_manager.gd" id="1_v26d1"]
+[ext_resource type="AudioStream" uid="uid://bsrpu8rgirlh4" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline1hardway.wav" id="3_f8jy4"]
+[ext_resource type="AudioStream" uid="uid://dacwj5kmx7al1" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline2pathetic.wav" id="4_n0l6l"]
+[ext_resource type="AudioStream" uid="uid://llm3acnx0ykd" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline3notdeadyet.wav" id="5_v6luk"]
+[ext_resource type="AudioStream" uid="uid://cxoeyv4imvf3g" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline4doitnow.wav" id="6_thpss"]
+[ext_resource type="AudioStream" uid="uid://dnotvsivnqmit" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline5sorryforyou.wav" id="7_luufd"]
+[ext_resource type="AudioStream" uid="uid://qkfu77s1scbe" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline6youcandoit.wav" id="8_n4vv5"]
+[ext_resource type="AudioStream" uid="uid://bagpuupbktbyp" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline7onyourown.wav" id="9_47tuo"]
+[ext_resource type="AudioStream" uid="uid://by3t66fn3ser8" path="res://Assets/Sounds/SFX/DoudouSFX/SD_lasthitandvictoryscreen.wav" id="10_hx81m"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0evum"]
+streams_count = 7
+stream_0/stream = ExtResource("3_f8jy4")
+stream_1/stream = ExtResource("4_n0l6l")
+stream_2/stream = ExtResource("5_v6luk")
+stream_3/stream = ExtResource("6_thpss")
+stream_4/stream = ExtResource("7_luufd")
+stream_5/stream = ExtResource("8_n4vv5")
+stream_6/stream = ExtResource("9_47tuo")
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_v26d1")
+
+[node name="StageMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_0a7po")
+volume_db = -15.0
+bus = &"Music"
+
+[node name="Voicelines" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_0evum")
+volume_db = 7.0
+bus = &"SFX"
+
+[node name="VictorySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_hx81m")
+volume_db = 2.0

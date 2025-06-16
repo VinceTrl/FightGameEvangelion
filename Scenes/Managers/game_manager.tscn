@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c38gsdfy72awb"]
+[gd_scene load_steps=15 format=3 uid="uid://c38gsdfy72awb"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameManager.gd" id="1_6hf0t"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/TimeEffects.gd" id="2_c8bkv"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="11_qg3go"]
 [ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="12_2b18o"]
 [ext_resource type="Resource" uid="uid://4kux6idtqvus" path="res://Resources/Spawnables/TrapHeart.tres" id="13_h0apr"]
+[ext_resource type="PackedScene" uid="uid://dyqrd26u8lp8x" path="res://Scenes/GUI/shitpost_gui.tscn" id="14_exsev"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_6hf0t")
@@ -30,4 +31,8 @@ one_shot = true
 
 [node name="SpawnManager" type="Node" parent="."]
 script = ExtResource("5_u6occ")
+randomSpawnDelayMin = 5.0
+randomSpawnDelayMax = 15.0
 items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("12_2b18o"), ExtResource("11_qg3go"), ExtResource("13_h0apr")])
+
+[node name="ShitpostGUI" parent="." instance=ExtResource("14_exsev")]

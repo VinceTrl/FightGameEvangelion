@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShitpostTexture" load_steps=3 format=3 uid="uid://bxux20ofg7u16"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/ShitpostTexture.gd" id="1_tmae7"]
+[ext_resource type="Texture2D" uid="uid://clpovbtbsboyr" path="res://Assets/Shitpost/Evangelion/2d0972b6f170a744aa3aea4732e832e3.jpg" id="2_ffnqx"]
+
+[resource]
+script = ExtResource("1_tmae7")
+shitpostName = &"shitpost_evangelion_001"
+texture = ExtResource("2_ffnqx")
+texturePath = &""

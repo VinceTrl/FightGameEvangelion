@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccriwcheek0fp"]
+
+[ext_resource type="PackedScene" uid="uid://dacbwj4s6wg2w" path="res://Sources/Meshes/SM_Road.fbx" id="1_ciy24"]
+[ext_resource type="Material" uid="uid://dxhmdp7i3ntyx" path="res://Assets/Materials/Enviro/M_Road.tres" id="2_nmdv6"]
+
+[node name="SM_Road" instance=ExtResource("1_ciy24")]
+
+[node name="SM_Road" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_nmdv6")

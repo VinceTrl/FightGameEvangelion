@@ -8,8 +8,8 @@ func EnterState():
 	Name = "ChargeShoot"
 	charge_shoot_timer.start(Player.chargeShootTime)
 	
-	Player.animator.play("StartChargeShoot")
-	await Player.animator.animation_finished
+	#Player.animator.play("StartChargeShoot")
+	#await Player.animator.animation_finished
 	Player.animator.play("ChargeShoot")
 	
 func ExitState():

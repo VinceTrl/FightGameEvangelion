@@ -6,3 +6,8 @@
 script = ExtResource("1_5qso8")
 itemName = &"POOP"
 scenePath = &"res://Scenes/Gameplay/poop.tscn"
+spawnOnGround = false
+groundOffset = Vector3(0, 0, 0)
+spawnOncePerGame = false
+isUniqueInstance = false
+spawnChance = 2

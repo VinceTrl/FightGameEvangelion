@@ -1,8 +1,10 @@
 extends Control
 
 
-@onready var lifeContainer: HBoxContainer = $CanvasLayer/LifeBar/Life
-@onready var ammoContainer: HBoxContainer = $CanvasLayer/AmmoBar/Ammo
+#@onready var lifeContainer: HBoxContainer = $CanvasLayer/LifeBar/Life
+#@onready var ammoContainer: HBoxContainer = $CanvasLayer/AmmoBar/Ammo
+@onready var lifeContainer: Control = $TextureBackgroundHP/ControlHP
+@onready var ammoContainer: HBoxContainer = $TextureBackgroundHP/AmmoContainer
 
 
 @export var playerIndex = 0

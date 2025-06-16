@@ -3,7 +3,7 @@ class_name ScoreManager
 extends Node
 
 #FIGHT
-@export var roundToWin = 2
+@export var roundToWin = 3
 
 var playerWinCount_1 = 0 #player 1
 var playerWinCount_2 = 0 #player 2
@@ -14,7 +14,9 @@ var fightIsFinished = false
 signal onScoreUpdated
 
 func _ready() -> void:
+	print("i'm the SCORE manager")
 	Manager.OnGameStateChanged.connect(OnGameStateChanged)
+	Manager.gameStateManager.OnTitleScreenStart.connect(ResetScore)
 	
 func OnGameStateChanged(_state: GameStates.GameState):
 	#fight begin
@@ -67,3 +69,10 @@ func ResetScore():
 	currentRound = 0
 	fightIsFinished = false
 	emit_signal("onScoreUpdated")
+	
+func GetWinner() -> int:
+	if(playerWinCount_1 > playerWinCount_2):
+		return 0
+	else:
+		return 1
+	

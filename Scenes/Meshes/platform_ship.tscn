@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bciapmt83r2n4"]
+
+[ext_resource type="Script" path="res://Scenes/Meshes/MovingPlatform.gd" id="1_vuq4s"]
+[ext_resource type="PackedScene" uid="uid://datj05j6lj0no" path="res://Assets/Meshes/Props/EvaAeroCarrier/eva_aerocarrier.fbx" id="1_y8umf"]
+
+[node name="PlatformShip" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_vuq4s")
+
+[node name="eva_aerocarrier" parent="." instance=ExtResource("1_y8umf")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D"]
+polygon = PackedVector2Array(-1.53231, -0.0361359, -0.138224, -0.0151947, -0.0694166, -0.051094, 0.0771719, -0.0570771, 0.122046, -0.0211779, 1.52662, -0.0418728, 0.14481, 0.0383835, -0.130853, 0.0418729)

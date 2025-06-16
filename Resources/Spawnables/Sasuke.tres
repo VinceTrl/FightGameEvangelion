@@ -8,3 +8,6 @@ itemName = &"SASUKE"
 scenePath = &"res://Scenes/Gameplay/sasuke.tscn"
 spawnOnGround = true
 groundOffset = Vector3(0, 0, 0)
+spawnOncePerGame = false
+isUniqueInstance = false
+spawnChance = 1

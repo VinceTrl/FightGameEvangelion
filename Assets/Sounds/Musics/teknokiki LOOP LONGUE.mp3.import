@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nqx3ft62tmu0"
+path="res://.godot/imported/teknokiki LOOP LONGUE.mp3-eeefefbdc62ffdcd7244a107f8b579d9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Musics/teknokiki LOOP LONGUE.mp3"
+dest_files=["res://.godot/imported/teknokiki LOOP LONGUE.mp3-eeefefbdc62ffdcd7244a107f8b579d9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

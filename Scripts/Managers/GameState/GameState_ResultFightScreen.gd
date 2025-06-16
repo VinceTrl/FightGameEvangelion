@@ -9,10 +9,11 @@ func _ready():
 func EnterState():
 	print("enter Result state")
 	canHandleInput = true
+	Manager.gameStateManager.OnResultScreenStart.emit()
 	Manager.masterUI.result_screen.StartResult()
 	
 func ExitState():
-	pass
+	Manager.gameStateManager.OnResultScreenEnd.emit()
 
 func Draw():
 	pass

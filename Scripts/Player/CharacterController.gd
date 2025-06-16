@@ -8,6 +8,8 @@ extends CharacterBody3D
 @onready var sprite = $Sprite2D
 @onready var collider = $Collider
 @onready var attackHitbox: Hitbox = $Hitbox
+@onready var hitbox_up: Hitbox = $HitboxUp
+@onready var hitbox_down: Hitbox = $HitboxDown
 @onready var playerHurtbox: Hurtbox = $Hurtbox
 @onready var animator: AnimationPlayer = $Animator
 @onready var States = $StateMachine
@@ -172,6 +174,8 @@ func _ready():
 	#set id
 	playerHurtbox.owner_id = playerID
 	attackHitbox.owner_id = playerID
+	hitbox_up.owner_id = playerID
+	hitbox_down.owner_id = playerID
 	
 	if(startFacingRight): facing = 1
 	else: facing = -1
@@ -320,8 +324,8 @@ func HandleFlipH():
 func HandleDash():
 	if(keyDash):
 		if(dashes < maxDashes) and (DashTimer.time_left <= 0):
-			DashTimer.start(dashBufferTime)
-			await DashTimer.timeout
+			#DashTimer.start(dashBufferTime)
+			#await DashTimer.timeout
 			
 			#cancel dash if player is damaged/dead during buffer
 			if(currentState == States.Hurt or currentState == States.Death):
@@ -359,7 +363,8 @@ func GetDirectionOn8Axis() -> Vector3:
 
 func HandleAttack():
 	if(((keyAttackJustPressed)) and (currentState != States.Attack)):
-		ChangeState(States.ChargingAttack)
+		#ChangeState(States.ChargingAttack)
+		ChangeState(States.Attack)
 		return
 		
 	if(((AttackBuffer.time_left > 0)) and (currentState != States.Attack)):
@@ -377,10 +382,11 @@ func HandleAirAttack():
 		
 		
 func SetSpriteOffset_Attack():
-	if (sprite.flip_h == true): #facing left
-		sprite.offset.x = -attackSpriteOffset
-	else: #facing right
-		sprite.offset.x = attackSpriteOffset
+	pass
+	#if (sprite.flip_h == true): #facing left
+		#sprite.offset.x = -attackSpriteOffset
+	#else: #facing right
+		#sprite.offset.x = attackSpriteOffset
 		
 func GetAttackDirection() -> Vector3:
 	var _dir = Vector3.ZERO
@@ -404,7 +410,7 @@ func ChangePlayerDirection(_facingDir: int):
 	facing = _facingDir
 	
 func HandleAttackBuffer():
-	if (keyAttack):
+	if (keyAttackJustPressed):
 		AttackBuffer.start(attackBufferTime)
 		
 		
@@ -447,6 +453,7 @@ func TakeDamage(hitboxSource: Hitbox):
 		emit_signal("OnPlayerTakeDamage")
 		
 		print("SOURCE : " + str(hitboxSource.owner))
+		
 		
 		if (currentHealthPoints > 0):
 			ChangeState(States.Hurt)

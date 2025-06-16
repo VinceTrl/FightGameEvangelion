@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5amqm6jpeons"]
+[gd_scene load_steps=9 format=3 uid="uid://c5amqm6jpeons"]
 
 [ext_resource type="PackedScene" uid="uid://bus7pxl8e5mmg" path="res://Scenes/GUI/fight_text.tscn" id="1_gskd5"]
 [ext_resource type="Script" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="3_cd8f7"]
-[ext_resource type="PackedScene" uid="uid://bcr5540fwgswj" path="res://Scenes/GUI/Round_ui.tscn" id="5_2w7hc"]
 [ext_resource type="PackedScene" uid="uid://cv0ukcamovfyt" path="res://Scenes/GUI/result_screen_ui.tscn" id="5_dvxp5"]
+[ext_resource type="Texture2D" uid="uid://dv6u3t40a0f0x" path="res://Assets/GUI/Test/test_ui_copie.png" id="6_8ak8g"]
+[ext_resource type="Texture2D" uid="uid://ijbpiebcm62y" path="res://Assets/Sprites/GUI/KikiGUI/GUI_TopBanner.png" id="6_s0lox"]
+[ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="8_ehwck"]
+[ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="9_wcwep"]
 
 [node name="MasterGUI" type="Control"]
 layout_mode = 3
@@ -16,12 +19,40 @@ grow_vertical = 2
 script = ExtResource("1_xuadb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 100
+layer = 99
 
 [node name="FightText" parent="CanvasLayer" instance=ExtResource("1_gskd5")]
 
 [node name="TimerRoot" parent="CanvasLayer" instance=ExtResource("3_cd8f7")]
+offset_top = 33.635
+offset_bottom = 73.635
 
 [node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("5_dvxp5")]
 
-[node name="Round" parent="CanvasLayer" instance=ExtResource("5_2w7hc")]
+[node name="TopBanner" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1143.0
+offset_top = -46.05
+offset_right = 1143.0
+offset_bottom = 43.95
+grow_horizontal = 2
+texture = ExtResource("6_s0lox")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -960.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8ak8g")
+
+[node name="LifeBarRoot_TopLeft" parent="." instance=ExtResource("8_ehwck")]
+
+[node name="LifeBarRoot_TopRight" parent="." instance=ExtResource("9_wcwep")]
+layout_mode = 1

@@ -7,10 +7,13 @@ extends RigidBody3D
 @onready var sprite: AnimatedSprite3D = $BulletSprite
 @onready var sfx: AudioStreamPlayer3D = $Sfx
 @onready var raycast: RayCast3D = $RayCast3D
+@onready var collision_shape: CollisionShape3D = $CollisionShape2D
+
 
 const EXPL_DSGN_ANIME_EXPLOSION_1_01 = preload("res://Assets/Sounds/SFX/EXPLDsgn_Anime Explosion 1_01.wav")
 const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
 const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
+const VFX_PROJECTILE_IMPACT = preload("res://Scenes/VFX/vfx_projectile_impact.tscn")
 
 @export var projectileMinSpeed = 5.0
 @export var projectileMaxSpeed = 11.0
@@ -19,6 +22,7 @@ const EXPLOSION = preload("res://Scenes/Gameplay/explosion.tscn")
 @export var parrySpeedCurve: Curve
 @export var bounceOnWall = true
 @export var canBounce = true
+@export var maxScale = 4
 @export var explodeWhenDestroyed = true
 
 var hitByAttack = 0
@@ -27,15 +31,17 @@ var moveDirection: Vector3 = Vector3(1,0,0)
 var canMove = false
 var chargeRatio = 0.0
 var projectileID = 1
+var iniScale = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.body_entered.connect(_on_body_entered)
 	SetNewID(randi_range(-100000,100000))
-	pass
+	print("SCALE : " + str(scale))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#print("SCALE : " + str(scale))
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -56,10 +62,14 @@ func SetupProjectile (id: int = 0,direction: Vector3 = Vector3.ONE,origin: Vecto
 	#SetSpriteFlipH()
 	SetProjectileRotation()
 	canMove = true
-	PlaySFX()
+	#PlaySFX()
 	
 func SetProjectileRotation():
 	global_rotation.z = lerp_angle(global_rotation.z,atan2(moveDirection.y,moveDirection.x),1)
+	
+	
+func GetProjectileRotation() -> float :
+	return lerp_angle(global_rotation.z,atan2(moveDirection.y,moveDirection.x),1)
 	
 	
 func SetNewID(newID: int):
@@ -128,10 +138,11 @@ func DestroyProjectile():
 		var explo = EXPLOSION.instantiate()
 		get_tree().get_root().add_child(explo)
 		explo.global_position = global_position
-	else:
-		var audio = AUDIO_SCENE.instantiate()
-		get_tree().get_root().add_child(audio)
-		audio.StartAudio(EXPL_DSGN_ANIME_EXPLOSION_1_01)
+	#else:
+		#var audio = AUDIO_SCENE.instantiate()
+		#get_tree().get_root().add_child(audio)
+		#audio.StartAudio(EXPL_DSGN_ANIME_EXPLOSION_1_01)
+		#pass
 
 	queue_free()
 
@@ -142,10 +153,52 @@ func enter(body: Node2D) -> void:
 	
 func PlaySFX():
 	sfx.play()
+	PlayVFXImpact()
+	
+
+func PlayVFXImpact():
+	var impact = VFX_PROJECTILE_IMPACT.instantiate()
+	get_tree().current_scene.add_child(impact)
+	impact.global_position = global_position
+	impact.global_rotation.z = -GetProjectileRotation()
+	impact.EmitAllParticles()
+	print("VFX INSTANCE CREATED")
 
 func _on_hitbox_on_hit() -> void:
 	ProjectileImpact()
 
+
+func SetProjectileScale(scaleRatio: float):
+	
+	var targetScale = lerp(iniScale,maxScale,scaleRatio)
+	
+	sprite.scale = Vector3(targetScale,targetScale,targetScale)
+	hitbox.scale = Vector3(targetScale,targetScale,targetScale)
+	hurtbox.scale = Vector3(targetScale,targetScale,targetScale)
+	raycast.scale = Vector3(targetScale,targetScale,targetScale)
+	
+	#ScaleShape(collision_shape.shape,targetScale)
+	#ScaleShape(hitbox.collision_shape.shape,targetScale)
+	#ScaleShape(hurtbox.collision_shape.shape,targetScale)
+	#scale = Vector3(targetScale,targetScale,targetScale)
+	
+	print("SET SCALE TO : " + str(scale))
+	
+	
+func ScaleShape(shape: Shape3D,target_size: float):
+	
+	if shape is BoxShape3D:
+		var x = shape.size.x * target_size
+		var y = shape.size.y * target_size
+		var z = shape.size.z * target_size
+		shape.size = Vector3(x, y, z)
+
+	elif shape is SphereShape3D:
+		shape.radius = shape.radius * target_size
+
+	elif shape is CapsuleShape3D:
+		shape.radius = target_size
+		shape.height = target_size * 2.0
 
 func _on_body_entered(body: Node3D) -> void:
 	if(body == Hitbox): return

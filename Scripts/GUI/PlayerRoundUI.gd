@@ -1,15 +1,24 @@
-extends HBoxContainer
+extends Label
 
 @export var playerID = 1
-@export var Icons: Array[NodePath]
+var Icons: Array[NodePath]
 
 var roundWon = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UpdateIcons()
-	Manager.scoreManager.connect("onScoreUpdated",UpdateIcons)
+	UpdateScore()
+	#Manager.scoreManager.connect("onScoreUpdated",UpdateIcons)
+	Manager.scoreManager.onScoreUpdated.connect(UpdateScore)
 	
+func UpdateScore():
+	if(playerID == 1):
+		roundWon = Manager.scoreManager.playerWinCount_1
+	else:
+		roundWon = Manager.scoreManager.playerWinCount_2
+		
+	text = str(roundWon)
 
 func UpdateIcons():
 	
