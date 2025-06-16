@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://r3ads2h4cewh"]
+[gd_scene load_steps=8 format=3 uid="uid://r3ads2h4cewh"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
 [ext_resource type="Texture2D" uid="uid://147dcgbjdv2t" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Player1.png" id="4_mdj3j"]
+[ext_resource type="FontFile" uid="uid://4vkwi6n6xoco" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9.ttf" id="5_j8biq"]
 [ext_resource type="PackedScene" uid="uid://dbx10gs5u8elq" path="res://Scenes/GUI/texture_hp_Left.tscn" id="5_jt636"]
 [ext_resource type="Texture2D" uid="uid://cxym3v1v584ej" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P1.png" id="6_fw131"]
+[ext_resource type="Script" path="res://Scripts/GUI/PlayerRoundUI.gd" id="6_y7uc4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_by4q8"]
+font = ExtResource("5_j8biq")
+font_size = 120
 
 [node name="LifeBarRoot_TopLeft" type="Control"]
 layout_mode = 3
@@ -81,3 +87,20 @@ stretch_mode = 5
 layout_mode = 2
 texture = ExtResource("6_fw131")
 stretch_mode = 5
+
+[node name="Round" type="Label" parent="TextureBackgroundHP"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 189.0
+offset_bottom = -72.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_by4q8")
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("6_y7uc4")

@@ -3,7 +3,7 @@ class_name ScoreManager
 extends Node
 
 #FIGHT
-@export var roundToWin = 2
+@export var roundToWin = 3
 
 var playerWinCount_1 = 0 #player 1
 var playerWinCount_2 = 0 #player 2
