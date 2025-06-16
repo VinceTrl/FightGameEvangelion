@@ -1,65 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://kqpbwnd4vdet"]
+[gd_scene load_steps=8 format=3 uid="uid://kqpbwnd4vdet"]
 
 [ext_resource type="PackedScene" uid="uid://dcta1ht6h4p3y" path="res://Sources/Meshes/Mesh_Penpen_01.fbx" id="1_jk6xu"]
 [ext_resource type="Material" uid="uid://bbicmo1vkrevv" path="res://Assets/Materials/Enviro/M_PenpenAtlas.tres" id="2_ul1yn"]
-[ext_resource type="PackedScene" uid="uid://d3rup554sci63" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="3_wncib"]
+[ext_resource type="Material" uid="uid://dokiesf32ocl2" path="res://Assets/Materials/Enviro/M_penpen_White.tres" id="3_5st14"]
+[ext_resource type="PackedScene" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="3_wncib"]
+[ext_resource type="Material" uid="uid://clgc6oj6jxrut" path="res://Assets/Materials/Enviro/M_penpen_black.tres" id="4_alllq"]
+[ext_resource type="Material" uid="uid://d2bvupxdhi7hm" path="res://Assets/Materials/Enviro/M_penpen_Bec.tres" id="5_4qwk6"]
+[ext_resource type="Material" uid="uid://ycx6lpvbaa07" path="res://Assets/Materials/Enviro/M_MetalRough.tres" id="7_g16ws"]
 
 [node name="Mesh_Penpen_01" instance=ExtResource("1_jk6xu")]
 
 [node name="Armature" parent="." index="0"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.716398, 1.02167, -0.0254979)
 
-[node name="Skeleton3D" parent="Armature" index="1"]
-bones/0/position = Vector3(-0.00716398, -0.000254977, 0.0261073)
-bones/0/rotation = Quaternion(0.707107, 8.42847e-08, 8.44593e-08, 0.707107)
-bones/1/position = Vector3(-6.20455e-05, -0.0246787, -0.000254978)
-bones/1/rotation = Quaternion(0.000627168, 0.0666579, 0.997678, -0.0139325)
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(-0.00716398, -0.000254979, 0.02582)
 bones/1/scale = Vector3(1, 1, 1)
-bones/2/position = Vector3(1.7113e-10, 0.0113568, -1.30094e-10)
-bones/2/rotation = Quaternion(-0.193882, -0.114105, -0.403856, 0.88673)
+bones/2/position = Vector3(1.15251e-10, 0.0113568, -1.58034e-10)
 bones/2/scale = Vector3(1, 1, 1)
-bones/3/position = Vector3(-2.36556e-09, 0.0129049, 5.96046e-10)
-bones/3/rotation = Quaternion(0.1829, -0.0295279, 0.178925, 0.966262)
+bones/3/position = Vector3(-1.6205e-09, 0.0129049, 2.98023e-10)
 bones/3/scale = Vector3(1, 1, 1)
-bones/5/position = Vector3(1.7113e-10, 0.0113568, -1.30094e-10)
-bones/5/rotation = Quaternion(0.178599, 0.00417619, 0.357294, 0.916747)
+bones/5/position = Vector3(1.15251e-10, 0.0113568, -1.58034e-10)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/position = Vector3(1.49012e-09, 0.0129916, 3.72529e-10)
-bones/6/rotation = Quaternion(0.240254, -0.170593, -0.0765594, 0.952531)
-bones/6/scale = Vector3(1, 1, 1)
+bones/6/position = Vector3(1.49012e-09, 0.0129916, 7.45058e-11)
 bones/8/position = Vector3(-9.90971e-05, -0.003619, -0.0327349)
 bones/8/rotation = Quaternion(2.30978e-07, -1.74336e-07, 0.999987, 0.00511521)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/position = Vector3(0.00590033, 0.0114356, 0.0172558)
-bones/9/rotation = Quaternion(2.7646e-08, 2.85106e-08, 0.0969878, 0.995286)
+bones/9/rotation = Quaternion(2.73668e-08, 2.86261e-08, 0.0964614, 0.995337)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/position = Vector3(7.74984e-10, 0.00646561, -7.72622e-10)
-bones/10/rotation = Quaternion(7.492e-08, 5.41774e-09, 0.0404351, 0.999182)
-bones/10/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(7.65816e-08, 5.47609e-09, 0.0408654, 0.999165)
 bones/11/position = Vector3(3.66027e-16, 0.00610506, -1.52588e-09)
 bones/11/rotation = Quaternion(-1.02629e-14, -1.32349e-23, -4.51997e-17, 1)
 bones/12/position = Vector3(8.67362e-19, 0.00510149, 3.46945e-18)
 bones/12/rotation = Quaternion(-2.19606e-22, -1.32349e-23, 4.13577e-25, 1)
-bones/14/position = Vector3(0.00719758, -0.0263256, -0.000254977)
-bones/14/rotation = Quaternion(-0.0173512, -0.0937832, 0.884855, -0.455999)
-bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(2.05412e-09, 0.00621122, 1.64247e-11)
 bones/15/rotation = Quaternion(1.4995e-07, -2.07047e-07, 0.0459399, 0.998944)
 bones/15/scale = Vector3(1, 1, 1)
-bones/17/position = Vector3(-0.00789303, -0.0259559, -0.00025498)
-bones/17/rotation = Quaternion(-0.0172515, 0.00903874, 0.933776, 0.357328)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/position = Vector3(-3.17656e-09, 0.00592314, 6.18752e-12)
 bones/18/rotation = Quaternion(1.20167e-07, 3.70871e-07, -0.101322, 0.994854)
-bones/20/position = Vector3(0.000260292, -0.0264784, 0.00127372)
-bones/20/rotation = Quaternion(0.198005, 0.00896586, -0.00507387, 0.980147)
-bones/20/scale = Vector3(1, 1, 1)
-bones/21/position = Vector3(8.49832e-11, 0.0035427, 0.00377501)
-bones/21/rotation = Quaternion(0.760765, 5.4117e-07, 6.34055e-07, 0.649028)
+bones/20/position = Vector3(0.000260292, -0.0268545, 0.00127372)
+bones/21/position = Vector3(-1.64728e-10, 0.0035427, 0.00377501)
 bones/21/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.999844, -0.0176562, -0.000606233, 0.00174795, 0.133014, -0.991113, 0.0175799, 0.990957, 0.133024, -0.00720805, 0.0329256, 0.000662262)
+transform = Transform3D(0.999844, -0.0176559, -0.000606196, 0.00174794, 0.133014, -0.991112, 0.0175796, 0.990957, 0.133024, -0.00720805, 0.0329256, 0.000374916)
 bone_name = "JetPack"
 bone_idx = 8
 
@@ -69,34 +56,48 @@ transform = Transform3D(-0.00983085, 0.00183136, -2.52353e-05, -0.00181838, -0.0
 [node name="VFX_Fire01_mecha2" parent="Armature/Skeleton3D/BoneAttachment3D" index="1" instance=ExtResource("3_wncib")]
 transform = Transform3D(-0.00982573, -0.0018537, 0.000138274, 0.00175967, -0.00951543, -0.00252195, 0.000599066, -0.00245366, 0.00967578, -0.0166749, -0.0245924, 0.021896)
 
-[node name="Head2" parent="Armature/Skeleton3D" index="1"]
-surface_material_override/0 = ExtResource("2_ul1yn")
+[node name="Antenne" parent="Armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_5st14")
+surface_material_override/1 = ExtResource("4_alllq")
 
-[node name="eyes" parent="Armature/Skeleton3D" index="2"]
-surface_material_override/0 = ExtResource("2_ul1yn")
+[node name="Bec_Bot" parent="Armature/Skeleton3D" index="2"]
+surface_material_override/0 = ExtResource("5_4qwk6")
 
 [node name="Bec_Top" parent="Armature/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("5_4qwk6")
+
+[node name="Body" parent="Armature/Skeleton3D" index="4"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Haris" parent="Armature/Skeleton3D" index="4"]
+[node name="Chaines" parent="Armature/Skeleton3D" index="5"]
+surface_material_override/0 = ExtResource("7_g16ws")
+surface_material_override/1 = ExtResource("4_alllq")
+
+[node name="Clope" parent="Armature/Skeleton3D" index="6"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Bec_Bot" parent="Armature/Skeleton3D" index="5"]
+[node name="Dent_Bot" parent="Armature/Skeleton3D" index="7"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Body" parent="Armature/Skeleton3D" index="6"]
+[node name="Dent_Top" parent="Armature/Skeleton3D" index="8"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Pattes" parent="Armature/Skeleton3D" index="8"]
+[node name="Grillz" parent="Armature/Skeleton3D" index="9"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Clope" parent="Armature/Skeleton3D" index="9"]
+[node name="Haris" parent="Armature/Skeleton3D" index="10"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Dent_Top" parent="Armature/Skeleton3D" index="12"]
+[node name="Head2" parent="Armature/Skeleton3D" index="11"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Dent_Bot" parent="Armature/Skeleton3D" index="13"]
+[node name="JetPack2" parent="Armature/Skeleton3D" index="12"]
+surface_material_override/0 = ExtResource("3_5st14")
+
+[node name="Pattes" parent="Armature/Skeleton3D" index="13"]
+surface_material_override/0 = ExtResource("5_4qwk6")
+
+[node name="eyes" parent="Armature/Skeleton3D" index="14"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
 [node name="AnimationPlayer" parent="." index="1"]

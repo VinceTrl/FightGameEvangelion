@@ -40,7 +40,7 @@ func PreloadResources():
 func TimerRandomSpawn():
 	var timerDuration = randf_range(randomSpawnDelayMin,randomSpawnDelayMax)
 	await get_tree().create_timer(timerDuration,true,false,true).timeout
-	RandomSpawn()
+	RandomSpawn(PickRandomSpawner())
 	TimerRandomSpawn()
 	
 func RegisterSpawner(_spawnerToAdd: Spawner):
@@ -48,8 +48,9 @@ func RegisterSpawner(_spawnerToAdd: Spawner):
 	spawners.append(_spawnerToAdd)
 	print("SPAWNER REGISTERED")
 	
-func RandomSpawn():
-	var spawner: Spawner = PickRandomSpawner()
+func RandomSpawn(spawner: Spawner):
+	
+	#var spawner: Spawner = PickRandomSpawner()
 	#print(str(spawner))
 	var _itemToSpawn = PickRandomItem()
 	
@@ -58,7 +59,7 @@ func RandomSpawn():
 		for spawnable_item in spawned_instances.keys():
 			if spawned_instances[spawnable_item] == _itemToSpawn:
 				#it's already spawned >>> restart spawn and cancel current function
-				RandomSpawn() 
+				RandomSpawn(spawner) 
 				return
 				
 	#check if it's an unique spawn

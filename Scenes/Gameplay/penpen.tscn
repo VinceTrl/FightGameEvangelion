@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkdrj6rwos5uk"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/penpen.gd" id="1_fk4f2"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_cpg5x"]
+[ext_resource type="PackedScene" uid="uid://kqpbwnd4vdet" path="res://Assets/Meshes/Characters/Penpen/Penpen_01.tscn" id="2_qpqa3"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="3_dj4io"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_keetd"]
+[ext_resource type="AudioStream" uid="uid://c0el1ew7qbcsg" path="res://Assets/Sounds/SFX/FGHTImpt_Anime Melee Gore 6_01.wav" id="6_4w12k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ofgqt"]
+size = Vector3(0.388535, 0.527092, 0.674)
+
+[node name="Penpen" type="Node3D"]
+script = ExtResource("1_fk4f2")
+healthPoints = 4
+
+[node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("2_cpg5x")
+nodeToShake = NodePath("Mesh_Penpen_01")
+
+[node name="Mesh_Penpen_01" parent="NodeShaker" instance=ExtResource("2_qpqa3")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="Hurtbox" type="Area3D" parent="NodeShaker/Mesh_Penpen_01"]
+transform = Transform3D(6.66667, 0, 0, 0, 6.66667, 0, 0, 0, 6.66667, 0, 0.712098, 0)
+script = ExtResource("3_dj4io")
+owner_id = 500
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NodeShaker/Mesh_Penpen_01/Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00139618, 0.0120811, 0)
+shape = SubResource("BoxShape3D_ofgqt")
+
+[node name="Spawner" parent="." instance=ExtResource("3_keetd")]
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="HurtSFX" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("6_4w12k")
+
+[connection signal="OnHurtboxTakeDamage" from="NodeShaker/Mesh_Penpen_01/Hurtbox" to="." method="_on_hurtbox_take_damage"]

@@ -5,6 +5,8 @@ extends Area3D
 @export var owner_id = 1
 @export var randomID = false
 
+signal OnHurtboxTakeDamage(hitbox : Hitbox)
+
 func _init() -> void:
 	collision_layer = 0
 	collision_mask = 3
@@ -24,3 +26,5 @@ func _on_area_entered(hitbox : Hitbox) -> void:
 
 	if owner.has_method("TakeDamage"):
 		owner.TakeDamage(hitbox)
+		
+	emit_signal("OnHurtboxTakeDamage",hitbox)
