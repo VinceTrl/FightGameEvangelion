@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bh60aa5jc78f5"]
+
+[ext_resource type="Shader" uid="uid://dj6msl4qv7rqh" path="res://Assets/Shaders/PubPanel_shader.tres" id="1_gm5c1"]
+[ext_resource type="Texture2D" uid="uid://bq324of86i0h7" path="res://Sources/Textures/T_Pub_Placeholder.png" id="2_1ixtt"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gm5c1")
+shader_parameter/Tiling = Vector2(-0.75, -0.875)
+shader_parameter/Line = 1
+shader_parameter/Column = 0
+shader_parameter/Albedo = ExtResource("2_1ixtt")
