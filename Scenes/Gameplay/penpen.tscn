@@ -31,6 +31,7 @@ nodeToShake = NodePath("Mesh_Penpen_01")
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 
 [node name="Spawner" parent="." instance=ExtResource("3_keetd")]
+registerOnManager = false
 
 [node name="Audio" type="Node3D" parent="."]
 
