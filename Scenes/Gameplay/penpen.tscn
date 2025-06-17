@@ -22,6 +22,8 @@ stream_4/stream = ExtResource("9_qo54p")
 script = ExtResource("1_fk4f2")
 healthPoints = 4
 hurtTime = 0.375
+moveSpeed = 0.15
+startingMoveDirection = Vector3(-1, 0, 0)
 
 [node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("2_cpg5x")
@@ -31,8 +33,12 @@ nodeToShake = NodePath("Mesh_Penpen_01")
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 
 [node name="Spawner" parent="." instance=ExtResource("3_keetd")]
+registerOnManager = false
 
 [node name="Audio" type="Node3D" parent="."]
 
 [node name="HurtSFX" type="AudioStreamPlayer3D" parent="Audio"]
 stream = SubResource("AudioStreamRandomizer_wf7mr")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

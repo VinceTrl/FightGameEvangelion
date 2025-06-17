@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=69 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -809,6 +809,10 @@ _data = {
 _data = [Vector2(0, 1), 0.0, -2.4727, 0, 0, Vector2(1, 0), -0.0449583, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_7yxmx"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.08599, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_8vhkr"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.12501, 0.0, 0, 0]
 point_count = 2
@@ -847,6 +851,7 @@ attackSpeedForceCurve = SubResource("Curve_qv1t1")
 maxAirAttack = 20
 chargeAttackTime = 1.25
 attackForceCurve = SubResource("Curve_ou6xi")
+chargeShootTime = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 128
@@ -880,7 +885,7 @@ vframes = 13
 script = ExtResource("4_1nn6i")
 
 [node name="PlayerSpear" parent="." instance=ExtResource("6_vx25g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104375, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0308377, 0)
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
@@ -917,7 +922,9 @@ script = ExtResource("13_utoig")
 
 [node name="Shoot" type="Node" parent="StateMachine"]
 script = ExtResource("15_ow3as")
+additiveRecoil = 3.0
 recoilCurve = SubResource("Curve_gijy7")
+recoilAdditiveCurve = SubResource("Curve_7yxmx")
 
 [node name="Hurt" type="Node" parent="StateMachine"]
 script = ExtResource("14_gm8e6")
