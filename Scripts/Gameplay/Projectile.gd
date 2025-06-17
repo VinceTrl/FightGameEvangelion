@@ -17,6 +17,7 @@ const VFX_PROJECTILE_IMPACT = preload("res://Scenes/VFX/vfx_projectile_impact.ts
 
 @export var projectileMinSpeed = 5.0
 @export var projectileMaxSpeed = 11.0
+@export var projectileAdditiveSpeed: float = 3.0
 @export var maxHit = 6
 @export var healthPoints = 8
 @export var parrySpeedCurve: Curve
@@ -30,6 +31,7 @@ var facing = 1
 var moveDirection: Vector3 = Vector3(1,0,0)
 var canMove = false
 var chargeRatio = 0.0
+var additiveRatio = 0.0
 var projectileID = 1
 var iniScale = 1
 
@@ -80,7 +82,7 @@ func SetNewID(newID: int):
 func GetProjectileSpeed() -> float:
 	var _speedRatio = hitByAttack/maxHit
 	var curveRatio = parrySpeedCurve.sample(_speedRatio);
-	var _speed = lerp(projectileMinSpeed,projectileMaxSpeed,curveRatio)
+	var _speed = lerp(projectileMinSpeed,projectileMaxSpeed,curveRatio) + additiveRatio
 	#print("SPEED : " + str(_speed))
 	#print("_speedRatio : " + str(_speedRatio))
 	#print("hit : " + str(hitByAttack))
@@ -171,6 +173,8 @@ func _on_hitbox_on_hit() -> void:
 
 func SetProjectileScale(scaleRatio: float):
 	
+	additiveRatio = lerp(0.0,projectileAdditiveSpeed,scaleRatio)
+	print("ADDITIVE : " + str(additiveRatio))
 	var targetScale = lerp(iniScale,maxScale,scaleRatio)
 	
 	sprite.scale = Vector3(targetScale,targetScale,targetScale)

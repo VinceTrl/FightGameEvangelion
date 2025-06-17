@@ -18,11 +18,11 @@ func _ready() -> void:
 	#await get_tree().create_timer(10,true,false,false).timeout
 	#EnterArena()
 
-func GoTowardsPosition(targetPosition: Vector3,travelTime: float = 1.0):
+func GoTowardsPosition(targetPosition: Vector3,travelTime: float = 1.0,ease:Tween.EaseType = Tween.EASE_OUT,trans:Tween.TransitionType = Tween.TRANS_ELASTIC):
 	
 	var tween = get_tree().create_tween()
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_ELASTIC)
+	tween.set_ease(ease)
+	tween.set_trans(trans)
 	tween.set_parallel(true)
 	
 	tween.tween_property(self,"global_position:x",targetPosition.x,travelTime)
@@ -41,5 +41,5 @@ func EnterArena():
 	ExitArena()
 	
 func ExitArena():
-	GoTowardsPosition(iniPosition,exitAreraTime)
+	GoTowardsPosition(iniPosition,exitAreraTime,Tween.EASE_IN_OUT,Tween.TRANS_BACK)
 	emit_signal("OnPlatformExit")
