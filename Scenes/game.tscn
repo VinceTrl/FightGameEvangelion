@@ -1,14 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=24 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="Shader" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="4_o5sha"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="4_sx5sm"]
+[ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="5_lr106"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
-[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -17,8 +18,6 @@
 [ext_resource type="AudioStream" uid="uid://nqx3ft62tmu0" path="res://Assets/Sounds/Musics/teknokiki LOOP LONGUE.mp3" id="17_7gvmf"]
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
 [ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="17_tjwxa"]
-[ext_resource type="PackedScene" uid="uid://bkdrj6rwos5uk" path="res://Scenes/Gameplay/penpen.tscn" id="18_3b7cw"]
-[ext_resource type="PackedScene" uid="uid://bdvwx0kkjddp" path="res://Scenes/Gameplay/heart.tscn" id="20_slsbe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rfxrm"]
 render_priority = -1
@@ -31,6 +30,7 @@ shader_parameter/glowRadialCoverage = 0
 shader_parameter/glowAngle = 0.0
 shader_parameter/glowSharpness = 0.0
 shader_parameter/alphaThreshold = 0.031
+shader_parameter/sprite_texture = ExtResource("5_lr106")
 
 [sub_resource type="Animation" id="Animation_j54aa"]
 resource_name = "AnimLightPolici"
@@ -89,7 +89,6 @@ startFacingRight = false
 
 [node name="Sprite2D" parent="Gameplay/Player2" index="3"]
 material_override = SubResource("ShaderMaterial_rfxrm")
-texture = null
 
 [node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 1.66432, 4.5)
@@ -120,12 +119,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.97922, -0.145446)
 
 [node name="Spawner5" parent="Gameplay" instance=ExtResource("8_dreha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.97922, -0.145446)
-
-[node name="Heart" parent="Gameplay" instance=ExtResource("20_slsbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33219, -0.325578, 2.38419e-07)
-
-[node name="Heart2" parent="Gameplay" instance=ExtResource("20_slsbe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66781, -0.325578, 2.38419e-07)
 
 [node name="GUI" type="Node" parent="."]
 
@@ -199,8 +192,14 @@ spot_range = 45.5801
 visible = false
 spot_range = 49.3115
 
+[node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="City Pivot" parent="Enviro/Node3D/Meshes/R2/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -303,9 +302,6 @@ spot_angle_attenuation = 303.142
 
 [node name="EVA" parent="Enviro" instance=ExtResource("17_tjwxa")]
 transform = Transform3D(3.98309, 0.0749004, -0.158483, -0.155357, 3.1779, -2.40262, 0.0811858, 2.40648, 3.17774, 0.058358, -5.89616, -11.5841)
-
-[node name="Penpen" parent="Enviro" instance=ExtResource("18_3b7cw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.650869, 0.312223, -0.156669)
 
 [node name="TimerOutSpawners" parent="." instance=ExtResource("17_avc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

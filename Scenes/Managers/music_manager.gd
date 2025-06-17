@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 func StartStageMusic():
 	print("START MUSIC")
 	stage_music.play()
+	victory_sound.stop()
 
 func LaunchVoiceline():
 	print("START VOICELINE")

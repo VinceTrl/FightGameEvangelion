@@ -138,10 +138,11 @@ func DestroyProjectile():
 		var explo = EXPLOSION.instantiate()
 		get_tree().get_root().add_child(explo)
 		explo.global_position = global_position
-	#else:
-		#var audio = AUDIO_SCENE.instantiate()
-		#get_tree().get_root().add_child(audio)
-		#audio.StartAudio(EXPL_DSGN_ANIME_EXPLOSION_1_01)
+	else:
+		var audio = AUDIO_SCENE.instantiate()
+		get_tree().get_root().add_child(audio)
+		audio.StartAudio(EXPL_DSGN_ANIME_EXPLOSION_1_01)
+		PlayImpactVFX()
 		#pass
 
 	queue_free()
@@ -153,10 +154,10 @@ func enter(body: Node2D) -> void:
 	
 func PlaySFX():
 	sfx.play()
-	PlayVFXImpact()
+	PlayImpactVFX()
 	
 
-func PlayVFXImpact():
+func PlayImpactVFX():
 	var impact = VFX_PROJECTILE_IMPACT.instantiate()
 	get_tree().current_scene.add_child(impact)
 	impact.global_position = global_position

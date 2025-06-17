@@ -23,9 +23,11 @@ func _ready() -> void:
 	
 func ActiveHitBox():
 	isActive = true
+	print("Active : " + str(isActive) + " on " + str(name))
 	
 func InactiveHitBox():
 	isActive = false
+	print("Inactive : " + str(isActive) + " on " + str(name))
 	
 func DealDamage(damagedEntityID: int = 0):
 	emit_signal("OnHit")
