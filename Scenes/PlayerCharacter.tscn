@@ -1000,7 +1000,7 @@ shape = SubResource("BoxShape3D_cr8h1")
 disabled = true
 
 [node name="HitboxDown" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0427645, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.204901, 0)
 script = ExtResource("14_fgxac")
 isActive = false
 

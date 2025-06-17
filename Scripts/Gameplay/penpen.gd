@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var spawner: Spawner = $Spawner
-@onready var hurtbox: Hurtbox = $NodeShaker/Mesh_Penpen_01/Hurtbox
+
 @onready var hurt_sfx: AudioStreamPlayer3D = $Audio/HurtSFX
 @onready var nodeShaker: NodeShaker = $NodeShaker
 
@@ -11,6 +11,7 @@ extends Node3D
 
 var animationPlayer: AnimationPlayer
 var animationTree: AnimationTree
+var hurtbox: Hurtbox
 var canTakeDamage = true
 var isTakingDamage = false
 var isDead = false
@@ -22,6 +23,7 @@ signal OnPenpenDeath
 func _ready():
 	animationPlayer = GetAnimationPlayer(self)
 	animationTree = GetAnimationTree(self)
+	hurtbox = GetHurtbox(self)
 	
 	if animationPlayer:
 		print("AnimationPlayer found ")
@@ -32,6 +34,13 @@ func _ready():
 		print("AnimationTREE found ")
 	else:
 		print("NO AnimationTREE Found")
+		
+	if hurtbox:
+		hurtbox.OnHurtboxTakeDamage.connect(_on_hurtbox_take_damage)
+	else:
+		print("!!! HURTBOX NOT FOUND !!!")
+		
+	
 
 func GetAnimationPlayer(node: Node) -> AnimationPlayer:
 	for child in node.get_children():
@@ -49,6 +58,17 @@ func GetAnimationTree(node: Node) -> AnimationTree:
 			return child
 		# Recherche récursive dans les enfants
 		var found = GetAnimationTree(child)
+		if found:
+			return found
+	return null
+	
+	
+func GetHurtbox(node: Node) -> Hurtbox:
+	for child in node.get_children():
+		if child is Hurtbox:
+			return child
+		# Recherche récursive dans les enfants
+		var found = GetHurtbox(child)
 		if found:
 			return found
 	return null
@@ -110,3 +130,5 @@ func PenpenDeath():
 	print("BRUTAL SLAP")
 	isDead = true
 	OnPenpenDeath.emit()
+	await animationPlayer.animation_finished
+	queue_free()
