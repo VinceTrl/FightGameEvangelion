@@ -7,6 +7,6 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_gnabm")
-shader_parameter/Intensity = Vector3(0, 1, 0)
+shader_parameter/BounceIntensity = 3.0
 shader_parameter/Noise = ExtResource("3_p7yyi")
 shader_parameter/MainTex = ExtResource("2_15fcq")
