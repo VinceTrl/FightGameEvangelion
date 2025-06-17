@@ -67,7 +67,7 @@ func RandomSpawn(spawner: Spawner):
 				
 	#check if it's an unique spawn
 	if(_itemToSpawn.spawnOncePerGame):
-		spawnableItems.erase(_itemToSpawn)
+		EraseItemFromSystem(_itemToSpawn)
 		
 	var instance = spawner.SpawnExternalItem(_itemToSpawn)
 	
@@ -110,3 +110,9 @@ func get_spawnable_item_from_instance(instance: Node) -> SpawnableItem:
 		if spawned_instances[spawnable_item] == instance:
 			return spawnable_item
 	return null  # pas trouvé 
+	
+	
+func EraseItemFromSystem(itemToRemove: SpawnableItem) -> void:
+	for i in range(spawnableItems.size() - 1, -1, -1):
+		if spawnableItems[i].itemName == itemToRemove.itemName:
+			spawnableItems.remove_at(i)

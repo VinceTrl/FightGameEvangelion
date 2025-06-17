@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://brq2qcfwowmsx"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_3xqwj"]
+
+[resource]
+script = ExtResource("1_3xqwj")
+itemName = &"PENPEN"
+scenePath = &"res://Scenes/Gameplay/penpen.tscn"
+spawnOnGround = true
+groundOffset = Vector3(0, 1, 0)
+spawnOncePerGame = true
+isUniqueInstance = true
+spawnChance = 6
