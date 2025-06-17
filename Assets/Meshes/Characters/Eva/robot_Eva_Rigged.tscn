@@ -46,7 +46,6 @@ bones/12/rotation = Quaternion(0.140844, 0.197348, 0.0452516, 0.969107)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-0.0641012, 0.120371, 1.10865e-07)
 bones/13/rotation = Quaternion(0.0602719, -0.111317, -0.0340815, 0.99137)
-bones/13/scale = Vector3(1, 1, 1)
 bones/14/position = Vector3(0.00749138, 0.173075, -6.67572e-08)
 bones/14/rotation = Quaternion(-0.158402, 0.0273894, 0.0163005, 0.98686)
 bones/14/scale = Vector3(1, 1, 1)
@@ -86,7 +85,7 @@ bones/29/position = Vector3(-0.000245409, 0.134433, 2.38419e-07)
 bones/29/rotation = Quaternion(0.20336, 0.000274644, -0.0361674, 0.978436)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/position = Vector3(-0.000715361, 0.129276, 1.19209e-07)
-bones/30/rotation = Quaternion(0.139463, 0.0105188, 0.0144079, 0.990067)
+bones/30/rotation = Quaternion(-1.29454e-07, -4.16301e-07, 1.4063e-07, 1)
 bones/32/position = Vector3(0.122073, 0.421334, -0.00787334)
 bones/32/rotation = Quaternion(0.294194, 0.0245815, -0.0868543, 0.951474)
 bones/32/scale = Vector3(1, 1, 1)
@@ -209,20 +208,37 @@ surface_material_override/0 = ExtResource("2_tpkj1")
 surface_material_override/0 = ExtResource("2_tpkj1")
 surface_material_override/1 = ExtResource("2_tpkj1")
 
+[node name="BoneAttachment3D_LeftArm" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
+transform = Transform3D(-0.0965796, 0.760593, -0.642005, 0.119866, -0.631438, -0.766106, -0.988081, -0.150945, -0.030185, 0.765589, 5.60132, 0.207164)
+bone_name = "bdef_LeftArm"
+bone_idx = 9
+
+[node name="VFX_Fire01_mecha3" parent="Armature/Skeleton3D/BoneAttachment3D_LeftArm" index="0" instance=ExtResource("3_4m2s7")]
+transform = Transform3D(-0.0245978, 0.004271, 0.332399, 0.295294, 0.153354, 0.0198818, -0.152669, 0.295932, -0.0151001, 0.0737761, 1.20581, 0.10143)
+
+[node name="BoneAttachment3D2_RightArm" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.284409, -0.8208, 0.495378, -0.388621, -0.571065, -0.72309, 0.876405, 0.0131393, -0.481396, -0.697689, 5.65, 0.397314)
+bone_name = "bdef_RightArm"
+bone_idx = 38
+
+[node name="VFX_Fire01_mecha2" parent="Armature/Skeleton3D/BoneAttachment3D2_RightArm" index="0" instance=ExtResource("3_4m2s7")]
+transform = Transform3D(0.0733558, 0.103788, -0.308154, -0.299235, 0.145158, -0.022343, 0.127236, 0.281547, 0.125115, -0.201208, 1.10997, 0.177862)
+
+[node name="BoneAttachment3D3_LeftFoot" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="4"]
+transform = Transform3D(-0.864529, 0.48407, 0.135151, -0.318185, -0.735329, 0.598373, 0.389035, 0.474308, 0.789737, 0.475458, 0.484599, -0.573527)
+bone_name = "bdef_LeftFoot"
+bone_idx = 68
+
+[node name="VFX_Fire01_mecha5" parent="Armature/Skeleton3D/BoneAttachment3D3_LeftFoot" index="0" instance=ExtResource("3_4m2s7")]
+transform = Transform3D(-0.292757, 0.00894124, -0.159137, 0.15321, 0.107547, -0.275812, 0.0439457, -0.315381, -0.098565, 0.0700661, 0.283545, -0.711067)
+
+[node name="BoneAttachment3D4_RightFoot" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="5"]
+transform = Transform3D(-0.667796, -0.63951, -0.380888, 0.238242, -0.668428, 0.704588, -0.705187, 0.379778, 0.598732, -0.628419, 0.351135, -0.361673)
+bone_name = "bdef_RightFoot"
+bone_idx = 74
+
+[node name="VFX_Fire01_mecha4" parent="Armature/Skeleton3D/BoneAttachment3D4_RightFoot" index="0" instance=ExtResource("3_4m2s7")]
+transform = Transform3D(-0.216297, 0.0599472, 0.246442, -0.220097, 0.116582, -0.221534, -0.126033, -0.306475, -0.0360657, 0.0654008, 0.245299, -0.645547)
+
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "Armature|Slap"
-
-[node name="FX" type="Node3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13743, 0)
-
-[node name="VFX_Fire01_mecha2" parent="FX" index="0" instance=ExtResource("3_4m2s7")]
-transform = Transform3D(0.333233, -0.00624995, -0.00527747, 0.00156417, -0.162403, 0.291092, -0.00802912, -0.291029, -0.162324, -1.42913, 6.1154, 0.891462)
-
-[node name="VFX_Fire01_mecha3" parent="FX" index="1" instance=ExtResource("3_4m2s7")]
-transform = Transform3D(0.333233, -0.00532145, -0.00621254, 0.00156417, -0.207036, 0.261238, -0.00802912, -0.261188, -0.206949, 1.4452, 6.10328, 0.639561)
-
-[node name="VFX_Fire01_mecha4" parent="FX" index="2" instance=ExtResource("3_4m2s7")]
-transform = Transform3D(0.333233, -0.00624996, -0.00527747, 0.00156417, -0.162403, 0.291092, -0.0080291, -0.291029, -0.162324, -0.593999, 1.05522, -0.82761)
-
-[node name="VFX_Fire01_mecha5" parent="FX" index="3" instance=ExtResource("3_4m2s7")]
-transform = Transform3D(0.333233, -0.00532146, -0.00621254, 0.00156417, -0.207036, 0.261238, -0.00802912, -0.261188, -0.206949, 0.445664, 1.15531, -1.07036)
