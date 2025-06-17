@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7yji2x0rgcui"
-path.s3tc="res://.godot/imported/Atak Up.png-13ea60eeb1c5c4491e7ca2aa4975e215.s3tc.ctex"
+path="res://.godot/imported/Atak Up.png-13ea60eeb1c5c4491e7ca2aa4975e215.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Sprites/KikiFighter/Player1/Atak Up.png"
-dest_files=["res://.godot/imported/Atak Up.png-13ea60eeb1c5c4491e7ca2aa4975e215.s3tc.ctex"]
+dest_files=["res://.godot/imported/Atak Up.png-13ea60eeb1c5c4491e7ca2aa4975e215.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
