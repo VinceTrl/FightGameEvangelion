@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=25 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="Shader" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="4_o5sha"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="4_sx5sm"]
-[ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="5_gech2"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
@@ -32,7 +31,43 @@ shader_parameter/glowRadialCoverage = 0
 shader_parameter/glowAngle = 0.0
 shader_parameter/glowSharpness = 0.0
 shader_parameter/alphaThreshold = 0.031
-shader_parameter/sprite_texture = ExtResource("5_gech2")
+
+[sub_resource type="Animation" id="Animation_j54aa"]
+resource_name = "AnimLightPolici"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.266667, 0.516667, 0.766667, 1.01667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(0.0166664, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lt8f3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1tnc3"]
+_data = {
+"AnimLightPolici": SubResource("Animation_j54aa"),
+"RESET": SubResource("Animation_lt8f3")
+}
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -45,7 +80,7 @@ unique_name_in_owner = true
 [node name="Gameplay" type="Node" parent="."]
 
 [node name="Player" parent="Gameplay" instance=ExtResource("1_rog66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42786, 1.71459, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44179, 1.71459, -0.00462174)
 
 [node name="Player2" parent="Gameplay" instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2585, 1.63538, 0)
@@ -54,6 +89,7 @@ startFacingRight = false
 
 [node name="Sprite2D" parent="Gameplay/Player2" index="3"]
 material_override = SubResource("ShaderMaterial_rfxrm")
+texture = null
 
 [node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 1.66432, 4.5)
@@ -163,14 +199,8 @@ spot_range = 45.5801
 visible = false
 spot_range = 49.3115
 
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
-
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R2/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -178,44 +208,98 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="SM_Road" parent="Enviro/Node3D/Meshes" index="2"]
 transform = Transform3D(1.11943, 0, 0, 0, 1.11943, 0, 0, 0, 1.11943, 0, -4.54701, -2.59207)
 
-[node name="Lighting" type="Node3D" parent="Enviro"]
+[node name="LightingOld" type="Node3D" parent="Enviro"]
 
-[node name="BackgroundMesh" type="MeshInstance3D" parent="Enviro/Lighting"]
+[node name="Old" type="Node3D" parent="Enviro/LightingOld"]
+visible = false
+
+[node name="BackgroundMesh" type="MeshInstance3D" parent="Enviro/LightingOld/Old"]
 transform = Transform3D(-0.0794317, 0.0450254, 0.547176, 0.0994026, 0.51173, -0.0236528, -0.41578, 0.11374, -0.110189, -0.182486, -1.39818, -13.1081)
 visible = false
 material_override = ExtResource("14_u3ss6")
 mesh = ExtResource("13_3v2jh")
+skeleton = NodePath("../..")
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="Enviro/Lighting"]
+[node name="SpotLight3D7" type="SpotLight3D" parent="Enviro/LightingOld/Old"]
 transform = Transform3D(1, 0, 0, 0, 0.888585, 0.458712, 0, -0.458712, 0.888585, 0, 9.1072, 3.70326)
 light_energy = 50.0
 shadow_enabled = true
 spot_range = 15.2065
 spot_angle = 47.6542
 
-[node name="SpotBuildingsRight" type="SpotLight3D" parent="Enviro/Lighting"]
-transform = Transform3D(-0.0636048, 0.206663, -0.976343, 0.960705, 0.277543, -0.00383842, 0.270184, -0.938222, -0.216195, -5.67032, 4.90765, -29.3489)
+[node name="SpotBuildingsRight" type="SpotLight3D" parent="Enviro/LightingOld/Old"]
+transform = Transform3D(-0.0636048, 0.206663, -0.976343, 0.960705, 0.277543, -0.00383839, 0.270184, -0.938222, -0.216195, -5.67032, 4.90765, -29.3489)
 light_color = Color(0.510236, 0.861405, 0.761492, 1)
 light_energy = 200.0
 light_volumetric_fog_energy = 1.087
 spot_range = 49.2912
 spot_angle = 50.291
 
-[node name="SpotBuildingsLeft" type="SpotLight3D" parent="Enviro/Lighting"]
-transform = Transform3D(0.550074, -0.571854, 0.608607, 0.596174, -0.241436, -0.765691, 0.584803, 0.784023, 0.208117, 0, -5.9291, -4.49585)
+[node name="SpotBuildingsLeft" type="SpotLight3D" parent="Enviro/LightingOld/Old"]
+transform = Transform3D(0.550074, -0.571853, 0.608607, 0.596174, -0.241435, -0.765693, 0.584803, 0.784023, 0.208117, 0, -5.9291, -4.49585)
 light_color = Color(0.510236, 0.861405, 0.761492, 1)
 light_energy = 200.0
 light_volumetric_fog_energy = 1.087
 spot_range = 56.6485
 spot_angle = 50.291
 
-[node name="SpotScat" type="SpotLight3D" parent="Enviro/Lighting"]
+[node name="SpotScat" type="SpotLight3D" parent="Enviro/LightingOld/Old"]
 transform = Transform3D(1, 0, 0, 0, 0.469009, -0.883193, 0, 0.883193, 0.469009, 0, -6.92803, -2.7011)
 light_color = Color(0.42, 1, 0.777667, 1)
 light_energy = 60.0
 light_volumetric_fog_energy = 10.0
 spot_range = 21.5625
 spot_angle = 54.9228
+
+[node name="LightPolice" type="SpotLight3D" parent="Enviro/LightingOld"]
+transform = Transform3D(0.952863, -0.142244, -0.26799, -0.0329332, 0.829577, -0.557421, 0.301608, 0.539972, 0.785789, 14.6089, -4.36369, 3.32817)
+light_energy = 500.0
+shadow_enabled = true
+spot_range = 35.0707
+spot_attenuation = -0.57
+spot_angle = 48.24
+spot_angle_attenuation = 303.142
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enviro/LightingOld/LightPolice"]
+libraries = {
+"": SubResource("AnimationLibrary_1tnc3")
+}
+autoplay = "AnimLightPolici"
+
+[node name="LightPolice2" type="SpotLight3D" parent="Enviro/LightingOld"]
+transform = Transform3D(0.911619, 0.253565, 0.323506, -0.0329331, 0.829577, -0.557421, -0.409716, 0.497501, 0.764608, -14.1532, -4.36369, 3.32817)
+light_energy = 500.0
+shadow_enabled = true
+spot_range = 35.0707
+spot_attenuation = -0.57
+spot_angle = 48.24
+spot_angle_attenuation = 303.142
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enviro/LightingOld/LightPolice2"]
+libraries = {
+"": SubResource("AnimationLibrary_1tnc3")
+}
+autoplay = "AnimLightPolici"
+
+[node name="Light" type="SpotLight3D" parent="Enviro/LightingOld"]
+transform = Transform3D(0.981894, -0.176849, 0.0678849, 0.152169, 0.522935, -0.83868, 0.11282, 0.833825, 0.540378, 0.944686, -7.98877, 5.47348)
+light_color = Color(1, 0.884124, 0.944117, 1)
+light_energy = 50.0
+shadow_enabled = true
+spot_range = 14.7661
+spot_attenuation = -0.57
+spot_angle = 48.24
+spot_angle_attenuation = 303.142
+
+[node name="Light2" type="SpotLight3D" parent="Enviro/LightingOld"]
+transform = Transform3D(0.981894, -0.176849, 0.0678849, 0.152169, 0.522935, -0.83868, 0.11282, 0.833825, 0.540378, 0.944686, -2.99429, -1.55692)
+light_color = Color(1, 0.884124, 0.944117, 1)
+light_energy = 50.0
+shadow_enabled = true
+spot_range = 14.7661
+spot_attenuation = -0.57
+spot_angle = 48.24
+spot_angle_attenuation = 303.142
 
 [node name="EVA" parent="Enviro" instance=ExtResource("17_tjwxa")]
 transform = Transform3D(3.98309, 0.0749004, -0.158483, -0.155357, 3.1779, -2.40262, 0.0811858, 2.40648, 3.17774, 0.058358, -5.89616, -11.5841)
