@@ -68,7 +68,7 @@ func SpawnExternalItem(_itemToSpawn: SpawnableItem):
 	var _itemInstance = _itemToSpawn.resource.instantiate()
 	if(_itemInstance == null) : return
 	
-	add_child(_itemInstance)
+	get_tree().current_scene.add_child(_itemInstance)
 	_itemInstance.global_position = _spawnPos
 	return _itemInstance
 	

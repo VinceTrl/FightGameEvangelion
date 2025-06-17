@@ -27,6 +27,7 @@ extends Node3D
 @export var zoomParams: Array[ZoomParameters] = []
 
 @onready var camShake: CameraShake = $CameraShake
+@onready var camera: Camera3D = $CameraShake/Camera3D
 
 @export var debugMode = false
 @onready var center_debug_label: Label3D = $CENTER_DEBUG_LABEL
