@@ -95,6 +95,7 @@ func Hurt(_damagePoint: int = 1):
 	isTakingDamage = true
 	canTakeDamage = false
 	
+	PenpenSpawnItem()
 	OnPenpenHurt.emit()
 	
 	#effects

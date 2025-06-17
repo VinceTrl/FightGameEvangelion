@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=68 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/LockedState.gd" id="6_85275"]
 [ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="6_s75a1"]
 [ext_resource type="AudioStream" uid="uid://b8qtxdl0qqfer" path="res://Assets/Sounds/SFX/DoudouSFX/SD_attack.wav" id="6_sqn8w"]
+[ext_resource type="PackedScene" uid="uid://62jphhwnawdu" path="res://Scenes/Gameplay/player_spear.tscn" id="6_vx25g"]
 [ext_resource type="Script" path="res://Scripts/Player/States/RunState.gd" id="7_y4pfp"]
 [ext_resource type="Script" path="res://Scripts/Player/States/JumpState.gd" id="8_g4l1g"]
 [ext_resource type="AudioStream" uid="uid://dcyeawnvw6u68" path="res://Assets/Sounds/SFX/DoudouSFX/SD_chargementdetir.wav" id="9_17uti"]
@@ -877,6 +878,9 @@ texture = ExtResource("6_s75a1")
 hframes = 9
 vframes = 13
 script = ExtResource("4_1nn6i")
+
+[node name="PlayerSpear" parent="." instance=ExtResource("6_vx25g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104375, 0)
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")

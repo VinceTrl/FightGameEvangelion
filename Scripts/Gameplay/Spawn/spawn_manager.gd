@@ -77,6 +77,7 @@ func RandomSpawn(spawner: Spawner):
 	
 func PickRandomSpawner() -> Spawner:
 	var ranIndex = randi_range(0,spawners.size()-1)
+	print("pick spawner : " + str(spawners[ranIndex]))
 	return spawners[ranIndex]
 	
 func PickRandomItemOnSpawner(_spawner : Spawner) -> StringName:

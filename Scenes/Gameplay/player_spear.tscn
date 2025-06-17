@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://62jphhwnawdu"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/player_spear.gd" id="1_bluxh"]
+[ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="1_w5cum"]
+
+[sub_resource type="Animation" id="Animation_m2jsr"]
+resource_name = "SpearIdle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [81]
+}
+
+[sub_resource type="Animation" id="Animation_qph30"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [81]
+}
+
+[sub_resource type="Animation" id="Animation_77k2e"]
+resource_name = "SpearCharging"
+length = 0.833337
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93]
+}
+
+[sub_resource type="Animation" id="Animation_yrn73"]
+resource_name = "SpearShoot"
+length = 0.300003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [99, 100, 101, 102, 103]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jd5tt"]
+_data = {
+"RESET": SubResource("Animation_qph30"),
+"SpearCharging": SubResource("Animation_77k2e"),
+"SpearIdle": SubResource("Animation_m2jsr"),
+"SpearShoot": SubResource("Animation_yrn73")
+}
+
+[node name="PlayerSpear" type="Node3D"]
+script = ExtResource("1_bluxh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 0
+texture = ExtResource("1_w5cum")
+hframes = 9
+vframes = 13
+frame = 81
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
+libraries = {
+"": SubResource("AnimationLibrary_jd5tt")
+}
+
+[node name="ProjectileSpawnLocation" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.424839, 0, 0)
+gizmo_extents = 0.67

@@ -27,6 +27,8 @@ extends CharacterBody3D
 @onready var raycastHolder: Node3D = $RaycastHolder
 @onready var backPlayerDetection: RayCast3D = $RaycastHolder/BackPlayerDetection
 @onready var ground_location: Marker3D = $GroundLocation
+@onready var player_spear: Spear = $PlayerSpear
+
 
 const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 const SD_GROUND_HIT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_GroundHit.wav")
@@ -176,6 +178,8 @@ func _ready():
 	attackHitbox.owner_id = playerID
 	hitbox_up.owner_id = playerID
 	hitbox_down.owner_id = playerID
+	
+	player_spear.InactiveSpear()
 	
 	if(startFacingRight): facing = 1
 	else: facing = -1

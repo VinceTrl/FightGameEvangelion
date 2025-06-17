@@ -5,6 +5,7 @@ extends PlayerState
 
 func EnterState():
 	Player.velocity = Vector3.ZERO
+	Player.player_spear.ActiveSpear()
 	Name = "ChargeShoot"
 	charge_shoot_timer.start(Player.chargeShootTime)
 	
@@ -13,13 +14,14 @@ func EnterState():
 	Player.animator.play("ChargeShoot")
 	
 func ExitState():
-	pass
+	Player.player_spear.InactiveSpear()
 
 func Draw():
 	pass
 	
 func Update(delta: float):
 	Player.HandleGravity(delta)
+	Player.player_spear.UpdateSpearRotation(Player.GetDirectionOn8Axis())
 	HandleChargeShoot()
 	HandleAnimations()
 	
