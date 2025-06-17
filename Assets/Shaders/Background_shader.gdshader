@@ -182,7 +182,7 @@ void fragment() {
 	EMISSION = vec3(pow(EMISSION.r, 1.0), pow(EMISSION.g, 1.0), pow(EMISSION.b, 1.0));
 	
 	//ALBEDO = pow(ALBEDO, vec3(2.0, 2.0, 2.0));
-	FOG = vec4(0.4, 1.0, 0.7, 0.2) * ((UV.y*5.0)-0.5);
+	//FOG = vec4(0.4, 1.0, 0.7, 0.2) * ((UV.y*5.0)-0.5);
 	//ALBEDO = vec3(0.0, 0.0, 0.0);
 	//ALBEDO += vec3(height02)*0.2;
 	//ALBEDO += vec3(0.5 * spectrum_value05 * soundIntensity, 0.0, 0.0) * 1.0;
