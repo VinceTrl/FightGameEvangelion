@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5gsxktvu5hbb"]
+
+[ext_resource type="PackedScene" uid="uid://bau5w3txjae2k" path="res://Assets/Meshes/Enviro/Plane_16_9.fbx" id="1_dluxr"]
+[ext_resource type="Material" uid="uid://damsxbju2djj0" path="res://Assets/Materials/Enviro/M_CRS.tres" id="2_ee1uw"]
+
+[node name="Plane_16_9" instance=ExtResource("1_dluxr")]
+
+[node name="Plane" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -9.61795e-06, 100, 0, -80.6812, -1.19209e-05, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_ee1uw")
