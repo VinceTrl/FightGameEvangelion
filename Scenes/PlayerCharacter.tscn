@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=67 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -32,8 +32,13 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/ChargingAttackState.gd" id="32_r0xa3"]
 [ext_resource type="Resource" uid="uid://b1kr6ya4e857u" path="res://Resources/PostProcessAnims/Glitch/DeathGlitch.tres" id="33_hpf16"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ChargeShootState.gd" id="35_8paei"]
+[ext_resource type="AudioStream" uid="uid://58ld363flnkm" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi1.wav" id="35_oblwe"]
+[ext_resource type="AudioStream" uid="uid://b3yffj8vv6fxj" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi2.wav" id="36_j4mcl"]
 [ext_resource type="AudioStream" uid="uid://ca3j2rm8aj6c8" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Ready 5_01.wav" id="36_tkpog"]
 [ext_resource type="Script" path="res://Scripts/Player/States/KnockbackState.gd" id="37_h0gmo"]
+[ext_resource type="AudioStream" uid="uid://dchwfsqn35bpo" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi3.wav" id="37_nr6h1"]
+[ext_resource type="AudioStream" uid="uid://b3k2bh6t8jvb8" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi4.wav" id="38_ipwkm"]
+[ext_resource type="AudioStream" uid="uid://dw5yrjagxb345" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi5.wav" id="39_fiots"]
 
 [sub_resource type="Curve" id="Curve_qv1t1"]
 _data = [Vector2(0, 0), 0.0, 0.0342598, 0, 0, Vector2(1, 1), 0.174008, 0.0, 0, 0]
@@ -817,6 +822,14 @@ size = Vector3(0.616932, 0.425266, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jq5e"]
 size = Vector3(0.248138, 0.338379, 1)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lnam8"]
+streams_count = 5
+stream_0/stream = ExtResource("35_oblwe")
+stream_1/stream = ExtResource("36_j4mcl")
+stream_2/stream = ExtResource("37_nr6h1")
+stream_3/stream = ExtResource("38_ipwkm")
+stream_4/stream = ExtResource("39_fiots")
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 axis_lock_linear_z = true
@@ -1042,6 +1055,9 @@ bus = &"SFX"
 
 [node name="Sfx_Move" type="AudioStreamPlayer3D" parent="PlayerAudio"]
 bus = &"SFX"
+
+[node name="Sfx_Mi" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+stream = SubResource("AudioStreamRandomizer_lnam8")
 
 [node name="RaycastHolder" type="Node3D" parent="."]
 

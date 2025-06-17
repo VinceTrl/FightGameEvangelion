@@ -7,6 +7,7 @@ extends PlayerState
 @onready var ground_location: Marker3D = $"../../GroundLocation"
 
 @onready var sfx_hurt: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Hurt"
+@onready var sfx_mi: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Mi"
 
 const VFX_2D_IMPACT_MEDIUM = preload("res://Scenes/VFX/VFX2D/vfx_2d_impact_medium.tscn")
 const SD_ATTACK_IMPACT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_attackIMPACT.wav")
@@ -46,6 +47,8 @@ func EnterState():
 			sfx_hurt.stream = SD_IMPACTPROJECTILE
 	
 	sfx_hurt.play()
+	#await sfx_hurt.finished
+	sfx_mi.play()
 	
 func ExitState():
 	pass
