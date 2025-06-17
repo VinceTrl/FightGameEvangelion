@@ -31,6 +31,7 @@ const float lightRadius = 0.5;
 uniform float height_scale = 1.0;
 uniform float speed = 1.0;
 uniform vec2 tiling = vec2(20.0, 20.0);
+uniform vec2 offset = vec2(0.0, 0.0);
 varying vec2 tex_position;
 uniform sampler2D noise;
 uniform sampler2D normalmap;
@@ -162,8 +163,8 @@ void fragment() {
 
 	//vec2 UV01 = vec2(-1.0, 1.0) * vec2(tex_position.y + 0.0 + TIME * 0.1 * speed + spectrum_value03 * 0.3, tex_position.x + TIME * 5.0 * speed + spectrum_value05 * 1.0);
 	//vec2 UV02 = vec2(1.0, 1.0) * vec2(tex_position.y + 0.0 - TIME * 0.1 * speed + spectrum_value04 * 1.0, tex_position.x - TIME * 1.0 * speed + spectrum_value06 * 1.0);
-	vec2 UV01 = vec2(UV.x + spectrum_value01 * 0.05 * sin(TIME*3.0*spectrum_value01), UV.y + spectrum_value03 * 0.1 * sin(TIME*3.0*spectrum_value03));
-	vec2 UV02 = vec2(UV.x + spectrum_value02 * 0.1 * sin(TIME*3.0*spectrum_value02), UV.y + spectrum_value00 * 0.1 * sin(TIME*3.0*spectrum_value00));
+	vec2 UV01 = vec2(UV.x + spectrum_value01 * 0.05 * sin(TIME*3.0*spectrum_value01), UV.y + spectrum_value03 * 0.1 * sin(TIME*3.0*spectrum_value03)) + offset;
+	vec2 UV02 = vec2(UV.x + spectrum_value02 * 0.1 * sin(TIME*3.0*spectrum_value02), UV.y + spectrum_value00 * 0.1 * sin(TIME*3.0*spectrum_value00)) + offset;
 
 	//TESTER DE WARPER LES UVS
 	//________________________
@@ -172,8 +173,8 @@ void fragment() {
 	ROUGHNESS = 1.0;
 	// Output to screen
 	ALBEDO = vec3(b,b,b) * 0.01;
-	ALBEDO += texture(noise, vec2(UV.x, UV.y)).xyz;
-	EMISSION = texture(noise, vec2(UV.x, UV.y)).xyz * 1.0;
+	ALBEDO += texture(noise, vec2(UV.x, UV.y) + offset).xyz;
+	EMISSION = texture(noise, vec2(UV.x, UV.y) + offset).xyz * 1.0;
 	ALBEDO += ((texture(noise, UV01).rgb * (spectrum_value01+spectrum_value05) * 5.0 + texture(noise, UV02).rgb) * (spectrum_value05+spectrum_value01) * 5.0) * texture(noise, UV01).rgb * texture(noise, UV02).rgb * 1.0;
 	//ALBEDO += (texture(noise, vec2(UV.x, UV.y)).xyz * 1.0-texture(mask00, vec2(UV.x, UV.y)).x) * 2.0;
 	//ALBEDO *= texture(mask00, vec2(UV.x, UV.y)).x;
