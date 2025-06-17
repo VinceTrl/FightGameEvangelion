@@ -13,7 +13,8 @@ func EnterState():
 	screenInstance = WINNER_SCREEN.instantiate()
 	add_child(screenInstance)
 	Manager.gameStateManager.OnWinnerScreenStart.emit()
-	canHandleInput = true
+	await get_tree().create_timer(8.0,true,false,true).timeout
+	RestartGame()
 	
 func ExitState():
 	#screenInstance as Node
@@ -24,9 +25,10 @@ func Draw():
 	pass
 	
 func Update(delta: float):
-	if(Input.is_action_pressed("MenuAccept_Global") and canHandleInput):
-		canHandleInput = false
-		RestartGame()
+	pass
+	#if(Input.is_action_pressed("MenuAccept_Global") and canHandleInput):
+		#canHandleInput = false
+		#RestartGame()
 		
 func RestartGame():
 	var timer = get_tree().create_timer(0.5,true,false,true)

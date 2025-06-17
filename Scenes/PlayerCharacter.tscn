@@ -835,6 +835,7 @@ texture = ExtResource("6_s75a1")
 hframes = 9
 vframes = 13
 script = ExtResource("4_1nn6i")
+hitColor = Color(1, 1, 1, 1)
 
 [node name="PlayerSpear" parent="." instance=ExtResource("6_vx25g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0308377, 0)

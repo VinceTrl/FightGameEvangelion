@@ -11,6 +11,8 @@ func EnterState():
 	canHandleInput = true
 	Manager.gameStateManager.OnResultScreenStart.emit()
 	Manager.masterUI.result_screen.StartResult()
+	await get_tree().create_timer(2.0,true,false,true).timeout
+	ExitGame()
 	
 func ExitState():
 	Manager.gameStateManager.OnResultScreenEnd.emit()
@@ -19,10 +21,11 @@ func Draw():
 	pass
 	
 func Update(delta: float):
-	if(Input.is_action_pressed("MenuAccept_Global") and canHandleInput):
-		print("INPUT")
-		canHandleInput = false
-		ExitGame()
+	pass
+	#if(Input.is_action_pressed("MenuAccept_Global") and canHandleInput):
+		#print("INPUT")
+		#canHandleInput = false
+		#ExitGame()
 		
 func ExitGame():
 	var timer = get_tree().create_timer(0.5,true,false,true)
