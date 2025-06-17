@@ -31,7 +31,20 @@ func GetShootPosition() -> Vector3:
 	
 func ActiveSpear():
 	sprite_3d.visible = true
+	animation_player.play("SpearIdle")
 	
 func InactiveSpear():
 	sprite_3d.visible = false
+	animation_player.play("SpearIdle")
+	
+func SpearCharge():
+	animation_player.play("SpearCharging")
+	
+func SpearChargeReady():
+	animation_player.play("SpearChargeReady")
+	
+func SpearShoot():
+	animation_player.play("SpearShoot")
+	await animation_player.animation_finished
+	animation_player.play("SpearIdle")
 	

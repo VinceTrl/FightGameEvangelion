@@ -49,7 +49,10 @@ func RegisterSpawner(_spawnerToAdd: Spawner):
 	print("SPAWNER REGISTERED")
 	
 func RandomSpawn(spawner: Spawner):
-	
+	if(spawner == null):
+		push_error("NULL SPAWNER ON RANDOM SPAWN")
+		return
+		
 	#var spawner: Spawner = PickRandomSpawner()
 	#print(str(spawner))
 	var _itemToSpawn = PickRandomItem()

@@ -6,15 +6,17 @@ extends PlayerState
 func EnterState():
 	Player.velocity = Vector3.ZERO
 	Player.player_spear.ActiveSpear()
+	Player.player_spear.SpearCharge()
 	Name = "ChargeShoot"
 	charge_shoot_timer.start(Player.chargeShootTime)
-	
-	#Player.animator.play("StartChargeShoot")
-	#await Player.animator.animation_finished
 	Player.animator.play("ChargeShoot")
 	
+	await charge_shoot_timer.timeout
+	ChargeReady()
+	
 func ExitState():
-	Player.player_spear.InactiveSpear()
+	#Player.player_spear.InactiveSpear()
+	pass
 
 func Draw():
 	pass
@@ -30,12 +32,18 @@ func HandleAnimations():
 	Player.SetSpriteOffset_Attack()
 	Player.animator.play("ChargeShoot")
 	
+func ChargeReady():
+	if(Player.currentState == self):
+		print("CHARGE IS FULL AND READY")
+		Player.player_spear.SpearChargeReady()
+	
 	
 func HandleChargeShoot():
 	#release attack input
 	if(Player.keyShoot):
 		
 		Player.SetChargeShootValue(GetChargeRatio())
+		Player.shootDirection = Player.GetDirectionOn8Axis()
 		Player.ChangeState(States.Shoot)
 		
 

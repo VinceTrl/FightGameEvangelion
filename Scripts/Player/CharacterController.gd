@@ -114,6 +114,7 @@ var airAttack = 0
 var currentAttackForce = 0.0
 var currentChargeRatio = 0.0
 
+var shootDirection
 var currentShootChargeForce = 0.0
 var currentShootChargeRatio = 0.0
 
