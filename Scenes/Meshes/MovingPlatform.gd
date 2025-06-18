@@ -4,8 +4,8 @@ extends Node3D
 @export var targetNode: Node3D
 @export var enterAreraTime: float = 2.0
 @export var exitAreraTime: float = 2.0
-@export var lifeTimeMin: float = 10
-@export var lifeTimeMax: float = 15
+@export var lifeTimeMin: float = 10.0
+@export var lifeTimeMax: float = 15.0
 var iniPosition
 
 signal OnPlatformEnter
