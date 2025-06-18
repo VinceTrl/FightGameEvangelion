@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
-[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -90,10 +90,11 @@ startFacingRight = false
 [node name="Sprite2D" parent="Gameplay/Player2" index="3"]
 material_override = SubResource("ShaderMaterial_rfxrm")
 
-[node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
+[node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2", "cameraTargets") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 1.66432, 4.5)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
+cameraTargets = [NodePath("../Player"), NodePath("../Player2")]
 cameraClampMin = Vector2(-5, 0)
 
 [node name="AmmoItem" parent="Gameplay" instance=ExtResource("13_8m82v")]

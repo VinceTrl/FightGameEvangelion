@@ -113,7 +113,10 @@ func StartTransition():
 func LoadTitleScene():
 	
 	StartTransition()
-	get_tree().current_scene.queue_free()
+	
+	if(get_tree().current_scene != null):
+		get_tree().current_scene.queue_free()
+		
 	await get_tree().process_frame # attendre la suppression effective
 	#ChangeGameState(GameStates.GameState.TitleScreen)
 	

@@ -4,6 +4,7 @@ extends Node3D
 
 @export var player1: Node3D
 @export var player2: Node3D
+@export var cameraTargets: Array[Node3D] = []
 
 @export var minDistZ = 2.0
 @export var maxDistZ = 4.5
@@ -35,6 +36,7 @@ extends Node3D
 @onready var cam_center: Sprite3D = $Cam_Center
 
 var followPlayers: bool = true
+var usePlayerDistanceForTargetZ = true
 
 var updateZposition = true
 var updateXYposition = true
@@ -73,6 +75,7 @@ func UpdatePositon_XY():
 	#print("update XY")
 	#var _middlePos: Vector3 = player1.global_position + player2.global_position/2
 	var _middlePos: Vector3 = 0.5 * (player1.global_position + player2.global_position)
+	_middlePos = GetAveragePosition(cameraTargets)
 	var _newPos: Vector3 = Vector3(_middlePos.x,_middlePos.y,global_position.z) + cameraOffset
 	#global_position = _newPos
 	
@@ -90,8 +93,10 @@ func UpdatePositon_Z():
 	if(!updateZposition): return
 	
 	#print("update Z")
+	var _currentZ = minDistZ
 	
-	var _currentZ = GetZtargetPosition()
+	if(usePlayerDistanceForTargetZ):
+		_currentZ = GetZtargetPosition()
 	
 	if TweenCamZ:
 		TweenCamZ.kill()
@@ -181,6 +186,19 @@ func GetZoomParamFromName(_zoomName: StringName) -> ZoomParameters:
 	push_error("No zoom param found")
 	return null
 	
+func GetAveragePosition(nodes: Array) -> Vector3:
+	var total_position := Vector3.ZERO
+	var count := 0
+	
+	for node in nodes:
+		if node is Node3D:
+			total_position += node.global_transform.origin
+			count += 1
+	
+	if count == 0:
+		return Vector3.ZERO
+	
+	return total_position / count
 	
 	#func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = 1.0,_zoomDuration: float = 2.0,_zoomCurve: Curve = zoomCurve):
 	#if(_targetNode == null): return
