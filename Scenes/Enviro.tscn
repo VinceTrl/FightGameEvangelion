@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://8a00sh66ihoa"]
+[gd_scene load_steps=23 format=3 uid="uid://8a00sh66ihoa"]
 
 [ext_resource type="PackedScene" uid="uid://bokk03njw1g62" path="res://Assets/Meshes/Enviro/mesh_buildings_loop_02.tscn" id="2_pmxf5"]
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="2_tsbgh"]
@@ -154,6 +154,51 @@ tracks/0/keys = {
 _data = {
 "Anim_CityRotation_slow": SubResource("Animation_mb0de"),
 "RESET": SubResource("Animation_s22g1")
+}
+
+[sub_resource type="Animation" id="Animation_y72g7"]
+resource_name = "Road"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0), Vector3(-3.14159, 0, 0), Vector3(-4.71239, 0, 0), Vector3(-6.26573, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1tiwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_latck"]
+_data = {
+"RESET": SubResource("Animation_1tiwo"),
+"Road": SubResource("Animation_y72g7")
 }
 
 [sub_resource type="Environment" id="Environment_lakqy"]
@@ -367,6 +412,12 @@ autoplay = "Anim_CityRotation_slow"
 
 [node name="SM_Road" parent="Meshes" instance=ExtResource("6_j67yi")]
 transform = Transform3D(0.801734, 0, 0, 0, 0.801734, 0, 0, 0, 0.801734, 0, -4.69539, -2.58847)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Meshes/SM_Road"]
+libraries = {
+"": SubResource("AnimationLibrary_latck")
+}
+autoplay = "Road"
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("4_474d5")

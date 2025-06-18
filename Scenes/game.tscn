@@ -192,20 +192,14 @@ spot_range = 45.5801
 visible = false
 spot_range = 49.3115
 
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
-
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="City Pivot" parent="Enviro/Node3D/Meshes/R2/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Node3D/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="SM_Road" parent="Enviro/Node3D/Meshes" index="2"]
-transform = Transform3D(1.11943, 0, 0, 0, 1.11943, 0, 0, 0, 1.11943, 0, -4.54701, -2.59207)
+transform = Transform3D(0.882625, 0, 0, 0, 0.882625, 0, 0, 0, 0.882625, 0, -3.74486, -2.28042)
 
 [node name="LightingOld" type="Node3D" parent="Enviro"]
 
@@ -301,7 +295,7 @@ spot_angle = 48.24
 spot_angle_attenuation = 303.142
 
 [node name="EVA" parent="Enviro" instance=ExtResource("17_tjwxa")]
-transform = Transform3D(3.98309, 0.0749004, -0.158483, -0.155357, 3.1779, -2.40262, 0.0811858, 2.40648, 3.17774, 0.058358, -5.89616, -11.5841)
+transform = Transform3D(0.999033, 0.0187865, -0.0397504, -0.0389664, 0.797075, -0.602622, 0.0203629, 0.603589, 0.797036, 0.410762, 1.87954, -26.7202)
 
 [node name="TimerOutSpawners" parent="." instance=ExtResource("17_avc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
