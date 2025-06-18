@@ -1,6 +1,7 @@
 class_name Eva
-
 extends Node3D
+
+const SLAP_WARNING = preload("res://Scenes/GUI/Slap/slap_warning.tscn")
 
 @export var AnimationPlayerName:String = "AnimationPlayer"
 @export var timeToReachTarget:float = 1.5
@@ -65,6 +66,11 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	
 	#move towards target position
 	var targetPos = Vector3(global_position.x,slapPosition.y,global_position.z)
+	
+	var warning = SLAP_WARNING.instantiate()
+	get_tree().current_scene.add_child(warning)
+	warning.global_position = Vector3(0,slapPosition.y,0)
+	
 	GoTowardsPosition(targetPos,timeToReachTarget)
 	await get_tree().create_timer(timeToReachTarget,true,false,false).timeout
 	
@@ -86,6 +92,8 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	
 	#Slap finished
 	hitbox.InactiveHitBox()
+	warning.queue_free()
 	Manager.gameCamera.RemoveCameraTarget(self)
 	Manager.gameCamera.usePlayerDistanceForTargetZ = true
+	
 	pass
