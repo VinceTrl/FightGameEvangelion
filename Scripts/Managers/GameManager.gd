@@ -13,6 +13,7 @@ extends Node
 @export var timeBeforeRestart = 6.0
 
 var players: Array[PlayerCharacter] = []
+var eva: Eva
 
 signal FightEnd
 signal GameManagerReady
@@ -36,6 +37,10 @@ func RegisterPlayer(_playerToAdd:PlayerCharacter):
 	if (!players.has(_playerToAdd)): 
 		players.append(_playerToAdd)
 		_playerToAdd.OnPlayerDeath.connect(OnAnyPlayerDeath)
+		
+func RegisterEva(_evaToAdd:Eva):
+	if(_evaToAdd == null): return
+	eva = _evaToAdd
 
 
 func OnAnyPlayerDeath():
