@@ -889,6 +889,7 @@ script = ExtResource("20_t6j6y")
 dashDuration = 0.13
 dashSpeedCurve = SubResource("Curve_8vhkr")
 dashMomentum = 0.5
+ghostInterval = 0.015
 
 [node name="Death" type="Node" parent="StateMachine"]
 script = ExtResource("27_vfu8l")
