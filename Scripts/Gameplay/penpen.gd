@@ -137,7 +137,7 @@ func Hurt(_damagePoint: int = 1):
 	
 func PenpenDeath():
 	animationPlayer.play("Armature|Dead")
-	Manager.gameManager.eva.StartSlap()
+	Manager.gameManager.eva.StartSlap(global_position)
 	isDead = true
 	OnPenpenDeath.emit()
 	await animationPlayer.animation_finished
