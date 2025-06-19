@@ -2,22 +2,24 @@ extends PlayerState
 
 var attackInAir = false
 var inRecover = false
+var currentHitbox: Hitbox
 @onready var hitbox: Hitbox = $"../../Hitbox"
 @onready var hitbox_up: Hitbox = $"../../HitboxUp"
 @onready var hitbox_down: Hitbox = $"../../HitboxDown"
 
+#func _ready() -> void:
+	#Player.hitbox_down.OnHitboxDetected.connect(HandleHitboxCollision)
+	#Player.hitbox_up.OnHitboxDetected.connect(HandleHitboxCollision)
+	#Player.attackHitbox.OnHitboxDetected.connect(HandleHitboxCollision)
 
 func EnterState():
 	Name = "Attack"
-	
-	#Player.velocity.y = 0
+	#Player.hitbox_down.OnHitboxDetected.connect(HandleHitboxCollision)
+	#Player.hitbox_up.OnHitboxDetected.connect(HandleHitboxCollision)
+	#Player.attackHitbox.OnHitboxDetected.connect(HandleHitboxCollision)
 	Player.AdjustAttackDirection()
-	#Player.HandleFlipH()
-	Player.SetSpriteOffset_Attack()
-	#Player.HandleAttack()
-	
 	var _attackDir = Player.GetAttackDirection()
-	Player.velocity = Player.velocity / 3
+	Player.velocity = Player.velocity / 3 # ptet enlever ?
 	
 	var _ratio = Player.attackSpeedForceCurve.sample(Player.currentChargeRatio)
 	var _speed = lerp(Player.attackSpeed,Player.attackSpeedMax,_ratio)
@@ -31,6 +33,12 @@ func ExitState():
 	hitbox.InactiveHitBox()
 	hitbox_up.InactiveHitBox()
 	hitbox_down.InactiveHitBox()
+	
+	#Player.hitbox_down.OnHitboxDetected.disconnect(HandleHitboxCollision)
+	#Player.hitbox_up.OnHitboxDetected.disconnect(HandleHitboxCollision)
+	#Player.attackHitbox.OnHitboxDetected.disconnect(HandleHitboxCollision)
+	
+	
 	Player.ResetChargeAttackValue()
 	inRecover = false
 
@@ -41,6 +49,7 @@ func Update(delta: float):
 	#Player.HandleGravity(Player.attackGravity)
 	#Player.HorizontalMovement()
 	Player.HandleAttackBuffer()
+	HandleHitboxOverlap()
 	HandleRecover()
 	HandleAnimations()
 	
@@ -77,6 +86,26 @@ func HandleAnimations():
 	#Player.animator.play("Attack")
 	Player.HandleFlipH()
 	
+func HandleHitboxOverlap():
+	if(currentHitbox == null): return
+	for area in currentHitbox.get_overlapping_areas():
+		if area is Hitbox and area != self:
+			OnHitboxCollision(area)
+	
+func OnHitboxCollision(_hitbox:Hitbox):
+	if(_hitbox.type != Hitbox.DamageType.Melee): return
+	#_hitbox.emit_signal("OnHitboxDetected",currentHitbox)
+	print(str(owner.name) + " ATTACK COLLISION WITH :" + str(_hitbox.owner.name))
+	Manager.timeManager.freezeFrame(0.001,0.2)
+	Manager.gameCamera.camShake.AskCamShake("HitShake")
+	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"HurtVibration")
+	
+	Player.velocity = Vector3.ZERO
+	Player.lastHitbox = _hitbox
+	Player.lastHitLocation = _hitbox.global_position
+	Player.ChangeState(States.Knockback)
+	pass
+	
 func SetAttackDirection(direction: Vector3):
 	direction = direction.normalized()
 
@@ -85,12 +114,16 @@ func SetAttackDirection(direction: Vector3):
 	if abs(direction.x) > abs(direction.y):
 		if direction.x > 0 : #attack Right
 			anim_name = "Attack"
+			currentHitbox = hitbox
 		else: #attack Left
 			anim_name = "Attack"
+			currentHitbox = hitbox
 	else:
 		if direction.y > 0 : #attack Up
 			anim_name = "AttackUp" 
+			currentHitbox = hitbox_up
 		else: #attack Down
 			anim_name = "AttackDown" 
+			currentHitbox = hitbox_down
 
 	Player.animator.play(anim_name)

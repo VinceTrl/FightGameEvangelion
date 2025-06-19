@@ -9,28 +9,39 @@ enum DamageType {Melee , projectile,Volume}
 @export var isActive = true
 @export var randomID = false
 
+signal OnHit()
+signal OnHitboxDetected(hitbox:Hitbox)
 	
 func _init() -> void:
 	collision_layer = 3
-	collision_mask = 0
+	collision_mask = 3 #was at 0 before hitbox knockback
 	
 	if(randomID):
 		owner_id = (randi_range(-100000,100000))
 		
 func _ready() -> void:
+	connect("area_entered",self._on_area_entered) 
+	
 	if(randomID):
 		owner_id = (randi_range(-100000,100000))
 	
 func ActiveHitBox():
 	isActive = true
-	print("Active : " + str(isActive) + " on " + str(name))
+	#print("Active : " + str(isActive) + " on " + str(name))
 	
 func InactiveHitBox():
 	isActive = false
-	print("Inactive : " + str(isActive) + " on " + str(name))
+	#print("Inactive : " + str(isActive) + " on " + str(name))
 	
 func DealDamage(damagedEntityID: int = 0):
 	emit_signal("OnHit")
 	print("HIT")
 	
-signal OnHit()
+func _on_area_entered(hitbox : Hitbox) -> void:
+	if (hitbox == null): return
+	if (hitbox.owner == owner): return
+	if (hitbox.owner_id == owner_id): return
+	if (!hitbox.isActive):return
+	#print(str(hitbox.owner.name) + " HITBOX DETECTED ON :" + str(owner.name))
+	emit_signal("OnHitboxDetected",hitbox)
+	
