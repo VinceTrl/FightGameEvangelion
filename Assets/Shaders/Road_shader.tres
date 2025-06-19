@@ -169,7 +169,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-740.665, -39.5854)
 flags/world_vertex_coords = true
 nodes/vertex/2/node = SubResource("VisualShaderNodeRotationByAxis_v7v3n")
 nodes/vertex/2/position = Vector2(-280, 480)

@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
 [ext_resource type="Shader" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="4_o5sha"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="4_sx5sm"]
-[ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="5_lr106"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
+[ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="5_rqgtm"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
-[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -30,7 +30,7 @@ shader_parameter/glowRadialCoverage = 0
 shader_parameter/glowAngle = 0.0
 shader_parameter/glowSharpness = 0.0
 shader_parameter/alphaThreshold = 0.031
-shader_parameter/sprite_texture = ExtResource("5_lr106")
+shader_parameter/sprite_texture = ExtResource("5_rqgtm")
 
 [sub_resource type="Animation" id="Animation_j54aa"]
 resource_name = "AnimLightPolici"
@@ -282,13 +282,22 @@ libraries = {
 autoplay = "AnimLightPolici"
 
 [node name="Light" type="SpotLight3D" parent="Enviro/LightingOld"]
-transform = Transform3D(0.981894, -0.176849, 0.0678849, 0.152169, 0.522935, -0.83868, 0.11282, 0.833825, 0.540378, 0.944686, -7.98877, 5.47348)
+transform = Transform3D(0.981894, -0.176849, 0.0678848, 0.152169, 0.522935, -0.83868, 0.11282, 0.833825, 0.540378, 0.944686, -3.86866, 5.47348)
 light_color = Color(1, 0.884124, 0.944117, 1)
 light_energy = 50.0
 shadow_enabled = true
 spot_range = 14.7661
 spot_attenuation = -0.57
 spot_angle = 48.24
+spot_angle_attenuation = 303.142
+
+[node name="Light3" type="SpotLight3D" parent="Enviro/LightingOld"]
+transform = Transform3D(0.981894, -0.176849, 0.0678848, 0.183823, 0.976091, -0.115996, -0.0457481, 0.126374, 0.990927, 0.427924, 0.869918, 5.16438)
+light_color = Color(1, 0.884124, 0.944117, 1)
+light_energy = 50.0
+spot_range = 10.2606
+spot_attenuation = -0.57
+spot_angle = 43.5938
 spot_angle_attenuation = 303.142
 
 [node name="Light2" type="SpotLight3D" parent="Enviro/LightingOld"]
