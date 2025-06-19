@@ -1,9 +1,10 @@
 extends PlayerState
 
 @onready var charge_shoot_timer: Timer = $"../../Timers/ChargeShootTimer"
-
+var hideSpearOnExit = true
 
 func EnterState():
+	hideSpearOnExit = true
 	Player.velocity = Vector3.ZERO
 	Player.player_spear.ActiveSpear()
 	Player.player_spear.SpearCharge()
@@ -15,7 +16,8 @@ func EnterState():
 	ChargeReady()
 	
 func ExitState():
-	#Player.player_spear.InactiveSpear()
+	if(hideSpearOnExit == true):
+		Player.player_spear.InactiveSpear()
 	pass
 
 func Draw():
@@ -23,6 +25,8 @@ func Draw():
 	
 func Update(delta: float):
 	Player.HandleGravity(delta)
+	Player.HandleDash()
+	Player.HandleJump()
 	Player.player_spear.UpdateSpearRotation(Player.GetDirectionOn8Axis())
 	HandleChargeShoot()
 	HandleAnimations()
@@ -44,6 +48,7 @@ func HandleChargeShoot():
 		
 		Player.SetChargeShootValue(GetChargeRatio())
 		Player.shootDirection = Player.GetDirectionOn8Axis()
+		hideSpearOnExit = false
 		Player.ChangeState(States.Shoot)
 		
 
