@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn5dywhunwl12"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/ghost_sprite.gd" id="1_41t30"]
+
+[node name="GhostSprite" type="Sprite3D"]
+texture_filter = 0
+script = ExtResource("1_41t30")

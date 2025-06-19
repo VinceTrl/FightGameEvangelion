@@ -93,7 +93,7 @@ func UpdatePositon_Z():
 	if(!updateZposition): return
 	
 	#print("update Z")
-	var _currentZ = minDistZ
+	var _currentZ = maxDistZ
 	
 	if(usePlayerDistanceForTargetZ):
 		_currentZ = GetZtargetPosition()
@@ -199,6 +199,16 @@ func GetAveragePosition(nodes: Array) -> Vector3:
 		return Vector3.ZERO
 	
 	return total_position / count
+	
+	
+func AddCameraTarget(newTarget:Node3D):
+	if(cameraTargets.has(newTarget)): return
+	cameraTargets.append(newTarget)
+	
+	
+func RemoveCameraTarget(targetToRemove:Node3D):
+	if(!cameraTargets.has(targetToRemove)): return
+	cameraTargets.erase(targetToRemove)
 	
 	#func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = 1.0,_zoomDuration: float = 2.0,_zoomCurve: Curve = zoomCurve):
 	#if(_targetNode == null): return

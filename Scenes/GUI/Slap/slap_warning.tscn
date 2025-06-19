@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jf58svmosbof"]
+
+[ext_resource type="Script" path="res://Scenes/GUI/Slap/slap_warning.gd" id="1_hwu3u"]
+
+[node name="SlapWarning" type="Node3D"]
+script = ExtResource("1_hwu3u")
+spawn_delay = 0.25
+spawn_direction = 1
