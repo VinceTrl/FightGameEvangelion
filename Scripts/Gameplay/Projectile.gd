@@ -24,6 +24,7 @@ const VFX_PROJECTILE_IMPACT = preload("res://Scenes/VFX/vfx_projectile_impact.ts
 @export var bounceOnWall = true
 @export var canBounce = true
 @export var maxScale = 4
+@export var maxChargeDifference = 0.2
 @export var explodeWhenDestroyed = true
 
 var hitByAttack = 0
@@ -48,6 +49,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	MoveProjectile(delta)
+	#HandleHitboxOverlap()
 	var v : Vector2 = Vector2.ONE
 
 func MoveProjectile(delta:float):
@@ -89,12 +91,18 @@ func GetProjectileSpeed() -> float:
 	#print("maxHit : " + str(maxHit))
 	return _speed
 	
+func GetChargeDifference(projectileToCompare:Projectile):
+	var difference = chargeRatio - projectileToCompare.chargeRatio
+	return abs(difference)
+	
 func TakeDamage(hitboxSource: Hitbox):
 	if(hitboxSource == null): return
 	
 	if(hitboxSource.type == hitboxSource.DamageType.Melee):
 		#SetNewID(hitboxSource.owner_id)
 		ProjectileBounce("ParryShake",true)
+	elif(hitboxSource.type == hitboxSource.DamageType.projectile):
+		OnCollisionWithAnotherProjectile(hitboxSource)
 	else:
 		ProjectileImpact()
 		
@@ -204,6 +212,34 @@ func ScaleShape(shape: Shape3D,target_size: float):
 	elif shape is CapsuleShape3D:
 		shape.radius = target_size
 		shape.height = target_size * 2.0
+		
+		
+func HandleHitboxOverlap():
+	if(hitbox == null): return
+	
+	for area in hitbox.get_overlapping_areas():
+		if area is Hitbox and area != self:
+			OnCollisionWithAnotherProjectile(area)
+			
+func OnCollisionWithAnotherProjectile(_hitbox:Hitbox):
+	if(_hitbox.type != Hitbox.DamageType.projectile): return
+	if (_hitbox.owner == owner): return
+	if (!_hitbox.isActive):return
+	
+	var projectile: Projectile
+	
+	if(_hitbox.owner is Projectile):
+		projectile = _hitbox.owner
+		var chargeDifference = GetChargeDifference(projectile)
+		#if(projectile.chargeRatio == chargeRatio):
+		if(chargeDifference <= maxChargeDifference):
+			#bounce
+			print("BOUNCE ON ANOTHER PROJECTILE")
+			ProjectileBounce("ParryShake",true)
+			return
+		elif(chargeRatio > projectile.chargeRatio):
+			print("DESTROY THE OTHER PROJECTILE")
+			projectile.ProjectileImpact()
 
 func _on_body_entered(body: Node3D) -> void:
 	if(body == Hitbox): return

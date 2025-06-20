@@ -81,7 +81,7 @@ func SpawnProjectile():
 	_shootFx.global_position = projectileSpawnPosition
 	
 	var _shootDir = Player.shootDirection
-	_projectile.SetupProjectile(Player.playerID,_shootDir,projectileSpawnPosition)
+	_projectile.SetupProjectile(Player.playerID,_shootDir,projectileSpawnPosition,Player.currentShootChargeRatio)
 	_projectile.SetProjectileScale(Player.currentShootChargeRatio)
 	
 	Player.ResetChargeAttackValue()

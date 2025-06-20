@@ -211,7 +211,7 @@ surface_material_override/0 = ExtResource("2_tpkj1")
 surface_material_override/1 = ExtResource("2_tpkj1")
 
 [node name="BoneAttachment3D_LeftArm" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.385507, -0.746236, 0.542693, -0.0923839, 0.616416, 0.781982, -0.918068, 0.251324, -0.306573, -0.273293, 5.49319, 0.317072)
+transform = Transform3D(-0.385508, -0.746236, 0.542693, -0.0923846, 0.616416, 0.781982, -0.918068, 0.251324, -0.306574, -0.273293, 5.4932, 0.317071)
 bone_name = "bdef_LeftArm"
 bone_idx = 9
 
@@ -219,7 +219,7 @@ bone_idx = 9
 transform = Transform3D(-0.0245978, 0.004271, 0.332399, 0.295294, 0.153354, 0.0198818, -0.152669, 0.295932, -0.0151001, 0.0737761, 1.20581, 0.10143)
 
 [node name="BoneAttachment3D2_RightArm" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="3"]
-transform = Transform3D(-0.468887, -0.841509, 0.268341, 0.618777, -0.529753, -0.580064, 0.630284, -0.105941, 0.769101, -0.514193, 4.16531, 0.326347)
+transform = Transform3D(-0.468888, -0.841509, 0.268341, 0.618778, -0.529754, -0.580064, 0.630283, -0.105942, 0.769103, -0.514193, 4.16532, 0.326346)
 bone_name = "bdef_RightArm"
 bone_idx = 38
 
@@ -227,7 +227,7 @@ bone_idx = 38
 transform = Transform3D(0.0733558, 0.103788, -0.308154, -0.299235, 0.145158, -0.022343, 0.127236, 0.281547, 0.125115, -0.201208, 1.10997, 0.177862)
 
 [node name="BoneAttachment3D3_LeftFoot" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.562367, 0.798284, -0.215609, -0.720353, -0.344938, 0.601755, 0.405999, 0.493721, 0.769029, 2.14638, 0.250813, -0.365751)
+transform = Transform3D(-0.562367, 0.798284, -0.215607, -0.720353, -0.34494, 0.601755, 0.405999, 0.49372, 0.769029, 2.14637, 0.250815, -0.365752)
 bone_name = "bdef_LeftFoot"
 bone_idx = 68
 
@@ -235,7 +235,7 @@ bone_idx = 68
 transform = Transform3D(-0.292757, 0.00894124, -0.159137, 0.15321, 0.107547, -0.275812, 0.0439457, -0.315381, -0.098565, 0.0700661, 0.283545, -0.711067)
 
 [node name="BoneAttachment3D4_RightFoot" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="5"]
-transform = Transform3D(-0.685226, -0.188218, -0.703589, -0.176656, -0.894235, 0.411263, -0.706581, 0.406102, 0.579503, 1.14925, -0.209268, -0.145003)
+transform = Transform3D(-0.685227, -0.188218, -0.703589, -0.176657, -0.894234, 0.411264, -0.706581, 0.406103, 0.579503, 1.14925, -0.20927, -0.145001)
 bone_name = "bdef_RightFoot"
 bone_idx = 74
 
@@ -243,7 +243,7 @@ bone_idx = 74
 transform = Transform3D(-0.216297, 0.0599472, 0.246442, -0.220097, 0.116582, -0.221534, -0.126033, -0.306475, -0.0360657, 0.0654008, 0.245299, -0.645547)
 
 [node name="BoneAttachment_Hitbox" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="6"]
-transform = Transform3D(-1.15446, -1.57553, 0.400465, 0.344777, -0.717303, -1.82813, 1.58865, -0.989257, 0.687766, -1.91186, 5.80732, 0.436706)
+transform = Transform3D(-1.15446, -1.57554, 0.400467, 0.344779, -0.717305, -1.82814, 1.58865, -0.989258, 0.687768, -1.91186, 5.80733, 0.436707)
 bone_name = "bdef_LeftHand"
 bone_idx = 11
 

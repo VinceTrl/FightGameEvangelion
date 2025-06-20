@@ -739,7 +739,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hobpm"]
 resource_name = "Taunt"
-length = 1.0
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
