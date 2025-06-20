@@ -9,6 +9,10 @@ const SLAP_TARGET = preload("res://Scenes/GUI/Slap/slap_target.tscn")
 @export var startFromRight:bool = true
 @export_enum("LeftToRight", "RightToLeft") var spawn_direction: int = 0
 
+var targets: Array = []
+
+signal OnAllObjectSpawned
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SpawnAlongLine()
@@ -31,6 +35,8 @@ func SpawnAlongLine() -> void:
 		var index = i if spawn_direction == 0 else (object_count - 1 - i)
 		var x_pos = start_x + index * spacing
 		SpawnWithDelay(Vector3(x_pos, 0,0), i * spawn_delay)
+		
+	emit_signal("OnAllObjectSpawned")
 
 func SpawnWithDelay(position: Vector3, delay: float) -> void:
 	await get_tree().create_timer(delay).timeout
@@ -39,3 +45,9 @@ func SpawnWithDelay(position: Vector3, delay: float) -> void:
 	if instance != null:
 		instance.position = position
 		add_child(instance)
+		targets.append(instance)
+		
+func SetWarningToAllTargets():
+	for target in targets:
+		target as AnimatedSprite3D
+		target.play("Warning")

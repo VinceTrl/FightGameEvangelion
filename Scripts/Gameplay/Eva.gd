@@ -23,7 +23,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("DebugKey")):
-		#Engine.time_scale = 0.25
+		#Engine.time_scale = 0.1
 		StartSlap(Manager.gameManager.players[0].global_position)
 
 
@@ -84,6 +84,7 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	await get_tree().create_timer(0.7,true,false,false).timeout
 	
 	#Launch Slap
+	warning.SetWarningToAllTargets()
 	hitbox.ActiveHitBox()
 	animPlayer.play()
 	

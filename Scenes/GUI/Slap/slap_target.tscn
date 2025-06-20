@@ -55,13 +55,22 @@ animations = [{
 "texture": SubResource("AtlasTexture_iw8hd")
 }],
 "loop": true,
+"name": &"Warning",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47tjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj0dv")
+}],
+"loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 5.0
 }]
 
-[node name="SlapTarget" type="Node3D"]
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="SlapTarget" type="AnimatedSprite3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 billboard = 1
 no_depth_test = true
@@ -69,4 +78,4 @@ texture_filter = 0
 render_priority = 10
 sprite_frames = SubResource("SpriteFrames_xyrap")
 autoplay = "default"
-frame_progress = 0.890009
+frame_progress = 0.442116
