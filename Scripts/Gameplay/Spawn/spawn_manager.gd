@@ -8,12 +8,14 @@ extends Node
 var spawners: Array[Spawner] = []
 var spawnableItems: Array[SpawnableItem] = []
 var uniqueInstances: Array[SpawnableItem] = []
+var canSpawn = true
 
 var spawned_instances = {} # Dictionnary of unique instances
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Manager.spawnManager = self
+	Manager.OnFightFinish.connect(StopSpawnerSystem)
 	#spawnableItems = items
 	PreloadResources()
 	SetSpawnArray()
@@ -49,6 +51,8 @@ func RegisterSpawner(_spawnerToAdd: Spawner):
 	print("SPAWNER REGISTERED")
 	
 func RandomSpawn(spawner: Spawner):
+	if(!canSpawn):return
+	
 	if(spawner == null):
 		push_error("NULL SPAWNER ON RANDOM SPAWN")
 		return
@@ -116,3 +120,9 @@ func EraseItemFromSystem(itemToRemove: SpawnableItem) -> void:
 	for i in range(spawnableItems.size() - 1, -1, -1):
 		if spawnableItems[i].itemName == itemToRemove.itemName:
 			spawnableItems.remove_at(i)
+			
+func StopSpawnerSystem():
+	canSpawn = false
+	
+func StartSpawnerSystem():
+	canSpawn = true

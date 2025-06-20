@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvqhlk4l25sd3"]
+[gd_scene load_steps=5 format=3 uid="uid://dvqhlk4l25sd3"]
 
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="1_ats3x"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/shrek_item.gd" id="1_xekkg"]
 [ext_resource type="PackedScene" uid="uid://cdv55byodmt2m" path="res://Assets/Meshes/Characters/Shrek/shrek.tscn" id="2_j27qo"]
+[ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_1w6qf"]
 
 [node name="ShrekItem" type="Node3D"]
 script = ExtResource("1_xekkg")
@@ -14,3 +15,6 @@ script = ExtResource("1_ats3x")
 
 [node name="Shrek" parent="Visual/NodeShaker" instance=ExtResource("2_j27qo")]
 transform = Transform3D(35, 0, 0, 0, 35, 0, 0, 0, 35, 0, 0, 0)
+
+[node name="CameraTarget" parent="." instance=ExtResource("4_1w6qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.469818, 0)

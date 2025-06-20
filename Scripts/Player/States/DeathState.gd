@@ -18,6 +18,9 @@ func EnterState():
 	Manager.timeManager.slowMotion(0.25,2.0)
 	Manager.gameCamera.camShake.AskCamShake("FinalHitShake")
 	Manager.gameCamera.CameraZoom(Player,Manager.gameCamera.GetZoomParamFromName("DeathZoom"))
+	await Manager.gameCamera.OnZoomEnd
+	Manager.gameCamera.RemoveCameraTarget(Player)
+	
 	
 func ExitState():
 	pass
