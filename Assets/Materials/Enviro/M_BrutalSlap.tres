@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdgpchxsng4ye"]
+
+[ext_resource type="Texture2D" uid="uid://cblvbndapp82q" path="res://Sources/Textures/T_BrutalSlap.png" id="1_uxaeg"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_uxaeg")
+emission_enabled = true
+emission_texture = ExtResource("1_uxaeg")
