@@ -2,6 +2,9 @@ class_name TimeManager
 
 extends Node
 
+@export var canFreezeTime = true
+@export var canSlowTime = true
+
 signal freezeFrameFinished
 signal slowMotionFinished
 
@@ -11,14 +14,18 @@ func _ready() -> void:
 	
 
 func freezeFrame(timescale: float = 0.001 ,duration: float = 0.1) -> void:
-	print("FREEZE FRAME")
+	if(!canFreezeTime):return
+	
+	#print("FREEZE FRAME")
 	Engine.time_scale = timescale
 	await get_tree().create_timer(duration,true,false,true).timeout
 	ResetTime()
 	emit_signal("freezeFrameFinished")
 	
 func slowMotion(timescale: float = 0.25 ,duration: float = 1) -> void:
-	print("SLOW MO")
+	if(!canSlowTime):return
+	
+	#print("SLOW MO")
 	Engine.time_scale = timescale
 	await get_tree().create_timer(duration,true,false,true).timeout
 	ResetTime()

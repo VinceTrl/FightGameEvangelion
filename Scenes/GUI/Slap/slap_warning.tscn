@@ -1,8 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://jf58svmosbof"]
+[gd_scene load_steps=6 format=3 uid="uid://jf58svmosbof"]
 
 [ext_resource type="Script" path="res://Scenes/GUI/Slap/slap_warning.gd" id="1_hwu3u"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="2_78j2w"]
+
+[sub_resource type="Gradient" id="Gradient_pr6tm"]
+colors = PackedColorArray(1, 0, 0, 0.0196078, 1, 0, 0, 0.0196078)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2d7pq"]
+gradient = SubResource("Gradient_pr6tm")
+width = 2000
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ar4pw"]
+size = Vector3(0.75, 0.6, 1)
 
 [node name="SlapWarning" type="Node3D"]
 script = ExtResource("1_hwu3u")
 spawn_delay = 0.25
 spawn_direction = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 70, 0, 0, 0, 1, 0, 0, 0)
+texture_filter = 0
+texture = SubResource("GradientTexture1D_2d7pq")
+
+[node name="Hitbox" type="Area3D" parent="."]
+script = ExtResource("2_78j2w")
+damage = 3
+isActive = false
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_ar4pw")

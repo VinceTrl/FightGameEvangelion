@@ -4,11 +4,11 @@ extends Node
 @export var randomSpawnDelayMin = 2.0
 @export var randomSpawnDelayMax = 5.0
 @export var items: Array[SpawnableItem] = []
+@export var canSpawn = true
 
 var spawners: Array[Spawner] = []
 var spawnableItems: Array[SpawnableItem] = []
 var uniqueInstances: Array[SpawnableItem] = []
-var canSpawn = true
 
 var spawned_instances = {} # Dictionnary of unique instances
 
