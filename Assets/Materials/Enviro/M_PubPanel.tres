@@ -5,6 +5,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_ikgib")
+shader_parameter/Color = Vector4(1, 0.3, 0, 1)
 shader_parameter/Tiling = Vector2(1, -0.1)
 shader_parameter/Line = 0
 shader_parameter/Column = 0
