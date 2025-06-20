@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=71 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/DeathState.gd" id="27_vfu8l"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAmmo.gd" id="28_oqnrj"]
 [ext_resource type="Resource" uid="uid://bgvu6c31k2dbe" path="res://Resources/PostProcessAnims/Glitch/DamageGlitch.tres" id="30_k65qb"]
+[ext_resource type="Script" path="res://Scripts/Player/States/TauntState.gd" id="32_b3v0a"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ChargingAttackState.gd" id="32_r0xa3"]
 [ext_resource type="Resource" uid="uid://b1kr6ya4e857u" path="res://Resources/PostProcessAnims/Glitch/DeathGlitch.tres" id="33_hpf16"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ChargeShootState.gd" id="35_8paei"]
@@ -736,6 +737,23 @@ tracks/0/keys = {
 "values": [7, 8, 9, 10]
 }
 
+[sub_resource type="Animation" id="Animation_hobpm"]
+resource_name = "Taunt"
+length = 1.0
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.95),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [20, 20]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jxbaw"]
 _data = {
 "Attack": SubResource("Animation_7hbhv"),
@@ -754,7 +772,8 @@ _data = {
 "Move": SubResource("Animation_ltgkn"),
 "RESET": SubResource("Animation_dvjaj"),
 "Shoot": SubResource("Animation_qjx5s"),
-"StartChargeShoot": SubResource("Animation_rysxc")
+"StartChargeShoot": SubResource("Animation_rysxc"),
+"Taunt": SubResource("Animation_hobpm")
 }
 
 [sub_resource type="Curve" id="Curve_gijy7"]
@@ -906,6 +925,9 @@ script = ExtResource("35_8paei")
 script = ExtResource("37_h0gmo")
 knockbackDuration = 0.2
 knockbackSpeedCurve = SubResource("Curve_dt2x8")
+
+[node name="Taunt" type="Node" parent="StateMachine"]
+script = ExtResource("32_b3v0a")
 
 [node name="Timers" type="Node" parent="."]
 

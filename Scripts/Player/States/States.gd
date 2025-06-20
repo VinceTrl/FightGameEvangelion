@@ -14,3 +14,4 @@ extends Node
 @onready var ChargingAttack: = $ChargingAttack
 @onready var ChargeShoot: Node = $ChargeShoot
 @onready var Knockback= $KnockBack
+@onready var Taunt: Node = $Taunt

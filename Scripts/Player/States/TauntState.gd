@@ -1,8 +1,8 @@
 extends PlayerState
 
 func EnterState():
-	Name = "Idle"
-	Player.animator.play("Idle")
+	Name = "Taunt"
+	Player.animator.play("Taunt")
 	
 	if(Player.is_on_floor()): 
 		Player.ResetJump()
@@ -22,14 +22,11 @@ func Update(delta: float):
 	Player.HandleDash()
 	Player.HandleAttack()
 	Player.HandleShoot()
-	Player.HandleTaunt()
 	
 	if (Player.moveDirectionX != 0):
 		Player.ChangeState(States.Run)
 	
 	HandleAnimations()
 
-
 func HandleAnimations():
-	
 	Player.HandleFlipH()

@@ -138,6 +138,10 @@ var keyAttack = false
 var keyAttackHold = false
 var keyAttackJustPressed = false
 
+var keyTaunt = false
+var keyTauntHold = false
+var keyTauntJustPressed = false
+
 var keyDash = false
 
 var keyShoot = false
@@ -237,6 +241,10 @@ func GetInputStates():
 	keyAttack = Input.is_action_just_released("KeyAttack_" + str(playerID))
 	keyAttackHold = Input.is_action_pressed("KeyAttack_" + str(playerID))
 	keyAttackJustPressed = Input.is_action_just_pressed("KeyAttack_" + str(playerID))
+	
+	keyTaunt = Input.is_action_just_released("KeyTaunt_" + str(playerID))
+	keyTauntHold = Input.is_action_pressed("KeyTaunt_" + str(playerID))
+	keyTauntJustPressed = Input.is_action_just_pressed("KeyTaunt_" + str(playerID))
 	
 	keyDash = Input.is_action_pressed("KeyDash_" + str(playerID))
 	
@@ -438,6 +446,11 @@ func HandleShoot():
 		if(Ammo.currentAmmo > 0):
 			ChangeState(States.ChargeShoot)
 			
+func HandleTaunt():
+	if(((keyTauntJustPressed)) and (currentState != States.Taunt) and is_on_floor()):
+		ChangeState(States.Taunt)
+		return
+
 func AddHealth(_points: int):
 	currentHealthPoints += _points
 	currentHealthPoints = clampi(currentHealthPoints,0,healthPoints)
