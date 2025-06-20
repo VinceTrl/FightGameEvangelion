@@ -42,6 +42,7 @@ var gameManager: Manager
 @export var healthPoints = 6
 @export var startFacingRight = true
 var isDead: bool = false
+var isInvicible: bool = false
 
 #run variables
 @export_group("Movement")
@@ -170,6 +171,7 @@ func _ready():
 	
 	gameManager = Manager
 	Manager.gameManager.RegisterPlayer(self)
+	Manager.OnFightFinish.connect(OnFightFinished)
 	
 	#init state machine
 	for state in States.get_children():
@@ -462,6 +464,8 @@ func RemoveHealth(_points: int):
 	emit_signal("OnPlayerLifeChanged")
 
 func TakeDamage(hitboxSource: Hitbox):
+	if(isInvicible):return
+	
 	if (currentState != States.Hurt and currentState != States.Death and currentState != States.Knockback):
 		#currentHealthPoints -= hitboxSource.damage
 		RemoveHealth(hitboxSource.damage)
@@ -489,6 +493,10 @@ func DestroyPlayer():
 	
 func ChangeSpriteColor():
 	pass
+	
+func OnFightFinished():
+	if(currentState == States.Death):return
+	ChangeState(States.Locked)
 
 func _on_melee_hitbox_on_hit() -> void:
 	Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"HitVibration")

@@ -2,8 +2,8 @@ class_name GameCamera
 
 extends Node3D
 
-@export var player1: Node3D
-@export var player2: Node3D
+@export var player1: PlayerCharacter
+@export var player2: PlayerCharacter
 @export var cameraTargets: Array[Node3D] = []
 
 @export var minDistZ = 2.0
@@ -37,6 +37,7 @@ extends Node3D
 
 var followPlayers: bool = true
 var usePlayerDistanceForTargetZ = true
+var canAddTargets = true
 
 var updateZposition = true
 var updateXYposition = true
@@ -46,10 +47,15 @@ var inZoomMode = false
 var TweenCamXY
 var TweenCamZ
 
+signal OnZoomStart
+signal OnZoomEnd
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Manager.gameCamera = self
-	
+	Manager.OnFightFinish.connect(OnFightFinished)
+	call_deferred("GetPlayers")
+	#GetPlayers()
 	if(debugMode): 
 		center_debug_label.visible = true
 		debug_values.visible = true
@@ -68,14 +74,23 @@ func debugCamera() -> void:
 		#AdvancedCameraShake()
 		#CameraZoom(player1)
 		FocusTargetZoom(player1,GetZoomParamFromName("MidFocusZoom"))
+		
+		
+func GetPlayers():
+	for target in cameraTargets:
+		if(target is PlayerCharacter):
+			if(target.playerID == 1):
+				player1 = target
+			elif(target.playerID == 2):
+				player2 = target
 	
 func UpdatePositon_XY():
 	if(!updateXYposition): return
 	
 	#print("update XY")
 	#var _middlePos: Vector3 = player1.global_position + player2.global_position/2
-	var _middlePos: Vector3 = 0.5 * (player1.global_position + player2.global_position)
-	_middlePos = GetAveragePosition(cameraTargets)
+	#var _middlePos: Vector3 = 0.5 * (player1.global_position + player2.global_position)
+	var _middlePos = GetAveragePosition(cameraTargets)
 	var _newPos: Vector3 = Vector3(_middlePos.x,_middlePos.y,global_position.z) + cameraOffset
 	#global_position = _newPos
 	
@@ -115,7 +130,8 @@ func ClampCameraPosition():
 	global_position = global_position.clamp(_clampPosMin,_clampPosMax)
 
 func GetZtargetPosition() -> float:
-	var _currentDistPlayers: float = player1.global_position.distance_to(player2.global_position)
+	#var _currentDistPlayers: float = player1.global_position.distance_to(player2.global_position)
+	var _currentDistPlayers: float = GetMaxDistanceInArray(cameraTargets)
 	var _playersDistRatio = _currentDistPlayers / maxPlayerDist
 	var _curveValue = zDistCurve.sample(_playersDistRatio);
 	var _zPos = lerp(minDistZ,maxDistZ,_curveValue)
@@ -156,6 +172,8 @@ func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = defaultZoom.zoomDis
 	var _targetPos = _targetNode.global_position
 	var zoomTimer = get_tree().create_timer(_zoomDuration,true,false,false)
 	
+	emit_signal("OnZoomStart")
+	
 	while zoomTimer.time_left > 0.0:
 		var _timeProgress = _zoomDuration - zoomTimer.time_left 
 		var _ratio = _timeProgress/_zoomDuration
@@ -177,6 +195,7 @@ func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = defaultZoom.zoomDis
 	updateXYposition = true
 	updateZposition = true
 	inZoomMode = false
+	emit_signal("OnZoomEnd")
 	
 func GetZoomParamFromName(_zoomName: StringName) -> ZoomParameters:
 	
@@ -200,8 +219,23 @@ func GetAveragePosition(nodes: Array) -> Vector3:
 	
 	return total_position / count
 	
+func GetMaxDistanceInArray(nodes: Array) -> float:
+	var max_distance := 0.0
+
+	for i in range(nodes.size()):
+		for j in range(i + 1, nodes.size()):
+			var pos_a = nodes[i].global_position
+			var pos_b = nodes[j].global_position
+			var distance = pos_a.distance_to(pos_b)
+
+			if distance > max_distance:
+				max_distance = distance
+
+	return max_distance
+	
 	
 func AddCameraTarget(newTarget:Node3D):
+	if(!canAddTargets): return
 	if(cameraTargets.has(newTarget)): return
 	cameraTargets.append(newTarget)
 	
@@ -210,40 +244,12 @@ func RemoveCameraTarget(targetToRemove:Node3D):
 	if(!cameraTargets.has(targetToRemove)): return
 	cameraTargets.erase(targetToRemove)
 	
-	#func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = 1.0,_zoomDuration: float = 2.0,_zoomCurve: Curve = zoomCurve):
-	#if(_targetNode == null): return
-	#
-	#updateXYposition = false
-	#updateZposition = false
-	#inZoomMode = true
-	#
-	#if TweenCamZ:
-		#TweenCamZ.kill()
-		#
-	#if TweenCamXY:
-		#TweenCamXY.kill()
-		#
-	#var _initPos = global_position
-	#var _targetPos = Vector3(_targetNode.global_position.x,_targetNode.global_position.y,_zoomDistance)
-	#
-	#
-	#
-	##zoom in
-	#var zoomInTimer = get_tree().create_timer(_zoomDuration,true,false,false)
-	#
-	##XY axis
-	#var TweenPos = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT).set_parallel(true)
-	#TweenPos.tween_property(self,"position:x",_targetPos.x,_zoomDuration)
-	#TweenPos.tween_property(self,"position:y",_targetPos.y,_zoomDuration)
-	#
-	##Z axis
-	#var TweenZoom = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-	#TweenPos.tween_property(self,"position:z",_targetPos.z,_zoomDuration)
-	#
-	#await  zoomInTimer.timeout
-#
-#
-	##reset
-	#updateXYposition = true
-	#updateZposition = true
-	#inZoomMode = false
+func RemoveAllTargetsExceptPlayers():
+	for target in cameraTargets:
+		if(!target is PlayerCharacter):
+			RemoveCameraTarget(target)
+			
+func OnFightFinished():
+	canAddTargets = false
+	RemoveAllTargetsExceptPlayers()
+	

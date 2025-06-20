@@ -4,16 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="2_u688i"]
 [ext_resource type="AudioStream" uid="uid://bwt4shvj2ln0p" path="res://Assets/Sounds/Musics/teknokiki v1.mp3" id="3_7mfm1"]
 [ext_resource type="PackedScene" uid="uid://demgp3gtvl6qk" path="res://Scenes/Meshes/building_large_a.tscn" id="4_dkps8"]
-[ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/game_camera.tscn" id="5_70mjh"]
+[ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/Camera/game_camera.tscn" id="5_70mjh"]
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="6_ijtxy"]
 [ext_resource type="PackedScene" uid="uid://dmnmobmgdmfm" path="res://Scenes/GUI/player_ui.tscn" id="7_ubm26"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_jmyrd"]
 [ext_resource type="Shader" path="res://Assets/Shaders/Background_shader.gdshader" id="9_ho1lm"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="10_r1wq7"]
 [ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="11_htcdw"]
-[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_taw65"]
+[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_taw65"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_ki7jb"]
 [ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="15_icj4x"]
+
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 

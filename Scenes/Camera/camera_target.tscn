@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpnv51teg4qq5"]
+
+[ext_resource type="Script" path="res://Scripts/Camera/camera_target.gd" id="1_gsjxu"]
+
+[node name="CameraTarget" type="Node3D"]
+script = ExtResource("1_gsjxu")
+
+[connection signal="tree_exiting" from="." to="." method="RemoveTarget"]

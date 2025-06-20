@@ -11,7 +11,7 @@ func EnterState():
 	canHandleInput = true
 	Manager.gameStateManager.OnResultScreenStart.emit()
 	Manager.masterUI.result_screen.StartResult()
-	await get_tree().create_timer(2.0,true,false,true).timeout
+	await get_tree().create_timer(3.0,true,false,true).timeout
 	ExitGame()
 	
 func ExitState():

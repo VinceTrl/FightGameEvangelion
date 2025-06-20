@@ -2,9 +2,11 @@ extends PlayerState
 
 func EnterState():
 	Name = "Locked"
+	Player.isInvicible = true
+	Player.velocity = Vector3.ZERO
 	
 func ExitState():
-	pass
+	Player.isInvicible = false
 
 func Draw():
 	pass
