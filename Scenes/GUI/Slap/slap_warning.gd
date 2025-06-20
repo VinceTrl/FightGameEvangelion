@@ -43,7 +43,7 @@ func SpawnWithDelay(position: Vector3, delay: float) -> void:
 	var instance = SLAP_TARGET.instantiate()
 	
 	if instance != null:
-		instance.position = position
+		instance.position = position 
 		add_child(instance)
 		targets.append(instance)
 		

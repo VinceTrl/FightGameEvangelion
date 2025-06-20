@@ -35,12 +35,15 @@ var chargeRatio = 0.0
 var additiveRatio = 0.0
 var projectileID = 1
 var iniScale = 1
+var currentHealthPoints = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.body_entered.connect(_on_body_entered)
 	SetNewID(randi_range(-100000,100000))
-	print("SCALE : " + str(scale))
+	currentHealthPoints = healthPoints
+	
+	#print("SCALE : " + str(scale))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -101,6 +104,7 @@ func TakeDamage(hitboxSource: Hitbox):
 	if(hitboxSource.type == hitboxSource.DamageType.Melee):
 		#SetNewID(hitboxSource.owner_id)
 		ProjectileBounce("ParryShake",true)
+		currentHealthPoints = healthPoints
 	elif(hitboxSource.type == hitboxSource.DamageType.projectile):
 		OnCollisionWithAnotherProjectile(hitboxSource)
 	else:
@@ -111,9 +115,9 @@ func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake",_isDeflected: bo
 	
 	print("BOUNCE")
 	
-	healthPoints -= 1
+	currentHealthPoints -= 1
 	
-	if (healthPoints <= 0):
+	if (currentHealthPoints <= 0):
 		ProjectileImpact()
 		return
 	
