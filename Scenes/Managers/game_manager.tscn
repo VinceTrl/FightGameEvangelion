@@ -39,7 +39,6 @@ randomSpawnDelayMax = 8.0
 items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("12_2b18o"), ExtResource("11_qg3go"), ExtResource("13_h0apr"), ExtResource("14_ewqcl"), ExtResource("15_fgir8")])
 
 [node name="ShitpostGUI" parent="." instance=ExtResource("14_exsev")]
-imageSize = 0.5
 
 [node name="PlatformManager" type="Node" parent="."]
 script = ExtResource("15_kouim")

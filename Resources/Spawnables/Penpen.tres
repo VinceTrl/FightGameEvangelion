@@ -10,4 +10,4 @@ spawnOnGround = true
 groundOffset = Vector3(0, 1, 0)
 spawnOncePerGame = true
 isUniqueInstance = true
-spawnChance = 6
+spawnChance = 12
