@@ -38,6 +38,12 @@ func AddItemInSpawnArray(itemToAdd : SpawnableItem):
 func PreloadResources():
 	for item in items: 	
 		item.resource = load(str(item.scenePath))
+		
+func ForceSpawn(delay:float = 0.0,useRandomDelay:bool = false):
+	var time = delay
+	if(useRandomDelay):time = randf_range(0.0,delay)
+	await get_tree().create_timer(time,true,false,true).timeout
+	RandomSpawn(PickRandomSpawner())
 
 func TimerRandomSpawn():
 	var timerDuration = randf_range(randomSpawnDelayMin,randomSpawnDelayMax)
@@ -132,3 +138,7 @@ func StopSpawnerSystem():
 	
 func StartSpawnerSystem():
 	canSpawn = true
+	
+func OnAnyPlayerTakeDamage():
+	print("FORCED SPAWN")
+	ForceSpawn(2.0,true)

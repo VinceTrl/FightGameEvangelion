@@ -7,6 +7,7 @@ extends Node
 @onready var game_timer: Timer = $GameTimer
 @onready var shitpost_gui: ShitpostGUI = $ShitpostGUI
 @onready var platform_manager: Node = $PlatformManager
+@onready var spawn_manager: SpawnManager = $SpawnManager
 
 @export var fightStartDelay = 3.0
 @export var fightDuration: float = 90.00
@@ -37,6 +38,8 @@ func RegisterPlayer(_playerToAdd:PlayerCharacter):
 	if (!players.has(_playerToAdd)): 
 		players.append(_playerToAdd)
 		_playerToAdd.OnPlayerDeath.connect(OnAnyPlayerDeath)
+		_playerToAdd.connect("OnPlayerTakeDamage", Callable(spawn_manager, "OnAnyPlayerTakeDamage"))
+
 		
 func RegisterEva(_evaToAdd:Eva):
 	if(_evaToAdd == null): return
