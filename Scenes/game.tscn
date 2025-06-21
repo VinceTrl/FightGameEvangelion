@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="5_rqgtm"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
-[ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
+[ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/Stage_01.tscn" id="10_55lj4"]
 [ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
@@ -19,6 +19,8 @@
 [ext_resource type="Material" path="res://Assets/Materials/Enviro/M_BrutalSlap.tres" id="18_0amj8"]
 [ext_resource type="Material" path="res://Assets/Materials/Enviro/M_UwuEyes.tres" id="18_ijg62"]
 [ext_resource type="Material" path="res://Assets/Materials/Enviro/M_EyeAngry.tres" id="20_iwk0k"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rfxrm"]
 render_priority = -1
@@ -32,8 +34,6 @@ shader_parameter/glowAngle = 0.0
 shader_parameter/glowSharpness = 0.0
 shader_parameter/alphaThreshold = 0.031
 shader_parameter/sprite_texture = ExtResource("5_rqgtm")
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
 [sub_resource type="Animation" id="Animation_j54aa"]
 resource_name = "AnimLightPolici"
@@ -460,10 +460,21 @@ script = ExtResource("1_2jg1a")
 [node name="GameManager" parent="." instance=ExtResource("5_r45th")]
 unique_name_in_owner = true
 
+[node name="Stage" type="Node" parent="."]
+
+[node name="Stage_01" parent="Stage" instance=ExtResource("10_55lj4")]
+
+[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom"]
+shape = SubResource("WorldBoundaryShape3D_e2grd")
+
 [node name="Gameplay" type="Node" parent="."]
 
 [node name="Player" parent="Gameplay" instance=ExtResource("1_rog66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.442, 1.715, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.318534, 1.715, 0)
 
 [node name="Player2" parent="Gameplay" instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2585, 1.63538, 0)
@@ -485,17 +496,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="TimerOutSpawners" parent="Gameplay" instance=ExtResource("17_avc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-
-[node name="Stage" type="Node" parent="."]
-
-[node name="TestMap" parent="Stage" instance=ExtResource("10_55lj4")]
-
-[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
-collision_mask = 15
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom"]
-shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="GUI" type="Node" parent="."]
 
