@@ -14,7 +14,7 @@ point_count = 3
 
 [sub_resource type="Curve" id="Curve_koqfe"]
 
-[node name="TestMap" type="Node3D"]
+[node name="Stage_01" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0125, -1.67964, -0.484462)
 
 [node name="Mesh_Plateforme_02" parent="." instance=ExtResource("2_wsm1i")]

@@ -56,6 +56,7 @@ func _ready() -> void:
 	Manager.OnFightFinish.connect(OnFightFinished)
 	call_deferred("GetPlayers")
 	#GetPlayers()
+	call_deferred("ResetCameraPosition")
 	if(debugMode): 
 		center_debug_label.visible = true
 		debug_values.visible = true
@@ -83,6 +84,13 @@ func GetPlayers():
 				player1 = target
 			elif(target.playerID == 2):
 				player2 = target
+				
+func ResetCameraPosition():
+	var targetPosXY = GetAveragePosition(cameraTargets)
+	var targetPosZ = GetZtargetPosition()
+	var targetPos = Vector3(targetPosXY.x,targetPosXY.y,targetPosZ)
+	position = targetPos
+	
 	
 func UpdatePositon_XY():
 	if(!updateXYposition): return
