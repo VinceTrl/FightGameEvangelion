@@ -50,7 +50,7 @@ func RegisterSpawner(_spawnerToAdd: Spawner):
 	spawners.append(_spawnerToAdd)
 	print("SPAWNER REGISTERED")
 	
-func RandomSpawn(spawner: Spawner):
+func RandomSpawn(spawner: Spawner,spawnItems: Array[SpawnableItem] = spawnableItems):
 	if(!canSpawn):return
 	
 	if(spawner == null):
@@ -59,18 +59,18 @@ func RandomSpawn(spawner: Spawner):
 		
 	#var spawner: Spawner = PickRandomSpawner()
 	#print(str(spawner))
-	var _itemToSpawn = PickRandomItem()
+	var _itemToSpawn = PickRandomItem(spawnItems)
 	
 	#check if it's an unique instance already spawned
 	if(_itemToSpawn.isUniqueInstance):
 		for spawnable_item in spawned_instances.keys():
 			if spawned_instances[spawnable_item] == _itemToSpawn:
 				#it's already spawned >>> restart spawn and cancel current function
-				RandomSpawn(spawner) 
+				RandomSpawn(spawner,spawnItems) 
 				return
 				
 	#check if it's an unique spawn
-	if(_itemToSpawn.spawnOncePerGame):
+	if(_itemToSpawn.spawnOncePerGame and spawnItems == spawnableItems):
 		EraseItemFromSystem(_itemToSpawn)
 		
 	var instance = spawner.SpawnExternalItem(_itemToSpawn)
@@ -102,12 +102,10 @@ func PickRandomItemOnSpawner(_spawner : Spawner) -> StringName:
 	#print("index : " + str(ranIndex))
 	return _spawner.items[ranIndex].itemName
 	
-func PickRandomItem() -> SpawnableItem:
+func PickRandomItem(items: Array[SpawnableItem] = spawnableItems) -> SpawnableItem:
 	randomize()
-	var ranIndex = randi_range(0,spawnableItems.size()-1)
-	#print("items max range : " + str(items.size()-1))
-	#print("index : " + str(ranIndex))
-	return spawnableItems[ranIndex]
+	var ranIndex = randi_range(0,items.size()-1)
+	return items[ranIndex]
 	
 func RemoveUniqueInstance(_instance: Node):
 	if(spawned_instances.has(_instance)):

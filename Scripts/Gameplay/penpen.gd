@@ -89,7 +89,7 @@ func GetHurtbox(node: Node) -> Hurtbox:
 	
 	
 func PenpenSpawnItem():
-	Manager.spawnManager.RandomSpawn(spawner)
+	Manager.spawnManager.RandomSpawn(spawner,spawner.items)
 	
 func _on_hurtbox_take_damage(hitbox: Hitbox) -> void:
 	if(hitbox.type == Hitbox.DamageType.Volume): return
