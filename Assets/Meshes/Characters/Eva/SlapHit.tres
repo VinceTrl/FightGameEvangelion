@@ -1389,3 +1389,20 @@ tracks/197/path = NodePath("Armature/Skeleton3D:bdef_RightHandPinky4")
 tracks/197/interp = 1
 tracks/197/loop_wrap = true
 tracks/197/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/198/type = "method"
+tracks/198/imported = false
+tracks/198/enabled = true
+tracks/198/path = NodePath("../..")
+tracks/198/interp = 1
+tracks/198/loop_wrap = true
+tracks/198/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"StartSlapHitbox"
+}, {
+"args": [],
+"method": &"EndSlapHitBox"
+}]
+}
