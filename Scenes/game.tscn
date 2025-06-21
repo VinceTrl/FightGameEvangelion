@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=30 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -6,16 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/Camera/game_camera.tscn" id="4_sx5sm"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="5_rqgtm"]
-[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="8_dreha"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://bkkbbr0htwc5p" path="res://Scenes/Maps/test_map.tscn" id="10_55lj4"]
 [ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
-[ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="13_8m82v"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
 [ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="15_7m25h"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
-[ext_resource type="AudioStream" uid="uid://nqx3ft62tmu0" path="res://Assets/Sounds/Musics/teknokiki LOOP LONGUE.mp3" id="17_7gvmf"]
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
 [ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="17_tjwxa"]
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="17_x2hyv"]
@@ -35,6 +32,8 @@ shader_parameter/glowAngle = 0.0
 shader_parameter/glowSharpness = 0.0
 shader_parameter/alphaThreshold = 0.031
 shader_parameter/sprite_texture = ExtResource("5_rqgtm")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
 [sub_resource type="Animation" id="Animation_j54aa"]
 resource_name = "AnimLightPolici"
@@ -455,8 +454,6 @@ _data = {
 "RESET": SubResource("Animation_lkh3u")
 }
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
-
 [node name="Game" type="Node3D"]
 script = ExtResource("1_2jg1a")
 
@@ -466,7 +463,7 @@ unique_name_in_owner = true
 [node name="Gameplay" type="Node" parent="."]
 
 [node name="Player" parent="Gameplay" instance=ExtResource("1_rog66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44179, 1.71459, -0.00462174)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.442, 1.715, 0)
 
 [node name="Player2" parent="Gameplay" instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2585, 1.63538, 0)
@@ -477,44 +474,32 @@ startFacingRight = false
 material_override = SubResource("ShaderMaterial_rfxrm")
 
 [node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2", "cameraTargets") instance=ExtResource("4_sx5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.063, 1.66432, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.21107)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
 cameraTargets = [NodePath("../Player"), NodePath("../Player2")]
 cameraClampMin = Vector2(-5, 0)
 
-[node name="AmmoItem" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3916, 1.25418, 0.113311)
-
-[node name="AmmoItem2" parent="Gameplay" instance=ExtResource("13_8m82v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33764, 1.25418, 0.113311)
-
 [node name="KillVolume" parent="Gameplay" instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
-[node name="Spawner" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.97922, 0)
-
-[node name="Spawner2" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.97922, 0)
-
-[node name="Spawner3" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.97922, 0)
-
-[node name="Spawner4" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.97922, 0)
-
-[node name="Spawner5" parent="Gameplay" instance=ExtResource("8_dreha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.97922, 0)
-
-[node name="GUI" type="Node" parent="."]
-
-[node name="MasterGUI" parent="GUI" instance=ExtResource("16_cim6e")]
+[node name="TimerOutSpawners" parent="Gameplay" instance=ExtResource("17_avc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="Stage" type="Node" parent="."]
 
 [node name="TestMap" parent="Stage" instance=ExtResource("10_55lj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.68, -0.484)
+
+[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom"]
+shape = SubResource("WorldBoundaryShape3D_e2grd")
+
+[node name="GUI" type="Node" parent="."]
+
+[node name="MasterGUI" parent="GUI" instance=ExtResource("16_cim6e")]
 
 [node name="Meshes" type="Node" parent="."]
 
@@ -708,7 +693,6 @@ bones/2/position = Vector3(1.27405e-08, 0.343423, -6.77444e-08)
 bones/3/position = Vector3(-9.53674e-09, 0.392483, 5.07385e-08)
 bones/3/rotation = Quaternion(-0.0639721, -0.0817179, -0.333327, 0.937082)
 bones/4/position = Vector3(1.26362e-07, 0.441543, 1.34111e-09)
-bones/4/rotation = Quaternion(-0.0670107, 0.00390045, 0.0187482, 0.997569)
 bones/5/position = Vector3(1.80602e-07, 0.0296303, 0.0168958)
 bones/5/rotation = Quaternion(-0.602827, -0.0882762, 0.0103784, 0.792905)
 bones/6/position = Vector3(4.76837e-09, 0.612545, 0.349281)
@@ -764,7 +748,6 @@ bones/35/rotation = Quaternion(2.6077e-08, 2.6077e-07, -1.86265e-08, 1)
 bones/37/position = Vector3(-0.245605, 0.40196, 0.0186645)
 bones/37/rotation = Quaternion(0.426298, -0.225363, 0.821032, 0.305595)
 bones/38/position = Vector3(-3.8147e-08, 0.507991, 1.43051e-08)
-bones/38/rotation = Quaternion(-0.403088, 0.265711, -0.284881, 0.828107)
 bones/39/position = Vector3(3.43323e-07, 1.07959, -3.8147e-07)
 bones/40/position = Vector3(2.28882e-07, 0.909795, -3.24249e-07)
 bones/41/position = Vector3(0.109561, 0.10435, 0.0875664)
@@ -807,7 +790,6 @@ bones/63/rotation = Quaternion(0.337832, 0.0431593, 0.0109272, 0.940153)
 bones/64/position = Vector3(-0.00475275, 0.118172, 1.81198e-07)
 bones/64/rotation = Quaternion(-2.74798e-07, -3.34345e-07, 2.98955e-07, 1)
 bones/66/position = Vector3(0.300234, -0.242309, 0.0300269)
-bones/66/rotation = Quaternion(0.0554046, 0.093495, 0.991473, 0.0719031)
 bones/67/position = Vector3(-8.34465e-08, 1.95511, 5.96046e-08)
 bones/68/position = Vector3(4.05312e-08, 2.14936, 0)
 bones/68/rotation = Quaternion(0.563763, -0.00833593, 0.137962, 0.81429)
@@ -826,19 +808,19 @@ bones/76/position = Vector3(-3.57628e-08, 0.307799, 0)
 bones/76/rotation = Quaternion(1.11759e-08, -5.4948e-08, 4.88944e-08, 1)
 
 [node name="BoneAttachment3D_LeftArm" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.10003, 0.554967, -0.825836, 0.2971, -0.808793, -0.507528, -0.949591, -0.194588, -0.245785, 0.768663, 6.14832, -0.202899)
+transform = Transform3D(0.10003, 0.554967, -0.825836, 0.297099, -0.808794, -0.507528, -0.949592, -0.194587, -0.245784, 0.768663, 6.14832, -0.202899)
 
 [node name="BoneAttachment3D2_RightArm" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="3"]
-transform = Transform3D(0.538112, -0.483237, -0.690592, 0.573403, 0.810397, -0.120272, 0.617773, -0.331268, 0.713174, -0.484029, 6.75784, -0.224398)
+transform = Transform3D(0.538112, -0.483237, -0.690592, 0.573404, 0.810397, -0.120271, 0.617773, -0.331268, 0.713174, -0.484029, 6.75784, -0.224399)
 
 [node name="BoneAttachment3D3_LeftFoot" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.910595, 0.123142, 0.39453, 0.0808259, -0.883093, 0.462184, 0.405321, 0.452751, 0.794188, -0.844986, 1.70663, -0.956947)
+transform = Transform3D(-0.910595, 0.123141, 0.394529, 0.0808258, -0.883093, 0.462183, 0.405319, 0.45275, 0.794187, -0.844985, 1.70663, -0.956948)
 
 [node name="BoneAttachment3D4_RightFoot" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="5"]
-transform = Transform3D(-0.508521, -0.860633, -0.0267632, 0.520691, -0.332118, 0.786498, -0.685775, 0.386015, 0.617012, -1.98102, 1.79958, -0.754672)
+transform = Transform3D(-0.508522, -0.860633, -0.0267641, 0.52069, -0.332118, 0.786498, -0.685775, 0.386015, 0.617013, -1.98101, 1.79958, -0.754673)
 
 [node name="BoneAttachment_Hitbox" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="6"]
-transform = Transform3D(0.627135, 0.662618, 0.409436, -0.287148, -0.291952, 0.91231, 0.724049, -0.68971, 0.00717647, 2.21499, 5.13043, -0.72061)
+transform = Transform3D(0.627135, 0.662619, 0.409436, -0.287147, -0.291952, 0.91231, 0.72405, -0.68971, 0.00717562, 2.21499, 5.13043, -0.72061)
 
 [node name="SpotLight3D3" parent="Meshes/EVA/Robot Pivot/Robot_eva_03" index="2"]
 visible = false
@@ -916,22 +898,6 @@ light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 spot_range = 12.9284
 spot_angle = 59.8843
-
-[node name="TimerOutSpawners" parent="." instance=ExtResource("17_avc87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-
-[node name="Boundary_Bottom" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
-collision_mask = 15
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary_Bottom"]
-shape = SubResource("WorldBoundaryShape3D_e2grd")
-
-[node name="StageMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_7gvmf")
-volume_db = -15.0
-bus = &"Music"
-parameters/looping = false
 
 [editable path="Gameplay/Player2"]
 [editable path="Meshes/Enviro"]

@@ -12,7 +12,7 @@ extends Node
 @export var fightStartDelay = 3.0
 @export var fightDuration: float = 90.00
 @export var timeBeforeRestart = 6.0
-
+var playerSpawns: Array[PlayerSpawn] = []
 var players: Array[PlayerCharacter] = []
 var eva: Eva
 
@@ -31,6 +31,12 @@ func LaunchFight():
 	
 	for player in players:
 		player.ChangeState(player.States.Fall)
+		
+func RegisterPlayerSpawn(_spawnToAdd:PlayerSpawn):
+	if(_spawnToAdd == null): return
+	
+	if (!players.has(_spawnToAdd)): 
+		playerSpawns.append(_spawnToAdd)
 	
 func RegisterPlayer(_playerToAdd:PlayerCharacter):
 	if(_playerToAdd == null): return
@@ -39,8 +45,16 @@ func RegisterPlayer(_playerToAdd:PlayerCharacter):
 		players.append(_playerToAdd)
 		_playerToAdd.OnPlayerDeath.connect(OnAnyPlayerDeath)
 		_playerToAdd.connect("OnPlayerTakeDamage", Callable(spawn_manager, "OnAnyPlayerTakeDamage"))
+		PlacePlayerOnSpawnPoint(_playerToAdd)
 
-		
+func PlacePlayerOnSpawnPoint(player:PlayerCharacter):
+	if(playerSpawns.size() <= 0):return
+	
+	for spawn in playerSpawns:
+		if(spawn.playerID == player.playerID):
+			player.global_position = spawn.global_position
+			return
+	
 func RegisterEva(_evaToAdd:Eva):
 	if(_evaToAdd == null): return
 	eva = _evaToAdd
