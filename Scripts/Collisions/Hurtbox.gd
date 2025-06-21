@@ -9,7 +9,7 @@ signal OnHurtboxTakeDamage(hitbox : Hitbox)
 
 func _init() -> void:
 	collision_layer = 0
-	collision_mask = 3
+	collision_mask = 4
 	
 
 func _ready() -> void:

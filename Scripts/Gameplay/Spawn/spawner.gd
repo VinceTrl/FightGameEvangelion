@@ -3,7 +3,9 @@ extends Node3D
 
 @export var items: Array[SpawnableItem] = []
 @export var registerOnManager = true
+@export var canSpawnOnPlayer = false
 @onready var ground_raycast: RayCast3D = $GroundRaycast
+@onready var player_raycast: RayCast3D = $PlayerRaycast
 @onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 const VFX_2D_SPAWN_SMOKE = preload("res://Scenes/VFX/VFX2D/vfx_2d_spawn_smoke.tscn")
@@ -21,8 +23,12 @@ func _process(delta: float) -> void:
 	pass
 
 func DebugSpawner() -> void:
+	
 	if(Input.is_action_just_pressed("DebugKey")):
-		SpawnItem("MIDDLE_FINGER")
+		#SpawnItem("MIDDLE_FINGER")
+		if player_raycast.is_colliding():
+			var collider = player_raycast.get_collider()
+			print("RAYCAST PLAYER : " + str(player_raycast.get_collider().collision_layer))
 	
 func PreloadResources():
 	for item in items: 	
@@ -80,3 +86,12 @@ func GetItemFromName(_name: StringName) -> SpawnableItem:
 	
 	push_error("No item found")
 	return null
+	
+func IsPlayerUnderSpawner() -> bool:
+	var col = player_raycast.get_collider()
+	
+	if(col != null):
+		return true
+	else:
+		return false
+	#return player_raycast.is_colliding()

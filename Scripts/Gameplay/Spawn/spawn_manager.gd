@@ -84,8 +84,16 @@ func RandomSpawn(spawner: Spawner):
 	
 func PickRandomSpawner() -> Spawner:
 	var ranIndex = randi_range(0,spawners.size()-1)
-	print("pick spawner : " + str(spawners[ranIndex]))
-	return spawners[ranIndex]
+	#print("pick spawner : " + str(spawners[ranIndex]))
+	var spawner = spawners[ranIndex]
+	#return spawner
+	
+	if(!spawner.canSpawnOnPlayer and spawner.IsPlayerUnderSpawner()):
+		print("not available spawner : " + str(spawners[ranIndex]))
+		return PickRandomSpawner()
+		#return null
+	else:
+		return spawners[ranIndex]
 	
 func PickRandomItemOnSpawner(_spawner : Spawner) -> StringName:
 	randomize()

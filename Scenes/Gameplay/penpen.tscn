@@ -1,13 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkdrj6rwos5uk"]
+[gd_scene load_steps=17 format=3 uid="uid://bkdrj6rwos5uk"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/penpen.gd" id="1_fk4f2"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_cpg5x"]
 [ext_resource type="PackedScene" uid="uid://kqpbwnd4vdet" path="res://Assets/Meshes/Characters/Penpen/Penpen_01.tscn" id="2_qpqa3"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_keetd"]
 [ext_resource type="AudioStream" uid="uid://58ld363flnkm" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi1.wav" id="5_u337t"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="5_v0tef"]
 [ext_resource type="AudioStream" uid="uid://b3yffj8vv6fxj" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi2.wav" id="6_1kjwj"]
+[ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="6_gyacs"]
 [ext_resource type="AudioStream" uid="uid://dchwfsqn35bpo" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi3.wav" id="7_1xoy7"]
+[ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="7_3xyg6"]
 [ext_resource type="AudioStream" uid="uid://b3k2bh6t8jvb8" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi4.wav" id="8_7wh5r"]
+[ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="8_bi1tk"]
+[ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="9_hs51q"]
 [ext_resource type="AudioStream" uid="uid://dw5yrjagxb345" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi5.wav" id="9_qo54p"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="10_2uiuh"]
 
@@ -35,6 +40,7 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 
 [node name="Spawner" parent="." instance=ExtResource("3_keetd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.201345, 0)
+items = Array[ExtResource("5_v0tef")]([ExtResource("6_gyacs"), ExtResource("7_3xyg6"), ExtResource("8_bi1tk"), ExtResource("9_hs51q")])
 registerOnManager = false
 
 [node name="Audio" type="Node3D" parent="."]

@@ -13,8 +13,10 @@ signal OnHit()
 signal OnHitboxDetected(hitbox:Hitbox)
 	
 func _init() -> void:
-	collision_layer = 3
-	collision_mask = 3 #was at 0 before hitbox knockback
+	collision_layer = 4
+	collision_mask = 4 #was at 0 before hitbox knockback
+	
+	print("LAYER :" + str(get_collision_layer()))
 	
 	if(randomID):
 		owner_id = (randi_range(-100000,100000))
