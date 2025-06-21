@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg5sc0ov3gcag"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/ground_magnet.gd" id="1_dr64j"]
+
+[node name="GroundMagnet" type="Node3D"]
+script = ExtResource("1_dr64j")

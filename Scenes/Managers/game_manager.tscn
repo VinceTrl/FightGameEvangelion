@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c38gsdfy72awb"]
+[gd_scene load_steps=18 format=3 uid="uid://c38gsdfy72awb"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameManager.gd" id="1_6hf0t"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/TimeEffects.gd" id="2_c8bkv"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://4kux6idtqvus" path="res://Resources/Spawnables/TrapHeart.tres" id="13_h0apr"]
 [ext_resource type="Resource" uid="uid://brq2qcfwowmsx" path="res://Resources/Spawnables/Penpen.tres" id="14_ewqcl"]
 [ext_resource type="PackedScene" uid="uid://dyqrd26u8lp8x" path="res://Scenes/GUI/shitpost_gui.tscn" id="14_exsev"]
+[ext_resource type="Resource" uid="uid://5mwafnwjmudh" path="res://Resources/Spawnables/Bloc.tres" id="15_fgir8"]
 [ext_resource type="Script" path="res://Scripts/Managers/platform_manager.gd" id="15_kouim"]
 
 [node name="GameManager" type="Node"]
@@ -35,7 +36,7 @@ one_shot = true
 script = ExtResource("5_u6occ")
 randomSpawnDelayMin = 5.0
 randomSpawnDelayMax = 8.0
-items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("12_2b18o"), ExtResource("11_qg3go"), ExtResource("13_h0apr"), ExtResource("14_ewqcl")])
+items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("12_2b18o"), ExtResource("11_qg3go"), ExtResource("13_h0apr"), ExtResource("14_ewqcl"), ExtResource("15_fgir8")])
 
 [node name="ShitpostGUI" parent="." instance=ExtResource("14_exsev")]
 imageSize = 0.5

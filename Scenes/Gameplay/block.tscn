@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://nsqkqa3nm3h6"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/block.gd" id="1_1mwp6"]
+[ext_resource type="PackedScene" uid="uid://dnpcmkm3cj1vo" path="res://Assets/Meshes/Props/Minecraft/minecraft_grass_block.fbx" id="1_erd5p"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="1_rd00h"]
+[ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="3_57dtm"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="3_q3etx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_50nyf"]
+size = Vector3(0.35, 0.35, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m21dq"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="Block" type="Node3D"]
+script = ExtResource("1_1mwp6")
+
+[node name="Hurtbox" type="Area3D" parent="."]
+script = ExtResource("1_rd00h")
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151065, 0)
+shape = SubResource("BoxShape3D_50nyf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150232, 0)
+shape = SubResource("BoxShape3D_m21dq")
+
+[node name="GroundMagnet" parent="." instance=ExtResource("3_57dtm")]
+cast_distance = 5.0
+offset_above_ground = 0.01
+
+[node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("3_q3etx")
+nodeToShake = NodePath(".")
+
+[node name="minecraft_grass_block" parent="NodeShaker" instance=ExtResource("1_erd5p")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)

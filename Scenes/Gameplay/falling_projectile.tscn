@@ -57,7 +57,7 @@ gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_tf2fl")
-moveSpeed = 1.0
+moveSpeed = 0.5
 explosionScale = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
