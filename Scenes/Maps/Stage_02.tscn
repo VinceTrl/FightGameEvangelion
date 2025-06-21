@@ -1,0 +1,266 @@
+[gd_scene load_steps=6 format=3 uid="uid://danlr5f6wtmu0"]
+
+[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="1_msagv"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="2_utlvj"]
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="3_kxmjw"]
+[ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="5_1iwjh"]
+[ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="7_txiu8"]
+
+[node name="Stage_02" type="Node3D"]
+
+[node name="Gameplay" type="Node3D" parent="."]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay"]
+
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.106562, 0)
+script = ExtResource("1_msagv")
+
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.106562, 0)
+script = ExtResource("1_msagv")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay"]
+
+[node name="Spawners" type="Node3D" parent="Gameplay/Objects"]
+
+[node name="Spawner" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 0)
+
+[node name="Spawner2" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 0)
+
+[node name="Spawner3" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, 0)
+
+[node name="Spawner4" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 0)
+
+[node name="Spawner5" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Spawner6" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0)
+
+[node name="Spawner7" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 0)
+
+[node name="Spawner8" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
+
+[node name="Spawner9" parent="Gameplay/Objects/Spawners" instance=ExtResource("2_utlvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 0)
+
+[node name="Block" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -0.439268, 0)
+
+[node name="Block12" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -0.139268, 0)
+
+[node name="Block13" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.139268, 0)
+
+[node name="Block14" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.139268, 0)
+
+[node name="Block15" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.139268, 0)
+
+[node name="Block16" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.139268, 0)
+
+[node name="Block17" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.160732, 0)
+
+[node name="Block18" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.160732, 0)
+
+[node name="Block19" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.160732, 0)
+
+[node name="Block20" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.160732, 0)
+
+[node name="Block21" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160732, 0)
+
+[node name="Block22" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.460732, 0)
+
+[node name="Block23" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.460732, 0)
+
+[node name="Block24" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.460732, 0)
+
+[node name="Block25" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.460732, 0)
+
+[node name="Block26" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.460732, 0)
+
+[node name="Block27" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.760732, 0)
+
+[node name="Block28" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.760732, 0)
+
+[node name="Block29" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.760732, 0)
+
+[node name="Block30" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.760732, 0)
+
+[node name="Block31" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.760732, 0)
+
+[node name="Block32" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.06073, 0)
+
+[node name="Block33" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1.06073, 0)
+
+[node name="Block34" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1.06073, 0)
+
+[node name="Block35" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.06073, 0)
+
+[node name="Block36" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06073, 0)
+
+[node name="Block2" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.439268, 0)
+
+[node name="Block3" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.439268, 0)
+
+[node name="Block5" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.439268, 0)
+
+[node name="Block6" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.439268, 0)
+
+[node name="Block4" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.439268, 0)
+
+[node name="Block37" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.139268, 0)
+
+[node name="Block38" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.139268, 0)
+
+[node name="Block39" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.139268, 0)
+
+[node name="Block40" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.139268, 0)
+
+[node name="Block41" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.139268, 0)
+
+[node name="Block42" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.160732, 0)
+
+[node name="Block43" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.160732, 0)
+
+[node name="Block44" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.160732, 0)
+
+[node name="Block45" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.160732, 0)
+
+[node name="Block46" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.160732, 0)
+
+[node name="Block47" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.460732, 0)
+
+[node name="Block48" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.460732, 0)
+
+[node name="Block49" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.460732, 0)
+
+[node name="Block50" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.460732, 0)
+
+[node name="Block51" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.460732, 0)
+
+[node name="Block52" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.760732, 0)
+
+[node name="Block53" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.760732, 0)
+
+[node name="Block54" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.760732, 0)
+
+[node name="Block55" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.760732, 0)
+
+[node name="Block56" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.760732, 0)
+
+[node name="Block57" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.06073, 0)
+
+[node name="Block58" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.06073, 0)
+
+[node name="Block59" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.06073, 0)
+
+[node name="Block60" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.06073, 0)
+
+[node name="Block61" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.06073, 0)
+
+[node name="Block7" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.439268, 0)
+
+[node name="Block8" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.439268, 0)
+
+[node name="Block9" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.439268, 0)
+
+[node name="Block10" parent="Gameplay/Objects" instance=ExtResource("3_kxmjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.439268, 0)
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="Mesh_Plateforme_01" parent="Level" instance=ExtResource("5_1iwjh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.68711, -0.67964, -0.258458)
+
+[node name="Mesh_Plateforme_02" parent="Level" instance=ExtResource("5_1iwjh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.71289, -0.67964, -0.258458)
+
+[node name="Mesh_Plateforme_03" parent="Level" instance=ExtResource("5_1iwjh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0128891, -0.67964, -0.258458)
+
+[node name="ShipTargetPosition" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -1.80664, 1.87463, 0.147627)
+
+[node name="ShipTargetPosition2" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 1.81121, 1.85054, 0.147627)
+
+[node name="PlatformShip" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("7_txiu8")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.00664163, 1.56009, -21.2861)
+targetNode = NodePath("../ShipTargetPosition")
+
+[node name="PlatformShip2" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("7_txiu8")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 4.49336, 0.976704, -21.2861)
+targetNode = NodePath("../ShipTargetPosition2")
+
+[node name="PlatformShip3" parent="Level" instance=ExtResource("7_txiu8")]
+transform = Transform3D(-4.37114e-08, 1.5, 0, -1, -6.55671e-08, 0, 0, 0, 1, 5.31069, 0.695988, 0.213281)
+registerOnManager = false
+
+[node name="PlatformShip4" parent="Level" instance=ExtResource("7_txiu8")]
+transform = Transform3D(-4.37114e-08, -1.5, 0, 1, -6.55671e-08, 0, 0, 0, 1, -4.88931, 0.695988, 0.213281)
+registerOnManager = false

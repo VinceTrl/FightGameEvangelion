@@ -6,6 +6,7 @@ extends Node3D
 @export var exitAreraTime: float = 2.0
 @export var lifeTimeMin: float = 10.0
 @export var lifeTimeMax: float = 15.0
+@export var registerOnManager = true
 var iniPosition
 
 signal OnPlatformEnter
@@ -14,7 +15,8 @@ signal OnPlatformExit
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	iniPosition = global_position
-	Manager.gameManager.platform_manager.RegisterPlatform(self)
+	if(registerOnManager):
+		Manager.gameManager.platform_manager.RegisterPlatform(self)
 	#await get_tree().create_timer(10,true,false,false).timeout
 	#EnterArena()
 

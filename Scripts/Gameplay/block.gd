@@ -22,5 +22,5 @@ func ChangeHealth(healthAmount:int = -1):
 	node_shaker.NodeShake()
 	healthPoints += healthAmount
 	if(healthPoints <= 0):
-		Manager.gameManager.shitpost_gui.ShowRandomImage()
+		#Manager.gameManager.shitpost_gui.ShowRandomImage()
 		queue_free()
