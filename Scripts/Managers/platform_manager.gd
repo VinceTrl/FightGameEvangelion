@@ -1,5 +1,6 @@
 extends Node
 
+@export var spawnScenario:Global.PlatformSpawnType
 @export var platforms: Array[MovingPlatform] = []
 @export var timeBetweenTest: float = 10
 @export var platformSpawnChance:float = 0.5
@@ -12,8 +13,12 @@ var canSpawnPlatform = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	CallPlatformTimer()
+	#Manager.gameManager.OnFightStart.connect(StartSpawn)
+	Manager.OnFightStart.connect(StartSpawn)
 
+func StartSpawn():
+	if(spawnScenario == Global.PlatformSpawnType.Random):
+		CallPlatformTimer()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -49,7 +54,7 @@ func CallPlatform():
 	for c in range(count):
 		var platform = PickRandomPlatformOnArray(platformsSelection)
 		platformsSelection.erase(platform)
-		platform.EnterArena()
+		platform.StartRandomTimedPlatform()
 		
 		
 		#need to connect the platform to signal to remove the platform from the active array

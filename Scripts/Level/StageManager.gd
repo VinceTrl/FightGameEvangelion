@@ -1,0 +1,22 @@
+extends Node
+
+@export var platformSpawnType:Global.PlatformSpawnType
+@export var scenario: AnimationPlayer
+@export var fixedCameraZoom:bool = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Manager.gameManager.platform_manager.spawnScenario = platformSpawnType
+	Manager.gameManager.OnFightStart.connect(StartSpawnScenario)
+	call_deferred("SetCamera")
+	
+func SetCamera():
+	if(fixedCameraZoom):
+		Manager.gameCamera.usePlayerDistanceForTargetZ = false
+
+func StartSpawnScenario():
+	if(platformSpawnType != Global.PlatformSpawnType.Scripted): return
+	
+	if(scenario != null):
+		var animations = scenario.get_animation_list()
+		scenario.play(animations[0])

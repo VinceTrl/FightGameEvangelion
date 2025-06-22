@@ -17,6 +17,7 @@ var players: Array[PlayerCharacter] = []
 var eva: Eva
 
 signal FightEnd
+signal OnFightStart
 signal GameManagerReady
 
 func _ready() -> void:
@@ -28,7 +29,7 @@ func _ready() -> void:
 func LaunchFight():
 	#await get_tree().create_timer(fightStartDelay,true,false,true).timeout
 	game_timer.start(fightDuration)
-	
+	OnFightStart.emit()
 	for player in players:
 		player.ChangeState(player.States.Fall)
 		

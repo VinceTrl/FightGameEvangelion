@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkkbbr0htwc5p"]
+[gd_scene load_steps=8 format=3 uid="uid://bkkbbr0htwc5p"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="1_00085"]
+[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_gicfg"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="2_8ac7a"]
 [ext_resource type="PackedScene" uid="uid://w5jpce2kyimj" path="res://Assets/Meshes/Enviro/mesh_plateforme_01.tscn" id="2_wsm1i"]
 [ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="3_v2yl4"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="5_nls0s"]
 
 [node name="Stage_01" type="Node3D"]
+script = ExtResource("1_gicfg")
 
 [node name="Gameplay" type="Node3D" parent="."]
 

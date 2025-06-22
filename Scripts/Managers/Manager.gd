@@ -22,6 +22,7 @@ var previousGameState : GameStates.GameState
 var currentGameState : GameStates.GameState = GameStates.GameState.TitleScreen
 
 signal OnGameManagerReady()
+signal OnFightStart
 signal OnFightFinish
 signal OnGameStateChanged(_newState: GameStates.GameState)
 
