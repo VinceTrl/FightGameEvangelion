@@ -10,5 +10,7 @@ func _ready() -> void:
 func SetWinScreen(winnerID: int):
 	if(winnerID == 0):
 		player_1.visible = true
+		player_2.visible = false
 	else:
+		player_1.visible = false
 		player_2.visible = true

@@ -281,10 +281,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.71289, -0.67964, -0.2
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0128891, -0.67964, -0.258458)
 
 [node name="ShipTargetPosition" type="Node3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -1.80664, 1.87463, 0.147627)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -2.10664, 1.87463, 0.147627)
 
 [node name="ShipTargetPosition2" type="Node3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 1.81121, 1.85054, 0.147627)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 2.71121, 1.85054, 0.147627)
 
 [node name="PlatformShip" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("7_txiu8")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.00664163, 1.56009, -21.2861)
