@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs6eigat3lyci"]
+[gd_scene load_steps=10 format=3 uid="uid://bs6eigat3lyci"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/pick_up.gd" id="1_8536p"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="1_pepgg"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="2_ou272"]
 [ext_resource type="Material" uid="uid://dtq71w580dncu" path="res://Assets/Materials/Gameplay/BasePrototype_Blue.tres" id="3_2cxck"]
+[ext_resource type="Texture2D" uid="uid://g4p33tpkj7om" path="res://Assets/Sprites/LaserPNGs/Laser1.png" id="5_qawh3"]
 
 [sub_resource type="Curve" id="Curve_jkujo"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -42,10 +43,16 @@ shakeTime = 0.1
 frequency = 1.0
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="VisualHolder/Visual/NodeShaker"]
-transform = Transform3D(0.321098, 0.112686, -0.940318, -0.33114, 0.943582, 8.73696e-09, 0.887266, 0.311377, 0.340297, 0, 0, 0)
+transform = Transform3D(0.321098, 0.112686, -0.940318, -0.33114, 0.943582, -6.31301e-08, 0.887267, 0.311377, 0.340297, 0, 0, 0)
+visible = false
 radius = 0.05
 height = 0.2
 material = ExtResource("3_2cxck")
+
+[node name="Sprite3D" type="Sprite3D" parent="VisualHolder/Visual/NodeShaker"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.00594343, 0.517871, 0.066128)
+texture_filter = 0
+texture = ExtResource("5_qawh3")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2

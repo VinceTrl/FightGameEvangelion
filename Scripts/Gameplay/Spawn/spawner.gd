@@ -4,11 +4,13 @@ extends Node3D
 @export var items: Array[SpawnableItem] = []
 @export var registerOnManager = true
 @export var canSpawnOnPlayer = false
+@export var forceSpawnOnGround = false
 @onready var ground_raycast: RayCast3D = $GroundRaycast
 @onready var player_raycast: RayCast3D = $PlayerRaycast
 @onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 const VFX_2D_SPAWN_SMOKE = preload("res://Scenes/VFX/VFX2D/vfx_2d_spawn_smoke.tscn")
+const SPAWN_TRAIL = preload("res://Scenes/VFX/spawn_trail.tscn")
 
 func _ready() -> void:
 	PreloadResources()
@@ -63,6 +65,11 @@ func SpawnExternalItem(_itemToSpawn: SpawnableItem):
 		_spawnPos = ground_raycast.get_collision_point()
 		_spawnPos = _spawnPos + _itemToSpawn.groundOffset
 		
+	if(forceSpawnOnGround):
+		_spawnPos = ground_raycast.get_collision_point()
+		_spawnPos = _spawnPos + _itemToSpawn.groundOffset
+		await SpawnTrail(global_position,_spawnPos)
+		
 		
 	var vfx = VFX_2D_SPAWN_SMOKE.instantiate()
 	vfx.global_position = _spawnPos
@@ -95,3 +102,11 @@ func IsPlayerUnderSpawner() -> bool:
 	else:
 		return false
 	#return player_raycast.is_colliding()
+	
+func SpawnTrail(startPos:Vector3,targetPos:Vector3):
+	var trail = SPAWN_TRAIL.instantiate()
+	trail.global_position = startPos
+	get_tree().current_scene.add_child(trail)
+	trail.MoveTrail(targetPos)
+	await trail.OnTrailReachDestination
+	trail.queue_free()

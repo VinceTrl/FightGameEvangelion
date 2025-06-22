@@ -79,7 +79,7 @@ func RandomSpawn(spawner: Spawner,spawnItems: Array[SpawnableItem] = spawnableIt
 	if(_itemToSpawn.spawnOncePerGame and spawnItems == spawnableItems):
 		EraseItemFromSystem(_itemToSpawn)
 		
-	var instance = spawner.SpawnExternalItem(_itemToSpawn)
+	var instance = await spawner.SpawnExternalItem(_itemToSpawn)
 	
 	if(instance is Node and _itemToSpawn.isUniqueInstance):
 		instance as Node

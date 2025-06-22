@@ -106,6 +106,7 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_g0msx")
 moveSpeed = 300.0
+scaleMin = 0.4
 scalingCurve = SubResource("Curve_icfqe")
 exploScaleMultiplier = 3.0
 

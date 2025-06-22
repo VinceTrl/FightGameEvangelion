@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://nn8roov4p5vq"]
+
+[ext_resource type="Script" path="res://Scripts/GameEffects/spawn_trail.gd" id="1_1c6fn"]
+[ext_resource type="SpriteFrames" uid="uid://boywxim1x038u" path="res://Assets/Sprites/BulletSpriteSheet.tres" id="1_d8u61"]
+
+[sub_resource type="Curve" id="Curve_aeft5"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494357, 0.502128), 4.72623, 4.72623, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_g71in"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.501129, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="SpawnTrail" type="Node3D"]
+script = ExtResource("1_1c6fn")
+moveSpeed = 1.5
+moveTransType = 2
+offsetX = 1.0
+animationCurve = SubResource("Curve_aeft5")
+offsetCurveX = SubResource("Curve_g71in")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = ExtResource("1_d8u61")
+autoplay = "default"
+frame_progress = 0.836217
