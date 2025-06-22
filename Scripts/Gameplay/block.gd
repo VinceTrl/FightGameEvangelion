@@ -2,11 +2,15 @@ extends Node3D
 
 @export var healthPoints:int = 3
 @export var canTakeDamage:bool = true
+@export var forceToGroundOnReady = true
 
 @onready var node_shaker: NodeShaker = $NodeShaker
+@onready var ground_magnet: ForceToGround = $GroundMagnet
 
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
+	ground_magnet.auto_align_on_ready = forceToGroundOnReady
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

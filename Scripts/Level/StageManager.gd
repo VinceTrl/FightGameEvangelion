@@ -3,6 +3,7 @@ extends Node
 @export var platformSpawnType:Global.PlatformSpawnType
 @export var scenario: AnimationPlayer
 @export var fixedCameraZoom:bool = false
+@export var fixedCamZ: float = 4.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _ready() -> void:
 	
 func SetCamera():
 	if(fixedCameraZoom):
-		Manager.gameCamera.usePlayerDistanceForTargetZ = false
+		Manager.gameCamera.SetCameraOverrideZ(fixedCamZ)
 
 func StartSpawnScenario():
 	if(platformSpawnType != Global.PlatformSpawnType.Scripted): return

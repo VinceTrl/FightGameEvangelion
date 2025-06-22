@@ -686,6 +686,9 @@ spot_angle_attenuation = 303.142
 [node name="EVA" parent="Meshes" instance=ExtResource("17_tjwxa")]
 transform = Transform3D(0.999033, 0.0187865, -0.0397504, -0.0389664, 0.797075, -0.602622, 0.0203629, 0.603589, 0.797036, 0.410762, 1.87954, -26.7202)
 
+[node name="Robot Pivot" parent="Meshes/EVA" index="0"]
+transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
+
 [node name="Skeleton3D" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature" index="0"]
 bones/0/position = Vector3(-0.052142, 5.31244, -0.345243)
 bones/1/position = Vector3(1.92225e-08, 0.290941, 0.0447505)

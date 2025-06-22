@@ -37,6 +37,8 @@ extends Node3D
 
 var followPlayers: bool = true
 var usePlayerDistanceForTargetZ = true
+var useOverrideZ = false
+var overrideTargetZ = 3.0
 var canAddTargets = true
 
 var updateZposition = true
@@ -120,6 +122,9 @@ func UpdatePositon_Z():
 	
 	if(usePlayerDistanceForTargetZ):
 		_currentZ = GetZtargetPosition()
+		
+	if(overrideTargetZ):
+		_currentZ = overrideTargetZ
 	
 	if TweenCamZ:
 		TweenCamZ.kill()
@@ -260,4 +265,14 @@ func RemoveAllTargetsExceptPlayers():
 func OnFightFinished():
 	canAddTargets = false
 	RemoveAllTargetsExceptPlayers()
+	
+func SetCameraOverrideZ(newTargetZ:float):
+	var z = clampf(newTargetZ,minDistZ,maxDistZ)
+	overrideTargetZ = z
+	useOverrideZ = true
+	usePlayerDistanceForTargetZ = false
+	
+func ResetCameraOverrideZ():
+	useOverrideZ = false
+	usePlayerDistanceForTargetZ = true
 	

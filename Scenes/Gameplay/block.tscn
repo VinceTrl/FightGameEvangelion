@@ -32,6 +32,7 @@ shape = SubResource("BoxShape3D_m21dq")
 [node name="GroundMagnet" parent="." instance=ExtResource("3_57dtm")]
 cast_distance = 5.0
 offset_above_ground = 0.01
+auto_align_on_ready = false
 auto_align_on_update = false
 
 [node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]

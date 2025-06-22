@@ -1,6 +1,8 @@
 extends Node3D
 
 @export var stagePaths: Array[String] = []
+@export var debugMode = false
+@export var debugSpawnIndex = 0
 var stages: Array
 
 
@@ -12,13 +14,24 @@ func PreloadResources():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PreloadResources()
-	SpawnStage()
+	
+	if(debugMode):
+		SpawnStage(debugSpawnIndex)
+		return
+	
+	RandomSpawnStage()
 	
 	
-func SpawnStage():
+func RandomSpawnStage():
 	if(stages.size() <= 0):
 		print("NO STAGE LOADED")
 		return
 	var ranIndex = randi_range(0,stages.size()-1)
-	var stage = stages[ranIndex].instantiate()
+	SpawnStage(ranIndex)
+
+func SpawnStage(stageIndex:int):
+	if(stages.size() <= 0):
+		print("NO STAGE LOADED")
+		return
+	var stage = stages[stageIndex].instantiate()
 	add_child(stage)
