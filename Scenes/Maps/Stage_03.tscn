@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxkkxysy7y8vf"]
+[gd_scene load_steps=9 format=3 uid="uid://cxkkxysy7y8vf"]
 
 [ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_fve1k"]
 [ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_1wtsl"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_hxax3"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="4_jtpew"]
 [ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="5_cnx6r"]
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="7_3jnp0"]
 
@@ -201,6 +202,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
 
 [node name="Spawner9" parent="Gameplay/Objects/Spawners" instance=ExtResource("3_hxax3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 0)
+
+[node name="PenpenLocations" type="Node3D" parent="Gameplay"]
+
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenpenLocations"]
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 1.5, 0)
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00934029, 2.17404, 0)
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33263, 1.52868, 0)
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation5" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79545, 0.223623, 0)
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3144, 0.0371858, 0)
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation7" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84069, 0.0371858, 0)
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation8" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5473, 1.31356, 0)
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37132, 2.93413, 0)
+script = ExtResource("4_jtpew")
+
+[node name="PenpenLocation10" type="Node3D" parent="Gameplay/PenpenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42868, 2.93413, 0)
+script = ExtResource("4_jtpew")
 
 [node name="Level" type="Node3D" parent="."]
 

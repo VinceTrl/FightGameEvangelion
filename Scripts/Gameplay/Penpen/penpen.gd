@@ -12,6 +12,9 @@ extends Node3D
 @export_range(0.0, 1.0, 0.001) var slapChance = 0.25
 @export var moveSpeed:float = 3
 @export var startingMoveDirection: Vector3
+@export var moveEaseType:Tween.EaseType = Tween.EASE_IN_OUT
+@export var moveTransType:Tween.TransitionType = Tween.TRANS_LINEAR
+@export var moveTowardsLocation:bool = true
 
 var animationPlayer: AnimationPlayer
 var animationTree: AnimationTree
@@ -23,14 +26,20 @@ var isOutOfScreen = false
 var isDead = false
 var currentHealthPoint = healthPoints
 var currentMoveDirection = startingMoveDirection
+var locations:Array[PenpenLocation]
+var targetLocation:PenpenLocation
+var tween
 
 signal OnPenpenHurt
 signal OnPenpenDeath
+signal OnMoveStart
+signal OnMoveEnd
 
 func _ready():
 	animationPlayer = GetAnimationPlayer(self)
 	animationTree = GetAnimationTree(self)
 	hurtbox = GetHurtbox(self)
+	GetAllPenpenLocations()
 	
 	if animationPlayer:
 		print("AnimationPlayer found ")
@@ -47,14 +56,18 @@ func _ready():
 	else:
 		print("!!! HURTBOX NOT FOUND !!!")
 		
-	currentMoveDirection = startingMoveDirection
+	#currentMoveDirection = startingMoveDirection
 	#SetRandomDirection()
+	global_position = GetRandomLocation().global_position
+	OnMoveEnd.connect(MovePenpenToLocation)
+	MovePenpenToLocation()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#Move(delta)
-	MovePenpen(delta)
+	#MovePenpen(delta)
 	#ClampInScreen()
+	pass
 
 func GetAnimationPlayer(node: Node) -> AnimationPlayer:
 	for child in node.get_children():
@@ -87,6 +100,11 @@ func GetHurtbox(node: Node) -> Hurtbox:
 			return found
 	return null
 	
+func GetAllPenpenLocations():
+	var nodes = get_tree().get_nodes_in_group("PenpenLocation")
+	for node in nodes:
+		if(node is PenpenLocation):
+			locations.append(node)
 	
 func PenpenSpawnItem():
 	Manager.spawnManager.RandomSpawn(spawner,spawner.items)
@@ -154,28 +172,40 @@ func SetRandomDirection():
 	var ranY = randi_range(-1,1)
 	
 	currentMoveDirection = Vector3(ranX,ranY,0).normalized()
-
-#func MovePenpen(delta):
-	#var z_plane := 0.0  # profondeur à laquelle le logo "vit"
-	#var camera = Manager.gameCamera.camera
-	#
-	## Mouvement simple
-	#global_position += currentMoveDirection.normalized() * moveSpeed * delta
-#
-	## Vérifier position à l'écran
-	#var screen_pos = camera.unproject_position(global_transform.origin)
-#
-	#var viewport_size = get_viewport().get_visible_rect().size
-#
-	## Rebondir sur les bords X (gauche/droite)
-	#if screen_pos.x <= 0 or screen_pos.x >= viewport_size.x:
-		#currentMoveDirection.x = -currentMoveDirection.x
-#
-	## Rebondir sur les bords Y (haut/bas)
-	#if screen_pos.y <= 0 or screen_pos.y >= viewport_size.y:
-		#currentMoveDirection.y = -currentMoveDirection.y
+	
+func GetRandomLocation()-> PenpenLocation:
+	randomize()
+	var ranIndex = randi_range(0,locations.size()-1)
+	return locations[ranIndex]
+	
+func GetTweenTime(targetPosition:Vector3) -> float:
+	var distance = position.distance_to(targetPosition)
+	return distance / moveSpeed
+	
+func GoTowardsLocation(targetPosition: Vector3,travelTime: float = 1.0):
+	if(tween):
+		tween.kill()
 		
+	tween = get_tree().create_tween()
+	tween.set_ease(moveEaseType)
+	tween.set_trans(moveTransType)
+	tween.set_parallel(true)
+	
+	tween.tween_property(self,"global_position:x",targetPosition.x,travelTime)
+	tween.tween_property(self,"global_position:y",targetPosition.y,travelTime)
+	tween.tween_property(self,"global_position:z",targetPosition.z,travelTime)
 		
+	OnMoveStart.emit()
+	await tween.finished
+	OnMoveEnd.emit()
+		
+func MovePenpenToLocation():
+	targetLocation = GetRandomLocation()
+	var targetPos = targetLocation.global_position
+	var time = GetTweenTime(targetPos)
+	GoTowardsLocation(targetPos,time)
+	
+	
 func MovePenpen(delta):
 	global_position += currentMoveDirection.normalized() * moveSpeed * delta
 	
