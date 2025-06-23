@@ -18,7 +18,7 @@ func EnterState():
 	
 	#await get_tree().create_timer(glitchEffect.glitchEffectTime,true,false,true).timeout
 	
-	Player.animator.play("Death")
+	PlayDeathAnimation()
 	PlayDeathSFX()
 	Manager.timeManager.slowMotion(0.25,2.0)
 	Manager.gameCamera.camShake.AskCamShake("FinalHitShake")
@@ -38,20 +38,26 @@ func Update(delta: float):
 	HandleAnimations()
 	
 func HandleAnimations():
-	Player.HandleFlipH()
+	#Player.HandleFlipH()
+	pass
 	
 func DestroyPlayer():
 	pass
 	
+func PlayDeathAnimation():
+	Player.animator.play("Death")
+	await Player.animator.animation_finished
+	Player.animator.play("DeathLoop")
+	
 func PlayDeathSFX():
 	var hitbox = Player.lastHitbox
 	
-	if(hitbox == Hitbox.DamageType.Melee):
-		sfx_hurt.stream = SD_ATTACK_IMPACT
-	else:
-		sfx_hurt.stream = SD_IMPACTPROJECTILE
-	
 	if(hitbox != null):
+		if(hitbox.type == Hitbox.DamageType.Melee):
+			sfx_hurt.stream = SD_ATTACK_IMPACT
+		else:
+			sfx_hurt.stream = SD_IMPACTPROJECTILE
+	
 		if(hitbox.type == Hitbox.DamageType.Volume):
 			sfx_kiki.play()
 		else:
