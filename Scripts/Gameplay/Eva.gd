@@ -114,6 +114,7 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	animPlayer.play("Armature|Slap_Recover")
 	await animPlayer.animation_finished
 	OnSlapEnd.emit()
+	GoTowardsPosition(initialPosition,timeToReachTarget)
 	
 func StartSlapHitbox():
 	if(slapWarning == null): return

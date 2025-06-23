@@ -168,14 +168,10 @@ transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.
 [node name="Robot_eva_03" parent="Robot Pivot" instance=ExtResource("1_amx48")]
 transform = Transform3D(3.98352, -0.166432, -0.0077004, 0.119631, 2.98548, -2.63984, 0.115963, 2.63731, 2.98786, 0.00796632, -3.76792, -5.05475)
 
-[node name="Armature" parent="Robot Pivot/Robot_eva_03" index="0"]
-transform = Transform3D(0.999802, 0.0192732, 0.00496247, -0.0183322, 0.988919, -0.147317, -0.00774675, 0.147197, 0.989077, 0, 0, 0)
-
 [node name="Skeleton3D" parent="Robot Pivot/Robot_eva_03/Armature" index="0"]
 bones/0/position = Vector3(-0.052142, 5.31178, -0.343636)
 bones/0/rotation = Quaternion(-0.0097985, -0.0125065, 0.0684357, 0.997529)
 bones/1/position = Vector3(7.7486e-08, 0.290941, 0.0447505)
-bones/1/rotation = Quaternion(0.140009, 0.00232958, -0.0485443, 0.988957)
 bones/2/position = Vector3(-1.62423e-08, 0.343422, -7.88644e-08)
 bones/2/rotation = Quaternion(-0.0353678, -0.0110381, -0.0506839, 0.998027)
 bones/3/position = Vector3(-3.53158e-08, 0.392483, 5.23031e-08)
@@ -197,7 +193,6 @@ bones/11/rotation = Quaternion(-0.201636, -0.65866, 0.0833752, 0.72011)
 bones/12/position = Vector3(-0.112958, 0.0964689, 0.0836286)
 bones/12/rotation = Quaternion(-0.0269159, 0.23402, 0.269938, 0.933619)
 bones/13/position = Vector3(-0.0162063, 0.133322, 0.0177207)
-bones/13/rotation = Quaternion(0.0602719, -0.111317, -0.0340815, 0.99137)
 bones/14/position = Vector3(0.00749126, 0.173075, 4.3869e-07)
 bones/14/rotation = Quaternion(0.0241005, -0.0278401, 0.101947, 0.994108)
 bones/15/position = Vector3(0.0566097, 0.164463, 6.86646e-07)
@@ -250,7 +245,6 @@ bones/41/rotation = Quaternion(0.112058, -0.278892, -0.0036564, 0.953755)
 bones/42/position = Vector3(0.0675412, 0.122461, 2.76566e-07)
 bones/42/rotation = Quaternion(0.17054, 0.121927, 0.249666, 0.945366)
 bones/43/position = Vector3(-0.00477134, 0.173355, -2.61068e-07)
-bones/43/rotation = Quaternion(-0.162862, -0.0262613, 0.0109021, 0.986239)
 bones/44/position = Vector3(-0.0627685, 0.159191, 1.62125e-07)
 bones/44/rotation = Quaternion(-4.88944e-08, 1.50874e-07, 4.6799e-08, 1)
 bones/46/position = Vector3(0.126791, 0.35263, 0.0168157)
@@ -307,19 +301,19 @@ bones/76/position = Vector3(-2.09808e-07, 0.307799, 0)
 bones/76/rotation = Quaternion(2.23517e-08, -4.09782e-08, 4.47035e-08, 1)
 
 [node name="BoneAttachment3D_LeftArm" parent="Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.10003, 0.554967, -0.825836, 0.297099, -0.808794, -0.507528, -0.949592, -0.194587, -0.245785, 0.768664, 6.14766, -0.201292)
+transform = Transform3D(0.100031, 0.554967, -0.825836, 0.297099, -0.808794, -0.507528, -0.949592, -0.194587, -0.245785, 0.768664, 6.14766, -0.201292)
 
 [node name="BoneAttachment3D2_RightArm" parent="Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="3"]
-transform = Transform3D(0.538114, -0.483237, -0.69059, 0.573405, 0.810396, -0.120269, 0.61777, -0.331269, 0.713176, -0.484029, 6.75718, -0.222791)
+transform = Transform3D(0.538114, -0.483237, -0.69059, 0.573405, 0.810396, -0.120269, 0.61777, -0.33127, 0.713176, -0.484029, 6.75718, -0.222791)
 
 [node name="BoneAttachment3D3_LeftFoot" parent="Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.910595, 0.123141, 0.394529, 0.0808256, -0.883093, 0.462183, 0.405319, 0.45275, 0.794188, -0.844984, 1.70597, -0.955342)
+transform = Transform3D(-0.910595, 0.123141, 0.394529, 0.0808256, -0.883093, 0.462183, 0.405319, 0.45275, 0.794187, -0.844984, 1.70597, -0.955341)
 
 [node name="BoneAttachment3D4_RightFoot" parent="Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="5"]
-transform = Transform3D(-0.50852, -0.860634, -0.0267656, 0.52069, -0.332119, 0.786498, -0.685776, 0.386014, 0.617012, -1.98101, 1.79892, -0.753069)
+transform = Transform3D(-0.50852, -0.860634, -0.0267656, 0.52069, -0.332119, 0.786498, -0.685776, 0.386014, 0.617012, -1.98101, 1.79892, -0.753068)
 
 [node name="BoneAttachment_Hitbox" parent="Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="6"]
-transform = Transform3D(0.630544, 0.681132, 0.37212, -0.272449, -0.254693, 0.927849, 0.726764, -0.686433, 0.0249783, 2.21502, 5.12967, -0.718872)
+transform = Transform3D(0.630544, 0.681132, 0.37212, -0.272449, -0.254693, 0.927849, 0.726764, -0.686433, 0.0249789, 2.21502, 5.12967, -0.718872)
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Robot Pivot/Robot_eva_03"]
 transform = Transform3D(0.999948, -0.00821157, -0.00605043, 0.0100089, 0.675693, 0.737115, -0.00196457, -0.737137, 0.67574, 0.473005, 0.30621, -0.923737)
