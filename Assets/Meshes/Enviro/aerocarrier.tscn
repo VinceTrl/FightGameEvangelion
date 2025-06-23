@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnxul8wmnkor3"]
+
+[ext_resource type="PackedScene" uid="uid://bexauyuy1tnsk" path="res://Sources/Blend/FBXs/Aerocarrier.fbx" id="1_mlx0q"]
+[ext_resource type="Material" uid="uid://q4x3utqq7yat" path="res://Assets/Materials/Enviro/M_AerocarrierAtlas.tres" id="2_i5obk"]
+
+[node name="Aerocarrier" instance=ExtResource("1_mlx0q")]
+
+[node name="Eva_Aerocarrier_Mesh" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_i5obk")
