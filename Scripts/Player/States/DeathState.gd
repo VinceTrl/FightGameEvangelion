@@ -2,6 +2,11 @@ extends PlayerState
 
 @export var glitchEffect: GlitchParameters
 @onready var sfx_mi: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Mi"
+@onready var sfx_kiki: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Kiki"
+@onready var sfx_hurt: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Hurt"
+
+const SD_ATTACK_IMPACT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_attackIMPACT.wav")
+const SD_IMPACTPROJECTILE = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_impactprojectile.wav")
 
 func EnterState():
 	Name = "Death"
@@ -14,7 +19,7 @@ func EnterState():
 	#await get_tree().create_timer(glitchEffect.glitchEffectTime,true,false,true).timeout
 	
 	Player.animator.play("Death")
-	sfx_mi.play()
+	PlayDeathSFX()
 	Manager.timeManager.slowMotion(0.25,2.0)
 	Manager.gameCamera.camShake.AskCamShake("FinalHitShake")
 	Manager.gameCamera.CameraZoom(Player,Manager.gameCamera.GetZoomParamFromName("DeathZoom"))
@@ -37,3 +42,20 @@ func HandleAnimations():
 	
 func DestroyPlayer():
 	pass
+	
+func PlayDeathSFX():
+	var hitbox = Player.lastHitbox
+	
+	if(hitbox == Hitbox.DamageType.Melee):
+		sfx_hurt.stream = SD_ATTACK_IMPACT
+	else:
+		sfx_hurt.stream = SD_IMPACTPROJECTILE
+	
+	if(hitbox != null):
+		if(hitbox.type == Hitbox.DamageType.Volume):
+			sfx_kiki.play()
+		else:
+			sfx_hurt.play()
+			sfx_mi.play()
+	else:
+		sfx_mi.play()
