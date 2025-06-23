@@ -102,7 +102,7 @@ script = ExtResource("1_bluxh")
 texture_filter = 0
 texture = ExtResource("1_w5cum")
 hframes = 9
-vframes = 13
+vframes = 18
 frame = 81
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
