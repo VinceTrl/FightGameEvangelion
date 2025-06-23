@@ -590,8 +590,14 @@ spot_range = 49.3115
 [node name="Meshes" parent="Meshes/Enviro" index="2"]
 transform = Transform3D(1.59308, 0, 0, 0, 1.59308, 0, 0, 0, 1.59308, 0, -3.01737, -3.63236)
 
+[node name="City Pivot" parent="Meshes/Enviro/Meshes/R/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
 [node name="Mesh_buildingsLoop_03" parent="Meshes/Enviro/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="City Pivot" parent="Meshes/Enviro/Meshes/R2/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Meshes/Enviro/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -710,8 +716,8 @@ transform = Transform3D(0.998719, -0.0305181, -0.0403521, 0, 0.797584, -0.603208
 animPlayerChore = NodePath("../SLAP_Choregraphie/AnimLight_Slap")
 slapStartPauseDuration = 1.0
 
-[node name="Armature" parent="Meshes/EVA/Robot Pivot/Robot_eva_03" index="0"]
-transform = Transform3D(0.999802, 0.0192732, 0.00496247, -0.0183322, 0.988919, -0.147317, -0.00774675, 0.147197, 0.989077, 0, 0, 0)
+[node name="Robot Pivot" parent="Meshes/EVA" index="0"]
+transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
 [node name="Skeleton3D" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature" index="0"]
 bones/0/position = Vector3(-0.052142, 5.31244, -0.345243)
@@ -788,7 +794,6 @@ bones/41/rotation = Quaternion(0.113396, -0.272964, -0.00674359, 0.955294)
 bones/42/position = Vector3(0.0675412, 0.122461, 2.76566e-07)
 bones/42/rotation = Quaternion(0.165285, 0.121684, 0.240311, 0.948749)
 bones/43/position = Vector3(-0.00477134, 0.173355, -2.61068e-07)
-bones/43/rotation = Quaternion(-0.162862, -0.0262613, 0.0109021, 0.986239)
 bones/44/position = Vector3(-0.0627685, 0.159191, 1.62125e-07)
 bones/44/rotation = Quaternion(-4.88944e-08, 1.50874e-07, 4.6799e-08, 1)
 bones/46/position = Vector3(0.126791, 0.35263, 0.0168157)
