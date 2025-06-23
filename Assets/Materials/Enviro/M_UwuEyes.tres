@@ -1,3 +1,9 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bn7nur2ulkf08"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bn7nur2ulkf08"]
+
+[ext_resource type="Texture2D" uid="uid://cj4yoqxg7cofj" path="res://Sources/Textures/T_uwuEyes.png" id="1_p05py"]
 
 [resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_p05py")

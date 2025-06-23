@@ -48,7 +48,7 @@ func MoveTrail(targetPosition: Vector3):
 	var _initPos = global_position
 	var _targetPos = targetPosition
 	var time = GetTweenTime(_targetPos)
-	var timer = get_tree().create_timer(time,true,false,false)
+	var timer = get_tree().create_timer(1,true,false,false)
 	
 	var positiveOffset: bool = randi_range(0,1)
 	

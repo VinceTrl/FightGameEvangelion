@@ -4,18 +4,18 @@
 [ext_resource type="SpriteFrames" uid="uid://boywxim1x038u" path="res://Assets/Sprites/BulletSpriteSheet.tres" id="1_d8u61"]
 
 [sub_resource type="Curve" id="Curve_aeft5"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494357, 0.502128), 4.72623, 4.72623, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 1.32338, 0, 0, Vector2(1, 1), 0.157607, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_g71in"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.501129, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.922421, 0, 0, Vector2(0.5, 1), 2.0, -2.0, 1, 1, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [node name="SpawnTrail" type="Node3D"]
 script = ExtResource("1_1c6fn")
-moveSpeed = 1.5
+moveSpeed = 1.0
 moveTransType = 2
-offsetX = 1.0
+offsetX = 0.25
 animationCurve = SubResource("Curve_aeft5")
 offsetCurveX = SubResource("Curve_g71in")
 

@@ -4,13 +4,20 @@ extends Node3D
 const SLAP_WARNING = preload("res://Scenes/GUI/Slap/slap_warning.tscn")
 
 @export var AnimationPlayerName:String = "AnimationPlayer"
-@export var timeToReachTarget:float = 1.5
+@export var animPlayerChore:AnimationPlayer
+@export var timeToReachTarget:float = 0.5
 @export var slapStartPauseDuration = 1.0
 @export var evaSlapOffset:Vector3
 var animPlayer: AnimationPlayer
 var hitbox: Hitbox
 var initialPosition
 var slapWarning
+
+signal OnSlapStart
+signal OnSlapPoseReached
+signal OnSlapHitStart
+signal OnSlapHitEnd
+signal OnSlapEnd
 
 
 # Called when the node enters the scene tree for the first time.
@@ -69,40 +76,51 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	
 	#move towards target position
 	var targetPos = Vector3(global_position.x,slapPosition.y,global_position.z) + evaSlapOffset
+	OnSlapStart.emit()
+	animPlayerChore.play("AnimLight_Slap_Intro")
+	animPlayer.play("Armature|Slap_Start")
 	
+	#await animPlayer.animation_finished
+	await animPlayerChore.animation_finished
+	OnSlapPoseReached.emit()
+	await get_tree().create_timer(slapStartPauseDuration,true,false,false).timeout
 	
+	animPlayerChore.play("AnimLight_Slap_PreHit")
+	
+	#SPAWN_WARNING
 	var warning = SLAP_WARNING.instantiate()
 	get_tree().current_scene.add_child(warning)
 	warning.global_position = Vector3(0,slapPosition.y,0)
 	slapWarning = warning
 	
+	
+	await animPlayerChore.animation_finished
+	
+	
+	warning.SetWarningToAllTargets()
+	
+	#movement
 	GoTowardsPosition(targetPos,timeToReachTarget)
 	await get_tree().create_timer(timeToReachTarget,true,false,false).timeout
 	
-	animPlayer.play("Armature|Slap_Start")
-	await animPlayer.animation_finished
-	
-	#Slap Pause
-	
-	warning.SetWarningToAllTargets()
-	await get_tree().create_timer(slapStartPauseDuration,true,false,false).timeout
-	
 	#Launch Slap
 	animPlayer.play("Armature|Slap_Hit")
-	#hitbox.ActiveHitBox()
+	animPlayerChore.play("AnimLight_Slap_Hit")
 	await animPlayer.animation_finished
 	
-	#Slap finished
-	#hitbox.InactiveHitBox()
-	#warning.queue_free()
+	#recover
 	Manager.gameCamera.RemoveCameraTarget(self)
 	Manager.gameCamera.usePlayerDistanceForTargetZ = true
 	animPlayer.play("Armature|Slap_Recover")
+	await animPlayer.animation_finished
+	OnSlapEnd.emit()
 	
 func StartSlapHitbox():
 	if(slapWarning == null): return
 	slapWarning.Slap()
+	OnSlapHitStart.emit()
 	print("SLAAAAP")
 	
 func EndSlapHitBox():
+	OnSlapHitEnd.emit()
 	print("STOP SLAAAAP")
