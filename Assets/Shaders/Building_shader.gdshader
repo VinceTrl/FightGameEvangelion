@@ -1,6 +1,6 @@
 shader_type spatial;
 //render_mode unshaded;
-render_mode depth_draw_never;
+//render_mode blend_premul_alpha;
 
 //SOUND INTEGRATION
 global uniform sampler2D spectrum_texture; //global variable set up in Project Settings
@@ -145,7 +145,7 @@ void fragment() {
 
 	EMISSION = vec3(pow(EMISSION.r, 1.0), pow(EMISSION.g, 1.0), pow(EMISSION.b, 1.0));
 	EMISSION *= 0.01;
-	
+
 	NORMAL = estimateNormal(texture(Diffuse, vec2(UV.x, UV.y)).xyz) * vec3(0.0, 0.0, 0.0001);
 	METALLIC = 1.0;
 	ROUGHNESS = 1.0;

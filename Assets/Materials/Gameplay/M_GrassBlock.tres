@@ -8,7 +8,7 @@ render_priority = 0
 shader = ExtResource("2_el7db")
 shader_parameter/outline_color = Color(1, 0.5, 0, 1)
 shader_parameter/outline_width = 1.0
-shader_parameter/outline_opacity = 0.1
+shader_parameter/outline_opacity = 0.3
 
 [resource]
 resource_name = "Grass_Block_TEX"
