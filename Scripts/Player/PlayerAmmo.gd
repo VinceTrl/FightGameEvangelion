@@ -24,6 +24,7 @@ signal OnAmmoRemoved
 signal OnReloadTimerEnd
 
 func _ready() -> void:
+	currentAmmo = startAmmo
 	OnReloadTimerEnd.connect(AddAmmo)
 	OnReloadTimerEnd.connect(StartReloadTimer)
 	StartReloadTimer()

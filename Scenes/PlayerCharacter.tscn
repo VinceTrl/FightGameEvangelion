@@ -965,7 +965,8 @@ one_shot = true
 
 [node name="PlayerAmmo" type="Node" parent="."]
 script = ExtResource("28_oqnrj")
-startAmmo = 10
+maxAmmo = 7
+startAmmo = 5
 reloadOverTime = false
 
 [node name="HitboxUp" type="Area3D" parent="."]
