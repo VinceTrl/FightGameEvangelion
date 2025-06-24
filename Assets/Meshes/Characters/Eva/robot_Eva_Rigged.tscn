@@ -49,7 +49,6 @@ bones/12/rotation = Quaternion(0.140844, 0.197348, 0.0452516, 0.969107)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-0.0641012, 0.120371, 1.10865e-07)
 bones/13/rotation = Quaternion(0.0602719, -0.111317, -0.0340815, 0.99137)
-bones/13/scale = Vector3(1, 1, 1)
 bones/14/position = Vector3(0.00749138, 0.173075, -6.67572e-08)
 bones/14/rotation = Quaternion(-0.158402, 0.0273894, 0.0163005, 0.98686)
 bones/14/scale = Vector3(1, 1, 1)
@@ -201,12 +200,12 @@ bones/75/scale = Vector3(1, 1, 1)
 bones/76/position = Vector3(-3.57628e-08, 0.307799, 0)
 bones/76/rotation = Quaternion(1.11759e-08, -5.4948e-08, 4.88944e-08, 1)
 
-[node name="bdef_‘•b2" parent="Armature/Skeleton3D" index="0"]
+[node name="bdef_‘•b1_001" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_tpkj1")
+
+[node name="bdef_‘•b2" parent="Armature/Skeleton3D" index="1"]
 surface_material_override/0 = ExtResource("2_tpkj1")
 surface_material_override/1 = ExtResource("2_tpkj1")
-
-[node name="bdef_‘•b1_001" parent="Armature/Skeleton3D" index="1"]
-surface_material_override/0 = ExtResource("2_tpkj1")
 
 [node name="BoneAttachment3D_LeftArm" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
 transform = Transform3D(-0.0965796, 0.760593, -0.642005, 0.119866, -0.631438, -0.766106, -0.988081, -0.150945, -0.030185, 0.765589, 5.60132, 0.207164)

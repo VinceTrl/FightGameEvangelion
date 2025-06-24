@@ -16,3 +16,4 @@ vibrationName = &"ShootVibration"
 duration = 0.7
 weakMagnitude = SubResource("Curve_4d4lh")
 strongMagnitude = SubResource("Curve_b0h5e")
+loop = false
