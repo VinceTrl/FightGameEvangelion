@@ -3,5 +3,4 @@
 [ext_resource type="Texture2D" uid="uid://b376imy21e13o" path="res://Sources/Textures/T_ColorsAtlas.png" id="1_12ajf"]
 
 [resource]
-transparency = 4
 albedo_texture = ExtResource("1_12ajf")
