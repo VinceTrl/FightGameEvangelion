@@ -2,7 +2,8 @@ shader_type spatial;
 render_mode unshaded,blend_mix,depth_prepass_alpha,cull_disabled,specular_disabled;
 uniform sampler2D sprite_texture : source_color, filter_nearest;
 uniform vec4 additiveColor : source_color = vec4(0.0, 0.0, 0.0, 1.0);
-
+uniform float alpha: hint_range(0.0, 1.0) = 1.0;
+/*
 uniform vec4 line_color : source_color = vec4(1.0,1.0,1.0,1.0); // Glow or outline color
 uniform float glowSize: hint_range(0.0, 300) = 15.0; // Size of glow
 uniform int glowDensity: hint_range(0, 30) = 3; // How many stamps to repeat in one direction
@@ -10,6 +11,7 @@ uniform int glowRadialCoverage: hint_range(0, 32) = 4; // How many directions to
 uniform float glowAngle: hint_range(0.0, 6.28) = 1.57; // The starting angle. More important if you want to use this as a trail.
 uniform float glowSharpness: hint_range(0.0, 5.0) = 1.0; // Effect how quickly stamps become transparent as they move out
 uniform float alphaThreshold: hint_range(0.0, 1.0) =  0.2; // Alpha level a pixel should be considered a glow
+*/
 
 //Goes through every single pixle and does thing
 void fragment() {
@@ -17,7 +19,7 @@ void fragment() {
 
 	// Sets source image as default pixel
 	ALBEDO = col.rgb + additiveColor.rgb;
-	ALPHA = col.a;
+	ALPHA = col.a  * alpha;
 
 /*
 	vec2 pixel_size = 1.0 / vec2(textureSize(sprite_texture, 0)); // Set pixel size
