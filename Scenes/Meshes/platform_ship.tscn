@@ -1,10 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://bciapmt83r2n4"]
+[gd_scene load_steps=17 format=3 uid="uid://bciapmt83r2n4"]
 
 [ext_resource type="Script" path="res://Scripts/Level/MovingPlatform.gd" id="1_vuq4s"]
-[ext_resource type="PackedScene" uid="uid://datj05j6lj0no" path="res://Assets/Meshes/Props/EvaAeroCarrier/eva_aerocarrier.fbx" id="2_508nm"]
+[ext_resource type="PackedScene" uid="uid://cafpr105xx1q7" path="res://Sources/Meshes/AerocarrierV2.fbx" id="2_mfhgm"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="3_fjin5"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_h3v5s"]
+[ext_resource type="Material" uid="uid://q4x3utqq7yat" path="res://Assets/Materials/Enviro/M_AerocarrierAtlas.tres" id="4_iesvs"]
 [ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Slap_Cible.png" id="5_3g813"]
+
+[sub_resource type="Curve" id="Curve_nlbt0"]
+
+[sub_resource type="Curve" id="Curve_ceg5i"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.496203, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_jwqbi"]
 
 [sub_resource type="Curve" id="Curve_rsivw"]
 
@@ -57,13 +66,23 @@ animations = [{
 [node name="PlatformShip" type="Node3D"]
 script = ExtResource("1_vuq4s")
 
-[node name="eva_aerocarrier" parent="." instance=ExtResource("2_508nm")]
+[node name="AerocarrierV2" parent="." instance=ExtResource("2_mfhgm")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+script = ExtResource("3_fjin5")
+positionTime = 3.0
+positionTarget = Vector3(0, 0.1, 0)
+positionCurveX = SubResource("Curve_nlbt0")
+positionCurveY = SubResource("Curve_ceg5i")
+positionCurveZ = SubResource("Curve_jwqbi")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="eva_aerocarrier"]
-transform = Transform3D(0.1, 0, 0, 0, 0.15, 0, 0, 0, 0.1, 0, 0, 0)
+[node name="Eva_Aerocarrier" parent="AerocarrierV2" index="0"]
+material_override = ExtResource("4_iesvs")
+cast_shadow = 0
 
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="eva_aerocarrier/StaticBody3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="AerocarrierV2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="AerocarrierV2/StaticBody3D"]
 polygon = PackedVector2Array(-1.53231, -0.0361359, -0.138224, -0.0151947, -0.0694166, -0.051094, 0.0771719, -0.0570771, 0.122046, -0.0211779, 1.52662, -0.0418728, 0.14481, 0.0383835, -0.130853, 0.0418729)
 
 [node name="CameraTarget" parent="." instance=ExtResource("4_h3v5s")]
@@ -105,3 +124,5 @@ sprite_frames = SubResource("SpriteFrames_7adgm")
 animation = &"Warning"
 autoplay = "Empty"
 frame_progress = 0.450105
+
+[editable path="AerocarrierV2"]

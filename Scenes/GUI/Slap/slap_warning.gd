@@ -25,7 +25,7 @@ signal OnHitboxDealDamage
 func _ready() -> void:
 	slapHitbox = GetHitbox(self)
 	slapHitbox.InactiveHitBox()
-	slapHitbox.OnHitSuccess.connect(OnHit)
+	slapHitbox.OnHit.connect(OnHit)
 	#slapHitbox.collision_shape.disabled = true
 	SpawnAlongLine()
 	pass # Replace with function body.

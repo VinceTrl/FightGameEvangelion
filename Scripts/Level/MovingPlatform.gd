@@ -1,7 +1,8 @@
 class_name MovingPlatform
 extends Node3D
 
-@onready var collision: CollisionPolygon3D = $eva_aerocarrier/StaticBody3D/CollisionPolygon3D
+
+@onready var collision: CollisionPolygon3D = $AerocarrierV2/StaticBody3D/CollisionPolygon3D
 @onready var camera_target: Node3D = $CameraTarget
 @onready var sprites: Node3D = $Sprites
 

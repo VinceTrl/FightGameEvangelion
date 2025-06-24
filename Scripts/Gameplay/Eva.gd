@@ -125,3 +125,9 @@ func StartSlapHitbox():
 func EndSlapHitBox():
 	OnSlapHitEnd.emit()
 	print("STOP SLAAAAP")
+	
+func SpawnWarning(warningPos:Vector3):
+	var warning = SLAP_WARNING.instantiate()
+	get_tree().current_scene.add_child(warning)
+	warning.global_position = Vector3(0,warningPos.y,0)
+	slapWarning = warning
