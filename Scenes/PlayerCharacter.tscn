@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=74 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -41,6 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://b3k2bh6t8jvb8" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi4.wav" id="38_ipwkm"]
 [ext_resource type="AudioStream" uid="uid://dw5yrjagxb345" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi5.wav" id="39_fiots"]
 [ext_resource type="AudioStream" uid="uid://conlqs7i2mi11" path="res://Assets/Sounds/SFX/DoudouSFX/SD_kikiiiiiiiiiiiiiiiii.wav" id="42_4e748"]
+[ext_resource type="AudioStream" uid="uid://cmny634ywrhvs" path="res://Assets/Sounds/SFX/DoudouSFX/SD_kikiiii.wav" id="42_af708"]
 
 [sub_resource type="Curve" id="Curve_qv1t1"]
 _data = [Vector2(0, 0), 0.0, 0.0342598, 0, 0, Vector2(1, 1), 0.174008, 0.0, 0, 0]
@@ -798,6 +799,11 @@ stream_2/stream = ExtResource("37_nr6h1")
 stream_3/stream = ExtResource("38_ipwkm")
 stream_4/stream = ExtResource("39_fiots")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yh1nb"]
+streams_count = 2
+stream_0/stream = ExtResource("42_4e748")
+stream_1/stream = ExtResource("42_af708")
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 axis_lock_linear_z = true
@@ -1043,7 +1049,7 @@ stream = SubResource("AudioStreamRandomizer_lnam8")
 bus = &"SFX"
 
 [node name="Sfx_Kiki" type="AudioStreamPlayer3D" parent="PlayerAudio"]
-stream = ExtResource("42_4e748")
+stream = SubResource("AudioStreamRandomizer_yh1nb")
 bus = &"SFX"
 
 [node name="RaycastHolder" type="Node3D" parent="."]
