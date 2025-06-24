@@ -19,11 +19,13 @@ var targets: Array = []
 var slapHitbox:Hitbox
 
 signal OnAllObjectSpawned
+signal OnHitboxDealDamage
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	slapHitbox = GetHitbox(self)
 	slapHitbox.InactiveHitBox()
+	slapHitbox.OnHitSuccess.connect(OnHit)
 	#slapHitbox.collision_shape.disabled = true
 	SpawnAlongLine()
 	pass # Replace with function body.
@@ -108,3 +110,7 @@ func MoveHitbox(targetPosition: Vector3,travelTime: float = 1.0,ease:Tween.EaseT
 	tween.tween_property(slapHitbox,"position:x",targetPosition.x,travelTime)
 	tween.tween_property(slapHitbox,"position:y",targetPosition.y,travelTime)
 	tween.tween_property(slapHitbox,"position:z",targetPosition.z,travelTime)
+	
+	
+func OnHit():
+	OnHitboxDealDamage.emit()

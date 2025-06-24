@@ -483,6 +483,23 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_hk6gi"]
+resource_name = "DeathLoop"
+length = 0.400003
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [126, 127, 128, 129, 130, 131, 132]
+}
+
 [sub_resource type="Animation" id="Animation_kla1b"]
 resource_name = "Fall"
 length = 0.200003
@@ -726,23 +743,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155]
-}
-
-[sub_resource type="Animation" id="Animation_hk6gi"]
-resource_name = "DeathLoop"
-length = 0.400003
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [126, 127, 128, 129, 130, 131, 132]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jxbaw"]

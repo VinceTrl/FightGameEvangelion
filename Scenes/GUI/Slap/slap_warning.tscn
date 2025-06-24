@@ -17,6 +17,7 @@ size = Vector3(0.75, 0.6, 1)
 script = ExtResource("1_hwu3u")
 spawn_delay = 0.25
 spawn_direction = 1
+hitboxMoveDuration = 0.5
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 70, 0, 0, 0, 1, 0, 0, 0)

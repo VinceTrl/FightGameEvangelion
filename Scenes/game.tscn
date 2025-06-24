@@ -505,6 +505,9 @@ startFacingRight = false
 [node name="Sprite2D" parent="Gameplay/Player2" index="3"]
 material_override = SubResource("ShaderMaterial_rfxrm")
 
+[node name="Sfx_Kiki" parent="Gameplay/Player2/PlayerAudio" index="11"]
+stream = null
+
 [node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2", "cameraTargets") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.21107)
 player1 = NodePath("../Player")

@@ -11,6 +11,7 @@ enum DamageType {Melee,projectile,Volume,Slap}
 
 signal OnHit()
 signal OnHitboxDetected(hitbox:Hitbox)
+signal OnHitSuccess
 	
 func _init() -> void:
 	collision_layer = 4
