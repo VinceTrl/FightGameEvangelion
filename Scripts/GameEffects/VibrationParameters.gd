@@ -5,3 +5,4 @@ class_name VibrationParameters
 @export var duration: float = 1.5
 @export var weakMagnitude: Curve
 @export var strongMagnitude: Curve
+@export var loop = false

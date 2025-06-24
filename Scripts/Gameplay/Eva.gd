@@ -88,16 +88,12 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	animPlayerChore.play("AnimLight_Slap_PreHit")
 	
 	#SPAWN_WARNING
-	var warning = SLAP_WARNING.instantiate()
-	get_tree().current_scene.add_child(warning)
-	warning.global_position = Vector3(0,slapPosition.y,0)
-	slapWarning = warning
-	
+	SpawnWarning(slapPosition)
 	
 	await animPlayerChore.animation_finished
 	
 	
-	warning.SetWarningToAllTargets()
+	slapWarning.SetWarningToAllTargets()
 	
 	#movement
 	GoTowardsPosition(targetPos,timeToReachTarget)
@@ -107,12 +103,15 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	animPlayer.play("Armature|Slap_Hit")
 	animPlayerChore.play("AnimLight_Slap_Hit")
 	await animPlayer.animation_finished
+	DestroyWarning()
 	
 	#recover
 	Manager.gameCamera.RemoveCameraTarget(self)
 	Manager.gameCamera.usePlayerDistanceForTargetZ = true
 	animPlayer.play("Armature|Slap_Recover")
 	await animPlayer.animation_finished
+	
+	#end recoiver
 	OnSlapEnd.emit()
 	GoTowardsPosition(initialPosition,timeToReachTarget)
 	
@@ -126,8 +125,22 @@ func EndSlapHitBox():
 	OnSlapHitEnd.emit()
 	print("STOP SLAAAAP")
 	
+func SlapHit():
+	print("SLAAAAP FREEZE")
+	#Manager.postProcessEffects.ResetGlitch()
+	#Manager.timeManager.freezeFrame(0.001,1.25)
+	
+	
 func SpawnWarning(warningPos:Vector3):
 	var warning = SLAP_WARNING.instantiate()
 	get_tree().current_scene.add_child(warning)
 	warning.global_position = Vector3(0,warningPos.y,0)
 	slapWarning = warning
+	slapWarning.OnHitboxDealDamage.connect(SlapHit)
+	
+	
+func DestroyWarning():
+	if(!slapWarning):return
+	slapWarning.OnHitboxDealDamage.disconnect(SlapHit)
+	slapWarning.queue_free()
+	

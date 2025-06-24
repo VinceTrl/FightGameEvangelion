@@ -96,11 +96,8 @@ func Slap():
 	MoveHitbox(targetPos,hitboxMoveDuration)
 	await get_tree().create_timer(hitboxMoveDuration,false,false,false).timeout
 	slapHitbox.InactiveHitBox()
-	#slapHitbox.collision_shape.disabled = true
-	print("FINISH SLAAAAP")
-	queue_free()
 	
-func MoveHitbox(targetPosition: Vector3,travelTime: float = 1.0,ease:Tween.EaseType = Tween.EASE_IN_OUT,trans:Tween.TransitionType = Tween.TRANS_LINEAR):
+func MoveHitbox(targetPosition: Vector3,travelTime: float = 1.0,ease:Tween.EaseType = Tween.EASE_IN,trans:Tween.TransitionType = Tween.TRANS_SINE):
 	
 	var tween = get_tree().create_tween()
 	tween.set_ease(ease)

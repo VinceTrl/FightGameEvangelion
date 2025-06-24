@@ -26,8 +26,8 @@ func LaunchVibration(_targetDevice:int,_name:StringName = "DefaultVibration"):
 	var _vibration = VIBRATION.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 	add_child(_vibration)
 	lastVibration = _vibration
-	
 	_vibration.StartVibration(_targetDevice,GetVibrationFromName(_name))
+	return _vibration
 
 func GetVibrationFromName(_vibrationName: StringName) -> VibrationParameters:
 	

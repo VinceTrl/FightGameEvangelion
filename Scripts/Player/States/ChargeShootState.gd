@@ -2,6 +2,7 @@ extends PlayerState
 
 @onready var charge_shoot_timer: Timer = $"../../Timers/ChargeShootTimer"
 var hideSpearOnExit = true
+var vibration: Vibration
 
 func EnterState():
 	hideSpearOnExit = true
@@ -11,11 +12,15 @@ func EnterState():
 	Name = "ChargeShoot"
 	charge_shoot_timer.start(Player.chargeShootTime)
 	Player.animator.play("ChargeShoot")
+	vibration = Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"ChargeShootVibration")
 	
 	await charge_shoot_timer.timeout
 	ChargeReady()
 	
 func ExitState():
+	if(vibration != null):
+		vibration.StopVibration()
+		
 	if(hideSpearOnExit == true):
 		Player.player_spear.InactiveSpear()
 	pass
