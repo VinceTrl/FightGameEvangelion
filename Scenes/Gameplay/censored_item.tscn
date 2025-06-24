@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6tijrr6vutrp"]
+
+[ext_resource type="Texture2D" uid="uid://bjicya45sj4ns" path="res://Assets/Sprites/Items/no-18-years-old.png" id="1_6b7ee"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/censored_item.gd" id="1_ycu7o"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="2_wgcyv"]
+
+[sub_resource type="Curve" id="Curve_bgo4n"]
+
+[sub_resource type="Curve" id="Curve_5dt0w"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49711, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_cttdd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iwy4l"]
+size = Vector3(0.192627, 0.344116, 1)
+
+[node name="CensoredItem" type="Node3D"]
+script = ExtResource("1_ycu7o")
+
+[node name="Visual" type="Node3D" parent="."]
+script = ExtResource("2_wgcyv")
+positionTime = 3.0
+positionTarget = Vector3(0, 0.1, 0)
+positionCurveX = SubResource("Curve_bgo4n")
+positionCurveY = SubResource("Curve_5dt0w")
+positionCurveZ = SubResource("Curve_cttdd")
+
+[node name="Sprite3D" type="Sprite3D" parent="Visual"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_6b7ee")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_iwy4l")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
