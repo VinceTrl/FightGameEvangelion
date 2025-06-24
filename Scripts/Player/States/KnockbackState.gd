@@ -37,12 +37,8 @@ func HandleAnimations():
 	Player.HandleFlipH()
 	
 func SetDirection():
-	if(hitbox == null): 
-		direction = Vector3(-Player.facing,0,0)
-	else:
-		#print("SetDirection ")
-		direction = Player.global_position - Player.lastHitLocation
-		direction = direction.normalized()
+	direction = Player.global_position - Player.lastHitLocation
+	direction = direction.normalized()
 	
 func HandleKnockbackSpeed():
 	if knockback_timer.time_left <= 0: 

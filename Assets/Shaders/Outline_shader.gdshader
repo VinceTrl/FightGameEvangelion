@@ -7,7 +7,6 @@ uniform float outline_width = 1.0;
 uniform float outline_opacity = 0.5;
 
 void fragment() {
-	
 	vec4 pixelatedtext = texture(SCREEN_TEXTURE, SCREEN_UV);
 	vec2 pixel_size = 1.0 / VIEWPORT_SIZE;
 	ALBEDO =  pixelatedtext.rgb;

@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded, depth_draw_never;
+render_mode unshaded;
 
 //SOUND INTEGRATION
 global uniform sampler2D spectrum_texture; //global variable set up in Project Settings
@@ -180,7 +180,7 @@ void fragment() {
 	//ALBEDO *= texture(mask00, vec2(UV.x, UV.y)).x;
 
 	EMISSION = vec3(pow(EMISSION.r, 1.0), pow(EMISSION.g, 1.0), pow(EMISSION.b, 1.0));
-	
+
 	//ALBEDO = pow(ALBEDO, vec3(2.0, 2.0, 2.0));
 	//FOG = vec4(0.4, 1.0, 0.7, 0.2) * ((UV.y*5.0)-0.5);
 	//ALBEDO = vec3(0.0, 0.0, 0.0);
