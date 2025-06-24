@@ -117,6 +117,7 @@ func ResetAll():
 	ResetChromaticAberration()
 	ResetStorm()
 	ResetGlitch()
+	ResetPixelate()
 	
 	
 # SPEED LINES
