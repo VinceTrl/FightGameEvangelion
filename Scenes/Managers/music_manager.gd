@@ -3,6 +3,7 @@ extends Node
 @onready var stage_music: AudioStreamPlayer = $StageMusic
 @onready var voicelines: AudioStreamPlayer = $Voicelines
 @onready var victory_sound: AudioStreamPlayer = $VictorySound
+var muteMusic:bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +15,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(Input.is_action_just_pressed("Mute")):
+		muteMusic = not muteMusic
+		MuteMusic()
+	
+	
+func MuteMusic():
+	stage_music.stream_paused = muteMusic
 	
 func StartStageMusic():
 	print("START MUSIC")

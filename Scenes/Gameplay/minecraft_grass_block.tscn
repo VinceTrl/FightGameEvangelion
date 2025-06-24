@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0jcpjl67p6ni"]
+
+[ext_resource type="PackedScene" uid="uid://dnpcmkm3cj1vo" path="res://Assets/Meshes/Props/Minecraft/minecraft_grass_block.fbx" id="1_yu1s1"]
+
+[node name="minecraft_grass_block" instance=ExtResource("1_yu1s1")]

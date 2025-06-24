@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded;
+render_mode unshaded, depth_draw_never;
 
 //SOUND INTEGRATION
 global uniform sampler2D spectrum_texture; //global variable set up in Project Settings

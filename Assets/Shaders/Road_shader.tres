@@ -76,7 +76,7 @@ operator = 2
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, world_vertex_coords;
+render_mode blend_mix, depth_draw_never, cull_back, diffuse_lambert, specular_schlick_ggx, world_vertex_coords;
 
 uniform sampler2D Noise : hint_default_black, filter_linear, repeat_enable;
 uniform float BounceIntensity : hint_range(0, 5) = 3;
@@ -169,6 +169,8 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-160.122, -111.939)
+modes/depth_draw = 2
 flags/world_vertex_coords = true
 nodes/vertex/2/node = SubResource("VisualShaderNodeRotationByAxis_v7v3n")
 nodes/vertex/2/position = Vector2(-280, 480)
