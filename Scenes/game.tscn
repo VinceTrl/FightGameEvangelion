@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=39 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -13,9 +13,21 @@
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
 [ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="15_7m25h"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
+[ext_resource type="Texture2D" uid="uid://bau5itgnsrv1t" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_BRUTAL.png" id="16_l2rx7"]
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
+[ext_resource type="Texture2D" uid="uid://bcp0jrosw2ovd" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_SLAP.png" id="17_c7lbv"]
 [ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="17_tjwxa"]
+[ext_resource type="Texture2D" uid="uid://bs6hriirg2shp" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim0.png" id="18_7rsm8"]
+[ext_resource type="Texture2D" uid="uid://dj6yriayrjmu2" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim1.png" id="19_rfunh"]
+[ext_resource type="Texture2D" uid="uid://ebw4024b53r0" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim2.png" id="20_6tqv0"]
 [ext_resource type="Texture2D" uid="uid://cblvbndapp82q" path="res://Sources/Textures/T_BrutalSlap.png" id="20_cii1m"]
+[ext_resource type="Texture2D" uid="uid://dcci7cb1oqhxm" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim3.png" id="21_ppba3"]
+[ext_resource type="Texture2D" uid="uid://dnbwb0323s0xd" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim4.png" id="22_pgpod"]
+[ext_resource type="Texture2D" uid="uid://cnyq2p2ihcim2" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim5.png" id="23_7tndc"]
+[ext_resource type="Texture2D" uid="uid://bhrd0djvsvsyx" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim6.png" id="24_vwix5"]
+[ext_resource type="Texture2D" uid="uid://drhiviyg3rie2" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim7.png" id="25_ujdi8"]
+[ext_resource type="Texture2D" uid="uid://c4yk026auh6gl" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim8.png" id="26_mtoum"]
+[ext_resource type="Texture2D" uid="uid://b2ctqey0v1ag8" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim9.png" id="27_jxtt0"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -301,6 +313,42 @@ tracks/10/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BrutalSlapHolder/TextureRect:texture")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.06667, 1.43333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("16_l2rx7"), ExtResource("17_c7lbv")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("BrutalSlapAlert:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("BrutalSlapAlert/TextureRect2:texture")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_7rsm8"), ExtResource("19_rfunh"), ExtResource("20_6tqv0"), ExtResource("21_ppba3"), ExtResource("22_pgpod"), ExtResource("23_7tndc"), ExtResource("24_vwix5"), ExtResource("25_ujdi8"), ExtResource("26_mtoum"), ExtResource("27_jxtt0")]
+}
 
 [sub_resource type="Animation" id="Animation_lkh3u"]
 length = 0.001
@@ -459,6 +507,42 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("BrutalSlapHolder/TextureRect:texture")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("20_cii1m")]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("BrutalSlapAlert:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("BrutalSlapAlert/TextureRect2:texture")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18_7rsm8")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y03qi"]
@@ -847,22 +931,22 @@ bones/76/position = Vector3(-2.09808e-07, 0.307799, 0)
 bones/76/rotation = Quaternion(2.23517e-08, -4.09782e-08, 4.47035e-08, 1)
 
 [node name="BoneAttachment3D_LeftArm" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.10003, 0.554967, -0.825836, 0.297099, -0.808793, -0.507528, -0.949592, -0.194587, -0.245784, 0.768664, 6.14832, -0.202899)
+transform = Transform3D(0.100031, 0.554967, -0.825836, 0.297099, -0.808794, -0.507528, -0.949592, -0.194587, -0.245785, 0.768664, 6.14832, -0.202899)
 
 [node name="BoneAttachment3D2_RightArm" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="3"]
-transform = Transform3D(0.538114, -0.483237, -0.69059, 0.573405, 0.810396, -0.120269, 0.61777, -0.331269, 0.713176, -0.484028, 6.75784, -0.224398)
+transform = Transform3D(0.538114, -0.483237, -0.69059, 0.573405, 0.810396, -0.120269, 0.61777, -0.33127, 0.713176, -0.484029, 6.75784, -0.224398)
 
 [node name="BoneAttachment3D3_LeftFoot" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.910596, 0.123141, 0.394529, 0.0808256, -0.883093, 0.462183, 0.40532, 0.45275, 0.794188, -0.844985, 1.70663, -0.956949)
+transform = Transform3D(-0.910595, 0.123141, 0.394529, 0.0808256, -0.883093, 0.462183, 0.405319, 0.45275, 0.794187, -0.844984, 1.70663, -0.956949)
 
 [node name="BoneAttachment3D4_RightFoot" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="5"]
-transform = Transform3D(-0.50852, -0.860633, -0.0267656, 0.52069, -0.332119, 0.786498, -0.685776, 0.386013, 0.617012, -1.98101, 1.79958, -0.754675)
+transform = Transform3D(-0.50852, -0.860634, -0.0267656, 0.52069, -0.332119, 0.786498, -0.685776, 0.386014, 0.617012, -1.98101, 1.79958, -0.754676)
 
 [node name="BoneAttachment_Hitbox" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="6"]
-transform = Transform3D(0.627135, 0.662618, 0.409436, -0.287147, -0.291952, 0.91231, 0.724049, -0.68971, 0.00717576, 2.21499, 5.13043, -0.720609)
+transform = Transform3D(0.627135, 0.662619, 0.409436, -0.287147, -0.291952, 0.91231, 0.72405, -0.68971, 0.00717564, 2.21499, 5.13043, -0.720609)
 
 [node name="BoneAttachment_Head" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="7"]
-transform = Transform3D(0.815282, 0.268621, 0.512988, -0.546106, 0.0620682, 0.835413, 0.192569, -0.961244, 0.197299, 0.236361, 6.66198, -0.0899724)
+transform = Transform3D(0.815282, 0.268621, 0.512989, -0.546106, 0.0620682, 0.835414, 0.192569, -0.961244, 0.197299, 0.236361, 6.66198, -0.0899723)
 
 [node name="EyeVener" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/BoneAttachment_Head" index="0"]
 visible = false
@@ -941,6 +1025,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("20_cii1m")
+
+[node name="BrutalSlapAlert" type="Control" parent="Meshes/SLAP_Choregraphie"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect2" type="TextureRect" parent="Meshes/SLAP_Choregraphie/BrutalSlapAlert"]
+layout_mode = 0
+offset_top = 168.0
+offset_right = 1920.0
+offset_bottom = 423.0
+texture = ExtResource("18_7rsm8")
 
 [editable path="Gameplay/Player2"]
 [editable path="Meshes/Enviro"]

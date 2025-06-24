@@ -109,7 +109,8 @@ func DebugPostProcess() -> void:
 		#ChromaticAberrationEffect()
 		#GrainEffect()
 		#GlitchEffect()
-		PixelateEffect()
+		#PixelateEffect()
+		pass
 		
 func ResetAll():
 	ResetSpeedLines()
