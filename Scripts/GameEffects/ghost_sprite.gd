@@ -2,6 +2,10 @@ extends Sprite3D
 
 @export var lifeTime:float = 0.25
 	
+func _ready() -> void:
+	_apply_texture()
+	texture_changed.connect(_apply_texture)
+
 func SetGhostSprite(sourceSprite: Sprite3D,ghostLifeTime: float = lifeTime):
 	texture = sourceSprite.texture
 	hframes = sourceSprite.hframes
@@ -26,6 +30,7 @@ func FadeOutSprite(sprite: Sprite3D, duration: float = 1.0) -> void:
 		var mod_color: Color = sprite.modulate
 		mod_color.a = new_alpha
 		sprite.modulate = mod_color
+		_apply_alpha(new_alpha)
 
 		await get_tree().process_frame
 		time += get_process_delta_time()
@@ -35,3 +40,12 @@ func FadeOutSprite(sprite: Sprite3D, duration: float = 1.0) -> void:
 	final_color.a = 0.0
 	sprite.modulate = final_color
 	queue_free()
+	
+	
+func _apply_texture():
+	var shader_material : ShaderMaterial = material_override
+	shader_material.set_shader_parameter("sprite_texture", texture)
+	
+func _apply_alpha(alpha):
+	var shader_material : ShaderMaterial = material_override
+	shader_material.set_shader_parameter("alpha", alpha * 0.05)

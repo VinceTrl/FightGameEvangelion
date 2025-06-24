@@ -16,3 +16,4 @@ vibrationName = &"HitVibration"
 duration = 0.25
 weakMagnitude = SubResource("Curve_4d4lh")
 strongMagnitude = SubResource("Curve_b0h5e")
+loop = false
