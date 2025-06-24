@@ -569,6 +569,8 @@ collision_mask = 15
 shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="StageSpawner" parent="Stage" instance=ExtResource("3_114nl")]
+debugMode = true
+debugSpawnIndex = 3
 
 [node name="Gameplay" type="Node" parent="."]
 
