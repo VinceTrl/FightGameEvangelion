@@ -7,6 +7,7 @@ extends Node
 @onready var grain_timer: Timer = $Timers/GrainTimer
 @onready var storm_timer: Timer = $Timers/StormTimer
 @onready var glitch_timer: Timer = $Timers/GlitchTimer
+@onready var pixel_timer: Timer = $Timers/PixelTimer
 
 @export_category("ANIMATION")
 @export_group("SPEED LINES")
@@ -53,6 +54,15 @@ var init_glitchIntensity
 var init_glitchOffset
 var init_glitchColorOffset
 
+@export_group("PIXEL")
+@export var pixelateTime = 5.0
+@export var pixelAnimationCurve: Curve
+var inAnimPixelate = false
+
+var init_Pixelate
+
+
+
 @export_category("POST PROCESS TARGET VALUES")
 @export var targetConfig: PostProcessingConfiguration
 
@@ -85,6 +95,9 @@ func _ready() -> void:
 	init_glitchColorOffset = gameplay_post_process.configuration.GlitchColorOffset
 	print("INIT GLITCH")
 	
+	#Chromatic Aberration
+	init_Pixelate = gameplay_post_process.configuration.PixelatePixelSize
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	DebugPostProcess()
@@ -95,7 +108,8 @@ func DebugPostProcess() -> void:
 		#SpeedLineEffect()
 		#ChromaticAberrationEffect()
 		#GrainEffect()
-		GlitchEffect()
+		#GlitchEffect()
+		PixelateEffect()
 		
 func ResetAll():
 	ResetSpeedLines()
@@ -280,3 +294,32 @@ func ResetGlitch():
 	gameplay_post_process.configuration.GlitchIntenity = init_glitchIntensity
 	gameplay_post_process.configuration.GlitchOffset = init_glitchOffset
 	gameplay_post_process.configuration.GlitchColorOffset = init_glitchColorOffset
+	
+# CHROMATIC ABERRATION
+func PixelateEffect(_time: float = pixelateTime, _timer: Timer = pixel_timer):
+	
+	#Reset Anim if it's already animating
+	if(inAnimPixelate):
+		_timer.stop()
+		ResetPixelate()
+		
+	#Start animation
+	inAnimPixelate = true
+	_timer.start(_time)
+	
+	#Animation frame update
+	while _timer.time_left > 0.0:
+		var _timeProgress = _time - _timer.time_left 
+		var _ratio = _timeProgress/_time
+		var _curveValue = pixelAnimationCurve.sample(_ratio)
+		var _animValueStrenght = lerp(init_Pixelate,targetConfig.PixelatePixelSize,_curveValue)
+		
+		gameplay_post_process.configuration.PixelatePixelSize = _animValueStrenght
+		
+		await get_tree().process_frame
+		
+	ResetPixelate()
+	
+func ResetPixelate():
+	inAnimPixelate = false
+	gameplay_post_process.configuration.PixelatePixelSize = init_Pixelate
