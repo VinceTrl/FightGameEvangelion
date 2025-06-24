@@ -6,6 +6,7 @@ var currentHitbox: Hitbox
 @onready var hitbox: Hitbox = $"../../Hitbox"
 @onready var hitbox_up: Hitbox = $"../../HitboxUp"
 @onready var hitbox_down: Hitbox = $"../../HitboxDown"
+@onready var sfx_contact: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Contact"
 
 #func _ready() -> void:
 	#Player.hitbox_down.OnHitboxDetected.connect(HandleHitboxCollision)
@@ -99,7 +100,7 @@ func OnHitboxCollision(_hitbox:Hitbox):
 	Manager.timeManager.freezeFrame(0.001,0.2)
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	Manager.gameManager.vibrationManager.LaunchVibration(Player.playerID-1,"HurtVibration")
-	
+	sfx_contact.play()
 	Player.velocity = Vector3.ZERO
 	Player.lastHitbox = _hitbox
 	Player.lastHitLocation = _hitbox.global_position

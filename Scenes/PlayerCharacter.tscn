@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=75 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/ChargingAttackState.gd" id="32_r0xa3"]
 [ext_resource type="Resource" uid="uid://b1kr6ya4e857u" path="res://Resources/PostProcessAnims/Glitch/DeathGlitch.tres" id="33_hpf16"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ChargeShootState.gd" id="35_8paei"]
+[ext_resource type="AudioStream" uid="uid://blusygh4ja0nt" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Contact.wav" id="35_32tav"]
 [ext_resource type="AudioStream" uid="uid://58ld363flnkm" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi1.wav" id="35_oblwe"]
 [ext_resource type="AudioStream" uid="uid://b3yffj8vv6fxj" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi2.wav" id="36_j4mcl"]
 [ext_resource type="AudioStream" uid="uid://ca3j2rm8aj6c8" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Ready 5_01.wav" id="36_tkpog"]
@@ -1015,6 +1016,11 @@ bus = &"SFX"
 
 [node name="Sfx_Attack" type="AudioStreamPlayer3D" parent="PlayerAudio"]
 volume_db = 10.0
+bus = &"SFX"
+
+[node name="Sfx_Contact" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+stream = ExtResource("35_32tav")
+volume_db = 41.861
 bus = &"SFX"
 
 [node name="Sfx_AttackChargeReady" type="AudioStreamPlayer3D" parent="PlayerAudio"]
