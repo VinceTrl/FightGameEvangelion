@@ -20,6 +20,7 @@ render_priority = 0
 shader = ExtResource("3_5mota")
 shader_parameter/outline_color = Color(0.3355, 0, 0.61, 1)
 shader_parameter/fresnel_power = 3.0
+shader_parameter/hue_speed = 0.0
 
 [node name="Sasuke" type="Node3D"]
 script = ExtResource("1_8n61w")
