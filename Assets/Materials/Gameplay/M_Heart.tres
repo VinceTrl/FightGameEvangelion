@@ -9,7 +9,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pi1c4"]
 render_priority = 0
 shader = ExtResource("3_mg5da")
-shader_parameter/fakeOutlineOpacity = 1.0
+shader_parameter/XOpacity = 0.0
+shader_parameter/XOffset = 9.0
+shader_parameter/YOpacity = 0.0
+shader_parameter/YOffset = 9.0
+shader_parameter/ZOpacity = 0.5
 shader_parameter/ZOffset = -0.2
 shader_parameter/outline_color = Color(1, 0.188235, 0.156863, 1)
 shader_parameter/outline_width = 1.0

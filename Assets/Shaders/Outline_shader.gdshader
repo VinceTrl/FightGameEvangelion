@@ -1,7 +1,11 @@
 shader_type spatial;
 render_mode unshaded;
 varying vec4 UV_vertex;
-uniform float fakeOutlineOpacity = 0.0;
+uniform float XOpacity = 0.0;
+uniform float XOffset = 9.0;
+uniform float YOpacity = 0.0;
+uniform float YOffset = 9.0;
+uniform float ZOpacity = 0.0;
 uniform float ZOffset = 9.0;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
@@ -34,6 +38,8 @@ void fragment() {
 		}
 	}
 	ALBEDO = outline_color.rgb;
-	ALPHA = clamp(-UV_vertex.z * 10.0 - ZOffset, 0.0, 1.0) * fakeOutlineOpacity;
+	ALPHA = clamp(-UV_vertex.x * 10.0 - XOffset, 0.0, 1.0) * XOpacity;
+	ALPHA += clamp(-UV_vertex.y * 10.0 - YOffset, 0.0, 1.0) * YOpacity;
+	ALPHA += clamp(-UV_vertex.z * 10.0 - ZOffset, 0.0, 1.0) * ZOpacity;
 	
 }
