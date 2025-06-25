@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6tijrr6vutrp"]
+[gd_scene load_steps=11 format=3 uid="uid://b6tijrr6vutrp"]
 
 [ext_resource type="Texture2D" uid="uid://bjicya45sj4ns" path="res://Assets/Sprites/Items/no-18-years-old.png" id="1_6b7ee"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/censored_item.gd" id="1_ycu7o"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="2_wgcyv"]
+[ext_resource type="Shader" uid="uid://siboucvt8jf0" path="res://Assets/Shaders/warning_shader.tres" id="3_4qfbi"]
+[ext_resource type="Texture2D" uid="uid://y3ksoxaqfg3b" path="res://Assets/Sprites/Items/no-18-years-old_mask.png" id="4_vc8xp"]
 
 [sub_resource type="Curve" id="Curve_bgo4n"]
 
@@ -11,6 +13,14 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49711, 1), 0.0, 0.0, 0, 0, Vec
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_cttdd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2apk3"]
+render_priority = 1
+shader = ExtResource("3_4qfbi")
+shader_parameter/Blinking_Speed = 15.0
+shader_parameter/Blinking_Intensity = 1.0
+shader_parameter/Blinking_Color = Color(100, 0, 0, 1)
+shader_parameter/Texture2DParameter = ExtResource("4_vc8xp")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwy4l"]
 size = Vector3(0.192627, 0.344116, 1)
@@ -28,6 +38,7 @@ positionCurveZ = SubResource("Curve_cttdd")
 
 [node name="Sprite3D" type="Sprite3D" parent="Visual"]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+material_overlay = SubResource("ShaderMaterial_2apk3")
 texture_filter = 0
 texture = ExtResource("1_6b7ee")
 

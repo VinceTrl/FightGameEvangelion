@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://duvty8js33aeu"]
+
+[ext_resource type="Shader" uid="uid://siboucvt8jf0" path="res://Assets/Shaders/warning_shader.tres" id="1_734bg"]
+[ext_resource type="Texture2D" uid="uid://y3ksoxaqfg3b" path="res://Assets/Sprites/Items/no-18-years-old_mask.png" id="2_8a1tn"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_734bg")
+shader_parameter/Blinking_Speed = 15.0
+shader_parameter/Blinking_Intensity = 1.0
+shader_parameter/Blinking_Color = Color(100, 0, 0, 1)
+shader_parameter/Texture2DParameter = ExtResource("2_8a1tn")
