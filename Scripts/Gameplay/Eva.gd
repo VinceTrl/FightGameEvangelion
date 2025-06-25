@@ -96,10 +96,11 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	slapWarning.SetWarningToAllTargets()
 	
 	#movement
-	GoTowardsPosition(targetPos,timeToReachTarget)
-	await get_tree().create_timer(timeToReachTarget,true,false,false).timeout
+	#GoTowardsPosition(targetPos,timeToReachTarget)
+	#await get_tree().create_timer(timeToReachTarget,true,false,false).timeout
 	
 	#Launch Slap
+	GoTowardsPosition(targetPos,0.75,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR)
 	animPlayer.play("Armature|Slap_Hit")
 	animPlayerChore.play("AnimLight_Slap_Hit")
 	await animPlayer.animation_finished

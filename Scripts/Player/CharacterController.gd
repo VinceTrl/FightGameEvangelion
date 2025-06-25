@@ -496,6 +496,7 @@ func ChangeSpriteColor():
 	
 func OnFightFinished():
 	if(currentState == States.Death):return
+	animator.play("Taunt")
 	ChangeState(States.Locked)
 
 func _on_melee_hitbox_on_hit() -> void:
