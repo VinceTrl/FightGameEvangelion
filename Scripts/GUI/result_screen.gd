@@ -4,6 +4,8 @@ extends Control
 @onready var win_text: Label = $ColorRect/WinText
 @onready var score_text: Label = $ScoreText
 @export var scoreDisplayDelay: float = 0.75
+@export var playerColor1:Color
+@export var playerColor2:Color
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,6 +39,12 @@ func StartResult():
 	var player = Manager.gameManager.GetWinner()
 	var winnerText
 	
+	if(player.playerID == 1):
+		score_text.label_settings.font_color = playerColor1
+	else:
+		score_text.label_settings.font_color = playerColor2
+	
+	
 	if(player == null):
 		winnerText = "DOUBLE KO"
 	else:
@@ -56,7 +64,7 @@ func SetScoreText():
 	var player1Score = Manager.scoreManager.playerWinCount_1
 	var player2Score = Manager.scoreManager.playerWinCount_2
 	var scoreString = str(player1Score) + " - " + str(player2Score)
-	
+		
 	score_text.text = scoreString
 	
 func ExitResult():

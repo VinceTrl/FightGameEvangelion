@@ -296,12 +296,22 @@ func HandleLanding():
 		ResetJump()
 		ResetDash()
 		ResetAirAttack()
-		sfx.stream = SD_GROUND_HIT
-		sfx.play()
-		Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"LandingVibration")
-		var vfx = VFX_2D_LANDING.instantiate()
-		vfx.global_position = ground_location.global_position
-		get_tree().current_scene.add_child(vfx)
+		LandingEffect()
+		
+func LandingWhileCharging():
+	if (is_on_floor()):
+		ResetJump()
+		ResetDash()
+		ResetAirAttack()
+		LandingEffect()
+		
+func LandingEffect():
+	sfx.stream = SD_GROUND_HIT
+	sfx.play()
+	Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"LandingVibration")
+	var vfx = VFX_2D_LANDING.instantiate()
+	vfx.global_position = ground_location.global_position
+	get_tree().current_scene.add_child(vfx)
 			
 func ResetDash():
 	dashes = 0
