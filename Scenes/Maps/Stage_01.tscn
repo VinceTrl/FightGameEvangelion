@@ -73,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0224712, 0.628443, 0)
 script = ExtResource("4_liqy6")
 
 [node name="PenpenLocation5" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.78734, 1.95018, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67796, 1.95018, 0)
 script = ExtResource("4_liqy6")
 
 [node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations"]
@@ -89,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15758, 1.42729, 0)
 script = ExtResource("4_liqy6")
 
 [node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.81776, 1.9066, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73479, 1.9066, 0)
 script = ExtResource("4_liqy6")
 
 [node name="Level" type="Node3D" parent="."]
@@ -113,13 +113,13 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -5.00664, 1.56009, 0.147627
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 5.99336, 1.56009, 0.147627)
 
 [node name="PlatformShip" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("5_nls0s")]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.00664163, 1.56009, -21.2861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00664163, 1.56009, -21.2861)
 targetNode = NodePath("../ShipTargetPosition")
 
 [node name="PlatformShip2" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("5_nls0s")]
-transform = Transform3D(0.0312712, 1.49927, 0, -0.999511, 0.0469068, 0, 0, 0, 1, -6.48879, 1.56009, -21.2861)
+transform = Transform3D(0.0312712, 0.999511, 0, -0.999511, 0.0312712, 0, 0, 0, 1, -6.48879, 1.56009, -21.2861)
 targetNode = NodePath("../ShipTargetPosition2")
 
 [node name="PlatformShip3" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("5_nls0s")]
-transform = Transform3D(0.0387889, -1.49887, 0, 0.999247, 0.0581834, 0, 0, 0, 1, 7.06332, 1.56009, -21.2861)
+transform = Transform3D(0.0387889, -0.999247, 0, 0.999247, 0.0387889, 0, 0, 0, 1, 7.06332, 1.56009, -21.2861)
 targetNode = NodePath("../ShipTargetPosition3")
