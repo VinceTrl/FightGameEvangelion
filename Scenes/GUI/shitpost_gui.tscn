@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/GUI/shitpost_gui.gd" id="1_fljbo"]
 [ext_resource type="Texture2D" uid="uid://uyxpod7dbnun" path="res://Assets/Shitpost/Evangelion/Screenshot_2025-06-10-03-23-13-35_1c337646f29875672b5a61192b9010f9.png" id="2_jctm3"]
 [ext_resource type="Texture2D" uid="uid://bmp4eds6qxrss" path="res://Assets/Shitpost/Evangelion/Screenshot_2025-06-10-03-21-20-29_1c337646f29875672b5a61192b9010f9.jpg" id="3_fwi6f"]
+[ext_resource type="Texture2D" uid="uid://dvxkcyercrxj8" path="res://Assets/Shitpost/Evangelion/5ab1a7fdea1892e1557bca2d07a47959.jpg.png" id="4_bkkub"]
 [ext_resource type="Texture2D" uid="uid://cmusgboqrnegr" path="res://Assets/Shitpost/Evangelion/fcd7f254e088748cfefe6f6001569ae2.jpg" id="4_cagmx"]
 [ext_resource type="Texture2D" uid="uid://bvrr52chskxmv" path="res://Assets/Shitpost/Evangelion/fc48d7e429810532cae72e09d33ed212.jpg" id="5_h5u70"]
 [ext_resource type="Texture2D" uid="uid://bybuipwl7mrue" path="res://Assets/Shitpost/Evangelion/e324aa9ed45b131e1b83b36a5bbea13d.jpg" id="6_joa1k"]
@@ -14,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://2ok3ndll1d2l" path="res://Assets/Shitpost/Evangelion/82e2144f388c61ba63e989ba833afa37.jpg" id="12_s2bre"]
 [ext_resource type="Texture2D" uid="uid://cg1yb23uqoc5t" path="res://Assets/Shitpost/Evangelion/31d9d40e72b4c622fbe5e5a658ce14e1.jpg" id="13_0pp8o"]
 [ext_resource type="Texture2D" uid="uid://bwci4e3yckfy2" path="res://Assets/Shitpost/Evangelion/9ff75b23906907b7e353476e7f45fd1a.jpg" id="14_a16vh"]
-[ext_resource type="Texture2D" uid="uid://cjqb6go0lnnam" path="res://Assets/Shitpost/Evangelion/5ab1a7fdea1892e1557bca2d07a47959.png" id="15_agov1"]
 [ext_resource type="Texture2D" uid="uid://byixbvm7drv3m" path="res://Assets/Shitpost/Evangelion/3e440885303fce3bcb594379a46be7d9.jpg" id="16_wvwx1"]
 [ext_resource type="Texture2D" uid="uid://clpovbtbsboyr" path="res://Assets/Shitpost/Evangelion/2d0972b6f170a744aa3aea4732e832e3.jpg" id="17_rqudw"]
 [ext_resource type="Texture2D" uid="uid://cc7jh3ef2whjb" path="res://Assets/Shitpost/Evangelion/5355f0b8ac14db00d19bad4e6e8daaba.jpg" id="18_oljaw"]
@@ -30,8 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fljbo")
-textureScale = Vector2(0.5, 0.5)
-textures = Array[CompressedTexture2D]([ExtResource("2_jctm3"), ExtResource("3_fwi6f"), ExtResource("4_cagmx"), ExtResource("5_h5u70"), ExtResource("6_joa1k"), ExtResource("7_tyv51"), ExtResource("8_cv82v"), ExtResource("9_2rng2"), ExtResource("10_d4ak8"), ExtResource("11_54yhn"), ExtResource("12_s2bre"), ExtResource("13_0pp8o"), ExtResource("14_a16vh"), ExtResource("15_agov1"), ExtResource("16_wvwx1"), ExtResource("17_rqudw"), ExtResource("18_oljaw"), ExtResource("19_fee6v"), ExtResource("20_och3k"), ExtResource("21_uus88")])
+textures = Array[CompressedTexture2D]([ExtResource("17_rqudw"), ExtResource("16_wvwx1"), ExtResource("4_bkkub"), ExtResource("14_a16vh"), ExtResource("13_0pp8o"), ExtResource("12_s2bre"), ExtResource("18_oljaw"), ExtResource("20_och3k"), ExtResource("21_uus88"), ExtResource("11_54yhn"), ExtResource("10_d4ak8"), ExtResource("9_2rng2"), ExtResource("8_cv82v"), ExtResource("7_tyv51"), ExtResource("6_joa1k"), ExtResource("19_fee6v"), ExtResource("5_h5u70"), ExtResource("4_cagmx"), ExtResource("3_fwi6f"), ExtResource("2_jctm3")])
 imageSize = 0.4
 debugMode = true
 
