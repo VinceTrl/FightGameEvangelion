@@ -9,14 +9,15 @@ extends Control
 
 @export var playerIndex = 0
 var player: PlayerCharacter
-var LifePoints = []
+var LifePoints:Array[PlayerGUI_HP]
 var AmmoPoints = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	for life in lifeContainer.get_children():
-		LifePoints.append(life)
+		if(life is PlayerGUI_HP):
+			LifePoints.append(life)
 		
 	for ammo in ammoContainer.get_children():
 		AmmoPoints.append(ammo)
@@ -69,9 +70,9 @@ func UpdateLifeBar():
 		count += 1
 		
 		if(count > hp):
-			life.visible = false
+			life.RemoveHp()
 		else:
-			life.visible = true
+			life.SetHpIdle()
 	
 	
 func UpdateAmmo():

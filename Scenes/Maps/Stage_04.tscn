@@ -1192,7 +1192,7 @@ forceToGroundOnReady = false
 [node name="PenpenLocations" type="Node3D" parent="Gameplay"]
 
 [node name="PenpenLocation" type="Node3D" parent="Gameplay/PenpenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33791, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02784, 0)
 script = ExtResource("5_usidj")
 
 [node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenpenLocations"]
@@ -1221,7 +1221,7 @@ script = ExtResource("5_usidj")
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -1.80664, 1.87463, 0.147627)
 
 [node name="PlatformShip" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("7_80g46")]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.00664163, 1.56009, -21.2861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00664163, 1.56009, -21.2861)
 targetNode = NodePath("../ShipTargetPosition")
 
 [node name="Mesh_Plateforme_01" parent="Level" instance=ExtResource("6_s1vk2")]

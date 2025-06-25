@@ -2,6 +2,9 @@ class_name Eva
 extends Node3D
 
 const SLAP_WARNING = preload("res://Scenes/GUI/Slap/slap_warning.tscn")
+@onready var audio_slap_hit: AudioStreamPlayer3D = $AudioSlapHit
+@onready var audio_uwu: AudioStreamPlayer3D = $AudioUwu
+@onready var audio_alarm: AudioStreamPlayer3D = $AudioAlarm
 
 @export var AnimationPlayerName:String = "AnimationPlayer"
 @export var animPlayerChore:AnimationPlayer
@@ -79,6 +82,7 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	OnSlapStart.emit()
 	animPlayerChore.play("AnimLight_Slap_Intro")
 	animPlayer.play("Armature|Slap_Start")
+	audio_uwu.play()
 	
 	#await animPlayer.animation_finished
 	await animPlayerChore.animation_finished
@@ -86,6 +90,7 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	await get_tree().create_timer(slapStartPauseDuration,true,false,false).timeout
 	
 	animPlayerChore.play("AnimLight_Slap_PreHit")
+	audio_alarm.play()
 	
 	#SPAWN_WARNING
 	SpawnWarning(slapPosition)
@@ -104,6 +109,7 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	animPlayer.play("Armature|Slap_Hit")
 	animPlayerChore.play("AnimLight_Slap_Hit")
 	await animPlayer.animation_finished
+	audio_alarm.stop()
 	DestroyWarning()
 	
 	#recover
@@ -128,6 +134,7 @@ func EndSlapHitBox():
 	
 func SlapHit():
 	print("SLAAAAP FREEZE")
+	audio_slap_hit.play()
 	#Manager.postProcessEffects.ResetGlitch()
 	#Manager.timeManager.freezeFrame(0.001,1.25)
 	

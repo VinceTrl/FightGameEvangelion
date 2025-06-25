@@ -44,6 +44,10 @@ var gameManager: Manager
 var isDead: bool = false
 var isInvicible: bool = false
 
+@export_group("Sprite setting")
+@export var spritesheet:Texture2D
+@export_group("")
+
 #run variables
 @export_group("Movement")
 @export var runSpeed = 3.0
@@ -168,6 +172,9 @@ signal OnPlayerJump
 signal OnPlayerLifeChanged
 
 func _ready():
+	
+	sprite.texture = spritesheet
+	player_spear.sprite_3d.texture = spritesheet
 	
 	gameManager = Manager
 	Manager.gameManager.RegisterPlayer(self)

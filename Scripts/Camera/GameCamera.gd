@@ -276,3 +276,9 @@ func ResetCameraOverrideZ():
 	useOverrideZ = false
 	usePlayerDistanceForTargetZ = true
 	
+func OverrideMinMaxDist(newMinZ:float,newMaxZ:float):
+	#var minZ = clampf(newMinZ,minDistZ,maxDistZ)
+	#var maxZ = clampf(newMaxZ,minDistZ,maxDistZ)
+	minDistZ = newMinZ
+	maxDistZ = newMaxZ
+	

@@ -6,9 +6,15 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qw1k6"]
 render_priority = 0
 shader = ExtResource("2_el7db")
+shader_parameter/XOpacity = 0.0
+shader_parameter/XOffset = 9.0
+shader_parameter/YOpacity = 0.0
+shader_parameter/YOffset = 9.0
+shader_parameter/ZOpacity = 0.2
+shader_parameter/ZOffset = 9.0
 shader_parameter/outline_color = Color(1, 0.5, 0, 1)
-shader_parameter/outline_width = 1.0
-shader_parameter/outline_opacity = 0.3
+shader_parameter/outline_width = 2.0
+shader_parameter/outline_opacity = 1.0
 
 [resource]
 resource_name = "Grass_Block_TEX"

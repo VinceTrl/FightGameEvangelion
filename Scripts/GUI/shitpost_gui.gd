@@ -2,7 +2,6 @@ class_name ShitpostGUI
 
 extends Control
 
-@export var textureScale: Vector2 = Vector2.ONE
 @export var textures: Array[CompressedTexture2D] = []
 @export var imageSize: float = 0.5
 @export var debugMode = false

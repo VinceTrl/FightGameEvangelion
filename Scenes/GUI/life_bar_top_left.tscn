@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://r3ads2h4cewh"]
+[gd_scene load_steps=19 format=3 uid="uid://r3ads2h4cewh"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
 [ext_resource type="Texture2D" uid="uid://147dcgbjdv2t" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Player1.png" id="4_mdj3j"]
@@ -6,10 +6,82 @@
 [ext_resource type="PackedScene" uid="uid://dbx10gs5u8elq" path="res://Scenes/GUI/texture_hp_Left.tscn" id="5_jt636"]
 [ext_resource type="Texture2D" uid="uid://cxym3v1v584ej" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P1.png" id="6_fw131"]
 [ext_resource type="Script" path="res://Scripts/GUI/PlayerRoundUI.gd" id="6_y7uc4"]
+[ext_resource type="Texture2D" uid="uid://c4dyfrrdv0mvk" path="res://Assets/Sprites/GUI/KikiGUI/GUI_HP_ANIM.png" id="7_5atp6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_by4q8"]
 font = ExtResource("5_j8biq")
 font_size = 120
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx8xm"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(0, 0, 278, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egnsy"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(278, 0, 278, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqrdb"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(556, 0, 278, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baw4t"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(834, 0, 278, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd3vv"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(1112, 0, 278, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_221hl"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(1390, 0, 278, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h74yp"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(1668, 0, 278, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfkqq"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(1946, 0, 278, 236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doxe6"]
+atlas = ExtResource("7_5atp6")
+region = Rect2(2224, 0, 278, 236)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_styjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx8xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egnsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqrdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baw4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd3vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_221hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h74yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfkqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doxe6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="LifeBarRoot_TopLeft" type="Control"]
 layout_mode = 3
@@ -33,17 +105,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
-layout_mode = 1
+position = Vector2(238.571, 175.714)
+animation = &"P1_Idle"
+frame = 0
+frame_progress = 0.522781
 
 [node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
-layout_mode = 1
-offset_left = 305.0
-offset_right = 583.0
+position = Vector2(444.286, 175.714)
+animation = &"P1_Idle"
+frame = 0
+frame_progress = 0.476848
 
 [node name="TextureHP3" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
-layout_mode = 1
-offset_left = 506.0
-offset_right = 784.0
+position = Vector2(647.143, 175.714)
+animation = &"P1_Idle"
+frame = 0
+frame_progress = 0.0
 
 [node name="AmmoContainer" type="HBoxContainer" parent="TextureBackgroundHP"]
 layout_mode = 0
@@ -104,3 +181,10 @@ label_settings = SubResource("LabelSettings_by4q8")
 horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("6_y7uc4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(187.143, 427.143)
+sprite_frames = SubResource("SpriteFrames_styjc")
+autoplay = "default"
+frame_progress = 0.652615
