@@ -209,7 +209,7 @@ frequency = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00594343, -0.0101355, 0.066128)
 sprite_frames = SubResource("SpriteFrames_eqyg0")
 autoplay = "default"
-frame_progress = 0.767572
+frame_progress = 0.650745
 
 [node name="Sprite3D" type="Sprite3D" parent="VisualHolder/Visual/NodeShaker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00594343, -0.0101355, 0.066128)
