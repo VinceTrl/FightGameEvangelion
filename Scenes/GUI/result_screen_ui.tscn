@@ -11,6 +11,7 @@ font_size = 72
 [sub_resource type="LabelSettings" id="LabelSettings_mhc5c"]
 font = ExtResource("4_5s8p2")
 font_size = 600
+font_color = Color(1, 0.682353, 0, 1)
 outline_size = 30
 outline_color = Color(0, 0, 0, 1)
 
@@ -22,6 +23,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yxu0l")
+playerColor1 = Color(1, 0.682353, 0, 1)
+playerColor2 = Color(1, 0, 0.435294, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

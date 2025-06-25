@@ -107,20 +107,16 @@ grow_vertical = 2
 [node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
 position = Vector2(238.571, 175.714)
 animation = &"P1_Idle"
-frame = 0
 frame_progress = 0.522781
 
 [node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
 position = Vector2(444.286, 175.714)
 animation = &"P1_Idle"
-frame = 0
 frame_progress = 0.476848
 
 [node name="TextureHP3" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
 position = Vector2(647.143, 175.714)
 animation = &"P1_Idle"
-frame = 0
-frame_progress = 0.0
 
 [node name="AmmoContainer" type="HBoxContainer" parent="TextureBackgroundHP"]
 layout_mode = 0
