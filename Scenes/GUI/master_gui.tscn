@@ -27,8 +27,6 @@ layer = 99
 offset_top = 33.635
 offset_bottom = 73.635
 
-[node name="ResultScreen" parent="CanvasLayer" instance=ExtResource("5_dvxp5")]
-
 [node name="TopBanner" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -55,4 +53,7 @@ texture = ExtResource("6_8ak8g")
 [node name="LifeBarRoot_TopLeft" parent="." instance=ExtResource("8_ehwck")]
 
 [node name="LifeBarRoot_TopRight" parent="." instance=ExtResource("9_wcwep")]
+layout_mode = 1
+
+[node name="ResultScreen" parent="." instance=ExtResource("5_dvxp5")]
 layout_mode = 1
