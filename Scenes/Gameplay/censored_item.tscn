@@ -17,10 +17,11 @@ point_count = 3
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2apk3"]
 render_priority = 1
 shader = ExtResource("3_4qfbi")
+shader_parameter/Background_Color = Color(0, 0, 0, 0)
+shader_parameter/Blinking_Color = Color(100, 0, 0, 1)
 shader_parameter/Blinking_Speed = 15.0
 shader_parameter/Blinking_Intensity = 1.0
-shader_parameter/Blinking_Color = Color(100, 0, 0, 1)
-shader_parameter/Texture2DParameter = ExtResource("4_vc8xp")
+shader_parameter/sprite_texture = ExtResource("4_vc8xp")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwy4l"]
 size = Vector3(0.192627, 0.344116, 1)
