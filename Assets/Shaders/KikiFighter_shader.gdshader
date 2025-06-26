@@ -2,7 +2,10 @@ shader_type spatial;
 render_mode unshaded,blend_mix,depth_prepass_alpha,cull_disabled,specular_disabled;
 uniform sampler2D sprite_texture : source_color, filter_nearest;
 uniform vec4 additiveColor : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform vec4 multiplyColor : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float alpha: hint_range(0.0, 1.0) = 1.0;
+uniform float secondLayerIntensity: hint_range(0.0, 100.0) = 0.0;
+uniform float secondLayerUVScaling: hint_range(0.0, 10000.0) = 100.0;
 /*
 uniform vec4 line_color : source_color = vec4(1.0,1.0,1.0,1.0); // Glow or outline color
 uniform float glowSize: hint_range(0.0, 300) = 15.0; // Size of glow
@@ -16,9 +19,12 @@ uniform float alphaThreshold: hint_range(0.0, 1.0) =  0.2; // Alpha level a pixe
 //Goes through every single pixle and does thing
 void fragment() {
 	vec4 col = texture(sprite_texture, UV); // Gets color at uv position of pixel
+	vec2 UV02 = vec2(UV.x * mix(1.0, 30.0, sin(TIME*20.0)/2.0+0.5), (UV.y * mix(1.0, 30.0, sin(TIME*15.0)/2.0+0.5))/5.0);
+	vec4 col02 = texture(sprite_texture, UV02);
 
 	// Sets source image as default pixel
-	ALBEDO = col.rgb + additiveColor.rgb;
+	ALBEDO = (col.rgb + additiveColor.rgb) * multiplyColor.rgb + (col02.rgb * secondLayerIntensity);
+	EMISSION = (col02.rgb * secondLayerIntensity);
 	ALPHA = col.a  * alpha;
 
 /*
