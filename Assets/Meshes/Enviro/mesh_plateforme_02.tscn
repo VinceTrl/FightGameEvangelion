@@ -1,9 +1,306 @@
-[gd_scene load_steps=5 format=3 uid="uid://xdx0hyltny5r"]
+[gd_scene load_steps=13 format=4 uid="uid://xdx0hyltny5r"]
 
 [ext_resource type="PackedScene" uid="uid://cuv0ymymfo1jy" path="res://Sources/Meshes/SM_Plateforme_Big_01.fbx" id="1_g8mij"]
 [ext_resource type="Material" uid="uid://dlsb52vrnlb05" path="res://Assets/Materials/Enviro/M_Plateforme_01.tres" id="2_ks68o"]
 [ext_resource type="Material" uid="uid://cfng2qtk7tala" path="res://Assets/Materials/Enviro/M_Plateforme_Adds_01.tres" id="4_ir50q"]
 [ext_resource type="Material" uid="uid://dnqk1ekx8qx5n" path="res://Assets/Materials/Enviro/M_Emissive_Red.tres" id="4_uuufu"]
+[ext_resource type="PackedScene" uid="uid://d3thq5x6e2ic6" path="res://Sources/Meshes/SlapBros_Plateforme_Bandeau.fbx" id="5_lf4a3"]
+[ext_resource type="Material" uid="uid://5hvx3m5rgfo1" path="res://Assets/Materials/Enviro/M_Bandeau.tres" id="6_lbc7q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id5et"]
+resource_name = "Adds01"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.111955, 0.0813428, 0.118211, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6t44h"]
+_surfaces = [{
+"aabb": AABB(-0.153951, -0.153951, -0.0315899, 0.307902, 0.307902, 0.0631797),
+"format": 34359742465,
+"index_count": 336,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAIAAgABAAQABgAHAAgACAAJAAYAAAADAAgACAAHAAAACgALAAwADAANAAoADgAPAAwADAALAA4AEAARABIAEgATABAACgANABIAEgARAAoAFAAVABYAFgAXABQAGAAZABYAFgAVABgAGgAbABwAHAAdABoAFAAXABwAHAAbABQAHgAfACAAIAAhAB4AIgAjAB8AHwAeACIAJAAlACYAJgAnACQAJAAhACAAIAAlACQAAwAoACkAKQAIAAMAIgAqACsAKwAjACIAGAAsAC0ALQAZABgALgAvAA8ADwAOAC4AMAAxACcAJwAmADAAMgAzAAUABQAEADIAHQA0ADUANQAaAB0AEwA2ADcANwAQABMAOAA5AAYABgAJADgAOgA7AB4AHgAhADoAPAA9ABUAFQAUADwACgA+AD8APwALAAoAOwAqACIAIgAeADsAAABAAEEAQQABAAAAPQAsABgAGAAVAD0ACwA/AC4ALgAOAAsAJwAxAEIAQgAkACcAQQAyAAQABAABAEEAGgA1AEMAQwAbABoAEAA3AEQARAARABAAJABCADoAOgAhACQAOQBFAAcABwAGADkAQwA8ABQAFAAbAEMARAA+AAoACgARAEQARgBHACAAIAAfAEYARQBAAAAAAAAHAEUAFgBIAEkASQAXABYADABKAEsASwANAAwAIwArAEYARgAfACMATAAoAAMAAwACAEwALQBIABYAFgAZAC0ALwBKAAwADAAPAC8ATQAwACYAJgAlAE0ABQAzAEwATAACAAUATgA0AB0AHQAcAE4ATwA2ABMAEwASAE8ARwBNACUAJQAgAEcAKQA4AAkACQAIACkASQBOABwAHAAXAEkADQBLAE8ATwASAA0A"),
+"lods": [0.00769692, PackedByteArray("BAAFAAgACAAAAAQABgAAAAgACAAJAAYADgAPAAwADAAKAA4AEAAKAAwADAATABAAGAAZABYAFgAUABgAGgAUABYAFgAdABoAIgAjACAAIAAeACIAHgAgACYAJgAnAB4ACAAoACkATAAoAAgACQAIACkAKQA4AAkATAAIAAUABQAzAEwAIgAqACsAKwAjACIAGAAsAC0ALQAZABgALgAvAA8ADwAOAC4AMAAxACcAJwAmADAAMgAzAAUABQAEADIAHQA0ADUANQAaAB0AEwA2ADcANwAQABMAOAA5AAYABgAJADgAOgA7AB4AHgBCADoAQgAeACcAIgAeADsAOwAqACIAJwAxAEIAPAA9ABQAQwA8ABQAGAAUAD0APQAsABgAQwAUABoAGgA1AEMACgA+AD8ACgA/AC4ALgAOAAoARAA+AAoARAAKABAAEAA3AEQAAABAAEEARQBAAAAAOQBFAAAAAAAGADkABAAAAEEAQQAyAAQARgBHACAARwBNACAARgAgACMAIwArAEYAJgAgAE0ATQAwACYAFgBIAEkALQBIABYAFgAZAC0ASQBOABYAHQAWAE4ATgA0AB0ADABKAEsALwBKAAwADAAPAC8ADABLAE8AEwAMAE8ATwA2ABMA")],
+"name": "Adds01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 80,
+"vertex_data": PackedByteArray("UKUdPr68eDKAe7c74J0aPhDO3LyEr/q7gB40PYCcALz7J+Q64KU3PaGhg7KAe7c7SKURPviPWL3iCqe8IKspPTBIfLwFGQG7SKURPvuPWD1hZAE94J0aPh/O3DzBaZo8gB40PX+cADzB9ho8IKspPU9IfDzBwVc8AAAAAFKlHb5ne7c7AM7cvN6dGr6Yr/q7gJwAvHgeNL3jJeQ6AAAAANClN715e7c7AJBYvUqlEb4GC6e8AEh8vBCrKb0NGQG7AJBYPUylEb5dZAE9AM7cPN6dGr66aZo8gJwAPHgeNL289ho8gEh8PBCrKb29wVc8UKUdvjJo6K+Ae7c74J0avhjO3Dz8r/q7gB40vYCcADwFJuQ64KU3vV9e/DKAe7c7SKURvvyPWD3+Cqe8IKspvUBIfDz7GAG7SKURvvmPWL1fZAE94J0avhHO3Ly/aZo8gB40vYGcALx/9ho8IKspvVFIfLy/wVc8AM7cPN6dGj7or/q7gJwAPHgeND0dJuQ6AAAAANSlNz0He7c7AAAAAFKlHT6Ze7c7AJBYPUulET76Cqe8AEh8PBCrKT3zGQG7AM7cvN2dGj6maZo8gJwAvHQeND2E9ho8gEh8vBCrKT3DwVc8AJBYvUylET5TZAE94KU3PeFjtDt/e7e7gB40PYDOWjz3JeS6gANCPUulET5dZAG9gBYiPBCrKT29wVe8SKURvn0DQj1fZAG9IKspvUEWIjy/wVe8gANCvUqlEb5TZAG9ABYivBSrKb3DwVe8QD2rvBCrKT0NGQE7gBxvvUylET4GC6c8SKURPncDQr1RZAG9IKspPS8WIrzBwVe8IKspvSg9q7z5GAE7SKURvngcb73+Cqc8QD2rPBCrKb3zGAE7gBxvPUylEb76Cqc8IKspPSg9qzwHGgE7SKURPnwcbz0CC6c8AGS0u1KlHT5ne7e7QLWvPN6dGj66aZq8UKUdvv9jtLuBe7e74J0avhm1rzy/aZq8AGS0O1KlHb6Ze7e7ALWvvN6dGr6maZq8UKUdPiFktDt/e7e74J0aPg+1r7yhaZq8gPMEvd2dGj4YsPo74J0avozzBL37r/o7gPMEPd6dGr7or/o74J0aPpDzBD0FsPo7AKoZO3geND289hq8AGS0u9SlNz15e7e7gB40vQOqGTvA9hq84KU3vd9jtLuBe7e7AKoZu3geNL3E9hq8AGS0O9ClN72He7e7gB40Pf2pGbuA9hq8gM5avHQeND3jJ+S6gB40vYDOWrwJJuS6gM5aPHgeNL0dJuS6")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6iekw"]
+resource_name = "SM_Plateforme_Big_01_017"
+_surfaces = [{
+"aabb": AABB(-0.153951, -0.153951, -0.0315899, 0.307902, 0.307902, 0.0631797),
+"attribute_data": PackedByteArray("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"),
+"format": 34359742487,
+"index_count": 336,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgBnAGQAaABpAGoAagBrAGgAbABtAG4AbgBvAGwAcABxAHIAcgBzAHAAdAB1AHYAdgB3AHQAeAB5AHoAegB7AHgAfAB9AH4AfgB/AHwAgACBAIIAggCDAIAAhACFAIYAhgCHAIQAiACJAIoAigCLAIgAjACNAI4AjgCPAIwAkACRAJIAkgCTAJAAlACVAJYAlgCXAJQAmACZAJoAmgCbAJgAnACdAJ4AngCfAJwAoAChAKIAogCjAKAApAClAKYApgCnAKQAqACpAKoAqgCrAKgArACtAK4ArgCvAKwAsACxALIAsgCzALAAtAC1ALYAtgC3ALQAuAC5ALoAugC7ALgAvAC9AL4AvgC/ALwAwADBAMIAwgDDAMAAxADFAMYAxgDHAMQAyADJAMoAygDLAMgAzADNAM4AzgDPAMwA0ADRANIA0gDTANAA1ADVANYA1gDXANQA2ADZANoA2gDbANgA3ADdAN4A3gDfANwA"),
+"lods": [0.00769692, PackedByteArray("BAAFAAoACgAAAAQACAAAAAoACgALAAgAFAAVABIAEgAQABQAGAAQABIAEgAbABgAJAAlACIAIgAgACQAKAAgACIAIgArACgANAA1ADIAMgAwADQAMAAyADoAOgA7ADAAQwBBAEIAtABBAEMA1gBDAEIAQgDVANYAtABDAMQAxADFALQARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgCCAGQAggBmAOEAcgBmAGUAZQBxAHIAgACBAIIAaABpAGsAigBoAGsA4ABrAGkAaQB5AOAAigBrAIgAiACJAIoAbABtAG4AbABuAH4AfgB/AGwAjgBtAGwAjgBsAIwAjACNAI4AdAB1AHYAlQB1AHQAlACVAHQAdACXAJQAhgB0AHYAdgCFAIYAoAChAKIAoQDAAKIAoACiALAAsACxAKAAwgCiAMAAwADBAMIAqACpAKoAuACpAKgAqAC7ALgAqgDIAKgAygCoAMgAyADJAMoArACtAK4AvACtAKwArAC/ALwArACuAMwAzgCsAMwAzADNAM4A")],
+"material": SubResource("StandardMaterial3D_id5et"),
+"name": "Adds01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 226,
+"vertex_data": PackedByteArray("UKUdPr68eDKAe7c74J0aPhDO3LyEr/q7gB40PYCcALz7J+Q64KU3PaGhg7KAe7c7SKURPviPWL3iCqe8IKspPTBIfLwFGQG7gB40PYCcALz7J+Q64J0aPhDO3LyEr/q7SKURPvuPWD1hZAE94J0aPh/O3DzBaZo8gB40PX+cADzB9ho8IKspPU9IfDzBwVc8UKUdPr68eDKAe7c74KU3PaGhg7KAe7c7gB40PX+cADzB9ho84J0aPh/O3DzBaZo8AAAAAFKlHb5ne7c7AM7cvN6dGr6Yr/q7gJwAvHgeNL3jJeQ6AAAAANClN715e7c7AJBYvUqlEb4GC6e8AEh8vBCrKb0NGQG7gJwAvHgeNL3jJeQ6AM7cvN6dGr6Yr/q7AJBYPUylEb5dZAE9AM7cPN6dGr66aZo8gJwAPHgeNL289ho8gEh8PBCrKb29wVc8AAAAAFKlHb5ne7c7AAAAANClN715e7c7gJwAPHgeNL289ho8AM7cPN6dGr66aZo8UKUdvjJo6K+Ae7c74J0avhjO3Dz8r/q7gB40vYCcADwFJuQ64KU3vV9e/DKAe7c7SKURvvyPWD3+Cqe8IKspvUBIfDz7GAG7gB40vYCcADwFJuQ64J0avhjO3Dz8r/q7SKURvvmPWL1fZAE94J0avhHO3Ly/aZo8gB40vYGcALx/9ho8IKspvVFIfLy/wVc8UKUdvjJo6K+Ae7c74KU3vV9e/DKAe7c7gB40vYGcALx/9ho84J0avhHO3Ly/aZo8AM7cPN6dGj7or/q7gJwAPHgeND0dJuQ6AAAAANSlNz0He7c7AAAAAFKlHT6Ze7c7AJBYPUulET76Cqe8AEh8PBCrKT3zGQG7gJwAPHgeND0dJuQ6AM7cPN6dGj7or/q7AM7cvN2dGj6maZo8gJwAvHQeND2E9ho8gEh8vBCrKT3DwVc8AJBYvUylET5TZAE9AM7cvN2dGj6maZo8AAAAAFKlHT6Ze7c7AAAAANSlNz0He7c7gJwAvHQeND2E9ho84KU3PaGhg7KAe7c74KU3PeFjtDt/e7e7gB40PYDOWjz3JeS6gB40PX+cADzB9ho8AJBYPUulET76Cqe8gANCPUulET5dZAG9gBYiPBCrKT29wVe8AEh8PBCrKT3zGQG7SKURvvyPWD3+Cqe8SKURvn0DQj1fZAG9IKspvUEWIjy/wVe8IKspvUBIfDz7GAG7gANCvUqlEb5TZAG9ABYivBSrKb3DwVe8AEh8vBCrKb0NGQG7AJBYvUqlEb4GC6e8QD2rvBCrKT0NGQE7gBxvvUylET4GC6c8AJBYvUylET5TZAE9gEh8vBCrKT3DwVc8SKURPncDQr1RZAG9IKspPS8WIrzBwVe8IKspPTBIfLwFGQG7SKURPviPWL3iCqe8IKspvVFIfLy/wVc8IKspvSg9q7z5GAE7SKURvngcb73+Cqc8SKURvvmPWL1fZAE9gEh8PBCrKb29wVc8QD2rPBCrKb3zGAE7gBxvPUylEb76Cqc8AJBYPUylEb5dZAE9IKspPSg9qzwHGgE7SKURPnwcbz0CC6c8SKURPvuPWD1hZAE9IKspPU9IfDzBwVc8AGS0u1KlHT5ne7e7QLWvPN6dGj66aZq8AM7cPN6dGj7or/q7AAAAAFKlHT6Ze7c7UKUdvv9jtLuBe7e74J0avhm1rzy/aZq84J0avhjO3Dz8r/q7UKUdvjJo6K+Ae7c7AAAAAFKlHb5ne7c7AGS0O1KlHb6Ze7e7ALWvvN6dGr6maZq8AM7cvN6dGr6Yr/q7QLWvPN6dGj66aZq8gANCPUulET5dZAG9AJBYPUulET76Cqe8AM7cPN6dGj7or/q7UKUdPr68eDKAe7c7UKUdPiFktDt/e7e74J0aPg+1r7yhaZq84J0aPhDO3LyEr/q74J0avhm1rzy/aZq8SKURvn0DQj1fZAG9SKURvvyPWD3+Cqe84J0avhjO3Dz8r/q7AM7cvN6dGr6Yr/q7ALWvvN6dGr6maZq8gANCvUqlEb5TZAG9AJBYvUqlEb4GC6e8AJBYvUylET5TZAE9gBxvvUylET4GC6c8gPMEvd2dGj4YsPo7AM7cvN2dGj6maZo84J0aPg+1r7yhaZq8SKURPncDQr1RZAG9SKURPviPWL3iCqe84J0aPhDO3LyEr/q7SKURvvmPWL1fZAE9SKURvngcb73+Cqc84J0avozzBL37r/o74J0avhHO3Ly/aZo8AJBYPUylEb5dZAE9gBxvPUylEb76Cqc8gPMEPd6dGr7or/o7AM7cPN6dGr66aZo8AM7cvN2dGj6maZo8gPMEvd2dGj4YsPo7AGS0u1KlHT5ne7e7AAAAAFKlHT6Ze7c7SKURPnwcbz0CC6c84J0aPpDzBD0FsPo74J0aPh/O3DzBaZo8SKURPvuPWD1hZAE94J0avozzBL37r/o7UKUdvv9jtLuBe7e7UKUdvjJo6K+Ae7c74J0avhHO3Ly/aZo8gPMEPd6dGr7or/o7AGS0O1KlHb6Ze7e7AAAAAFKlHb5ne7c7AM7cPN6dGr66aZo8AKoZO3geND289hq8AGS0u9SlNz15e7e7AAAAANSlNz0He7c7gJwAPHgeND0dJuQ64J0aPpDzBD0FsPo7UKUdPiFktDt/e7e7UKUdPr68eDKAe7c74J0aPh/O3DzBaZo8gB40vYCcADwFJuQ6gB40vQOqGTvA9hq84KU3vd9jtLuBe7e74KU3vV9e/DKAe7c7gJwAvHgeNL3jJeQ6AKoZu3geNL3E9hq8AGS0O9ClN72He7e7AAAAANClN715e7c7AEh8PBCrKT3zGQG7gBYiPBCrKT29wVe8AKoZO3geND289hq8gJwAPHgeND0dJuQ6gB40Pf2pGbuA9hq84KU3PeFjtDt/e7e74KU3PaGhg7KAe7c7gB40PYCcALz7J+Q6IKspvUEWIjy/wVe8gB40vQOqGTvA9hq8gB40vYCcADwFJuQ6IKspvUBIfDz7GAG7ABYivBSrKb3DwVe8AKoZu3geNL3E9hq8gJwAvHgeNL3jJeQ6AEh8vBCrKb0NGQG7gM5avHQeND3jJ+S6QD2rvBCrKT0NGQE7gEh8vBCrKT3DwVc8gJwAvHQeND2E9ho8IKspPTBIfLwFGQG7IKspPS8WIrzBwVe8gB40Pf2pGbuA9hq8gB40PYCcALz7J+Q6gB40vYDOWrwJJuS6IKspvSg9q7z5GAE7IKspvVFIfLy/wVc8gB40vYGcALx/9ho8gM5aPHgeNL0dJuS6QD2rPBCrKb3zGAE7gEh8PBCrKb29wVc8gJwAPHgeNL289ho8AGS0u9SlNz15e7e7gM5avHQeND3jJ+S6gJwAvHQeND2E9ho8AAAAANSlNz0He7c7gB40PYDOWjz3JeS6IKspPSg9qzwHGgE7IKspPU9IfDzBwVc8gB40PX+cADzB9ho84KU3vd9jtLuBe7e7gB40vYDOWrwJJuS6gB40vYGcALx/9ho84KU3vV9e/DKAe7c7AAAAANClN715e7c7AGS0O9ClN72He7e7gM5aPHgeNL0dJuS6gJwAPHgeNL289ho8SKURvvyPWD3+Cqe8AJBYvUylET5TZAE9/3/QVS6qAID/f9BVLqoAgP9/0FXQVQCA/3/QVdBVAID/f9BVLqoAgP9/0FUuqgCA/3/QVS6qAID/f9BVLqoAgP9/0FXQVQCA/3/QVdBVAID/f9BV0FUAgP9/0FXQVQCA/3/QVdBVAID/f9BVLqoAgP9/0FUuqgCA/3/QVdBVAIDQVf9//38AgNBV/3//fwCA0FX/f/9/AIDQVf9//38AgNBV/3//fwCA0FX/f/9/AIDQVf9//38AgNBV/3//fwCA0FX/f/9/AIDQVf9//38AgNBV/3//fwCA0FX/f/9/AIDQVf9//38AgNBV/3//fwCA0FX/f/9/AIDQVf9//38AgP9/Lqouqv7//38uqi6q/v//fy6qLqr+//9/Lqouqv7//38uqi6q/v//fy6q0FX+//9/LqrQVf7//38uqi6q/v//fy6qLqr+//9/Lqouqv7//38uqi6q/v//fy6qLqr+//9/LqrQVf7//38uqtBV/v//fy6q0FX+//9/LqrQVf7/Lqr/f/9/AIAuqv9//38AgC6q/3//fwCALqr/f/9/AIAuqv9//38AgC6q/3//fwCALqr/f/9/AIAuqv9//38AgC6q/3//fwCALqr/f/9/AIAuqv9//38AgC6q/3//fwCALqr/f/9/AIAuqv9//38AgC6q/3//fwCALqr/f/9/AID+CRZxOXf25/4JFnE5d/bn/gkWcTl39uf+CRZxOXf257/hiEEAABeVv+GIQQAAF5W/4YhBAAAXlb/hiEEAABeVdr6/4VfSsbB2vr/hV9KxsHa+v+FX0rGwdr6/4VfSsbA/Hna+m54r6T8edr6bnivpPx52vpueK+k/Hna+m54r6XY+wGEAABeVdj7AYQAA5+p2PsBhAADn6nY+wGEAABeViEE/HqctTc+IQT8epy1Nz4hBPx6nLU3PiEE/HqctTc8+nnY+py2xsD6edj6nLbGwPp52PqctsbA+nnY+py2xsIjBPp6bntOWiME+npue05aIwT6em57TlojBPp6bntOWwGGIwVfSTc/AYYjBV9JNz8BhiMFX0k3PwGGIwVfSTc/ojgD2AADn6uiOAPYAAOfq6I4A9gAA5+rojgD2AADn6v4J6I4QsJz7/gnojhCwnPv+CeiOELCc+/4J6I4QsJz7FnH+CcUIB9gWcf4JxQgH2BZx/gnFCAfYFnH+CcUIB9j2pDbnAADn6vakNucAAOfq9qQ25wAA5+r2pDbnAADn6gD2FnHuT2KEAPYWce5PYoQA9hZx7k9ihAD2FnHuT2KEyBj2pAm6LPTIGPakCbos9MgY9qQJuiz0yBj2pAm6LPQIW8gYpRcE3QhbyBilFwTdCFvIGKUXBN0IW8gYpRcE3TdnCNsAAOfqN2cI2wAA5+o3ZwjbAADn6jdnCNsAAOfqNucIW/VF0os25whb9UXSizbnCFv1RdKLNucIW/VF0ov3JDdn9UUs9PckN2f1RSz09yQ3Z/VFLPT3JDdn9UUs9MeY9iSlF/qix5j2JKUX+qLHmPYkpRf6oseY9iSlF/qiAHYW8QAAF5UAdhbxAAAXlQB2FvEAAOfqAHYW8QAA5+oH28eYCbrSiwfbx5gJutKLB9vHmAm60osH28eYCbrSi+gOAHbuT5z76A4Adu5PnPvoDgB27k+c++gOAHbuT5z7/onoDsUI9qf+iegOxQj2p/6J6A7FCPan/onoDsUI9qcAdugOAADn6gB26A4AAOfqAHboDgAAF5UAdugOAAAXlRbx/okQsGKEFvH+iRCwYoQW8f6JELBihBbx/okQsGKEFvEAdjl3B5gW8QB2OXcHmBbxAHY5dweYFvEAdjl3B5j+iRbx7s+cu/6JFvHuz5y7/okW8e7PnLv+iRbx7s+cuzdn9yQAAOfqN2f3JAAA5+o3Z/ckAADn6jdn9yQAAOfq6A7+icWI9ufoDv6JxYj25+gO/onFiPbn6A7+icWI9ucI2zdnWWgEnQjbN2dZaASdCNs3Z1loBJ0I2zdnWWgEnceYB9v1xSy0x5gH2/XFLLTHmAfb9cUstMeYB9v1xSy09qTIGAAA5+r2pMgYAADn6vakyBgAAOfq9qTIGAAA5+r2JMeYpZf64vYkx5ill/ri9iTHmKWX+uL2JMeYpZf64jbn9qSllwSdNuf2pKWXBJ025/akpZcEnTbn9qSllwSdCFs25/XF0ssIWzbn9cXSywhbNuf1xdLLCFs25/XF0svojv4JAADn6uiO/gkAAOfq6I7+CQAA5+rojv4JAADn6sgYCFtZaPriyBgIW1lo+uLIGAhbWWj64sgYCFtZaPriAPbojsWIB5gA9uiOxYgHmAD26I7FiAeYAPbojsWIB5gWcQD27c9ixBZxAPbtz2LEFnEA9u3PYsQWcQD27c9ixJIcNp0Juiz00oxFvgAA5+o=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6t44h")
+
+[sub_resource type="Animation" id="Animation_2m5t0"]
+resource_name = "Anim_Plateform_cosmetic"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_017:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.75, 1, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 3.14159), Vector3(0, 0, 4.71239), Vector3(0, 0, 6.26573), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_016:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.75, 1, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 3.14159), Vector3(0, 0, 4.71239), Vector3(0, 0, 6.26573), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_015:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.75, 1, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 3.14159), Vector3(0, 0, 4.71239), Vector3(0, 0, 6.26573), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_001:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.75, 1, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 3.14159), Vector3(0, 0, 4.71239), Vector3(0, 0, 6.26573), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_005:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.75, 1, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 3.14159), Vector3(0, 0, 4.71239), Vector3(0, 0, 6.26573), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SM_Plateforme_Big_01/Cylinder_003:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333, 0.466667, 0.666667, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SM_Plateforme_Big_01/Cylinder_002:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333, 0.466667, 0.666667, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SM_Plateforme_Big_01/Cylinder_004:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333, 0.466667, 0.666667, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SM_Plateforme_Big_01/Cylinder_005:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333, 0.466667, 0.666667, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1), Vector3(1.5, 1.5, 2), Vector3(1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_018:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, -1.5708, 0), Vector3(-1.5708, -3.14159, 0), Vector3(-1.5708, -4.71239, 0), Vector3(-1.5708, -6.26573, 0), Vector3(-1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a38bt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_017:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_016:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_015:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_001:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_005:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SM_Plateforme_Big_01/Cylinder_003:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SM_Plateforme_Big_01/Cylinder_002:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SM_Plateforme_Big_01/Cylinder_004:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SM_Plateforme_Big_01/Cylinder_005:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SM_Plateforme_Big_01/SM_Plateforme_Big_01_018:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrmx7"]
+_data = {
+"Anim_Plateform_cosmetic": SubResource("Animation_2m5t0"),
+"RESET": SubResource("Animation_a38bt")
+}
 
 [node name="SM_Plateforme_Big_01" instance=ExtResource("1_g8mij")]
 
@@ -34,92 +331,119 @@ surface_material_override/0 = ExtResource("4_ir50q")
 [node name="SM_Plateforme_Big_01_017" parent="SM_Plateforme_Big_01" index="6"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_024" parent="SM_Plateforme_Big_01" index="7"]
+[node name="SM_Plateforme_Big_01_018" type="MeshInstance3D" parent="SM_Plateforme_Big_01" index="7"]
+transform = Transform3D(10.3591, 0, 0, 0, -4.5281e-07, 10.3591, 0, -10.3591, -4.5281e-07, -0.936511, -0.643322, 0.198772)
+mesh = SubResource("ArrayMesh_6iekw")
+skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_003" parent="SM_Plateforme_Big_01" index="8"]
+[node name="SM_Plateforme_Big_01_022" type="MeshInstance3D" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01_018" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_6iekw")
+skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_025" parent="SM_Plateforme_Big_01" index="9"]
+[node name="SM_Plateforme_Big_01_024" parent="SM_Plateforme_Big_01" index="8"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_021" parent="SM_Plateforme_Big_01" index="10"]
+[node name="SM_Plateforme_Big_01_003" parent="SM_Plateforme_Big_01" index="9"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_026" parent="SM_Plateforme_Big_01" index="11"]
+[node name="SM_Plateforme_Big_01_025" parent="SM_Plateforme_Big_01" index="10"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_004" parent="SM_Plateforme_Big_01" index="12"]
+[node name="SM_Plateforme_Big_01_021" parent="SM_Plateforme_Big_01" index="11"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_019" parent="SM_Plateforme_Big_01" index="13"]
+[node name="SM_Plateforme_Big_01_026" parent="SM_Plateforme_Big_01" index="12"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_020" parent="SM_Plateforme_Big_01" index="14"]
+[node name="SM_Plateforme_Big_01_004" parent="SM_Plateforme_Big_01" index="13"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_028" parent="SM_Plateforme_Big_01" index="15"]
+[node name="SM_Plateforme_Big_01_019" parent="SM_Plateforme_Big_01" index="14"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_027" parent="SM_Plateforme_Big_01" index="16"]
+[node name="SM_Plateforme_Big_01_020" parent="SM_Plateforme_Big_01" index="15"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_029" parent="SM_Plateforme_Big_01" index="17"]
+[node name="SM_Plateforme_Big_01_028" parent="SM_Plateforme_Big_01" index="16"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="Cylinder_003" parent="SM_Plateforme_Big_01" index="18"]
+[node name="SM_Plateforme_Big_01_027" parent="SM_Plateforme_Big_01" index="17"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="Cylinder_002" parent="SM_Plateforme_Big_01" index="19"]
+[node name="SM_Plateforme_Big_01_029" parent="SM_Plateforme_Big_01" index="18"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_006" parent="SM_Plateforme_Big_01" index="20"]
+[node name="Cylinder_003" parent="SM_Plateforme_Big_01" index="19"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_023" parent="SM_Plateforme_Big_01" index="21"]
+[node name="Cylinder_002" parent="SM_Plateforme_Big_01" index="20"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_030" parent="SM_Plateforme_Big_01" index="22"]
+[node name="SM_Plateforme_Big_01_006" parent="SM_Plateforme_Big_01" index="21"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_031" parent="SM_Plateforme_Big_01" index="23"]
+[node name="SM_Plateforme_Big_01_023" parent="SM_Plateforme_Big_01" index="22"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_032" parent="SM_Plateforme_Big_01" index="24"]
+[node name="SM_Plateforme_Big_01_030" parent="SM_Plateforme_Big_01" index="23"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_033" parent="SM_Plateforme_Big_01" index="25"]
+[node name="SM_Plateforme_Big_01_031" parent="SM_Plateforme_Big_01" index="24"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_034" parent="SM_Plateforme_Big_01" index="26"]
+[node name="SM_Plateforme_Big_01_032" parent="SM_Plateforme_Big_01" index="25"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_035" parent="SM_Plateforme_Big_01" index="27"]
+[node name="SM_Plateforme_Big_01_033" parent="SM_Plateforme_Big_01" index="26"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="Cylinder_004" parent="SM_Plateforme_Big_01" index="28"]
+[node name="SM_Plateforme_Big_01_034" parent="SM_Plateforme_Big_01" index="27"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="Cylinder_005" parent="SM_Plateforme_Big_01" index="29"]
+[node name="SM_Plateforme_Big_01_035" parent="SM_Plateforme_Big_01" index="28"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_036" parent="SM_Plateforme_Big_01" index="30"]
+[node name="Cylinder_004" parent="SM_Plateforme_Big_01" index="29"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_037" parent="SM_Plateforme_Big_01" index="31"]
+[node name="Cylinder_005" parent="SM_Plateforme_Big_01" index="30"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_038" parent="SM_Plateforme_Big_01" index="32"]
+[node name="SM_Plateforme_Big_01_036" parent="SM_Plateforme_Big_01" index="31"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_039" parent="SM_Plateforme_Big_01" index="33"]
+[node name="SM_Plateforme_Big_01_037" parent="SM_Plateforme_Big_01" index="32"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_040" parent="SM_Plateforme_Big_01" index="34"]
+[node name="SM_Plateforme_Big_01_038" parent="SM_Plateforme_Big_01" index="33"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_041" parent="SM_Plateforme_Big_01" index="35"]
+[node name="SM_Plateforme_Big_01_039" parent="SM_Plateforme_Big_01" index="34"]
 surface_material_override/0 = ExtResource("4_ir50q")
 
-[node name="SM_Plateforme_Big_01_042" parent="SM_Plateforme_Big_01" index="36"]
+[node name="SM_Plateforme_Big_01_040" parent="SM_Plateforme_Big_01" index="35"]
 surface_material_override/0 = ExtResource("4_ir50q")
+
+[node name="SM_Plateforme_Big_01_041" parent="SM_Plateforme_Big_01" index="36"]
+surface_material_override/0 = ExtResource("4_ir50q")
+
+[node name="SM_Plateforme_Big_01_042" parent="SM_Plateforme_Big_01" index="37"]
+surface_material_override/0 = ExtResource("4_ir50q")
+
+[node name="Anim_Plateform" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_wrmx7")
+}
+autoplay = "Anim_Plateform_cosmetic"
+
+[node name="SlapBros_Plateforme_Bandeau" parent="." index="2" instance=ExtResource("5_lf4a3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0866323, 0.209632, -0.15529)
+
+[node name="SM_Plateforme_Big_01_043" parent="SlapBros_Plateforme_Bandeau" index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, -0.483366, 0.156007)
+surface_material_override/0 = ExtResource("6_lbc7q")
+
+[editable path="SlapBros_Plateforme_Bandeau"]

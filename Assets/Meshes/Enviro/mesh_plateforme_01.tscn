@@ -1,14 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://w5jpce2kyimj"]
+[gd_scene load_steps=10 format=3 uid="uid://w5jpce2kyimj"]
 
 [ext_resource type="PackedScene" uid="uid://i08d75by6ohj" path="res://Sources/Meshes/Mesh_Plateforme_01.fbx" id="1_a533a"]
 [ext_resource type="Material" uid="uid://dh3itiecirk2e" path="res://Assets/Materials/Enviro/M_PurpleMetal.tres" id="2_g4kf8"]
 [ext_resource type="Material" uid="uid://b3yrf7e0nua60" path="res://Assets/Materials/Enviro/M_Red.tres" id="3_lkboy"]
 [ext_resource type="Material" uid="uid://dnqk1ekx8qx5n" path="res://Assets/Materials/Enviro/M_Emissive_Red.tres" id="4_2nlh3"]
 [ext_resource type="Material" uid="uid://31jg1icsear4" path="res://Assets/Materials/Enviro/M_Chrome.tres" id="4_l5ppx"]
-[ext_resource type="PackedScene" uid="uid://cuv0ymymfo1jy" path="res://Sources/Meshes/SM_Plateforme_Big_01.fbx" id="7_vss7b"]
-[ext_resource type="Material" uid="uid://dlsb52vrnlb05" path="res://Assets/Materials/Enviro/M_Plateforme_01.tres" id="8_e7cs7"]
+[ext_resource type="PackedScene" uid="uid://xdx0hyltny5r" path="res://Assets/Meshes/Enviro/mesh_plateforme_02.tscn" id="7_8d2br"]
 [ext_resource type="Material" uid="uid://bh60aa5jc78f5" path="res://Assets/Materials/Enviro/M_PubPanel_Plane_02.tres" id="8_earxi"]
-[ext_resource type="Material" uid="uid://cfng2qtk7tala" path="res://Assets/Materials/Enviro/M_Plateforme_Adds_01.tres" id="9_bnqfh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1r4ai"]
 size = Vector3(5.25563, 0.276189, 2.35387)
@@ -60,125 +58,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00204969, 0.341368, 0.18782
 shape = SubResource("BoxShape3D_1r4ai")
 
 [node name="PanelPlane" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -0.791613, -0.146241, 1.06598)
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -0.791613, -0.146241, 1.0395)
 mesh = SubResource("PlaneMesh_u3dhb")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("8_earxi")
 
-[node name="SM_Plateforme_Big_01" parent="." index="3" instance=ExtResource("7_vss7b")]
-transform = Transform3D(0.914831, 0, 0, 0, 0.914831, -3.99885e-08, 0, 3.99885e-08, 0.914831, 0.00204969, -0.436997, 0.248011)
-
-[node name="SM_Plateforme_Big_01" parent="SM_Plateforme_Big_01" index="0"]
-surface_material_override/0 = ExtResource("8_e7cs7")
-surface_material_override/1 = ExtResource("4_2nlh3")
-surface_material_override/2 = ExtResource("4_2nlh3")
-
-[node name="SM_Plateforme_Big_01_002" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="1"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_005" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="2"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_001" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="3"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_015" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="4"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_016" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="5"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_017" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="6"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_024" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="7"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_003" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="8"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_025" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="9"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_021" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="10"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_026" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="11"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_004" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="12"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_019" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="13"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_020" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="14"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_028" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="15"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_027" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="16"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_029" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="17"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="Cylinder_003" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="18"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="Cylinder_002" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="19"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_006" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="20"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_023" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="21"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_030" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="22"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_031" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="23"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_032" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="24"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_033" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="25"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_034" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="26"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_035" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="27"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="Cylinder_004" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="28"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="Cylinder_005" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="29"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_036" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="30"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_037" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="31"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_038" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="32"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_039" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="33"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_040" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="34"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_041" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="35"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[node name="SM_Plateforme_Big_01_042" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01" index="36"]
-surface_material_override/0 = ExtResource("9_bnqfh")
-
-[editable path="SM_Plateforme_Big_01"]
+[node name="SM_Plateforme_Big_02" parent="." index="3" instance=ExtResource("7_8d2br")]
+transform = Transform3D(0.91362, 0, 0, 0, 0.91362, 0, 0, 0, 0.91362, 0.0996592, -0.166436, 0.235062)

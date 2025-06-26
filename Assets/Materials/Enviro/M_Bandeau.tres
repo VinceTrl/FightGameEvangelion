@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://5hvx3m5rgfo1"]
+
+[ext_resource type="Shader" uid="uid://dhs7yv0hcugjs" path="res://Assets/Shaders/Scrolling.tres" id="1_g5oio"]
+[ext_resource type="Texture2D" uid="uid://cj2awmsmijw56" path="res://Sources/Textures/T_Bandeau.png" id="2_nuc5h"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_g5oio")
+shader_parameter/Speed = -0.5
+shader_parameter/Offset = 0.0
+shader_parameter/Texture = ExtResource("2_nuc5h")
