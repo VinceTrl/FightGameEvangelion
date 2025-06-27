@@ -72,7 +72,7 @@ func SpawnWithDelay(position: Vector3, delay: float) -> void:
 func SetWarningToAllTargets():
 	for target in targets:
 		target as AnimatedSprite3D
-		target.play("Warning")
+		#target.play("Warning")
 		
 func Slap():
 	print("START SLAAAAP")

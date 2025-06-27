@@ -1,0 +1,125 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5fc4fh8i01vj"]
+
+[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_xjiak"]
+[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_xbhsl"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_hl4g5"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_2p66u"]
+[ext_resource type="PackedScene" uid="uid://w5jpce2kyimj" path="res://Assets/Meshes/Enviro/mesh_plateforme_01.tscn" id="6_b8ik4"]
+[ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="7_shemx"]
+[ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="8_2o51h"]
+[ext_resource type="PackedScene" uid="uid://dtndx3uhsdsnl" path="res://Assets/Meshes/Enviro/mesh_plateforme_04.tscn" id="9_8ngka"]
+[ext_resource type="PackedScene" uid="uid://dvqhlk4l25sd3" path="res://Scenes/Gameplay/shrek_item.tscn" id="9_walvn"]
+
+[node name="Stage_08" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.3, 0)
+script = ExtResource("1_xjiak")
+
+[node name="Gameplay" type="Node3D" parent="."]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay"]
+
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.339606, 1.46675, -0.481903)
+script = ExtResource("2_xbhsl")
+
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.33961, 1.46675, -0.481903)
+script = ExtResource("2_xbhsl")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay"]
+
+[node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.28702, 3.3, 0)
+
+[node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.28702, 3.3, 0)
+
+[node name="Spawner3" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28702, 3.3, 0)
+
+[node name="Spawner4" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.193, 3.3, 0)
+
+[node name="Spawner5" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.193, 3.3, 0)
+
+[node name="Spawner6" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.193, 3.3, 0)
+
+[node name="PenPenLocations" type="Node3D" parent="Gameplay"]
+
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37871, 0.252657, 0)
+script = ExtResource("5_2p66u")
+
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.627961, 0)
+script = ExtResource("5_2p66u")
+
+[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38339, 2.54319, 0)
+script = ExtResource("5_2p66u")
+
+[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25588, 2.73042, 0)
+script = ExtResource("5_2p66u")
+
+[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07223, 0.466167, 0)
+script = ExtResource("5_2p66u")
+
+[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95277, 2.53234, 0)
+script = ExtResource("5_2p66u")
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="Mesh_Plateforme_03" parent="Level" instance=ExtResource("6_b8ik4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.18295, 1.82613, -0.484462)
+
+[node name="Mesh_Plateforme_01" parent="Level" instance=ExtResource("7_shemx")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.26289, 1.82613, -0.232963)
+
+[node name="ShipTargetPosition4" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 2.79084, 2.07117, 0.147627)
+
+[node name="ShipTargetPosition5" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 8.33782, -0.42128, 0.147627)
+
+[node name="ShipTargetPosition6" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -2.32944, -0.378128, 0.147627)
+
+[node name="PlatformShip4" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("8_2o51h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77103, 1.99263, -21.2861)
+targetNode = NodePath("../ShipTargetPosition4")
+
+[node name="PlatformShip5" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("8_2o51h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.80703, -0.502137, -21.2861)
+targetNode = NodePath("../ShipTargetPosition5")
+
+[node name="PlatformShip6" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("8_2o51h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85343, -0.791395, -21.2861)
+targetNode = NodePath("../ShipTargetPosition6")
+
+[node name="Mesh_Plateforme_07" parent="Level" instance=ExtResource("9_8ngka")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.339606, -0.533253, -0.481903)
+
+[node name="Mesh_Plateforme_08" parent="Level" instance=ExtResource("9_8ngka")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.97379, -0.533253, -0.481903)
+
+[node name="Mesh_Plateforme_09" parent="Level" instance=ExtResource("9_8ngka")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.58511, -0.533253, -0.481903)
+
+[node name="ShrekItem" parent="Level" instance=ExtResource("9_walvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97389, -0.328187, -0.0205155)
+infinite = true
+
+[node name="CameraTarget" parent="Level/ShrekItem" index="1"]
+autoRegister = false
+
+[node name="GroundMagnet" parent="Level/ShrekItem" index="2"]
+auto_align_on_ready = false
+auto_align_on_update = false
+
+[editable path="Level/ShrekItem"]

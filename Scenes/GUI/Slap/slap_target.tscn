@@ -78,4 +78,4 @@ texture_filter = 0
 render_priority = 10
 sprite_frames = SubResource("SpriteFrames_xyrap")
 autoplay = "default"
-frame_progress = 0.442116
+frame_progress = 0.343285
