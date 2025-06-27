@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://nn8roov4p5vq"]
+[gd_scene load_steps=22 format=3 uid="uid://nn8roov4p5vq"]
 
 [ext_resource type="Script" path="res://Scripts/GameEffects/spawn_trail.gd" id="1_1c6fn"]
-[ext_resource type="SpriteFrames" uid="uid://boywxim1x038u" path="res://Assets/Sprites/BulletSpriteSheet.tres" id="1_d8u61"]
+[ext_resource type="Texture2D" uid="uid://dum7m1fiqjiis" path="res://Assets/Sprites/Items/GUI_ItemBox.png" id="2_c5w83"]
 
 [sub_resource type="Curve" id="Curve_aeft5"]
 _data = [Vector2(0, 0), 0.0, 1.32338, 0, 0, Vector2(1, 1), 0.157607, 0.0, 0, 0]
@@ -10,6 +10,126 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_g71in"]
 _data = [Vector2(0, 0), 0.0, 0.922421, 0, 0, Vector2(0.5, 1), 2.0, -2.0, 1, 1, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prr5w"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(0, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvbx8"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(111, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj7pg"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(222, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjsf5"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(333, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbgu8"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(444, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enet3"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(555, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jce46"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(666, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnysc"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(777, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7333"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(888, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf1my"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(999, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8cj5"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(1110, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42oon"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(1221, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnmv5"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(1332, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nahn"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(1443, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1jxp"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(1554, 0, 111, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mtyt"]
+atlas = ExtResource("2_c5w83")
+region = Rect2(1665, 0, 111, 101)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8y33"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prr5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvbx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj7pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjsf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbgu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enet3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jce46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnysc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7333")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf1my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8cj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42oon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnmv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nahn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1jxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mtyt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="SpawnTrail" type="Node3D"]
 script = ExtResource("1_1c6fn")
@@ -20,9 +140,9 @@ animationCurve = SubResource("Curve_aeft5")
 offsetCurveX = SubResource("Curve_g71in")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(0.469364, 0, 0, 0, 0.469364, 0, 0, 0, 0.469364, 0, 0, 0)
 billboard = 1
 texture_filter = 0
-sprite_frames = ExtResource("1_d8u61")
+sprite_frames = SubResource("SpriteFrames_u8y33")
 autoplay = "default"
-frame_progress = 0.836217
+frame_progress = 0.684088
