@@ -37,6 +37,11 @@ animations = [{
 "loop": false,
 "name": &"default",
 "speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Vfx2D_ImpactMedium" type="AnimatedSprite3D"]
@@ -44,7 +49,6 @@ billboard = 1
 no_depth_test = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_6drh8")
+animation = &"new_animation"
 autoplay = "default"
-frame = 3
-frame_progress = 1.0
 script = ExtResource("2_60tkm")

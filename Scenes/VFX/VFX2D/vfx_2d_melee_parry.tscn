@@ -1,0 +1,117 @@
+[gd_scene load_steps=17 format=3 uid="uid://l4c54p2hblnf"]
+
+[ext_resource type="Texture2D" uid="uid://bxqwpphkbwfs3" path="res://Assets/Sprites/Vfx/Hit/PC Computer - RPG Maker MV - Hit 1.png" id="1_xq5d6"]
+[ext_resource type="Texture2D" uid="uid://bw6sxt63ket52" path="res://Assets/Sprites/Vfx/Hit/PC Computer - CrossCode - Hit Effects.png" id="2_r1w3l"]
+[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="3_878j7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkaqw"]
+atlas = ExtResource("1_xq5d6")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy20o"]
+atlas = ExtResource("1_xq5d6")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usxrk"]
+atlas = ExtResource("1_xq5d6")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptgmo"]
+atlas = ExtResource("1_xq5d6")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnqjj"]
+atlas = ExtResource("2_r1w3l")
+region = Rect2(130, 67, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4uco"]
+atlas = ExtResource("2_r1w3l")
+region = Rect2(194, 67, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucb3w"]
+atlas = ExtResource("2_r1w3l")
+region = Rect2(258, 67, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaot1"]
+atlas = ExtResource("2_r1w3l")
+region = Rect2(322, 67, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax1cd"]
+atlas = ExtResource("2_r1w3l")
+region = Rect2(386, 67, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l001m"]
+atlas = ExtResource("2_r1w3l")
+region = Rect2(450, 67, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_768au"]
+atlas = ExtResource("2_r1w3l")
+region = Rect2(2, 131, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sgww"]
+atlas = ExtResource("2_r1w3l")
+region = Rect2(66, 131, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_udan5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkaqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy20o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usxrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptgmo")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnqjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4uco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucb3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaot1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax1cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l001m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_768au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sgww")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 20.0
+}]
+
+[node name="Vfx2DMeleeParry" type="AnimatedSprite3D"]
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_udan5")
+autoplay = "new_animation"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("3_878j7")

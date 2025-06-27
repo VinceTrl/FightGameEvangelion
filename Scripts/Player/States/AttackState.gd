@@ -8,6 +8,8 @@ var currentHitbox: Hitbox
 @onready var hitbox_down: Hitbox = $"../../HitboxDown"
 @onready var sfx_contact: AudioStreamPlayer3D = $"../../PlayerAudio/Sfx_Contact"
 
+const VFX_2D_MELEE_PARRY = preload("res://Scenes/VFX/VFX2D/vfx_2d_melee_parry.tscn")
+
 #func _ready() -> void:
 	#Player.hitbox_down.OnHitboxDetected.connect(HandleHitboxCollision)
 	#Player.hitbox_up.OnHitboxDetected.connect(HandleHitboxCollision)
@@ -104,8 +106,20 @@ func OnHitboxCollision(_hitbox:Hitbox):
 	Player.velocity = Vector3.ZERO
 	Player.lastHitbox = _hitbox
 	Player.lastHitLocation = _hitbox.global_position
+	
+	var positions:Array
+	positions.append(Player)
+	positions.append(_hitbox)
+	SpawnParryVFX(GetAveragePosition(positions))
+	#SpawnParryVFX(Player.lastHitLocation)
+	
 	Player.ChangeState(States.Knockback)
 	pass
+	
+func SpawnParryVFX(spawnPos:Vector3):
+	var vfx = VFX_2D_MELEE_PARRY.instantiate()
+	get_tree().current_scene.add_child(vfx)
+	vfx.global_position = spawnPos
 	
 func SetAttackDirection(direction: Vector3):
 	direction = direction.normalized()
@@ -128,3 +142,17 @@ func SetAttackDirection(direction: Vector3):
 			currentHitbox = hitbox_down
 
 	Player.animator.play(anim_name)
+	
+func GetAveragePosition(nodes: Array) -> Vector3:
+	var total_position := Vector3.ZERO
+	var count := 0
+	
+	for node in nodes:
+		if node is Node3D:
+			total_position += node.global_transform.origin
+			count += 1
+	
+	if count == 0:
+		return Vector3.ZERO
+	
+	return total_position / count

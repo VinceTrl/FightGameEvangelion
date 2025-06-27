@@ -33,6 +33,7 @@ extends CharacterBody3D
 const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 const SD_GROUND_HIT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_GroundHit.wav")
 const VFX_2D_LANDING = preload("res://Scenes/VFX/VFX2D/vfx_2d_landing.tscn")
+const VFX_2D_HEAL = preload("res://Scenes/VFX/VFX2D/vfx_2d_heal.tscn")
 
 @export var playerID = 1
 
@@ -473,7 +474,14 @@ func HandleTaunt():
 func AddHealth(_points: int):
 	currentHealthPoints += _points
 	currentHealthPoints = clampi(currentHealthPoints,0,healthPoints)
+	SpawnLifeVFX()
 	emit_signal("OnPlayerLifeChanged")
+	
+	
+func SpawnLifeVFX():
+	var vfx = VFX_2D_HEAL.instantiate()
+	add_child(vfx)
+	
 	
 func RemoveHealth(_points: int):
 	currentHealthPoints -= _points

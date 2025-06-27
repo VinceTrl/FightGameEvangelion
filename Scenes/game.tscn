@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/KikiFighter/SpriteKikiYellow.png" id="7_j3bm8"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
-[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
+[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_3v2jh"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_u3ss6"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="15_2shva"]
 [ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="15_7m25h"]
@@ -729,8 +729,14 @@ spot_range = 49.3115
 [node name="Meshes" parent="Meshes/Enviro" index="2"]
 transform = Transform3D(1.59308, 0, 0, 0, 1.59308, 0, 0, 0, 1.59308, 0, -3.01737, -3.63236)
 
+[node name="City Pivot" parent="Meshes/Enviro/Meshes/R/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+
 [node name="Mesh_buildingsLoop_03" parent="Meshes/Enviro/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="City Pivot" parent="Meshes/Enviro/Meshes/R2/CityRight" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Meshes/Enviro/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -848,6 +854,9 @@ spot_angle_attenuation = 303.142
 transform = Transform3D(0.998719, -0.0305181, -0.0403521, 0, 0.797584, -0.603208, 0.0505929, 0.602436, 0.796562, 0.410762, 0.446429, -26.7202)
 animPlayerChore = NodePath("../SLAP_Choregraphie/AnimLight_Slap")
 slapStartPauseDuration = 1.0
+
+[node name="Robot Pivot" parent="Meshes/EVA" index="0"]
+transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
 [node name="Robot_eva_03" parent="Meshes/EVA/Robot Pivot" index="0"]
 transform = Transform3D(3.97652, -0.16614, -0.0076868, 0.119421, 2.98024, -2.63521, 0.115759, 2.63268, 2.98262, 0, -3, -5)

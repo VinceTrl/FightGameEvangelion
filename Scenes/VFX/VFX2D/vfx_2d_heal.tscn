@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://j7lwtovgn0bn"]
+
+[ext_resource type="Texture2D" uid="uid://bvchqm3uy3r40" path="res://Assets/Sprites/Vfx/Heal/HealFxSheet.png" id="1_j7tha"]
+[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="2_axfaf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkv5q"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(0, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cxry"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(50, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdto6"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(100, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7njvt"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(150, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa8d6"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(200, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4755"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(250, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bb4k"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(300, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofhb7"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(350, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv7y2"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(400, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h0h4"]
+atlas = ExtResource("1_j7tha")
+region = Rect2(450, 0, 50, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uyoym"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkv5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cxry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdto6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7njvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa8d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4755")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bb4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofhb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv7y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h0h4")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Vfx2DHeal" type="AnimatedSprite3D"]
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+render_priority = 4
+sprite_frames = SubResource("SpriteFrames_uyoym")
+autoplay = "default"
+frame = 10
+frame_progress = 1.0
+script = ExtResource("2_axfaf")
+instanceScale = Vector3(1.5, 1.5, 1.5)

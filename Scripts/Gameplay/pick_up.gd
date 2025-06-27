@@ -3,6 +3,7 @@ extends Node3D
 
 @onready var area_3d: Area3D = $Area3D
 @onready var node_shaker: NodeShaker = $VisualHolder/Visual/NodeShaker
+const VFX_2D_PICK_UP_ITEM = preload("res://Scenes/VFX/VFX2D/vfx_2d_pick_up_item.tscn")
 
 enum ItemType {Ammo,Explo,Shield}
 @export var type: ItemType = ItemType.Ammo
@@ -29,8 +30,14 @@ func GetItem(_body: Node3D):
 func DestroyItem():
 	used = true
 	node_shaker.NodeShake()
+	SpawnVFX()
 	await get_tree().create_timer(destroyDelay,true,false,false).timeout
 	queue_free()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	GetItem(body)
+	
+func SpawnVFX():
+	var vfx = VFX_2D_PICK_UP_ITEM.instantiate()
+	vfx.global_position = global_position
+	get_tree().current_scene.add_child(vfx)
