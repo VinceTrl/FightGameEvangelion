@@ -332,7 +332,7 @@ surface_material_override/0 = ExtResource("4_ir50q")
 surface_material_override/0 = ExtResource("4_ir50q")
 
 [node name="SM_Plateforme_Big_01_018" type="MeshInstance3D" parent="SM_Plateforme_Big_01" index="7"]
-transform = Transform3D(10.3591, 0, 0, 0, -4.5281e-07, 10.3591, 0, -10.3591, -4.5281e-07, -0.936511, -0.643322, 0.198772)
+transform = Transform3D(10.3591, 0, 0, 0, -3.74998e-05, 10.3591, 0, -10.3591, -3.74998e-05, -0.936511, -0.643322, 0.198772)
 mesh = SubResource("ArrayMesh_6iekw")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_ir50q")
@@ -380,6 +380,7 @@ surface_material_override/0 = ExtResource("4_ir50q")
 surface_material_override/0 = ExtResource("4_ir50q")
 
 [node name="Cylinder_002" parent="SM_Plateforme_Big_01" index="20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35323, 2.14144, 0.118278)
 surface_material_override/0 = ExtResource("4_ir50q")
 
 [node name="SM_Plateforme_Big_01_006" parent="SM_Plateforme_Big_01" index="21"]
@@ -410,6 +411,7 @@ surface_material_override/0 = ExtResource("4_ir50q")
 surface_material_override/0 = ExtResource("4_ir50q")
 
 [node name="Cylinder_005" parent="SM_Plateforme_Big_01" index="30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.44499, 2.15306, 0.0608214)
 surface_material_override/0 = ExtResource("4_ir50q")
 
 [node name="SM_Plateforme_Big_01_036" parent="SM_Plateforme_Big_01" index="31"]

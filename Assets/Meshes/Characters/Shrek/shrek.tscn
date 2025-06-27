@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdv55byodmt2m"]
+[gd_scene load_steps=8 format=3 uid="uid://cdv55byodmt2m"]
 
 [ext_resource type="PackedScene" uid="uid://cjuhbvaggbelq" path="res://Assets/Meshes/Characters/Shrek/Shrek.fbx" id="1_x48c5"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="2_7avlx"]
 [ext_resource type="Shader" path="res://Assets/Shaders/FresnelOutline_shader.gdshader" id="2_p3u7f"]
+[ext_resource type="Material" uid="uid://b5mvmts0o7f3e" path="res://Assets/Materials/Gameplay/M_Shrek2.tres" id="3_i8h71"]
+[ext_resource type="Material" uid="uid://bw4a1ctvlsojs" path="res://Assets/Materials/Gameplay/M_ShrekEyes.tres" id="4_owwwy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7cpjh"]
 render_priority = 0
 shader = ExtResource("2_p3u7f")
-shader_parameter/outline_color = Color(1, 0.516667, 0, 0.0784314)
-shader_parameter/fresnel_power = 2.0
+shader_parameter/outline_color = Color(0.523353, 0.25839, 1.78084e-06, 0.0784314)
+shader_parameter/fresnel_power = 0.5
 shader_parameter/hue_speed = 10.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iv1e3"]
@@ -50,9 +52,22 @@ bones/31/rotation = Quaternion(0.329768, 0.0244116, -0.00445755, 0.943736)
 
 [node name="Body" parent="Skeleton3D" index="0"]
 material_overlay = SubResource("ShaderMaterial_7cpjh")
+surface_material_override/0 = ExtResource("3_i8h71")
+
+[node name="Eye1" parent="Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("4_owwwy")
+
+[node name="Teeth1" parent="Skeleton3D" index="2"]
+surface_material_override/0 = ExtResource("4_owwwy")
+
+[node name="Eye2" parent="Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("4_owwwy")
+
+[node name="Teeth2" parent="Skeleton3D" index="4"]
+surface_material_override/0 = ExtResource("4_owwwy")
 
 [node name="HandR" type="BoneAttachment3D" parent="Skeleton3D" index="5"]
-transform = Transform3D(0.705426, -0.573225, 0.416877, -0.312252, -0.779344, -0.543251, 0.636296, 0.253053, -0.72876, -0.0091471, 0.00873431, 0.00377505)
+transform = Transform3D(0.705427, -0.573225, 0.416877, -0.312253, -0.779345, -0.543249, 0.636295, 0.253052, -0.728762, -0.00914709, 0.0087343, 0.00377503)
 bone_name = "mixamorig_RightHand"
 bone_idx = 18
 
@@ -66,7 +81,7 @@ transform = Transform3D(0.999996, 0, 0, 0, 0.999999, 0, 0, 0, 0.999991, 0, 0, 0)
 shape = SubResource("BoxShape3D_iv1e3")
 
 [node name="HandL" type="BoneAttachment3D" parent="Skeleton3D" index="6"]
-transform = Transform3D(0.795331, 0.603401, -0.0579334, 0.285801, -0.45755, -0.842001, -0.534572, 0.653112, -0.536356, 0.0092261, 0.00944729, 0.0052089)
+transform = Transform3D(0.795331, 0.6034, -0.0579322, 0.2858, -0.457549, -0.842002, -0.534571, 0.653113, -0.536355, 0.00922609, 0.00944729, 0.00520892)
 bone_name = "mixamorig_LeftHand"
 bone_idx = 10
 

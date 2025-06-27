@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dyqrd26u8lp8x"]
+[gd_scene load_steps=39 format=3 uid="uid://dyqrd26u8lp8x"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/shitpost_gui.gd" id="1_fljbo"]
 [ext_resource type="Texture2D" uid="uid://uyxpod7dbnun" path="res://Assets/Shitpost/Evangelion/Screenshot_2025-06-10-03-23-13-35_1c337646f29875672b5a61192b9010f9.png" id="2_jctm3"]
@@ -21,6 +21,23 @@
 [ext_resource type="Texture2D" uid="uid://bawt8suh22o0q" path="res://Assets/Shitpost/Evangelion/EEoXGIjUwAALgAh.jpg" id="19_fee6v"]
 [ext_resource type="Texture2D" uid="uid://ddpn7aoun25an" path="res://Assets/Shitpost/Evangelion/010952.jpg" id="20_och3k"]
 [ext_resource type="Texture2D" uid="uid://cgvgit881smla" path="res://Assets/Shitpost/Evangelion/011133.png" id="21_uus88"]
+[ext_resource type="Texture2D" uid="uid://bg4y5tmwplsby" path="res://Assets/Shitpost/Evangelion/GOCHISME1.jpg" id="22_qxmfy"]
+[ext_resource type="Texture2D" uid="uid://dbcjvq5by3ui0" path="res://Assets/Shitpost/Evangelion/GOCHISME2.jpg" id="23_sqbul"]
+[ext_resource type="Texture2D" uid="uid://b8gtkaqu7o0jk" path="res://Assets/Shitpost/Evangelion/GOCHISME3.jpg" id="24_c62ho"]
+[ext_resource type="Texture2D" uid="uid://baoo8rkednysi" path="res://Assets/Shitpost/Evangelion/GOCHISME4.jpg" id="25_cm780"]
+[ext_resource type="Texture2D" uid="uid://imopuqdg4gke" path="res://Assets/Shitpost/Evangelion/GOCHISME5.jpg" id="26_fvjcx"]
+[ext_resource type="Texture2D" uid="uid://d4jxrctqjsv7w" path="res://Assets/Shitpost/Evangelion/GOCHISME6.jpg" id="27_cwdv6"]
+[ext_resource type="Texture2D" uid="uid://bxeaknq7s7qk4" path="res://Assets/Shitpost/Evangelion/GOCHISME7.jpg" id="28_yw1kb"]
+[ext_resource type="Texture2D" uid="uid://ciumq5it0wnco" path="res://Assets/Shitpost/Evangelion/RDR1.jpg" id="29_x4paf"]
+[ext_resource type="Texture2D" uid="uid://cch3dqn6cniqc" path="res://Assets/Shitpost/Evangelion/RDR2.jpg" id="30_2qli4"]
+[ext_resource type="Texture2D" uid="uid://67v2ibbgg8w3" path="res://Assets/Shitpost/Evangelion/RDR3.jpg" id="31_dn8pt"]
+[ext_resource type="Texture2D" uid="uid://cmt3kqgskpbhw" path="res://Assets/Shitpost/Evangelion/RDR4.jpg" id="32_tii0o"]
+[ext_resource type="Texture2D" uid="uid://c0no3dktkta6a" path="res://Assets/Shitpost/Evangelion/RDR5.jpg" id="33_cbp0v"]
+[ext_resource type="Texture2D" uid="uid://dxwcv0fibcxbd" path="res://Assets/Shitpost/Evangelion/GLITCH 1.jpg" id="34_a2xfs"]
+[ext_resource type="Texture2D" uid="uid://bqqqv6ercpx75" path="res://Assets/Shitpost/Evangelion/GLITCH 2.jpg" id="35_ni7ay"]
+[ext_resource type="Texture2D" uid="uid://np1btf5w84hu" path="res://Assets/Shitpost/Evangelion/GLITCH 3.jpg" id="36_t15np"]
+[ext_resource type="Texture2D" uid="uid://csos2q0cpgxyj" path="res://Assets/Shitpost/Evangelion/POMPIER2.jpg" id="37_yk8kj"]
+[ext_resource type="Texture2D" uid="uid://bxki8h3utwtdm" path="res://Assets/Shitpost/Evangelion/POMPIER1.jpg" id="38_sj7r4"]
 
 [node name="ShitpostGUI" type="Control"]
 layout_mode = 3
@@ -30,7 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fljbo")
-textures = Array[CompressedTexture2D]([ExtResource("17_rqudw"), ExtResource("16_wvwx1"), ExtResource("4_bkkub"), ExtResource("14_a16vh"), ExtResource("13_0pp8o"), ExtResource("12_s2bre"), ExtResource("18_oljaw"), ExtResource("20_och3k"), ExtResource("21_uus88"), ExtResource("11_54yhn"), ExtResource("10_d4ak8"), ExtResource("9_2rng2"), ExtResource("8_cv82v"), ExtResource("7_tyv51"), ExtResource("6_joa1k"), ExtResource("19_fee6v"), ExtResource("5_h5u70"), ExtResource("4_cagmx"), ExtResource("3_fwi6f"), ExtResource("2_jctm3")])
+textures = Array[CompressedTexture2D]([ExtResource("17_rqudw"), ExtResource("16_wvwx1"), ExtResource("4_bkkub"), ExtResource("14_a16vh"), ExtResource("13_0pp8o"), ExtResource("12_s2bre"), ExtResource("18_oljaw"), ExtResource("20_och3k"), ExtResource("21_uus88"), ExtResource("11_54yhn"), ExtResource("10_d4ak8"), ExtResource("9_2rng2"), ExtResource("8_cv82v"), ExtResource("7_tyv51"), ExtResource("6_joa1k"), ExtResource("19_fee6v"), ExtResource("5_h5u70"), ExtResource("4_cagmx"), ExtResource("3_fwi6f"), ExtResource("2_jctm3"), ExtResource("22_qxmfy"), ExtResource("23_sqbul"), ExtResource("24_c62ho"), ExtResource("25_cm780"), ExtResource("26_fvjcx"), ExtResource("27_cwdv6"), ExtResource("28_yw1kb"), ExtResource("29_x4paf"), ExtResource("30_2qli4"), ExtResource("31_dn8pt"), ExtResource("32_tii0o"), ExtResource("33_cbp0v"), ExtResource("3_fwi6f"), ExtResource("29_x4paf"), ExtResource("30_2qli4"), ExtResource("31_dn8pt"), ExtResource("32_tii0o"), ExtResource("33_cbp0v"), ExtResource("34_a2xfs"), ExtResource("35_ni7ay"), ExtResource("36_t15np"), ExtResource("22_qxmfy"), ExtResource("22_qxmfy"), ExtResource("37_yk8kj"), ExtResource("37_yk8kj"), ExtResource("38_sj7r4"), ExtResource("38_sj7r4")])
 imageSize = 0.4
 debugMode = true
 
@@ -419,6 +436,106 @@ grow_vertical = 0
 stretch_mode = 5
 
 [node name="TextureHolder40" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder41" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder42" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder43" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder44" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder45" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder46" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder47" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder48" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder49" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -754.0
+offset_bottom = -754.0
+grow_vertical = 0
+stretch_mode = 5
+
+[node name="TextureHolder50" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
