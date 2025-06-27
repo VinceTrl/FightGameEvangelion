@@ -1009,7 +1009,7 @@ shape = SubResource("BoxShape3D_7jq5e")
 [node name="ShootPointRoot" type="Node3D" parent="."]
 
 [node name="ShootPoint" type="Marker3D" parent="ShootPointRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199727, 0.0199942, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0775437, -0.139844, 0)
 
 [node name="PlayerAudio" type="Node" parent="."]
 
