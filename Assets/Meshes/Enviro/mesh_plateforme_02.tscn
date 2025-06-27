@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=4 uid="uid://xdx0hyltny5r"]
+[gd_scene load_steps=19 format=4 uid="uid://xdx0hyltny5r"]
 
 [ext_resource type="PackedScene" uid="uid://cuv0ymymfo1jy" path="res://Sources/Meshes/SM_Plateforme_Big_01.fbx" id="1_g8mij"]
 [ext_resource type="Material" uid="uid://dlsb52vrnlb05" path="res://Assets/Materials/Enviro/M_Plateforme_01.tres" id="2_ks68o"]
 [ext_resource type="Material" uid="uid://cfng2qtk7tala" path="res://Assets/Materials/Enviro/M_Plateforme_Adds_01.tres" id="4_ir50q"]
 [ext_resource type="Material" uid="uid://dnqk1ekx8qx5n" path="res://Assets/Materials/Enviro/M_Emissive_Red.tres" id="4_uuufu"]
+[ext_resource type="Shader" uid="uid://7kqcqxvqcrrp" path="res://Assets/Shaders/Distorsion_shader.tres" id="5_77dyd"]
 [ext_resource type="PackedScene" uid="uid://d3thq5x6e2ic6" path="res://Sources/Meshes/SlapBros_Plateforme_Bandeau.fbx" id="5_lf4a3"]
+[ext_resource type="Texture2D" uid="uid://bs81jr8tgdtvv" path="res://Assets/Sprites/Vfx/T_Gradient_Radial.png" id="6_1ougl"]
 [ext_resource type="Material" uid="uid://5hvx3m5rgfo1" path="res://Assets/Materials/Enviro/M_Bandeau.tres" id="6_lbc7q"]
+[ext_resource type="Texture2D" uid="uid://yekos3w2s0ft" path="res://Assets/Sprites/Vfx/Fire/Voronoi01.png" id="7_1x4vv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id5et"]
 resource_name = "Adds01"
@@ -48,6 +51,24 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6t44h")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lym40"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1x8v"]
+render_priority = 0
+shader = ExtResource("5_77dyd")
+shader_parameter/Speed = Vector2(0.5, 0.5)
+shader_parameter/DistorsionIntensity = 0.01
+shader_parameter/Noise = ExtResource("7_1x4vv")
+shader_parameter/Alpha = ExtResource("6_1ougl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ei30"]
+render_priority = 0
+shader = ExtResource("5_77dyd")
+shader_parameter/Speed = Vector2(-0.5, 0.5)
+shader_parameter/DistorsionIntensity = 0.01
+shader_parameter/Noise = ExtResource("7_1x4vv")
+shader_parameter/Alpha = ExtResource("6_1ougl")
 
 [sub_resource type="Animation" id="Animation_2m5t0"]
 resource_name = "Anim_Plateform_cosmetic"
@@ -348,6 +369,30 @@ surface_material_override/0 = ExtResource("4_ir50q")
 
 [node name="SM_Plateforme_Big_01_003" parent="SM_Plateforme_Big_01" index="9"]
 surface_material_override/0 = ExtResource("4_ir50q")
+
+[node name="DistorsionFX_02" type="MeshInstance3D" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01_003" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.74228e-08, 0, -8.74228e-08, 1, -2.97923, 0.670017, 0.384985)
+mesh = SubResource("QuadMesh_lym40")
+skeleton = NodePath("../DistorsionFX_01")
+surface_material_override/0 = SubResource("ShaderMaterial_p1x8v")
+
+[node name="DistorsionFX_04" type="MeshInstance3D" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01_003" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.74228e-08, 0, -8.74228e-08, 1, -0.850006, 0.837113, 0.384985)
+mesh = SubResource("QuadMesh_lym40")
+skeleton = NodePath("../DistorsionFX_01")
+surface_material_override/0 = SubResource("ShaderMaterial_8ei30")
+
+[node name="DistorsionFX_01" type="MeshInstance3D" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01_003" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.37114e-08, 0, -4.37114e-08, 1, 0.69358, 0.748861, 0.436183)
+mesh = SubResource("QuadMesh_lym40")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p1x8v")
+
+[node name="DistorsionFX_03" type="MeshInstance3D" parent="SM_Plateforme_Big_01/SM_Plateforme_Big_01_003" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.31134e-07, 0, -1.31134e-07, 1, 2.87323, 0.666722, 0.408736)
+mesh = SubResource("QuadMesh_lym40")
+skeleton = NodePath("../DistorsionFX_02")
+surface_material_override/0 = SubResource("ShaderMaterial_8ei30")
 
 [node name="SM_Plateforme_Big_01_025" parent="SM_Plateforme_Big_01" index="10"]
 surface_material_override/0 = ExtResource("4_ir50q")
