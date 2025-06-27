@@ -76,7 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35913, 1.458, 0)
 script = ExtResource("4_khixt")
 
 [node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33373, -0.642305, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43763, -0.312706, 0)
 script = ExtResource("4_khixt")
 
 [node name="Level" type="Node3D" parent="."]

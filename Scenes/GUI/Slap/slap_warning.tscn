@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://jf58svmosbof"]
+[gd_scene load_steps=7 format=3 uid="uid://jf58svmosbof"]
 
 [ext_resource type="Script" path="res://Scenes/GUI/Slap/slap_warning.gd" id="1_hwu3u"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="2_78j2w"]
@@ -12,6 +12,8 @@ width = 2000
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ar4pw"]
 size = Vector3(0.25, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bk7jd"]
 
 [node name="SlapWarning" type="Node3D"]
 script = ExtResource("1_hwu3u")
@@ -33,3 +35,7 @@ randomID = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("BoxShape3D_ar4pw")
+
+[node name="Sprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0246429, 0)
+sprite_frames = SubResource("SpriteFrames_bk7jd")

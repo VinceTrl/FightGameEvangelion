@@ -10,6 +10,7 @@ extends Node3D
 @export var hurtTime = 1.0
 @export var moveTime = 3.0
 @export_range(0.0, 1.0, 0.001) var slapChance = 0.25
+@export var slapDelay:float = 1.25
 @export var moveSpeed:float = 3
 @export var startingMoveDirection: Vector3
 @export var moveEaseType:Tween.EaseType = Tween.EASE_IN_OUT
@@ -29,6 +30,7 @@ var currentMoveDirection = startingMoveDirection
 var locations:Array[PenpenLocation]
 var targetLocation:PenpenLocation
 var tween
+var evaTarget:Node3D
 
 signal OnPenpenHurt
 signal OnPenpenDeath
@@ -112,17 +114,21 @@ func PenpenSpawnItem():
 func _on_hurtbox_take_damage(hitbox: Hitbox) -> void:
 	if(hitbox.type == Hitbox.DamageType.Volume): return
 	
-	Hurt(hitbox.damage)
-	SetMoveDirection(hitbox.global_position)
+	Hurt(hitbox)
+	#SetMoveDirection(hitbox.global_position)
 	
-func Hurt(_damagePoint: int = 1):
+func Hurt(_hitbox: Hitbox):
 	if(!canTakeDamage or isTakingDamage):return
+	if(_hitbox == null): return
 	
 	print("PENPEN HURT")
 	
-	currentHealthPoint -= _damagePoint
+	currentHealthPoint -= _hitbox.damage
 	isTakingDamage = true
 	canTakeDamage = false
+	
+	if(_hitbox.type == Hitbox.DamageType.Melee):
+		evaTarget = _hitbox.owner
 	
 	PenpenSpawnItem()
 	OnPenpenHurt.emit()
@@ -155,9 +161,13 @@ func Hurt(_damagePoint: int = 1):
 	
 func PenpenDeath():
 	animationPlayer.play("Armature|Dead")
-	Manager.gameManager.eva.StartSlap(global_position)
 	isDead = true
 	OnPenpenDeath.emit()
+	
+	await get_tree().create_timer(slapDelay,false,false,false).timeout
+	var slapTarget = GetSlapTarget()
+	Manager.gameManager.eva.StartSlap(slapTarget)
+	
 	await animationPlayer.animation_finished
 	queue_free()
 	
@@ -181,6 +191,22 @@ func GetRandomLocation()-> PenpenLocation:
 func GetTweenTime(targetPosition:Vector3) -> float:
 	var distance = position.distance_to(targetPosition)
 	return distance / moveSpeed
+	
+func GetSlapLocation()-> Vector3:
+	if(evaTarget):
+		return evaTarget.global_position
+	else:
+		return global_position
+		
+		
+func GetSlapTarget()-> Node3D:
+	if(evaTarget and evaTarget is PlayerCharacter):
+		return evaTarget
+	else:
+		var target = Node3D.new()
+		get_tree().current_scene.add_child(target)
+		target.global_position = global_position
+		return target
 	
 func GoTowardsLocation(targetPosition: Vector3,travelTime: float = 1.0):
 	if(tween):

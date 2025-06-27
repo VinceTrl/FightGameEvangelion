@@ -14,6 +14,7 @@ const SLAP_WARNING = preload("res://Scenes/GUI/Slap/slap_warning.tscn")
 var animPlayer: AnimationPlayer
 var hitbox: Hitbox
 var initialPosition
+var target
 var slapWarning
 
 signal OnSlapStart
@@ -37,7 +38,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("DebugKey")):
 		#Engine.time_scale = 0.5
-		StartSlap(Manager.gameManager.players[0].global_position)
+		StartSlap(Manager.gameManager.players[0])
 
 
 func GetAnimationPlayerWithName(node: Node,animationPlayerName: String) -> AnimationPlayer:
@@ -72,13 +73,14 @@ func GoTowardsPosition(targetPosition: Vector3,travelTime: float = 1.0,ease:Twee
 	tween.tween_property(self,"global_position:y",targetPosition.y,travelTime)
 	tween.tween_property(self,"global_position:z",targetPosition.z,travelTime)
 	
-func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
+func StartSlap(_target:Node3D):
+	if(_target == null): return
+	target = _target
 	
 	Manager.gameCamera.AddCameraTarget(self)
 	Manager.gameCamera.usePlayerDistanceForTargetZ = false
 	
 	#move towards target position
-	var targetPos = Vector3(global_position.x,slapPosition.y,global_position.z) + evaSlapOffset
 	OnSlapStart.emit()
 	animPlayerChore.play("AnimLight_Slap_Intro")
 	animPlayer.play("Armature|Slap_Start")
@@ -93,7 +95,7 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	audio_alarm.play()
 	
 	#SPAWN_WARNING
-	SpawnWarning(slapPosition)
+	SpawnWarning(target)
 	
 	await animPlayerChore.animation_finished
 	
@@ -105,6 +107,8 @@ func StartSlap(slapPosition:Vector3 = Vector3.ZERO):
 	#await get_tree().create_timer(timeToReachTarget,true,false,false).timeout
 	
 	#Launch Slap
+	slapWarning.StopFollow()
+	var targetPos = Vector3(global_position.x,target.global_position.y,global_position.z) + evaSlapOffset
 	GoTowardsPosition(targetPos,0.75,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR)
 	animPlayer.play("Armature|Slap_Hit")
 	animPlayerChore.play("AnimLight_Slap_Hit")
@@ -139,11 +143,12 @@ func SlapHit():
 	#Manager.timeManager.freezeFrame(0.001,1.25)
 	
 	
-func SpawnWarning(warningPos:Vector3):
+func SpawnWarning(warningTarget:Node3D):
 	var warning = SLAP_WARNING.instantiate()
 	get_tree().current_scene.add_child(warning)
-	warning.global_position = Vector3(0,warningPos.y,0)
+	warning.global_position = Vector3(0,warningTarget.global_position.y,0)
 	slapWarning = warning
+	slapWarning.SetTarget(warningTarget)
 	slapWarning.OnHitboxDealDamage.connect(SlapHit)
 	
 	

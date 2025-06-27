@@ -57,39 +57,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 0)
 [node name="PenPenLocations" type="Node3D" parent="Gameplay"]
 
 [node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41277, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82545, 0)
 script = ExtResource("4_liqy6")
 
 [node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.97922, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.23433, 0)
 script = ExtResource("4_liqy6")
 
 [node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21787, 1.42729, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21787, 1.06917, 0)
 script = ExtResource("4_liqy6")
 
 [node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0224712, 0.628443, 0)
-script = ExtResource("4_liqy6")
-
-[node name="PenpenLocation5" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67796, 1.95018, 0)
-script = ExtResource("4_liqy6")
-
-[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80762, 3.5043, 0)
-script = ExtResource("4_liqy6")
-
-[node name="PenpenLocation7" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78213, 2.66188, 0)
-script = ExtResource("4_liqy6")
-
-[node name="PenpenLocation8" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15758, 1.42729, 0)
-script = ExtResource("4_liqy6")
-
-[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73479, 1.9066, 0)
 script = ExtResource("4_liqy6")
 
 [node name="Level" type="Node3D" parent="."]

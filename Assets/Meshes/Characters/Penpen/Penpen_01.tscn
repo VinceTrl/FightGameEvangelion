@@ -1,16 +1,249 @@
-[gd_scene load_steps=10 format=3 uid="uid://kqpbwnd4vdet"]
+[gd_scene load_steps=44 format=3 uid="uid://kqpbwnd4vdet"]
 
 [ext_resource type="PackedScene" uid="uid://dcta1ht6h4p3y" path="res://Sources/Meshes/Mesh_Penpen_01.fbx" id="1_jk6xu"]
 [ext_resource type="Material" uid="uid://bbicmo1vkrevv" path="res://Assets/Materials/Enviro/M_PenpenAtlas.tres" id="2_ul1yn"]
 [ext_resource type="Material" uid="uid://dokiesf32ocl2" path="res://Assets/Materials/Enviro/M_penpen_White.tres" id="3_5st14"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="3_dj08w"]
-[ext_resource type="PackedScene" uid="uid://d3rup554sci63" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="3_wncib"]
+[ext_resource type="PackedScene" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="3_wncib"]
+[ext_resource type="Texture2D" uid="uid://dgeplckgt4xo5" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Penpen_Cible.png" id="4_58mfr"]
 [ext_resource type="Material" uid="uid://clgc6oj6jxrut" path="res://Assets/Materials/Enviro/M_penpen_black.tres" id="4_alllq"]
 [ext_resource type="Material" uid="uid://d2bvupxdhi7hm" path="res://Assets/Materials/Enviro/M_penpen_Bec.tres" id="5_4qwk6"]
 [ext_resource type="Material" uid="uid://ycx6lpvbaa07" path="res://Assets/Materials/Enviro/M_MetalRough.tres" id="7_g16ws"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l1rmg"]
 size = Vector3(0.0337067, 0.0446587, 0.0361328)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep7qq"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(0, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi7wa"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(255, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sut5y"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(510, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsawc"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(765, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d5nd"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(1020, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmxei"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(1275, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roeh1"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(1530, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlmmc"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(1785, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe5cf"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(2040, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etdcb"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(2295, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtnbv"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(2550, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxb4v"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(2805, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x68p1"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(3060, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq7gm"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(3315, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uv3v"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(3570, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svjij"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(3825, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hk83"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(4080, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqp1m"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(4335, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wt0t"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(4590, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdec8"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(4845, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i7jb"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(5100, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3kxi"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(5355, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aonee"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(5610, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtmj2"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(5865, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_admay"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(6120, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh8pc"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(6375, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajqf2"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(6630, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgbvb"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(6885, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfjoq"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(7140, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv1gx"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(7395, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpt6n"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(7650, 0, 255, 308)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea00v"]
+atlas = ExtResource("4_58mfr")
+region = Rect2(7905, 0, 255, 308)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6x0a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep7qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi7wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sut5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsawc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d5nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmxei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roeh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlmmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe5cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etdcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtnbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxb4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x68p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq7gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uv3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svjij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hk83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqp1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wt0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdec8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i7jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3kxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aonee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtmj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_admay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh8pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajqf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgbvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfjoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv1gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpt6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea00v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Mesh_Penpen_01" instance=ExtResource("1_jk6xu")]
 
@@ -64,7 +297,7 @@ bones/21/rotation = Quaternion(0.760765, 5.4117e-07, 6.34055e-07, 0.649028)
 bones/21/scale = Vector3(1, 1, 1)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.999844, -0.0176558, -0.000606193, 0.00174794, 0.133014, -0.991112, 0.0175795, 0.990957, 0.133024, -0.00720805, 0.0329256, 0.000662262)
+transform = Transform3D(0.999844, -0.0176559, -0.000606196, 0.00174794, 0.133014, -0.991112, 0.0175796, 0.990957, 0.133024, -0.00720805, 0.0329256, 0.000662266)
 bone_name = "JetPack"
 bone_idx = 8
 
@@ -75,7 +308,7 @@ transform = Transform3D(-0.00983085, 0.00183136, -2.52353e-05, -0.00181838, -0.0
 transform = Transform3D(-0.00982573, -0.0018537, 0.000138274, 0.00175967, -0.00951543, -0.00252195, 0.000599066, -0.00245366, 0.00967578, -0.0166749, -0.0245924, 0.021896)
 
 [node name="BoneAttachmentHurtbox" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.999611, 0.0278836, -0.000605723, -0.00310907, -0.132989, -0.991113, -0.0277163, -0.990725, 0.133024, -0.00722603, -1.04774e-09, 0.0014286)
+transform = Transform3D(-0.999611, 0.0278836, -0.000605726, -0.00310908, -0.132989, -0.991112, -0.0277164, -0.990725, 0.133024, -0.00722602, -7.567e-09, 0.00142861)
 bone_name = "Spine1"
 bone_idx = 1
 
@@ -87,48 +320,62 @@ randomID = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachmentHurtbox/Hurtbox" index="0"]
 shape = SubResource("BoxShape3D_l1rmg")
 
-[node name="Antenne" parent="Armature/Skeleton3D" index="2"]
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
+transform = Transform3D(-0.999611, 0.0278836, -0.000605726, -0.00310908, -0.132989, -0.991112, -0.0277164, -0.990725, 0.133024, -0.00722602, -7.567e-09, 0.00142861)
+bone_name = "Spine1"
+bone_idx = 1
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Armature/Skeleton3D/BoneAttachment3D2" index="0"]
+transform = Transform3D(0.033, 0, 0, 0, -1.44248e-09, -0.033, 0, 0.033, -1.44248e-09, 0, 0, 0)
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_6x0a7")
+autoplay = "default"
+frame_progress = 0.0700455
+
+[node name="Antenne" parent="Armature/Skeleton3D" index="3"]
 surface_material_override/0 = ExtResource("3_5st14")
 surface_material_override/1 = ExtResource("4_alllq")
 
-[node name="Bec_Bot" parent="Armature/Skeleton3D" index="3"]
+[node name="Bec_Bot" parent="Armature/Skeleton3D" index="4"]
 surface_material_override/0 = ExtResource("5_4qwk6")
 
-[node name="Bec_Top" parent="Armature/Skeleton3D" index="4"]
+[node name="Bec_Top" parent="Armature/Skeleton3D" index="5"]
 surface_material_override/0 = ExtResource("5_4qwk6")
 
-[node name="Body" parent="Armature/Skeleton3D" index="5"]
+[node name="Body" parent="Armature/Skeleton3D" index="6"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Chaines" parent="Armature/Skeleton3D" index="6"]
+[node name="Chaines" parent="Armature/Skeleton3D" index="7"]
 surface_material_override/0 = ExtResource("7_g16ws")
 surface_material_override/1 = ExtResource("4_alllq")
 
-[node name="Clope" parent="Armature/Skeleton3D" index="7"]
+[node name="Clope" parent="Armature/Skeleton3D" index="8"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Dent_Bot" parent="Armature/Skeleton3D" index="8"]
+[node name="Dent_Bot" parent="Armature/Skeleton3D" index="9"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Dent_Top" parent="Armature/Skeleton3D" index="9"]
+[node name="Dent_Top" parent="Armature/Skeleton3D" index="10"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Grillz" parent="Armature/Skeleton3D" index="10"]
+[node name="Grillz" parent="Armature/Skeleton3D" index="11"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Haris" parent="Armature/Skeleton3D" index="11"]
+[node name="Haris" parent="Armature/Skeleton3D" index="12"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="Head2" parent="Armature/Skeleton3D" index="12"]
+[node name="Head2" parent="Armature/Skeleton3D" index="13"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
-[node name="JetPack2" parent="Armature/Skeleton3D" index="13"]
+[node name="JetPack2" parent="Armature/Skeleton3D" index="14"]
 surface_material_override/0 = ExtResource("3_5st14")
 
-[node name="Pattes" parent="Armature/Skeleton3D" index="14"]
+[node name="Pattes" parent="Armature/Skeleton3D" index="15"]
 surface_material_override/0 = ExtResource("5_4qwk6")
 
-[node name="eyes" parent="Armature/Skeleton3D" index="15"]
+[node name="eyes" parent="Armature/Skeleton3D" index="16"]
 surface_material_override/0 = ExtResource("2_ul1yn")
 
 [node name="AnimationPlayer" parent="." index="1"]

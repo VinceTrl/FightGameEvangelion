@@ -15,8 +15,14 @@ const SLAP_TARGET = preload("res://Scenes/GUI/Slap/slap_target.tscn")
 @export var hitboxMoveDuration = 0.3
 @export_group("")
 
+@export var smoothFollow:float = 0.25
+
 var targets: Array = []
 var slapHitbox:Hitbox
+
+var nodeTarget
+var followNode = false
+var tween
 
 signal OnAllObjectSpawned
 signal OnHitboxDealDamage
@@ -43,7 +49,7 @@ func GetHitbox(node: Node) -> Hitbox:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	FollowNode()
 	
 
 func SpawnAlongLine() -> void:
@@ -108,6 +114,32 @@ func MoveHitbox(targetPosition: Vector3,travelTime: float = 1.0,ease:Tween.EaseT
 	tween.tween_property(slapHitbox,"position:y",targetPosition.y,travelTime)
 	tween.tween_property(slapHitbox,"position:z",targetPosition.z,travelTime)
 	
+	
+func SetTarget(_target:Node3D):
+	nodeTarget = _target
+	followNode = true
+	
+func StopFollow():
+	followNode = false
+	
+func FollowNode():
+	if(!followNode): return
+	
+	if(nodeTarget == null): 
+		followNode = false
+		return
+	
+	#print("update XY")
+	#var _middlePos: Vector3 = player1.global_position + player2.global_position/2
+	var _targetPos: Vector3 = nodeTarget.global_position
+	#global_position = _newPos
+	
+	#tween
+	if tween:
+		tween.kill()
+		
+	tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD).set_parallel(true)
+	tween.tween_property(self,"global_position:y",_targetPos.y,smoothFollow)
 	
 func OnHit():
 	OnHitboxDealDamage.emit()
