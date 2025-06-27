@@ -56,5 +56,6 @@ one_shot = true
 
 [node name="CameraTarget" parent="." instance=ExtResource("10_2uiuh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295406, 0)
+autoRegister = false
 
 [node name="Vfx2DSpawnSmoke" parent="." instance=ExtResource("16_ynvji")]
