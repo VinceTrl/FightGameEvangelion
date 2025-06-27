@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bw4a1ctvlsojs"]
+
+[ext_resource type="Texture2D" uid="uid://qhjn7vrcvaq6" path="res://Assets/Meshes/Characters/Shrek/Shrek_0.png" id="1_lwlpk"]
+
+[resource]
+albedo_texture = ExtResource("1_lwlpk")
+emission_enabled = true
+emission_energy_multiplier = 0.05
+emission_texture = ExtResource("1_lwlpk")

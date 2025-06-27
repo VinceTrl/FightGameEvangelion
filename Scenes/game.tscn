@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=42 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://drhiviyg3rie2" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim7.png" id="25_ujdi8"]
 [ext_resource type="Texture2D" uid="uid://c4yk026auh6gl" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim8.png" id="26_mtoum"]
 [ext_resource type="Texture2D" uid="uid://b2ctqey0v1ag8" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim9.png" id="27_jxtt0"]
+[ext_resource type="Material" uid="uid://dokiesf32ocl2" path="res://Assets/Materials/Enviro/M_penpen_White.tres" id="29_65dnu"]
+[ext_resource type="Material" uid="uid://l1r613a3gttm" path="res://Assets/Materials/Enviro/M_EVA.tres" id="30_3rdaf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -353,6 +355,30 @@ tracks/13/keys = {
 "update": 1,
 "values": [ExtResource("18_7rsm8"), ExtResource("19_rfunh"), ExtResource("20_6tqv0"), ExtResource("21_ppba3"), ExtResource("22_pgpod"), ExtResource("23_7tndc"), ExtResource("24_vwix5"), ExtResource("25_ujdi8"), ExtResource("26_mtoum"), ExtResource("27_jxtt0")]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/bdef_‘•b2:surface_material_override/0")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("29_65dnu"), ExtResource("30_3rdaf")]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/bdef_‘•b1_002:surface_material_override/0")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("29_65dnu"), ExtResource("30_3rdaf")]
+}
 
 [sub_resource type="Animation" id="Animation_lkh3u"]
 length = 0.001
@@ -548,6 +574,30 @@ tracks/15/keys = {
 "update": 1,
 "values": [ExtResource("18_7rsm8")]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/bdef_‘•b2:surface_material_override/0")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("30_3rdaf")]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/bdef_‘•b1_002:surface_material_override/0")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("30_3rdaf")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y03qi"]
 _data = {
@@ -679,14 +729,8 @@ spot_range = 49.3115
 [node name="Meshes" parent="Meshes/Enviro" index="2"]
 transform = Transform3D(1.59308, 0, 0, 0, 1.59308, 0, 0, 0, 1.59308, 0, -3.01737, -3.63236)
 
-[node name="City Pivot" parent="Meshes/Enviro/Meshes/R/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
-
 [node name="Mesh_buildingsLoop_03" parent="Meshes/Enviro/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="City Pivot" parent="Meshes/Enviro/Meshes/R2/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
 
 [node name="Mesh_buildingsLoop_03" parent="Meshes/Enviro/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -805,9 +849,6 @@ transform = Transform3D(0.998719, -0.0305181, -0.0403521, 0, 0.797584, -0.603208
 animPlayerChore = NodePath("../SLAP_Choregraphie/AnimLight_Slap")
 slapStartPauseDuration = 1.0
 
-[node name="Robot Pivot" parent="Meshes/EVA" index="0"]
-transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
-
 [node name="Robot_eva_03" parent="Meshes/EVA/Robot Pivot" index="0"]
 transform = Transform3D(3.97652, -0.16614, -0.0076868, 0.119421, 2.98024, -2.63521, 0.115759, 2.63268, 2.98262, 0, -3, -5)
 
@@ -864,22 +905,22 @@ bones/73/rotation = Quaternion(-0.390524, 0.141058, -0.0976596, 0.904465)
 bones/74/rotation = Quaternion(0.543829, 0.0918792, -0.00132804, 0.83415)
 
 [node name="BoneAttachment3D_LeftArm" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.096579, 0.760592, -0.642006, 0.119867, -0.631438, -0.766105, -0.988081, -0.150945, -0.0301863, 0.765589, 5.60133, 0.207165)
+transform = Transform3D(-0.0948586, 0.760462, -0.642416, 0.0164916, -0.644036, -0.764816, -0.995353, -0.0831439, 0.0485512, 0.765911, 5.61372, 0.101199)
 
 [node name="BoneAttachment3D2_RightArm" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="3"]
-transform = Transform3D(0.284409, -0.820799, 0.495378, -0.388621, -0.571065, -0.723089, 0.876404, 0.0131391, -0.481396, -0.697689, 5.65, 0.397315)
+transform = Transform3D(0.282712, -0.821164, 0.495744, -0.295484, -0.566251, -0.769447, 0.912558, 0.0710474, -0.402727, -0.697652, 5.68253, 0.282736)
 
 [node name="BoneAttachment3D3_LeftFoot" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.86453, 0.48407, 0.13515, -0.318184, -0.735328, 0.598374, 0.389034, 0.47431, 0.789737, 0.475459, 0.484604, -0.573524)
+transform = Transform3D(-0.86453, 0.48407, 0.135151, -0.318185, -0.735329, 0.598373, 0.389035, 0.474308, 0.789738, 0.475459, 0.4846, -0.573526)
 
 [node name="BoneAttachment3D4_RightFoot" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="5"]
-transform = Transform3D(-0.667796, -0.639509, -0.380888, 0.238243, -0.668429, 0.704587, -0.705186, 0.379777, 0.598733, -0.628417, 0.351147, -0.361677)
+transform = Transform3D(-0.667796, -0.639509, -0.380887, 0.238243, -0.668428, 0.704588, -0.705187, 0.379777, 0.598732, -0.628419, 0.351142, -0.361673)
 
 [node name="BoneAttachment_Hitbox" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="6"]
-transform = Transform3D(-0.326463, 0.728572, -0.602166, -0.165699, -0.671319, -0.722408, -0.930572, -0.136062, 0.339884, 2.38101, 4.49661, 0.179923)
+transform = Transform3D(-0.32501, 0.728394, -0.603167, -0.261446, -0.682139, -0.682885, -0.908853, -0.0642487, 0.412138, 2.38071, 4.51147, 0.191783)
 
 [node name="BoneAttachment_Head" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="7"]
-transform = Transform3D(0.988573, 0.146164, -0.0368562, 0.00911364, 0.186101, 0.982488, 0.150463, -0.971598, 0.182642, 0.0276775, 5.75978, 0.237134)
+transform = Transform3D(0.991593, 0.126936, -0.0250879, -0.120454, 0.976394, 0.179289, 0.047254, -0.17476, 0.983476, 0.0280465, 5.77474, 0.113255)
 
 [node name="EyeVener" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/BoneAttachment_Head" index="0"]
 visible = false

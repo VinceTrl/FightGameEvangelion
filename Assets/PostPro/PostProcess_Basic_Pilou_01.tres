@@ -7,7 +7,7 @@
 script = ExtResource("2_lv6sn")
 reload = false
 ASCII = false
-ASCIISize = Vector2(2, 2)
+ASCIISize = Vector2(2, 1)
 ChromaticAberration = true
 StrenghtCA = 0.2
 Blur = true
@@ -85,7 +85,7 @@ brightness = 1.5
 discolor = true
 warp_amount = 0.061
 clip_warp = false
-vignette_intensity = 0.3
+vignette_intensity = 0.0
 vignette_opacity = 0.5
 AnalogMonitor = false
 AnalogMonitorResolution = Vector2(1024, 1024)

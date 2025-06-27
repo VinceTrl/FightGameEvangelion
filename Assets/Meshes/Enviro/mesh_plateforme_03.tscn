@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://djknv7uuu235g" path="res://Assets/Materials/Enviro/M_PubPanel_Plane.tres" id="8_i5lfb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1r4ai"]
-size = Vector3(5.45746, 0.276189, 2.35387)
+size = Vector3(6.05193, 0.276189, 2.35387)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ysqws"]
 render_priority = 0
@@ -63,7 +63,7 @@ material_override = ExtResource("4_jrmic")
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00890779, 0.341368, 0.187828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000407696, 0.419965, 0.187828)
 shape = SubResource("BoxShape3D_1r4ai")
 
 [node name="SM_Plateforme_Big_02" parent="." index="2" instance=ExtResource("6_5l2qg")]
