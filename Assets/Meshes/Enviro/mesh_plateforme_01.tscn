@@ -9,7 +9,7 @@
 [ext_resource type="Material" uid="uid://bh60aa5jc78f5" path="res://Assets/Materials/Enviro/M_PubPanel_Plane_02.tres" id="8_earxi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1r4ai"]
-size = Vector3(5.25563, 0.276189, 2.35387)
+size = Vector3(5.4798, 0.439852, 2.35387)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u3dhb"]
 lightmap_size_hint = Vector2i(12, 12)
@@ -52,9 +52,10 @@ material_override = ExtResource("4_l5ppx")
 material_override = ExtResource("3_lkboy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+disable_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00204969, 0.341368, 0.187828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0329657, 0.259536, 0.187828)
 shape = SubResource("BoxShape3D_1r4ai")
 
 [node name="PanelPlane" type="MeshInstance3D" parent="." index="2"]

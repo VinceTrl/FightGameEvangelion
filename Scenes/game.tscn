@@ -628,6 +628,7 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="Player" parent="Gameplay" instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.318534, 1.715, 0)
+debugMode = true
 
 [node name="Player2" parent="Gameplay" instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2585, 1.63538, 0)
@@ -855,9 +856,6 @@ transform = Transform3D(0.998719, -0.0305181, -0.0403521, 0, 0.797584, -0.603208
 animPlayerChore = NodePath("../SLAP_Choregraphie/AnimLight_Slap")
 slapStartPauseDuration = 1.0
 
-[node name="Robot Pivot" parent="Meshes/EVA" index="0"]
-transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
-
 [node name="Robot_eva_03" parent="Meshes/EVA/Robot Pivot" index="0"]
 transform = Transform3D(3.97652, -0.16614, -0.0076868, 0.119421, 2.98024, -2.63521, 0.115759, 2.63268, 2.98262, 0, -3, -5)
 
@@ -914,22 +912,22 @@ bones/73/rotation = Quaternion(-0.390524, 0.141058, -0.0976596, 0.904465)
 bones/74/rotation = Quaternion(0.543829, 0.0918792, -0.00132804, 0.83415)
 
 [node name="BoneAttachment3D_LeftArm" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.0948586, 0.760462, -0.642416, 0.0164916, -0.644036, -0.764816, -0.995353, -0.0831439, 0.0485512, 0.765911, 5.61372, 0.101199)
+transform = Transform3D(-0.0948587, 0.760463, -0.642416, 0.0164916, -0.644037, -0.764817, -0.995354, -0.0831439, 0.0485512, 0.765912, 5.61372, 0.101199)
 
 [node name="BoneAttachment3D2_RightArm" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="3"]
-transform = Transform3D(0.282712, -0.821164, 0.495744, -0.295484, -0.566251, -0.769447, 0.912558, 0.0710474, -0.402727, -0.697652, 5.68253, 0.282736)
+transform = Transform3D(0.282712, -0.821165, 0.495744, -0.295484, -0.566251, -0.769447, 0.912558, 0.0710475, -0.402727, -0.697653, 5.68253, 0.282736)
 
 [node name="BoneAttachment3D3_LeftFoot" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="4"]
-transform = Transform3D(-0.86453, 0.48407, 0.135151, -0.318185, -0.735329, 0.598373, 0.389035, 0.474308, 0.789738, 0.475459, 0.4846, -0.573526)
+transform = Transform3D(-0.864529, 0.48407, 0.135151, -0.318185, -0.735329, 0.598373, 0.389034, 0.474308, 0.789737, 0.475458, 0.484599, -0.573527)
 
 [node name="BoneAttachment3D4_RightFoot" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="5"]
-transform = Transform3D(-0.667796, -0.639509, -0.380887, 0.238243, -0.668428, 0.704588, -0.705187, 0.379777, 0.598732, -0.628419, 0.351142, -0.361673)
+transform = Transform3D(-0.667796, -0.63951, -0.380888, 0.238242, -0.668428, 0.704588, -0.705187, 0.379778, 0.598732, -0.628419, 0.351135, -0.361674)
 
 [node name="BoneAttachment_Hitbox" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="6"]
-transform = Transform3D(-0.32501, 0.728394, -0.603167, -0.261446, -0.682139, -0.682885, -0.908853, -0.0642487, 0.412138, 2.38071, 4.51147, 0.191783)
+transform = Transform3D(-0.32501, 0.728394, -0.603167, -0.261446, -0.682139, -0.682885, -0.908853, -0.0642487, 0.412138, 2.38072, 4.51147, 0.191782)
 
 [node name="BoneAttachment_Head" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="7"]
-transform = Transform3D(0.991593, 0.126936, -0.0250879, -0.120454, 0.976394, 0.179289, 0.047254, -0.17476, 0.983476, 0.0280465, 5.77474, 0.113255)
+transform = Transform3D(0.991593, 0.126936, -0.025088, -0.120454, 0.976394, 0.179289, 0.047254, -0.17476, 0.983477, 0.0280464, 5.77474, 0.113255)
 
 [node name="EyeVener" parent="Meshes/EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/BoneAttachment_Head" index="0"]
 visible = false

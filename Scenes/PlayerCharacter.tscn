@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=77 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/HurtStates.gd" id="14_gm8e6"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="15_3tuu1"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ShootState.gd" id="15_ow3as"]
+[ext_resource type="Script" path="res://Scripts/Player/States/LedgegrabState.gd" id="16_i7cct"]
 [ext_resource type="AudioStream" uid="uid://b1ca000nfun4i" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Jump.wav" id="17_emdqr"]
 [ext_resource type="AudioStream" uid="uid://bwvfenw5lg1vq" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Charge 9_02.wav" id="18_baug7"]
 [ext_resource type="AudioStream" uid="uid://l4gky62ks1qr" path="res://Assets/Sounds/SFX/FGHTClth_Anime Swing 3_01.wav" id="19_73mbs"]
@@ -770,6 +771,10 @@ _data = {
 "Taunt": SubResource("Animation_hobpm")
 }
 
+[sub_resource type="Curve" id="Curve_l16ew"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_gijy7"]
 _data = [Vector2(0, 1), 0.0, -2.4727, 0, 0, Vector2(1, 0), -0.0449583, 0.0, 0, 0]
 point_count = 2
@@ -873,6 +878,11 @@ script = ExtResource("5_hmp2k")
 
 [node name="Locked" type="Node" parent="StateMachine"]
 script = ExtResource("6_85275")
+
+[node name="Ledgegrab" type="Node" parent="StateMachine"]
+script = ExtResource("16_i7cct")
+ledgeGrabDuration = 0.1
+snapToPosition = SubResource("Curve_l16ew")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("6_726n8")
@@ -1059,6 +1069,40 @@ bus = &"SFX"
 [node name="Sfx_Kiki" type="AudioStreamPlayer3D" parent="PlayerAudio"]
 stream = SubResource("AudioStreamRandomizer_yh1nb")
 bus = &"SFX"
+
+[node name="LedgegrabRaycasts" type="Node3D" parent="."]
+
+[node name="LedgeRightUpper" type="RayCast3D" parent="LedgegrabRaycasts"]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
+target_position = Vector3(0.3, 0, 0)
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.823529, 1, 0, 1)
+
+[node name="LedgeLeftUpper" type="RayCast3D" parent="LedgegrabRaycasts"]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
+target_position = Vector3(-0.3, 0, 0)
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.823529, 1, 0, 1)
+
+[node name="LedgeRightLower" type="RayCast3D" parent="LedgegrabRaycasts"]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
+target_position = Vector3(0.2, 0, 0)
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.823529, 1, 0, 1)
+
+[node name="LedgeLeftLower" type="RayCast3D" parent="LedgegrabRaycasts"]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
+target_position = Vector3(-0.2, 0, 0)
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.823529, 1, 0, 1)
 
 [node name="RaycastHolder" type="Node3D" parent="."]
 

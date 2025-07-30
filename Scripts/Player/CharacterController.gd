@@ -29,6 +29,12 @@ extends CharacterBody3D
 @onready var ground_location: Marker3D = $GroundLocation
 @onready var player_spear: Spear = $PlayerSpear
 
+@onready var ledge_right_upper_cast: RayCast3D = $LedgegrabRaycasts/LedgeRightUpper
+@onready var ledge_left_upper_cast: RayCast3D = $LedgegrabRaycasts/LedgeLeftUpper
+@onready var ledge_right_lower_cast: RayCast3D = $LedgegrabRaycasts/LedgeRightLower
+@onready var ledge_left_lower_cast: RayCast3D = $LedgegrabRaycasts/LedgeLeftLower
+
+
 
 const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 const SD_GROUND_HIT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_GroundHit.wav")
@@ -67,6 +73,12 @@ var isInvicible: bool = false
 @export var maxFallVelocity = 10.0
 @export var maxJumps = 2
 @export var fallGravityMultiplier = 1.5
+@export_group("")
+
+#ledgegrab variable
+@export_group("Ledgegrab")
+var ledgeDirection: Vector3 = Vector3.ZERO
+@export var ledgegrabGroup = 0
 @export_group("")
 
 #Dash
@@ -274,8 +286,15 @@ func DebugPlayer():
 		var debug_previousState = "\n /player prev State : " + str(previousState.name)
 		var debug_velocity = "\n /player velocity: " + str(velocity)
 		var debug_attackForce = "\n /air attack : " + str(airAttack)
+		var debug_facing = "\n /facing : " + str(facing)
 		
-		debug_values.text = "DEBUG : "  + debug_currentState + debug_previousState + debug_velocity + debug_attackForce
+		var debug_text = debug_currentState
+		debug_text += debug_previousState
+		debug_text += debug_velocity
+		debug_text += debug_attackForce
+		debug_text += debug_facing
+		
+		debug_values.text = "DEBUG : "  + debug_text
 		
 		
 func HandleGravity(delta: float, gravity: float = jumpGravity):
@@ -382,6 +401,20 @@ func GetDirectionOn8Axis() -> Vector3:
 	else:
 		_dir = Vector3(key8Direction.x,key8Direction.y,0)
 	return _dir.normalized()
+	
+	
+func HandleLedgegrab():
+	print("LEDGEGRAB HANDLED")
+	
+	if(ledge_left_lower_cast.is_colliding() and !ledge_left_upper_cast.is_colliding()):
+		if(facing == -1):
+			velocity = Vector3.ZERO
+			ChangeState(States.Ledgegrab)
+			
+	if(ledge_right_lower_cast.is_colliding() and !ledge_right_upper_cast.is_colliding()):
+		if(facing == 1):
+			velocity = Vector3.ZERO
+			ChangeState(States.Ledgegrab)
 	
 #func HandleAttack():
 	#if(((keyAttack) or (AttackBuffer.time_left > 0)) and (currentState != States.Attack)):

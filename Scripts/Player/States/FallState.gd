@@ -20,6 +20,7 @@ func Update(delta: float):
 	Player.HandleDash()
 	Player.HandleAirAttack()
 	Player.HandleShoot()
+	Player.HandleLedgegrab()
 	
 	HandleAnimations()
 	

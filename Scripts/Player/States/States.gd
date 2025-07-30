@@ -1,6 +1,7 @@
 extends Node
 
 @onready var Locked = $Locked
+@onready var Ledgegrab: Node = $Ledgegrab
 @onready var Idle = $Idle
 @onready var Run = $Run
 @onready var Jump = $Jump
