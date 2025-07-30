@@ -645,6 +645,22 @@ stream = null
 [node name="Sfx_Kiki" parent="Gameplay/Player2/PlayerAudio" index="12"]
 stream = null
 
+[node name="LedgeRightUpper" parent="Gameplay/Player2/LedgegrabRaycasts" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
+debug_shape_custom_color = Color(0.823529, 1, 0, 1)
+
+[node name="LedgeLeftUpper" parent="Gameplay/Player2/LedgegrabRaycasts" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
+debug_shape_custom_color = Color(0.823529, 1, 0, 1)
+
+[node name="LedgeRightLower" parent="Gameplay/Player2/LedgegrabRaycasts" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
+debug_shape_custom_color = Color(0.823529, 1, 0, 1)
+
+[node name="LedgeLeftLower" parent="Gameplay/Player2/LedgegrabRaycasts" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
+debug_shape_custom_color = Color(0.823529, 1, 0, 1)
+
 [node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2", "cameraTargets") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.21107)
 player1 = NodePath("../Player")

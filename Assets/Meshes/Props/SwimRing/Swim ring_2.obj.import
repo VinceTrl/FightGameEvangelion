@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://neowvh0xeer4"
+path="res://.godot/imported/Swim ring_2.obj-d859459837bdf3f1dd78dd25bfd23f4f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Swim ring_2.obj-d859459837bdf3f1dd78dd25bfd23f4f.mesh"]
+
+source_file="res://Assets/Meshes/Props/SwimRing/Swim ring_2.obj"
+dest_files=["res://.godot/imported/Swim ring_2.obj-d859459837bdf3f1dd78dd25bfd23f4f.mesh", "res://.godot/imported/Swim ring_2.obj-d859459837bdf3f1dd78dd25bfd23f4f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

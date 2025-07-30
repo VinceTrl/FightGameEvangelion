@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://dp7u5gy3r2kgs"]
+
+[ext_resource type="ArrayMesh" uid="uid://neowvh0xeer4" path="res://Assets/Meshes/Props/SwimRing/Swim ring_2.obj" id="1_7ftt7"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/PhysicObject.gd" id="1_bfpfp"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Bumper.gd" id="2_e401o"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="2_tng2y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_681oy"]
+friction = 0.34
+bounce = 0.76
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rxpxi"]
+height = 0.15
+radius = 0.32
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_waeqj"]
+height = 0.219983
+radius = 0.281811
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3hob"]
+size = Vector3(0.65, 0.3, 0.75)
+
+[node name="BouncyRing" type="RigidBody3D"]
+collision_mask = 19
+axis_lock_linear_z = true
+mass = 0.104
+physics_material_override = SubResource("PhysicsMaterial_681oy")
+gravity_scale = 0.654
+script = ExtResource("1_bfpfp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_rxpxi")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 26
+script = ExtResource("2_e401o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_waeqj")
+
+[node name="Visual" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00875795, -0.24675, 0)
+
+[node name="SwimRing2" type="MeshInstance3D" parent="Visual"]
+mesh = ExtResource("1_7ftt7")
+skeleton = NodePath("../..")
+
+[node name="Hurtbox" type="Area3D" parent="."]
+script = ExtResource("2_tng2y")
+owner_id = 451
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+shape = SubResource("BoxShape3D_x3hob")
