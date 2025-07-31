@@ -1,0 +1,186 @@
+[gd_scene load_steps=20 format=3 uid="uid://bqdn3tdqwtmj5"]
+
+[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="1_6f6nq"]
+[ext_resource type="ArrayMesh" uid="uid://cdw1vh727ua2l" path="res://Assets/Meshes/Props/FishingRod/FishingRod.obj" id="1_ltjw2"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/fishing_rod.gd" id="1_ou3dj"]
+[ext_resource type="PackedScene" uid="uid://oe2wdd63r10x" path="res://Assets/Meshes/Props/FishHook/fishhook.fbx" id="2_5d37m"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishStateMachine.gd" id="2_h2i8m"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishingHook.gd" id="3_6k48w"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishIdleState.gd" id="3_jixxv"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/FishLine.gd" id="3_okyeq"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishPullState.gd" id="4_fgn3p"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishThrowState.gd" id="5_3favy"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishFishState.gd" id="6_20j83"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1706i"]
+size = Vector3(0.405, 0.46, 1)
+
+[sub_resource type="Animation" id="Animation_6bc61"]
+resource_name = "Fishing"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gh01s"]
+resource_name = "PullUp"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667, 0.2, 0.366667, 0.5, 0.6, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0872665, 0, 0), Vector3(0, 0, 0), Vector3(0.0872665, 0, 0), Vector3(0, 0, 0), Vector3(0.0872665, 0, 0), Vector3(-2.0944, 0, 0), Vector3(-1.11162, 0, 0), Vector3(-0.760964, 0, 0), Vector3(-1.11162, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mpvsu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2opmq"]
+resource_name = "RodUp"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.11162, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o1gif"]
+resource_name = "Throwing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.233333, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.11162, 0, 0), Vector3(0.0872665, 0, 0), Vector3(0, 0, 0), Vector3(0.0872665, 0, 0), Vector3(0, 0, 0), Vector3(0.0872665, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lo8q7"]
+_data = {
+"Fishing": SubResource("Animation_6bc61"),
+"PullUp": SubResource("Animation_gh01s"),
+"RESET": SubResource("Animation_mpvsu"),
+"RodUp": SubResource("Animation_2opmq"),
+"Throwing": SubResource("Animation_o1gif")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xcbym"]
+radius = 0.15
+
+[node name="FishingRod" type="Node3D"]
+script = ExtResource("1_ou3dj")
+debugMode = true
+
+[node name="FishingStates" type="Node" parent="."]
+script = ExtResource("2_h2i8m")
+
+[node name="Idle" type="Node" parent="FishingStates"]
+script = ExtResource("3_jixxv")
+
+[node name="Pull" type="Node" parent="FishingStates"]
+script = ExtResource("4_fgn3p")
+
+[node name="Throw" type="Node" parent="FishingStates"]
+script = ExtResource("5_3favy")
+
+[node name="Fish" type="Node" parent="FishingStates"]
+script = ExtResource("6_20j83")
+
+[node name="Hurtbox" type="Area3D" parent="."]
+script = ExtResource("1_6f6nq")
+owner_id = 6315
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+shape = SubResource("BoxShape3D_1706i")
+
+[node name="HookFishPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.9)
+
+[node name="HookUpPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.747444, 0.376385)
+
+[node name="FishingRod" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+mesh = ExtResource("1_ltjw2")
+
+[node name="FishLineTop" type="Marker3D" parent="FishingRod"]
+transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, 1.58946e-07, 1.11742)
+
+[node name="FishingRodAnimation" type="AnimationPlayer" parent="FishingRod"]
+libraries = {
+"": SubResource("AnimationLibrary_lo8q7")
+}
+autoplay = "Fishing"
+
+[node name="Hook" type="Node3D" parent="." node_paths=PackedStringArray("hookUpLocation", "hookFishLocation")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.13147, 0.91394)
+script = ExtResource("3_6k48w")
+hookUpLocation = NodePath("../HookUpPosition")
+hookFishLocation = NodePath("../HookFishPosition")
+hookOffset = Vector3(0, -0.65, 0)
+hookMovementTime = 2.0
+
+[node name="Area3D" type="Area3D" parent="Hook"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143824, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hook/Area3D"]
+shape = SubResource("SphereShape3D_xcbym")
+
+[node name="FishLineBottom" type="Marker3D" parent="Hook"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0494843, 0.609154, 0)
+
+[node name="fishhook" parent="Hook" instance=ExtResource("2_5d37m")]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+
+[node name="Line" type="Node" parent="." node_paths=PackedStringArray("lineTopPosition", "lineBottomPosition")]
+script = ExtResource("3_okyeq")
+lineTopPosition = NodePath("../FishingRod/FishLineTop")
+lineBottomPosition = NodePath("../Hook/FishLineBottom")
+lineColor = Color(0.070971, 0.665669, 0, 1)
+
+[node name="DebugLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.627777, 0.590668, 0)
+visible = false
+text = "STATE=IDLE"

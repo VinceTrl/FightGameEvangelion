@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://l167uu8l3k8h"]
+
+[ext_resource type="PackedScene" uid="uid://bxxd5gxnke66u" path="res://Assets/Meshes/Props/Ducks/duck.fbx" id="1_c20ec"]
+
+[node name="Duck" type="Node3D"]
+
+[node name="duck" parent="." instance=ExtResource("1_c20ec")]
+transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, 0.05, 0, -0.05, -2.18557e-09, 0, 0, 0)

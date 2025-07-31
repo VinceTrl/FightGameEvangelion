@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cdw1vh727ua2l"
+path="res://.godot/imported/FishingRod.obj-cf1121ec4c7fc62e65ef84c3922b53db.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FishingRod.obj-cf1121ec4c7fc62e65ef84c3922b53db.mesh"]
+
+source_file="res://Assets/Meshes/Props/FishingRod/FishingRod.obj"
+dest_files=["res://.godot/imported/FishingRod.obj-cf1121ec4c7fc62e65ef84c3922b53db.mesh", "res://.godot/imported/FishingRod.obj-cf1121ec4c7fc62e65ef84c3922b53db.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

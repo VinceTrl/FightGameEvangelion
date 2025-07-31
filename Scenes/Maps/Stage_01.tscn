@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkkbbr0htwc5p"]
+[gd_scene load_steps=12 format=3 uid="uid://bkkbbr0htwc5p"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="1_00085"]
 [ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_gicfg"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="4_liqy6"]
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="5_nls0s"]
 [ext_resource type="PackedScene" uid="uid://dp7u5gy3r2kgs" path="res://Scenes/Gameplay/bouncy_ring.tscn" id="9_3uqnp"]
+[ext_resource type="PackedScene" uid="uid://l167uu8l3k8h" path="res://Scenes/Gameplay/duck.tscn" id="10_hxck3"]
+[ext_resource type="PackedScene" uid="uid://bqdn3tdqwtmj5" path="res://Scenes/Gameplay/fishing_rod.tscn" id="11_48gm3"]
 
 [node name="Stage_01" type="Node3D"]
 script = ExtResource("1_gicfg")
@@ -131,3 +133,9 @@ transform = Transform3D(0.356587, 0.933194, -0.044655, -0.933967, 0.357268, 0.00
 transform = Transform3D(0.935711, -0.35267, -0.00827058, 0.351986, 0.934941, -0.0446148, 0.0234668, 0.0388355, 0.99897, -1.12799, 0.906036, -0.210815)
 contact_monitor = true
 max_contacts_reported = 1
+
+[node name="Duck" parent="." instance=ExtResource("10_hxck3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8896, -0.202479, 0.0536014)
+
+[node name="FishingRod" parent="." instance=ExtResource("11_48gm3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.341, 0.610786, 0.349716)
