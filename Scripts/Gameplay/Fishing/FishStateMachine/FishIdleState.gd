@@ -3,7 +3,7 @@ extends FishState
 func EnterState():
 	Name = "Idle"
 	HandleAnimations()
-	FishingRodOwner.hook.PullHook()
+	FishingRodOwner.hook.OnPullHookStop()
 	
 func ExitState():
 	pass

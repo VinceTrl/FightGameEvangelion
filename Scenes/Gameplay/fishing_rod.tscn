@@ -110,7 +110,6 @@ radius = 0.15
 
 [node name="FishingRod" type="Node3D"]
 script = ExtResource("1_ou3dj")
-debugMode = true
 
 [node name="FishingStates" type="Node" parent="."]
 script = ExtResource("2_h2i8m")
@@ -155,15 +154,16 @@ libraries = {
 autoplay = "Fishing"
 
 [node name="Hook" type="Node3D" parent="." node_paths=PackedStringArray("hookUpLocation", "hookFishLocation")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.13147, 0.91394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0476608, -0.0703433, 0.428894)
 script = ExtResource("3_6k48w")
 hookUpLocation = NodePath("../HookUpPosition")
 hookFishLocation = NodePath("../HookFishPosition")
-hookOffset = Vector3(0, -0.65, 0)
-hookMovementTime = 2.0
+fishDistance = Vector3(0, -2, 0.5)
 
 [node name="Area3D" type="Area3D" parent="Hook"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143824, 0)
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hook/Area3D"]
 shape = SubResource("SphereShape3D_xcbym")
@@ -184,3 +184,5 @@ lineColor = Color(0.070971, 0.665669, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.627777, 0.590668, 0)
 visible = false
 text = "STATE=IDLE"
+
+[connection signal="area_entered" from="Hook/Area3D" to="Hook" method="_on_area_entered"]

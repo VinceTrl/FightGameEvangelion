@@ -15,5 +15,6 @@ func Update(delta: float):
 
 func HandleAnimations():
 	FishingRodOwner.fishing_rod_animation.play("PullUp")
+	FishingRodOwner.hook.PullHook()
 	await FishingRodOwner.fishing_rod_animation.animation_finished
 	FishingRodOwner.ChangeState(FishingRodOwner.fishing_states.Idle)

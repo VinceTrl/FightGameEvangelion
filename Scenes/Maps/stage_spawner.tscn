@@ -4,5 +4,6 @@
 
 [node name="StageSpawner" type="Node3D"]
 script = ExtResource("1_un617")
-stagePaths = Array[String](["res://Scenes/Maps/Stage_01.tscn", "res://Scenes/Maps/Stage_02.tscn", "res://Scenes/Maps/Stage_03.tscn", "res://Scenes/Maps/Stage_04.tscn", "res://Scenes/Maps/Stage_05.tscn", "res://Scenes/Maps/Stage_06.tscn", "res://Scenes/Maps/Stage_07.tscn"])
+stagePaths = Array[String](["res://Scenes/Maps/Stage_01.tscn", "res://Scenes/Maps/Stage_02.tscn", "res://Scenes/Maps/Stage_03.tscn", "res://Scenes/Maps/Stage_04.tscn", "res://Scenes/Maps/Stage_05.tscn", "res://Scenes/Maps/Stage_06.tscn", "res://Scenes/Maps/Stage_07.tscn", "res://Scenes/Maps/Stage_10.tscn"])
 debugMode = true
+debugSpawnIndex = 7
