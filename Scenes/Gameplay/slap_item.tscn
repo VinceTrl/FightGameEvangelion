@@ -1,0 +1,109 @@
+[gd_scene load_steps=16 format=3 uid="uid://3gavhjybn6mj"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/slap_item.gd" id="1_vx6ft"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="2_briio"]
+[ext_resource type="Texture2D" uid="uid://bvqk55hxktpe5" path="res://Assets/Sprites/Items/Master Hand and Crazy Hand.png" id="3_4owna"]
+
+[sub_resource type="Curve" id="Curve_bgo4n"]
+
+[sub_resource type="Curve" id="Curve_5dt0w"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49711, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_cttdd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igeyg"]
+atlas = ExtResource("3_4owna")
+region = Rect2(6, 395, 71, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_004h2"]
+atlas = ExtResource("3_4owna")
+region = Rect2(77, 395, 71, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkxms"]
+atlas = ExtResource("3_4owna")
+region = Rect2(148, 395, 71, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k4y0"]
+atlas = ExtResource("3_4owna")
+region = Rect2(219, 395, 71, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cubiu"]
+atlas = ExtResource("3_4owna")
+region = Rect2(0, 474, 71, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5wrl"]
+atlas = ExtResource("3_4owna")
+region = Rect2(71, 474, 71, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dq5p"]
+atlas = ExtResource("3_4owna")
+region = Rect2(142, 474, 71, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b2s0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igeyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_004h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkxms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k4y0")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cubiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5wrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dq5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5wrl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iwy4l"]
+size = Vector3(0.363, 0.344, 1)
+
+[node name="SlapItem" type="Node3D"]
+script = ExtResource("1_vx6ft")
+
+[node name="Visual" type="Node3D" parent="."]
+script = ExtResource("2_briio")
+positionTime = 3.0
+positionTarget = Vector3(0, 0.1, 0)
+positionCurveX = SubResource("Curve_bgo4n")
+positionCurveY = SubResource("Curve_5dt0w")
+positionCurveZ = SubResource("Curve_cttdd")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Visual"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_b2s0r")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_iwy4l")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

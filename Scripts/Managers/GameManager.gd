@@ -72,3 +72,9 @@ func GetWinner() -> PlayerCharacter:
 			return player
 	
 	return null
+	
+func GetPlayerOpponent(_player:PlayerCharacter) -> PlayerCharacter:
+	for player in players:
+		if(player != _player): 
+			return player
+	return null

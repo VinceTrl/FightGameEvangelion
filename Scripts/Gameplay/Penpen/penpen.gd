@@ -165,8 +165,8 @@ func PenpenDeath():
 	OnPenpenDeath.emit()
 	
 	await get_tree().create_timer(slapDelay,false,false,false).timeout
-	var slapTarget = GetSlapTarget()
-	Manager.gameManager.eva.StartSlap(slapTarget)
+	#var slapTarget = GetSlapTarget()
+	#Manager.gameManager.eva.StartSlap(slapTarget)
 	
 	await animationPlayer.animation_finished
 	queue_free()
