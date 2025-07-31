@@ -404,7 +404,7 @@ func GetDirectionOn8Axis() -> Vector3:
 	
 	
 func HandleLedgegrab():
-	print("LEDGEGRAB HANDLED")
+	#print("LEDGEGRAB HANDLED")
 	
 	if(ledge_left_lower_cast.is_colliding() and !ledge_left_upper_cast.is_colliding()):
 		if(facing == -1):
@@ -520,6 +520,12 @@ func RemoveHealth(_points: int):
 	currentHealthPoints -= _points
 	currentHealthPoints = clampi(currentHealthPoints,0,healthPoints)
 	emit_signal("OnPlayerLifeChanged")
+	
+	
+func SetBounceState(_bounceDirection:Vector3, _bounceForceToAdd:float = 0):
+	States.Bounce.additionnalBounceForce = _bounceForceToAdd
+	States.Bounce.bounceDirection = _bounceDirection
+	ChangeState(States.Bounce)
 
 func TakeDamage(hitboxSource: Hitbox):
 	if(isInvicible):return

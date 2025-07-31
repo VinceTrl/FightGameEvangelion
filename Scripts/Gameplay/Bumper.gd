@@ -1,6 +1,10 @@
-class_name bumper
+class_name Bumper
 extends Area3D
 
+@export var bounceForce: float = 6
+@export var forceBounceOnUpVector = true
+
+signal OnBumperStart
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,4 +22,10 @@ func OnObjectEnterArea(object:Node3D):
 	
 	if(object is PlayerCharacter):
 		object as PlayerCharacter
-		object.ChangeState(object.States.Jump)
+		var dir = object.global_position - global_position
+		
+		if(forceBounceOnUpVector):
+			dir = global_transform.basis.y
+			
+		object.SetBounceState(dir.normalized(),bounceForce)
+		OnBumperStart.emit()

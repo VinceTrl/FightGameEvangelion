@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dp7u5gy3r2kgs"]
+[gd_scene load_steps=11 format=3 uid="uid://dp7u5gy3r2kgs"]
 
 [ext_resource type="ArrayMesh" uid="uid://neowvh0xeer4" path="res://Assets/Meshes/Props/SwimRing/Swim ring_2.obj" id="1_7ftt7"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/PhysicObject.gd" id="1_bfpfp"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Bumper.gd" id="2_e401o"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="2_tng2y"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/BumperAnimation.gd" id="3_4ivnr"]
+[ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="4_5txh8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_681oy"]
 friction = 0.34
@@ -14,13 +16,14 @@ height = 0.15
 radius = 0.32
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_waeqj"]
-height = 0.219983
-radius = 0.281811
+height = 0.100311
+radius = 0.306118
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x3hob"]
 size = Vector3(0.65, 0.3, 0.75)
 
 [node name="BouncyRing" type="RigidBody3D"]
+collision_layer = 16
 collision_mask = 19
 axis_lock_linear_z = true
 mass = 0.104
@@ -31,20 +34,40 @@ script = ExtResource("1_bfpfp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_rxpxi")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="BounceZoneUp" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0857237, 0)
 collision_layer = 0
 collision_mask = 26
 script = ExtResource("2_e401o")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BounceZoneUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.82749e-05, 0)
+shape = SubResource("CylinderShape3D_waeqj")
+
+[node name="BounceZoneDown" type="Area3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 1.39497e-08, -0.0738423, 0)
+collision_layer = 0
+collision_mask = 26
+script = ExtResource("2_e401o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BounceZoneDown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.82749e-05, 0)
 shape = SubResource("CylinderShape3D_waeqj")
 
 [node name="Visual" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00875795, -0.24675, 0)
 
-[node name="SwimRing2" type="MeshInstance3D" parent="Visual"]
+[node name="BounceRoot" type="Node3D" parent="Visual" node_paths=PackedStringArray("bumpers", "hurtBoxes")]
+script = ExtResource("3_4ivnr")
+bumpers = [NodePath("../../BounceZoneUp"), NodePath("../../BounceZoneDown")]
+hurtBoxes = [NodePath("../../Hurtbox")]
+animationTime = 0.3
+animationCurve = ExtResource("4_5txh8")
+maxScale = Vector3(1.75, 1.25, 1.75)
+
+[node name="SwimRing2" type="MeshInstance3D" parent="Visual/BounceRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00875795, -0.24675, 0)
 mesh = ExtResource("1_7ftt7")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("2_tng2y")

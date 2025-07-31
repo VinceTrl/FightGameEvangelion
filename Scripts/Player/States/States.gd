@@ -5,6 +5,7 @@ extends Node
 @onready var Idle = $Idle
 @onready var Run = $Run
 @onready var Jump = $Jump
+@onready var Bounce: Node = $Bounce
 @onready var JumpPeak = $JumpPeak
 @onready var Fall = $Fall
 @onready var Attack = $Attack

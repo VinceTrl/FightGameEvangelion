@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://c6w14dtath5on"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_0fq0q"]
+
+[resource]
+script = ExtResource("1_0fq0q")
+itemName = &"BUMPER_RING"
+scenePath = &"res://Scenes/Gameplay/bouncy_ring.tscn"
+spawnOnGround = false
+groundOffset = Vector3(0, 0, 0)
+spawnOncePerGame = false
+isUniqueInstance = false
+spawnChance = 3

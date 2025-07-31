@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c38gsdfy72awb"]
+[gd_scene load_steps=20 format=3 uid="uid://c38gsdfy72awb"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/GameManager.gd" id="1_6hf0t"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/TimeEffects.gd" id="2_c8bkv"]
@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://5mwafnwjmudh" path="res://Resources/Spawnables/Bloc.tres" id="15_fgir8"]
 [ext_resource type="Script" path="res://Scripts/Managers/platform_manager.gd" id="15_kouim"]
 [ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="16_gf8x2"]
+[ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="17_rq3k3"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_6hf0t")
@@ -37,7 +38,7 @@ one_shot = true
 script = ExtResource("5_u6occ")
 randomSpawnDelayMin = 5.0
 randomSpawnDelayMax = 8.0
-items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("12_2b18o"), ExtResource("11_qg3go"), ExtResource("13_h0apr"), ExtResource("14_ewqcl"), ExtResource("15_fgir8"), ExtResource("16_gf8x2")])
+items = Array[ExtResource("6_ar45l")]([ExtResource("7_2at6g"), ExtResource("8_qwwg1"), ExtResource("9_s7kaf"), ExtResource("10_6w68r"), ExtResource("12_2b18o"), ExtResource("11_qg3go"), ExtResource("13_h0apr"), ExtResource("14_ewqcl"), ExtResource("15_fgir8"), ExtResource("16_gf8x2"), ExtResource("17_rq3k3")])
 
 [node name="ShitpostGUI" parent="." instance=ExtResource("14_exsev")]
 

@@ -15,3 +15,7 @@ func GetAveragePosition(nodes: Array) -> Vector3:
 		return Vector3.ZERO
 	
 	return total_position / count
+	
+	
+func GetCustomTweenCurveValue(curve:Curve,interp:float):
+	return curve.sample_baked(interp)
