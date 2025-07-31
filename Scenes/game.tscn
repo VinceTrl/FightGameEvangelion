@@ -645,22 +645,6 @@ stream = null
 [node name="Sfx_Kiki" parent="Gameplay/Player2/PlayerAudio" index="12"]
 stream = null
 
-[node name="LedgeRightUpper" parent="Gameplay/Player2/LedgegrabRaycasts" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
-debug_shape_custom_color = Color(0.823529, 1, 0, 1)
-
-[node name="LedgeLeftUpper" parent="Gameplay/Player2/LedgegrabRaycasts" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
-debug_shape_custom_color = Color(0.823529, 1, 0, 1)
-
-[node name="LedgeRightLower" parent="Gameplay/Player2/LedgegrabRaycasts" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
-debug_shape_custom_color = Color(0.823529, 1, 0, 1)
-
-[node name="LedgeLeftLower" parent="Gameplay/Player2/LedgegrabRaycasts" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
-debug_shape_custom_color = Color(0.823529, 1, 0, 1)
-
 [node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2", "cameraTargets") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.21107)
 player1 = NodePath("../Player")
@@ -871,6 +855,9 @@ spot_angle_attenuation = 303.142
 transform = Transform3D(0.998719, -0.0305181, -0.0403521, 0, 0.797584, -0.603208, 0.0505929, 0.602436, 0.796562, 0.410762, 0.446429, -26.7202)
 animPlayerChore = NodePath("../SLAP_Choregraphie/AnimLight_Slap")
 slapStartPauseDuration = 1.0
+
+[node name="Robot Pivot" parent="Meshes/EVA" index="0"]
+transform = Transform3D(0.99866, 0.0387993, 0.0342322, -0.0349867, 0.993783, -0.105696, -0.0381203, 0.104357, 0.993809, 0.0536268, 1.89316, 0)
 
 [node name="Robot_eva_03" parent="Meshes/EVA/Robot Pivot" index="0"]
 transform = Transform3D(3.97652, -0.16614, -0.0076868, 0.119421, 2.98024, -2.63521, 0.115759, 2.63268, 2.98262, 0, -3, -5)

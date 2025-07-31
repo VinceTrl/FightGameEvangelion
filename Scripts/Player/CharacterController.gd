@@ -370,6 +370,7 @@ func HandleFlipH():
 	
 	#hitbox flip
 	attackHitbox.scale.x = facing
+	attackHitbox.SetHitDirection(Vector3(facing,0,0))
 	shoot_point_root.scale.x = facing
 	raycastHolder.scale.x = facing
 	

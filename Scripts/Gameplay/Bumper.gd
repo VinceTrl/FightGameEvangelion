@@ -29,3 +29,12 @@ func OnObjectEnterArea(object:Node3D):
 			
 		object.SetBounceState(dir.normalized(),bounceForce)
 		OnBumperStart.emit()
+		
+	if(object is PhysicObject):
+		object as PhysicObject
+		var dir = object.global_position - global_position
+		
+		if(forceBounceOnUpVector):
+			dir = global_transform.basis.y
+			
+		object.Impulse(dir)

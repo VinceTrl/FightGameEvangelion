@@ -11,7 +11,6 @@ extends RigidBody3D
 @export var glitchOnHit = false
 @export_group("")
 
-var moveDirection
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,8 +27,13 @@ func TakeDamage(hitboxSource: Hitbox):
 	
 	print("HIT PHYSIC OBJECT")
 	var nextDir = (global_position - hitboxSource.global_position).normalized()
-	moveDirection = Vector3(nextDir.x,0,0)
-	apply_impulse(nextDir * impulseForce)
+	var forceMultiplier = 1
+	
+	if(hitboxSource.type == hitboxSource.DamageType.Melee):
+		nextDir = hitboxSource.hitDirection
+		forceMultiplier = 2
+	
+	Impulse(nextDir,forceMultiplier)
 	
 	#Hit effects
 	if(shakeCamOnHit):
@@ -42,4 +46,5 @@ func TakeDamage(hitboxSource: Hitbox):
 		Manager.postProcessEffects.GlitchEffect()
 	
 	
-	
+func Impulse(_direction:Vector3,_forceMultiplier:float = 1):
+	apply_impulse(_direction * (impulseForce * _forceMultiplier))

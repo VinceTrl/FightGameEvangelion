@@ -988,6 +988,7 @@ reloadOverTime = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190702, 0)
 script = ExtResource("14_fgxac")
 isActive = false
+hitDirection = Vector3(0, 1, 0)
 
 [node name="CollisionShapeHitboxUp" type="CollisionShape3D" parent="HitboxUp"]
 shape = SubResource("BoxShape3D_cr8h1")
@@ -1007,6 +1008,7 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.204901, 0)
 script = ExtResource("14_fgxac")
 isActive = false
+hitDirection = Vector3(0, -1, 0)
 
 [node name="CollisionShapeHitboxDown" type="CollisionShape3D" parent="HitboxDown"]
 shape = SubResource("BoxShape3D_cr8h1")

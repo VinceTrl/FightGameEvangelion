@@ -8,6 +8,7 @@ enum DamageType {Melee,projectile,Volume,Slap}
 @export var type: DamageType = DamageType.Melee
 @export var isActive = true
 @export var randomID = false
+@export var hitDirection:Vector3 = Vector3.RIGHT
 
 signal OnHit()
 signal OnHitboxDetected(hitbox:Hitbox)
@@ -16,6 +17,7 @@ signal OnHitSuccess
 func _init() -> void:
 	collision_layer = 4
 	collision_mask = 4 #was at 0 before hitbox knockback
+	hitDirection = hitDirection.normalized()
 	
 	print("LAYER :" + str(get_collision_layer()))
 	
@@ -27,6 +29,9 @@ func _ready() -> void:
 	
 	if(randomID):
 		owner_id = (randi_range(-100000,100000))
+		
+func SetHitDirection(_hitDirection:Vector3):
+	hitDirection = _hitDirection.normalized()
 	
 func ActiveHitBox():
 	isActive = true
