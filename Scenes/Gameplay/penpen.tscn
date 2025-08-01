@@ -79,7 +79,7 @@ autoplay = "default"
 frame_progress = 0.0465716
 
 [node name="Spawner" parent="." instance=ExtResource("3_keetd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.201345, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156809, 0)
 items = Array[ExtResource("5_v0tef")]([ExtResource("6_gyacs"), ExtResource("7_3xyg6"), ExtResource("8_bi1tk"), ExtResource("9_hs51q")])
 registerOnManager = false
 canSpawnOnPlayer = true
