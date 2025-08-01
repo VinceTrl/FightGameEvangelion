@@ -19,3 +19,8 @@ func GetAveragePosition(nodes: Array) -> Vector3:
 	
 func GetCustomTweenCurveValue(curve:Curve,interp:float):
 	return curve.sample_baked(interp)
+	
+	
+func GetTimeToReachTargetWithSpeed(startPosition:Vector3,targetPosition:Vector3,speed:float) -> float:
+	var distance = startPosition.distance_to(targetPosition)
+	return distance / speed

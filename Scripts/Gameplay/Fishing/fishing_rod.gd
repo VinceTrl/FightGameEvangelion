@@ -11,9 +11,12 @@ extends Node3D
 
 var previousState 
 var currentState
+var lastPlayer: PlayerCharacter
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	hook.fishingRodOwner = self
 	
 	#init state machine
 	for state in fishing_states.get_children():
@@ -41,6 +44,9 @@ func TakeDamage(hitboxSource: Hitbox):
 		ChangeState(fishing_states.Throw)
 	elif(currentState == fishing_states.Fish):
 		ChangeState(fishing_states.Pull)
+		
+	if(hitboxSource.owner is PlayerCharacter):
+		lastPlayer = hitboxSource.owner
 	
 	#Hit effects
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
@@ -54,7 +60,7 @@ func _process(delta: float) -> void:
 	
 
 func DebugText():
-	if(!debugMode): pass
+	if(!debugMode): return
 	
 	var debug_currentState = "\n /current State : " + str(currentState.name)
 	var debug_previousState = "\n /previous State : " + str(previousState.name)

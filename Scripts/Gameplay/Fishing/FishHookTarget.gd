@@ -27,6 +27,5 @@ func CatchTarget(_hook:FishHook):
 func ReleaseTarget():
 	print("TARGET RELEASED")
 	isCaught = false
-	hookHolder = null
 	OnFishHookTargetReleased.emit()
 	pass

@@ -78,3 +78,8 @@ func GetPlayerOpponent(_player:PlayerCharacter) -> PlayerCharacter:
 		if(player != _player): 
 			return player
 	return null
+	
+func GetRandomPlayer() -> PlayerCharacter:
+	randomize()
+	var ranIndex = randi_range(0,players.size()-1)
+	return players[ranIndex]

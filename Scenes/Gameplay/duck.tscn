@@ -1,14 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://l167uu8l3k8h"]
+[gd_scene load_steps=12 format=3 uid="uid://l167uu8l3k8h"]
 
 [ext_resource type="PackedScene" uid="uid://bxxd5gxnke66u" path="res://Assets/Meshes/Props/Ducks/duck.fbx" id="1_c20ec"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/duck.gd" id="1_uo8j8"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="2_rthil"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishHookTarget.gd" id="2_x7xrh"]
+[ext_resource type="Curve" uid="uid://bejdsc83o57do" path="res://Scripts/Curves/speedCurve.tres" id="3_31it7"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="4_sj4j7"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="7_kxbjc"]
+
+[sub_resource type="Curve" id="Curve_apjdq"]
+
+[sub_resource type="Curve" id="Curve_xa5cw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qlu5d"]
 radius = 0.25
 
-[node name="Duck" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_quj8t"]
+size = Vector3(0.5, 0.5, 1)
 
-[node name="duck" parent="." instance=ExtResource("1_c20ec")]
+[node name="Duck" type="Node3D"]
+script = ExtResource("1_uo8j8")
+moveSpeed = 4.0
+
+[node name="Visual" type="Node3D" parent="."]
+script = ExtResource("2_rthil")
+positionTarget = Vector3(0, 0.25, 0)
+positionCurveX = SubResource("Curve_apjdq")
+positionCurveY = ExtResource("3_31it7")
+positionCurveZ = SubResource("Curve_xa5cw")
+
+[node name="NodeShaker" type="Node3D" parent="Visual" node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("4_sj4j7")
+nodeToShake = NodePath(".")
+frequency = 1.0
+
+[node name="duck" parent="Visual/NodeShaker" instance=ExtResource("1_c20ec")]
 transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, 0.05, 0, -0.05, -2.18557e-09, 0, 0, 0)
 
 [node name="FishHookTarget" type="Area3D" parent="."]
@@ -20,3 +46,20 @@ script = ExtResource("2_x7xrh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FishHookTarget"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.116074, 0)
 shape = SubResource("SphereShape3D_qlu5d")
+
+[node name="Hitbox" type="Area3D" parent="."]
+script = ExtResource("7_kxbjc")
+damage = 3
+owner_id = 515
+isActive = false
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_quj8t")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[connection signal="OnFishHookTargetCaught" from="FishHookTarget" to="." method="on_fish_hook_target_caught"]
+[connection signal="OnFishHookTargetReleased" from="FishHookTarget" to="." method="on_fish_hook_target_released"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
