@@ -9,6 +9,7 @@ extends Node3D
 @export var hookEaseType:Tween.EaseType = Tween.EASE_OUT
 @export var hookTransType:Tween.TransitionType = Tween.TRANS_BOUNCE
 @export var hookMovementTime:float = 1.75
+@export var paths: Array[NodePathFollow]
 @onready var hookArea: Area3D = $Area3D
 @onready var path_follow_3d: NodePathFollow = $"../ItemsPositions/Path3D/PathFollow3D"
 
@@ -83,16 +84,35 @@ func AddFishTarget(_target:FishHookTarget):
 func RemoveFishTarget(_target:FishHookTarget,eraseFromArray = false):
 	if(!targetsCaught.has(_target)): return
 	#_target.owner.reparent(get_tree().current_scene)
-	path_follow_3d.SetChildrenNode(_target.owner,true)
+	#path_follow_3d.SetChildrenNode(_target.owner,true)
 	if(eraseFromArray):targetsCaught.erase(_target)
 	_target.ReleaseTarget()
 	
-func ReleaseAllTargets():
+	
+func AssignTargetsToPath():
+	var i = 0
 	for target in targetsCaught:
-		RemoveFishTarget(target)
+		paths[i].SetChildrenNode(target.owner,true)
+		i += 1
+		if(i >= paths.size()): i = 0
+		
+func MakeTargetsFollowPath():
+	var p:NodePathFollow
+	for path in paths:
+		path.StartFollowPath()
+		p = path
+	await p.OnEndFollowPath
+	
+func ReleaseAllTargets():
+	AssignTargetsToPath()
+	await MakeTargetsFollowPath()
+	
+	for target in targetsCaught:
+		if(target != null):
+			RemoveFishTarget(target)
 		
 	targetsCaught.clear()
-	path_follow_3d.StartFollowPath()
+	#path_follow_3d.StartFollowPath()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

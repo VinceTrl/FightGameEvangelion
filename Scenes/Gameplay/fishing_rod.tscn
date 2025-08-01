@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqdn3tdqwtmj5"]
+[gd_scene load_steps=26 format=3 uid="uid://bqdn3tdqwtmj5"]
 
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="1_6f6nq"]
 [ext_resource type="ArrayMesh" uid="uid://cdw1vh727ua2l" path="res://Assets/Meshes/Props/FishingRod/FishingRod.obj" id="1_ltjw2"]
@@ -111,13 +111,31 @@ radius = 0.15
 
 [sub_resource type="Curve3D" id="Curve3D_ko23a"]
 _data = {
-"points": PackedVector3Array(0, -0.6, 0, 0, 0.6, 0, 0, 0, 0, 0, 0.6, 0, 0, -0.6, 0, 0.693328, 0.00189574, 0),
+"points": PackedVector3Array(0, -0.6, 0, 0, 0.6, 0, 0, 0.3, 0.3, 0, 0.6, 0, 0, -0.6, 0, 0.6, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_4ftec"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_c2eec"]
+_data = [Vector2(0.00902934, 0.0263829), 0.0, 3.43089, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_elmi2"]
+_data = {
+"points": PackedVector3Array(0, -0.6, 0, 0, 0.6, 0, 0, 0.3, 0.3, 0, 0.6, 0, 0, -0.6, 0, -0.6, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_fl0fu"]
+_data = [Vector2(0.00902934, 0.0263829), 0.0, 3.43089, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_hpccf"]
+_data = {
+"points": PackedVector3Array(0, -0.6, 0, 0, 0.6, 0, 0, 0.3, 0.3, 0, 0.3, 0, 0, -0.3, 0, -0.395712, 0, -0.0133057),
+"tilts": PackedFloat32Array(0, 0)
+}
 point_count = 2
 
 [node name="FishingRod" type="Node3D"]
@@ -165,12 +183,13 @@ libraries = {
 }
 autoplay = "Fishing"
 
-[node name="Hook" type="Node3D" parent="." node_paths=PackedStringArray("hookUpLocation", "hookFishLocation")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0476608, -0.0703433, 0.428894)
+[node name="Hook" type="Node3D" parent="." node_paths=PackedStringArray("hookUpLocation", "hookFishLocation", "paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0476608, 0.088989, 0.377319)
 script = ExtResource("3_6k48w")
 hookUpLocation = NodePath("../HookUpPosition")
 hookFishLocation = NodePath("../HookFishPosition")
 fishDistance = Vector3(0, -2, 0.5)
+paths = [NodePath("../ItemsPositions/Path3D/PathFollow3D"), NodePath("../ItemsPositions/Path3D2/PathFollow3D"), NodePath("../ItemsPositions/Path3D3/PathFollow3D")]
 
 [node name="Area3D" type="Area3D" parent="Hook"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143824, 0)
@@ -199,23 +218,34 @@ text = "STATE=IDLE"
 
 [node name="ItemsPositions" type="Node3D" parent="."]
 
-[node name="Marker3D2" type="Marker3D" parent="ItemsPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.687454, 0.00852966, 0)
-
-[node name="Marker3D3" type="Marker3D" parent="ItemsPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34631, 0.0870972, 0)
-
 [node name="Path3D" type="Path3D" parent="ItemsPositions"]
 curve = SubResource("Curve3D_ko23a")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="ItemsPositions/Path3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999969, 0, 0, 0, 0.999969, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999969, 0, 0, 0, 0.999969, 0, 0.3, 0.3)
 rotation_mode = 0
 loop = false
 script = ExtResource("12_agcee")
-pathFollowTransCurve = SubResource("Curve_4ftec")
+pathFollowTransCurve = SubResource("Curve_c2eec")
 
-[node name="Marker3D" type="Marker3D" parent="ItemsPositions/Path3D/PathFollow3D"]
-transform = Transform3D(-4.37114e-08, 2.1177e-22, -1, 1.00003, -4.37126e-08, -4.37126e-08, -4.37126e-08, -1.00003, 1.91074e-15, -1.87142e-08, 0.428143, -0.0749685)
+[node name="Path3D2" type="Path3D" parent="ItemsPositions"]
+curve = SubResource("Curve3D_elmi2")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ItemsPositions/Path3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.999969, 0, 0, 0, 0.999969, 0, 0.3, 0.3)
+rotation_mode = 0
+loop = false
+script = ExtResource("12_agcee")
+pathFollowTransCurve = SubResource("Curve_fl0fu")
+
+[node name="Path3D3" type="Path3D" parent="ItemsPositions"]
+curve = SubResource("Curve3D_hpccf")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ItemsPositions/Path3D3"]
+transform = Transform3D(1, 0, 0, 0, 0.999969, 0, 0, 0, 0.999969, 0, 0.3, 0.3)
+rotation_mode = 0
+loop = false
+script = ExtResource("12_agcee")
+pathFollowTransCurve = SubResource("Curve_fl0fu")
 
 [connection signal="area_entered" from="Hook/Area3D" to="Hook" method="_on_area_entered"]

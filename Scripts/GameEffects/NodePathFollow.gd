@@ -57,12 +57,14 @@ func FollowPath():
 		FollowPath()
 	
 func StartFollowPath():
+	print(str(owner.name) + " : START FOLLOW PATH")
 	isFollowing = true
 	FollowPath()
 	OnStartFollowPath.emit()
 	pass
 	
 func EndFollowPath():
+	print(str(owner.name) +  " : END FOLLOW PATH")
 	isPlayingFollow = false
 	isFollowing = false
 	OnEndFollowPath.emit()
