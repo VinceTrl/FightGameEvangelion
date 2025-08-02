@@ -32,7 +32,8 @@ extends Node3D
 
 @export var debugMode = false
 @onready var center_debug_label: Label3D = $CENTER_DEBUG_LABEL
-@onready var debug_values: Label = $DEBUG_VALUES
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var debug_values: Label = $CanvasLayer/DEBUG_VALUES
 @onready var cam_center: Sprite3D = $Cam_Center
 
 var followPlayers: bool = true
@@ -41,9 +42,15 @@ var useOverrideZ = false
 var overrideTargetZ = 3.0
 var canAddTargets = true
 
+#offset var
+var currentOffset = cameraOffset
+var isOverridingCameraOffset :bool = false
+var overrideOffset :Vector3 = Vector3.ZERO
+
 var updateZposition = true
 var updateXYposition = true
 var inZoomMode = false
+var lastZoomParameters
 
 #TWEEN VARIABLES
 var TweenCamXY
@@ -56,11 +63,12 @@ signal OnZoomEnd
 func _ready() -> void:
 	Manager.gameCamera = self
 	Manager.OnFightFinish.connect(OnFightFinished)
+	currentOffset = cameraOffset
 	call_deferred("GetPlayers")
-	#GetPlayers()
 	call_deferred("ResetCameraPosition")
 	if(debugMode): 
 		center_debug_label.visible = true
+		canvas_layer.visible = true
 		debug_values.visible = true
 		cam_center.visible = true
 
@@ -69,16 +77,34 @@ func _process(delta: float) -> void:
 	UpdatePositon_XY()
 	UpdatePositon_Z()
 	ClampCameraPosition()
-	#debugCamera()
+	DebugCamera()
 	
-func debugCamera() -> void:
+
+func DebugCamera():
+	if(!debugMode): return
+	#var _currentDistPlayers: float = player1.global_position.distance_to(player2.global_position)
+	var _currentDistPlayers: float = GetMaxDistanceInArray(cameraTargets)
+	var _playersDistRatio = _currentDistPlayers / maxPlayerDist
+	var _curveValue = zDistCurve.sample(_playersDistRatio);
+	var _zPos = lerp(minDistZ,maxDistZ,_curveValue)
+	
+	
+	var debug_dist = "\n /player dist : " + str(_currentDistPlayers)
+	var debug_zCam = "\n /cam z dist : " + str(_zPos)
+	var debug_distRatio = "\n /player ratio dist : " + str(_playersDistRatio)
+	var debug_posX = "\n /Cam X : " + str(global_position.x)
+	var debug_posY = "\n /Cam Y : " + str(global_position.y)
+	var debug_zoomMode = "\n /ZOOM MODE : " + str(inZoomMode)
+	var debug_zoomParam = "\n /LAST ZOOM : " + str(lastZoomParameters)
+	debug_values.text = "DEBUG CAMERA : " + debug_dist + debug_distRatio + debug_zCam + debug_posX + debug_posY + debug_zoomMode + debug_zoomParam
+	
 	if(Input.is_action_just_pressed("DebugKey")):
 		#SimpleCameraShake()
 		#AdvancedCameraShake()
 		#CameraZoom(player1)
 		FocusTargetZoom(player1,GetZoomParamFromName("MidFocusZoom"))
-		
-		
+
+
 func GetPlayers():
 	for target in cameraTargets:
 		if(target is PlayerCharacter):
@@ -101,7 +127,7 @@ func UpdatePositon_XY():
 	#var _middlePos: Vector3 = player1.global_position + player2.global_position/2
 	#var _middlePos: Vector3 = 0.5 * (player1.global_position + player2.global_position)
 	var _middlePos = GetAveragePosition(cameraTargets)
-	var _newPos: Vector3 = Vector3(_middlePos.x,_middlePos.y,global_position.z) + cameraOffset
+	var _newPos: Vector3 = Vector3(_middlePos.x,_middlePos.y,global_position.z) + GetCameraOffset()
 	#global_position = _newPos
 	
 	#tween
@@ -149,25 +175,31 @@ func GetZtargetPosition() -> float:
 	var _curveValue = zDistCurve.sample(_playersDistRatio);
 	var _zPos = lerp(minDistZ,maxDistZ,_curveValue)
 	
-	if(debugMode): 
-		var debug_dist = "\n /player dist : " + str(_currentDistPlayers)
-		var debug_zCam = "\n /cam z dist : " + str(_zPos)
-		var debug_distRatio = "\n /player ratio dist : " + str(_playersDistRatio)
-		var debug_posX = "\n /Cam X : " + str(global_position.x)
-		var debug_posY = "\n /Cam Y : " + str(global_position.y)
-		debug_values.text = "DEBUG : " + debug_dist + debug_distRatio + debug_zCam + debug_posX + debug_posY
-	
 	return _zPos
+	
+func GetCameraOffset() -> Vector3:
+	if(isOverridingCameraOffset):
+		return overrideOffset
+	return cameraOffset
+	
+func OverrideCameraOffset(_offset:Vector3):
+	overrideOffset = _offset
+	isOverridingCameraOffset = true
+	
+func ResetCameraOffset():
+	isOverridingCameraOffset = false
 	
 #zoom that ignores zoom distance
 func FocusTargetZoom(_target: Node3D,_zoomParams: ZoomParameters = defaultZoom):
-	ZoomOnTarget(_target,GetZtargetPosition(),_zoomParams.zoomDuration,_zoomParams.zoomCurve,_zoomParams.translationCurve,true,true)
+	lastZoomParameters = _zoomParams.zoomName
+	ZoomOnTarget(_target,_zoomParams.targetOffset,GetZtargetPosition(),_zoomParams.zoomDuration,_zoomParams.zoomCurve,_zoomParams.translationCurve,true,true)
 	
 func CameraZoom(_target: Node3D,_zoomParams: ZoomParameters = defaultZoom):
 	if(_target == null): return
-	ZoomOnTarget(_target,_zoomParams.zoomDistance,_zoomParams.zoomDuration,_zoomParams.zoomCurve,_zoomParams.translationCurve)
+	lastZoomParameters = _zoomParams.zoomName
+	ZoomOnTarget(_target,_zoomParams.targetOffset,_zoomParams.zoomDistance,_zoomParams.zoomDuration,_zoomParams.zoomCurve,_zoomParams.translationCurve)
 
-func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = defaultZoom.zoomDistance,_zoomDuration: float = defaultZoom.zoomDuration,_zoomCurve: Curve = defaultZoom.zoomCurve,_transCurve: Curve = defaultZoom.translationCurve,_keepCamUpdateXY: bool = false,_keepCamUpdateZ: bool = false):
+func ZoomOnTarget(_targetNode: Node3D,_targetOffset:Vector3 = Vector3.ZERO,_zoomDistance: float = defaultZoom.zoomDistance,_zoomDuration: float = defaultZoom.zoomDuration,_zoomCurve: Curve = defaultZoom.zoomCurve,_transCurve: Curve = defaultZoom.translationCurve,_keepCamUpdateXY: bool = false,_keepCamUpdateZ: bool = false):
 	if(_targetNode == null): return
 	
 	updateXYposition = _keepCamUpdateXY
@@ -182,7 +214,7 @@ func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = defaultZoom.zoomDis
 	inZoomMode = true
 	
 	var _initPos = global_position
-	var _targetPos = _targetNode.global_position
+	var _targetPos = _targetNode.global_position + _targetOffset
 	var zoomTimer = get_tree().create_timer(_zoomDuration,true,false,false)
 	
 	emit_signal("OnZoomStart")
@@ -208,6 +240,7 @@ func ZoomOnTarget(_targetNode: Node3D,_zoomDistance: float = defaultZoom.zoomDis
 	updateXYposition = true
 	updateZposition = true
 	inZoomMode = false
+	ResetCameraOffset()
 	emit_signal("OnZoomEnd")
 	
 func GetZoomParamFromName(_zoomName: StringName) -> ZoomParameters:

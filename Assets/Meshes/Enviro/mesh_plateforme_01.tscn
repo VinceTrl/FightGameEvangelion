@@ -51,7 +51,7 @@ material_override = ExtResource("4_l5ppx")
 [node name="Cube_014" parent="Cube_002" index="11"]
 material_override = ExtResource("3_lkboy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" groups=["Ledgegrab"]]
 disable_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]

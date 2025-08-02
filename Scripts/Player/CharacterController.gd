@@ -406,16 +406,30 @@ func GetDirectionOn8Axis() -> Vector3:
 	
 func HandleLedgegrab():
 	#print("LEDGEGRAB HANDLED")
+	var left_lower_cast = IsCollidingWithLedge(ledge_left_lower_cast)
+	var right_lower_cast = IsCollidingWithLedge(ledge_right_lower_cast)
 	
-	if(ledge_left_lower_cast.is_colliding() and !ledge_left_upper_cast.is_colliding()):
+	if(left_lower_cast and !ledge_left_upper_cast.is_colliding()):
 		if(facing == -1):
 			velocity = Vector3.ZERO
 			ChangeState(States.Ledgegrab)
 			
-	if(ledge_right_lower_cast.is_colliding() and !ledge_right_upper_cast.is_colliding()):
+	if(right_lower_cast and !ledge_right_upper_cast.is_colliding()):
 		if(facing == 1):
 			velocity = Vector3.ZERO
 			ChangeState(States.Ledgegrab)
+			
+			
+func IsCollidingWithLedge(raycast:RayCast3D) -> bool:
+	if(raycast.is_colliding()):
+		var col = raycast.get_collider()
+		if col is Node:
+			if col.is_in_group("Ledgegrab"):
+				# Do whatever with it
+				print("LEDGE DETECTED")
+				return true
+	return false
+	
 	
 #func HandleAttack():
 	#if(((keyAttack) or (AttackBuffer.time_left > 0)) and (currentState != States.Attack)):

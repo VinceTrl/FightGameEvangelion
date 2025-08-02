@@ -6,3 +6,4 @@ class_name ZoomParameters
 @export var zoomDistance: float = 1.0
 @export var zoomCurve: Curve
 @export var translationCurve: Curve
+@export var targetOffset: Vector3 = Vector3.ZERO

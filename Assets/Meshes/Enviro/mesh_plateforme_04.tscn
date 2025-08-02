@@ -51,7 +51,7 @@ material_override = ExtResource("3_h33mj")
 [node name="Cube_014" parent="Cube_002" index="11"]
 material_override = ExtResource("4_56hmw")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" groups=["Ledgegrab"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00379086, 0.243667, 0.187828)

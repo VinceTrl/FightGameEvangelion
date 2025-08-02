@@ -25,7 +25,7 @@ func EnterState():
 	Manager.gameCamera.CameraZoom(Player,Manager.gameCamera.GetZoomParamFromName("DeathZoom"))
 	await Manager.gameCamera.OnZoomEnd
 	Manager.gameCamera.RemoveCameraTarget(Player)
-	
+	Manager.gameCamera.CameraZoom(Manager.gameManager.GetPlayerOpponent(Player),Manager.gameCamera.GetZoomParamFromName("VictoryZoom"))
 	
 func ExitState():
 	pass

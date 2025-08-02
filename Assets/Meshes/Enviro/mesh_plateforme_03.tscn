@@ -60,7 +60,7 @@ material_override = ExtResource("3_ufyl5")
 [node name="Cube_014" parent="Cube_002" index="11"]
 material_override = ExtResource("4_jrmic")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" groups=["Ledgegrab"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000407696, 0.419965, 0.187828)
@@ -68,6 +68,9 @@ shape = SubResource("BoxShape3D_1r4ai")
 
 [node name="SM_Plateforme_Big_02" parent="." index="2" instance=ExtResource("6_5l2qg")]
 transform = Transform3D(1.01359, 0, 0, 0, 1.01359, -8.86103e-08, 0, 8.86103e-08, 1.01359, 0.074049, -0.172795, -0.387255)
+
+[node name="SM_Plateforme_Big_01_018" parent="SM_Plateforme_Big_02/SM_Plateforme_Big_01" index="7"]
+transform = Transform3D(10.3591, 0, 0, 0, -3.74998e-05, 10.3591, 0, -10.3591, -3.74998e-05, -0.936511, -0.643322, 0.198772)
 
 [node name="SM_Plateforme_Big_01_043" parent="SM_Plateforme_Big_02/SlapBros_Plateforme_Bandeau" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_ysqws")

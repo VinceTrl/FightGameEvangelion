@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://diwhygl1ho1la"]
+[gd_scene load_steps=19 format=3 uid="uid://diwhygl1ho1la"]
 
 [ext_resource type="Script" path="res://Scripts/Camera/GameCamera.gd" id="1_cpg4t"]
 [ext_resource type="Resource" uid="uid://cgaw0g5mdfmxf" path="res://Resources/CameraZoom/DefaultZoom.tres" id="2_e3wng"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://0cqr4c4c2gjx" path="res://Resources/CameraShakes/FinalHitShake.tres" id="5_lh302"]
 [ext_resource type="Resource" uid="uid://ggln04kpqgxg" path="res://Resources/CameraZoom/DeathZoom.tres" id="6_5okmd"]
 [ext_resource type="Resource" uid="uid://ca46wpijujmka" path="res://Resources/CameraShakes/ShootShake.tres" id="6_83sxp"]
+[ext_resource type="Resource" uid="uid://v7kb7424kuor" path="res://Resources/CameraZoom/VictoryZoom.tres" id="7_ng602"]
 [ext_resource type="Resource" uid="uid://brxvhmltagd5m" path="res://Resources/CameraShakes/ParryShake.tres" id="7_vrig3"]
 [ext_resource type="Resource" uid="uid://bdg7oxf5kjk3b" path="res://Resources/CameraShakes/ImpactShake.tres" id="8_yyu2d"]
 [ext_resource type="Resource" uid="uid://dbruj4m2iyqrh" path="res://Resources/CameraShakes/DestroyProjectileShake.tres" id="14_p6ck8"]
@@ -35,7 +36,8 @@ cameraSmoothnessY = 0.85
 cameraClampMax = Vector2(10, 3)
 cameraClampMin = Vector2(-5, -1)
 defaultZoom = ExtResource("2_e3wng")
-zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource("4_45u5i"), ExtResource("5_k8ve0"), ExtResource("6_5okmd")])
+zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource("4_45u5i"), ExtResource("5_k8ve0"), ExtResource("6_5okmd"), ExtResource("7_ng602")])
+debugMode = true
 
 [node name="CameraShake" type="Node3D" parent="."]
 script = ExtResource("2_xo7ej")
@@ -55,9 +57,11 @@ text = "CAM_TARGET
 font_size = 16
 outline_size = 6
 
-[node name="DEBUG_VALUES" type="Label" parent="."]
-visible = false
-offset_right = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="DEBUG_VALUES" type="Label" parent="CanvasLayer"]
+offset_right = 42.0
 offset_bottom = 23.0
 text = "CACA"
 

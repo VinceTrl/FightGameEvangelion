@@ -17,3 +17,5 @@ zoomDuration = 1.0
 zoomDistance = 3.0
 zoomCurve = SubResource("Curve_putxy")
 translationCurve = SubResource("Curve_56qo3")
+changeCameraOffset = false
+offset = Vector3(0, 0, 0)
