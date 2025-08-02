@@ -16,7 +16,6 @@
 
 [node name="Stage_01" type="Node3D"]
 script = ExtResource("1_6hget")
-fixedCameraZoom = true
 
 [node name="Gameplay" type="Node3D" parent="."]
 

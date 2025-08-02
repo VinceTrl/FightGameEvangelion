@@ -17,3 +17,4 @@ zoomDuration = 0.5
 zoomDistance = 1.0
 zoomCurve = SubResource("Curve_putxy")
 translationCurve = SubResource("Curve_56qo3")
+targetOffset = Vector3(0, 0, 0)

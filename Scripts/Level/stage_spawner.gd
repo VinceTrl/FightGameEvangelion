@@ -1,13 +1,13 @@
 extends Node3D
 
-@export var stagePaths: Array[String] = []
+@export var map:Map
 @export var debugMode = false
 @export var debugSpawnIndex = 0
 var stages: Array
 
 
 func PreloadResources():
-	for path in stagePaths: 	
+	for path in map.stagePaths: 	
 		var stage = load(str(path))
 		stages.append(stage)
 
@@ -20,7 +20,6 @@ func _ready() -> void:
 		return
 	
 	RandomSpawnStage()
-	
 	
 func RandomSpawnStage():
 	if(stages.size() <= 0):

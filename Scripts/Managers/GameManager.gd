@@ -47,6 +47,8 @@ func RegisterPlayer(_playerToAdd:PlayerCharacter):
 		_playerToAdd.OnPlayerDeath.connect(OnAnyPlayerDeath)
 		_playerToAdd.connect("OnPlayerTakeDamage", Callable(spawn_manager, "OnAnyPlayerTakeDamage"))
 		PlacePlayerOnSpawnPoint(_playerToAdd)
+		#Set new camera target
+		Manager.gameCamera.AddCameraTarget(_playerToAdd)
 
 func PlacePlayerOnSpawnPoint(player:PlayerCharacter):
 	if(playerSpawns.size() <= 0):return
