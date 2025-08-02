@@ -1,0 +1,21 @@
+dark_v_x
+========
+  Textures:
+    - yo_wave_soko
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Constant Colors:
+    - 0, 0, 20, 100
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Color Registers:
+    - 210, 250, 255, 0
+
+  Steps:
+    1: RGB = (lerp from (0, 0, 20) to (210, 250, 255) using (tex #1 RGB))
+         A = 0, then add 100

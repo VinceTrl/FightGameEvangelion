@@ -1,0 +1,16 @@
+hunsui_v_x
+==========
+  Textures:
+    - pc_water2
+        Offset: 0.6733333468437195, -6.733333587646484
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))

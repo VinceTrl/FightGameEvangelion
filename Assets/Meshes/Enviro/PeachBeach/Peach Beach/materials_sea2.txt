@@ -1,0 +1,25 @@
+tex_tx_v
+========
+  Textures:
+    - yo_wave_tex
+        Offset: -1.8216667175292969, 0
+        Scale: 5, 5
+    - yo_wave_warp
+        Offset: 0, 0.8876822590827942
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Constant Colors:
+    - 0, 83, 255, 240
+
+  Material Colors:
+    - 0, 96, 255, 160
+    - 0, 96, 255, 160
+
+  Color Registers:
+    - 165, 165, 165, 255
+
+  Steps:
+    1: RGB = (lerp from (0, 83, 255) to (165, 165, 165) using (tex #1 RGB)), then add (tex #1 RGB)
+         A = 0, then add 240

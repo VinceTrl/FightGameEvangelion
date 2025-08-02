@@ -1,0 +1,24 @@
+spc_tx_v
+========
+  Textures:
+    - yo_wave
+        Offset: -1.7183334827423096, 0
+    - yo_wave
+        Offset: -0.09737438708543777, 0.8052512407302856
+        Scale: 2.0096657276153564, 2.0096657276153564
+
+  Ambient Colors:
+    - 80, 80, 80, 50
+
+  Constant Colors:
+    - 255, 255, 255, 0
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+  Steps:
+    1: RGB = (0, 0, 0), then add (tex #1 RGB)
+         A = 0, then add (tex #1 A)
+    2: RGB = ((tex #2 RGB) * (prev. RGB)), multiply by 4
+         A = ((tex #2 A) * (prev. A)), multiply by 2

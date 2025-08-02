@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Map" load_steps=2 format=3 uid="uid://d4fpeppot8y16"]
+
+[ext_resource type="Script" path="res://Scripts/Level/map.gd" id="1_x0id5"]
+
+[resource]
+script = ExtResource("1_x0id5")
+mapName = &"TestMap"
+mapScenePath = &"res://Scenes/Maps/Maps/Test_map.tscn"
+stagePaths = Array[String](["res://Scenes/Maps/Stage_01.tscn", "res://Scenes/Maps/Stage_02.tscn", "res://Scenes/Maps/Stage_03.tscn", "res://Scenes/Maps/Stage_04.tscn", "res://Scenes/Maps/Stage_05.tscn", "res://Scenes/Maps/Stage_06.tscn", "res://Scenes/Maps/Stage_07.tscn", "res://Scenes/Maps/Stage_10.tscn"])

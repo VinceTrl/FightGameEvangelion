@@ -1,0 +1,13 @@
+nami_tx_v_x
+===========
+  Textures:
+
+  Ambient Colors:
+    - 80, 80, 80, 50
+
+  Constant Colors:
+    - 0, 90, 255, 128
+
+  Steps:
+    1: RGB = (255, 255, 255), then add (0, 90, 255)
+         A = 0, then add 128

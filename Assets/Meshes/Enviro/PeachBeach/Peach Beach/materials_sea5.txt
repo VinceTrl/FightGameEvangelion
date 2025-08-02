@@ -1,0 +1,18 @@
+sand_tx_v_x
+===========
+  Textures:
+    - dk_sky
+
+  Ambient Colors:
+    - 80, 80, 80, 50
+
+  Constant Colors:
+    - 102, 101, 101, 72
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (102, 101, 101))
+         A = ((tex #1 A) * 72)

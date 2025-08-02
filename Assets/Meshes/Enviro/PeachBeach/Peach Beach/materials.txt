@@ -1,0 +1,288 @@
+base1_v
+=======
+  Textures:
+    - pc_base1
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+base2_v
+=======
+  Textures:
+    - pc_base2_2
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+base3_v
+=======
+  Textures:
+    - pc_base3_2
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+bill_v
+======
+  Textures:
+    - pc_bill
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+grass1_v
+========
+  Textures:
+    - pc_grass
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+grass2_v
+========
+  Textures:
+    - pc_grass0_2
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+grass3_v
+========
+  Textures:
+    - pc_grass01_2
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+iwa_v
+=====
+  Textures:
+    - pc_iwa_p2
+    - pc_sima3
+        Offset: 4.423828125, 0.1220703125
+        Scale: 1.3623046875, 1.3623046875
+        Rotation: 0.119602038636433
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * 127)
+    2: RGB = ((tex #2 RGB) * (prev. RGB))
+         A = (lerp from (tex #2 A) to 0 using 127), then add (prev. A)
+
+
+
+king_v
+======
+  Textures:
+    - pc_king_rgb
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+lambert5_v_x
+============
+  Textures:
+    - mk_spectrum1
+        Offset: 0, 2.7333333492279053
+    - dash_yajirushi99
+        Offset: 0, 5.5333333015441895
+        Scale: 1, 2
+        Rotation: 0.499984740745262
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Constant Colors:
+    - 255, 255, 255, 118
+    - 0, 75, 255, 255
+
+  Color Registers:
+    - 50, 50, 150, 255
+    - 70, 70, 70, 255
+
+  Steps:
+    1: RGB = ((128, 128, 128) * (tex #2 RGB)), multiply by 2
+         A = 0, then add 255
+    2: RGB = ((118, 118, 118) * (prev. RGB)), then add (tex #1 RGB)
+         A = (vertex A)
+
+
+
+road_v
+======
+  Textures:
+    - pc_road03
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+sand5_v
+=======
+  Textures:
+    - pc_suna03
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
+
+
+
+shadow_v_x
+==========
+  Textures:
+    - pc_tree_s
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Constant Colors:
+    - 24, 24, 23, 115
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (24, 24, 23))
+         A = ((tex #1 A) * 115)
+
+
+
+sky_tx_v
+========
+  Textures:
+    - real_sky3_2
+        Offset: 0.04729389026761055, 0
+    - real_sky2_4
+        Offset: -2.8515625, -0.33203125
+        Scale: 0.8251953125, 1.4892578125
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB)), then add (tex #1 RGB), divide by 2
+         A = ((tex #1 A) * (vertex A))
+    2: RGB = (lerp from (prev. RGB) to (255, 255, 255) using (tex #2 RGB))
+         A = (vertex A)
+
+
+
+tent_v
+======
+  Textures:
+    - pc_tent
+
+  Ambient Colors:
+    - 50, 50, 50, 50
+
+  Material Colors:
+    - 204, 204, 204, 255
+    - 204, 204, 204, 255
+
+  Steps:
+    1: RGB = ((tex #1 RGB) * (vertex RGB))
+         A = ((tex #1 A) * (vertex A))
