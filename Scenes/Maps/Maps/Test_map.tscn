@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bq5o5cen08wou"]
+[gd_scene load_steps=31 format=3 uid="uid://bq5o5cen08wou"]
 
 [ext_resource type="PackedScene" uid="uid://dw1oaifideof1" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeachMap.fbx" id="1_a882g"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="1_oniah"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b2ctqey0v1ag8" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/Slap Gui Anim9.png" id="17_i7rt3"]
 [ext_resource type="Material" uid="uid://dokiesf32ocl2" path="res://Assets/Materials/Enviro/M_penpen_White.tres" id="18_ayqgu"]
 [ext_resource type="Material" uid="uid://l1r613a3gttm" path="res://Assets/Materials/Enviro/M_EVA.tres" id="19_jq2t1"]
+[ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/TestMap.tres" id="20_bhy2f"]
 [ext_resource type="Texture2D" uid="uid://cblvbndapp82q" path="res://Sources/Textures/T_BrutalSlap.png" id="20_t6uh6"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="21_e4ph7"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="21_uv2n1"]
@@ -683,6 +684,7 @@ collision_mask = 15
 shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="StageSpawner" parent="Stage" instance=ExtResource("21_uv2n1")]
+map = ExtResource("20_bhy2f")
 
 [node name="Lighting" type="Node3D" parent="."]
 

@@ -9,10 +9,10 @@ point_count = 13
 [resource]
 script = ExtResource("1_a8dyc")
 glitchName = &"Damage"
-glitchEffectTime = 0.25
+glitchEffectTime = 0.18
 glitchAnimationCurve = SubResource("Curve_0823w")
-GlitchRange = 0.055
+GlitchRange = 0.025
 GlitchNoiseQuality = 250.0
-GlitchIntenity = 0.041
-GlitchOffset = 0.057
-GlitchColorOffset = 2.099
+GlitchIntenity = 0.014
+GlitchOffset = 0.007
+GlitchColorOffset = 1.601
