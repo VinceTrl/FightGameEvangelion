@@ -1,12 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://r3ads2h4cewh"]
+[gd_scene load_steps=22 format=3 uid="uid://r3ads2h4cewh"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
+[ext_resource type="Texture2D" uid="uid://i8srkr0pioyq" path="res://Resources/Gradients/Player1_DamageEffect_Yellow.tres" id="2_i8cx7"]
+[ext_resource type="Script" path="res://Scripts/GUI/damage_effect.gd" id="3_7dijb"]
 [ext_resource type="Texture2D" uid="uid://147dcgbjdv2t" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Player1.png" id="4_mdj3j"]
 [ext_resource type="FontFile" uid="uid://4vkwi6n6xoco" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9.ttf" id="5_j8biq"]
 [ext_resource type="PackedScene" uid="uid://dbx10gs5u8elq" path="res://Scenes/GUI/texture_hp_Left.tscn" id="5_jt636"]
 [ext_resource type="Texture2D" uid="uid://cxym3v1v584ej" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P1.png" id="6_fw131"]
 [ext_resource type="Script" path="res://Scripts/GUI/PlayerRoundUI.gd" id="6_y7uc4"]
 [ext_resource type="Texture2D" uid="uid://c4dyfrrdv0mvk" path="res://Assets/Sprites/GUI/KikiGUI/GUI_HP_ANIM.png" id="7_5atp6"]
+
+[sub_resource type="Curve" id="Curve_ugew3"]
+_data = [Vector2(0, 1), 19.2646, 8.5177e-07, 1, 0, Vector2(1, 0), -3.47398, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="LabelSettings" id="LabelSettings_by4q8"]
 font = ExtResource("5_j8biq")
@@ -89,6 +95,15 @@ anchors_preset = 0
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_m1rj3")
 
+[node name="DamageEffect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 2000.0
+texture = ExtResource("2_i8cx7")
+script = ExtResource("3_7dijb")
+duration = 1.0
+alphaCurve = SubResource("Curve_ugew3")
+
 [node name="TextureBackgroundHP" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 30.0
@@ -106,8 +121,9 @@ grow_vertical = 2
 
 [node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
 position = Vector2(238.571, 175.714)
-animation = &"P1_Idle"
-frame_progress = 0.522781
+animation = &"P1_Hit"
+frame = 9
+frame_progress = 1.0
 
 [node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
 position = Vector2(444.286, 175.714)
