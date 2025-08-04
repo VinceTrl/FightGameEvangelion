@@ -181,6 +181,7 @@ signal OnPlayerTakeDamage
 signal OnPlayerDeath
 signal OnPlayerShoot
 signal OnPlayerAttack
+signal OnPlayerHit(hurtbox:Hurtbox)
 signal OnPlayerJump
 signal OnPlayerLifeChanged
 
@@ -205,6 +206,10 @@ func _ready():
 	attackHitbox.owner_id = playerID
 	hitbox_up.owner_id = playerID
 	hitbox_down.owner_id = playerID
+	
+	attackHitbox.OnHitWithHurtbox.connect(PlayerHit)
+	hitbox_up.OnHitWithHurtbox.connect(PlayerHit)
+	hitbox_down.OnHitWithHurtbox.connect(PlayerHit)
 	
 	player_spear.InactiveSpear()
 	
@@ -572,6 +577,10 @@ func DestroyPlayer():
 	
 func ChangeSpriteColor():
 	pass
+	
+func PlayerHit(hurtbox:Hurtbox):
+	print("PLAYER HIT SIGNAL")
+	emit_signal("OnPlayerHit",hurtbox)
 	
 func OnFightFinished():
 	if(currentState == States.Death):return

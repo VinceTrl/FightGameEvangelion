@@ -25,6 +25,7 @@ func _on_area_entered(hitbox : Hitbox) -> void:
 	if (hitbox.owner_id == owner_id): return
 	if (!hitbox.isActive):return
 
+	hitbox.emit_signal("OnHitWithHurtbox",self)
 	hitbox.OnHitSuccess.emit()
 
 	if owner.has_method("TakeDamage"):

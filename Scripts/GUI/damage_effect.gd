@@ -47,7 +47,7 @@ func StartDamageEffect(_duration:float = duration):
 		var _alpha = lerp(0.0,1.0,_curveValue)
 		self_modulate.a = _alpha
 		
-		print("DMG EFFECT ALPHA = " + str(_alpha))
+		#print("DMG EFFECT ALPHA = " + str(_alpha))
 		
 		if !is_instance_valid(get_tree()):
 			return

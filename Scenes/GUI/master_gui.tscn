@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5amqm6jpeons"]
+[gd_scene load_steps=10 format=3 uid="uid://c5amqm6jpeons"]
 
 [ext_resource type="PackedScene" uid="uid://bus7pxl8e5mmg" path="res://Scenes/GUI/fight_text.tscn" id="1_gskd5"]
 [ext_resource type="Script" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dv6u3t40a0f0x" path="res://Assets/GUI/Test/test_ui_copie.png" id="6_8ak8g"]
 [ext_resource type="Texture2D" uid="uid://ijbpiebcm62y" path="res://Assets/Sprites/GUI/KikiGUI/GUI_TopBanner.png" id="6_s0lox"]
 [ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="8_ehwck"]
+[ext_resource type="PackedScene" uid="uid://ilo5r2bvattv" path="res://Scenes/GUI/hit_text_effect.tscn" id="9_e53dv"]
 [ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="9_wcwep"]
 
 [node name="MasterGUI" type="Control"]
@@ -44,8 +45,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -960.0
-offset_bottom = -540.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_8ak8g")
@@ -61,3 +60,23 @@ offset_bottom = 28.0
 
 [node name="ResultScreen" parent="." instance=ExtResource("5_dvxp5")]
 layout_mode = 1
+
+[node name="HitTextEffect_P1" parent="." instance=ExtResource("9_e53dv")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 300.0
+offset_right = 300.0
+grow_horizontal = 1
+
+[node name="HitTextEffect_P2" parent="." instance=ExtResource("9_e53dv")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_right = -300.0
+grow_horizontal = 0
+playerIndex = 1
+color = Color(1, 0, 0.435294, 1)
