@@ -171,6 +171,7 @@ var keyMoveAxisY = 0
 var key8Direction
 
 #State Machine
+var canChangeState:bool = true
 var currentState: PlayerState = null
 var previousState: PlayerState = null
 
@@ -242,6 +243,10 @@ func _physics_process(delta: float) -> void:
 	DebugPlayer()
 
 func ChangeState(nextState):
+	if(!canChangeState):
+		print("PLAYER " + str(playerID) + " CANNOT CHANGE ITS STATE")
+		return
+	
 	if(nextState != null):
 		previousState = currentState
 		currentState = nextState
@@ -586,6 +591,7 @@ func OnFightFinished():
 	if(currentState == States.Death):return
 	animator.play("Taunt")
 	ChangeState(States.Locked)
+	canChangeState = false
 
 func _on_melee_hitbox_on_hit() -> void:
 	Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"HitVibration")
