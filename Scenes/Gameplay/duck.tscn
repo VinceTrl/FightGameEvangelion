@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://l167uu8l3k8h"]
+[gd_scene load_steps=13 format=3 uid="uid://l167uu8l3k8h"]
 
 [ext_resource type="PackedScene" uid="uid://bxxd5gxnke66u" path="res://Assets/Meshes/Props/Ducks/duck.fbx" id="1_c20ec"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/duck.gd" id="1_uo8j8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Curve" uid="uid://bejdsc83o57do" path="res://Scripts/Curves/speedCurve.tres" id="3_31it7"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="4_sj4j7"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="7_kxbjc"]
+[ext_resource type="PackedScene" uid="uid://sddtfc33krlr" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="8_ank3h"]
 
 [sub_resource type="Curve" id="Curve_apjdq"]
 
@@ -36,6 +37,10 @@ frequency = 1.0
 
 [node name="duck" parent="Visual/NodeShaker" instance=ExtResource("1_c20ec")]
 transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, 0.05, 0, -0.05, -2.18557e-09, 0, 0, 0)
+
+[node name="VFX_Fire01_mecha" parent="Visual/NodeShaker/duck" instance=ExtResource("8_ank3h")]
+transform = Transform3D(-4.37114e-07, -10, 4.37114e-07, 0, -4.37114e-07, -10, 10, -4.37114e-07, 1.91069e-14, 0, 0, 0)
+startEmitting = false
 
 [node name="FishHookTarget" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.263504, 0)

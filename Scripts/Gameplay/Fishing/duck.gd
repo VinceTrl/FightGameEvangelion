@@ -4,6 +4,7 @@ extends Node3D
 @onready var hitbox: Hitbox = $Hitbox
 @onready var node_shaker: NodeShaker = $Visual/NodeShaker
 @onready var visual: Node3D = $Visual
+@onready var vfx_fire: ParticlesHolder = $Visual/NodeShaker/duck/VFX_Fire01_mecha
 
 
 @export var attackDelay:float = 1 
@@ -44,6 +45,7 @@ func on_fish_hook_target_released() -> void:
 	
 func LaunchAttack():
 	node_shaker.NodeShake()
+	vfx_fire.EmitParticles()
 	var target = GetPlayerTarget()
 	var newDirection = (target.global_position - global_position).normalized()
 	HandleMeshFlip(newDirection)

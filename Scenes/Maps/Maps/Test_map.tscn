@@ -688,6 +688,7 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="StageSpawner" parent="Stage" instance=ExtResource("21_uv2n1")]
 map = ExtResource("20_bhy2f")
+debugSpawnIndex = 7
 
 [node name="Lighting" type="Node3D" parent="."]
 
