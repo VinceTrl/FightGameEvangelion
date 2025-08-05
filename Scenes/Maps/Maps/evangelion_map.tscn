@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://bi2pd8mrk31u2"]
+[gd_scene load_steps=32 format=3 uid="uid://bi2pd8mrk31u2"]
 
+[ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_28bjl"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="1_eofbn"]
 [ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="2_dbumj"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="3_j0ixo"]
@@ -588,6 +589,8 @@ _data = {
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
 [node name="EvangelionMap" type="Node3D"]
+
+[node name="SpawnManager" parent="." instance=ExtResource("1_28bjl")]
 
 [node name="Enviro" parent="." instance=ExtResource("1_eofbn")]
 transform = Transform3D(3, 0, 0, 0, 2.30766, -1.91695, 0, 1.91695, 2.30766, 0, -4.34559, -6.257)

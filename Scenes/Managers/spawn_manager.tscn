@@ -1,0 +1,22 @@
+[gd_scene load_steps=15 format=3 uid="uid://belfhcyyhg3fg"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/spawn_manager.gd" id="1_1gdln"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="2_4p3j3"]
+[ext_resource type="Resource" uid="uid://b0okcggscbndq" path="res://Resources/Spawnables/FallingProjectile.tres" id="3_bbqr2"]
+[ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="4_x0qvi"]
+[ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="5_qj470"]
+[ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="6_g752w"]
+[ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="7_evm1a"]
+[ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="8_hfedu"]
+[ext_resource type="Resource" uid="uid://4kux6idtqvus" path="res://Resources/Spawnables/TrapHeart.tres" id="9_bscx2"]
+[ext_resource type="Resource" uid="uid://brq2qcfwowmsx" path="res://Resources/Spawnables/Penpen.tres" id="10_psy00"]
+[ext_resource type="Resource" uid="uid://5mwafnwjmudh" path="res://Resources/Spawnables/Bloc.tres" id="11_d15k6"]
+[ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="12_gpbyq"]
+[ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="13_kwyu3"]
+[ext_resource type="Resource" uid="uid://bn4dnmdit2ovc" path="res://Resources/Spawnables/Slap.tres" id="14_h3te8"]
+
+[node name="SpawnManager" type="Node"]
+script = ExtResource("1_1gdln")
+randomSpawnDelayMin = 5.0
+randomSpawnDelayMax = 8.0
+items = Array[ExtResource("2_4p3j3")]([ExtResource("3_bbqr2"), ExtResource("4_x0qvi"), ExtResource("5_qj470"), ExtResource("6_g752w"), ExtResource("7_evm1a"), ExtResource("8_hfedu"), ExtResource("9_bscx2"), ExtResource("10_psy00"), ExtResource("11_d15k6"), ExtResource("12_gpbyq"), ExtResource("13_kwyu3"), ExtResource("14_h3te8")])

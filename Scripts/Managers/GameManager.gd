@@ -7,7 +7,7 @@ extends Node
 @onready var game_timer: Timer = $GameTimer
 @onready var shitpost_gui: ShitpostGUI = $ShitpostGUI
 @onready var platform_manager: Node = $PlatformManager
-@onready var spawn_manager: SpawnManager = $SpawnManager
+var spawn_manager: SpawnManager
 
 @export var fightStartDelay = 3.0
 @export var fightDuration: float = 90.00
@@ -24,6 +24,7 @@ func _ready() -> void:
 	#Register
 	Manager.gameManager = self
 	Manager.timeManager = timeManager
+	spawn_manager = Manager.spawnManager
 	emit_signal("GameManagerReady")
 	
 func LaunchFight():

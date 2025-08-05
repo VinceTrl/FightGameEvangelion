@@ -6,4 +6,4 @@
 script = ExtResource("1_x0id5")
 mapName = &"TestMap"
 mapScenePath = &"res://Scenes/Maps/Maps/Test_map.tscn"
-stagePaths = Array[String](["res://Scenes/Maps/Stage_01.tscn", "res://Scenes/Maps/Stage_02.tscn", "res://Scenes/Maps/Stage_03.tscn", "res://Scenes/Maps/Stage_04.tscn", "res://Scenes/Maps/Stage_05.tscn", "res://Scenes/Maps/Stage_06.tscn", "res://Scenes/Maps/Stage_07.tscn", "res://Scenes/Maps/Stage_10.tscn"])
+stagePaths = Array[String](["res://Scenes/Maps/Stages/EvangelionStages/Eva_Stage_01.tscn", "res://Scenes/Maps/Stages/EvangelionStages/Eva_Stage_02.tscn", "res://Scenes/Maps/Stages/EvangelionStages/Eva_Stage_03.tscn", "res://Scenes/Maps/Stages/EvangelionStages/Eva_Stage_04.tscn", "res://Scenes/Maps/Stages/EvangelionStages/Eva_Stage_05.tscn", "res://Scenes/Maps/Stages/EvangelionStages/Eva_Stage_06.tscn", "res://Scenes/Maps/Stages/EvangelionStages/Eva_Stage_07.tscn", "res://Scenes/Maps/Stages/EvangelionStages/Eva_Stage_10.tscn"])
