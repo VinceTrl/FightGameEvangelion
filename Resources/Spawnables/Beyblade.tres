@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://qh6r3mcx1l4u"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_wj4sm"]
+
+[resource]
+script = ExtResource("1_wj4sm")
+itemName = &"Beyblade"
+scenePath = &"res://Scenes/Gameplay/beyblade.tscn"
+spawnOnGround = true
+groundOffset = Vector3(0, 0.25, 0)
+spawnOncePerGame = false
+isUniqueInstance = false
+spawnChance = 4

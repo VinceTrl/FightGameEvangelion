@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://belfhcyyhg3fg"]
+[gd_scene load_steps=16 format=3 uid="uid://belfhcyyhg3fg"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/spawn_manager.gd" id="1_1gdln"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="2_4p3j3"]
@@ -14,9 +14,10 @@
 [ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="12_gpbyq"]
 [ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="13_kwyu3"]
 [ext_resource type="Resource" uid="uid://bn4dnmdit2ovc" path="res://Resources/Spawnables/Slap.tres" id="14_h3te8"]
+[ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="15_ngmeq"]
 
 [node name="SpawnManager" type="Node"]
 script = ExtResource("1_1gdln")
 randomSpawnDelayMin = 5.0
 randomSpawnDelayMax = 8.0
-items = Array[ExtResource("2_4p3j3")]([ExtResource("3_bbqr2"), ExtResource("4_x0qvi"), ExtResource("5_qj470"), ExtResource("6_g752w"), ExtResource("7_evm1a"), ExtResource("8_hfedu"), ExtResource("9_bscx2"), ExtResource("10_psy00"), ExtResource("11_d15k6"), ExtResource("12_gpbyq"), ExtResource("13_kwyu3"), ExtResource("14_h3te8")])
+items = Array[ExtResource("2_4p3j3")]([ExtResource("3_bbqr2"), ExtResource("4_x0qvi"), ExtResource("5_qj470"), ExtResource("6_g752w"), ExtResource("7_evm1a"), ExtResource("8_hfedu"), ExtResource("9_bscx2"), ExtResource("10_psy00"), ExtResource("11_d15k6"), ExtResource("12_gpbyq"), ExtResource("13_kwyu3"), ExtResource("14_h3te8"), ExtResource("15_ngmeq")])

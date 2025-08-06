@@ -51,7 +51,7 @@ func TakeDamage(hitboxSource: Hitbox):
 	#Hit effects
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	Manager.timeManager.freezeFrame(0.001,0.1)
-	Manager.postProcessEffects.GlitchEffect()
+	#Manager.postProcessEffects.GlitchEffect()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -97,6 +97,7 @@ func HandleHitboxOverlap():
 	
 func OnHitboxCollision(_hitbox:Hitbox):
 	if(_hitbox.type != Hitbox.DamageType.Melee): return
+	if(!_hitbox.isActive): return
 	#_hitbox.emit_signal("OnHitboxDetected",currentHitbox)
 	print(str(owner.name) + " ATTACK COLLISION WITH :" + str(_hitbox.owner.name))
 	Manager.timeManager.freezeFrame(0.001,0.2)

@@ -64,6 +64,7 @@ func SetupProjectile (id: int = 0,direction: Vector3 = Vector3.ONE,origin: Vecto
 	chargeRatio = _charge
 	#SetNewID(id)
 	moveDirection = direction
+	hitbox.hitDirection = moveDirection.normalized()
 	var _newFacing = clamp(direction.x,-1,1)
 	facing = _newFacing
 	#SetSpriteFlipH()
@@ -131,6 +132,7 @@ func ProjectileBounce(_camShakeToAsk: StringName = "ParryShake",_isDeflected: bo
 	
 	var newDir = -2*(moveDirection.dot(normal)) * normal + moveDirection
 	moveDirection = newDir
+	hitbox.hitDirection = moveDirection.normalized()
 	
 	SetProjectileRotation()
 	Manager.gameCamera.camShake.AskCamShake(_camShakeToAsk)
