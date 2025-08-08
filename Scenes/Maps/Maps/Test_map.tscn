@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://bq5o5cen08wou"]
+[gd_scene load_steps=33 format=3 uid="uid://bq5o5cen08wou"]
 
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_3v2v2"]
 [ext_resource type="PackedScene" uid="uid://dw1oaifideof1" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeachMap.fbx" id="1_a882g"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="1_oniah"]
+[ext_resource type="Script" path="res://Scripts/Level/game_map.gd" id="1_qoa21"]
 [ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="5_qwd4p"]
 [ext_resource type="Texture2D" uid="uid://bau5itgnsrv1t" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_BRUTAL.png" id="6_8u0f6"]
 [ext_resource type="Texture2D" uid="uid://bcp0jrosw2ovd" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_SLAP.png" id="7_h33jv"]
@@ -428,16 +429,23 @@ _data = {
 ambient_light_source = 2
 ambient_light_color = Color(0.808998, 0.808998, 0.808998, 1)
 
-[node name="TestMap" type="Node3D"]
+[node name="TestMap" type="Node3D" node_paths=PackedStringArray("enviro", "lights")]
+script = ExtResource("1_qoa21")
+enviro = [NodePath("Enviro")]
+lights = [NodePath("Lighting")]
 
 [node name="SpawnManager" parent="." instance=ExtResource("1_3v2v2")]
 
-[node name="PeachBeachMap" parent="." instance=ExtResource("1_a882g")]
+[node name="Enviro" type="Node3D" parent="."]
+
+[node name="PeachBeachMap" parent="Enviro" instance=ExtResource("1_a882g")]
 transform = Transform3D(0.0382237, 0.00114924, 0.145044, 0.0221454, 0.14819, -0.0070102, -0.143347, 0.0232, 0.0375929, -2.4032, -0.66203, -44.6887)
 
-[node name="WaterPlane" type="CSGMesh3D" parent="PeachBeachMap"]
+[node name="WaterPlane" type="CSGMesh3D" parent="Enviro/PeachBeachMap"]
 transform = Transform3D(1.69883, 0.25917, -6.44139, 0.0510762, 6.66055, 0.28146, 6.44636, -0.121074, 1.69528, -286.488, 7.00705, 92.0118)
 mesh = SubResource("PlaneMesh_boel5")
+
+[node name="Lighting" type="Node3D" parent="."]
 
 [node name="EVA" parent="." node_paths=PackedStringArray("animPlayerChore") instance=ExtResource("5_qwd4p")]
 transform = Transform3D(0.998719, -0.0305181, -0.0403521, 0, 0.797584, -0.603208, 0.0505929, 0.602436, 0.796562, 0.410762, 0.446429, -26.7202)
@@ -689,8 +697,6 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 [node name="StageSpawner" parent="Stage" instance=ExtResource("21_uv2n1")]
 map = ExtResource("20_bhy2f")
 debugSpawnIndex = 7
-
-[node name="Lighting" type="Node3D" parent="."]
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("21_e4ph7")

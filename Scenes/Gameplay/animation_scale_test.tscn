@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://byfv3lsovril5"]
+
+[ext_resource type="Texture2D" uid="uid://c78fbhwykfes5" path="res://Assets/Sprites/Items/Ammo.png" id="1_8ysq6"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/animation_ScaledToTime.gd" id="2_hi2d6"]
+
+[sub_resource type="Animation" id="Animation_1ek23"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(3, 3, 3), Vector3(0.5, 0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_eq0pm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_knp6n"]
+_data = {
+"RESET": SubResource("Animation_eq0pm"),
+"idle": SubResource("Animation_1ek23")
+}
+
+[node name="AnimationScaleTest" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_8ysq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite3D")
+libraries = {
+"": SubResource("AnimationLibrary_knp6n")
+}
+autoplay = "idle"
+script = ExtResource("2_hi2d6")

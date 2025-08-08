@@ -12,18 +12,27 @@ func EnterState():
 	Name = "Death"
 	Player.velocity = Vector3.ZERO
 	Player.emit_signal("OnPlayerDeath")
+	Player.canChangeState = false
 	Player.Ammo.StopReloadTimer()
 	
 	Manager.postProcessEffects.GlitchEffect(glitchEffect)
-	
 	#await get_tree().create_timer(glitchEffect.glitchEffectTime,true,false,true).timeout
-	
+	Manager.postProcessEffects.GlitchEffect(glitchEffect)
+	Manager.gameManager.currentMap.SetEnviroVisibility(false)
+	Manager.gameManager.currentStage.SetLevelVisibility(false)
+	Manager.gameManager.death_background.SetBackgroundOnPlayer(Player)
+
+	Manager.timeManager.slowMotion(0.15,1.0)
 	PlayDeathAnimation()
 	PlayDeathSFX()
-	Manager.timeManager.slowMotion(0.25,2.0)
+	Player.nodeShaker.NodeShake(0.1,0.5)
 	Manager.gameCamera.camShake.AskCamShake("FinalHitShake")
 	Manager.gameCamera.CameraZoom(Player,Manager.gameCamera.GetZoomParamFromName("DeathZoom"))
 	await Manager.gameCamera.OnZoomEnd
+
+	Manager.gameManager.currentMap.SetEnviroVisibility(true)
+	Manager.gameManager.currentStage.SetLevelVisibility(true)
+	Manager.gameManager.death_background.HideBackground()
 	Manager.gameCamera.RemoveCameraTarget(Player)
 	Manager.gameCamera.CameraZoom(Manager.gameManager.GetPlayerOpponent(Player),Manager.gameCamera.GetZoomParamFromName("VictoryZoom"))
 	
@@ -45,6 +54,7 @@ func DestroyPlayer():
 	pass
 	
 func PlayDeathAnimation():
+	#Player.animator.ignoreTimeScale = true
 	Player.animator.play("Death")
 	await Player.animator.animation_finished
 	Player.animator.play("DeathLoop")

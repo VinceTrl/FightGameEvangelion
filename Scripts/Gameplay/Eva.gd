@@ -38,7 +38,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("DebugKey")):
 		#Engine.time_scale = 0.5
-		StartSlap(Manager.gameManager.players[0])
+		#StartSlap(Manager.gameManager.players[0])
+		pass
 
 
 func GetAnimationPlayerWithName(node: Node,animationPlayerName: String) -> AnimationPlayer:

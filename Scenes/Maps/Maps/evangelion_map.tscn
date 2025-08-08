@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://bi2pd8mrk31u2"]
+[gd_scene load_steps=33 format=3 uid="uid://bi2pd8mrk31u2"]
 
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_28bjl"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="1_eofbn"]
+[ext_resource type="Script" path="res://Scripts/Level/game_map.gd" id="1_jb52f"]
 [ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="2_dbumj"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="3_j0ixo"]
 [ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="4_55tvq"]
@@ -588,7 +589,10 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
-[node name="EvangelionMap" type="Node3D"]
+[node name="EvangelionMap" type="Node3D" node_paths=PackedStringArray("enviro", "lights")]
+script = ExtResource("1_jb52f")
+enviro = [NodePath("Enviro/Meshes")]
+lights = [NodePath("LightingOld")]
 
 [node name="SpawnManager" parent="." instance=ExtResource("1_28bjl")]
 
@@ -951,7 +955,6 @@ collision_mask = 15
 shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="StageSpawner" parent="Stage" instance=ExtResource("21_mnhne")]
-debugMode = true
 debugSpawnIndex = 7
 
 [editable path="Enviro"]

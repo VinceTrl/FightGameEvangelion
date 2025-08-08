@@ -9,10 +9,10 @@ point_count = 23
 [resource]
 script = ExtResource("1_5iowo")
 glitchName = &"Death"
-glitchEffectTime = 0.125
+glitchEffectTime = 0.2
 glitchAnimationCurve = SubResource("Curve_0823w")
-GlitchRange = 0.055
-GlitchNoiseQuality = 250.0
-GlitchIntenity = 0.273
-GlitchOffset = 0.074
-GlitchColorOffset = 3.143
+GlitchRange = 0.02
+GlitchNoiseQuality = 300.0
+GlitchIntenity = 0.014
+GlitchOffset = 0.007
+GlitchColorOffset = 1.601

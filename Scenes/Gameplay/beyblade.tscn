@@ -30,10 +30,9 @@ axis_lock_angular_z = true
 script = ExtResource("1_t1y04")
 spinNode = NodePath("TiltRoot/Visual/SpinNode")
 tiltNode = NodePath("TiltRoot")
-debugMode = true
 spinIncreaseByDamage = 50.0
 maxTiltAngle = 40.0
-tiltDelta = 0.05
+tiltDelta = 0.1
 gravity = 20.0
 maxMovingSpeed = 200.0
 speedRelativeToSpin = SubResource("Curve_nnnkc")
@@ -54,7 +53,6 @@ animationCurve = ExtResource("3_2snwk")
 maxScale = Vector3(1.2, 1.2, 1.2)
 
 [node name="SpinNode" type="Node3D" parent="TiltRoot/Visual"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="beybladeSnake" parent="TiltRoot/Visual/SpinNode" instance=ExtResource("2_w40rj")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

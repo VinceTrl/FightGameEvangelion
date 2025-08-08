@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://Scripts/Camera/ZoomParams.gd" id="1_6jwhn"]
 
 [sub_resource type="Curve" id="Curve_56qo3"]
-_data = [Vector2(0, 0), 0.0, 2.90131, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.896708), 0.0, 0.272985, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_putxy"]
-_data = [Vector2(0, 0), 0.0, 6.03294, 0, 0, Vector2(0.242331, 0.794903), 0.912504, 0.912504, 0, 0, Vector2(0.834356, 0.984223), -0.0714331, -0.0714331, 0, 0]
-point_count = 3
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), -0.0714331, -0.0714331, 0, 0]
+point_count = 2
 
 [resource]
 script = ExtResource("1_6jwhn")

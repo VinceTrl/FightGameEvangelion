@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=79 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/AttackState.gd" id="13_utoig"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="14_fgxac"]
 [ext_resource type="Script" path="res://Scripts/Player/States/HurtStates.gd" id="14_gm8e6"]
+[ext_resource type="Script" path="res://Scripts/GameEffects/animation_ScaledToTime.gd" id="14_q4g8e"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="15_3tuu1"]
 [ext_resource type="Script" path="res://Scripts/Player/States/ShootState.gd" id="15_ow3as"]
 [ext_resource type="Script" path="res://Scripts/Player/States/LedgegrabState.gd" id="16_i7cct"]
@@ -459,7 +460,7 @@ tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_su0wr"]
 resource_name = "Death"
-length = 1.36667
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -467,10 +468,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [117, 118, 119, 120, 121, 122]
+"values": [117, 118, 119, 120, 121, 122, 121, 122, 121, 122, 121, 122]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -479,12 +480,9 @@ tracks/1/path = NodePath("../StateMachine/Death")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.36667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"DestroyPlayer"
-}]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_hk6gi"]
@@ -871,6 +869,8 @@ libraries = {
 "": SubResource("AnimationLibrary_jxbaw")
 }
 next/JumpStart = &"Jump"
+script = ExtResource("14_q4g8e")
+ignoreTimeScale = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Animator"]
 

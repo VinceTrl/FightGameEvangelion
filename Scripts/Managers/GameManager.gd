@@ -7,7 +7,10 @@ extends Node
 @onready var game_timer: Timer = $GameTimer
 @onready var shitpost_gui: ShitpostGUI = $ShitpostGUI
 @onready var platform_manager: Node = $PlatformManager
+@onready var death_background: DeathBackground = $DeathBackground
 var spawn_manager: SpawnManager
+var currentMap: GameMap
+var currentStage: StageManager
 
 @export var fightStartDelay = 3.0
 @export var fightDuration: float = 90.00
