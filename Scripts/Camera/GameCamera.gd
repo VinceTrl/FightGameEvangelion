@@ -2,6 +2,8 @@ class_name GameCamera
 
 extends Node3D
 
+const CAMERA_DISTANCE_CURVE = preload("res://Resources/Curves/CameraDistanceCurve.tres")
+
 @export var player1: PlayerCharacter
 @export var player2: PlayerCharacter
 @export var cameraTargets: Array[Node3D] = []
@@ -10,7 +12,7 @@ extends Node3D
 @export var maxDistZ = 4.5
 @export var minPlayerDist = 3.5
 @export var maxPlayerDist = 8
-@export var zDistCurve: Curve
+@export var zDistCurve: Curve = CAMERA_DISTANCE_CURVE
 
 @export var cameraOffset: Vector3 = Vector3.ZERO
 
@@ -148,23 +150,27 @@ func UpdatePositon_Z():
 	
 	if(usePlayerDistanceForTargetZ):
 		_currentZ = GetZtargetPosition()
+		print("DIST Z APPLIED = " + str(_currentZ))
 		
-	if(overrideTargetZ):
+	if(useOverrideZ):
 		_currentZ = overrideTargetZ
+		print("OVERRIDE Z APPLIED = " + str(_currentZ))
 	
 	if TweenCamZ:
 		TweenCamZ.kill()
 		
 	TweenCamZ = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	TweenCamZ.tween_property(self,"position:z",_currentZ,cameraSmoothnessZ)
+	print("Z APPLIED = " + str(_currentZ))
+	#global_position.z = _currentZ #TEMP
 	
 	
 func ClampCameraPosition():
 	if(!canClampPosition): return
 	
 	#print("update Z")
-	var _clampPosMin = Vector3(cameraClampMin.x,cameraClampMin.y,global_position.z)
-	var _clampPosMax = Vector3(cameraClampMax.x,cameraClampMax.y,global_position.z)
+	var _clampPosMin = Vector3(cameraClampMin.x,cameraClampMin.y,-100)
+	var _clampPosMax = Vector3(cameraClampMax.x,cameraClampMax.y,100)
 	
 	global_position = global_position.clamp(_clampPosMin,_clampPosMax)
 
@@ -174,6 +180,7 @@ func GetZtargetPosition() -> float:
 	var _playersDistRatio = _currentDistPlayers / maxPlayerDist
 	var _curveValue = zDistCurve.sample(_playersDistRatio);
 	var _zPos = lerp(minDistZ,maxDistZ,_curveValue)
+	print("Z TARGET = " + str(_zPos))
 	
 	return _zPos
 	

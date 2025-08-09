@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5fc4fh8i01vj"]
+[gd_scene load_steps=11 format=3 uid="uid://c5fc4fh8i01vj"]
 
 [ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_xjiak"]
 [ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_xbhsl"]
@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="8_2o51h"]
 [ext_resource type="PackedScene" uid="uid://dtndx3uhsdsnl" path="res://Assets/Meshes/Enviro/mesh_plateforme_04.tscn" id="9_8ngka"]
 [ext_resource type="PackedScene" uid="uid://dvqhlk4l25sd3" path="res://Scenes/Gameplay/shrek_item.tscn" id="9_walvn"]
+[ext_resource type="PackedScene" uid="uid://bdvwx0kkjddp" path="res://Scenes/Gameplay/heart.tscn" id="10_nnuc7"]
 
 [node name="Stage_08" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.3, 0)
 script = ExtResource("1_xjiak")
 
 [node name="Gameplay" type="Node3D" parent="."]
@@ -19,7 +19,7 @@ script = ExtResource("1_xjiak")
 [node name="GameplayLogic" type="Node3D" parent="Gameplay"]
 
 [node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.339606, 1.46675, -0.481903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.999, 0.439, 0)
 script = ExtResource("2_xbhsl")
 
 [node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
@@ -29,23 +29,34 @@ playerID = 2
 
 [node name="Objects" type="Node3D" parent="Gameplay"]
 
+[node name="ShrekItem" parent="Gameplay/Objects" instance=ExtResource("9_walvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000145674, 1.77063, -0.0205155)
+infinite = true
+
+[node name="CameraTarget" parent="Gameplay/Objects/ShrekItem" index="1"]
+autoRegister = false
+
+[node name="GroundMagnet" parent="Gameplay/Objects/ShrekItem" index="2"]
+auto_align_on_ready = false
+auto_align_on_update = false
+
 [node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.28702, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96439, 3.3, 0)
 
 [node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.28702, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96439, 3.3, 0)
 
 [node name="Spawner3" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28702, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96439, 3.3, 0)
 
 [node name="Spawner4" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.193, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86243, 3.3, 0)
 
 [node name="Spawner5" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.193, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86243, 3.3, 0)
 
 [node name="Spawner6" parent="Gameplay/Objects" instance=ExtResource("3_hl4g5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.193, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86243, 3.3, 0)
 
 [node name="PenPenLocations" type="Node3D" parent="Gameplay"]
 
@@ -75,51 +86,40 @@ script = ExtResource("5_2p66u")
 
 [node name="Level" type="Node3D" parent="."]
 
+[node name="Mesh_Plateforme_08" parent="Level" instance=ExtResource("9_8ngka")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.484, -0.482)
+
 [node name="Mesh_Plateforme_03" parent="Level" instance=ExtResource("6_b8ik4")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.18295, 1.82613, -0.484462)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3.9, -0.616, -0.731734)
 
 [node name="Mesh_Plateforme_01" parent="Level" instance=ExtResource("7_shemx")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.26289, 1.82613, -0.232963)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.9, -0.616, -0.494236)
 
 [node name="ShipTargetPosition4" type="Node3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 2.79084, 2.07117, 0.147627)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
 
 [node name="ShipTargetPosition5" type="Node3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 8.33782, -0.42128, 0.147627)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
 
 [node name="ShipTargetPosition6" type="Node3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -2.32944, -0.378128, 0.147627)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
 
 [node name="PlatformShip4" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("8_2o51h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77103, 1.99263, -21.2861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22897, -0.10737, -21.2861)
 targetNode = NodePath("../ShipTargetPosition4")
 
 [node name="PlatformShip5" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("8_2o51h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.80703, -0.502137, -21.2861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49297, 1.59786, -21.2861)
 targetNode = NodePath("../ShipTargetPosition5")
 
 [node name="PlatformShip6" parent="Level" node_paths=PackedStringArray("targetNode") instance=ExtResource("8_2o51h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85343, -0.791395, -21.2861)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.74657, 1.60861, -21.2861)
 targetNode = NodePath("../ShipTargetPosition6")
 
-[node name="Mesh_Plateforme_07" parent="Level" instance=ExtResource("9_8ngka")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.339606, -0.533253, -0.481903)
+[node name="Heart" parent="Level" instance=ExtResource("10_nnuc7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07495, 2.17508, -0.0319995)
 
-[node name="Mesh_Plateforme_08" parent="Level" instance=ExtResource("9_8ngka")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.97379, -0.533253, -0.481903)
+[node name="Heart2" parent="Level" instance=ExtResource("10_nnuc7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02505, 2.17508, -0.0319995)
 
-[node name="Mesh_Plateforme_09" parent="Level" instance=ExtResource("9_8ngka")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.58511, -0.533253, -0.481903)
-
-[node name="ShrekItem" parent="Level" instance=ExtResource("9_walvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97389, -0.328187, -0.0205155)
-infinite = true
-
-[node name="CameraTarget" parent="Level/ShrekItem" index="1"]
-autoRegister = false
-
-[node name="GroundMagnet" parent="Level/ShrekItem" index="2"]
-auto_align_on_ready = false
-auto_align_on_update = false
-
-[editable path="Level/ShrekItem"]
+[editable path="Gameplay/Objects/ShrekItem"]

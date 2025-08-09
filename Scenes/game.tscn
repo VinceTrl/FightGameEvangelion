@@ -39,7 +39,7 @@ debugMode = true
 [node name="Gameplay" type="Node" parent="."]
 
 [node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
 cameraClampMin = Vector2(-5, 0)
@@ -64,7 +64,7 @@ stream = null
 stream = null
 
 [node name="KillVolume" parent="Gameplay" instance=ExtResource("8_u84ky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
 [node name="TimerOutSpawners" parent="Gameplay" instance=ExtResource("17_avc87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

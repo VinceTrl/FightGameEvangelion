@@ -688,7 +688,7 @@ texture = ExtResource("8_cjhh7")
 [node name="Stage" type="Node" parent="."]
 
 [node name="Boundary_Bottom" type="StaticBody3D" parent="Stage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.88575, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom"]
