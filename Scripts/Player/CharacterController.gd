@@ -589,6 +589,10 @@ func PlayerHit(hurtbox:Hurtbox):
 	
 func OnFightFinished():
 	if(currentState == States.Death):return
+	
+	isInvicible = true
+	#return
+	
 	var waitAnim = currentState == States.Attack
 	ChangeState(States.Locked)
 	canChangeState = false

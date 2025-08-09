@@ -19,6 +19,11 @@ var direction = Vector3.ZERO
 var hitbox: Hitbox = null
 
 func EnterState():
+	
+	if(Player.isInvicible):
+		Player.ChangeState(States.Knockback)
+		return
+		
 	Name = "Hurt"
 	Player.velocity = Vector3.ZERO #stop player
 	Player.animator.play("Hurt")
