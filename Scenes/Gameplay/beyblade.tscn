@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ma1a8w06qfh8"]
+[gd_scene load_steps=12 format=3 uid="uid://ma1a8w06qfh8"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/beyblade.gd" id="1_t1y04"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/BumperAnimation.gd" id="2_718lx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="3_2snwk"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="3_qtif3"]
 [ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="4_h6thn"]
+[ext_resource type="PackedScene" uid="uid://sddtfc33krlr" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="7_627sr"]
 
 [sub_resource type="Curve" id="Curve_nnnkc"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 1, Vector2(1, 1), 2.00597, 0.0, 0, 0]
@@ -21,7 +22,7 @@ size = Vector3(0.551, 0.272, 0.625)
 height = 0.095
 radius = 0.264793
 
-[node name="Beyblade" type="CharacterBody3D" node_paths=PackedStringArray("spinNode", "tiltNode")]
+[node name="Beyblade" type="CharacterBody3D" node_paths=PackedStringArray("spinNode", "tiltNode", "fireParticles", "fireRoot")]
 collision_layer = 17
 axis_lock_linear_z = true
 axis_lock_angular_x = true
@@ -37,6 +38,9 @@ gravity = 20.0
 maxMovingSpeed = 200.0
 speedRelativeToSpin = SubResource("Curve_nnnkc")
 hitboxActivationThreshold = 0.3
+fireParticles = NodePath("VFXs/VFX_Fire01_mecha")
+fireRoot = NodePath("VFXs")
+maxFireScale = Vector3(0.35, 0.35, 0.35)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00259277, -0.0524734, 0)
@@ -56,6 +60,13 @@ maxScale = Vector3(1.2, 1.2, 1.2)
 
 [node name="beybladeSnake" parent="TiltRoot/Visual/SpinNode" instance=ExtResource("2_w40rj")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="VFXs" type="Node3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.068922, 0)
+
+[node name="VFX_Fire01_mecha" parent="VFXs" instance=ExtResource("7_627sr")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+startEmitting = false
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("3_qtif3")

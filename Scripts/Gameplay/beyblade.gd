@@ -31,6 +31,13 @@ var currentMovingSpeed:float
 @export_range(0.0, 1.0) var hitboxActivationThreshold: float = 0.25
 @export_group("")
 
+@export_group("VFXs")
+@export var fireParticles: ParticlesHolder
+@export var fireRoot:Node3D
+@export_custom(PROPERTY_HINT_LINK, "suffix:") var minFireScale: Vector3 = Vector3(0.1,0.1,0.1)
+@export_custom(PROPERTY_HINT_LINK, "suffix:") var maxFireScale: Vector3 = Vector3(0.3,0.3,0.3)
+@export_group("")
+
 @export_group("Hit effects setting")
 @export var shakeCamOnHit = true
 @export var shakeCamName = "HitShake"
@@ -41,6 +48,7 @@ var currentMovingSpeed:float
 
 @onready var debug_label: Label3D = $DebugLabel
 @onready var hitbox: Hitbox = $Hitbox
+@onready var vfxs: Node3D = $VFXs
 
 @onready var wall_check_r: RayCast3D = $Raycasts/WallCheck_R
 @onready var wall_check_l: RayCast3D = $Raycasts/WallCheck_L
@@ -53,6 +61,7 @@ var currentMovingSpeed:float
 func _ready() -> void:
 	debug_label.visible = debugMode
 	currentSpinSpeed = maxSpinSpeed
+	SetFireRotation()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -60,6 +69,7 @@ func _process(delta: float) -> void:
 	SpinDecrease(delta)
 	HandleHitbox()
 	Tilt()
+	SetParticlesScale()
 	Debug()
 	
 func _physics_process(delta: float) -> void:
@@ -107,6 +117,7 @@ func Move(_delta:float):
 	
 func ChangeDirection():
 	movingDir = -movingDir
+	SetFireRotation()
 	if(switchVelocityOnDirectionChange):
 		velocity.x = -velocity.x
 	
@@ -121,7 +132,19 @@ func HandleGravity(delta: float, _gravity: float):
 	if (!is_on_floor()):
 		velocity.y -= _gravity * delta
 		#return
+		
+func SetFireRotation():
+	fireRoot.global_rotation.z = lerp_angle(fireRoot.global_rotation.z,atan2(movingDir.y,movingDir.x),1)
 	
+func SetFireParticles(emitFire:bool):
+	if(emitFire):
+		fireParticles.EmitParticles()
+	else:
+		fireParticles.StopParticles()
+		
+func SetParticlesScale():
+	var ratio = GetSpinRatio()
+	fireRoot.scale = lerp(minFireScale,maxFireScale,ratio)
 	
 func HandleCollision():
 	if(get_slide_collision_count() > 0):
@@ -136,8 +159,10 @@ func HandleHitbox():
 	var ratio = GetSpinRatio()
 	if(ratio >= hitboxActivationThreshold and hitbox.isActive == false):
 		hitbox.ActiveHitBox()
+		SetFireParticles(true)
 	elif ratio < hitboxActivationThreshold and hitbox.isActive == true:
 		hitbox.InactiveHitBox()
+		SetFireParticles(false)
 	
 func Debug():
 	if(!debugMode): return
@@ -157,6 +182,7 @@ func TakeDamage(hitboxSource: Hitbox):
 	velocity = Vector3.ZERO
 	SpinIncrease(spinIncreaseByDamage * hitboxSource.damage)
 	movingDir = hitboxSource.hitDirection
+	SetFireRotation()
 	
 	#Hit effects
 	if(shakeCamOnHit):
