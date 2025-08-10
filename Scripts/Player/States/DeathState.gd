@@ -7,6 +7,7 @@ extends PlayerState
 
 const SD_ATTACK_IMPACT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_attackIMPACT.wav")
 const SD_IMPACTPROJECTILE = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_impactprojectile.wav")
+const VFX_2D_FALL = preload("res://Scenes/VFX/VFX2D/vfx_2d_fall.tscn")
 
 func EnterState():
 	Name = "Death"
@@ -29,6 +30,10 @@ func EnterState():
 	if(Player.lastHitbox.type != Hitbox.DamageType.Volume):
 		Manager.gameCamera.CameraZoom(Player,Manager.gameCamera.GetZoomParamFromName("DeathZoom"))
 		await Manager.gameCamera.OnZoomEnd
+	else:
+		var vfx = VFX_2D_FALL.instantiate()
+		vfx.global_position = Player.global_position
+		get_tree().current_scene.add_child(vfx)
 
 	StopBackgroundEffect()
 	Manager.gameCamera.RemoveCameraTarget(Player)
