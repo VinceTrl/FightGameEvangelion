@@ -18,21 +18,19 @@ func EnterState():
 	Manager.postProcessEffects.GlitchEffect(glitchEffect)
 	#await get_tree().create_timer(glitchEffect.glitchEffectTime,true,false,true).timeout
 	Manager.postProcessEffects.GlitchEffect(glitchEffect)
-	Manager.gameManager.currentMap.SetEnviroVisibility(false)
-	Manager.gameManager.currentStage.SetLevelVisibility(false)
-	Manager.gameManager.death_background.SetBackgroundOnPlayer(Player)
+	StartBackgroundEffect()
 
 	Manager.timeManager.slowMotion(0.15,1.0)
 	PlayDeathAnimation()
 	PlayDeathSFX()
 	Player.nodeShaker.NodeShake(0.1,0.5)
 	Manager.gameCamera.camShake.AskCamShake("FinalHitShake")
-	Manager.gameCamera.CameraZoom(Player,Manager.gameCamera.GetZoomParamFromName("DeathZoom"))
-	await Manager.gameCamera.OnZoomEnd
+	
+	if(Player.lastHitbox.type != Hitbox.DamageType.Volume):
+		Manager.gameCamera.CameraZoom(Player,Manager.gameCamera.GetZoomParamFromName("DeathZoom"))
+		await Manager.gameCamera.OnZoomEnd
 
-	Manager.gameManager.currentMap.SetEnviroVisibility(true)
-	Manager.gameManager.currentStage.SetLevelVisibility(true)
-	Manager.gameManager.death_background.HideBackground()
+	StopBackgroundEffect()
 	Manager.gameCamera.RemoveCameraTarget(Player)
 	Manager.gameCamera.CameraZoom(Manager.gameManager.GetPlayerOpponent(Player),Manager.gameCamera.GetZoomParamFromName("VictoryZoom"))
 	
@@ -63,6 +61,7 @@ func PlayDeathSFX():
 	var hitbox = Player.lastHitbox
 	
 	if(hitbox != null):
+		
 		if(hitbox.type == Hitbox.DamageType.Melee):
 			sfx_hurt.stream = SD_ATTACK_IMPACT
 		else:
@@ -75,3 +74,15 @@ func PlayDeathSFX():
 			sfx_mi.play()
 	else:
 		sfx_mi.play()
+		
+func StartBackgroundEffect():
+	if(Player.lastHitbox.type == Hitbox.DamageType.Volume): return
+	
+	Manager.gameManager.currentMap.SetEnviroVisibility(false)
+	Manager.gameManager.currentStage.SetLevelVisibility(false)
+	Manager.gameManager.death_background.SetBackgroundOnPlayer(Player)
+	
+func StopBackgroundEffect():
+	Manager.gameManager.currentMap.SetEnviroVisibility(true)
+	Manager.gameManager.currentStage.SetLevelVisibility(true)
+	Manager.gameManager.death_background.HideBackground()

@@ -59,9 +59,6 @@ material_override = SubResource("ShaderMaterial_rfxrm")
 [node name="Sfx_Contact" parent="Gameplay/Player2/PlayerAudio" index="2"]
 stream = null
 
-[node name="Sfx_Kiki" parent="Gameplay/Player2/PlayerAudio" index="12"]
-stream = null
-
 [node name="KillVolume" parent="Gameplay" instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
