@@ -60,7 +60,7 @@ script = ExtResource("4_7wv57")
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.2, 6.32, -0.484)
 
 [node name="Mesh_Plateforme_01" parent="Level" instance=ExtResource("5_7r0d4")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.02, -0.484)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.165097, -0.484)
 
 [node name="Mesh_Plateforme_03" parent="Level" instance=ExtResource("7_tvtre")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.2, 6.32, -0.484)
