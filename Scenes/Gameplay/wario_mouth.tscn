@@ -1,0 +1,181 @@
+[gd_scene load_steps=13 format=3 uid="uid://ba20ikpx0nyx0"]
+
+[ext_resource type="Texture2D" uid="uid://bcchnm3p4kfeu" path="res://Assets/Sprites/Items/WarioHead.png" id="1_waknv"]
+[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="2_i5xfx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwnug"]
+atlas = ExtResource("1_waknv")
+region = Rect2(0, 0, 543, 501)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04ttl"]
+atlas = ExtResource("1_waknv")
+region = Rect2(543, 0, 543, 501)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj3w7"]
+atlas = ExtResource("1_waknv")
+region = Rect2(1086, 0, 543, 501)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cros"]
+atlas = ExtResource("1_waknv")
+region = Rect2(1629, 0, 543, 501)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_la1po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwnug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04ttl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj3w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cros")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3hwh"]
+size = Vector3(2.018, 1.61829, 1)
+
+[sub_resource type="Animation" id="Animation_v5x71"]
+resource_name = "Eating"
+length = 1.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.241667, 0.375, 0.508333, 0.641667, 0.775),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitbox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"ActiveHitBox"
+}, {
+"args": [],
+"method": &"InactiveHitBox"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hitbox/HitboxCollisionShape:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0666667, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_w5ppp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite3D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitbox/HitboxCollisionShape:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ha2r5"]
+_data = {
+"Eating": SubResource("Animation_v5x71"),
+"RESET": SubResource("Animation_w5ppp")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jfswq"]
+size = Vector3(3, 5, 1)
+
+[node name="WarioMouth" type="Node3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_la1po")
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6084, -1.05852, 0)
+script = ExtResource("2_i5xfx")
+damage = 3
+type = 2
+isActive = false
+randomID = true
+hitDirection = Vector3(-1, 0, 0)
+
+[node name="HitboxCollisionShape" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45754, -0.190857, 0)
+shape = SubResource("BoxShape3D_p3hwh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ha2r5")
+}
+autoplay = "Eating"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24761, 0, 0)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_jfswq")

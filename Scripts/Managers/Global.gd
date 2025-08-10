@@ -1,6 +1,6 @@
 extends Node
 
-enum PlatformSpawnType {Random, Scripted}
+enum PlatformSpawnType {Random, Scripted, None}
 
 func GetAveragePosition(nodes: Array) -> Vector3:
 	var total_position := Vector3.ZERO

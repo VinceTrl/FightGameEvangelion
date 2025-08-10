@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctb65dyncmbxe"]
+
+[ext_resource type="PackedScene" uid="uid://f85ubw8ij48m" path="res://Assets/Meshes/Enviro/WoodPlatform/wood_float_platform.fbx" id="1_6uxky"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aof3p"]
+size = Vector3(4.2, 2.495, 4)
+
+[node name="WoodPlatform" type="Node3D"]
+
+[node name="wood_float_platform" parent="." instance=ExtResource("1_6uxky")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.125, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wood_float_platform" groups=["Ledgegrab"]]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wood_float_platform/StaticBody3D"]
+shape = SubResource("BoxShape3D_aof3p")

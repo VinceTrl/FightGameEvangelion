@@ -1,0 +1,284 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqoibe403b6hy"]
+
+[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_k0tsr"]
+[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_dufh1"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_1d2pd"]
+[ext_resource type="PackedScene" uid="uid://dp7u5gy3r2kgs" path="res://Scenes/Gameplay/bouncy_ring.tscn" id="4_k3uol"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_fag7v"]
+[ext_resource type="PackedScene" uid="uid://b8to22k0bf58q" path="res://Assets/Meshes/Props/Pool/swimming_pool.fbx" id="6_4t43o"]
+[ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_h6ksb"]
+[ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="7_gwjxb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_chbuj"]
+size = Vector3(3.98096, 1, 1.96704)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0m7tc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5fvu6"]
+size = Vector3(0.25, 3, 1.815)
+
+[node name="Ani_Stage_03" type="Node3D"]
+script = ExtResource("1_k0tsr")
+platformSpawnType = 1
+overrideMinCamZ = 4.0
+overrideMaxCamZ = 6.0
+
+[node name="Gameplay" type="Node3D" parent="."]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay"]
+
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.439, 0)
+script = ExtResource("2_dufh1")
+
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.439, 0)
+script = ExtResource("2_dufh1")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay"]
+
+[node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96439, 3.3, 0)
+
+[node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96439, 3.3, 0)
+
+[node name="Spawner3" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96439, 3.3, 0)
+
+[node name="Spawner4" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86243, 3.3, 0)
+
+[node name="Spawner5" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86243, 3.3, 0)
+
+[node name="Spawner6" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86243, 3.3, 0)
+
+[node name="Rings" type="Node3D" parent="Gameplay/Objects"]
+
+[node name="BouncyRing" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3488, 1.13497, 0)
+
+[node name="BouncyRing2" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08942, 1.13497, 0)
+
+[node name="BouncyRing3" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.81966, 1.13497, 0)
+
+[node name="BouncyRing4" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57065, 1.13497, 0)
+
+[node name="BouncyRing5" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6512, 1.13497, 0)
+
+[node name="BouncyRing6" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.910585, 1.13497, 0)
+
+[node name="BouncyRing7" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180345, 1.13497, 0)
+
+[node name="BouncyRing8" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.570646, 1.13497, 0)
+
+[node name="BouncyRing10" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91058, 1.13497, 0)
+
+[node name="BouncyRing11" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18034, 1.13497, 0)
+
+[node name="BouncyRing12" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42935, 1.13497, 0)
+
+[node name="BouncyRing13" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85282, 2.39126, 0)
+
+[node name="BouncyRing14" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.890753, 2.29245, 0)
+
+[node name="BouncyRing15" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12778, 2.22187, 0)
+
+[node name="BouncyRing16" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365535, 2.23599, 0)
+
+[node name="BouncyRing17" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63446, 2.23599, 0)
+
+[node name="BouncyRing18" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36554, 2.23599, 0)
+
+[node name="BouncyRing19" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36554, 2.23599, 0)
+
+[node name="BouncyRing20" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.808072, 0.589084, 0, -0.589084, 0.808072, 0, 0, 0, 1, -1.92574, 3.11116, 0)
+
+[node name="BouncyRing21" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.908019, -0.418929, 0, 0.418929, 0.908019, 0, 0, 0, 1, 3.07426, 3.11116, 0)
+
+[node name="BouncyRing22" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.908019, -0.418929, 0, 0.418929, 0.908019, 0, 0, 0, 1, 3.68123, 1.77018, 0)
+
+[node name="BouncyRing23" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.999757, -0.0220243, 0, 0.0220243, 0.999757, 0, 0, 0, 1, 2.08616, 1.8831, 0)
+
+[node name="BouncyRing24" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.634798, 0.772678, 0, -0.772678, 0.634798, 0, 0, 0, 1, 0.0958648, 2.65946, 0)
+
+[node name="BouncyRing25" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.999771, 0.0213787, 0, -0.0213787, 0.999771, 0, 0, 0, 1, 0.0958648, 4.06413, 0)
+
+[node name="BouncyRing26" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.999771, 0.0213787, 0, -0.0213787, 0.999771, 0, 0, 0, 1, -0.768321, 2.73627, 0)
+
+[node name="BouncyRing9" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26648, 1.69477, 0)
+
+[node name="BouncyRing27" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00709, 1.69477, 0)
+
+[node name="BouncyRing28" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.73733, 1.69477, 0)
+
+[node name="BouncyRing29" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48832, 1.69477, 0)
+
+[node name="BouncyRing30" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73352, 1.69477, 0)
+
+[node name="BouncyRing31" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.992907, 1.69477, 0)
+
+[node name="BouncyRing32" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262667, 1.69477, 0)
+
+[node name="BouncyRing33" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.488324, 1.69477, 0)
+
+[node name="BouncyRing34" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99291, 1.69477, 0)
+
+[node name="BouncyRing35" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26267, 1.69477, 0)
+
+[node name="BouncyRing36" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51168, 1.69477, 0)
+
+[node name="BouncyRing37" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93514, 2.95105, 0)
+
+[node name="BouncyRing38" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.973075, 2.85224, 0)
+
+[node name="BouncyRing39" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04546, 2.78167, 0)
+
+[node name="BouncyRing40" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.283213, 2.79578, 0)
+
+[node name="BouncyRing41" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71679, 2.79578, 0)
+
+[node name="BouncyRing42" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28321, 2.79578, 0)
+
+[node name="BouncyRing43" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28321, 2.79578, 0)
+
+[node name="BouncyRing44" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.808072, 0.589084, 0, -0.589084, 0.808072, 0, 0, 0, 1, -1.52946, 3.51501, 0)
+
+[node name="BouncyRing45" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.908019, -0.418929, 0, 0.418929, 0.908019, 0, 0, 0, 1, 2.91449, 3.65395, 0)
+
+[node name="BouncyRing46" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.908019, -0.418929, 0, 0.418929, 0.908019, 0, 0, 0, 1, 3.52146, 2.31296, 0)
+
+[node name="BouncyRing47" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.999757, -0.0220243, 0, 0.0220243, 0.999757, 0, 0, 0, 1, 2.15614, 2.44457, 0)
+
+[node name="BouncyRing48" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.634798, 0.772678, 0, -0.772678, 0.634798, 0, 0, 0, 1, 0.580661, 2.9512, 0)
+
+[node name="BouncyRing49" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.999771, 0.0213787, 0, -0.0213787, 0.999771, 0, 0, 0, 1, 0.190136, 4.62203, 0)
+
+[node name="BouncyRing50" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+transform = Transform3D(0.999771, 0.0213787, 0, -0.0213787, 0.999771, 0, 0, 0, 1, -0.67405, 3.29418, 0)
+
+[node name="PenPenLocations" type="Node3D" parent="Gameplay"]
+
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37871, 0.252657, 0)
+script = ExtResource("5_fag7v")
+
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.627961, 0)
+script = ExtResource("5_fag7v")
+
+[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38339, 2.54319, 0)
+script = ExtResource("5_fag7v")
+
+[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25588, 2.73042, 0)
+script = ExtResource("5_fag7v")
+
+[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07223, 0.466167, 0)
+script = ExtResource("5_fag7v")
+
+[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95277, 2.53234, 0)
+script = ExtResource("5_fag7v")
+
+[node name="swimming_pool" parent="Gameplay" instance=ExtResource("6_4t43o")]
+transform = Transform3D(2.255, 0, 0, 0, 2.14061, -0.709099, 0, 0.709099, 2.14061, 0.581694, 0.29134, 0.0900879)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Gameplay/swimming_pool"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.43051e-06, 0, 1.43051e-06, 1, -0.199219, -0.129779, -0.0250246)
+shape = SubResource("BoxShape3D_chbuj")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Gameplay/swimming_pool"]
+transform = Transform3D(1.72002, 0, 0, 0, 1, 0, 0, 0, 0.913212, -0.167984, 0.242347, 7.45058e-09)
+mesh = SubResource("PlaneMesh_0m7tc")
+material = ExtResource("7_gwjxb")
+
+[node name="Wall" type="StaticBody3D" parent="Gameplay/swimming_pool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6647, 0.519058, 1.49012e-08)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/Wall"]
+shape = SubResource("BoxShape3D_5fvu6")
+
+[node name="Wall2" type="StaticBody3D" parent="Gameplay/swimming_pool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07245, 0.519058, 1.49012e-08)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/Wall2"]
+shape = SubResource("BoxShape3D_5fvu6")
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="ShipTargetPosition4" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
+
+[node name="ShipTargetPosition5" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
+
+[node name="ShipTargetPosition6" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
+
+[node name="WoodPlatform9" parent="Level" instance=ExtResource("6_h6ksb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
+
+[node name="WoodPlatform10" parent="Level" instance=ExtResource("6_h6ksb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, 0)
+
+[node name="WoodPlatform11" parent="Level" instance=ExtResource("6_h6ksb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+
+[node name="WoodPlatform12" parent="Level" instance=ExtResource("6_h6ksb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 0)

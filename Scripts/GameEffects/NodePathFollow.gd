@@ -6,6 +6,7 @@ extends PathFollow3D
 @export var pathFollowTransCurve: Curve
 @export var pathFollowLoop:bool = false
 @export var freeChildrenOnEnd = true
+@export var followOnFightStart:bool = false
 
 var path: Path3D
 var isPlayingFollow = false
@@ -21,7 +22,8 @@ func _ready() -> void:
 	if(parent is Path3D):
 		path = parent
 		
-	#path.curve.set_point_position(0,global_position)
+	if(followOnFightStart):
+		Manager.gameManager.OnFightStart.connect(StartFollowPath)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

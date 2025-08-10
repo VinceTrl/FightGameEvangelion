@@ -439,7 +439,7 @@ lights = [NodePath("Lighting")]
 [node name="Enviro" type="Node3D" parent="."]
 
 [node name="PeachBeachMap" parent="Enviro" instance=ExtResource("1_a882g")]
-transform = Transform3D(0.0382237, 0.00114924, 0.145044, 0.0221454, 0.14819, -0.0070102, -0.143347, 0.0232, 0.0375929, -2.4032, -0.66203, -44.6887)
+transform = Transform3D(0.0382237, 0.00114924, 0.145044, 0.00735124, 0.149787, -0.0031241, -0.144861, 0.00790441, 0.0381131, -2.4032, 1.62675, -44.6887)
 
 [node name="WaterPlane" type="CSGMesh3D" parent="Enviro/PeachBeachMap"]
 transform = Transform3D(1.69883, 0.25917, -6.44139, 0.0510762, 6.66055, 0.28146, 6.44636, -0.121074, 1.69528, -286.488, 7.00705, 92.0118)
@@ -696,7 +696,7 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="StageSpawner" parent="Stage" instance=ExtResource("21_uv2n1")]
 map = ExtResource("20_bhy2f")
-debugSpawnIndex = 7
+debugSpawnIndex = 2
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("21_e4ph7")
