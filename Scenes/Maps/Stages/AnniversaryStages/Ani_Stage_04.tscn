@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2eln4s6wcfac"]
+
+[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_thu62"]
+[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_srwkm"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_4vx7h"]
+[ext_resource type="PackedScene" uid="uid://bqdn3tdqwtmj5" path="res://Scenes/Gameplay/fishing_rod.tscn" id="5_1yylx"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_qej2g"]
+[ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_6ynbj"]
+[ext_resource type="PackedScene" uid="uid://l167uu8l3k8h" path="res://Scenes/Gameplay/duck.tscn" id="6_l72ue"]
+
+[node name="Ani_Stage_04" type="Node3D"]
+script = ExtResource("1_thu62")
+platformSpawnType = 1
+fixedCameraZoom = true
+fixedCamZ = 5.0
+overrideMinCamZ = 4.0
+overrideMaxCamZ = 6.0
+
+[node name="Gameplay" type="Node3D" parent="."]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay"]
+
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.439, 0)
+script = ExtResource("2_srwkm")
+
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.439, 0)
+script = ExtResource("2_srwkm")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay"]
+
+[node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_4vx7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79836, 3.3, 0)
+
+[node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_4vx7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29552, 3.3, 0)
+
+[node name="Spawner5" parent="Gameplay/Objects" instance=ExtResource("3_4vx7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35344, 3.3, 0)
+
+[node name="Spawner6" parent="Gameplay/Objects" instance=ExtResource("3_4vx7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86197, 3.3, 0)
+
+[node name="PenPenLocations" type="Node3D" parent="Gameplay"]
+
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67183, 3.45, 0)
+script = ExtResource("5_qej2g")
+
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5507, 3.45, 0)
+script = ExtResource("5_qej2g")
+
+[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6506, 3.45, 0)
+script = ExtResource("5_qej2g")
+
+[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54676, 3.45, 0)
+script = ExtResource("5_qej2g")
+
+[node name="Items" type="Node3D" parent="Gameplay"]
+
+[node name="FishingRod" parent="Gameplay/Items" instance=ExtResource("5_1yylx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.01022, 0.351362)
+
+[node name="FishingRod2" parent="Gameplay/Items" instance=ExtResource("5_1yylx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.01022, 0.351362)
+
+[node name="FishingRod3" parent="Gameplay/Items" instance=ExtResource("5_1yylx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01022, 0.351362)
+
+[node name="Duck" parent="Gameplay/Items" instance=ExtResource("6_l72ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.04776, 0.384277, 0.932167)
+
+[node name="Duck2" parent="Gameplay/Items" instance=ExtResource("6_l72ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95224, 0.384277, 0.932167)
+moveDirection = Vector3(-1, 0, 0)
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="ShipTargetPosition4" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
+
+[node name="ShipTargetPosition5" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
+
+[node name="ShipTargetPosition6" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
+
+[node name="WoodPlatform" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="WoodPlatform2" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+
+[node name="WoodPlatform3" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
+
+[node name="WoodPlatform4" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)
+
+[node name="WoodPlatform5" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+
+[node name="WoodPlatform6" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
+
+[node name="WoodPlatform7" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
+
+[node name="WoodPlatform8" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 0)
+
+[node name="WoodPlatform9" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
+
+[node name="WoodPlatform10" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6041, 2.5, 0)
+
+[node name="WoodPlatform12" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54516, 2.5, 0)

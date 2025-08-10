@@ -6,7 +6,10 @@ var camera: GameCamera
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GetCamera()
-	if(autoRegister): AddTarget()
+	
+	if(autoRegister): 
+		call_deferred("GetCamera")
+		call_deferred("AddTarget")
 
 func GetCamera():
 	camera = Manager.gameCamera

@@ -696,7 +696,7 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="StageSpawner" parent="Stage" instance=ExtResource("21_uv2n1")]
 map = ExtResource("20_bhy2f")
-debugSpawnIndex = 2
+debugSpawnIndex = 4
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("21_e4ph7")
