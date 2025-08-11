@@ -11,8 +11,6 @@
 [node name="Ani_Stage_04" type="Node3D"]
 script = ExtResource("1_thu62")
 platformSpawnType = 1
-fixedCameraZoom = true
-fixedCamZ = 5.0
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 6.0
 
@@ -21,11 +19,11 @@ overrideMaxCamZ = 6.0
 [node name="GameplayLogic" type="Node3D" parent="Gameplay"]
 
 [node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.439, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.439, 0)
 script = ExtResource("2_srwkm")
 
 [node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.439, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.439, 0)
 script = ExtResource("2_srwkm")
 playerID = 2
 
@@ -63,14 +61,14 @@ script = ExtResource("5_qej2g")
 
 [node name="Items" type="Node3D" parent="Gameplay"]
 
-[node name="FishingRod" parent="Gameplay/Items" instance=ExtResource("5_1yylx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.01022, 0.351362)
-
-[node name="FishingRod2" parent="Gameplay/Items" instance=ExtResource("5_1yylx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.01022, 0.351362)
-
 [node name="FishingRod3" parent="Gameplay/Items" instance=ExtResource("5_1yylx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01022, 0.351362)
+
+[node name="FishingRod4" parent="Gameplay/Items" instance=ExtResource("5_1yylx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.01022, 0.351362)
+
+[node name="FishingRod5" parent="Gameplay/Items" instance=ExtResource("5_1yylx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.01022, 0.351362)
 
 [node name="Duck" parent="Gameplay/Items" instance=ExtResource("6_l72ue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.04776, 0.384277, 0.932167)
@@ -93,29 +91,26 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627
 [node name="WoodPlatform" parent="Level" instance=ExtResource("6_6ynbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
+[node name="WoodPlatform8" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+
+[node name="WoodPlatform3" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 0)
+
+[node name="WoodPlatform6" parent="Level" instance=ExtResource("6_6ynbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0)
+
 [node name="WoodPlatform2" parent="Level" instance=ExtResource("6_6ynbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
 
-[node name="WoodPlatform3" parent="Level" instance=ExtResource("6_6ynbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
-
 [node name="WoodPlatform4" parent="Level" instance=ExtResource("6_6ynbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
 
 [node name="WoodPlatform5" parent="Level" instance=ExtResource("6_6ynbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
 
-[node name="WoodPlatform6" parent="Level" instance=ExtResource("6_6ynbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
-
 [node name="WoodPlatform7" parent="Level" instance=ExtResource("6_6ynbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
-
-[node name="WoodPlatform8" parent="Level" instance=ExtResource("6_6ynbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 0)
-
-[node name="WoodPlatform9" parent="Level" instance=ExtResource("6_6ynbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
 
 [node name="WoodPlatform10" parent="Level" instance=ExtResource("6_6ynbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6041, 2.5, 0)

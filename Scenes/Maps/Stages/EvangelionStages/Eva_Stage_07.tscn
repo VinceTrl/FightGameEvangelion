@@ -14,6 +14,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.3, 0)
 script = ExtResource("1_w6xrg")
 fixedCameraZoom = true
+fixedCamZ = 3.61
 
 [node name="Gameplay" type="Node3D" parent="."]
 

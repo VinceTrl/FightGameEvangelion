@@ -14,7 +14,8 @@ size = Vector3(1, 10, 0.445)
 [node name="Ani_Stage_05" type="Node3D"]
 script = ExtResource("1_vi1qd")
 platformSpawnType = 1
-overrideCamZ = true
+fixedCameraZoom = true
+fixedCamZ = 3.0
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 5.0
 
@@ -109,12 +110,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
 
 [node name="WoodPlatform7" parent="Level" instance=ExtResource("7_d33a2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
-
-[node name="WoodPlatform8" parent="Level" instance=ExtResource("7_d33a2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 0)
-
-[node name="WoodPlatform9" parent="Level" instance=ExtResource("7_d33a2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
 
 [node name="WoodPlatform10" parent="Level" instance=ExtResource("7_d33a2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)

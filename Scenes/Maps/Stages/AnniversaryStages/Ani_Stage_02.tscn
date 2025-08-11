@@ -10,8 +10,6 @@
 [node name="Ani_Stage_02" type="Node3D"]
 script = ExtResource("1_hqxp8")
 platformSpawnType = 1
-fixedCameraZoom = true
-fixedCamZ = 5.0
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 6.0
 
@@ -31,28 +29,19 @@ playerID = 2
 [node name="Objects" type="Node3D" parent="Gameplay"]
 
 [node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96439, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48911, 4.3, 0)
 
 [node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96439, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03561, 4.3, 0)
 
 [node name="Spawner3" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96439, 3.3, 0)
-
-[node name="Spawner4" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86243, 3.3, 0)
-
-[node name="Spawner5" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86243, 3.3, 0)
-
-[node name="Spawner6" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86243, 3.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49128, 4.3, 0)
 
 [node name="WarioMouth" parent="Gameplay/Objects" instance=ExtResource("5_x8xyy")]
-transform = Transform3D(0.75, 0, -7.99361e-15, 0, 0.75, 0, 7.99361e-15, 0, 0.75, 4.75, 2.403, 0.493)
+transform = Transform3D(0.75, 0, -7.99361e-15, 0, 0.75, 0, 7.99361e-15, 0, 0.75, 3.75, 2.403, 0.493)
 
 [node name="WarioMouth2" parent="Gameplay/Objects" instance=ExtResource("5_x8xyy")]
-transform = Transform3D(-0.75, -6.55671e-08, -6.55671e-08, -6.55671e-08, 0.75, 0, -6.55671e-08, -5.73206e-15, 0.75, -4.75, 2.4, 0.4)
+transform = Transform3D(-0.75, -6.55671e-08, -6.55671e-08, -6.55671e-08, 0.75, 0, -6.55671e-08, -5.73206e-15, 0.75, -3.75, 2.4, 0.4)
 
 [node name="PenPenLocations" type="Node3D" parent="Gameplay"]
 
@@ -112,17 +101,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
 [node name="WoodPlatform7" parent="Level" instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
 
-[node name="WoodPlatform8" parent="Level" instance=ExtResource("7_gvulw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 0)
-
-[node name="WoodPlatform9" parent="Level" instance=ExtResource("7_gvulw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
-
-[node name="WoodPlatform10" parent="Level" instance=ExtResource("7_gvulw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, 0)
-
 [node name="WoodPlatform11" parent="Level" instance=ExtResource("7_gvulw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50401, 2.5, 0)
 
 [node name="WoodPlatform12" parent="Level" instance=ExtResource("7_gvulw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49599, 2.5, 0)

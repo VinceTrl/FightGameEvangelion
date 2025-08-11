@@ -157,6 +157,7 @@ script = ExtResource("1_fve1k")
 platformSpawnType = 1
 scenario = NodePath("AnimationPlayer")
 fixedCameraZoom = true
+fixedCamZ = 3.665
 
 [node name="Gameplay" type="Node3D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://diwhygl1ho1la"]
+[gd_scene load_steps=19 format=3 uid="uid://diwhygl1ho1la"]
 
 [ext_resource type="Script" path="res://Scripts/Camera/GameCamera.gd" id="1_cpg4t"]
 [ext_resource type="Resource" uid="uid://cgaw0g5mdfmxf" path="res://Resources/CameraZoom/DefaultZoom.tres" id="2_e3wng"]
@@ -17,21 +17,28 @@
 [ext_resource type="Resource" uid="uid://bdg7oxf5kjk3b" path="res://Resources/CameraShakes/ImpactShake.tres" id="8_yyu2d"]
 [ext_resource type="Resource" uid="uid://dbruj4m2iyqrh" path="res://Resources/CameraShakes/DestroyProjectileShake.tres" id="14_p6ck8"]
 
+[sub_resource type="Curve" id="Curve_qrsff"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_t0je2"]
 _data = [Vector2(0, 1), 0.0, -2.43313, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="GameCamera" type="Node3D"]
 script = ExtResource("1_cpg4t")
-minDistZ = 1.965
-maxDistZ = 5.345
+minDistZ = 1.75
+zDistCurve = SubResource("Curve_qrsff")
 cameraOffset = Vector3(0, 0.04, 0)
 cameraSmoothnessX = 1.75
 cameraSmoothnessY = 0.85
+cameraSmoothnessZ = 0.38
+canClampPosition = false
 cameraClampMax = Vector2(10, 3)
 cameraClampMin = Vector2(-5, -1)
 defaultZoom = ExtResource("2_e3wng")
 zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource("4_45u5i"), ExtResource("5_k8ve0"), ExtResource("6_5okmd"), ExtResource("7_ng602")])
+debugMode = true
 
 [node name="CameraShake" type="Node3D" parent="."]
 script = ExtResource("2_xo7ej")
