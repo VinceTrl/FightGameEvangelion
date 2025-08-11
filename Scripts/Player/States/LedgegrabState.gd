@@ -41,19 +41,28 @@ func EnterState():
 	queryEnd = Vector3(queryStart.x,queryStart.y - rayLenght,queryStart.z)
 	var space_state = Player.get_world_3d().direct_space_state
 	# use global coordinates, not local to node
-	var query = PhysicsRayQueryParameters3D.create(queryStart,queryEnd)
+	var queryMask = mask_from_layers([Player.collisionLayer])
+	print("MASK = " + str(queryMask))
+	var query = PhysicsRayQueryParameters3D.create(queryStart,queryEnd,queryMask)
 	var result = space_state.intersect_ray(query)
 	
-	if result:
+	
+	if result and result.collider.is_in_group("Ledgegrab"):
 		endPos = result.position
 		canLedge = true
 		print("RESULT : "  + str(result))
-		
-	ledgegrabPosition = Player.global_position
-	targetPosition = endPos
+		ledgegrabPosition = Player.global_position
+		targetPosition = endPos
+		Player.animator.play("Dash")
+	else:
+		Player.ChangeState(Player.States.Fall)
 	
-	Player.animator.play("Dash")
-	
+func mask_from_layers(layers: Array[int]) -> int:
+	var mask := 0
+	for layer in layers:
+		mask |= 1 << (layer - 1) # Active corresponding bit 
+	return mask
+
 func ExitState():
 	canLedge = false
 

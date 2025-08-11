@@ -811,6 +811,7 @@ stream_1/stream = ExtResource("42_af708")
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
+collision_mask = 0
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true

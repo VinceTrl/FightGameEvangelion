@@ -48,6 +48,7 @@ var gameManager: Manager
 #player stats variables
 @export var healthPoints = 6
 @export var startFacingRight = true
+@export var collisionLayer:int = 7
 var isDead: bool = false
 var isInvicible: bool = false
 
@@ -190,6 +191,7 @@ func _ready():
 	
 	sprite.texture = spritesheet
 	player_spear.sprite_3d.texture = spritesheet
+	SetCollisionLayer()
 	
 	gameManager = Manager
 	Manager.gameManager.RegisterPlayer(self)
@@ -305,6 +307,13 @@ func DebugPlayer():
 		debug_text += debug_facing
 		
 		debug_values.text = "DEBUG : "  + debug_text
+		
+func SetCollisionLayer():
+	set_collision_mask_value(collisionLayer, true)
+	ledge_left_lower_cast.set_collision_mask_value(collisionLayer,true)
+	ledge_left_upper_cast.set_collision_mask_value(collisionLayer,true)
+	ledge_right_lower_cast.set_collision_mask_value(collisionLayer,true)
+	ledge_right_upper_cast.set_collision_mask_value(collisionLayer,true)
 		
 		
 func HandleGravity(delta: float, gravity: float = jumpGravity):

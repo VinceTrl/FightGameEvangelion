@@ -34,7 +34,7 @@ unique_name_in_owner = true
 [node name="MapManager" type="Node" parent="."]
 script = ExtResource("3_dv241")
 maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("6_3xkmj")])
-debugSpawnIndex = 1
+debugMode = true
 
 [node name="Gameplay" type="Node" parent="."]
 
@@ -51,6 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.318534, 1.715, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2585, 1.63538, 0)
 playerID = 2
 startFacingRight = false
+collisionLayer = 8
 spritesheet = ExtResource("5_kufng")
 
 [node name="Sprite2D" parent="Gameplay/Player2" index="3"]

@@ -192,6 +192,8 @@ Mute={
 3d_physics/layer_4="Projectile"
 3d_physics/layer_5="Items"
 3d_physics/layer_6="Hurtbox"
+3d_physics/layer_7="World_P1"
+3d_physics/layer_8="World_P2"
 
 [physics]
 

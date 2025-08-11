@@ -11,6 +11,7 @@ size = Vector3(4.2, 2.495, 4)
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.125, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="wood_float_platform" groups=["Ledgegrab"]]
+collision_layer = 193
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wood_float_platform/StaticBody3D"]

@@ -61,6 +61,7 @@ material_override = ExtResource("3_ufyl5")
 material_override = ExtResource("4_jrmic")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" groups=["Ledgegrab"]]
+collision_layer = 193
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000407696, 0.419965, 0.187828)

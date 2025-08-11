@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4bqfwnqem52u"]
+[gd_scene load_steps=19 format=3 uid="uid://c4bqfwnqem52u"]
 
 [ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_6hget"]
 [ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_ni3r1"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b7ty5xmpj8jnh" path="res://Assets/Sprites/BG/water_tile.png" id="9_v10ek"]
 [ext_resource type="PackedScene" uid="uid://ma1a8w06qfh8" path="res://Scenes/Gameplay/beyblade.tscn" id="14_g8n6f"]
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="15_wnyvx"]
+[ext_resource type="PackedScene" uid="uid://b04nmwkumh84t" path="res://Scenes/Meshes/one_way_platform.tscn" id="15_wyfuf"]
 [ext_resource type="PackedScene" uid="uid://byfv3lsovril5" path="res://Scenes/Gameplay/animation_scale_test.tscn" id="16_qcl4n"]
 [ext_resource type="PackedScene" uid="uid://bah62ne6gthmy" path="res://Scenes/GUI/death_background.tscn" id="17_rp3st"]
 
@@ -191,6 +192,9 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.275284, -2.37989, 0.345848
 texture_filter = 0
 render_priority = -1
 texture = ExtResource("9_v10ek")
+
+[node name="OneWayPlatform" parent="Level" instance=ExtResource("15_wyfuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82177, 1.44545, -0.0864477)
 
 [node name="Spawner" parent="." instance=ExtResource("3_4xj1p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60998, 1.67034, -0.0763577)
