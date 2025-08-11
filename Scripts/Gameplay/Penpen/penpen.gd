@@ -61,8 +61,6 @@ func _ready():
 	#currentMoveDirection = startingMoveDirection
 	#SetRandomDirection()
 	global_position = GetRandomLocation().global_position
-	OnMoveEnd.connect(MovePenpenToLocation)
-	MovePenpenToLocation()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -157,6 +155,7 @@ func Hurt(_hitbox: Hitbox):
 	
 	isTakingDamage = false
 	canTakeDamage = true
+	MovePenpenToLocation()
 	
 	
 func PenpenDeath():

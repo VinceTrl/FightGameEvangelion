@@ -60,7 +60,7 @@ script = ExtResource("1_fk4f2")
 healthPoints = 4
 hurtTime = 0.375
 slapChance = 0.5
-moveSpeed = 0.75
+moveSpeed = 0.8
 startingMoveDirection = Vector3(-1, 0, 0)
 
 [node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]
