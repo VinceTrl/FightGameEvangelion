@@ -13,7 +13,7 @@ point_count = 2
 [resource]
 script = ExtResource("1_6jwhn")
 zoomName = &"DeathZoom"
-zoomDuration = 0.5
+zoomDuration = 1.5
 zoomDistance = 1.0
 zoomCurve = SubResource("Curve_putxy")
 translationCurve = SubResource("Curve_56qo3")

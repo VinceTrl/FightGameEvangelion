@@ -22,9 +22,11 @@ script = ExtResource("4_ka06k")
 
 [node name="FightOutro" type="Node" parent="."]
 script = ExtResource("5_j4i07")
+resultStateDelay = 2.0
 
 [node name="ResultScreen" type="Node" parent="."]
 script = ExtResource("6_6utuw")
+exitGameDelay = 4.0
 
 [node name="WinnerScreen" type="Node" parent="."]
 script = ExtResource("7_el524")

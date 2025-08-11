@@ -1,5 +1,6 @@
 extends GameStates
 
+@export var displayTime:float = 8.0
 const WINNER_SCREEN = preload("res://Scenes/GUI/winner_screen.tscn")
 var canHandleInput = false
 var screenInstance
@@ -13,7 +14,7 @@ func EnterState():
 	screenInstance = WINNER_SCREEN.instantiate()
 	add_child(screenInstance)
 	Manager.gameStateManager.OnWinnerScreenStart.emit()
-	await get_tree().create_timer(8.0,true,false,true).timeout
+	await get_tree().create_timer(displayTime,true,false,true).timeout
 	RestartGame()
 	
 func ExitState():

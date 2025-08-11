@@ -1,5 +1,6 @@
 extends GameStates
 
+@export var exitGameDelay:float = 3.0
 var canHandleInput = true
 
 func _ready():
@@ -11,7 +12,7 @@ func EnterState():
 	canHandleInput = true
 	Manager.gameStateManager.OnResultScreenStart.emit()
 	Manager.masterUI.result_screen.StartResult()
-	await get_tree().create_timer(3.0,true,false,true).timeout
+	await get_tree().create_timer(exitGameDelay,true,false,true).timeout
 	ExitGame()
 	
 func ExitState():

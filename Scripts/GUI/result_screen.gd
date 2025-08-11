@@ -3,7 +3,8 @@ extends Control
 
 @onready var win_text: Label = $ColorRect/WinText
 @onready var score_text: Label = $ScoreText
-@export var scoreDisplayDelay: float = 0.75
+@export var displayDelay: float = 1.0
+@export var scoreUpdateDelay: float = 0.75
 @export var playerColor1:Color
 @export var playerColor2:Color
 
@@ -51,9 +52,11 @@ func StartResult():
 		winnerText = "Player" + str(player.playerID)
 		win_text.text = winnerText + " Wins"
 		
+	await get_tree().create_timer(displayDelay,true,false,false).timeout
+		
 	self.visible = true	
 	
-	await get_tree().create_timer(scoreDisplayDelay,true,false,false).timeout
+	await get_tree().create_timer(scoreUpdateDelay,true,false,false).timeout
 	
 	SetScoreText()
 		
