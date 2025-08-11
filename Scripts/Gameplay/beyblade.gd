@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var debugMode:bool = false
 
 @export_group("Spin")
+@export var spinOnReady: bool = false
 @export var maxSpinSpeed : float = 100.0
 @export var spinDecreaseSpeed: float = 5.0
 @export var spinIncreaseByDamage: float = 25.0
@@ -60,8 +61,11 @@ var currentMovingSpeed:float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	debug_label.visible = debugMode
-	currentSpinSpeed = maxSpinSpeed
 	SetFireRotation()
+	
+	if(spinOnReady):
+		currentSpinSpeed = maxSpinSpeed
+		
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

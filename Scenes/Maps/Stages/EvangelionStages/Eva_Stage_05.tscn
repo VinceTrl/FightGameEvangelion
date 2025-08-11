@@ -17,11 +17,11 @@ script = ExtResource("1_giggg")
 [node name="GameplayLogic" type="Node3D" parent="Gameplay"]
 
 [node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0582, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0582, 1.5, 0)
 script = ExtResource("2_eybdt")
 
 [node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01505, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01505, 1.5, 0)
 script = ExtResource("2_eybdt")
 playerID = 2
 
@@ -60,7 +60,7 @@ script = ExtResource("4_7wv57")
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4.2, 6.32, -0.484)
 
 [node name="Mesh_Plateforme_01" parent="Level" instance=ExtResource("5_7r0d4")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.165097, -0.484)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.434903, -0.651357)
 
 [node name="Mesh_Plateforme_03" parent="Level" instance=ExtResource("7_tvtre")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.2, 6.32, -0.484)
@@ -72,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.99336, 1.56009, 0.147627)
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.50664, 1.56009, 0.147627)
 
 [node name="ShipTargetPosition5" type="Node3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.0933597, 1.56009, 0.147627)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.0933597, 2.46009, 0.147627)
 
 [node name="ShipTargetPosition6" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.16458, -0.0332165, 0.147627)
