@@ -150,18 +150,18 @@ func UpdatePositon_Z():
 	
 	if(usePlayerDistanceForTargetZ):
 		_currentZ = GetZtargetPosition()
-		print("DIST Z APPLIED = " + str(_currentZ))
+		#print("DIST Z APPLIED = " + str(_currentZ))
 		
 	if(useOverrideZ):
 		_currentZ = overrideTargetZ
-		print("OVERRIDE Z APPLIED = " + str(_currentZ))
+		#print("OVERRIDE Z APPLIED = " + str(_currentZ))
 	
 	if TweenCamZ:
 		TweenCamZ.kill()
 		
 	TweenCamZ = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	TweenCamZ.tween_property(self,"position:z",_currentZ,cameraSmoothnessZ)
-	print("Z APPLIED = " + str(_currentZ))
+	#print("Z APPLIED = " + str(_currentZ))
 	#global_position.z = _currentZ #TEMP
 	
 	
@@ -180,7 +180,7 @@ func GetZtargetPosition() -> float:
 	var _playersDistRatio = _currentDistPlayers / maxPlayerDist
 	var _curveValue = zDistCurve.sample(_playersDistRatio);
 	var _zPos = lerp(minDistZ,maxDistZ,_curveValue)
-	print("Z TARGET = " + str(_zPos))
+	#print("Z TARGET = " + str(_zPos))
 	
 	return _zPos
 	

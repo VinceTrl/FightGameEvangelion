@@ -1,9 +1,12 @@
 class_name Hurtbox
 extends Area3D
 
+const VFX_2D_IMPACT = preload("res://Scenes/VFX/VFX2D/vfx_2d_impact_medium.tscn")
 @onready var collision_shape: CollisionShape3D = $CollisionShape2D
+
 @export var owner_id = 1
 @export var randomID = false
+@export var playVfxOnHit: bool = true
 
 signal OnHurtboxTakeDamage(hitbox : Hitbox)
 signal OnHurtboxHit
@@ -18,6 +21,9 @@ func _ready() -> void:
 	
 	if(randomID):
 		owner_id = (randi_range(-100000,100000))
+		
+	if(playVfxOnHit):
+		OnHurtboxTakeDamage.connect(HitVfx)
 
 func _on_area_entered(hitbox : Hitbox) -> void:
 	if (hitbox == null): return
@@ -33,3 +39,11 @@ func _on_area_entered(hitbox : Hitbox) -> void:
 		
 	emit_signal("OnHurtboxTakeDamage",hitbox)
 	emit_signal("OnHurtboxHit")
+	
+	
+func HitVfx(hitbox:Hitbox):
+	var vfx = VFX_2D_IMPACT.instantiate()
+	var total = owner.global_position + hitbox.owner.global_position
+	var targetPosition = total / 2
+	vfx.global_position = targetPosition
+	get_tree().current_scene.add_child(vfx)

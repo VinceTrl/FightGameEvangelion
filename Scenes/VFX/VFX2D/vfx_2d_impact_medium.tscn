@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1ect6ccjmigm"]
+[gd_scene load_steps=13 format=3 uid="uid://d1ect6ccjmigm"]
 
 [ext_resource type="Texture2D" uid="uid://dykar3hxwibxl" path="res://Assets/Sprites/Vfx/Smoke/ImpactMedium1.png" id="1_1xffe"]
 [ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="2_60tkm"]
+[ext_resource type="Texture2D" uid="uid://bxqwpphkbwfs3" path="res://Assets/Sprites/Vfx/Hit/PC Computer - RPG Maker MV - Hit 1.png" id="2_exmbx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mn6tm"]
 atlas = ExtResource("1_1xffe")
@@ -18,6 +19,22 @@ region = Rect2(96, 0, 48, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_srhwe"]
 atlas = ExtResource("1_1xffe")
 region = Rect2(144, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v46v5"]
+atlas = ExtResource("2_exmbx")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na7oh"]
+atlas = ExtResource("2_exmbx")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifobl"]
+atlas = ExtResource("2_exmbx")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5ic2"]
+atlas = ExtResource("2_exmbx")
+region = Rect2(576, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6drh8"]
 animations = [{
@@ -38,10 +55,22 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v46v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na7oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifobl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5ic2")
+}],
+"loop": false,
 "name": &"new_animation",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Vfx2D_ImpactMedium" type="AnimatedSprite3D"]
@@ -50,5 +79,7 @@ no_depth_test = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_6drh8")
 animation = &"new_animation"
-autoplay = "default"
+autoplay = "new_animation"
 script = ExtResource("2_60tkm")
+instanceScale = Vector3(0.5, 0.5, 0.5)
+ignoreTimeScale = true

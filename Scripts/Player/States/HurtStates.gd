@@ -32,9 +32,7 @@ func EnterState():
 	hurtTimer.start(hurtTime)
 	Player.Ammo.AddTime()
 	
-	var vfx = VFX_2D_IMPACT_MEDIUM.instantiate()
-	vfx.global_position = Player.global_position
-	get_tree().current_scene.add_child(vfx)
+	ImpactFx()
 	
 	#Hurt effects
 	Manager.gameCamera.FocusTargetZoom(Player,Manager.gameCamera.GetZoomParamFromName("HitZoom"))
@@ -77,3 +75,11 @@ func HandleHurtState():
 	if hurtTimer.time_left <= 0: 
 		Player.ChangeState(States.Knockback)
 		print("GOES TO KNOCKBACK")
+		
+		
+func ImpactFx():
+	var vfx = VFX_2D_IMPACT_MEDIUM.instantiate()
+	var total = Player.global_position + Player.lastHitbox.owner.global_position
+	var targetPosition = total / 2
+	vfx.global_position = targetPosition
+	get_tree().current_scene.add_child(vfx)
