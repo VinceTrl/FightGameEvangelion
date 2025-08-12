@@ -29,6 +29,11 @@ func RandomSpawnStage():
 		print("NO STAGE LOADED")
 		return
 	var ranIndex = randi_range(0,stages.size()-1)
+	
+	if(ranIndex == Manager.previousStage):
+		RandomSpawnStage()
+		return
+		
 	SpawnStage(ranIndex)
 
 func SpawnStage(stageIndex:int):
@@ -37,3 +42,4 @@ func SpawnStage(stageIndex:int):
 		return
 	var stage = stages[stageIndex].instantiate()
 	add_child(stage)
+	Manager.previousStage = stageIndex
