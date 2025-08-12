@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://w7nmihk4qbnm"]
 
 [ext_resource type="AudioStream" uid="uid://nqx3ft62tmu0" path="res://Assets/Sounds/Musics/teknokiki LOOP LONGUE.mp3" id="1_0a7po"]
-[ext_resource type="Script" path="res://Scenes/Managers/music_manager.gd" id="1_v26d1"]
+[ext_resource type="Script" uid="uid://baijcya5hul44" path="res://Scenes/Managers/music_manager.gd" id="1_v26d1"]
 [ext_resource type="AudioStream" uid="uid://bsrpu8rgirlh4" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline1hardway.wav" id="3_f8jy4"]
 [ext_resource type="AudioStream" uid="uid://dacwj5kmx7al1" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline2pathetic.wav" id="4_n0l6l"]
 [ext_resource type="AudioStream" uid="uid://llm3acnx0ykd" path="res://Assets/Sounds/SFX/DoudouSFX/Voicelines/SD_voiceline3notdeadyet.wav" id="5_v6luk"]

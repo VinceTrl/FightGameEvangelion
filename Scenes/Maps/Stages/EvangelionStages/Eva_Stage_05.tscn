@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dex2eb5c1jvq4"]
 
-[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_giggg"]
-[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_eybdt"]
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_giggg"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_eybdt"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_lgl4p"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="4_7wv57"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="4_7wv57"]
 [ext_resource type="PackedScene" uid="uid://w5jpce2kyimj" path="res://Assets/Meshes/Enviro/mesh_plateforme_01.tscn" id="5_7r0d4"]
 [ext_resource type="PackedScene" uid="uid://dtndx3uhsdsnl" path="res://Assets/Meshes/Enviro/mesh_plateforme_04.tscn" id="5_e0y6l"]
 [ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="7_tvtre"]

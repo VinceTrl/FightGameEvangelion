@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://dyqrd26u8lp8x"]
 
-[ext_resource type="Script" path="res://Scripts/GUI/shitpost_gui.gd" id="1_fljbo"]
+[ext_resource type="Script" uid="uid://8clh5dgovq3u" path="res://Scripts/GUI/shitpost_gui.gd" id="1_fljbo"]
 [ext_resource type="Texture2D" uid="uid://uyxpod7dbnun" path="res://Assets/Shitpost/Evangelion/Screenshot_2025-06-10-03-23-13-35_1c337646f29875672b5a61192b9010f9.png" id="2_jctm3"]
 [ext_resource type="Texture2D" uid="uid://bmp4eds6qxrss" path="res://Assets/Shitpost/Evangelion/Screenshot_2025-06-10-03-21-20-29_1c337646f29875672b5a61192b9010f9.jpg" id="3_fwi6f"]
 [ext_resource type="Texture2D" uid="uid://dvxkcyercrxj8" path="res://Assets/Shitpost/Evangelion/5ab1a7fdea1892e1557bca2d07a47959.jpg.png" id="4_bkkub"]

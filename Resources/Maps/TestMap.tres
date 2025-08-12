@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Map" load_steps=2 format=3 uid="uid://d4fpeppot8y16"]
 
-[ext_resource type="Script" path="res://Scripts/Level/map.gd" id="1_x0id5"]
+[ext_resource type="Script" uid="uid://cwdo4krnscq8b" path="res://Scripts/Level/map.gd" id="1_x0id5"]
 
 [resource]
 script = ExtResource("1_x0id5")

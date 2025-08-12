@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxqwpphkbwfs3" path="res://Assets/Sprites/Vfx/Hit/PC Computer - RPG Maker MV - Hit 1.png" id="1_xq5d6"]
 [ext_resource type="Texture2D" uid="uid://bw6sxt63ket52" path="res://Assets/Sprites/Vfx/Hit/PC Computer - CrossCode - Hit Effects.png" id="2_r1w3l"]
-[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="3_878j7"]
+[ext_resource type="Script" uid="uid://bqsvlb8owoo24" path="res://Scripts/VFX/Vfx2D.gd" id="3_878j7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkaqw"]
 atlas = ExtResource("1_xq5d6")

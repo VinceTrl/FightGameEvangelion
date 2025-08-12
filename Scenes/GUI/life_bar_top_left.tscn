@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=3 uid="uid://r3ads2h4cewh"]
 
-[ext_resource type="Script" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
+[ext_resource type="Script" uid="uid://cnkheeds0wrh" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
 [ext_resource type="Texture2D" uid="uid://i8srkr0pioyq" path="res://Resources/Gradients/Player1_DamageEffect_Yellow.tres" id="2_i8cx7"]
-[ext_resource type="Script" path="res://Scripts/GUI/damage_effect.gd" id="3_7dijb"]
+[ext_resource type="Script" uid="uid://bt0gay7ixu07q" path="res://Scripts/GUI/damage_effect.gd" id="3_7dijb"]
 [ext_resource type="Texture2D" uid="uid://147dcgbjdv2t" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Player1.png" id="4_mdj3j"]
 [ext_resource type="FontFile" uid="uid://4vkwi6n6xoco" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9.ttf" id="5_j8biq"]
 [ext_resource type="PackedScene" uid="uid://dbx10gs5u8elq" path="res://Scenes/GUI/texture_hp_Left.tscn" id="5_jt636"]
 [ext_resource type="Texture2D" uid="uid://cxym3v1v584ej" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P1.png" id="6_fw131"]
-[ext_resource type="Script" path="res://Scripts/GUI/PlayerRoundUI.gd" id="6_y7uc4"]
+[ext_resource type="Script" uid="uid://rypcejv8gl2c" path="res://Scripts/GUI/PlayerRoundUI.gd" id="6_y7uc4"]
 [ext_resource type="Texture2D" uid="uid://c4dyfrrdv0mvk" path="res://Assets/Sprites/GUI/KikiGUI/GUI_HP_ANIM.png" id="7_5atp6"]
 
 [sub_resource type="Curve" id="Curve_ugew3"]

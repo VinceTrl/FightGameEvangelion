@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://xtejdfho465q"]
 
-[ext_resource type="Shader" path="res://addons/post_processing/shaders/directional_drift_shader.gdshader" id="1_5lpdk"]
+[ext_resource type="Shader" uid="uid://cm7fkaaeaf6db" path="res://addons/post_processing/shaders/directional_drift_shader.gdshader" id="1_5lpdk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_directional_drift"]
 shader = ExtResource("1_5lpdk")
@@ -8,7 +8,7 @@ shader_parameter/particle_color = Color(0.87, 0.78, 0.6, 1)
 shader_parameter/particle_density = 0.3
 shader_parameter/flow_speed = 1.0
 shader_parameter/pattern_scale = 30.0
-shader_parameter/flow_direction = Vector2(1, 0.5)
+shader_parameter/normalized_flow_direction = Vector2(0.894427, 0.447214)
 shader_parameter/layer_velocity_ratio = 1.2
 
 [node name="directional_drift" type="CanvasLayer"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=36 format=3 uid="uid://bs6eigat3lyci"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/pick_up.gd" id="1_8536p"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="1_pepgg"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="2_ou272"]
+[ext_resource type="Script" uid="uid://c6m7vbkknig2s" path="res://Scripts/Gameplay/pick_up.gd" id="1_8536p"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="1_pepgg"]
+[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="2_ou272"]
 [ext_resource type="Material" uid="uid://dtq71w580dncu" path="res://Assets/Materials/Gameplay/BasePrototype_Blue.tres" id="3_2cxck"]
 [ext_resource type="Shader" uid="uid://siboucvt8jf0" path="res://Assets/Shaders/warning_shader.tres" id="4_uaybe"]
 [ext_resource type="Texture2D" uid="uid://c8n1885byqlc3" path="res://Assets/Sprites/Items/Bullet.png" id="5_5d5as"]
@@ -23,11 +23,11 @@ point_count = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eix0o"]
 render_priority = 1
 shader = ExtResource("4_uaybe")
+shader_parameter/sprite_texture = ExtResource("5_5d5as")
 shader_parameter/Background_Color = Color(0.6, 0.6, 1, 0.501961)
 shader_parameter/Blinking_Color = Color(1, 0.5, 0.5, 0.501961)
 shader_parameter/Blinking_Speed = 20.0
 shader_parameter/Blinking_Intensity = 2.0
-shader_parameter/sprite_texture = ExtResource("5_5d5as")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edpoh"]
 atlas = ExtResource("5_5d5as")

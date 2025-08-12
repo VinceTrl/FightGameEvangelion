@@ -1,17 +1,17 @@
 [gd_scene load_steps=26 format=3 uid="uid://bqdn3tdqwtmj5"]
 
-[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="1_6f6nq"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_6f6nq"]
 [ext_resource type="ArrayMesh" uid="uid://cdw1vh727ua2l" path="res://Assets/Meshes/Props/FishingRod/FishingRod.obj" id="1_ltjw2"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/fishing_rod.gd" id="1_ou3dj"]
+[ext_resource type="Script" uid="uid://dcrgs35jbs66o" path="res://Scripts/Gameplay/Fishing/fishing_rod.gd" id="1_ou3dj"]
 [ext_resource type="PackedScene" uid="uid://oe2wdd63r10x" path="res://Assets/Meshes/Props/FishHook/fishhook.fbx" id="2_5d37m"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishStateMachine.gd" id="2_h2i8m"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishingHook.gd" id="3_6k48w"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishIdleState.gd" id="3_jixxv"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/FishLine.gd" id="3_okyeq"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishPullState.gd" id="4_fgn3p"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishThrowState.gd" id="5_3favy"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishFishState.gd" id="6_20j83"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/NodePathFollow.gd" id="12_agcee"]
+[ext_resource type="Script" uid="uid://cishup86t1030" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishStateMachine.gd" id="2_h2i8m"]
+[ext_resource type="Script" uid="uid://drltssn8viptx" path="res://Scripts/Gameplay/Fishing/FishingHook.gd" id="3_6k48w"]
+[ext_resource type="Script" uid="uid://d340qrso5gv4a" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishIdleState.gd" id="3_jixxv"]
+[ext_resource type="Script" uid="uid://b6xkh1jdp2xp8" path="res://Scripts/GameEffects/FishLine.gd" id="3_okyeq"]
+[ext_resource type="Script" uid="uid://c1t1l08xw8gyf" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishPullState.gd" id="4_fgn3p"]
+[ext_resource type="Script" uid="uid://b6d2s0twt05f8" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishThrowState.gd" id="5_3favy"]
+[ext_resource type="Script" uid="uid://cug5120y3o5xh" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishFishState.gd" id="6_20j83"]
+[ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/NodePathFollow.gd" id="12_agcee"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1706i"]
 size = Vector3(0.405, 0.46, 1)
@@ -99,11 +99,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lo8q7"]
 _data = {
-"Fishing": SubResource("Animation_6bc61"),
-"PullUp": SubResource("Animation_gh01s"),
-"RESET": SubResource("Animation_mpvsu"),
-"RodUp": SubResource("Animation_2opmq"),
-"Throwing": SubResource("Animation_o1gif")
+&"Fishing": SubResource("Animation_6bc61"),
+&"PullUp": SubResource("Animation_gh01s"),
+&"RESET": SubResource("Animation_mpvsu"),
+&"RodUp": SubResource("Animation_2opmq"),
+&"Throwing": SubResource("Animation_o1gif")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xcbym"]

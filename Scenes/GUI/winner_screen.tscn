@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jbwy0n1ex4sr"]
 
 [ext_resource type="Texture2D" uid="uid://cnbh0sg1ku46h" path="res://Assets/Sprites/GUI/KikiGUI/GUI_WinScreen_P1.png" id="1_snc47"]
-[ext_resource type="Script" path="res://Scripts/GUI/winner_screen.gd" id="1_yk8f7"]
+[ext_resource type="Script" uid="uid://ctmf5u5chhju1" path="res://Scripts/GUI/winner_screen.gd" id="1_yk8f7"]
 [ext_resource type="Texture2D" uid="uid://dgk57t3m31e5q" path="res://Assets/Sprites/GUI/KikiGUI/GUI_WinScreen_P2.png" id="2_75co4"]
 
 [node name="WinnerScreen" type="Control"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dmk70g8tprtrd"]
 
-[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_jfpya"]
-[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_lq3oa"]
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_jfpya"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_lq3oa"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="4_4rgyf"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_l3vcj"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/NodePathFollow.gd" id="5_wiekq"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_l3vcj"]
+[ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/NodePathFollow.gd" id="5_wiekq"]
 [ext_resource type="PackedScene" uid="uid://ba20ikpx0nyx0" path="res://Scenes/Gameplay/wario_mouth.tscn" id="6_qqxa0"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="12_56mo6"]
 

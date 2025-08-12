@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://c38gsdfy72awb"]
 
-[ext_resource type="Script" path="res://Scripts/Managers/GameManager.gd" id="1_6hf0t"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/TimeEffects.gd" id="2_c8bkv"]
+[ext_resource type="Script" uid="uid://y01h447kxic" path="res://Scripts/Managers/GameManager.gd" id="1_6hf0t"]
+[ext_resource type="Script" uid="uid://b7d7q6uhyqy5j" path="res://Scripts/GameEffects/TimeEffects.gd" id="2_c8bkv"]
 [ext_resource type="PackedScene" uid="uid://c8kqnefy3vkr2" path="res://Scenes/Managers/vibration_manager.tscn" id="3_otru3"]
 [ext_resource type="PackedScene" uid="uid://bwvyar8y8lpaw" path="res://Scenes/Gameplay/post_process_effects.tscn" id="4_fa6t8"]
 [ext_resource type="PackedScene" uid="uid://bah62ne6gthmy" path="res://Scenes/GUI/death_background.tscn" id="7_dd241"]
 [ext_resource type="PackedScene" uid="uid://dyqrd26u8lp8x" path="res://Scenes/GUI/shitpost_gui.tscn" id="14_exsev"]
-[ext_resource type="Script" path="res://Scripts/Managers/platform_manager.gd" id="15_kouim"]
+[ext_resource type="Script" uid="uid://dhwcpplmkbemg" path="res://Scripts/Managers/platform_manager.gd" id="15_kouim"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_6hf0t")

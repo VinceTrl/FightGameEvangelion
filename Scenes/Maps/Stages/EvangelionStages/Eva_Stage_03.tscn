@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cxkkxysy7y8vf"]
 
-[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_fve1k"]
-[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_1wtsl"]
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_fve1k"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_1wtsl"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_hxax3"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="4_jtpew"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="4_jtpew"]
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="7_3jnp0"]
 
 [sub_resource type="Animation" id="Animation_qmil3"]
@@ -149,7 +149,7 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vu32n"]
 _data = {
-"Platform": SubResource("Animation_qmil3")
+&"Platform": SubResource("Animation_qmil3")
 }
 
 [node name="Stage_03" type="Node3D" node_paths=PackedStringArray("scenario")]

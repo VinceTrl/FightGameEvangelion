@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bd04ovk8t6feu"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/trap_heart.gd" id="1_l1fk1"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/visual_holder.gd" id="1_ogd58"]
+[ext_resource type="Script" uid="uid://rbtlmn7u1pl" path="res://Scripts/Gameplay/trap_heart.gd" id="1_l1fk1"]
+[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="1_ogd58"]
 [ext_resource type="PackedScene" uid="uid://2whp7jbymhuk" path="res://Assets/Meshes/Props/Heart/ItemHeartContainer.fbx" id="2_c1kcw"]
 
 [sub_resource type="Curve" id="Curve_riyve"]
@@ -9,7 +9,7 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_u2huv"]
-min_value = -1.0
+_limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25058, 1), 0.0, 0.0, 0, 0, Vector2(0.75406, -1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 

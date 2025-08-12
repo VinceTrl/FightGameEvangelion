@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://bqoibe403b6hy"]
 
-[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_k0tsr"]
-[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_dufh1"]
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_k0tsr"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_dufh1"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_1d2pd"]
 [ext_resource type="PackedScene" uid="uid://dp7u5gy3r2kgs" path="res://Scenes/Gameplay/bouncy_ring.tscn" id="4_k3uol"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_fag7v"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_fag7v"]
 [ext_resource type="PackedScene" uid="uid://b8to22k0bf58q" path="res://Assets/Meshes/Props/Pool/swimming_pool.fbx" id="6_4t43o"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_h6ksb"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="7_gwjxb"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://836trpqu362t"]
 
 [ext_resource type="PackedScene" uid="uid://2f6atne80lb0" path="res://Assets/Meshes/Characters/Eva/robot_Eva_Rigged.tscn" id="1_amx48"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Eva.gd" id="1_rim4i"]
+[ext_resource type="Script" uid="uid://ikmfwnqnhpo3" path="res://Scripts/Gameplay/Eva.gd" id="1_rim4i"]
 [ext_resource type="PackedScene" uid="uid://4ktf8xhcxr8f" path="res://Assets/Meshes/Enviro/plane_16_9.tscn" id="3_6h8go"]
 [ext_resource type="Material" uid="uid://bn7nur2ulkf08" path="res://Assets/Materials/Enviro/M_UwuEyes.tres" id="4_iug7u"]
 [ext_resource type="Material" uid="uid://cg0xaualf4e3e" path="res://Assets/Materials/Enviro/M_EyeAngry.tres" id="5_5ksam"]
@@ -158,8 +158,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eapgk"]
 _data = {
-"Anim_Robot": SubResource("Animation_xx3aq"),
-"RESET": SubResource("Animation_kwp3a")
+&"Anim_Robot": SubResource("Animation_xx3aq"),
+&"RESET": SubResource("Animation_kwp3a")
 }
 
 [node name="EVA" type="Node3D"]

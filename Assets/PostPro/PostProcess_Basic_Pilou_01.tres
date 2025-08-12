@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PostProcessingConfiguration" load_steps=3 format=3 uid="uid://btqekgqovx3lm"]
 
 [ext_resource type="Texture2D" uid="uid://nf2dcuadvrh7" path="res://addons/post_processing/assets/interesting_palette.png" id="1_c1chf"]
-[ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="2_lv6sn"]
+[ext_resource type="Script" uid="uid://dc4d4ynkw5nok" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="2_lv6sn"]
 
 [resource]
 script = ExtResource("2_lv6sn")

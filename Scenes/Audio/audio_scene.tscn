@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dc6bk6rmi44gx"]
 
-[ext_resource type="Script" path="res://Scripts/Audio/AudioScene.gd" id="1_b6ug0"]
+[ext_resource type="Script" uid="uid://b282slivooxei" path="res://Scripts/Audio/AudioScene.gd" id="1_b6ug0"]
 
 [node name="AudioScene" type="AudioStreamPlayer3D"]
 volume_db = -10.0

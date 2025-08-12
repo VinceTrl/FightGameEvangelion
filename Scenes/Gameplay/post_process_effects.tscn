@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bwvyar8y8lpaw"]
 
-[ext_resource type="Script" path="res://Scripts/GameEffects/PostProcessEffects.gd" id="1_24wkp"]
-[ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="2_83oct"]
+[ext_resource type="Script" uid="uid://dti0revucc65l" path="res://Scripts/GameEffects/PostProcessEffects.gd" id="1_24wkp"]
+[ext_resource type="Script" uid="uid://dc4d4ynkw5nok" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="2_83oct"]
 [ext_resource type="Resource" uid="uid://qjkftfo6dekq" path="res://Resources/PostProcessAnims/Glitch/DefaultGlitch.tres" id="2_dep2t"]
 [ext_resource type="PackedScene" uid="uid://cnnnogye3b8fs" path="res://Scenes/Gameplay/gameplay_post_process.tscn" id="2_toebk"]
 

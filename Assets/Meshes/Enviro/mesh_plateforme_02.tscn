@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://dlsb52vrnlb05" path="res://Assets/Materials/Enviro/M_Plateforme_01.tres" id="2_ks68o"]
 [ext_resource type="Material" uid="uid://cfng2qtk7tala" path="res://Assets/Materials/Enviro/M_Plateforme_Adds_01.tres" id="4_ir50q"]
 [ext_resource type="Material" uid="uid://dnqk1ekx8qx5n" path="res://Assets/Materials/Enviro/M_Emissive_Red.tres" id="4_uuufu"]
-[ext_resource type="Shader" uid="uid://7kqcqxvqcrrp" path="res://Assets/Shaders/Distorsion_shader.tres" id="5_77dyd"]
+[ext_resource type="Shader" uid="uid://bh25tvdribvre" path="res://Assets/Shaders/Distorsion_shader.tres" id="5_77dyd"]
 [ext_resource type="PackedScene" uid="uid://d3thq5x6e2ic6" path="res://Sources/Meshes/SlapBros_Plateforme_Bandeau.fbx" id="5_lf4a3"]
 [ext_resource type="Texture2D" uid="uid://bs81jr8tgdtvv" path="res://Assets/Sprites/Vfx/T_Gradient_Radial.png" id="6_1ougl"]
 [ext_resource type="Material" uid="uid://5hvx3m5rgfo1" path="res://Assets/Materials/Enviro/M_Bandeau.tres" id="6_lbc7q"]
@@ -58,16 +58,16 @@ shadow_mesh = SubResource("ArrayMesh_6t44h")
 render_priority = 0
 shader = ExtResource("5_77dyd")
 shader_parameter/Speed = Vector2(0.5, 0.5)
-shader_parameter/DistorsionIntensity = 0.01
 shader_parameter/Noise = ExtResource("7_1x4vv")
+shader_parameter/DistorsionIntensity = 0.01
 shader_parameter/Alpha = ExtResource("6_1ougl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ei30"]
 render_priority = 0
 shader = ExtResource("5_77dyd")
 shader_parameter/Speed = Vector2(-0.5, 0.5)
-shader_parameter/DistorsionIntensity = 0.01
 shader_parameter/Noise = ExtResource("7_1x4vv")
+shader_parameter/DistorsionIntensity = 0.01
 shader_parameter/Alpha = ExtResource("6_1ougl")
 
 [sub_resource type="Animation" id="Animation_2m5t0"]
@@ -319,8 +319,8 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wrmx7"]
 _data = {
-"Anim_Plateform_cosmetic": SubResource("Animation_2m5t0"),
-"RESET": SubResource("Animation_a38bt")
+&"Anim_Plateform_cosmetic": SubResource("Animation_2m5t0"),
+&"RESET": SubResource("Animation_a38bt")
 }
 
 [node name="SM_Plateforme_Big_01" instance=ExtResource("1_g8mij")]

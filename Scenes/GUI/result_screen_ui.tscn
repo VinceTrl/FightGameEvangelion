@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cv0ukcamovfyt"]
 
-[ext_resource type="Script" path="res://Scripts/GUI/result_screen.gd" id="1_yxu0l"]
+[ext_resource type="Script" uid="uid://doronrhxnb3qp" path="res://Scripts/GUI/result_screen.gd" id="1_yxu0l"]
 [ext_resource type="FontFile" uid="uid://5x8o7p2t84dl" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9-Condensed.ttf" id="2_w7gmf"]
 [ext_resource type="FontFile" uid="uid://4vkwi6n6xoco" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9.ttf" id="4_5s8p2"]
 

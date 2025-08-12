@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://c4bqfwnqem52u"]
 
-[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_6hget"]
-[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_ni3r1"]
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_6hget"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_ni3r1"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_4xj1p"]
 [ext_resource type="PackedScene" uid="uid://bqdn3tdqwtmj5" path="res://Scenes/Gameplay/fishing_rod.tscn" id="4_mm1sk"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="4_ymlwd"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="4_ymlwd"]
 [ext_resource type="PackedScene" uid="uid://w5jpce2kyimj" path="res://Assets/Meshes/Enviro/mesh_plateforme_01.tscn" id="5_20jdf"]
 [ext_resource type="PackedScene" uid="uid://l167uu8l3k8h" path="res://Scenes/Gameplay/duck.tscn" id="5_hom26"]
 [ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="6_twbi4"]

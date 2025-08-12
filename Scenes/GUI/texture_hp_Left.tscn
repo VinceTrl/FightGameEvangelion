@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dbx10gs5u8elq"]
 
 [ext_resource type="Texture2D" uid="uid://c4dyfrrdv0mvk" path="res://Assets/Sprites/GUI/KikiGUI/GUI_HP_ANIM.png" id="1_cbter"]
-[ext_resource type="Script" path="res://Scripts/GUI/texture_hp.gd" id="2_x84f7"]
+[ext_resource type="Script" uid="uid://cp5rad2ejix0a" path="res://Scripts/GUI/texture_hp.gd" id="2_x84f7"]
 [ext_resource type="Texture2D" uid="uid://da7a0jpk0abak" path="res://Assets/Sprites/GUI/KikiGUI/GUI_HP_ANIM_P2.png" id="3_dgqn3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xsim0"]

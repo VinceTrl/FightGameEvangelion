@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cdv55byodmt2m"]
 
 [ext_resource type="PackedScene" uid="uid://cjuhbvaggbelq" path="res://Assets/Meshes/Characters/Shrek/Shrek.fbx" id="1_x48c5"]
-[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="2_7avlx"]
-[ext_resource type="Shader" path="res://Assets/Shaders/FresnelOutline_shader.gdshader" id="2_p3u7f"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="2_7avlx"]
+[ext_resource type="Shader" uid="uid://jthvk00ttasn" path="res://Assets/Shaders/FresnelOutline_shader.gdshader" id="2_p3u7f"]
 [ext_resource type="Material" uid="uid://b5mvmts0o7f3e" path="res://Assets/Materials/Gameplay/M_Shrek2.tres" id="3_i8h71"]
 [ext_resource type="Material" uid="uid://bw4a1ctvlsojs" path="res://Assets/Materials/Gameplay/M_ShrekEyes.tres" id="4_owwwy"]
 

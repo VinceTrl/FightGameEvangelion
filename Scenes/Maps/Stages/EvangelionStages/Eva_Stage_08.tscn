@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://c5fc4fh8i01vj"]
 
-[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_xjiak"]
-[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_xbhsl"]
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_xjiak"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_xbhsl"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_hl4g5"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_2p66u"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_2p66u"]
 [ext_resource type="PackedScene" uid="uid://w5jpce2kyimj" path="res://Assets/Meshes/Enviro/mesh_plateforme_01.tscn" id="6_b8ik4"]
 [ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="7_shemx"]
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="8_2o51h"]

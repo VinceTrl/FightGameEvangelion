@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dp7u5gy3r2kgs"]
 
 [ext_resource type="ArrayMesh" uid="uid://neowvh0xeer4" path="res://Assets/Meshes/Props/SwimRing/Swim ring_2.obj" id="1_7ftt7"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/PhysicObject.gd" id="1_bfpfp"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Bumper.gd" id="2_e401o"]
-[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="2_tng2y"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/BumperAnimation.gd" id="3_4ivnr"]
+[ext_resource type="Script" uid="uid://rijharimj3h8" path="res://Scripts/GameEffects/PhysicObject.gd" id="1_bfpfp"]
+[ext_resource type="Script" uid="uid://devahp3jju1bf" path="res://Scripts/Gameplay/Bumper.gd" id="2_e401o"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_tng2y"]
+[ext_resource type="Script" uid="uid://bjur7smhqpufy" path="res://Scripts/Gameplay/BumperAnimation.gd" id="3_4ivnr"]
 [ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="4_5txh8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_681oy"]

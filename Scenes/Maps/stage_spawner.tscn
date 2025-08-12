@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3g16dul2x0ta"]
 
-[ext_resource type="Script" path="res://Scripts/Level/stage_spawner.gd" id="1_un617"]
+[ext_resource type="Script" uid="uid://basm01k4s5p24" path="res://Scripts/Level/stage_spawner.gd" id="1_un617"]
 [ext_resource type="Resource" uid="uid://b562ecwtwp5vd" path="res://Resources/Maps/EvangelionMap.tres" id="2_js7ao"]
 
 [node name="StageSpawner" type="Node3D"]

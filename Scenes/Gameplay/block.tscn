@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://nsqkqa3nm3h6"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/block.gd" id="1_1mwp6"]
-[ext_resource type="Script" path="res://Scripts/Collisions/Hurtbox.gd" id="1_rd00h"]
+[ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/block.gd" id="1_1mwp6"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_rd00h"]
 [ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="3_57dtm"]
-[ext_resource type="Script" path="res://Scripts/GameEffects/NodeShaker.gd" id="3_q3etx"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="3_q3etx"]
 [ext_resource type="PackedScene" uid="uid://c0jcpjl67p6ni" path="res://Scenes/Gameplay/minecraft_grass_block.tscn" id="5_1hayc"]
 [ext_resource type="AudioStream" uid="uid://bgrm5be8bl5gb" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocHit.wav" id="6_yv8ff"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://62jphhwnawdu"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/player_spear.gd" id="1_bluxh"]
+[ext_resource type="Script" uid="uid://ehbmr8wrnltc" path="res://Scripts/Gameplay/player_spear.gd" id="1_bluxh"]
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/KikiFighter/SpriteKikiYellow.png" id="2_wcb7u"]
 [ext_resource type="Texture2D" uid="uid://rtbvltn3ylkd" path="res://Assets/Sprites/Vfx/T_VFX_Projectile.png" id="3_ua2go"]
 
@@ -88,11 +88,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jd5tt"]
 _data = {
-"RESET": SubResource("Animation_qph30"),
-"SpearChargeReady": SubResource("Animation_68sb7"),
-"SpearCharging": SubResource("Animation_77k2e"),
-"SpearIdle": SubResource("Animation_m2jsr"),
-"SpearShoot": SubResource("Animation_yrn73")
+&"RESET": SubResource("Animation_qph30"),
+&"SpearChargeReady": SubResource("Animation_68sb7"),
+&"SpearCharging": SubResource("Animation_77k2e"),
+&"SpearIdle": SubResource("Animation_m2jsr"),
+&"SpearShoot": SubResource("Animation_yrn73")
 }
 
 [node name="PlayerSpear" type="Node3D"]

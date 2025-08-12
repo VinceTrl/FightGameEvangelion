@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0d4h1un0350r"]
 
-[ext_resource type="Shader" path="res://addons/post_processing/shaders/particle_storm.gdshader" id="1_wnruh"]
+[ext_resource type="Shader" uid="uid://cd3soaw6jnlsm" path="res://addons/post_processing/shaders/particle_storm.gdshader" id="1_wnruh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_particle_storm"]
 shader = ExtResource("1_wnruh")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://qh6r3mcx1l4u"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_wj4sm"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_wj4sm"]
 
 [resource]
 script = ExtResource("1_wj4sm")

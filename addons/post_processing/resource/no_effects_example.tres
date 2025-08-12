@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PostProcessingConfiguration" load_steps=2 format=3 uid="uid://c0dsfxhwb8bwe"]
 
-[ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="1_6y0uy"]
+[ext_resource type="Script" uid="uid://dc4d4ynkw5nok" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="1_6y0uy"]
 
 [resource]
 script = ExtResource("1_6y0uy")
@@ -51,6 +51,13 @@ particle_storm_scale = 1.0
 particle_storm_density = 1.0
 particle_storm_wind_direction = Vector2(1, 0.2)
 particle_storm_wind_speed = 1.0
+directional_drift = false
+directional_drift_color = Color(0.76, 0.69, 0.5, 0.3)
+directional_drift_density = 0.3
+directional_drift_speed = 1.0
+directional_drift_scale = 30.0
+directional_drift_direction = Vector2(1, 0.5)
+directional_drift_layer_ratio = 1.2
 ColorCorrection = false
 ColorCorrectionTint = Color(0, 0, 0, 1)
 ColorCorrectionBrightness = 0.0

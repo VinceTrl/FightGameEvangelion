@@ -8,13 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="6_ijtxy"]
 [ext_resource type="PackedScene" uid="uid://dmnmobmgdmfm" path="res://Scenes/GUI/player_ui.tscn" id="7_ubm26"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_jmyrd"]
-[ext_resource type="Shader" path="res://Assets/Shaders/Background_shader.gdshader" id="9_ho1lm"]
-[ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="10_r1wq7"]
-[ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="11_htcdw"]
-[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_taw65"]
+[ext_resource type="Shader" uid="uid://nv5csvghruof" path="res://Assets/Shaders/Background_shader.gdshader" id="9_ho1lm"]
+[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="10_r1wq7"]
+[ext_resource type="Script" uid="uid://dc4d4ynkw5nok" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="11_htcdw"]
+[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="13_taw65"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="14_ki7jb"]
-[ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="15_icj4x"]
-
+[ext_resource type="Script" uid="uid://dudvybhyivn5d" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="15_icj4x"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
@@ -36,6 +35,7 @@ shader_parameter/equalizer07 = 1.0
 shader_parameter/height_scale = 1.0
 shader_parameter/speed = 1.0
 shader_parameter/tiling = Vector2(20, 20)
+shader_parameter/offset = Vector2(0, 0)
 shader_parameter/colorForeground = Vector3(1, 1, 1)
 shader_parameter/colorBackground = Vector3(1, 1, 1)
 shader_parameter/DEBUG = 1.0

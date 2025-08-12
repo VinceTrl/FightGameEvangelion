@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://c3we8840pvurs"]
 
 [ext_resource type="Texture2D" uid="uid://dmrlp03hmfkfi" path="res://Assets/Sprites/Vfx/Smoke/BIG IMPACT SMOKE.png" id="1_xlr3c"]
-[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="2_jivd8"]
+[ext_resource type="Script" uid="uid://bqsvlb8owoo24" path="res://Scripts/VFX/Vfx2D.gd" id="2_jivd8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmgy1"]
 atlas = ExtResource("1_xlr3c")

@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_28bjl"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="1_eofbn"]
-[ext_resource type="Script" path="res://Scripts/Level/game_map.gd" id="1_jb52f"]
-[ext_resource type="PlaneMesh" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="2_dbumj"]
+[ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_jb52f"]
+[ext_resource type="PlaneMesh" uid="uid://dqwqxtb75rk7" path="res://Assets/Meshes/Enviro/Background_mesh.tres" id="2_dbumj"]
 [ext_resource type="Material" uid="uid://lfed143fg2ps" path="res://Assets/Materials/Enviro/Background_material.tres" id="3_j0ixo"]
-[ext_resource type="Script" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="4_55tvq"]
+[ext_resource type="Script" uid="uid://dudvybhyivn5d" path="res://Scripts/Audio/audio_spectrum_helper.gd" id="4_55tvq"]
 [ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="5_82r76"]
 [ext_resource type="Texture2D" uid="uid://bau5itgnsrv1t" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_BRUTAL.png" id="6_4rudc"]
 [ext_resource type="Texture2D" uid="uid://bcp0jrosw2ovd" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_SLAP.png" id="7_ilto3"]
@@ -57,8 +57,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1tnc3"]
 _data = {
-"AnimLightPolici": SubResource("Animation_j54aa"),
-"RESET": SubResource("Animation_lt8f3")
+&"AnimLightPolici": SubResource("Animation_j54aa"),
+&"RESET": SubResource("Animation_lt8f3")
 }
 
 [sub_resource type="Animation" id="Animation_0nu2x"]
@@ -581,10 +581,10 @@ tracks/17/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y03qi"]
 _data = {
-"AnimLight_Slap_Hit": SubResource("Animation_0nu2x"),
-"AnimLight_Slap_Intro": SubResource("Animation_k0xc5"),
-"AnimLight_Slap_PreHit": SubResource("Animation_d8pm2"),
-"RESET": SubResource("Animation_lkh3u")
+&"AnimLight_Slap_Hit": SubResource("Animation_0nu2x"),
+&"AnimLight_Slap_Intro": SubResource("Animation_k0xc5"),
+&"AnimLight_Slap_PreHit": SubResource("Animation_d8pm2"),
+&"RESET": SubResource("Animation_lkh3u")
 }
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
@@ -732,7 +732,7 @@ spot_angle_attenuation = 303.142
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LightingOld/LightPolice"]
 libraries = {
-"": SubResource("AnimationLibrary_1tnc3")
+&"": SubResource("AnimationLibrary_1tnc3")
 }
 autoplay = "AnimLightPolici"
 
@@ -748,7 +748,7 @@ spot_angle_attenuation = 303.142
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LightingOld/LightPolice2"]
 libraries = {
-"": SubResource("AnimationLibrary_1tnc3")
+&"": SubResource("AnimationLibrary_1tnc3")
 }
 autoplay = "AnimLightPolici"
 
@@ -891,7 +891,7 @@ spot_range = 8.35071
 
 [node name="AnimLight_Slap" type="AnimationPlayer" parent="SLAP_Choregraphie"]
 libraries = {
-"": SubResource("AnimationLibrary_y03qi")
+&"": SubResource("AnimationLibrary_y03qi")
 }
 
 [node name="Light_Slap_PreHit_Rim" type="SpotLight3D" parent="SLAP_Choregraphie"]

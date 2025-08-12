@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_3v2v2"]
 [ext_resource type="PackedScene" uid="uid://dw1oaifideof1" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeachMap.fbx" id="1_a882g"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="1_oniah"]
-[ext_resource type="Script" path="res://Scripts/Level/game_map.gd" id="1_qoa21"]
+[ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_qoa21"]
 [ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="5_qwd4p"]
 [ext_resource type="Texture2D" uid="uid://bau5itgnsrv1t" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_BRUTAL.png" id="6_8u0f6"]
 [ext_resource type="Texture2D" uid="uid://bcp0jrosw2ovd" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_SLAP.png" id="7_h33jv"]
@@ -21,7 +21,7 @@
 [ext_resource type="Material" uid="uid://l1r613a3gttm" path="res://Assets/Materials/Enviro/M_EVA.tres" id="19_jq2t1"]
 [ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/TestMap.tres" id="20_bhy2f"]
 [ext_resource type="Texture2D" uid="uid://cblvbndapp82q" path="res://Sources/Textures/T_BrutalSlap.png" id="20_t6uh6"]
-[ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="21_e4ph7"]
+[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="21_e4ph7"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="21_uv2n1"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="22_mdkoo"]
 
@@ -417,10 +417,10 @@ tracks/13/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y03qi"]
 _data = {
-"AnimLight_Slap_Hit": SubResource("Animation_0nu2x"),
-"AnimLight_Slap_Intro": SubResource("Animation_k0xc5"),
-"AnimLight_Slap_PreHit": SubResource("Animation_d8pm2"),
-"RESET": SubResource("Animation_lkh3u")
+&"AnimLight_Slap_Hit": SubResource("Animation_0nu2x"),
+&"AnimLight_Slap_Intro": SubResource("Animation_k0xc5"),
+&"AnimLight_Slap_PreHit": SubResource("Animation_d8pm2"),
+&"RESET": SubResource("Animation_lkh3u")
 }
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]

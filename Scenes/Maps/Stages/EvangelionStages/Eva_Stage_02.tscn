@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://danlr5f6wtmu0"]
 
-[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="1_msagv"]
-[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_vrqej"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="1_msagv"]
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_vrqej"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="2_utlvj"]
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="3_kxmjw"]
 [ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="5_1iwjh"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_6f185"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_6f185"]
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="7_txiu8"]
 [ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="8_c8sdu"]
 

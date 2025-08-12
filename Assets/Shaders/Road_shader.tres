@@ -79,7 +79,7 @@ code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, world_vertex_coords;
 
 uniform sampler2D Noise : hint_default_black, filter_linear, repeat_enable;
-uniform float BounceIntensity : hint_range(0, 5) = 3;
+uniform float BounceIntensity : hint_range(0.0, 5.0) = 3.0;
 global uniform sampler2D spectrum_texture;
 uniform sampler2D MainTex;
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://qofhmib4acam"]
 
-[ext_resource type="Script" path="res://Scripts/GUI/TitleScreen.gd" id="1_q3f6b"]
+[ext_resource type="Script" uid="uid://dig7xxmxljgpt" path="res://Scripts/GUI/TitleScreen.gd" id="1_q3f6b"]
 [ext_resource type="Texture2D" uid="uid://bk1xdnu6hburf" path="res://Assets/Sprites/GUI/KikiGUI/GUI_StartingScreen_BG.png" id="2_nvbhf"]
 [ext_resource type="AudioStream" uid="uid://1hqlp5gehwy4" path="res://Assets/Sounds/SFX/DoudouSFX/SD_playbutton..wav" id="3_57ycc"]
 [ext_resource type="Texture2D" uid="uid://cbvuh2wk3nwxs" path="res://Assets/Sprites/GUI/KikiGUI/GUI_FIGHT.png" id="3_bid6k"]
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jqx0d"]
 _data = {
-"RESET": SubResource("Animation_vdg6d"),
-"TitleExit": SubResource("Animation_wofvt")
+&"RESET": SubResource("Animation_vdg6d"),
+&"TitleExit": SubResource("Animation_wofvt")
 }
 
 [sub_resource type="Animation" id="Animation_00l3v"]
@@ -77,8 +77,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_reu31"]
 _data = {
-"RESET": SubResource("Animation_00l3v"),
-"TitleBlink": SubResource("Animation_snmfp")
+&"RESET": SubResource("Animation_00l3v"),
+&"TitleBlink": SubResource("Animation_snmfp")
 }
 
 [node name="TitleScreen" type="Control"]

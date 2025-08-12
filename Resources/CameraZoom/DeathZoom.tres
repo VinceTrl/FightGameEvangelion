@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ZoomParameters" load_steps=4 format=3 uid="uid://ggln04kpqgxg"]
 
-[ext_resource type="Script" path="res://Scripts/Camera/ZoomParams.gd" id="1_6jwhn"]
+[ext_resource type="Script" uid="uid://cmc5xe8vg5dr3" path="res://Scripts/Camera/ZoomParams.gd" id="1_6jwhn"]
 
 [sub_resource type="Curve" id="Curve_56qo3"]
 _data = [Vector2(0, 0.896708), 0.0, 0.272985, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]

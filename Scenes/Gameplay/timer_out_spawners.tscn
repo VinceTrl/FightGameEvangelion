@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://m4y8m8c70o62"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/timer_out_spawners.gd" id="1_s1fp1"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="2_bdksg"]
+[ext_resource type="Script" uid="uid://cxf2ru57pidbq" path="res://Scripts/Gameplay/Spawn/timer_out_spawners.gd" id="1_s1fp1"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="2_bdksg"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="2_dopwe"]
 [ext_resource type="Resource" uid="uid://b0okcggscbndq" path="res://Resources/Spawnables/FallingProjectile.tres" id="3_05b8r"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ilo5r2bvattv"]
 
-[ext_resource type="Script" path="res://Scripts/GUI/hit_text_effect.gd" id="1_yt846"]
+[ext_resource type="Script" uid="uid://do8sy87u1rup7" path="res://Scripts/GUI/hit_text_effect.gd" id="1_yt846"]
 [ext_resource type="FontFile" uid="uid://5x8o7p2t84dl" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9-Condensed.ttf" id="2_dmtfu"]
 [ext_resource type="Curve" uid="uid://bxvsfnb3bcq1w" path="res://Resources/Curves/HalfFlickerCurve.tres" id="2_evb4d"]
 

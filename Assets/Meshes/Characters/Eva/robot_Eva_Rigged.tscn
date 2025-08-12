@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dbeg5q0e4hft4" path="res://Assets/Meshes/Enviro/Robot_eva_02.fbx" id="1_g67sn"]
 [ext_resource type="Material" uid="uid://l1r613a3gttm" path="res://Assets/Materials/Enviro/M_EVA.tres" id="2_8toxf"]
 [ext_resource type="PackedScene" uid="uid://c0adcejocn12d" path="res://Scenes/VFX/vfx_fire_01_mecha.tscn" id="3_4m2s7"]
-[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="4_0xkqb"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="4_0xkqb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_quhsn"]
 size = Vector3(0.151443, 1.08795, 0.182251)

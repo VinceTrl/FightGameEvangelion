@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://3iwau20l7bb6"]
 
-[ext_resource type="Script" path="res://Scripts/GameEffects/Vibration.gd" id="1_im3pw"]
+[ext_resource type="Script" uid="uid://btn2cgrlw4hfv" path="res://Scripts/GameEffects/Vibration.gd" id="1_im3pw"]
 [ext_resource type="Resource" uid="uid://b7u5pwabdjgw" path="res://Resources/Vibrations/DefaultVibration.tres" id="2_pl40e"]
 
 [node name="Vibration" type="Node"]

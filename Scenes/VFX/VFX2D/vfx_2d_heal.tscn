@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://j7lwtovgn0bn"]
 
 [ext_resource type="Texture2D" uid="uid://bvchqm3uy3r40" path="res://Assets/Sprites/Vfx/Heal/HealFxSheet.png" id="1_j7tha"]
-[ext_resource type="Script" path="res://Scripts/VFX/Vfx2D.gd" id="2_axfaf"]
+[ext_resource type="Script" uid="uid://bqsvlb8owoo24" path="res://Scripts/VFX/Vfx2D.gd" id="2_axfaf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qkv5q"]
 atlas = ExtResource("1_j7tha")

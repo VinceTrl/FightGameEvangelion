@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://ba20ikpx0nyx0"]
 
 [ext_resource type="Texture2D" uid="uid://bcchnm3p4kfeu" path="res://Assets/Sprites/Items/WarioHead.png" id="1_waknv"]
-[ext_resource type="Script" path="res://Scripts/Collisions/Hitbox.gd" id="2_i5xfx"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="2_i5xfx"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="3_tvw6m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwnug"]
@@ -141,8 +141,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ha2r5"]
 _data = {
-"Eating": SubResource("Animation_v5x71"),
-"RESET": SubResource("Animation_w5ppp")
+&"Eating": SubResource("Animation_v5x71"),
+&"RESET": SubResource("Animation_w5ppp")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jfswq"]
@@ -169,7 +169,7 @@ shape = SubResource("BoxShape3D_p3hwh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ha2r5")
+&"": SubResource("AnimationLibrary_ha2r5")
 }
 autoplay = "Eating"
 

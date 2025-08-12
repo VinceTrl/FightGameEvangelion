@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://lqp4gj0p1nt7"]
 
-[ext_resource type="Script" path="res://Scripts/Level/StageManager.gd" id="1_hqxp8"]
-[ext_resource type="Script" path="res://Scripts/Player/player_spawn.gd" id="2_yhxr1"]
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_hqxp8"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_yhxr1"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_uvq2c"]
 [ext_resource type="PackedScene" uid="uid://ba20ikpx0nyx0" path="res://Scenes/Gameplay/wario_mouth.tscn" id="5_x8xyy"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="6_2dd1u"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="6_2dd1u"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="7_gvulw"]
 
 [node name="Ani_Stage_02" type="Node3D"]

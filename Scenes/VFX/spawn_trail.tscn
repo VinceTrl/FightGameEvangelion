@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://nn8roov4p5vq"]
 
-[ext_resource type="Script" path="res://Scripts/GameEffects/spawn_trail.gd" id="1_1c6fn"]
+[ext_resource type="Script" uid="uid://dewisvrqusdmh" path="res://Scripts/GameEffects/spawn_trail.gd" id="1_1c6fn"]
 [ext_resource type="Texture2D" uid="uid://dum7m1fiqjiis" path="res://Assets/Sprites/Items/GUI_ItemBox.png" id="2_c5w83"]
 
 [sub_resource type="Curve" id="Curve_aeft5"]

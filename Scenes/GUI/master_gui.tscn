@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c5amqm6jpeons"]
 
 [ext_resource type="PackedScene" uid="uid://bus7pxl8e5mmg" path="res://Scenes/GUI/fight_text.tscn" id="1_gskd5"]
-[ext_resource type="Script" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
+[ext_resource type="Script" uid="uid://bnnr6dw1o8jcu" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="3_cd8f7"]
 [ext_resource type="PackedScene" uid="uid://cv0ukcamovfyt" path="res://Scenes/GUI/result_screen_ui.tscn" id="5_dvxp5"]
 [ext_resource type="Texture2D" uid="uid://dv6u3t40a0f0x" path="res://Assets/GUI/Test/test_ui_copie.png" id="6_8ak8g"]

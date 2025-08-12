@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ShakeParameters" load_steps=3 format=3 uid="uid://dbruj4m2iyqrh"]
 
-[ext_resource type="Script" path="res://Scripts/Camera/ShakeParams.gd" id="1_8l8qa"]
+[ext_resource type="Script" uid="uid://c411xrcd3f3th" path="res://Scripts/Camera/ShakeParams.gd" id="1_8l8qa"]
 
 [sub_resource type="Curve" id="Curve_c07rw"]
 _data = [Vector2(0, 0.519886), 0.0, 5.3625, 0, 0, Vector2(0.188312, 0.994724), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.83535, 0.0, 0, 0]
