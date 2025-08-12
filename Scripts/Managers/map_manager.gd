@@ -1,8 +1,8 @@
 extends Node
 
 @export var maps: Array[Map] = []
-@export var debugMode = false
-@export var debugSpawnIndex = 0
+var debugMode = false
+var debugSpawnIndex = 0
 var mapsLoaded: Array
 
 func PreloadAllResources():
@@ -13,6 +13,9 @@ func PreloadAllResources():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#PreloadAllResources()
+	
+	debugMode = Manager.gameDebug.debugMap
+	debugSpawnIndex = Manager.gameDebug.mapIndex
 	
 	if(debugMode):
 		SpawnMap(debugSpawnIndex)

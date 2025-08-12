@@ -1,8 +1,8 @@
 extends Node3D
 
 @export var map:Map
-@export var debugMode = false
-@export var debugSpawnIndex = 0
+var debugMode = false
+var debugSpawnIndex = 0
 var stages: Array
 
 
@@ -14,6 +14,9 @@ func PreloadResources():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PreloadResources()
+	
+	debugMode = Manager.gameDebug.debugStage
+	debugSpawnIndex = Manager.gameDebug.stageIndex
 	
 	if(debugMode):
 		SpawnStage(debugSpawnIndex)

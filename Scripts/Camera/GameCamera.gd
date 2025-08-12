@@ -32,7 +32,7 @@ const CAMERA_DISTANCE_CURVE = preload("res://Resources/Curves/CameraDistanceCurv
 @onready var camShake: CameraShake = $CameraShake
 @onready var camera: Camera3D = $CameraShake/Camera3D
 
-@export var debugMode = false
+var debugMode = false
 @onready var center_debug_label: Label3D = $CENTER_DEBUG_LABEL
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var debug_values: Label = $CanvasLayer/DEBUG_VALUES
@@ -68,6 +68,9 @@ func _ready() -> void:
 	currentOffset = cameraOffset
 	call_deferred("GetPlayers")
 	call_deferred("ResetCameraPosition")
+	
+	debugMode = Manager.gameDebug.debugCamera
+	
 	if(debugMode): 
 		center_debug_label.visible = true
 		canvas_layer.visible = true

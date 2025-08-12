@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var spinNode:Node3D
 @export var tiltNode:Node3D
-@export var debugMode:bool = false
+var debugMode:bool = false
 
 @export_group("Spin")
 @export var spinOnReady: bool = false
@@ -66,6 +66,7 @@ func _ready() -> void:
 	if(spinOnReady):
 		currentSpinSpeed = maxSpinSpeed
 		
+	debugMode = Manager.gameDebug.debugBeybalde
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

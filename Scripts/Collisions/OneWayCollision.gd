@@ -19,6 +19,8 @@ func _process(delta: float) -> void:
 	SetCollisionForPlayer(player1)
 	SetCollisionForPlayer(player2)
 	
+	
+	
 func GetPlayers():
 	for player in Manager.gameManager.players:
 		if(player.playerID == 1):

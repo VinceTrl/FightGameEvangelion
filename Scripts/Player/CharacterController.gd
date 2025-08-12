@@ -118,7 +118,7 @@ var ledgeDirection: Vector3 = Vector3.ZERO
 @export var chargedShoothreshold = 0.8
 @export_group("")
 
-@export var debugMode = false
+var debugMode = false
 
 #movement variables
 var isMoving = false
@@ -224,6 +224,12 @@ func _ready():
 	currentHealthPoints = healthPoints
 	moveSpeed = runSpeed
 	jumpSpeed = jumpVelocity
+	
+	#Set Debug mode
+	if(Manager.gameDebug.debugPlayer):
+		for id in Manager.gameDebug.playerDebugID:
+			if(id == playerID):
+				debugMode = true
 
 func _draw():
 	currentState.Draw()
