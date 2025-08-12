@@ -4,6 +4,7 @@ extends Node
 var debugMode = false
 var debugSpawnIndex = 0
 var mapsLoaded: Array
+var currentMap
 
 func PreloadAllResources():
 	for map in maps: 	
@@ -43,3 +44,4 @@ func SpawnMap(mapIndex:int):
 	var mapData = load(str(maps[mapIndex].mapScenePath))
 	var map = mapData.instantiate()
 	add_child(map)
+	currentMap = maps[mapIndex]
