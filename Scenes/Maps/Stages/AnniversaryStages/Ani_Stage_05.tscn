@@ -137,6 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.16813, 0)
 size = Vector3(1, 10, 0.445)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/CSGBox3D"]
+collision_layer = 193
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/CSGBox3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_4n6iy")
