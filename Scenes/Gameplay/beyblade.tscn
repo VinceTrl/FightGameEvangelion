@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bnfxedwkb4ml0" path="res://Scripts/Gameplay/beyblade.gd" id="1_t1y04"]
 [ext_resource type="Script" uid="uid://bjur7smhqpufy" path="res://Scripts/Gameplay/BumperAnimation.gd" id="2_718lx"]
-[ext_resource type="PackedScene" uid="uid://cliqfj6ilrcp2" path="res://Assets/Meshes/Props/Beyblade/beybladeSnake.fbx" id="2_w40rj"]
 [ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="3_2snwk"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="3_qtif3"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="4_h6thn"]
+[ext_resource type="PackedScene" uid="uid://ctn0ijdhhkhpc" path="res://Scenes/Gameplay/beyblade_snake.tscn" id="4_he7th"]
 [ext_resource type="PackedScene" uid="uid://sddtfc33krlr" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="7_627sr"]
 
 [sub_resource type="Curve" id="Curve_nnnkc"]
@@ -58,7 +58,7 @@ maxScale = Vector3(1.2, 1.2, 1.2)
 
 [node name="SpinNode" type="Node3D" parent="TiltRoot/Visual"]
 
-[node name="beybladeSnake" parent="TiltRoot/Visual/SpinNode" instance=ExtResource("2_w40rj")]
+[node name="beybladeSnake" parent="TiltRoot/Visual/SpinNode" instance=ExtResource("4_he7th")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="VFXs" type="Node3D" parent="."]
