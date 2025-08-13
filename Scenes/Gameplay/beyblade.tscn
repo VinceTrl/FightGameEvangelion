@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://ma1a8w06qfh8"]
+[gd_scene load_steps=15 format=3 uid="uid://ma1a8w06qfh8"]
 
 [ext_resource type="Script" uid="uid://bnfxedwkb4ml0" path="res://Scripts/Gameplay/beyblade.gd" id="1_t1y04"]
 [ext_resource type="Script" uid="uid://bjur7smhqpufy" path="res://Scripts/Gameplay/BumperAnimation.gd" id="2_718lx"]
 [ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="3_2snwk"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="3_qtif3"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="4_h6thn"]
-[ext_resource type="PackedScene" uid="uid://ctn0ijdhhkhpc" path="res://Scenes/Gameplay/beyblade_snake.tscn" id="4_he7th"]
+[ext_resource type="PackedScene" path="res://Scenes/Gameplay/beyblade_snake.tscn" id="4_he7th"]
 [ext_resource type="PackedScene" uid="uid://sddtfc33krlr" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="7_627sr"]
 
 [sub_resource type="Curve" id="Curve_nnnkc"]
@@ -14,6 +14,18 @@ point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ic0y2"]
 size = Vector3(0.45, 0.274292, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_he7th"]
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+billboard_mode = 1
+
+[sub_resource type="Curve" id="Curve_tbgqv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_uqyhy"]
+colors = PackedColorArray(0.00784314, 0.831373, 0.552941, 1, 1, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_svkph"]
 size = Vector3(0.551, 0.272, 0.625)
@@ -60,6 +72,26 @@ maxScale = Vector3(1.2, 1.2, 1.2)
 
 [node name="beybladeSnake" parent="TiltRoot/Visual/SpinNode" instance=ExtResource("4_he7th")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="TrailEmitter" type="TrailEmitter" parent="TiltRoot/Visual/SpinNode"]
+material = SubResource("StandardMaterial3D_he7th")
+curve = SubResource("Curve_tbgqv")
+gradient = SubResource("Gradient_uqyhy")
+num_points = 14
+noise_scale = 0.165
+size = 0.02
+update_interval = 0.005
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.00984499, 0.272237)
+
+[node name="TrailEmitter2" type="TrailEmitter" parent="TiltRoot/Visual/SpinNode"]
+material = SubResource("StandardMaterial3D_he7th")
+curve = SubResource("Curve_tbgqv")
+gradient = SubResource("Gradient_uqyhy")
+num_points = 14
+noise_scale = 0.165
+size = 0.02
+update_interval = 0.005
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.00984499, -0.289441)
 
 [node name="VFXs" type="Node3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.068922, 0)
