@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://difa1tbhr27vn"]
+[gd_scene load_steps=83 format=3 uid="uid://difa1tbhr27vn"]
 
 [ext_resource type="Script" uid="uid://dgfhro4eut85b" path="res://Scripts/Gameplay/Projectile.gd" id="1_imuxp"]
 [ext_resource type="Curve" uid="uid://bb47w0dbu6x4n" path="res://Scripts/Curves/projectileSpeedParry.tres" id="2_h0nys"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgq2a8jhgtqx2" path="res://Assets/Sprites/Projectiles/ProjectileSpriteSheet_32x32.png" id="3_xdjyt"]
 [ext_resource type="Texture2D" uid="uid://c4vuyvb6roinn" path="res://Assets/Sprites/Projectiles/ProjectileSpritesheet02_32x32.png" id="5_7g40w"]
 [ext_resource type="AudioStream" uid="uid://b1tlptpxgx04n" path="res://Assets/Sounds/SFX/DoudouSFX/SD_impactprojectile.wav" id="6_0ldrt"]
-[ext_resource type="PackedScene" uid="uid://cihfnaev7mkhu" path="res://Scenes/VFX/Projectile_Trail_vfx.tscn" id="9_ekur6"]
+[ext_resource type="PackedScene" uid="uid://brj0uvtprch6f" path="res://Scenes/VFX/Projectile_Trail_vfx.tscn" id="9_ekur6"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="10_cujeu"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="11_w1rla"]
 
@@ -485,6 +485,35 @@ size = Vector3(0.0918731, 0.0906219, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kc145"]
 size = Vector3(0.239748, 0.132919, 1)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ekur6"]
+resource_local_to_scene = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = -2.23517e-06
+scale_min = 0.05
+scale_max = 0.05
+
+[sub_resource type="Gradient" id="Gradient_ekur6"]
+colors = PackedColorArray(0.909804, 0.0980392, 0.290196, 1, 1, 0.588235, 0.988235, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xxsyy"]
+gradient = SubResource("Gradient_ekur6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekur6"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture1D_xxsyy")
+
+[sub_resource type="Curve" id="Curve_xxsyy"]
+_data = [Vector2(0, 1), 0.0, -2.75782, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="Projectile" type="RigidBody3D"]
 collision_layer = 8
 collision_mask = 17
@@ -537,5 +566,14 @@ debug_shape_custom_color = Color(1.46799e-06, 0.490135, 0, 1)
 
 [node name="TrailFX" parent="." instance=ExtResource("9_ekur6")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.046, 0, 0)
+process_material = SubResource("ParticleProcessMaterial_ekur6")
+
+[node name="TrailEmitter" type="TrailEmitter" parent="."]
+material = SubResource("StandardMaterial3D_ekur6")
+curve = SubResource("Curve_xxsyy")
+num_points = 4
+noise_scale = 0.445
+size = 0.05
+update_interval = 0.05
 
 [connection signal="OnHit" from="Hitbox" to="." method="_on_hitbox_on_hit"]

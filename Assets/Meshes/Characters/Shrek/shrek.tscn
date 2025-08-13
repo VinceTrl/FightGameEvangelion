@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdv55byodmt2m"]
+[gd_scene load_steps=12 format=3 uid="uid://cdv55byodmt2m"]
 
 [ext_resource type="PackedScene" uid="uid://cjuhbvaggbelq" path="res://Assets/Meshes/Characters/Shrek/Shrek.fbx" id="1_x48c5"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="2_7avlx"]
 [ext_resource type="Shader" uid="uid://jthvk00ttasn" path="res://Assets/Shaders/FresnelOutline_shader.gdshader" id="2_p3u7f"]
 [ext_resource type="Material" uid="uid://b5mvmts0o7f3e" path="res://Assets/Materials/Gameplay/M_Shrek2.tres" id="3_i8h71"]
 [ext_resource type="Material" uid="uid://bw4a1ctvlsojs" path="res://Assets/Materials/Gameplay/M_ShrekEyes.tres" id="4_owwwy"]
+[ext_resource type="Texture2D" uid="uid://bpy1xclxhfcts" path="res://addons/trailmesh/example/albedo.png" id="6_7g51y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7cpjh"]
 render_priority = 0
@@ -15,6 +16,19 @@ shader_parameter/hue_speed = 10.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iv1e3"]
 size = Vector3(0.00369263, 0.0109558, 0.00534058)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sxfa"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("6_7g51y")
+billboard_mode = 1
+
+[sub_resource type="Curve" id="Curve_7g51y"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_4o0x3"]
+colors = PackedColorArray(1, 0, 0, 1, 0.839216, 0.0588235, 0.388235, 1)
 
 [node name="Shrek" instance=ExtResource("1_x48c5")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
@@ -80,6 +94,15 @@ randomID = true
 transform = Transform3D(0.999996, 0, 0, 0, 0.999999, 0, 0, 0, 0.999991, 0, 0, 0)
 shape = SubResource("BoxShape3D_iv1e3")
 
+[node name="TrailEmitter" type="TrailEmitter" parent="Skeleton3D/HandR" index="1"]
+material = SubResource("StandardMaterial3D_2sxfa")
+curve = SubResource("Curve_7g51y")
+gradient = SubResource("Gradient_4o0x3")
+num_points = 6
+noise_scale = 2.6
+size = 0.06
+update_interval = 0.065
+
 [node name="HandL" type="BoneAttachment3D" parent="Skeleton3D" index="6"]
 transform = Transform3D(0.795331, 0.6034, -0.0579322, 0.2858, -0.457549, -0.842002, -0.534571, 0.653113, -0.536355, 0.00922609, 0.00944729, 0.00520892)
 bone_name = "mixamorig_LeftHand"
@@ -93,6 +116,16 @@ randomID = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/HandL/Hitbox" index="0"]
 transform = Transform3D(1, -1.49012e-07, -1.49012e-07, 1.49012e-08, 1, -2.68221e-07, 1.49012e-08, 2.98023e-08, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_iv1e3")
+
+[node name="TrailEmitter2" type="TrailEmitter" parent="Skeleton3D/HandL" index="1"]
+material = SubResource("StandardMaterial3D_2sxfa")
+curve = SubResource("Curve_7g51y")
+gradient = SubResource("Gradient_4o0x3")
+num_points = 6
+noise_scale = 2.6
+size = 0.06
+update_interval = 0.065
+transform = Transform3D(0.131662, -0.813915, 0.565869, 0.984098, 0.175976, 0.0241426, -0.11923, 0.553692, 0.824141, 0, 0, 0)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "mixamo_com"
