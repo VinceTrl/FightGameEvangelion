@@ -20,6 +20,8 @@ var gameDebug: GameDebug
 var titleScreen: TitleScreen
 var musicManager
 
+var transitionInstance
+
 var previousGameState : GameStates.GameState
 var currentGameState : GameStates.GameState = GameStates.GameState.TitleScreen
 
@@ -84,6 +86,13 @@ func LoadGameScene():
 	
 func ReloadGameScene():
 	
+	StartTransition()
+	print("TRANSITION START FOR RELOAD GAME SCENE")
+	
+	if(transitionInstance != null):
+		await transitionInstance.OnTransitionReachFullVisibleFrames
+		print("ON TRANSITION REACH VISIBLE STATE")
+	
 	get_tree().current_scene.queue_free()
 	await get_tree().process_frame # attendre la suppression effective
 
@@ -102,27 +111,38 @@ func ReloadGameScene():
 	#ChangeGameState(GameStates.GameState.FightIntro)
 	
 func OnGameSceneReloaded():
-	StartTransition()
+	#StartTransition()
 	
-	await StartTransition()
+	if(transitionInstance != null):
+		await transitionInstance.OnTransitionEnd
+		
+	#await StartTransition()
 	ChangeGameState(GameStates.GameState.FightIntro)
 	print("GO TO INTRO")
 	
 func StartTransition():
 	var transitionScreen = TRANSITION_SCREEN.instantiate()
 	add_child(transitionScreen)
-	transitionScreen.StartTransition()
+	transitionInstance = transitionScreen
 	
+	transitionScreen.StartTransition()
 	await transitionScreen.OnTransitionEnd
 	
-	transitionScreen.queue_free()
+	#transitionScreen.queue_free()
 	print("TRANSITION FINISHED")
 	
 	
 	
 func LoadTitleScene():
 	
+	#StartTransition()
+	
 	StartTransition()
+	print("TRANSITION START FOR RELOAD GAME")
+	
+	if(transitionInstance != null):
+		await transitionInstance.OnTransitionReachFullVisibleFrames
+		print("ON TRANSITION REACH VISIBLE STATE")
 	
 	if(get_tree().current_scene != null):
 		get_tree().current_scene.queue_free()
@@ -132,7 +152,10 @@ func LoadTitleScene():
 	
 	#StartTransition()
 	
-	await StartTransition()
+	#await StartTransition()
+	
+	if(transitionInstance != null):
+		await transitionInstance.OnTransitionAlmostFinished
 	#ChangeGameState(GameStates.GameState.TitleScreen)
 	#var title = GetGameState(currentGameState)
 	#title.canHandleInput = true

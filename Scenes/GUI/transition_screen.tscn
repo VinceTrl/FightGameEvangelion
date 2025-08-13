@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bob6atoxub5xw"]
+[gd_scene load_steps=57 format=3 uid="uid://bob6atoxub5xw"]
 
 [ext_resource type="Script" uid="uid://ghbwafs8w7mm" path="res://Scripts/GUI/transition_screen_ui.gd" id="1_hrpvg"]
 [ext_resource type="Texture2D" uid="uid://cio12736viy1m" path="res://Videos/Transition/frames/frame_0001.png" id="2_yrohw"]
@@ -55,12 +55,6 @@
 [ext_resource type="Texture2D" uid="uid://bpdaghafsoqv5" path="res://Videos/Transition/frames/frame_0052.png" id="53_vldu7"]
 [ext_resource type="Texture2D" uid="uid://b5ybq6wyi1est" path="res://Videos/Transition/frames/frame_0053.png" id="54_kd1fm"]
 [ext_resource type="Texture2D" uid="uid://cft5cobcytw8p" path="res://Videos/Transition/frames/frame_0054.png" id="55_mtac1"]
-[ext_resource type="Texture2D" uid="uid://1uwsvrkdxi3c" path="res://Videos/Transition/frames/frame_0055.png" id="56_ku53k"]
-[ext_resource type="Texture2D" uid="uid://40u4i6j2o3ba" path="res://Videos/Transition/frames/frame_0056.png" id="57_t0hil"]
-[ext_resource type="Texture2D" uid="uid://bbuk8jm4rirko" path="res://Videos/Transition/frames/frame_0057.png" id="58_he2gu"]
-[ext_resource type="Texture2D" uid="uid://xnunb8ndpg6a" path="res://Videos/Transition/frames/frame_0058.png" id="59_j2j4e"]
-[ext_resource type="Texture2D" uid="uid://k8utt7vqs01" path="res://Videos/Transition/frames/frame_0059.png" id="60_1ttq2"]
-[ext_resource type="Texture2D" uid="uid://bs7p22nn05a47" path="res://Videos/Transition/frames/frame_0060.png" id="61_matfk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m7vd8"]
 animations = [{
@@ -228,22 +222,22 @@ animations = [{
 "texture": ExtResource("55_mtac1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("56_ku53k")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("57_t0hil")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("58_he2gu")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("59_j2j4e")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("60_1ttq2")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("61_matfk")
+"texture": null
 }],
 "loop": false,
 "name": &"transition",

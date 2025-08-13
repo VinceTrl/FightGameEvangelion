@@ -20,7 +20,7 @@ func EnterState():
 func ExitState():
 	#screenInstance as Node
 	Manager.gameStateManager.OnWinnerScreenEnd.emit()
-	screenInstance.queue_free()
+	#screenInstance.queue_free()
 
 func Draw():
 	pass
@@ -35,5 +35,6 @@ func RestartGame():
 	var timer = get_tree().create_timer(0.5,true,false,true)
 	await timer.timeout
 	manager.LoadTitleScene()
+	screenInstance.queue_free()
 	#get_tree().reload_current_scene()
 	#manager.ChangeGameState(GameState.FightIntro)
