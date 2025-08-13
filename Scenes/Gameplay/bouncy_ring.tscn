@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp7u5gy3r2kgs"]
+[gd_scene load_steps=12 format=3 uid="uid://dp7u5gy3r2kgs"]
 
 [ext_resource type="ArrayMesh" uid="uid://neowvh0xeer4" path="res://Assets/Meshes/Props/SwimRing/Swim ring_2.obj" id="1_7ftt7"]
 [ext_resource type="Script" uid="uid://rijharimj3h8" path="res://Scripts/GameEffects/PhysicObject.gd" id="1_bfpfp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_tng2y"]
 [ext_resource type="Script" uid="uid://bjur7smhqpufy" path="res://Scripts/Gameplay/BumperAnimation.gd" id="3_4ivnr"]
 [ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="4_5txh8"]
+[ext_resource type="Material" uid="uid://btukdgxqu0kwh" path="res://Assets/Materials/Gameplay/M_BouncyRing.tres" id="6_jubcv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_681oy"]
 friction = 0.34
@@ -68,6 +69,7 @@ maxScale = Vector3(1.75, 1.25, 1.75)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00875795, -0.24675, 0)
 mesh = ExtResource("1_7ftt7")
 skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("6_jubcv")
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("2_tng2y")
