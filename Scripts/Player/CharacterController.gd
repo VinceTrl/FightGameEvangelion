@@ -230,6 +230,11 @@ func _ready():
 		for id in Manager.gameDebug.playerDebugID:
 			if(id == playerID):
 				debugMode = true
+				
+	if(Manager.gameDebug.debugPlayerHitboxes):
+		attackHitbox.debugShape = true
+		hitbox_up.debugShape = true
+		hitbox_down.debugShape = true
 
 func _draw():
 	currentState.Draw()

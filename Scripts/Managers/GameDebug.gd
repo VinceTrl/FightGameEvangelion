@@ -17,6 +17,7 @@ extends Node
 @export_group("PLAYER DEBUG")
 @export var debugPlayer: bool = false
 @export var playerDebugID:Array[int]
+@export var debugPlayerHitboxes: bool = false
 @export_group("")
 
 @export_group("CAMERA DEBUG")
@@ -24,5 +25,15 @@ extends Node
 @export_group("")
 
 @export_group("BEYBLADE DEBUG")
-@export var debugBeybalde: bool = false
+@export var debugBeyblade: bool = false
+@export var debugBeybladeHitbox: bool = false
+@export_group("")
+
+@export_group("HITBOX DEBUG")
+@export var debugHitboxShape: bool = false
+@export var debugHitboxText: bool = false
+@export var debugActiveColor: Color = Color.LIME_GREEN
+@export var debugInactiveColor: Color = Color.RED
+@export var debugActiveLineThickness: float = 0.1
+@export var debugInactiveLineThickness: float = 0.01
 @export_group("")

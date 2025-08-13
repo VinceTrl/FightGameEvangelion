@@ -155,7 +155,7 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_la1po")
 
 [node name="Hitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6084, -1.05852, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994247, -1.24938, 0)
 script = ExtResource("2_i5xfx")
 damage = 3
 type = 2
@@ -164,7 +164,6 @@ randomID = true
 hitDirection = Vector3(-1, 0, 0)
 
 [node name="HitboxCollisionShape" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45754, -0.190857, 0)
 shape = SubResource("BoxShape3D_p3hwh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

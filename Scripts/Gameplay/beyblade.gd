@@ -66,7 +66,10 @@ func _ready() -> void:
 	if(spinOnReady):
 		currentSpinSpeed = maxSpinSpeed
 		
-	debugMode = Manager.gameDebug.debugBeybalde
+	debugMode = Manager.gameDebug.debugBeyblade
+	
+	if(Manager.gameDebug.debugBeybladeHitbox):
+		hitbox.debugShape = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
