@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqoibe403b6hy"]
+[gd_scene load_steps=14 format=3 uid="uid://bqoibe403b6hy"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_k0tsr"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_dufh1"]
@@ -8,9 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://b8to22k0bf58q" path="res://Assets/Meshes/Props/Pool/swimming_pool.fbx" id="6_4t43o"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_h6ksb"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="7_gwjxb"]
+[ext_resource type="Material" uid="uid://7h0y05yhaebh" path="res://Assets/Meshes/Enviro/PeachBeach/WaterPool.tres" id="7_j24wt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_chbuj"]
 size = Vector3(3.98096, 1, 1.96704)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j24wt"]
+size = Vector2(4, 2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0m7tc"]
 
@@ -198,6 +202,11 @@ collision_layer = 193
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.43051e-06, 0, 1.43051e-06, 1, -0.199219, -0.129779, -0.0250246)
 shape = SubResource("BoxShape3D_chbuj")
+
+[node name="WaterPlane" type="MeshInstance3D" parent="Gameplay/swimming_pool/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, -0.143334, 0.334365, -0.110762)
+material_override = ExtResource("7_j24wt")
+mesh = SubResource("PlaneMesh_j24wt")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Gameplay/swimming_pool"]
 transform = Transform3D(1.72002, 0, 0, 0, 1, 0, 0, 0, 0.913212, -0.167984, 0.242347, 7.45058e-09)
