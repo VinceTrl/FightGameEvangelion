@@ -15,6 +15,8 @@ surface_material_override/0 = ExtResource("3_mf3mu")
 [node name="Lighting" type="Node3D" parent="." index="16"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lighting" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.7056, 0)
-light_energy = 16.0
-spot_range = 66.077
+transform = Transform3D(0.985244, 7.48144e-09, -0.171155, 0.171155, -4.30664e-08, 0.985244, 0, -1, -4.37114e-08, 81.2518, 542.017, 0)
+light_energy = 1.5
+spot_range = 840.023
+spot_attenuation = 0.0
+spot_angle = 50.36
