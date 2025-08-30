@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2eln4s6wcfac"]
+[gd_scene load_steps=10 format=3 uid="uid://d2eln4s6wcfac"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_thu62"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_srwkm"]
@@ -7,6 +7,12 @@
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_qej2g"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_6ynbj"]
 [ext_resource type="PackedScene" uid="uid://l167uu8l3k8h" path="res://Scenes/Gameplay/duck.tscn" id="6_l72ue"]
+[ext_resource type="Material" uid="uid://gf5mwn4dvi6f" path="res://Assets/Materials/Enviro/Beach_Peach/M_Water_peach_beach_AniStage4.tres" id="8_l2816"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s5uxr"]
+size = Vector2(50, 50)
+subdivide_width = 100
+subdivide_depth = 100
 
 [node name="Ani_Stage_04" type="Node3D"]
 script = ExtResource("1_thu62")
@@ -117,6 +123,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6041, 2.5, 0)
 
 [node name="WoodPlatform12" parent="Level" instance=ExtResource("6_6ynbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54516, 2.5, 0)
+
+[node name="WaterPlane" type="MeshInstance3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.287267, 0)
+mesh = SubResource("PlaneMesh_s5uxr")
+surface_material_override/0 = ExtResource("8_l2816")
 
 [node name="Lighting" type="Node3D" parent="."]
 
