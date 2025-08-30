@@ -117,3 +117,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6041, 2.5, 0)
 
 [node name="WoodPlatform12" parent="Level" instance=ExtResource("6_6ynbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54516, 2.5, 0)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.0107859, 0.999942, 0, -0.999942, 0.0107859, 0, 6.63272, 0.527242)
+light_energy = 3.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 15.0
+spot_angle = 57.86
