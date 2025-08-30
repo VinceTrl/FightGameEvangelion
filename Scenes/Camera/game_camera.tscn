@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://diwhygl1ho1la"]
+[gd_scene load_steps=20 format=3 uid="uid://diwhygl1ho1la"]
 
 [ext_resource type="Script" uid="uid://2yxjqjvkj34j" path="res://Scripts/Camera/GameCamera.gd" id="1_cpg4t"]
 [ext_resource type="Resource" uid="uid://cgaw0g5mdfmxf" path="res://Resources/CameraZoom/DefaultZoom.tres" id="2_e3wng"]
 [ext_resource type="Script" uid="uid://cmc5xe8vg5dr3" path="res://Scripts/Camera/ZoomParams.gd" id="2_jjh8l"]
 [ext_resource type="Texture2D" uid="uid://dum8uqc8jo8e5" path="res://icon.svg" id="2_qut7l"]
-[ext_resource type="Script" uid="uid://diwwtlss4xx7" path="res://Scripts/Camera/CameraShake.gd" id="2_xo7ej"]
-[ext_resource type="Script" uid="uid://c411xrcd3f3th" path="res://Scripts/Camera/ShakeParams.gd" id="3_m2yog"]
+[ext_resource type="Script" uid="uid://dlwy74we303ku" path="res://Scripts/Camera/CameraShake.gd" id="2_xo7ej"]
+[ext_resource type="Script" uid="uid://b2ch87mjh70ab" path="res://Scripts/Camera/ShakeParams.gd" id="3_m2yog"]
 [ext_resource type="Resource" uid="uid://du6y5q0t43v7t" path="res://Resources/CameraShakes/HitShake.tres" id="4_3bh2q"]
 [ext_resource type="Resource" uid="uid://bncgjtn60sowd" path="res://Resources/CameraZoom/MidFocusZoom.tres" id="4_45u5i"]
 [ext_resource type="Resource" uid="uid://buvt4ntvp0gmw" path="res://Resources/CameraZoom/HitZoom.tres" id="5_k8ve0"]
@@ -25,6 +25,25 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, -2.43313, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Environment" id="Environment_06x2v"]
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.1
+glow_blend_mode = 0
+fog_light_color = Color(0, 0.215686, 0, 1)
+fog_light_energy = 16.0
+fog_sun_scatter = 1.0
+fog_density = 0.1
+fog_sky_affect = 0.0
+fog_height = 1.0
+fog_height_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.0392157, 0.0392157, 0.0392157, 1)
+volumetric_fog_gi_inject = 16.0
+volumetric_fog_ambient_inject = 16.0
+volumetric_fog_sky_affect = 0.0
+
 [node name="GameCamera" type="Node3D"]
 script = ExtResource("1_cpg4t")
 minDistZ = 1.75
@@ -38,7 +57,6 @@ cameraClampMax = Vector2(10, 3)
 cameraClampMin = Vector2(-5, -1)
 defaultZoom = ExtResource("2_e3wng")
 zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource("4_45u5i"), ExtResource("5_k8ve0"), ExtResource("6_5okmd"), ExtResource("7_ng602")])
-debugMode = true
 
 [node name="CameraShake" type="Node3D" parent="."]
 script = ExtResource("2_xo7ej")
@@ -46,6 +64,7 @@ magnitudeOverTime = SubResource("Curve_t0je2")
 shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d"), ExtResource("14_p6ck8")])
 
 [node name="Camera3D" type="Camera3D" parent="CameraShake"]
+environment = SubResource("Environment_06x2v")
 size = 4.896
 
 [node name="CENTER_DEBUG_LABEL" type="Label3D" parent="."]
