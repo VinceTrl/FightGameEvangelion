@@ -23,6 +23,7 @@ func Update(delta: float):
 	Player.HandleAttack()
 	Player.HandleShoot()
 	Player.HandleTaunt()
+	Player.HandleDrop()
 	
 	if (Player.moveDirectionX != 0):
 		Player.ChangeState(States.Run)

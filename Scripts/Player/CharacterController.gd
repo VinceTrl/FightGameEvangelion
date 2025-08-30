@@ -28,6 +28,7 @@ extends CharacterBody3D
 @onready var backPlayerDetection: RayCast3D = $RaycastHolder/BackPlayerDetection
 @onready var ground_location: Marker3D = $GroundLocation
 @onready var player_spear: Spear = $PlayerSpear
+@onready var one_way_platform_ray_cast: OneWayPlatformRaycast = $RaycastHolder/OneWayPlatformRayCast
 
 @onready var ledge_right_upper_cast: RayCast3D = $LedgegrabRaycasts/LedgeRightUpper
 @onready var ledge_left_upper_cast: RayCast3D = $LedgegrabRaycasts/LedgeLeftUpper
@@ -74,6 +75,8 @@ var isInvicible: bool = false
 @export var maxFallVelocity = 10.0
 @export var maxJumps = 2
 @export var fallGravityMultiplier = 1.5
+var isAboutToDrop:bool = false
+@export var dropInputTime:float = 1.0
 @export_group("")
 
 #ledgegrab variable
@@ -130,6 +133,7 @@ var moveDirectionX = 0
 var jumps = 0
 var airAttack = 0
 
+
 var currentAttackForce = 0.0
 var currentChargeRatio = 0.0
 
@@ -147,6 +151,7 @@ var lastHitLocation
 #inputs variables 
 var keyUp = false
 var keyDown = false
+var keyDownPressed = false
 var keyLeft = false
 var keyRight = false
 
@@ -192,6 +197,7 @@ func _ready():
 	sprite.texture = spritesheet
 	player_spear.sprite_3d.texture = spritesheet
 	SetCollisionLayer()
+	one_way_platform_ray_cast.set_mask(collisionLayer)
 	
 	gameManager = Manager
 	Manager.gameManager.RegisterPlayer(self)
@@ -273,6 +279,7 @@ func ChangeState(nextState):
 func GetInputStates():
 	keyUp = Input.is_action_pressed("KeyUp_" + str(playerID))
 	keyDown = Input.is_action_pressed("KeyDown_" + str(playerID))
+	keyDownPressed = Input.is_action_just_pressed("KeyDown_" + str(playerID))
 	keyRight = Input.is_action_pressed("KeyRight_" + str(playerID))
 	keyLeft = Input.is_action_pressed("KeyLeft_" + str(playerID))
 	
@@ -347,6 +354,20 @@ func HandleLanding():
 		ResetDash()
 		ResetAirAttack()
 		LandingEffect()
+		
+func HandleDrop():
+	if(one_way_platform_ray_cast.is_on_one_way_platform()):
+		if(keyDownPressed and !isAboutToDrop):
+			print("DROP : is about to drop")
+			isAboutToDrop = true
+			await get_tree().create_timer(dropInputTime,true,false,true).timeout
+			print("DROP : drop timer finished")
+			if(keyDown and one_way_platform_ray_cast.is_on_one_way_platform()):
+				var platform := one_way_platform_ray_cast.get_platform()
+				platform.ForceDrop(self)
+				
+			isAboutToDrop = false
+			print("DROP : RESET")
 		
 func LandingWhileCharging():
 	if (is_on_floor()):

@@ -8,6 +8,8 @@ extends StaticBody3D
 var player1: PlayerCharacter
 var player2: PlayerCharacter
 
+var processCollision: bool = true
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,8 +29,37 @@ func GetPlayers():
 			player1 = player
 		if(player.playerID == 2):
 			player2 = player
+			
+			
+func ForceDrop(_playerToDrop:PlayerCharacter):
+	var maxY = global_position.y + (shapeSize.y / 2)
+	var minY = global_position.y - (shapeSize.y / 2)
+	var layerInt
+	
+	if(_playerToDrop == player1):
+		layerInt = playerLayer_1
+	elif(_playerToDrop == player2):
+		layerInt = playerLayer_2
+		
+	set_collision_layer_value(layerInt, false)
+	processCollision = false
+	print("DROP: start force drop on platform collision for player : ", _playerToDrop.name)
+		
+	var playerIsUnderCollision: bool = _playerToDrop.global_position.y <= minY
+	var playerIsAboveCollision: bool = _playerToDrop.global_position.y > maxY
+	var canReset := playerIsAboveCollision or playerIsUnderCollision
+	
+	await get_tree().create_timer(0.25,true,true,false).timeout
+	
+	while !canReset:
+		await get_tree().process_frame
+		
+	print("DROP: Reset platform collision")
+	set_collision_layer_value(layerInt, true)
+	processCollision = true
 	
 func SetCollisionForPlayer(_player:PlayerCharacter):
+	if(!processCollision):return
 	if(!_player): return
 	
 	var maxY = global_position.y + (shapeSize.y / 2)

@@ -46,7 +46,7 @@ default_value = 1.0
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
-uniform float Speed = 1;
+uniform float Speed = 1.0;
 uniform float Offset = 0.25;
 uniform sampler2D Texture : source_color;
 

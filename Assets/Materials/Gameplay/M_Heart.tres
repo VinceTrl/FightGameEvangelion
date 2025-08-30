@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cdbkvq68uscka" path="res://Assets/Meshes/Props/Heart/mi_heartcontainer_alb.png" id="1_cpi62"]
 [ext_resource type="Texture2D" uid="uid://du3vipq4gbr11" path="res://Assets/Meshes/Props/Heart/mi_heartcontainer_mtl.png" id="2_yyjhb"]
 [ext_resource type="Texture2D" uid="uid://e1grtcgcdstl" path="res://Assets/Meshes/Props/Heart/mi_heartcontainer_nml.png" id="3_ikew6"]
-[ext_resource type="Shader" path="res://Assets/Shaders/Outline_shader.gdshader" id="3_mg5da"]
+[ext_resource type="Shader" uid="uid://cl7dqetv48qsr" path="res://Assets/Shaders/Outline_shader.gdshader" id="3_mg5da"]
 [ext_resource type="Texture2D" uid="uid://bnj4biwa03s86" path="res://Assets/Meshes/Props/Heart/mi_heartcontainer_smt.png" id="4_kerrb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pi1c4"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=80 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" uid="uid://1nqqf1x2wfer" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -46,6 +46,7 @@
 [ext_resource type="AudioStream" uid="uid://dw5yrjagxb345" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi5.wav" id="39_fiots"]
 [ext_resource type="AudioStream" uid="uid://conlqs7i2mi11" path="res://Assets/Sounds/SFX/DoudouSFX/SD_kikiiiiiiiiiiiiiiiii.wav" id="42_4e748"]
 [ext_resource type="AudioStream" uid="uid://cmny634ywrhvs" path="res://Assets/Sounds/SFX/DoudouSFX/SD_kikiiii.wav" id="42_af708"]
+[ext_resource type="Script" uid="uid://cdrpjvqaxsd7t" path="res://Scripts/Player/one_way_platform_ray_cast.gd" id="47_uhhuy"]
 
 [sub_resource type="Curve" id="Curve_qv1t1"]
 _data = [Vector2(0, 0), 0.0, 0.0342598, 0, 0, Vector2(1, 1), 0.174008, 0.0, 0, 0]
@@ -1121,6 +1122,12 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.366727, 0.432952, 0.970629, 1)
 debug_shape_thickness = 1
+
+[node name="OneWayPlatformRayCast" type="RayCast3D" parent="RaycastHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.109699, 0)
+target_position = Vector3(0, -0.3, 0)
+debug_shape_custom_color = Color(0.451456, 0.650862, 0, 1)
+script = ExtResource("47_uhhuy")
 
 [node name="GroundLocation" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.200597, 0)

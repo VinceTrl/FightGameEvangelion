@@ -268,5 +268,5 @@ isCameraTarget = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vu32n")
+&"": SubResource("AnimationLibrary_vu32n")
 }

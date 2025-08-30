@@ -84,7 +84,7 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_d
 
 uniform vec2 Speed = vec2(0.000000, 0.300000);
 uniform sampler2D Noise : repeat_enable;
-uniform float DistorsionIntensity = 0;
+uniform float DistorsionIntensity = 0.0;
 uniform sampler2D screen_tex_frg_6 : hint_screen_texture;
 uniform sampler2D Alpha;
 

@@ -76,8 +76,8 @@ render_mode blend_add, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 uniform sampler2D sprite_texture;
 uniform vec4 Background_Color : source_color = vec4(0.000000, 0.000000, 0.000000, 0.000000);
 uniform vec4 Blinking_Color : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
-uniform float Blinking_Speed = 10;
-uniform float Blinking_Intensity = 1;
+uniform float Blinking_Speed = 10.0;
+uniform float Blinking_Intensity = 1.0;
 
 
 
