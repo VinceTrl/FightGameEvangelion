@@ -296,7 +296,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 0)
 
 [node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 0.0107859, 0.999942, 0, -0.999942, 0.0107859, 0, 6.62258, 1.46718)
-light_energy = 16.0
+light_energy = 3.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 57.86
