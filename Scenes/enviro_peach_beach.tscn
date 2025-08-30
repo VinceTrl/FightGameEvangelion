@@ -1,5 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://4kpiihudkml6"]
+[gd_scene load_steps=4 format=3 uid="uid://4kpiihudkml6"]
 
 [ext_resource type="PackedScene" uid="uid://dw1oaifideof1" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeachMap.fbx" id="1_dkts6"]
+[ext_resource type="Material" uid="uid://bu1bi1m3yo7uu" path="res://Assets/Materials/Enviro/Beach_Peach/M_Sky.tres" id="2_l40vm"]
+[ext_resource type="Material" uid="uid://cdc6yah1iu04q" path="res://Assets/Materials/Enviro/Beach_Peach/M_Houses_Peach_Beach.tres" id="3_mf3mu"]
 
 [node name="PeachBeachMap" instance=ExtResource("1_dkts6")]
+
+[node name="m1" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_l40vm")
+
+[node name="m7" parent="." index="13"]
+surface_material_override/0 = ExtResource("3_mf3mu")
+
+[node name="Lighting" type="Node3D" parent="." index="16"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.7056, 0)
+light_energy = 16.0
+spot_range = 66.077
