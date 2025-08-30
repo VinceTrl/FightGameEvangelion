@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://bq5o5cen08wou"]
+[gd_scene load_steps=35 format=3 uid="uid://bq5o5cen08wou"]
 
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_3v2v2"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="1_oniah"]
 [ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_qoa21"]
 [ext_resource type="PackedScene" uid="uid://4kpiihudkml6" path="res://Scenes/enviro_peach_beach.tscn" id="3_2ndgt"]
+[ext_resource type="Material" uid="uid://gf5mwn4dvi6f" path="res://Assets/Materials/Enviro/Beach_Peach/M_Water_peach_beach_AniStage4.tres" id="5_egxmt"]
 [ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="5_qwd4p"]
 [ext_resource type="Texture2D" uid="uid://bau5itgnsrv1t" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_BRUTAL.png" id="6_8u0f6"]
 [ext_resource type="Texture2D" uid="uid://bcp0jrosw2ovd" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_SLAP.png" id="7_h33jv"]
@@ -28,6 +29,11 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_boel5"]
 material = ExtResource("1_oniah")
 size = Vector2(512, 512)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3dkcm"]
+size = Vector2(100, 100)
+subdivide_width = 100
+subdivide_depth = 100
 
 [sub_resource type="Animation" id="Animation_0nu2x"]
 resource_name = "AnimLight_Slap_Hit"
@@ -444,6 +450,11 @@ transform = Transform3D(0.0382237, 0.00114923, 0.145044, 0.00735124, 0.149787, -
 [node name="WaterPlane" type="CSGMesh3D" parent="Enviro/PeachBeachMap"]
 transform = Transform3D(1, -5.21541e-08, -1.04308e-07, -1.67638e-08, 0.999947, -0.0104894, 2.83122e-07, 0.0104896, 0.999943, -1.88351e-05, 0.282819, 0.374477)
 mesh = SubResource("PlaneMesh_boel5")
+
+[node name="WaterPlane" type="MeshInstance3D" parent="Enviro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295127, -4.02583)
+mesh = SubResource("PlaneMesh_3dkcm")
+surface_material_override/0 = ExtResource("5_egxmt")
 
 [node name="Lighting" type="Node3D" parent="."]
 
