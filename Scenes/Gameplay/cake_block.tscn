@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq6bhap1jwxrm"]
+
+[ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/block.gd" id="1_8fj4h"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_f7dpp"]
+[ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="3_0wkps"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="4_xulyr"]
+[ext_resource type="PackedScene" uid="uid://v7cx5yy2c3k7" path="res://Scenes/Gameplay/minecraft_cake_block.tscn" id="6_s746l"]
+[ext_resource type="AudioStream" uid="uid://bgrm5be8bl5gb" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocHit.wav" id="7_1hpdu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_50nyf"]
+size = Vector3(0.35, 0.2, 0.35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcmxf"]
+size = Vector3(0.3, 0.175, 0.3)
+
+[node name="Block" type="Node3D"]
+script = ExtResource("1_8fj4h")
+
+[node name="Hurtbox" type="Area3D" parent="."]
+script = ExtResource("2_f7dpp")
+randomID = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0877319, 0)
+shape = SubResource("BoxShape3D_50nyf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["Ledgegrab"]]
+collision_layer = 193
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0880303, 0)
+shape = SubResource("BoxShape3D_lcmxf")
+
+[node name="GroundMagnet" parent="." instance=ExtResource("3_0wkps")]
+cast_distance = 5.0
+offset_above_ground = 0.01
+auto_align_on_ready = false
+auto_align_on_update = false
+
+[node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("4_xulyr")
+nodeToShake = NodePath(".")
+
+[node name="minecraft_cake_block" parent="NodeShaker" instance=ExtResource("6_s746l")]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 0, 0, 0)
+
+[node name="AudioHit" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_1hpdu")
+bus = &"SFX"
