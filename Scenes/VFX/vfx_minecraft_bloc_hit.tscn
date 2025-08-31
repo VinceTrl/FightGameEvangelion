@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1syavad6jdov"]
+[gd_scene load_steps=11 format=3 uid="uid://b1syavad6jdov"]
 
 [ext_resource type="Script" uid="uid://sdembkohc8gu" path="res://Scenes/VFX/VFXOneShot.gd" id="1_5a7xs"]
 [ext_resource type="Shader" uid="uid://bhvt3i8u56aah" path="res://Assets/Shaders/FX_minecraft_Block_Hit.tres" id="2_ftm1k"]
 [ext_resource type="Texture2D" uid="uid://yekos3w2s0ft" path="res://Assets/Sprites/Vfx/Fire/Voronoi01.png" id="3_sphfq"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ge3p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftm1k"]
 render_priority = 0
 shader = ExtResource("2_ftm1k")
 shader_parameter/DissolveTiling = Vector2(0.25, 0.2)
@@ -12,17 +12,26 @@ shader_parameter/DissolveSpeed = Vector2(0, 0.2)
 shader_parameter/DissolveTexture = ExtResource("3_sphfq")
 shader_parameter/DissolveAmount = 0.5
 
-[sub_resource type="Gradient" id="Gradient_ipnen"]
+[sub_resource type="Gradient" id="Gradient_5a7xs"]
 offsets = PackedFloat32Array(0, 0.233871, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_0b16o"]
-gradient = SubResource("Gradient_ipnen")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ftm1k"]
+gradient = SubResource("Gradient_5a7xs")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ggvc5"]
+[sub_resource type="Curve" id="Curve_mjmqb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5a7xs"]
+curve = SubResource("Curve_mjmqb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sphfq"]
 emission_shape = 1
 emission_sphere_radius = 0.1
-gravity = Vector3(0, -5, 0)
+radial_velocity_min = 0.999978
+radial_velocity_max = 4.99998
+gravity = Vector3(10, 0, 0)
 linear_accel_min = 10.0
 linear_accel_max = 10.0
 radial_accel_min = 5.0
@@ -31,25 +40,25 @@ tangential_accel_min = -2.23517e-06
 tangential_accel_max = -2.23517e-06
 damping_min = 0.1
 damping_max = 0.5
-scale_min = 0.05
-scale_max = 0.1
+scale_min = 0.1
+scale_max = 0.2
 scale_over_velocity_max = 100.0
-color = Color(2, 0.8, 0.04, 1)
-color_ramp = SubResource("GradientTexture1D_0b16o")
+color = Color(1.3, 0.684, 0.14, 1)
+color_ramp = SubResource("GradientTexture1D_ftm1k")
+emission_curve = SubResource("CurveTexture_5a7xs")
 
-[sub_resource type="QuadMesh" id="QuadMesh_ft1fj"]
+[sub_resource type="QuadMesh" id="QuadMesh_wep3t"]
 
-[node name="VFX_Projectile_Impact" type="Node3D"]
+[node name="vfx_minecraft_bloc_hit" type="Node3D"]
 script = ExtResource("1_5a7xs")
 
 [node name="Projectiles" type="GPUParticles3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_7ge3p")
-emitting = false
+material_override = SubResource("ShaderMaterial_ftm1k")
+amount = 16
 lifetime = 0.2
-one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 local_coords = true
-process_material = SubResource("ParticleProcessMaterial_ggvc5")
-draw_pass_1 = SubResource("QuadMesh_ft1fj")
+process_material = SubResource("ParticleProcessMaterial_sphfq")
+draw_pass_1 = SubResource("QuadMesh_wep3t")
