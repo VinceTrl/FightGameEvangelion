@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://bq5o5cen08wou"]
+[gd_scene load_steps=35 format=3 uid="uid://bq5o5cen08wou"]
 
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_3v2v2"]
-[ext_resource type="PackedScene" uid="uid://dw1oaifideof1" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeachMap.fbx" id="1_a882g"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="1_oniah"]
 [ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_qoa21"]
+[ext_resource type="PackedScene" uid="uid://4kpiihudkml6" path="res://Scenes/enviro_peach_beach.tscn" id="3_2ndgt"]
+[ext_resource type="Material" uid="uid://gf5mwn4dvi6f" path="res://Assets/Materials/Enviro/Beach_Peach/M_Water_peach_beach_AniStage4.tres" id="5_egxmt"]
 [ext_resource type="PackedScene" uid="uid://836trpqu362t" path="res://Scenes/evaInGame.tscn" id="5_qwd4p"]
 [ext_resource type="Texture2D" uid="uid://bau5itgnsrv1t" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_BRUTAL.png" id="6_8u0f6"]
 [ext_resource type="Texture2D" uid="uid://bcp0jrosw2ovd" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/GUI_Text_SLAP.png" id="7_h33jv"]
@@ -21,13 +22,18 @@
 [ext_resource type="Material" uid="uid://l1r613a3gttm" path="res://Assets/Materials/Enviro/M_EVA.tres" id="19_jq2t1"]
 [ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/TestMap.tres" id="20_bhy2f"]
 [ext_resource type="Texture2D" uid="uid://cblvbndapp82q" path="res://Sources/Textures/T_BrutalSlap.png" id="20_t6uh6"]
-[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="21_e4ph7"]
+[ext_resource type="Script" uid="uid://df4x3l4luvmk4" path="res://addons/post_processing/node/post_process.gd" id="21_e4ph7"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="21_uv2n1"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="22_mdkoo"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_boel5"]
 material = ExtResource("1_oniah")
 size = Vector2(512, 512)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3dkcm"]
+size = Vector2(100, 100)
+subdivide_width = 100
+subdivide_depth = 100
 
 [sub_resource type="Animation" id="Animation_0nu2x"]
 resource_name = "AnimLight_Slap_Hit"
@@ -438,12 +444,17 @@ lights = [NodePath("Lighting")]
 
 [node name="Enviro" type="Node3D" parent="."]
 
-[node name="PeachBeachMap" parent="Enviro" instance=ExtResource("1_a882g")]
-transform = Transform3D(0.0382237, 0.00114924, 0.145044, 0.00735124, 0.149787, -0.0031241, -0.144861, 0.00790441, 0.0381131, -2.4032, 1.62675, -44.6887)
+[node name="PeachBeachMap" parent="Enviro" instance=ExtResource("3_2ndgt")]
+transform = Transform3D(0.0382237, 0.00114923, 0.145044, 0.00735124, 0.149787, -0.00312413, -0.144861, 0.00790446, 0.0381134, -2.4032, 1.62675, -44.6887)
 
 [node name="WaterPlane" type="CSGMesh3D" parent="Enviro/PeachBeachMap"]
-transform = Transform3D(1.69883, 0.25917, -6.44139, 0.0510762, 6.66055, 0.28146, 6.44636, -0.121074, 1.69528, -286.488, 7.00705, 92.0118)
+transform = Transform3D(1, -5.21541e-08, -1.04308e-07, -1.67638e-08, 0.999947, -0.0104894, 2.83122e-07, 0.0104896, 0.999943, -1.88351e-05, 0.282819, 0.374477)
 mesh = SubResource("PlaneMesh_boel5")
+
+[node name="WaterPlane" type="MeshInstance3D" parent="Enviro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295127, -4.02583)
+mesh = SubResource("PlaneMesh_3dkcm")
+surface_material_override/0 = ExtResource("5_egxmt")
 
 [node name="Lighting" type="Node3D" parent="."]
 
@@ -631,7 +642,7 @@ spot_range = 8.35071
 
 [node name="AnimLight_Slap" type="AnimationPlayer" parent="SLAP_Choregraphie"]
 libraries = {
-"": SubResource("AnimationLibrary_y03qi")
+&"": SubResource("AnimationLibrary_y03qi")
 }
 
 [node name="Light_Slap_PreHit_Rim" type="SpotLight3D" parent="SLAP_Choregraphie"]
@@ -696,7 +707,6 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="StageSpawner" parent="Stage" instance=ExtResource("21_uv2n1")]
 map = ExtResource("20_bhy2f")
-debugSpawnIndex = 4
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("21_e4ph7")

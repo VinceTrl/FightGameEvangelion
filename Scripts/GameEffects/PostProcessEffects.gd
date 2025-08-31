@@ -314,7 +314,7 @@ func PixelateEffect(_time: float = pixelateTime, _timer: Timer = pixel_timer):
 		var _timeProgress = _time - _timer.time_left 
 		var _ratio = _timeProgress/_time
 		var _curveValue = pixelAnimationCurve.sample(_ratio)
-		var _animValueStrenght = lerp(init_Pixelate,targetConfig.PixelatePixelSize,_curveValue)
+		var _animValueStrenght = lerp(float(init_Pixelate),float(targetConfig.PixelatePixelSize),_curveValue)
 		
 		gameplay_post_process.configuration.PixelatePixelSize = _animValueStrenght
 		

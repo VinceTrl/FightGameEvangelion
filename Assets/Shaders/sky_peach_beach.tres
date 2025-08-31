@@ -1,0 +1,148 @@
+[gd_resource type="VisualShader" load_steps=13 format=3 uid="uid://d27lke5p5ym7x"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_li556"]
+parameter_name = "EmissiveMult"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_h1w4n"]
+parameter_name = "Emissive"
+color_default = 1
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_li556"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 5
+
+[sub_resource type="VisualShaderNodeVec4Parameter" id="VisualShaderNodeVec4Parameter_3cjke"]
+parameter_name = "AlbedoPower"
+default_value_enabled = true
+default_value = Vector4(1, 1, 1, 1)
+
+[sub_resource type="VisualShaderNodeVec4Parameter" id="VisualShaderNodeVec4Parameter_h1w4n"]
+parameter_name = "AlbedoPower2"
+default_value_enabled = true
+default_value = Vector4(1, 1, 1, 1)
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_cswq7"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_3cjke"]
+parameter_name = "Albedo"
+color_default = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_li556"]
+source = 5
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_3cjke"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+expanded_output_ports = [0]
+op_type = 2
+operator = 2
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_h1w4n"]
+parameter_name = "AlbedoMult"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_cswq7"]
+source = 5
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_rtejs"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+operator = 2
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_toon, specular_toon;
+
+uniform vec4 AlbedoMult : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform sampler2D Albedo : hint_default_black;
+uniform vec4 AlbedoPower = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform vec4 EmissiveMult : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+uniform sampler2D Emissive : hint_default_black;
+uniform vec4 AlbedoPower2 = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+
+
+
+void fragment() {
+// ColorParameter:7
+	vec4 n_out7p0 = AlbedoMult;
+
+
+	vec4 n_out4p0;
+// Texture2D:4
+	n_out4p0 = texture(Albedo, UV);
+
+
+// Vector4Parameter:13
+	vec4 n_out13p0 = AlbedoPower;
+
+
+// VectorOp:12
+	vec4 n_out12p0 = pow(n_out4p0, n_out13p0);
+
+
+// VectorOp:6
+	vec4 n_out6p0 = n_out7p0 * n_out12p0;
+	float n_out6p4 = n_out6p0.a;
+
+
+// ColorParameter:10
+	vec4 n_out10p0 = EmissiveMult;
+
+
+	vec4 n_out8p0;
+// Texture2D:8
+	n_out8p0 = texture(Emissive, UV);
+
+
+// Vector4Parameter:14
+	vec4 n_out14p0 = AlbedoPower2;
+
+
+// VectorOp:15
+	vec4 n_out15p0 = pow(n_out8p0, n_out14p0);
+
+
+// VectorOp:9
+	vec4 n_out9p0 = n_out10p0 * n_out15p0;
+
+
+// Output:0
+	ALBEDO = vec3(n_out6p0.xyz);
+	ALPHA = n_out6p4;
+	EMISSION = vec3(n_out9p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-495.46, -31.5197)
+modes/diffuse = 3
+modes/specular = 1
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_3cjke")
+nodes/fragment/3/position = Vector2(-1560, -180)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_li556")
+nodes/fragment/4/position = Vector2(-1220, -120)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_3cjke")
+nodes/fragment/6/position = Vector2(-620, -200)
+nodes/fragment/7/node = SubResource("VisualShaderNodeColorParameter_h1w4n")
+nodes/fragment/7/position = Vector2(-900, -340)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_cswq7")
+nodes/fragment/8/position = Vector2(-1120, 800)
+nodes/fragment/9/node = SubResource("VisualShaderNodeVectorOp_rtejs")
+nodes/fragment/9/position = Vector2(-600, 700)
+nodes/fragment/10/node = SubResource("VisualShaderNodeColorParameter_li556")
+nodes/fragment/10/position = Vector2(-880, 560)
+nodes/fragment/11/node = SubResource("VisualShaderNodeTexture2DParameter_h1w4n")
+nodes/fragment/11/position = Vector2(-1460, 740)
+nodes/fragment/12/node = SubResource("VisualShaderNodeVectorOp_li556")
+nodes/fragment/12/position = Vector2(-880, -100)
+nodes/fragment/13/node = SubResource("VisualShaderNodeVec4Parameter_3cjke")
+nodes/fragment/13/position = Vector2(-1140, 120)
+nodes/fragment/14/node = SubResource("VisualShaderNodeVec4Parameter_h1w4n")
+nodes/fragment/14/position = Vector2(-1120, 1020)
+nodes/fragment/15/node = SubResource("VisualShaderNodeVectorOp_cswq7")
+nodes/fragment/15/position = Vector2(-820, 800)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 2, 6, 4, 0, 1, 6, 0, 0, 0, 7, 0, 6, 0, 11, 0, 8, 2, 10, 0, 9, 0, 9, 0, 0, 5, 4, 0, 12, 0, 13, 0, 12, 1, 12, 0, 6, 1, 14, 0, 15, 1, 8, 0, 15, 0, 15, 0, 9, 1)
