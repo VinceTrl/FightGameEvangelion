@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dde4ypk5wqife"]
+
+[ext_resource type="Shader" uid="uid://cl7dqetv48qsr" path="res://Assets/Shaders/Outline_shader.gdshader" id="1_kf41e"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kf41e")
+shader_parameter/XOpacity = 0.0
+shader_parameter/XOffset = 9.0
+shader_parameter/YOpacity = 0.0
+shader_parameter/YOffset = 9.0
+shader_parameter/ZOpacity = 0.5
+shader_parameter/ZOffset = 66.0
+shader_parameter/outline_color = Color(1, 0.5, 0, 1)
+shader_parameter/outline_width = 1.0
+shader_parameter/outline_opacity = 1.0
