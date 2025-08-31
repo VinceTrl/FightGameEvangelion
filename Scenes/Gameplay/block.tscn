@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://nsqkqa3nm3h6"]
+[gd_scene load_steps=11 format=3 uid="uid://nsqkqa3nm3h6"]
 
 [ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/block.gd" id="1_1mwp6"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_rd00h"]
@@ -10,6 +10,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_50nyf"]
 size = Vector3(0.35, 0.35, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcmxf"]
+size = Vector3(0.3, 0.172583, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m21dq"]
 size = Vector3(0.3, 0.3, 0.3)
@@ -28,9 +31,14 @@ shape = SubResource("BoxShape3D_50nyf")
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["Ledgegrab"]]
 collision_layer = 193
 
+[node name="Cake_CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0865235, 0)
+shape = SubResource("BoxShape3D_lcmxf")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150232, 0)
 shape = SubResource("BoxShape3D_m21dq")
+disabled = true
 
 [node name="GroundMagnet" parent="." instance=ExtResource("3_57dtm")]
 cast_distance = 5.0
@@ -44,10 +52,10 @@ nodeToShake = NodePath(".")
 
 [node name="minecraft_grass_block" parent="NodeShaker" instance=ExtResource("5_1hayc")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+visible = false
 
 [node name="minecraft_cake_block" parent="NodeShaker" instance=ExtResource("6_lcmxf")]
 transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 0, 0, 0)
-visible = false
 
 [node name="AudioHit" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_yv8ff")
