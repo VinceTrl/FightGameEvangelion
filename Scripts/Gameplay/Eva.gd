@@ -14,7 +14,7 @@ const SLAP_WARNING = preload("res://Scenes/GUI/Slap/slap_warning.tscn")
 var animPlayer: AnimationPlayer
 var hitbox: Hitbox
 var initialPosition
-var target
+var target: Node3D
 var slapWarning
 
 signal OnSlapStart

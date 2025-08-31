@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://3gavhjybn6mj"]
+[gd_scene load_steps=33 format=3 uid="uid://3gavhjybn6mj"]
 
 [ext_resource type="Script" uid="uid://d1yy66qnxfefx" path="res://Scripts/Gameplay/slap_item.gd" id="1_vx6ft"]
 [ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="2_briio"]
 [ext_resource type="Texture2D" uid="uid://bvqk55hxktpe5" path="res://Assets/Sprites/Items/Master Hand and Crazy Hand.png" id="3_4owna"]
+[ext_resource type="Texture2D" uid="uid://bmatiqcg87pb8" path="res://Assets/Sprites/Vfx/Portal/portal_sheet.png" id="4_ii2l7"]
+[ext_resource type="PackedScene" uid="uid://bds2caa0p1n3j" path="res://Assets/Meshes/Props/Hand/DevilHand.fbx" id="5_ywtwx"]
 
 [sub_resource type="Curve" id="Curve_bgo4n"]
 
@@ -77,13 +79,166 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_ywtwx"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DevilHand:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ulm7t"]
+resource_name = "Return"
+length = 0.75
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DevilHand:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.109, -0.266667, -0.0681134, 0.25, 0, -0.418, -0.25, 0, 0.0333333, 0.560243),
+"times": PackedFloat32Array(0, 0.75)
+}
+
+[sub_resource type="Animation" id="Animation_ii2l7"]
+resource_name = "Spawn"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("DevilHand:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DevilHand:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.0333333, 0.560243, 0.131, -0.133333, 0.365236, 0.133333, -0.333409, -0.278012, -0.0666667, -0.159641, 0.166667, 0.451209, -0.0445206, -0.0666667, 0.116441, 0.1, -0.127613, 0.109, -0.266667, -0.0681134, 0.25, 0),
+"times": PackedFloat32Array(0, 0.466667, 0.733333, 1.4, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("DevilHand:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ulm7t"]
+_data = {
+&"RESET": SubResource("Animation_ywtwx"),
+&"Return": SubResource("Animation_ulm7t"),
+&"Spawn": SubResource("Animation_ii2l7")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulm7t"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1qym"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sppao"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3reed"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln7eh"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dbq2"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmr4o"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_froqn"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5pio"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(256, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfsyi"]
+atlas = ExtResource("4_ii2l7")
+region = Rect2(288, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7fqlu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulm7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1qym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sppao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3reed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln7eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dbq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmr4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_froqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5pio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfsyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwy4l"]
 size = Vector3(0.363, 0.344, 1)
 
 [node name="SlapItem" type="Node3D"]
 script = ExtResource("1_vx6ft")
+destroyDelay = 1.0
 
 [node name="Visual" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.144531, 0)
 script = ExtResource("2_briio")
 positionTime = 3.0
 positionTarget = Vector3(0, 0.1, 0)
@@ -93,11 +248,27 @@ positionCurveZ = SubResource("Curve_cttdd")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Visual"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+visible = false
 billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_b2s0r")
 animation = &"Idle"
 autoplay = "Idle"
+
+[node name="DevilHand" parent="Visual" instance=ExtResource("5_ywtwx")]
+transform = Transform3D(0.0254902, -0.00286279, -0.0306929, 0.00446431, 0.0397501, 3.80056e-10, 0.0305011, -0.00342556, 0.0256505, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual/DevilHand"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ulm7t")
+}
+autoplay = "Spawn"
+
+[node name="PortalSprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_7fqlu")
+frame_progress = 0.420645
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 16

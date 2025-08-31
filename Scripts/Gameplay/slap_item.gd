@@ -5,6 +5,9 @@ extends Node3D
 var used = false
 const VFX_2D_PICK_UP_ITEM = preload("res://Scenes/VFX/VFX2D/vfx_2d_pick_up_item.tscn")
 @onready var animated_sprite_3d: AnimatedSprite3D = $Visual/AnimatedSprite3D
+@onready var animation_player: AnimationPlayer = $Visual/DevilHand/AnimationPlayer
+
+
 var player: PlayerCharacter
 
 
@@ -24,6 +27,12 @@ func DestroyItem():
 	used = true
 	SpawnVFX()
 	
+	animated_sprite_3d.play("Hit")
+	animation_player.play("Return")
+	animated_sprite_3d.play("Hit")
+	
+	await get_tree().create_timer(destroyDelay,true,false,false).timeout
+	
 	var slapTarget
 	
 	if (player):
@@ -32,9 +41,9 @@ func DestroyItem():
 	if(slapTarget):
 		Manager.gameManager.eva.StartSlap(slapTarget)
 		
-	animated_sprite_3d.play("Hit")
 	
-	await get_tree().create_timer(destroyDelay,true,false,false).timeout
+	
+	
 	queue_free()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

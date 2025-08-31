@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cg0l0t2b72kge"]
+
+[resource]
+diffuse_mode = 3
+albedo_color = Color(1, 0.609747, 0.999753, 1)
+backlight_enabled = true
+backlight = Color(0, 1, 0.67451, 1)
+disable_receive_shadows = true
