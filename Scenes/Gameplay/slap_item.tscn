@@ -266,9 +266,11 @@ libraries = {
 autoplay = "Spawn"
 
 [node name="PortalSprite" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, -0.0797056, -0.999205, 0, 1.99841, -0.0398528, 0, 0.0126801, 0)
 sprite_frames = SubResource("SpriteFrames_7fqlu")
-frame_progress = 0.420645
+autoplay = "default"
+frame = 4
+frame_progress = 0.226128
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 16

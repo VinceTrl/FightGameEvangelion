@@ -259,11 +259,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54, -0.476302, 0.147627)
 isCameraTarget = true
 
 [node name="PlatformShip7" parent="Level" instance=ExtResource("7_3jnp0")]
-transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, -2.79069, 0.797121, 0.147627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79069, 0.797121, 0.147627)
 isCameraTarget = true
 
 [node name="PlatformShip8" parent="Level" instance=ExtResource("7_3jnp0")]
-transform = Transform3D(0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0, 0, 1, 2.84297, 0.797121, 0.147627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84297, 0.797121, 0.147627)
 isCameraTarget = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
