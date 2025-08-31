@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 Manager="*res://Scripts/Managers/Manager.gd"
 Global="*res://Scripts/Managers/Global.gd"
+GlobalPostProcessData="*res://Scripts/GameEffects/PostProcessAnimationParams/GlobalPostProcessData.gd"
 
 [debug_draw_3d]
 

@@ -822,6 +822,7 @@ healthPoints = 3
 spritesheet = ExtResource("4_pudg7")
 runSpeed = 4.0
 deceleration = 1.045
+dropInputTime = 0.5
 dashDuration = 0.3
 attackSpeedMax = 12.0
 attackSpeedForceCurve = SubResource("Curve_qv1t1")

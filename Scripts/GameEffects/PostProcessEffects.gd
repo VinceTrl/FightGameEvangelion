@@ -72,31 +72,61 @@ func _ready() -> void:
 	Manager.postProcessEffects = self
 	
 	#SPEED LINES
-	init_speedLinesDensity = gameplay_post_process.configuration.SpeedLineDensity
-	init_speedLinesCount = gameplay_post_process.configuration.SpeedLinesCount
-	init_speedLinesSpeed = gameplay_post_process.configuration.SpeedLineSpeed
-	init_speedLinesColor = gameplay_post_process.configuration.SpeedLinesColor
+	init_speedLinesDensity = GlobalPostProcessData.init_speedLinesDensity
+	init_speedLinesCount = GlobalPostProcessData.init_speedLinesCount
+	init_speedLinesSpeed = GlobalPostProcessData.init_speedLinesSpeed
+	init_speedLinesColor = GlobalPostProcessData.init_speedLinesColor
 	
 	#Chromatic Aberration
-	init_chromaticAberrationStrenght = gameplay_post_process.configuration.StrenghtCA
+	init_chromaticAberrationStrenght = GlobalPostProcessData.init_chromaticAberrationStrenght
 	
 	#Grain
-	init_grainPower = gameplay_post_process.configuration.GrainPower
+	init_grainPower = GlobalPostProcessData.init_grainPower
 	
 	#particles Storm
-	init_stormColor = gameplay_post_process.configuration.particle_storm_color
-	init_stormDensity = gameplay_post_process.configuration.particle_storm_density
-	init_stormDirection = gameplay_post_process.configuration.particle_storm_wind_direction
-	init_stormSpeed = gameplay_post_process.configuration.particle_storm_wind_speed
+	init_stormColor = GlobalPostProcessData.init_stormColor
+	init_stormDensity = GlobalPostProcessData.init_stormDensity
+	init_stormDirection = GlobalPostProcessData.init_stormDirection
+	init_stormSpeed = GlobalPostProcessData.init_stormSpeed
 	
 	#Glitch
-	init_glitchIntensity = gameplay_post_process.configuration.GlitchIntenity
-	init_glitchOffset = gameplay_post_process.configuration.GlitchOffset
-	init_glitchColorOffset = gameplay_post_process.configuration.GlitchColorOffset
+	init_glitchIntensity = GlobalPostProcessData.init_glitchIntensity
+	init_glitchOffset = GlobalPostProcessData.init_glitchOffset
+	init_glitchColorOffset = GlobalPostProcessData.init_glitchColorOffset
 	print("INIT GLITCH")
 	
-	#Chromatic Aberration
-	init_Pixelate = gameplay_post_process.configuration.PixelatePixelSize
+	#pixelate
+	init_Pixelate = GlobalPostProcessData.init_Pixelate
+	
+	ResetAll()
+	
+	
+	##SPEED LINES
+	#init_speedLinesDensity = gameplay_post_process.configuration.SpeedLineDensity
+	#init_speedLinesCount = gameplay_post_process.configuration.SpeedLinesCount
+	#init_speedLinesSpeed = gameplay_post_process.configuration.SpeedLineSpeed
+	#init_speedLinesColor = gameplay_post_process.configuration.SpeedLinesColor
+	#
+	##Chromatic Aberration
+	#init_chromaticAberrationStrenght = gameplay_post_process.configuration.StrenghtCA
+	#
+	##Grain
+	#init_grainPower = gameplay_post_process.configuration.GrainPower
+	#
+	##particles Storm
+	#init_stormColor = gameplay_post_process.configuration.particle_storm_color
+	#init_stormDensity = gameplay_post_process.configuration.particle_storm_density
+	#init_stormDirection = gameplay_post_process.configuration.particle_storm_wind_direction
+	#init_stormSpeed = gameplay_post_process.configuration.particle_storm_wind_speed
+	#
+	##Glitch
+	#init_glitchIntensity = gameplay_post_process.configuration.GlitchIntenity
+	#init_glitchOffset = gameplay_post_process.configuration.GlitchOffset
+	#init_glitchColorOffset = gameplay_post_process.configuration.GlitchColorOffset
+	#print("INIT GLITCH")
+	#
+	##pixelate
+	#init_Pixelate = gameplay_post_process.configuration.PixelatePixelSize
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

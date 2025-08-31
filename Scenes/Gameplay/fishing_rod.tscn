@@ -179,7 +179,7 @@ transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, 1.58946e
 
 [node name="FishingRodAnimation" type="AnimationPlayer" parent="FishingRod"]
 libraries = {
-"": SubResource("AnimationLibrary_lo8q7")
+&"": SubResource("AnimationLibrary_lo8q7")
 }
 autoplay = "Fishing"
 
