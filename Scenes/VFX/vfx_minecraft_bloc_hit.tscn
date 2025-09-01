@@ -55,8 +55,10 @@ script = ExtResource("1_5a7xs")
 [node name="Projectiles" type="GPUParticles3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_ftm1k")
+emitting = false
 amount = 16
 lifetime = 0.2
+one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 local_coords = true

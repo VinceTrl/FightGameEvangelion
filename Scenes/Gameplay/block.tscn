@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://nsqkqa3nm3h6"]
+[gd_scene load_steps=10 format=3 uid="uid://nsqkqa3nm3h6"]
 
 [ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/block.gd" id="1_1mwp6"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_rd00h"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="3_q3etx"]
 [ext_resource type="PackedScene" uid="uid://c0jcpjl67p6ni" path="res://Scenes/Gameplay/minecraft_grass_block.tscn" id="5_1hayc"]
 [ext_resource type="AudioStream" uid="uid://bgrm5be8bl5gb" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocHit.wav" id="6_yv8ff"]
+[ext_resource type="PackedScene" uid="uid://b1syavad6jdov" path="res://Scenes/VFX/vfx_minecraft_bloc_hit.tscn" id="7_lcmxf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_50nyf"]
 size = Vector3(0.35, 0.35, 0.3)
@@ -47,3 +48,6 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 [node name="AudioHit" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_yv8ff")
 bus = &"SFX"
+
+[node name="vfx_minecraft_bloc_hit" parent="." instance=ExtResource("7_lcmxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153324, 0.176456)

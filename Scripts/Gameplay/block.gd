@@ -11,6 +11,7 @@ const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestro
 @onready var node_shaker: NodeShaker = $NodeShaker
 @onready var ground_magnet: ForceToGround = $GroundMagnet
 @onready var audio_hit: AudioStreamPlayer3D = $AudioHit
+@onready var vfx_minecraft_bloc_hit: VFXOneShot = $vfx_minecraft_bloc_hit
 
 var isDead = false
 
@@ -33,6 +34,7 @@ func ChangeHealth(healthAmount:int = -1):
 	if(isDead): return
 	
 	node_shaker.NodeShake()
+	vfx_minecraft_bloc_hit.EmitAllParticles()
 	healthPoints += healthAmount
 	if(healthPoints <= 0):
 		isDead = true
