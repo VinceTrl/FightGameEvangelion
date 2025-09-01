@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bnysftp5eamtv"]
+
+[ext_resource type="Shader" uid="uid://d27lke5p5ym7x" path="res://Assets/Shaders/sky_peach_beach.tres" id="1_ls5ug"]
+[ext_resource type="Texture2D" uid="uid://g254xbl43db3" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/real_sky3_2.png" id="2_5oqq1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ls5ug")
+shader_parameter/AlbedoMult = Color(1, 1, 1, 1)
+shader_parameter/Albedo = ExtResource("2_5oqq1")
+shader_parameter/AlbedoPower = Vector4(4, 4, 4, 4)
+shader_parameter/EmissiveMult = Color(1, 0.5, 0.7, 1)
+shader_parameter/Emissive = ExtResource("2_5oqq1")
+shader_parameter/AlbedoPower2 = Vector4(4, 4, 4, 4)
