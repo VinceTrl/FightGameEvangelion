@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://ds4p0crgmmus8"
+path="res://.godot/imported/super-smash-bros-melee-melee.gif-f2de933eb68c7f15f72b023b39973687.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/super-smash-bros-melee-melee.gif"
+dest_files=["res://.godot/imported/super-smash-bros-melee-melee.gif-f2de933eb68c7f15f72b023b39973687.tres"]
+
+[params]
+

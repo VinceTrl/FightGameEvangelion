@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dyqrd26u8lp8x"]
+[gd_scene load_steps=56 format=3 uid="uid://dyqrd26u8lp8x"]
 
 [ext_resource type="Script" uid="uid://8clh5dgovq3u" path="res://Scripts/GUI/shitpost_gui.gd" id="1_fljbo"]
 [ext_resource type="Texture2D" uid="uid://uyxpod7dbnun" path="res://Assets/Shitpost/Evangelion/Screenshot_2025-06-10-03-23-13-35_1c337646f29875672b5a61192b9010f9.png" id="2_jctm3"]
@@ -45,6 +45,16 @@
 [ext_resource type="Texture2D" uid="uid://bvs1r8mi6xk3k" path="res://Assets/Shitpost/Evangelion/ELO5.jpg" id="43_1iqcn"]
 [ext_resource type="Texture2D" uid="uid://cs308v2mcuwdt" path="res://Assets/Shitpost/Evangelion/ELO6.jpg" id="44_p4nx5"]
 [ext_resource type="Texture2D" uid="uid://bgcy6naf1autx" path="res://Assets/Shitpost/Evangelion/ELO7.jpg" id="45_vsjr1"]
+[ext_resource type="PackedScene" uid="uid://cajciipmd7227" path="res://Scenes/GUI/window_gif_gui.tscn" id="46_8ddlr"]
+[ext_resource type="Texture2D" uid="uid://d22umma1r4atk" path="res://Assets/Shitpost/GIF/Smash/yoshi-mario.gif" id="46_eyk60"]
+[ext_resource type="Texture2D" uid="uid://cdp4wkqnw3ewj" path="res://Assets/Shitpost/GIF/Smash/ssbm.gif" id="47_jv208"]
+[ext_resource type="Texture2D" uid="uid://vtyxth32a6as" path="res://Assets/Shitpost/GIF/Smash/kirby-cute.gif" id="48_x1p6f"]
+[ext_resource type="Texture2D" uid="uid://ffnculvaves5" path="res://Assets/Shitpost/GIF/Smash/green-mario-green.gif" id="49_k401x"]
+[ext_resource type="Texture2D" uid="uid://bcgbc1urxen4k" path="res://Assets/Shitpost/GIF/Smash/jigglypuff-pokemon.gif" id="50_shmmb"]
+[ext_resource type="Texture2D" uid="uid://cwbpgeq1gab3w" path="res://Assets/Shitpost/GIF/Smash/smash-bros-dark-pit.gif" id="51_t07pd"]
+[ext_resource type="Texture2D" uid="uid://c7s1w3snn0w74" path="res://Assets/Shitpost/GIF/Smash/ssf2-super-smash-flash2.gif" id="52_3aq8c"]
+[ext_resource type="Texture2D" uid="uid://ds4p0crgmmus8" path="res://Assets/Shitpost/GIF/Smash/super-smash-bros-melee-melee.gif" id="53_65biy"]
+[ext_resource type="Texture2D" uid="uid://c7yrn7hi3fam" path="res://Assets/Shitpost/GIF/Smash/super-smash-bros-brawl-super-smash-bros.gif" id="54_cqdp6"]
 
 [node name="ShitpostGUI" type="Control"]
 layout_mode = 3
@@ -54,7 +64,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fljbo")
-textures = Array[CompressedTexture2D]([ExtResource("17_rqudw"), ExtResource("16_wvwx1"), ExtResource("4_bkkub"), ExtResource("14_a16vh"), ExtResource("13_0pp8o"), ExtResource("12_s2bre"), ExtResource("18_oljaw"), ExtResource("20_och3k"), ExtResource("21_uus88"), ExtResource("11_54yhn"), ExtResource("10_d4ak8"), ExtResource("9_2rng2"), ExtResource("8_cv82v"), ExtResource("7_tyv51"), ExtResource("6_joa1k"), ExtResource("19_fee6v"), ExtResource("5_h5u70"), ExtResource("4_cagmx"), ExtResource("3_fwi6f"), ExtResource("2_jctm3"), ExtResource("22_qxmfy"), ExtResource("23_sqbul"), ExtResource("24_c62ho"), ExtResource("25_cm780"), ExtResource("26_fvjcx"), ExtResource("27_cwdv6"), ExtResource("28_yw1kb"), ExtResource("29_x4paf"), ExtResource("30_2qli4"), ExtResource("31_dn8pt"), ExtResource("32_tii0o"), ExtResource("33_cbp0v"), ExtResource("3_fwi6f"), ExtResource("29_x4paf"), ExtResource("30_2qli4"), ExtResource("31_dn8pt"), ExtResource("32_tii0o"), ExtResource("33_cbp0v"), ExtResource("34_a2xfs"), ExtResource("35_ni7ay"), ExtResource("36_t15np"), ExtResource("22_qxmfy"), ExtResource("22_qxmfy"), ExtResource("37_yk8kj"), ExtResource("37_yk8kj"), ExtResource("38_sj7r4"), ExtResource("38_sj7r4"), ExtResource("39_246c6"), ExtResource("40_ftb2m"), ExtResource("41_gkqgf"), ExtResource("42_8u2y4"), ExtResource("43_1iqcn"), ExtResource("44_p4nx5"), ExtResource("45_vsjr1")])
+textures = Array[Texture2D]([ExtResource("17_rqudw"), ExtResource("16_wvwx1"), ExtResource("4_bkkub"), ExtResource("14_a16vh"), ExtResource("13_0pp8o"), ExtResource("12_s2bre"), ExtResource("18_oljaw"), ExtResource("20_och3k"), ExtResource("21_uus88"), ExtResource("11_54yhn"), ExtResource("10_d4ak8"), ExtResource("9_2rng2"), ExtResource("8_cv82v"), ExtResource("7_tyv51"), ExtResource("6_joa1k"), ExtResource("19_fee6v"), ExtResource("5_h5u70"), ExtResource("4_cagmx"), ExtResource("3_fwi6f"), ExtResource("2_jctm3"), ExtResource("22_qxmfy"), ExtResource("23_sqbul"), ExtResource("24_c62ho"), ExtResource("25_cm780"), ExtResource("26_fvjcx"), ExtResource("27_cwdv6"), ExtResource("28_yw1kb"), ExtResource("29_x4paf"), ExtResource("30_2qli4"), ExtResource("31_dn8pt"), ExtResource("32_tii0o"), ExtResource("33_cbp0v"), ExtResource("3_fwi6f"), ExtResource("29_x4paf"), ExtResource("30_2qli4"), ExtResource("31_dn8pt"), ExtResource("32_tii0o"), ExtResource("33_cbp0v"), ExtResource("34_a2xfs"), ExtResource("35_ni7ay"), ExtResource("36_t15np"), ExtResource("22_qxmfy"), ExtResource("22_qxmfy"), ExtResource("37_yk8kj"), ExtResource("37_yk8kj"), ExtResource("38_sj7r4"), ExtResource("38_sj7r4"), ExtResource("39_246c6"), ExtResource("40_ftb2m"), ExtResource("41_gkqgf"), ExtResource("42_8u2y4"), ExtResource("43_1iqcn"), ExtResource("44_p4nx5"), ExtResource("45_vsjr1"), ExtResource("46_eyk60"), ExtResource("47_jv208"), ExtResource("48_x1p6f"), ExtResource("49_k401x"), ExtResource("50_shmmb"), ExtResource("51_t07pd"), ExtResource("52_3aq8c"), ExtResource("53_65biy"), ExtResource("54_cqdp6")])
 imageSize = 0.4
 debugMode = true
 
@@ -583,3 +593,63 @@ grow_vertical = 0
 stretch_mode = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ShitpostWindow" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow2" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow3" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow4" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow5" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow6" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow7" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow8" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow9" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow10" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow11" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow12" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow13" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow14" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow15" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow16" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow17" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow18" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow19" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1
+
+[node name="ShitpostWindow20" parent="." instance=ExtResource("46_8ddlr")]
+layout_mode = 1

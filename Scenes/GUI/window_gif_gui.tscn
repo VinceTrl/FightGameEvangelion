@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cajciipmd7227"]
+
+[ext_resource type="StyleBox" uid="uid://dlmiu2kgm8ttl" path="res://Assets/Sprites/GUI/KikiGUI/Shitpost/style_box_window.tres" id="1_34o5a"]
+[ext_resource type="Script" uid="uid://bpjnswalfqy4" path="res://Scripts/GUI/window_gif_gui.gd" id="1_bavvx"]
+[ext_resource type="Texture2D" uid="uid://b3mth673b81vv" path="res://Assets/GUI/Images/BSA-Title.png" id="2_bavvx"]
+[ext_resource type="Texture2D" uid="uid://vtyxth32a6as" path="res://Assets/Shitpost/GIF/Smash/kirby-cute.gif" id="4_0x0ej"]
+
+[node name="ShitpostWindow" type="Control" node_paths=PackedStringArray("windowPanel", "texture_rect")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_bavvx")
+imageSize = 1.0
+windowPanel = NodePath("PanelContainer")
+texture = ExtResource("2_bavvx")
+texture_rect = NodePath("PanelContainer/TextureRect")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -374.5
+offset_right = 18.0
+offset_bottom = -74.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_34o5a")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("4_0x0ej")
+expand_mode = 1

@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://c7s1w3snn0w74"
+path="res://.godot/imported/ssf2-super-smash-flash2.gif-db0390b696a42b28114a4d155f453789.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/ssf2-super-smash-flash2.gif"
+dest_files=["res://.godot/imported/ssf2-super-smash-flash2.gif-db0390b696a42b28114a4d155f453789.tres"]
+
+[params]
+

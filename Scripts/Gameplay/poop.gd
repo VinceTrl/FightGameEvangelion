@@ -85,7 +85,7 @@ func GetTargetScale() -> float:
 	
 func _physics_process(delta: float) -> void:
 	movePoop(delta)
-	poopRotation(delta)
+	#poopRotation(delta)
 	pass
 	
 func TakeDamage(hitboxSource: Hitbox):

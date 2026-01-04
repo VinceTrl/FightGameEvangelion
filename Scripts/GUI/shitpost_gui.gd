@@ -2,12 +2,13 @@ class_name ShitpostGUI
 
 extends Control
 
-@export var textures: Array[CompressedTexture2D] = []
+@export var textures: Array[Texture2D] = []
 @export var imageSize: float = 0.5
 @export var debugMode = false
 
 @onready var texture_holder_root: Control = $CanvasLayer/TextureHolderRoot
 var textureHolders: Array[TextureRect] = []
+var gifHolders: Array[ShitpostWindow] = []
 var currentIndex
 
 signal OnRandomImageSetVisible
@@ -34,37 +35,59 @@ func Debug():
 func GetAllTextureHolders():
 	for child in get_children():
 		if(child is TextureRect): textureHolders.append(child)
+		if(child is ShitpostWindow): gifHolders.append(child)
 	
 func ResetTexture():
 	for texture in textureHolders:
 		texture.visible = false
+		
+	for gif in gifHolders:
+		gif.visible = false
 	
 func ShowRandomImage(duration: float = 3.0):
-	var ranTextureHolder = GetAvailableTextureHolder()
+	
+	#get a random image
+	var texture = GetRandomTexture()
+	if(texture == null): 
+		print("NO TEXTURE FOUND FOR RANDOM SHITPOST")
+		return
+		
+	var ranTextureHolder
+	
+	#check if the image is animated
+	if(texture is AnimatedTexture):
+		print("GIF shitpost")
+		ranTextureHolder = GetAvailableGifHolder()
+		if(ranTextureHolder == null): return
+		LoadNewGIF(ranTextureHolder,texture)
+	else:
+		ranTextureHolder = GetAvailableTextureHolder()
+		if(ranTextureHolder == null): return
+		LoadNewTexture(ranTextureHolder,texture)
+	
+	
 	if(ranTextureHolder == null): return
 	
-	var ranTexture = LoadRandomTexture(ranTextureHolder)
+	#var ranTexture = LoadRandomTexture(ranTextureHolder)
 	SetRandomPositionOnScreen(ranTextureHolder)
 	ranTextureHolder.visible = true
 	emit_signal("OnRandomImageSetVisible")
 	await  get_tree().create_timer(duration,true,false,true).timeout
 	ranTextureHolder.visible = false
 	emit_signal("OnRandomImageSetInvisible")
-	print("SET TIME OUT : " + str(ranTexture))
+	print("SET TIME OUT : " + str(texture))
 	
-func LoadRandomTexture(textureRect: TextureRect):
+	
+#get a random texture different from the previous one
+func GetRandomTexture() -> Texture2D:
 	var random_index = randi_range(0,textures.size()-1)
-	#randi() % textures.size()
-	
+
 	if(random_index == currentIndex):
-		LoadRandomTexture(textureRect)
+		GetRandomTexture()
 		return
 		
 	currentIndex = random_index
-	var ranTexture = textures[random_index]
-	call_deferred("LoadNewTexture",textureRect,ranTexture)
-	#LoadNewTexture(textureRect,ranTexture)
-	return ranTexture
+	return textures[random_index]
 	
 #Set a new CompressedTexture in a TextureRect
 func LoadNewTexture(texture: TextureRect, newTexture: CompressedTexture2D):
@@ -82,6 +105,12 @@ func LoadNewTexture(texture: TextureRect, newTexture: CompressedTexture2D):
 	print("TEXTURE TARGET SIZE: " + str(newSize))
 	print("TEXTURE RECT SIZE: " + str(texture.size))
 	
+	
+#Set a new AnimatedTexture in a ShitpostWindow
+func LoadNewGIF(window: ShitpostWindow, newTexture: Texture2D):
+	window.LoadNewTexture(newTexture)
+	
+	
 func GetAvailableTextureHolder() -> TextureRect:
 	for texture in textureHolders:
 		if(texture.visible == false): return texture
@@ -89,8 +118,15 @@ func GetAvailableTextureHolder() -> TextureRect:
 	print("No Holder Available")
 	return null
 	
+func GetAvailableGifHolder() -> ShitpostWindow:
+	for holder in gifHolders:
+		if(holder.visible == false): return holder
+		
+	print("No Holder Available")
+	return null
+	
 #Set a new random position inside the screen for a TextureRect
-func SetRandomPositionOnScreen(texture: TextureRect):
+func SetRandomPositionOnScreen(texture: Control):
 	randomize()
 	#texture.scale = Vector2.ONE
 	

@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://cdp4wkqnw3ewj"
+path="res://.godot/imported/ssbm.gif-7302231dd3c99575c86dbd8e90304018.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/ssbm.gif"
+dest_files=["res://.godot/imported/ssbm.gif-7302231dd3c99575c86dbd8e90304018.tres"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://cwbpgeq1gab3w"
+path="res://.godot/imported/smash-bros-dark-pit.gif-1d823c8ae9c994da6a378f671879da93.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/smash-bros-dark-pit.gif"
+dest_files=["res://.godot/imported/smash-bros-dark-pit.gif-1d823c8ae9c994da6a378f671879da93.tres"]
+
+[params]
+

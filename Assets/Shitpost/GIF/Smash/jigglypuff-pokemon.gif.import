@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://bcgbc1urxen4k"
+path="res://.godot/imported/jigglypuff-pokemon.gif-01aad548a149b18faed860820227343e.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/jigglypuff-pokemon.gif"
+dest_files=["res://.godot/imported/jigglypuff-pokemon.gif-01aad548a149b18faed860820227343e.tres"]
+
+[params]
+
