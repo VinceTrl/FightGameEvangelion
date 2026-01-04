@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://diwhygl1ho1la"]
+[gd_scene load_steps=20 format=3 uid="uid://diwhygl1ho1la"]
 
 [ext_resource type="Script" uid="uid://2yxjqjvkj34j" path="res://Scripts/Camera/GameCamera.gd" id="1_cpg4t"]
 [ext_resource type="Resource" uid="uid://cgaw0g5mdfmxf" path="res://Resources/CameraZoom/DefaultZoom.tres" id="2_e3wng"]
@@ -17,10 +17,6 @@
 [ext_resource type="Resource" uid="uid://bdg7oxf5kjk3b" path="res://Resources/CameraShakes/ImpactShake.tres" id="8_yyu2d"]
 [ext_resource type="Resource" uid="uid://dbruj4m2iyqrh" path="res://Resources/CameraShakes/DestroyProjectileShake.tres" id="14_p6ck8"]
 [ext_resource type="Environment" uid="uid://nily06bi73yt" path="res://Resources/Environement/enviro_game_camera.tres" id="16_3rs5q"]
-[ext_resource type="PackedScene" uid="uid://dy4h6k7bb6c51" path="res://Assets/Meshes/Props/Hand/hand_pointing.fbx" id="16_yc385"]
-[ext_resource type="Script" uid="uid://cwemm5t08s40v" path="res://Scripts/GameEffects/rotation_to_target.gd" id="17_5g0f1"]
-[ext_resource type="Script" uid="uid://fvrhsppt1d0r" path="res://Scripts/GameEffects/first_person_hand.gd" id="17_d0i3x"]
-[ext_resource type="Script" uid="uid://dj7iptu4x72h7" path="res://Scripts/GameEffects/move_to_direction_2D.gd" id="19_d0i3x"]
 
 [sub_resource type="Curve" id="Curve_qrsff"]
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
@@ -78,18 +74,3 @@ visible = false
 pixel_size = 0.001
 no_depth_test = true
 texture = ExtResource("2_qut7l")
-
-[node name="FirstPersonHand" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0142098, -0.0593214)
-script = ExtResource("17_d0i3x")
-
-[node name="Hand_rot" type="Node3D" parent="FirstPersonHand" node_paths=PackedStringArray("nodeToRotate")]
-script = ExtResource("17_5g0f1")
-nodeToRotate = NodePath(".")
-
-[node name="hand_pointing" parent="FirstPersonHand/Hand_rot" node_paths=PackedStringArray("nodeToMove", "baseNode") instance=ExtResource("16_yc385")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00405994, 0, 0.0316515)
-script = ExtResource("19_d0i3x")
-nodeToMove = NodePath(".")
-baseNode = NodePath("..")
-radius = 0.015

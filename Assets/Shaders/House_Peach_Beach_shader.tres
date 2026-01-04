@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=25 format=3 uid="uid://xbksilasdvht"]
+[gd_resource type="VisualShader" load_steps=25 format=3 uid="uid://nk2xvihj0xiv"]
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_m3nbn"]
 parameter_name = "Albedo"

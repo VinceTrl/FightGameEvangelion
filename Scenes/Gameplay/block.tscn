@@ -20,6 +20,7 @@ script = ExtResource("1_1mwp6")
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("1_rd00h")
 randomID = true
+playVfxOnHit = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151065, 0)

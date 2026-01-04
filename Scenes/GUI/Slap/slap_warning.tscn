@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://jf58svmosbof"]
+[gd_scene load_steps=10 format=3 uid="uid://jf58svmosbof"]
 
 [ext_resource type="Script" uid="uid://cgcl0codsd444" path="res://Scenes/GUI/Slap/slap_warning.gd" id="1_hwu3u"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="2_78j2w"]
 
 [sub_resource type="Gradient" id="Gradient_pr6tm"]
-colors = PackedColorArray(1, 0, 0, 0.0196078, 1, 0, 0, 0.0196078)
+colors = PackedColorArray(1, 0, 0, 0.0784314, 1, 0, 0, 0.0784314)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_2d7pq"]
 gradient = SubResource("Gradient_pr6tm")
@@ -15,6 +15,44 @@ size = Vector3(0.25, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bk7jd"]
 
+[sub_resource type="Animation" id="Animation_wot2s"]
+resource_name = "GlowingStripe"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gradient:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_me4im"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gradient:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_omnal"]
+_data = {
+&"GlowingStripe": SubResource("Animation_wot2s"),
+&"RESET": SubResource("Animation_me4im")
+}
+
 [node name="SlapWarning" type="Node3D"]
 script = ExtResource("1_hwu3u")
 object_count = 20
@@ -22,7 +60,7 @@ spawn_delay = 0.2
 spawn_direction = 1
 hitboxMoveDuration = 0.5
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Gradient" type="Sprite3D" parent="."]
 transform = Transform3D(1.429, 0, 0, 0, 100, 0, 0, 0, 1.429, 0, 0, 0)
 texture_filter = 0
 texture = SubResource("GradientTexture1D_2d7pq")
@@ -39,3 +77,9 @@ shape = SubResource("BoxShape3D_ar4pw")
 [node name="Sprite3D2" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0246429, 0)
 sprite_frames = SubResource("SpriteFrames_bk7jd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_omnal")
+}
+autoplay = "GlowingStripe"
