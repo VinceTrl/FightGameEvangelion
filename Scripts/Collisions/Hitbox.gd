@@ -9,6 +9,7 @@ enum DamageType {Melee,projectile,Volume,Slap,Beyblade}
 @export var isActive = true
 @export var randomID = false
 @export var hitDirection:Vector3 = Vector3.RIGHT
+@export var hitForce:float = 1.0
 @export var playFxOnHit:bool = true
 
 @export var debugShape: bool = false

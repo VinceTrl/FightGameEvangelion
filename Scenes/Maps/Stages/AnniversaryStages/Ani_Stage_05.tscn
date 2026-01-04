@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0jspyevviqd7"]
+[gd_scene load_steps=10 format=3 uid="uid://b0jspyevviqd7"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_vi1qd"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_75p6w"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqdn3tdqwtmj5" path="res://Scenes/Gameplay/fishing_rod.tscn" id="5_lbtjm"]
 [ext_resource type="PackedScene" uid="uid://l167uu8l3k8h" path="res://Scenes/Gameplay/duck.tscn" id="6_x30ta"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="7_d33a2"]
+[ext_resource type="PackedScene" uid="uid://dghphu03vg5of" path="res://Scenes/GUI/duck_text.tscn" id="8_cyjor"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4n6iy"]
 size = Vector3(1, 10, 0.445)
@@ -150,3 +151,5 @@ light_energy = 3.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 57.86
+
+[node name="DuckText" parent="." instance=ExtResource("8_cyjor")]

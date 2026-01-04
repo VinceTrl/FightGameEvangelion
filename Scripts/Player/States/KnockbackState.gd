@@ -4,7 +4,7 @@ extends PlayerState
 @export var knockbackSpeedMax = 10.0
 @export var knockbackDuration = 0.25
 @export var knockbackSpeedCurve: Curve
-@export var knockbackForceMultiplier: float
+@export var knockbackForceMultiplier: float = 1.0
 @onready var knockback_timer: Timer = $"../../Timers/KnockbackTimer"
 
 var knockbackTime = 0.0
@@ -19,6 +19,7 @@ func EnterState():
 	if(Player.lastHitbox != null): hitbox = Player.lastHitbox
 	SetDirection()
 	
+	currentKnockbackForce = hitbox.hitForce
 	knockbackTime = knockbackDuration
 	knockback_timer.start(knockbackTime)
 	
@@ -39,6 +40,10 @@ func HandleAnimations():
 func SetDirection():
 	direction = Player.global_position - Player.lastHitLocation
 	direction = direction.normalized()
+	
+	if(hitbox.type == Hitbox.DamageType.Slap):
+		print("SLAP KNOCKBACK")
+		direction = hitbox.hitDirection
 	
 func HandleKnockbackSpeed():
 	if knockback_timer.time_left <= 0: 

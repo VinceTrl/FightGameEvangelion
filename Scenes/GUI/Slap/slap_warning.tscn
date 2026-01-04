@@ -68,8 +68,11 @@ texture = SubResource("GradientTexture1D_2d7pq")
 [node name="Hitbox" type="Area3D" parent="."]
 script = ExtResource("2_78j2w")
 damage = 3
+type = 3
 isActive = false
 randomID = true
+hitDirection = Vector3(-1, 0, 0)
+hitForce = 4.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("BoxShape3D_ar4pw")

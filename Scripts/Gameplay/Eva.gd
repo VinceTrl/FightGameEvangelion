@@ -32,6 +32,7 @@ func _ready() -> void:
 	hitbox.InactiveHitBox()
 	initialPosition = global_position
 	Manager.gameManager.RegisterEva(self)
+	Manager.gameManager.FightEnd.connect(PauseSlap)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -112,6 +113,7 @@ func StartSlap(_target:Node3D):
 	var targetPos = Vector3(global_position.x,target.global_position.y,global_position.z) + evaSlapOffset
 	GoTowardsPosition(targetPos,0.75,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR)
 	animPlayer.play("Armature|Slap_Hit")
+	animPlayer.speed_scale = 0.5
 	animPlayerChore.play("AnimLight_Slap_Hit")
 	await animPlayer.animation_finished
 	audio_alarm.stop()
@@ -122,6 +124,7 @@ func StartSlap(_target:Node3D):
 	Manager.gameCamera.usePlayerDistanceForTargetZ = true
 	animPlayer.play("Armature|Slap_Recover")
 	await animPlayer.animation_finished
+	animPlayer.speed_scale = 1.0
 	
 	#end recoiver
 	OnSlapEnd.emit()
@@ -140,6 +143,7 @@ func EndSlapHitBox():
 func SlapHit():
 	print("SLAAAAP FREEZE")
 	audio_slap_hit.play()
+	#DestroyWarning()
 	#Manager.postProcessEffects.ResetGlitch()
 	#Manager.timeManager.freezeFrame(0.001,1.25)
 	
@@ -157,4 +161,11 @@ func DestroyWarning():
 	if(!slapWarning):return
 	slapWarning.OnHitboxDealDamage.disconnect(SlapHit)
 	slapWarning.queue_free()
+	
+	
+func PauseSlap():
+	animPlayer.speed_scale = 0
+	DestroyWarning()
+	await get_tree().create_timer(1,true,false,true).timeout
+	animPlayer.speed_scale = 0.5
 	

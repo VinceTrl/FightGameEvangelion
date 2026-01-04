@@ -76,6 +76,6 @@ autoplay = "default"
 frame = 3
 frame_progress = 1.0
 script = ExtResource("2_rqa3n")
-instanceScale = Vector3(15, 10, 10)
+instanceScale = Vector3(30, 10, 10)
 instanceOffset = Vector3(0, 2, 0)
 instanceRotation = Vector3(0, 0, 90)
