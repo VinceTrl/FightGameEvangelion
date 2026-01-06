@@ -16,10 +16,11 @@ func EnterState():
 	Name = "Knockback"
 	Player.velocity = Vector3.ZERO #stop player
 	#Player.animator.play("Hurt")
-	if(Player.lastHitbox != null): hitbox = Player.lastHitbox
+	if(Player.lastHitbox != null): 
+		hitbox = Player.lastHitbox
+		currentKnockbackForce = hitbox.hitForce
+		
 	SetDirection()
-	
-	currentKnockbackForce = hitbox.hitForce
 	knockbackTime = knockbackDuration
 	knockback_timer.start(knockbackTime)
 	
@@ -41,9 +42,10 @@ func SetDirection():
 	direction = Player.global_position - Player.lastHitLocation
 	direction = direction.normalized()
 	
-	if(hitbox.type == Hitbox.DamageType.Slap):
-		print("SLAP KNOCKBACK")
-		direction = hitbox.hitDirection
+	if(hitbox):
+		if(hitbox.type == Hitbox.DamageType.Slap):
+			print("SLAP KNOCKBACK")
+			direction = hitbox.hitDirection
 	
 func HandleKnockbackSpeed():
 	if knockback_timer.time_left <= 0: 

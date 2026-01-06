@@ -317,5 +317,5 @@ show_percentage = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tska2")
+&"": SubResource("AnimationLibrary_tska2")
 }

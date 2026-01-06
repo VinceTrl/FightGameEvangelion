@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://cj5ey4n7m20ia"]
+
+[ext_resource type="Script" uid="uid://uyroa6qvwffd" path="res://Scripts/Gameplay/eva_crosshair.gd" id="1_nxuwf"]
+[ext_resource type="Texture2D" uid="uid://b7tom7adsmn0h" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/CrosshairsSheet.png" id="2_0kk58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbv38"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(0, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xnic"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(64, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds0hj"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(128, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l6yk"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(192, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53jh5"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(256, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51xdu"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(0, 65, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7k1m"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(64, 65, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2u8j"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(128, 65, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tk2d"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(192, 65, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv2j8"]
+atlas = ExtResource("2_0kk58")
+region = Rect2(256, 65, 64, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0p35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbv38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xnic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds0hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l6yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53jh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51xdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7k1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2u8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tk2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv2j8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EvaCrosshair" type="Node3D"]
+script = ExtResource("1_nxuwf")
+offset = Vector3(0, 0, 0.1)
+weight = 0.15
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+modulate = Color(1, 0, 1, 1)
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+render_priority = 11
+sprite_frames = SubResource("SpriteFrames_p0p35")
+autoplay = "default"
+frame_progress = 0.413257

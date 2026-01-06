@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://1s7868dthyoc"]
+
+[ext_resource type="Script" uid="uid://dth1pc7jfyjni" path="res://Scripts/Gameplay/smash_ball_item.gd" id="1_kspie"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_vifah"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kspie"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kspie"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dm8be"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="SmashBall" type="Node3D" node_paths=PackedStringArray("hurtbox", "screenNotifier")]
+script = ExtResource("1_kspie")
+hurtbox = NodePath("Hurtbox")
+screenNotifier = NodePath("VisibleOnScreenNotifier3D")
+minSpeed = 100.0
+maxSpeed = 150.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = SubResource("SphereMesh_kspie")
+surface_material_override/0 = SubResource("StandardMaterial3D_kspie")
+
+[node name="Hurtbox" type="Area3D" parent="."]
+script = ExtResource("1_vifah")
+randomID = true
+metadata/_custom_type_script = "uid://be4u7kwwov65g"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+shape = SubResource("BoxShape3D_dm8be")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-0.128281, -0.130186, -0.132324, 0.256562, 0.260373, 0.264649)

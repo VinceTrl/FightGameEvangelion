@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://jf58svmosbof"]
 
-[ext_resource type="Script" uid="uid://cgcl0codsd444" path="res://Scenes/GUI/Slap/slap_warning.gd" id="1_hwu3u"]
+[ext_resource type="Script" uid="uid://cgcl0codsd444" path="res://Scripts/GUI/slap_warning.gd" id="1_hwu3u"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="2_78j2w"]
 
 [sub_resource type="Gradient" id="Gradient_pr6tm"]

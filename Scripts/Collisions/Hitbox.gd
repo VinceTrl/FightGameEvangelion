@@ -4,7 +4,7 @@ extends Area3D
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
 @export var damage = 1
 @export var owner_id = 1
-enum DamageType {Melee,projectile,Volume,Slap,Beyblade}
+enum DamageType {Melee,projectile,Volume,Slap,Beyblade,Tooth}
 @export var type: DamageType = DamageType.Melee
 @export var isActive = true
 @export var randomID = false

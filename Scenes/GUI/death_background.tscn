@@ -1600,6 +1600,6 @@ script = ExtResource("2_2jolm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_awmsx")
+&"": SubResource("AnimationLibrary_awmsx")
 }
 script = ExtResource("5_hekow")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://c4118fmg5ie3i"
+path="res://.godot/imported/30850110.gif-29d8b7896bbd68c7fe2c6a2cdb3ff780.tres"
+
+[deps]
+
+source_file="res://Assets/Sprites/BG/SasukeBackground/30850110.gif"
+dest_files=["res://.godot/imported/30850110.gif-29d8b7896bbd68c7fe2c6a2cdb3ff780.tres"]
+
+[params]
+
+frames_per_second=30

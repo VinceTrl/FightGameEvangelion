@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c4bqfwnqem52u"]
+[gd_scene load_steps=21 format=3 uid="uid://c4bqfwnqem52u"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_6hget"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_ni3r1"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://byfv3lsovril5" path="res://Scenes/Gameplay/animation_scale_test.tscn" id="16_qcl4n"]
 [ext_resource type="PackedScene" uid="uid://bah62ne6gthmy" path="res://Scenes/GUI/death_background.tscn" id="17_rp3st"]
 [ext_resource type="PackedScene" uid="uid://3gavhjybn6mj" path="res://Scenes/Gameplay/slap_item.tscn" id="19_n8tbk"]
+[ext_resource type="PackedScene" uid="uid://1s7868dthyoc" path="res://Scenes/Gameplay/smash_ball.tscn" id="20_5fkd4"]
 
 [node name="Stage_01" type="Node3D"]
 script = ExtResource("1_6hget")
@@ -237,3 +238,8 @@ visible = false
 
 [node name="SlapItem" parent="." instance=ExtResource("19_n8tbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.992624, 2.08712, -0.0362626)
+
+[node name="SmashBall" parent="." instance=ExtResource("20_5fkd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.765465, 0.59939, -0.0167828)
+minSpeed = 0.5
+maxSpeed = 2.0

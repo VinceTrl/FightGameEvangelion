@@ -2,6 +2,8 @@ class_name Eva
 extends Node3D
 
 const SLAP_WARNING = preload("res://Scenes/GUI/Slap/slap_warning.tscn")
+const EVA_CROSSHAIR = preload("res://Scenes/GUI/Slap/eva_crosshair.tscn")
+
 @onready var audio_slap_hit: AudioStreamPlayer3D = $AudioSlapHit
 @onready var audio_uwu: AudioStreamPlayer3D = $AudioUwu
 @onready var audio_alarm: AudioStreamPlayer3D = $AudioAlarm
@@ -11,18 +13,19 @@ const SLAP_WARNING = preload("res://Scenes/GUI/Slap/slap_warning.tscn")
 @export var timeToReachTarget:float = 0.5
 @export var slapStartPauseDuration = 1.0
 @export var evaSlapOffset:Vector3
+
 var animPlayer: AnimationPlayer
 var hitbox: Hitbox
 var initialPosition
 var target: Node3D
 var slapWarning
+var crosshair:Node3D
 
 signal OnSlapStart
 signal OnSlapPoseReached
 signal OnSlapHitStart
 signal OnSlapHitEnd
 signal OnSlapEnd
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -82,6 +85,11 @@ func StartSlap(_target:Node3D):
 	Manager.gameCamera.AddCameraTarget(self)
 	Manager.gameCamera.usePlayerDistanceForTargetZ = false
 	
+	#Spawn crosshair
+	crosshair = EVA_CROSSHAIR.instantiate()
+	get_tree().current_scene.add_child(crosshair)
+	crosshair.StartFollowTarget(target)
+	
 	#move towards target position
 	OnSlapStart.emit()
 	animPlayerChore.play("AnimLight_Slap_Intro")
@@ -110,6 +118,7 @@ func StartSlap(_target:Node3D):
 	
 	#Launch Slap
 	slapWarning.StopFollow()
+	crosshair.queue_free()
 	var targetPos = Vector3(global_position.x,target.global_position.y,global_position.z) + evaSlapOffset
 	GoTowardsPosition(targetPos,0.75,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR)
 	animPlayer.play("Armature|Slap_Hit")
