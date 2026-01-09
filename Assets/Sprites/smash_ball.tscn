@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://1s7868dthyoc"]
+[gd_scene load_steps=8 format=3 uid="uid://1s7868dthyoc"]
 
 [ext_resource type="Script" uid="uid://dth1pc7jfyjni" path="res://Scripts/Gameplay/smash_ball_item.gd" id="1_kspie"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_vifah"]
+[ext_resource type="Script" uid="uid://cg2f0qymkqehu" path="res://Scripts/Utilities/ScreenBorderDetection3D.gd" id="3_m7qlv"]
+[ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_l6hae"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_kspie"]
 
@@ -11,12 +13,15 @@ albedo_color = Color(0, 1, 0, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dm8be"]
 size = Vector3(0.25, 0.25, 0.25)
 
-[node name="SmashBall" type="Node3D" node_paths=PackedStringArray("hurtbox", "screenNotifier")]
+[node name="SmashBall" type="Node3D" node_paths=PackedStringArray("hurtbox", "screenNotifier", "screenMarginDetector")]
 script = ExtResource("1_kspie")
 hurtbox = NodePath("Hurtbox")
 screenNotifier = NodePath("VisibleOnScreenNotifier3D")
-minSpeed = 100.0
-maxSpeed = 150.0
+screenMarginDetector = NodePath("ScreenDetection3D")
+lifePoints = 10
+minBallSpeed = 2.5
+maxBallSpeed = 5.0
+randomBounceAngleAmount = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -33,3 +38,19 @@ shape = SubResource("BoxShape3D_dm8be")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 aabb = AABB(-0.128281, -0.130186, -0.132324, 0.256562, 0.260373, 0.264649)
+
+[node name="ScreenDetection3D" type="Node" parent="." node_paths=PackedStringArray("node", "label")]
+script = ExtResource("3_m7qlv")
+margin = 250
+node = NodePath("..")
+label = NodePath("../Label3D")
+metadata/_custom_type_script = "uid://cg2f0qymkqehu"
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216492, 0)
+billboard = 1
+text = "debug"
+font_size = 16
+outline_size = 8
+
+[node name="CameraTarget" parent="." instance=ExtResource("4_l6hae")]
