@@ -482,7 +482,7 @@ surface_material_override/0 = ExtResource("4_ir50q")
 
 [node name="Anim_Plateform" type="AnimationPlayer" parent="." index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_wrmx7")
+&"": SubResource("AnimationLibrary_wrmx7")
 }
 autoplay = "Anim_Plateform_cosmetic"
 

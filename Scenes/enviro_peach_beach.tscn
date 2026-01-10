@@ -1,8 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://4kpiihudkml6"]
+[gd_scene load_steps=10 format=3 uid="uid://4kpiihudkml6"]
 
 [ext_resource type="PackedScene" uid="uid://dw1oaifideof1" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeachMap.fbx" id="1_dkts6"]
 [ext_resource type="Material" uid="uid://c32xaoy4av8ja" path="res://Assets/Materials/Enviro/Beach_Peach/M_Sky03.tres" id="2_mf3mu"]
 [ext_resource type="Material" uid="uid://cdc6yah1iu04q" path="res://Assets/Materials/Enviro/Beach_Peach/M_Houses_Peach_Beach.tres" id="3_mf3mu"]
+[ext_resource type="Texture2D" uid="uid://ucs5ee764ebo" path="res://Assets/Shitpost/GIF/Smash/Gif_SunBaby.gif" id="4_bk0ut"]
+[ext_resource type="Material" uid="uid://hn1hyerijivh" path="res://Assets/Materials/Enviro/Beach_Peach/M_SunBaby.tres" id="4_sptxr"]
+[ext_resource type="PackedScene" uid="uid://dl38jbhp5ib6c" path="res://Assets/Materials/Enviro/Beach_Peach/peach_map_boat.tscn" id="6_v1q5d"]
+
+[sub_resource type="Animation" id="Animation_v1q5d"]
+resource_name = "Anim_Bato"
+length = 80.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 19.9, 40.1667, 60.4, 80),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0), Vector3(0, -3.14159, 0), Vector3(0, -4.71239, 0), Vector3(0, -6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v6bwy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.0698132, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rksw6"]
+_data = {
+&"Anim_Bato": SubResource("Animation_v1q5d"),
+&"RESET": SubResource("Animation_v6bwy")
+}
 
 [node name="PeachBeachMap" instance=ExtResource("1_dkts6")]
 
@@ -16,14 +64,50 @@ surface_material_override/0 = ExtResource("3_mf3mu")
 [node name="Lighting" type="Node3D" parent="." index="16"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lighting" index="0"]
-transform = Transform3D(0.985244, 7.48144e-09, -0.171155, 0.171155, -4.30664e-08, 0.985244, 0, -1, -4.37114e-08, 81.2518, 542.017, 0)
-visible = false
-light_energy = 1.5
+transform = Transform3D(0.958915, 0.000352477, -0.283693, 0.283693, -9.2786e-05, 0.958915, 0.000311672, -1, -0.000188971, -129.488, 479.67, -0.0684959)
+light_color = Color(0.515233, 0.88369, 0.938346, 1)
+light_energy = 0.3
 spot_range = 840.023
 spot_attenuation = 0.0
 spot_angle = 50.36
 spot_angle_attenuation = 0.341511
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" index="1"]
-transform = Transform3D(-4.37114e-08, 0.707107, -0.707107, 0, 0.707107, 0.707107, 1, 3.09086e-08, -3.09086e-08, 0, 0, 0)
-light_energy = 0.3
+transform = Transform3D(0.00138903, 0.751846, 0.659338, -0.0902982, -0.65655, 0.748858, 0.995914, -0.0605772, 0.0669784, -4.03105, 66.8239, 1.13687e-13)
+light_color = Color(1, 0.913333, 0.35, 1)
+shadow_enabled = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lighting" index="2"]
+transform = Transform3D(0.659177, 0.41433, -0.627548, 0.0692474, 0.797528, 0.599295, 0.748793, -0.438498, 0.497021, -107.68, 194.28, 361.635)
+light_color = Color(0.874465, 0.698985, 0.455866, 1)
+light_energy = 50.0
+shadow_enabled = true
+shadow_bias = 0.3
+spot_range = 652.994
+spot_angle = 58.1256
+
+[node name="Sun" type="Sprite3D" parent="." index="17"]
+transform = Transform3D(80.2999, 0, -44.7312, 0, 88.8259, 0, 104.46, 0, 34.3855, 171.464, 207.776, -513.413)
+material_override = ExtResource("4_sptxr")
+texture = ExtResource("4_bk0ut")
+
+[node name="Meshes" type="Node3D" parent="." index="18"]
+
+[node name="Pivot_Boat" type="Node3D" parent="Meshes" index="0"]
+transform = Transform3D(0.997564, 0, -0.0697565, 0, 1, 0, 0.0697565, 0, 0.997564, -587.659, 0, 73.1087)
+
+[node name="PeachMap_Boat" parent="Meshes/Pivot_Boat" index="0" instance=ExtResource("6_v1q5d")]
+transform = Transform3D(0.539466, 0.0475039, -8.58605e-05, -0.0860704, 0.297738, 0.000952298, 0.000370517, -0.000807204, 0.346203, 372.767, 19.5344, -2.09021)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Meshes/Pivot_Boat/PeachMap_Boat" index="1"]
+transform = Transform3D(-0.0321519, 0.252758, -0.966995, 0.109601, 0.962553, 0.247952, 0.993456, -0.0980113, -0.0586503, -167.548, 128.076, -35.4789)
+light_energy = 5.0
+spot_range = 175.69
+spot_attenuation = 1.1
+spot_angle = 45.1666
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Meshes/Pivot_Boat" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_rksw6")
+}
+autoplay = "Anim_Bato"

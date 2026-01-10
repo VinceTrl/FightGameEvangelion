@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://gf5mwn4dvi6f"]
 
-[ext_resource type="Shader" path="res://Scenes/Maps/Stages/AnniversaryStages/WaterShader.gdshader" id="1_djkm2"]
+[ext_resource type="Shader" uid="uid://b7xkfiv6jkyhq" path="res://Scenes/Maps/Stages/AnniversaryStages/WaterShader.gdshader" id="1_djkm2"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j24wt"]
 

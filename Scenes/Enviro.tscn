@@ -313,7 +313,7 @@ transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843
 
 [node name="Anim_CityRotation" type="AnimationPlayer" parent="Meshes/R/CityRight/City Pivot"]
 libraries = {
-"": SubResource("AnimationLibrary_kajny")
+&"": SubResource("AnimationLibrary_kajny")
 }
 autoplay = "CityLoop"
 
@@ -337,7 +337,7 @@ transform = Transform3D(1.26802, -9.41234e-08, -1.78814e-07, -3.13745e-08, 1.268
 
 [node name="Anim_CityRotation_mid" type="AnimationPlayer" parent="Meshes/R/CityRight2/City PivotMid"]
 libraries = {
-"": SubResource("AnimationLibrary_rvgy6")
+&"": SubResource("AnimationLibrary_rvgy6")
 }
 autoplay = "Anim_CityRotation_Mid"
 
@@ -352,7 +352,7 @@ transform = Transform3D(1.64001, 0, 0, 0, 1.64001, -7.45058e-09, 0, 0, 1.64001, 
 
 [node name="Anim_CityRotation_slow" type="AnimationPlayer" parent="Meshes/R/CityRight3/City PivotSlow"]
 libraries = {
-"": SubResource("AnimationLibrary_vjtfl")
+&"": SubResource("AnimationLibrary_vjtfl")
 }
 autoplay = "Anim_CityRotation_slow"
 
@@ -367,7 +367,7 @@ transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843
 
 [node name="Anim_CityRotation" type="AnimationPlayer" parent="Meshes/R2/CityRight/City Pivot"]
 libraries = {
-"": SubResource("AnimationLibrary_kajny")
+&"": SubResource("AnimationLibrary_kajny")
 }
 autoplay = "CityLoop"
 
@@ -391,7 +391,7 @@ transform = Transform3D(1.26802, -2.48749e-07, -3.00112e-07, -3.13745e-08, -0.34
 
 [node name="Anim_CityRotation_mid" type="AnimationPlayer" parent="Meshes/R2/CityRight2/City PivotMid"]
 libraries = {
-"": SubResource("AnimationLibrary_rvgy6")
+&"": SubResource("AnimationLibrary_rvgy6")
 }
 autoplay = "Anim_CityRotation_Mid"
 
@@ -406,7 +406,7 @@ transform = Transform3D(1.64001, 0, 0, 0, -0.241843, 1.62208, 0, -1.62208, -0.24
 
 [node name="Anim_CityRotation_slow" type="AnimationPlayer" parent="Meshes/R2/CityRight3/City PivotSlow"]
 libraries = {
-"": SubResource("AnimationLibrary_vjtfl")
+&"": SubResource("AnimationLibrary_vjtfl")
 }
 autoplay = "Anim_CityRotation_slow"
 
@@ -415,7 +415,7 @@ transform = Transform3D(0.801734, 0, 0, 0, 0.801734, 0, 0, 0, 0.801734, 0, -4.69
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Meshes/SM_Road"]
 libraries = {
-"": SubResource("AnimationLibrary_latck")
+&"": SubResource("AnimationLibrary_latck")
 }
 autoplay = "Road"
 

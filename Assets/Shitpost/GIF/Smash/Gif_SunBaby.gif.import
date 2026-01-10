@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://ucs5ee764ebo"
+path="res://.godot/imported/Gif_SunBaby.gif-1396fed9749dd7b659b7831f9983b720.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/Gif_SunBaby.gif"
+dest_files=["res://.godot/imported/Gif_SunBaby.gif-1396fed9749dd7b659b7831f9983b720.tres"]
+
+[params]
+
