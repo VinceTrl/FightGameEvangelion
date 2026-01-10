@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4kpiihudkml6"]
+[gd_scene load_steps=21 format=3 uid="uid://4kpiihudkml6"]
 
 [ext_resource type="PackedScene" uid="uid://dw1oaifideof1" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeachMap.fbx" id="1_dkts6"]
 [ext_resource type="Material" uid="uid://c32xaoy4av8ja" path="res://Assets/Materials/Enviro/Beach_Peach/M_Sky03.tres" id="2_mf3mu"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ucs5ee764ebo" path="res://Assets/Shitpost/GIF/Smash/Gif_SunBaby.gif" id="4_bk0ut"]
 [ext_resource type="Material" uid="uid://hn1hyerijivh" path="res://Assets/Materials/Enviro/Beach_Peach/M_SunBaby.tres" id="4_sptxr"]
 [ext_resource type="PackedScene" uid="uid://dl38jbhp5ib6c" path="res://Assets/Materials/Enviro/Beach_Peach/peach_map_boat.tscn" id="6_v1q5d"]
+[ext_resource type="PackedScene" uid="uid://cc6jgpfbiw0va" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/peach_beach_map_beam.tscn" id="7_v6bwy"]
+[ext_resource type="PackedScene" uid="uid://d0xil3j8mobd0" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/peach_beach_shark.tscn" id="8_rksw6"]
 
 [sub_resource type="Animation" id="Animation_v1q5d"]
 resource_name = "Anim_Bato"
@@ -52,6 +54,120 @@ _data = {
 &"RESET": SubResource("Animation_v6bwy")
 }
 
+[sub_resource type="Animation" id="Animation_rksw6"]
+resource_name = "BeachBeam01"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0), Vector3(0, 4.71239, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bm5u6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1fdnm"]
+_data = {
+&"BeachBeam01": SubResource("Animation_rksw6"),
+&"RESET": SubResource("Animation_bm5u6")
+}
+
+[sub_resource type="Animation" id="Animation_6a47s"]
+resource_name = "Beach_Beam02"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.03079, 10, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0), Vector3(0, -3.14159, 0), Vector3(0, -4.71239, 0), Vector3(0, -6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jenby"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kog4e"]
+_data = {
+&"Beach_Beam02": SubResource("Animation_6a47s"),
+&"RESET": SubResource("Animation_jenby")
+}
+
+[sub_resource type="Animation" id="Animation_1fdnm"]
+resource_name = "Anim_Shark"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.99916, 27.607, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-305.636, 0.146211, -22.8366), Vector3(-305.636, 0.146211, -22.8366), Vector3(-209.617, 0.146211, 231.534), Vector3(-209.617, 0.146211, 231.534)]
+}
+
+[sub_resource type="Animation" id="Animation_x02or"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-305.636, 0.146211, -22.8366)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6a47s"]
+_data = {
+&"Anim_Shark": SubResource("Animation_1fdnm"),
+&"RESET": SubResource("Animation_x02or")
+}
+
 [node name="PeachBeachMap" instance=ExtResource("1_dkts6")]
 
 [node name="m1" parent="." index="1"]
@@ -94,10 +210,10 @@ texture = ExtResource("4_bk0ut")
 [node name="Meshes" type="Node3D" parent="." index="18"]
 
 [node name="Pivot_Boat" type="Node3D" parent="Meshes" index="0"]
-transform = Transform3D(0.997564, 0, -0.0697565, 0, 1, 0, 0.0697565, 0, 0.997564, -587.659, 0, 73.1087)
+transform = Transform3D(0.997564, 0, -0.0697565, 0, 1, 0, 0.0697565, 0, 0.997564, -578.074, 0, 36.6561)
 
 [node name="PeachMap_Boat" parent="Meshes/Pivot_Boat" index="0" instance=ExtResource("6_v1q5d")]
-transform = Transform3D(0.539466, 0.0475039, -8.58605e-05, -0.0860704, 0.297738, 0.000952298, 0.000370517, -0.000807204, 0.346203, 372.767, 19.5344, -2.09021)
+transform = Transform3D(0.506876, 0.0475039, 0.117029, -0.081378, 0.297738, -0.0177898, -0.18678, -0.000807203, 0.325339, 372.767, 19.5344, -2.09021)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Meshes/Pivot_Boat/PeachMap_Boat" index="1"]
 transform = Transform3D(-0.0321519, 0.252758, -0.966995, 0.109601, 0.962553, 0.247952, 0.993456, -0.0980113, -0.0586503, -167.548, 128.076, -35.4789)
@@ -111,3 +227,62 @@ libraries = {
 &"": SubResource("AnimationLibrary_rksw6")
 }
 autoplay = "Anim_Bato"
+
+[node name="PivotBeam" type="Node3D" parent="Meshes" index="1"]
+transform = Transform3D(0.923679, -0.383167, 0, 0.353844, 0.852991, 0.383667, -0.147009, -0.354385, 0.923472, 434.184, 0, -120.133)
+
+[node name="Pivot_Beam01" type="Node3D" parent="Meshes/PivotBeam" index="0"]
+transform = Transform3D(1.49788, 0, 0, 0, 1.49788, 0, 0, 0, 1.49788, 0, 0, 0)
+
+[node name="PeachBeachMap_Beam" parent="Meshes/PivotBeam/Pivot_Beam01" index="0" instance=ExtResource("7_v6bwy")]
+transform = Transform3D(0.925249, 0.379359, 0, -0.379359, 0.925249, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PeachBeachMap_Beam2" parent="Meshes/PivotBeam/Pivot_Beam01/PeachBeachMap_Beam" index="1" instance=ExtResource("7_v6bwy")]
+transform = Transform3D(-0.28413, -0.526503, -0.801289, -0.526503, 0.78413, -0.328535, 0.801289, 0.328535, -0.5, 0, 0, 0)
+
+[node name="PeachBeachMap_Beam3" parent="Meshes/PivotBeam/Pivot_Beam01/PeachBeachMap_Beam" index="2" instance=ExtResource("7_v6bwy")]
+transform = Transform3D(-0.28413, -0.526503, 0.80129, -0.526503, 0.78413, 0.328535, -0.80129, -0.328535, -0.5, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Meshes/PivotBeam/Pivot_Beam01/PeachBeachMap_Beam" index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_1fdnm")
+}
+autoplay = "BeachBeam01"
+
+[node name="PivotBeam2" type="Node3D" parent="Meshes" index="2"]
+transform = Transform3D(0.982653, 0.0543852, 0.1773, -0.0296085, 0.989779, -0.139507, -0.183075, 0.131837, 0.974219, 342.933, 92.0446, 179.573)
+
+[node name="Pivot_Beam01" type="Node3D" parent="Meshes/PivotBeam2" index="0"]
+transform = Transform3D(1.49788, 0, 0, 0, 1.49788, 0, 0, 0, 1.49788, 0, 0, 0)
+
+[node name="PeachBeachMap_Beam" parent="Meshes/PivotBeam2/Pivot_Beam01" index="0" instance=ExtResource("7_v6bwy")]
+transform = Transform3D(0.925249, 0.379359, 0, -0.379359, 0.925249, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PeachBeachMap_Beam2" parent="Meshes/PivotBeam2/Pivot_Beam01/PeachBeachMap_Beam" index="1" instance=ExtResource("7_v6bwy")]
+transform = Transform3D(-0.28413, -0.526503, -0.801289, -0.526503, 0.78413, -0.328535, 0.801289, 0.328535, -0.5, 0, 0, 0)
+
+[node name="PeachBeachMap_Beam3" parent="Meshes/PivotBeam2/Pivot_Beam01/PeachBeachMap_Beam" index="2" instance=ExtResource("7_v6bwy")]
+transform = Transform3D(-0.28413, -0.526503, 0.80129, -0.526503, 0.78413, 0.328535, -0.80129, -0.328535, -0.5, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Meshes/PivotBeam2/Pivot_Beam01" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_kog4e")
+}
+autoplay = "Beach_Beam02"
+
+[node name="Node3D" type="Node3D" parent="Meshes" index="3"]
+transform = Transform3D(3.09124, 0, 1.09285, 0, 3.27873, 0, -1.09285, 0, 3.09124, -305.636, 0.146211, -22.8366)
+
+[node name="PeachBeach_Shark" parent="Meshes/Node3D" index="0" instance=ExtResource("8_rksw6")]
+
+[node name="PeachBeach_Shark2" parent="Meshes/Node3D" index="1" instance=ExtResource("8_rksw6")]
+transform = Transform3D(0.46109, 0, 0, 0, 0.46109, 0, 0, 0, 0.46109, 0.865158, 0.878005, -5.58688)
+
+[node name="PeachBeach_Shark3" parent="Meshes/Node3D" index="2" instance=ExtResource("8_rksw6")]
+transform = Transform3D(0.610194, 0, 0, 0, 0.610194, 0, 0, 0, 0.610194, 3.43006, 0.878002, -8.97456)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Meshes/Node3D" index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_6a47s")
+}
+autoplay = "Anim_Shark"

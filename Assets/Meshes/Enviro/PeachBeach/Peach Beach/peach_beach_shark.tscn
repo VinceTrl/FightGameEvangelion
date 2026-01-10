@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0xil3j8mobd0"]
+
+[ext_resource type="PackedScene" uid="uid://dbe8ijeouiqnh" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeach_Shark.fbx" id="1_t7ns4"]
+[ext_resource type="Texture2D" uid="uid://t6yxuf31wpvq" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeach_Shark.png" id="2_ew4yl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7ahj"]
+albedo_texture = ExtResource("2_ew4yl")
+emission_enabled = true
+emission_energy_multiplier = 4.0
+emission_texture = ExtResource("2_ew4yl")
+
+[node name="PeachBeach_Shark" instance=ExtResource("1_t7ns4")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(-0.00306126, 0.000369556, 0.0285853)
+bones/0/rotation = Quaternion(0.998774, 8.19564e-08, 1.66699e-06, 0.0495127)
+bones/1/position = Vector3(0.00309621, -0.0221262, 0.0156888)
+bones/1/rotation = Quaternion(1.67436e-14, -4.76889e-07, -1.00348e-08, 1)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(-2.35374e-10, 0.0148495, -3.02205e-09)
+bones/2/rotation = Quaternion(0.0159508, 1.5985e-10, 4.80641e-08, 0.999873)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/position = Vector3(4.41027e-15, 0.0182467, -4.91511e-10)
+bones/3/rotation = Quaternion(-0.00546009, -0.00819401, 0.112576, 0.993594)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/position = Vector3(-4.66648e-15, 0.0135936, 1.16814e-09)
+bones/4/rotation = Quaternion(-0.0122124, 5.96018e-07, -3.63968e-08, 0.999925)
+bones/4/scale = Vector3(1, 1, 1)
+
+[node name="model" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w7ahj")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Armature|Anim_Shark_Idle"
