@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx8w30oi2ennb"]
+
+[ext_resource type="ArrayMesh" uid="uid://6ro3ljs8yfp5" path="res://Assets/Meshes/Props/Trophee/WashBarTrophé.obj" id="1_b5g53"]
+[ext_resource type="Script" uid="uid://bjur7smhqpufy" path="res://Scripts/Gameplay/BumperAnimation.gd" id="1_w0q86"]
+[ext_resource type="Script" uid="uid://devahp3jju1bf" path="res://Scripts/Gameplay/Bumper.gd" id="2_a0ntq"]
+[ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="2_l0bd5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0jl7"]
+size = Vector3(2.63, 0.752, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0q86"]
+size = Vector3(2.5, 3.06575, 2.5)
+
+[node name="Wash" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="BumperVisualRoot" type="Node3D" parent="." node_paths=PackedStringArray("bumpers")]
+script = ExtResource("1_w0q86")
+bumpers = [NodePath("../Bumper")]
+animationCurve = ExtResource("2_l0bd5")
+maxScale = Vector3(2, 2, 2)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BumperVisualRoot"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_b5g53")
+skeleton = NodePath("../..")
+
+[node name="Bumper" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 26
+script = ExtResource("2_a0ntq")
+metadata/_custom_type_script = "uid://devahp3jju1bf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bumper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85632, 0)
+shape = SubResource("BoxShape3D_w0jl7")
+debug_color = Color(0.71441, 0.257615, 1, 0.42)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54357, 0)
+shape = SubResource("BoxShape3D_w0q86")
