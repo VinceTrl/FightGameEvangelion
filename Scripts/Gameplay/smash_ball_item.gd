@@ -4,12 +4,17 @@ extends Node3D
 @export var hurtbox:Hurtbox
 @export var screenNotifier:VisibleOnScreenNotifier3D
 @export var screenMarginDetector:ScreenDetection3D
+@export var ballMesh:Node3D
 
 @export_category("Settings")
 @export var lifePoints: int = 3
 @export var minBallSpeed:float = 4.0
 @export var maxBallSpeed:float = 8.0
+
+@export_category("Hurt effects")
+@export var damageGlitchEffect: GlitchParameters
 @export var hurtTime:float = 1
+@export var hurtSpeedCurve:Curve
 
 @export_category("Screen Border Bounce settings")
 enum BounceType{RandomInverseAngle,InverseContact}
@@ -20,6 +25,7 @@ var currentDir:Vector3
 var currentSpeed:float = 0.0
 var canMove:bool = false
 var isHurt:bool = false
+var timer:SceneTreeTimer
 
 #signals
 signal OnSmashBallHurt
@@ -41,6 +47,7 @@ func ConnectSignals():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	Move(delta)
+	ballMesh.global_rotation.z = GetBallRotation()
 	
 	
 func OnExitMargins(dir:ScreenDetection3D.ScreenDirection):
@@ -92,21 +99,47 @@ func GetCurrentSpeed(speedRatio:float) -> float:
 	print("SPEED :" + str(speed))
 	return speed
 	
+func GetSpeedRatio() -> float:
+	if(!timer): return 0.0
+	if(timer.time_left == 0): return 0.0
+	
+	var _timeProgress = hurtTime - timer.time_left
+	var _progressRatio = _timeProgress/hurtTime
+	var _curveValue = hurtSpeedCurve.sample(_progressRatio);
+	var _speed = lerp(minBallSpeed,maxBallSpeed,_curveValue)
+	return _speed
+	
 func Move(delta:float):
 	if(!canMove):return
 	
-	var nextPos = ((currentDir * GetCurrentSpeed(currentSpeed)) * delta)
+	var nextPos = ((currentDir * GetCurrentSpeed(GetSpeedRatio())) * delta)
 	global_position += nextPos #lerp(global_position,nextPos,0.5)
 	DebugDraw3D.draw_arrow(global_position,global_position + currentDir,Color.REBECCA_PURPLE,0.2)
+	
+	
+func GetBallRotation() -> float :
+	return lerp_angle(global_rotation.z,atan2(currentDir.y,currentDir.x),1)
 	
 func OnHit(hitbox : Hitbox):
 	print("SMASH BALL HURT")
 	OnSmashBallHurt.emit()
 	lifePoints -= hitbox.damage
 	
+	Manager.timeManager.freezeFrame(0.001,0.1)
+	Manager.gameCamera.camShake.AskCamShake("HitShake")
+	Manager.postProcessEffects.GlitchEffect(damageGlitchEffect)
+	
 	if(lifePoints > 0):
 		var origin := Vector3(hitbox.global_position.x,hitbox.global_position.y,global_position.z)
 		currentDir = (global_position - origin).normalized()
+		StartHurtTimer()
 	else:
 		OnSmashBallDestroyed.emit()
 		queue_free()
+		
+		
+func StartHurtTimer():
+	isHurt = true
+	timer = get_tree().create_timer(hurtTime)
+	await timer.timeout
+	isHurt = false
