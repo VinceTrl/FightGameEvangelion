@@ -1,17 +1,93 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccq8u40edk25l"]
+[gd_scene load_steps=19 format=3 uid="uid://ccq8u40edk25l"]
 
 [ext_resource type="Script" uid="uid://cnkheeds0wrh" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_umlfk"]
 [ext_resource type="Texture2D" uid="uid://c638bakjdtbln" path="res://Resources/Gradients/Player2_DamageEffect_Pink.tres" id="2_porba"]
 [ext_resource type="Script" uid="uid://bt0gay7ixu07q" path="res://Scripts/GUI/damage_effect.gd" id="3_dx6rq"]
-[ext_resource type="Texture2D" uid="uid://bka1ws4dgcnly" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Player2.png" id="4_gpk2l"]
+[ext_resource type="Texture2D" uid="uid://5uj2diw6w5i7" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Life_Background_2.png" id="4_sxuqw"]
 [ext_resource type="PackedScene" uid="uid://dbx10gs5u8elq" path="res://Scenes/GUI/texture_hp_Left.tscn" id="5_egxum"]
+[ext_resource type="Texture2D" uid="uid://oiaiuee3giwu" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP2_1.png" id="6_6ftx2"]
 [ext_resource type="FontFile" uid="uid://4vkwi6n6xoco" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9.ttf" id="6_aipge"]
 [ext_resource type="Texture2D" uid="uid://d134wtncuty64" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P2.png" id="7_7j4th"]
 [ext_resource type="Script" uid="uid://rypcejv8gl2c" path="res://Scripts/GUI/PlayerRoundUI.gd" id="7_fnjrm"]
+[ext_resource type="Texture2D" uid="uid://dq3u6ohwutdkm" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP2_2.png" id="7_vic8l"]
+[ext_resource type="Texture2D" uid="uid://cmxfyydt0jdgi" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP1_1.png" id="8_0nv5t"]
+[ext_resource type="Texture2D" uid="uid://bldhvt87d6e4x" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP1_2.png" id="9_pmx6q"]
+[ext_resource type="Texture2D" uid="uid://dl4mte7rb6fup" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Player_2.png" id="13_lba1f"]
+[ext_resource type="Texture2D" uid="uid://bm3edlyew80g" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Kiki_Head_2.png" id="14_ungtg"]
 
 [sub_resource type="Curve" id="Curve_13v2t"]
 _data = [Vector2(0, 1), 19.2646, 8.5177e-07, 1, 0, Vector2(1, 0), -3.47398, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5odx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6ftx2")
+}],
+"loop": false,
+"name": &"P1_Hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6ftx2")
+}],
+"loop": true,
+"name": &"P1_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_vic8l")
+}],
+"loop": false,
+"name": &"P2_Hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_vic8l")
+}],
+"loop": true,
+"name": &"P2_Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4mskk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0nv5t")
+}],
+"loop": false,
+"name": &"P1_Hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0nv5t")
+}],
+"loop": true,
+"name": &"P1_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_pmx6q")
+}],
+"loop": false,
+"name": &"P2_Hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_pmx6q")
+}],
+"loop": true,
+"name": &"P2_Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b5tgb"]
 font = ExtResource("6_aipge")
@@ -44,41 +120,64 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -888.0
-offset_right = -30.0
-offset_bottom = 268.0
+offset_left = -985.714
+offset_top = 1241.43
+offset_right = -352.714
+offset_bottom = 1421.43
 grow_horizontal = 0
-texture = ExtResource("4_gpk2l")
+texture = ExtResource("4_sxuqw")
+
+[node name="KIKI2" type="TextureRect" parent="TextureBackgroundHP"]
+layout_mode = 0
+offset_left = 125.714
+offset_top = -110.0
+offset_right = 503.714
+offset_bottom = 41.0
+texture = ExtResource("13_lba1f")
+
+[node name="KIKI head 2" type="TextureRect" parent="TextureBackgroundHP"]
+layout_mode = 0
+offset_left = 414.286
+offset_top = -152.857
+offset_right = 817.286
+offset_bottom = 139.143
+texture = ExtResource("14_ungtg")
 
 [node name="ControlHP" type="Control" parent="TextureBackgroundHP"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -28.5712
+offset_top = -70.0
+offset_right = -28.5712
+offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
-position = Vector2(619.429, 172.857)
+position = Vector2(575.071, 172.286)
 animation = &"P2_Idle"
 playerIndex = 2
 
 [node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
-position = Vector2(423.714, 172.857)
+position = Vector2(430.786, 160.857)
+sprite_frames = SubResource("SpriteFrames_q5odx")
 animation = &"P2_Idle"
 playerIndex = 2
 
 [node name="TextureHP3" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
-position = Vector2(213.714, 172.857)
+position = Vector2(272.214, 150.857)
+sprite_frames = SubResource("SpriteFrames_4mskk")
 animation = &"P2_Idle"
 playerIndex = 2
 
 [node name="AmmoContainer" type="HBoxContainer" parent="TextureBackgroundHP"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 196.0
-offset_right = 618.0
-offset_bottom = 255.0
+offset_left = 144.286
+offset_top = 175.714
+offset_right = 572.286
+offset_bottom = 234.714
 theme_override_constants/separation = 12
 alignment = 2
 
@@ -126,9 +225,10 @@ stretch_mode = 5
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -190.0
-offset_right = 1.0
-offset_bottom = -72.0
+offset_left = -161.429
+offset_top = -162.857
+offset_right = 29.5715
+offset_bottom = -28.8571
 grow_vertical = 2
 text = "0"
 label_settings = SubResource("LabelSettings_b5tgb")
