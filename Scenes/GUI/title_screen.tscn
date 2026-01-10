@@ -1,9 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://qofhmib4acam"]
+[gd_scene load_steps=20 format=3 uid="uid://qofhmib4acam"]
 
 [ext_resource type="Script" uid="uid://dig7xxmxljgpt" path="res://Scripts/GUI/TitleScreen.gd" id="1_q3f6b"]
 [ext_resource type="Texture2D" uid="uid://bk1xdnu6hburf" path="res://Assets/Sprites/GUI/KikiGUI/GUI_StartingScreen_BG.png" id="2_nvbhf"]
 [ext_resource type="AudioStream" uid="uid://1hqlp5gehwy4" path="res://Assets/Sounds/SFX/DoudouSFX/SD_playbutton..wav" id="3_57ycc"]
+[ext_resource type="Texture2D" uid="uid://ds5ub7ge7v82o" path="res://Assets/GUI/TitleScreen/Photocopy_derriere_txt.png" id="3_426x7"]
 [ext_resource type="Texture2D" uid="uid://cbvuh2wk3nwxs" path="res://Assets/Sprites/GUI/KikiGUI/GUI_FIGHT.png" id="3_bid6k"]
+[ext_resource type="Texture2D" uid="uid://bklujkgupuyxi" path="res://Assets/GUI/TitleScreen/noise.jpg" id="4_mbhl2"]
+[ext_resource type="Texture2D" uid="uid://1cao6c2ffffg" path="res://Assets/GUI/TitleScreen/lignes.png" id="5_0poxc"]
+[ext_resource type="Texture2D" uid="uid://dp4pcdtnukhqo" path="res://Assets/GUI/TitleScreen/dust.png" id="6_1lgm6"]
+[ext_resource type="Texture2D" uid="uid://c5acds51wum6w" path="res://Assets/GUI/TitleScreen/flare.png" id="7_u2des"]
+[ext_resource type="Texture2D" uid="uid://k7q5ns4oyl8l" path="res://Assets/GUI/TitleScreen/machine_lighten.png" id="8_0vduw"]
+[ext_resource type="Texture2D" uid="uid://f71acyx6r3hm" path="res://Assets/GUI/TitleScreen/titre.png" id="9_m8k51"]
+[ext_resource type="Texture2D" uid="uid://cbge3tcuxnvi7" path="res://Assets/GUI/TitleScreen/collectifs.png" id="10_55pvl"]
+[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="13_0poxc"]
 
 [sub_resource type="Animation" id="Animation_vdg6d"]
 length = 0.001
@@ -31,7 +40,7 @@ tracks/0/path = NodePath("Control:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333),
+"times": PackedFloat32Array(0, 0.3333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 1253)]
@@ -101,7 +110,7 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 126
+layer = 99
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -112,6 +121,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -121,6 +131,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,7 +140,66 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_nvbhf")
 
-[node name="TextureText" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="TextureBackground" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_426x7")
+
+[node name="TextureNoise" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_mbhl2")
+
+[node name="TextureLignes" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_0poxc")
+
+[node name="TextureDust" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_1lgm6")
+
+[node name="TextureFlare" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_u2des")
+
+[node name="TextureMachine" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_0vduw")
+
+[node name="TextureTitle" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -558.0
+offset_top = 100.0
+offset_right = 558.0
+offset_bottom = 694.0
+grow_horizontal = 2
+texture = ExtResource("9_m8k51")
+
+[node name="TextureCollectif" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -898.0
+offset_right = 898.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("10_55pvl")
+
+[node name="FightText" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -137,14 +207,14 @@ anchor_top = 0.72
 anchor_right = 0.5
 anchor_bottom = 0.72
 offset_left = -359.0
-offset_top = -136.0
+offset_top = -82.6
 offset_right = 359.0
-offset_bottom = 136.0
+offset_bottom = 189.4
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_bid6k")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/TextureText"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/FightText"]
 libraries = {
 &"": SubResource("AnimationLibrary_reu31")
 }
@@ -153,3 +223,8 @@ autoplay = "TitleBlink"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_57ycc")
 volume_db = -8.0
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("13_0poxc")
+metadata/_custom_type_script = "uid://b5paj253lonlf"
