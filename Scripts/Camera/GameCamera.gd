@@ -29,6 +29,12 @@ const CAMERA_DISTANCE_CURVE = preload("res://Resources/Curves/CameraDistanceCurv
 
 @export var zoomParams: Array[ZoomParameters] = []
 
+@export_category("Margins")
+@export var marginHorizontal:int = 100
+@export var marginVertical:int = 100
+@export var distanceInMargin = 2.0
+
+
 @onready var camShake: CameraShake = $CameraShake
 @onready var camera: Camera3D = $CameraShake/Camera3D
 
@@ -88,7 +94,7 @@ func _process(delta: float) -> void:
 func DebugCamera():
 	if(!debugMode): return
 	#var _currentDistPlayers: float = player1.global_position.distance_to(player2.global_position)
-	var _currentDistPlayers: float = GetMaxDistanceInArray(cameraTargets)
+	var _currentDistPlayers: float = GetMaxDistanceInArray(cameraTargets) + DetectTargetInForbiddenMargins()
 	var _playersDistRatio = _currentDistPlayers / maxPlayerDist
 	var _curveValue = zDistCurve.sample(_playersDistRatio);
 	var _zPos = lerp(minDistZ,maxDistZ,_curveValue)
@@ -179,13 +185,40 @@ func ClampCameraPosition():
 
 func GetZtargetPosition() -> float:
 	#var _currentDistPlayers: float = player1.global_position.distance_to(player2.global_position)
-	var _currentDistPlayers: float = GetMaxDistanceInArray(cameraTargets)
+	var _currentDistPlayers: float = GetMaxDistanceInArray(cameraTargets) + DetectTargetInForbiddenMargins()
 	var _playersDistRatio = _currentDistPlayers / maxPlayerDist
 	var _curveValue = zDistCurve.sample(_playersDistRatio);
 	var _zPos = lerp(minDistZ,maxDistZ,_curveValue)
 	#print("Z TARGET = " + str(_zPos))
 	
 	return _zPos
+	
+	
+func DetectTargetInForbiddenMargins() -> float:
+	
+	var totalDistance:float = 0.0
+	
+	for node in cameraTargets:
+		var screen_pos = camera.unproject_position(node.global_position)
+		var viewport_size = get_viewport().size
+		var distanceRatio:float = 0.0 
+
+		if screen_pos.x < marginHorizontal:
+			distanceRatio = screen_pos.x / marginHorizontal
+		elif screen_pos.x > viewport_size.x - marginHorizontal:
+			distanceRatio = screen_pos.x / viewport_size.x
+		elif screen_pos.y < marginVertical: 
+			distanceRatio = screen_pos.y / marginVertical
+		elif screen_pos.y > viewport_size.y - marginVertical:
+			distanceRatio = screen_pos.y / viewport_size.y
+			
+		totalDistance += lerp(0.0,distanceInMargin,distanceRatio)
+		#else:
+			#pass
+	if(totalDistance > 0.0):
+		print("ADDITIONNAL DIST WITH MARGINS AT : "  + str(totalDistance))
+		
+	return totalDistance
 	
 func GetCameraOffset() -> Vector3:
 	if(isOverridingCameraOffset):

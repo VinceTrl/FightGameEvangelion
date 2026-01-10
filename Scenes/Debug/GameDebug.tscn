@@ -6,4 +6,5 @@
 script = ExtResource("1_ag8n1")
 stageIndex = 8
 playerDebugID = Array[int]([1])
+debugCamera = true
 debugActiveLineThickness = 0.05
