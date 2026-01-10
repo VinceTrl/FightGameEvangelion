@@ -986,6 +986,7 @@ script = ExtResource("28_oqnrj")
 maxAmmo = 7
 startAmmo = 5
 reloadOverTime = false
+reloadTime = 6.0
 
 [node name="HitboxUp" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190702, 0)

@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://byfv3lsovril5" path="res://Scenes/Gameplay/animation_scale_test.tscn" id="16_qcl4n"]
 [ext_resource type="PackedScene" uid="uid://bah62ne6gthmy" path="res://Scenes/GUI/death_background.tscn" id="17_rp3st"]
 [ext_resource type="PackedScene" uid="uid://3gavhjybn6mj" path="res://Scenes/Gameplay/slap_item.tscn" id="19_n8tbk"]
-[ext_resource type="PackedScene" uid="uid://1s7868dthyoc" path="res://Assets/Sprites/smash_ball.tscn" id="20_5fkd4"]
+[ext_resource type="PackedScene" uid="uid://1s7868dthyoc" path="res://Scenes/Gameplay/smash_ball.tscn" id="20_5fkd4"]
 
 [node name="Stage_01" type="Node3D"]
 script = ExtResource("1_6hget")

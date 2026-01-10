@@ -101,7 +101,6 @@ func HitScreenBorder(normal:Vector3):
 	
 func GetCurrentSpeed(speedRatio:float) -> float:
 	var speed:float = lerp(minBallSpeed,maxBallSpeed,speedRatio)
-	print("SPEED :" + str(speed))
 	return speed
 	
 func GetSpeedRatio() -> float:
@@ -147,11 +146,23 @@ func OnHit(hitbox : Hitbox):
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	Manager.postProcessEffects.GlitchEffect(damageGlitchEffect)
 	
+	if(hitbox.owner is PlayerCharacter):
+			print("HIT BY PLAYER")
+	
 	if(lifePoints > 0):
 		var origin := Vector3(hitbox.global_position.x,hitbox.global_position.y,global_position.z)
 		currentDir = (global_position - origin).normalized()
 		StartHurtTimer()
 	else:
+		var target:Node3D
+		if(hitbox.owner is PlayerCharacter):
+			var player := hitbox.owner as PlayerCharacter
+			target = Manager.gameManager.GetPlayerOpponent(player)
+			print("DESTROY BY PLAYER")
+		else:
+			target = Manager.gameManager.GetRandomPlayer()
+			
+		Manager.gameManager.eva.StartSlap(target)
 		OnSmashBallDestroyed.emit()
 		queue_free()
 		

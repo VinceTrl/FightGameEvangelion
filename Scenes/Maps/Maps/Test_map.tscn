@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bq5o5cen08wou"]
+[gd_scene load_steps=26 format=3 uid="uid://bq5o5cen08wou"]
 
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_3v2v2"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="1_oniah"]
 [ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_qoa21"]
 [ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="3_0s7yt"]
 [ext_resource type="PackedScene" uid="uid://4kpiihudkml6" path="res://Scenes/enviro_peach_beach.tscn" id="3_2ndgt"]
-[ext_resource type="Resource" uid="uid://b0okcggscbndq" path="res://Resources/Spawnables/FallingProjectile.tres" id="4_fn3o4"]
 [ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="5_2ndgt"]
 [ext_resource type="Material" uid="uid://gf5mwn4dvi6f" path="res://Assets/Materials/Enviro/Beach_Peach/M_Water_peach_beach_AniStage4.tres" id="5_egxmt"]
 [ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="6_egxmt"]
@@ -44,7 +43,7 @@ enviro = [NodePath("Enviro")]
 lights = [NodePath("Lighting")]
 
 [node name="SpawnManager" parent="." instance=ExtResource("1_3v2v2")]
-items = Array[ExtResource("3_0s7yt")]([ExtResource("4_fn3o4"), ExtResource("5_2ndgt"), ExtResource("6_egxmt"), ExtResource("7_3dkcm"), ExtResource("8_oqd8u"), ExtResource("9_a77w8"), ExtResource("10_fwq1n"), ExtResource("11_5nu7v"), ExtResource("12_r4gs8"), ExtResource("13_mj8fs"), ExtResource("14_5j2rv"), ExtResource("15_u5o35")])
+items = Array[ExtResource("3_0s7yt")]([ExtResource("5_2ndgt"), ExtResource("6_egxmt"), ExtResource("7_3dkcm"), ExtResource("8_oqd8u"), ExtResource("9_a77w8"), ExtResource("10_fwq1n"), ExtResource("11_5nu7v"), ExtResource("12_r4gs8"), ExtResource("13_mj8fs"), ExtResource("14_5j2rv"), ExtResource("15_u5o35")])
 
 [node name="Enviro" type="Node3D" parent="."]
 
