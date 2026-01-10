@@ -97,7 +97,7 @@ script = ExtResource("1_q3f6b")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../CanvasLayer")
 libraries = {
-"": SubResource("AnimationLibrary_jqx0d")
+&"": SubResource("AnimationLibrary_jqx0d")
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -146,7 +146,7 @@ texture = ExtResource("3_bid6k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/TextureText"]
 libraries = {
-"": SubResource("AnimationLibrary_reu31")
+&"": SubResource("AnimationLibrary_reu31")
 }
 autoplay = "TitleBlink"
 

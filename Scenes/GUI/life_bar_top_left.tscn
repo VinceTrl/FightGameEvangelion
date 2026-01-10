@@ -1,93 +1,97 @@
-[gd_scene load_steps=22 format=3 uid="uid://r3ads2h4cewh"]
+[gd_scene load_steps=19 format=3 uid="uid://r3ads2h4cewh"]
 
 [ext_resource type="Script" uid="uid://cnkheeds0wrh" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
 [ext_resource type="Texture2D" uid="uid://i8srkr0pioyq" path="res://Resources/Gradients/Player1_DamageEffect_Yellow.tres" id="2_i8cx7"]
 [ext_resource type="Script" uid="uid://bt0gay7ixu07q" path="res://Scripts/GUI/damage_effect.gd" id="3_7dijb"]
-[ext_resource type="Texture2D" uid="uid://147dcgbjdv2t" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Player1.png" id="4_mdj3j"]
+[ext_resource type="Texture2D" uid="uid://den1kn4x8tnrv" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Life_Background_1.png" id="4_g5yp7"]
 [ext_resource type="FontFile" uid="uid://4vkwi6n6xoco" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9.ttf" id="5_j8biq"]
 [ext_resource type="PackedScene" uid="uid://dbx10gs5u8elq" path="res://Scenes/GUI/texture_hp_Left.tscn" id="5_jt636"]
+[ext_resource type="Texture2D" uid="uid://oiaiuee3giwu" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP2_1.png" id="6_673ed"]
 [ext_resource type="Texture2D" uid="uid://cxym3v1v584ej" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P1.png" id="6_fw131"]
 [ext_resource type="Script" uid="uid://rypcejv8gl2c" path="res://Scripts/GUI/PlayerRoundUI.gd" id="6_y7uc4"]
-[ext_resource type="Texture2D" uid="uid://c4dyfrrdv0mvk" path="res://Assets/Sprites/GUI/KikiGUI/GUI_HP_ANIM.png" id="7_5atp6"]
+[ext_resource type="Texture2D" uid="uid://dq3u6ohwutdkm" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP2_2.png" id="7_umgcs"]
+[ext_resource type="Texture2D" uid="uid://cmxfyydt0jdgi" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP1_1.png" id="8_41b8j"]
+[ext_resource type="Texture2D" uid="uid://bldhvt87d6e4x" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP1_2.png" id="9_87x0d"]
+[ext_resource type="Texture2D" uid="uid://ckuqbn6akd7ae" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Kiki_Head_1.png" id="14_s7lo4"]
+[ext_resource type="Texture2D" uid="uid://bxlhkwai42hik" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Player_1.png" id="15_yclad"]
 
 [sub_resource type="Curve" id="Curve_ugew3"]
 _data = [Vector2(0, 1), 19.2646, 8.5177e-07, 1, 0, Vector2(1, 0), -3.47398, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="LabelSettings" id="LabelSettings_by4q8"]
-font = ExtResource("5_j8biq")
-font_size = 120
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dx8xm"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(0, 0, 278, 236)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_egnsy"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(278, 0, 278, 236)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yqrdb"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(556, 0, 278, 236)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_baw4t"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(834, 0, 278, 236)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hd3vv"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(1112, 0, 278, 236)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_221hl"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(1390, 0, 278, 236)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h74yp"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(1668, 0, 278, 236)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lfkqq"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(1946, 0, 278, 236)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_doxe6"]
-atlas = ExtResource("7_5atp6")
-region = Rect2(2224, 0, 278, 236)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_styjc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lckk5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dx8xm")
+"texture": ExtResource("6_673ed")
+}],
+"loop": false,
+"name": &"P1_Hit",
+"speed": 10.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_egnsy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yqrdb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_baw4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hd3vv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_221hl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h74yp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lfkqq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_doxe6")
+"texture": ExtResource("6_673ed")
 }],
 "loop": true,
-"name": &"default",
+"name": &"P1_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_umgcs")
+}],
+"loop": false,
+"name": &"P2_Hit",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_umgcs")
+}],
+"loop": true,
+"name": &"P2_Idle",
+"speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ladwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_41b8j")
+}],
+"loop": false,
+"name": &"P1_Hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_41b8j")
+}],
+"loop": true,
+"name": &"P1_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_87x0d")
+}],
+"loop": false,
+"name": &"P2_Hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_87x0d")
+}],
+"loop": true,
+"name": &"P2_Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_by4q8"]
+font = ExtResource("5_j8biq")
+font_size = 120
 
 [node name="LifeBarRoot_TopLeft" type="Control"]
 layout_mode = 3
@@ -106,40 +110,58 @@ alphaCurve = SubResource("Curve_ugew3")
 
 [node name="TextureBackgroundHP" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 30.0
-offset_right = 887.0
-offset_bottom = 268.0
-texture = ExtResource("4_mdj3j")
+offset_left = 317.143
+offset_top = 1241.43
+offset_right = 950.143
+offset_bottom = 1421.43
+texture = ExtResource("4_g5yp7")
+
+[node name="KIKI_Head" type="TextureRect" parent="TextureBackgroundHP"]
+layout_mode = 0
+offset_left = -185.714
+offset_top = -151.429
+offset_right = 217.286
+offset_bottom = 140.571
+texture = ExtResource("14_s7lo4")
+
+[node name="KIKI_1" type="TextureRect" parent="TextureBackgroundHP"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -122.857
+offset_right = 507.0
+offset_bottom = 40.1427
+texture = ExtResource("15_yclad")
 
 [node name="ControlHP" type="Control" parent="TextureBackgroundHP"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -58.5718
+offset_right = -30.0
+offset_bottom = -58.5718
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
-position = Vector2(238.571, 175.714)
-animation = &"P1_Hit"
-frame = 9
-frame_progress = 1.0
+position = Vector2(114.286, 162.857)
+animation = &"P1_Idle"
 
 [node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
-position = Vector2(444.286, 175.714)
-animation = &"P1_Idle"
-frame_progress = 0.476848
+position = Vector2(258.571, 151.429)
+sprite_frames = SubResource("SpriteFrames_lckk5")
 
 [node name="TextureHP3" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
-position = Vector2(647.143, 175.714)
-animation = &"P1_Idle"
+position = Vector2(421.429, 140)
+sprite_frames = SubResource("SpriteFrames_ladwr")
 
 [node name="AmmoContainer" type="HBoxContainer" parent="TextureBackgroundHP"]
 layout_mode = 0
-offset_left = 241.0
-offset_top = 196.0
-offset_right = 667.0
-offset_bottom = 255.0
+offset_left = 202.857
+offset_top = 171.428
+offset_right = 628.857
+offset_bottom = 230.428
 theme_override_constants/separation = 12
 
 [node name="TextureAmmo" type="TextureRect" parent="TextureBackgroundHP/AmmoContainer"]
@@ -183,9 +205,10 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_right = 189.0
-offset_bottom = -72.0
+offset_left = -43.0
+offset_top = -161.429
+offset_right = 147.0
+offset_bottom = -27.4285
 grow_horizontal = 0
 grow_vertical = 2
 text = "0"
@@ -193,10 +216,3 @@ label_settings = SubResource("LabelSettings_by4q8")
 horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("6_y7uc4")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(187.143, 427.143)
-sprite_frames = SubResource("SpriteFrames_styjc")
-autoplay = "default"
-frame_progress = 0.652615
