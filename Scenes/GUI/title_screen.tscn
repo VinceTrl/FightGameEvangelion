@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://qofhmib4acam"]
+[gd_scene load_steps=21 format=3 uid="uid://qofhmib4acam"]
 
 [ext_resource type="Script" uid="uid://dig7xxmxljgpt" path="res://Scripts/GUI/TitleScreen.gd" id="1_q3f6b"]
 [ext_resource type="Texture2D" uid="uid://bk1xdnu6hburf" path="res://Assets/Sprites/GUI/KikiGUI/GUI_StartingScreen_BG.png" id="2_nvbhf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://f71acyx6r3hm" path="res://Assets/GUI/TitleScreen/titre.png" id="9_m8k51"]
 [ext_resource type="Texture2D" uid="uid://cbge3tcuxnvi7" path="res://Assets/GUI/TitleScreen/collectifs.png" id="10_55pvl"]
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="13_0poxc"]
+[ext_resource type="Resource" uid="uid://ddt3bdsesulh5" path="res://Resources/PostProcessConfig/title_screen_postprocess.tres" id="14_0poxc"]
 
 [sub_resource type="Animation" id="Animation_vdg6d"]
 length = 0.001
@@ -142,21 +143,17 @@ texture = ExtResource("2_nvbhf")
 
 [node name="TextureBackground" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1079.0
 texture = ExtResource("3_426x7")
 
 [node name="TextureNoise" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+modulate = Color(1, 1, 1, 0.309804)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("4_mbhl2")
-
-[node name="TextureLignes" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("5_0poxc")
 
 [node name="TextureDust" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -165,28 +162,32 @@ offset_bottom = 1080.0
 texture = ExtResource("6_1lgm6")
 
 [node name="TextureFlare" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -948.0
+offset_top = -540.0
+offset_right = 972.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("7_u2des")
+
+[node name="TextureLignes" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_0poxc")
 
 [node name="TextureMachine" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("8_0vduw")
-
-[node name="TextureTitle" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -558.0
-offset_top = 100.0
-offset_right = 558.0
-offset_bottom = 694.0
-grow_horizontal = 2
-texture = ExtResource("9_m8k51")
 
 [node name="TextureCollectif" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -194,10 +195,23 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -898.0
+offset_top = 20.0
 offset_right = 898.0
-offset_bottom = 40.0
+offset_bottom = 60.0
 grow_horizontal = 2
 texture = ExtResource("10_55pvl")
+
+[node name="TextureTitle" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -558.0
+offset_top = 131.0
+offset_right = 558.0
+offset_bottom = 725.0
+grow_horizontal = 2
+texture = ExtResource("9_m8k51")
 
 [node name="FightText" type="TextureRect" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -207,9 +221,9 @@ anchor_top = 0.72
 anchor_right = 0.5
 anchor_bottom = 0.72
 offset_left = -359.0
-offset_top = -82.6
+offset_top = -39.6
 offset_right = 359.0
-offset_bottom = 189.4
+offset_bottom = 232.4
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_bid6k")
@@ -227,4 +241,5 @@ volume_db = -8.0
 [node name="PostProcess" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("13_0poxc")
+configuration = ExtResource("14_0poxc")
 metadata/_custom_type_script = "uid://b5paj253lonlf"
