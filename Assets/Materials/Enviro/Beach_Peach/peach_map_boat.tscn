@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl38jbhp5ib6c"]
+
+[ext_resource type="PackedScene" uid="uid://bjocdijqjue7f" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachMap_Boat.fbx" id="1_lcrb1"]
+
+[node name="PeachMap_Boat" instance=ExtResource("1_lcrb1")]

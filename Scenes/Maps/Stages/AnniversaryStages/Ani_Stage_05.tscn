@@ -106,6 +106,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)
 [node name="WoodPlatform5" parent="Level" instance=ExtResource("7_d33a2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
 
+[node name="WoodPlatform9" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(1.0183e-07, 0.776537, 0, -0.776537, 1.0183e-07, 0, 0, 0, 0.776537, 0.256555, 1.19176, 0.174411)
+
+[node name="WoodPlatform17" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(-1.69717e-07, -0.776537, 0, 0.776537, -1.69717e-07, 0, 0, 0, 0.776537, -0.241712, 1.19176, 0.174411)
+
+[node name="WoodPlatform18" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(1.0183e-07, 0.776537, 0, -0.776537, 1.0183e-07, 0, 0, 0, 0.776537, 0.256555, 1.95549, 0.174411)
+
+[node name="WoodPlatform19" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(-1.69717e-07, -0.776537, 0, 0.776537, -1.69717e-07, 0, 0, 0, 0.776537, -0.241712, 1.95549, 0.174411)
+
+[node name="WoodPlatform20" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(1.0183e-07, 0.776537, 0, -0.776537, 1.0183e-07, 0, 0, 0, 0.776537, 0.256555, 2.73332, 0.174411)
+
+[node name="WoodPlatform21" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(-1.69717e-07, -0.776537, 0, 0.776537, -1.69717e-07, 0, 0, 0, 0.776537, -0.241712, 2.73332, 0.174411)
+
+[node name="WoodPlatform22" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(1.0183e-07, 0.776537, 0, -0.776537, 1.0183e-07, 0, 0, 0, 0.776537, 0.256555, 3.50517, 0.174411)
+
+[node name="WoodPlatform23" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(-1.69717e-07, -0.776537, 0, 0.776537, -1.69717e-07, 0, 0, 0, 0.776537, -0.241712, 3.50517, 0.174411)
+
+[node name="WoodPlatform24" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(1.0183e-07, 0.776537, 0, -0.776537, 1.0183e-07, 0, 0, 0, 0.776537, 0.256555, 4.27765, 0.174411)
+
+[node name="WoodPlatform25" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(-1.69717e-07, -0.776537, 0, 0.776537, -1.69717e-07, 0, 0, 0, 0.776537, -0.241712, 4.27765, 0.174411)
+
+[node name="WoodPlatform26" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(1.0183e-07, 0.776537, 0, -0.776537, 1.0183e-07, 0, 0, 0, 0.776537, 0.256555, 5.04307, 0.174411)
+
+[node name="WoodPlatform27" parent="Level" instance=ExtResource("7_d33a2")]
+transform = Transform3D(-1.69717e-07, -0.776537, 0, 0.776537, -1.69717e-07, 0, 0, 0, 0.776537, -0.241712, 5.04307, 0.174411)
+
 [node name="WoodPlatform6" parent="Level" instance=ExtResource("7_d33a2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
 
@@ -135,6 +171,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1.5, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.16813, 0)
+visible = false
 size = Vector3(1, 10, 0.445)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/CSGBox3D"]

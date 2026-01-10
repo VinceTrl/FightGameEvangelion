@@ -25,5 +25,5 @@ shader_parameter/colorForeground = Vector3(1, 1, 1)
 shader_parameter/colorBackground = Vector3(1, 1, 1)
 shader_parameter/DEBUG = 0.0
 shader_parameter/EmissiveIntensity = 1.0
-shader_parameter/AlbedoIntensity = 0.01
+shader_parameter/AlbedoIntensity = 1.5
 shader_parameter/AlbedoMultiply = Color(1, 0.85, 0.95, 1)

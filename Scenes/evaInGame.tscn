@@ -295,7 +295,7 @@ spot_angle = 45.3775
 
 [node name="Anim_Robot" type="AnimationPlayer" parent="Robot Pivot"]
 libraries = {
-"": SubResource("AnimationLibrary_eapgk")
+&"": SubResource("AnimationLibrary_eapgk")
 }
 autoplay = "Anim_Robot"
 
