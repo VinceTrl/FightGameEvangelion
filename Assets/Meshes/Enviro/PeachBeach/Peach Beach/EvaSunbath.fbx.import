@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cliqfj6ilrcp2"
-path="res://.godot/imported/beybladeSnake.fbx-18b136a4c0e9c57aa7f82ed671070c0b.scn"
+uid="uid://xj6ghoqf6egr"
+path="res://.godot/imported/EvaSunbath.fbx-28bdbf8a112361a84825692c38363a0f.scn"
 
 [deps]
 
-source_file="res://Assets/Meshes/Props/Beyblade/beybladeSnake.fbx"
-dest_files=["res://.godot/imported/beybladeSnake.fbx-18b136a4c0e9c57aa7f82ed671070c0b.scn"]
+source_file="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/EvaSunbath.fbx"
+dest_files=["res://.godot/imported/EvaSunbath.fbx-28bdbf8a112361a84825692c38363a0f.scn"]
 
 [params]
 

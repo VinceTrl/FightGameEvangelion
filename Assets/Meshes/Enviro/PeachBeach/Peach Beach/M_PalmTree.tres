@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dekh0cajk0dff" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/T_PalmTree.png" id="1_gjnkr"]
 
 [resource]
-specular_mode = 1
 albedo_texture = ExtResource("1_gjnkr")
-roughness = 0.2
+roughness = 0.55
+clearcoat_enabled = true
+clearcoat_roughness = 1.0

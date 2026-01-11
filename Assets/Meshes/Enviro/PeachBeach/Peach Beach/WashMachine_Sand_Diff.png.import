@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfc03347ond1h"
-path.s3tc="res://.godot/imported/w_chi_01duck.png-7a1bd4f1576fe3923aacd7481cd5c3b8.s3tc.ctex"
+uid="uid://bv3lhc6ml543t"
+path.s3tc="res://.godot/imported/WashMachine_Sand_Diff.png-706ee38b45897d4db58c5251d655002a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Props/Ducks/w_chi_01duck.png"
-dest_files=["res://.godot/imported/w_chi_01duck.png-7a1bd4f1576fe3923aacd7481cd5c3b8.s3tc.ctex"]
+source_file="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/WashMachine_Sand_Diff.png"
+dest_files=["res://.godot/imported/WashMachine_Sand_Diff.png-706ee38b45897d4db58c5251d655002a.s3tc.ctex"]
 
 [params]
 

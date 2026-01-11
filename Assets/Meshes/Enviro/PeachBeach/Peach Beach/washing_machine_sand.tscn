@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgdjstnbe7wpl"]
+
+[ext_resource type="PackedScene" uid="uid://coq0dybc1so5" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/WashingMachine_Sand.fbx" id="1_rli2o"]
+[ext_resource type="Material" uid="uid://b8og47l6b1nhc" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/M_SnadMachine.tres" id="2_pkw2i"]
+
+[node name="WashingMachine_Sand" instance=ExtResource("1_rli2o")]
+
+[node name="WashingMachine_Sand" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pkw2i")

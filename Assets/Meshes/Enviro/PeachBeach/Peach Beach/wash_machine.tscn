@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ln8x7tl7bxlr"]
+[gd_scene load_steps=3 format=3 uid="uid://pc4ayrcj5bv6"]
 
 [ext_resource type="PackedScene" uid="uid://dgecl8aywk301" path="res://Assets/Meshes/Enviro/PeachBeach/SM_WashMachine.fbx" id="1_od3rf"]
 [ext_resource type="Material" uid="uid://2qfywkhlf4p8" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/M_WashMachine_3.tres" id="2_4jy77"]

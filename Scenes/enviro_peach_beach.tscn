@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://4kpiihudkml6"]
+[gd_scene load_steps=28 format=3 uid="uid://4kpiihudkml6"]
 
 [ext_resource type="PackedScene" uid="uid://dw1oaifideof1" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeachMap.fbx" id="1_dkts6"]
 [ext_resource type="Material" uid="uid://c32xaoy4av8ja" path="res://Assets/Materials/Enviro/Beach_Peach/M_Sky03.tres" id="2_mf3mu"]
@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://ucs5ee764ebo" path="res://Assets/Shitpost/GIF/Smash/Gif_SunBaby.gif" id="4_bk0ut"]
 [ext_resource type="Material" uid="uid://hn1hyerijivh" path="res://Assets/Materials/Enviro/Beach_Peach/M_SunBaby.tres" id="4_sptxr"]
 [ext_resource type="PackedScene" uid="uid://dl38jbhp5ib6c" path="res://Assets/Materials/Enviro/Beach_Peach/peach_map_boat.tscn" id="6_v1q5d"]
+[ext_resource type="PackedScene" uid="uid://cgdjstnbe7wpl" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/washing_machine_sand.tscn" id="6_x02or"]
 [ext_resource type="PackedScene" uid="uid://cc6jgpfbiw0va" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/peach_beach_map_beam.tscn" id="7_v6bwy"]
 [ext_resource type="PackedScene" uid="uid://d0xil3j8mobd0" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/peach_beach_shark.tscn" id="8_rksw6"]
+[ext_resource type="PackedScene" uid="uid://cy51701osxojk" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/beach_palm.tscn" id="9_bm5u6"]
+[ext_resource type="PackedScene" uid="uid://bty4w5atwtw7t" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/beach_palm_Floating.tscn" id="10_1fdnm"]
+[ext_resource type="PackedScene" uid="uid://du67ugwtqvba6" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/eva_sunbath.tscn" id="12_6a47s"]
 
 [sub_resource type="Animation" id="Animation_v1q5d"]
 resource_name = "Anim_Bato"
@@ -130,6 +134,44 @@ _data = {
 &"RESET": SubResource("Animation_jenby")
 }
 
+[sub_resource type="Animation" id="Animation_kog4e"]
+resource_name = "Palm_Floating_Translate"
+length = 90.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 36.7587, 89.7129, 89.7333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-277.069, 5, 134.461), Vector3(-277.069, 5.221, 134.461), Vector3(-314.089, 5.22074, -1.46655), Vector3(-314.103, 3.73118, -1.51898)]
+}
+
+[sub_resource type="Animation" id="Animation_2goll"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-314.103, 3.73118, -1.51898)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mf8l8"]
+_data = {
+&"Palm_Floating_Translate": SubResource("Animation_kog4e"),
+&"RESET": SubResource("Animation_2goll")
+}
+
 [sub_resource type="Animation" id="Animation_1fdnm"]
 resource_name = "Anim_Shark"
 length = 60.0
@@ -202,20 +244,84 @@ shadow_bias = 0.3
 spot_range = 652.994
 spot_angle = 58.1256
 
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lighting" index="3"]
+transform = Transform3D(0.829436, -0.0799381, -0.552852, 0.48526, 0.593341, 0.642237, 0.276691, -0.800972, 0.53093, -149.132, 81.9394, 34.9864)
+light_color = Color(0.859209, 0.79928, 0.424054, 1)
+light_energy = 20.0
+spot_range = 192.742
+spot_angle_attenuation = 1.27456
+
 [node name="Sun" type="Sprite3D" parent="." index="17"]
-transform = Transform3D(80.2999, 0, -44.7312, 0, 88.8259, 0, 104.46, 0, 34.3855, 171.464, 207.776, -513.413)
+transform = Transform3D(80.2999, 0, -44.7312, 0, 88.8259, 0, 104.46, 0, 34.3855, 171.615, 208.628, -513.457)
 material_override = ExtResource("4_sptxr")
 texture = ExtResource("4_bk0ut")
 
 [node name="Meshes" type="Node3D" parent="." index="18"]
 
-[node name="Pivot_Boat" type="Node3D" parent="Meshes" index="0"]
+[node name="SandMachine" type="Node3D" parent="Meshes" index="0"]
+transform = Transform3D(5.77466, 0.559062, 9.93565, -0.021856, 11.488, -0.633707, -9.95134, 0.299187, 5.76694, -123.084, 23.546, -43.7042)
+
+[node name="WashingMachine_Sand" parent="Meshes/SandMachine" index="0" instance=ExtResource("6_x02or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000521822, -0.168841, -1.5425e-07)
+
+[node name="WashingMachine_Sand2" parent="Meshes/SandMachine" index="1" instance=ExtResource("6_x02or")]
+transform = Transform3D(0.900494, -0.0350217, -0.131161, 0.0370087, 0.909849, 0.0111443, 0.130614, -0.0163501, 0.901106, -0.0188534, -0.320146, 5.51524)
+
+[node name="WashingMachine_Sand3" parent="Meshes/SandMachine" index="2" instance=ExtResource("6_x02or")]
+transform = Transform3D(0.187185, 0.0304618, -0.554151, -0.098321, 0.577391, -0.00147227, 0.546209, 0.0934947, 0.189642, -0.142542, -1.00714, 1.5173)
+
+[node name="WashingMachine_Sand5" parent="Meshes/SandMachine" index="3" instance=ExtResource("6_x02or")]
+transform = Transform3D(0.612463, -0.0492362, -0.00608403, 0.0495596, 0.603796, 0.102699, -0.00225072, -0.102854, 0.605796, -0.288363, -0.753793, -1.73507)
+
+[node name="WashingMachine_Sand4" parent="Meshes/SandMachine" index="4" instance=ExtResource("6_x02or")]
+transform = Transform3D(-0.0116778, -0.0017195, 0.517548, -0.00557109, 0.51765, 0.00159414, -0.517521, -0.00553367, -0.0116956, -0.348545, -1.00657, 4.03554)
+
+[node name="WashingMachine_Sand6" parent="Meshes/SandMachine" index="5" instance=ExtResource("6_x02or")]
+transform = Transform3D(0.234361, -0.0125084, 0.461425, -0.00201776, 0.517459, 0.0150522, -0.461591, -0.00861279, 0.234211, -0.891727, -0.846957, 6.94768)
+
+[node name="Beach_Palm2" parent="Meshes" index="1" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-2.44086, 0.00314477, 1.96967, 0.217313, 3.11775, 0.264321, -1.95766, 0.34217, -2.42651, -70.8565, 4.87457, 28.8912)
+
+[node name="Beach_Palm11" parent="Meshes" index="2" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-3.38837, -0.434072, 2.75661, 0.544892, 4.14977, 1.32321, -2.73687, 1.36359, -3.14938, -71.801, 4.87457, -53.4185)
+
+[node name="Beach_Palm8" parent="Meshes" index="3" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-2.42108, -0.310156, 1.96967, 0.0632201, 3.08479, 0.563458, -1.99294, 0.474642, -2.37494, -141.737, 8.90071, 147.554)
+
+[node name="Beach_Palm9" parent="Meshes" index="4" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(2.6571, -0.703616, -1.51068, 0.277418, 2.99028, -0.90481, 1.64325, 0.632905, 2.59549, -158.054, 7.72065, 170.483)
+
+[node name="Beach_Palm3" parent="Meshes" index="5" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-3.02187, -0.573348, 0.61402, -0.501371, 3.07027, 0.399423, -0.674074, 0.286677, -3.04974, -169.465, 3.43408, -37.9726)
+
+[node name="Beach_Palm4" parent="Meshes" index="6" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-3.09346, -0.29195, 0.427485, -0.222987, 3.08897, 0.49598, -0.467177, 0.458786, -3.06736, -181.945, 6.11357, -89.605)
+
+[node name="Beach_Palm5" parent="Meshes" index="7" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-3.09346, -0.250954, 0.452769, -0.222987, 3.1217, 0.206732, -0.467177, 0.171707, -3.09672, -196.13, 2.77432, -65.8245)
+
+[node name="Beach_Palm12" parent="Meshes" index="8" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-3.09346, -0.250954, 0.452769, -0.222987, 3.1217, 0.206732, -0.467177, 0.171707, -3.09672, -115.827, 9.51262, -138.743)
+
+[node name="Beach_Palm10" parent="Meshes" index="9" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-3.09346, -0.250954, 0.452769, -0.173469, 3.0872, 0.525932, -0.487736, 0.493679, -3.05873, -110.475, 2.42602, 69.9252)
+
+[node name="Beach_Palm6" parent="Meshes" index="10" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-2.65844, -0.215664, 0.389099, -0.19163, 2.68271, 0.17766, -0.40148, 0.147561, -2.66125, -10.8973, 18.3865, -81.898)
+
+[node name="Beach_Palm7" parent="Meshes" index="11" instance=ExtResource("9_bm5u6")]
+transform = Transform3D(-2.50698, -0.771738, 0.620238, -0.79234, 2.57631, 0.00300223, -0.593694, -0.179533, -2.62307, -18.8904, 25.0481, 164.248)
+
+[node name="Pivot_Boat" type="Node3D" parent="Meshes" index="12"]
 transform = Transform3D(0.997564, 0, -0.0697565, 0, 1, 0, 0.0697565, 0, 0.997564, -578.074, 0, 36.6561)
 
 [node name="PeachMap_Boat" parent="Meshes/Pivot_Boat" index="0" instance=ExtResource("6_v1q5d")]
-transform = Transform3D(0.506876, 0.0475039, 0.117029, -0.081378, 0.297738, -0.0177898, -0.18678, -0.000807203, 0.325339, 372.767, 19.5344, -2.09021)
+transform = Transform3D(0.512494, 0.0168031, 0.118316, -0.0334522, 0.300935, 0.00184552, -0.18618, -0.00781746, 0.325354, 372.767, 19.5344, -2.09021)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Meshes/Pivot_Boat/PeachMap_Boat" index="1"]
+[node name="EvaSunbath" parent="Meshes/Pivot_Boat/PeachMap_Boat" index="0" instance=ExtResource("12_6a47s")]
+transform = Transform3D(21.3773, -2.68399, 0.27689, 5.85871, 32.2378, -1.62075, 0.265418, -1.46092, -28.3922, 15.0311, -20.7489, -68.5041)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Meshes/Pivot_Boat/PeachMap_Boat" index="2"]
 transform = Transform3D(-0.0321519, 0.252758, -0.966995, 0.109601, 0.962553, 0.247952, 0.993456, -0.0980113, -0.0586503, -167.548, 128.076, -35.4789)
 light_energy = 5.0
 spot_range = 175.69
@@ -228,7 +334,7 @@ libraries = {
 }
 autoplay = "Anim_Bato"
 
-[node name="PivotBeam" type="Node3D" parent="Meshes" index="1"]
+[node name="PivotBeam" type="Node3D" parent="Meshes" index="13"]
 transform = Transform3D(0.923679, -0.383167, 0, 0.353844, 0.852991, 0.383667, -0.147009, -0.354385, 0.923472, 434.184, 0, -120.133)
 
 [node name="Pivot_Beam01" type="Node3D" parent="Meshes/PivotBeam" index="0"]
@@ -249,7 +355,7 @@ libraries = {
 }
 autoplay = "BeachBeam01"
 
-[node name="PivotBeam2" type="Node3D" parent="Meshes" index="2"]
+[node name="PivotBeam2" type="Node3D" parent="Meshes" index="14"]
 transform = Transform3D(0.982653, 0.0543852, 0.1773, -0.0296085, 0.989779, -0.139507, -0.183075, 0.131837, 0.974219, 342.933, 92.0446, 179.573)
 
 [node name="Pivot_Beam01" type="Node3D" parent="Meshes/PivotBeam2" index="0"]
@@ -270,7 +376,18 @@ libraries = {
 }
 autoplay = "Beach_Beam02"
 
-[node name="Node3D" type="Node3D" parent="Meshes" index="3"]
+[node name="Pivot_FloatingPalm" type="Node3D" parent="Meshes" index="15"]
+transform = Transform3D(1.57753, 0, 0.429641, 0, 1.63499, 0, -0.429641, 0, 1.57753, -314.103, 3.73118, -1.51898)
+
+[node name="Beach_Palm" parent="Meshes/Pivot_FloatingPalm" index="0" instance=ExtResource("10_1fdnm")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Meshes/Pivot_FloatingPalm" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_mf8l8")
+}
+autoplay = "Palm_Floating_Translate"
+
+[node name="Node3D" type="Node3D" parent="Meshes" index="16"]
 transform = Transform3D(3.09124, 0, 1.09285, 0, 3.27873, 0, -1.09285, 0, 3.09124, -305.636, 0.146211, -22.8366)
 
 [node name="PeachBeach_Shark" parent="Meshes/Node3D" index="0" instance=ExtResource("8_rksw6")]
