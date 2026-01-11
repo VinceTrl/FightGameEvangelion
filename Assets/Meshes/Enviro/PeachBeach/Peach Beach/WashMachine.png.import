@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0wk2qavsvyfw"
-path.s3tc="res://.godot/imported/Swim ring_2.png-c7225251e8d2df14f3fd86741dbf2084.s3tc.ctex"
+uid="uid://6w20xlxfshc"
+path.s3tc="res://.godot/imported/WashMachine.png-382f14a3b72ac90091e03d144fee8076.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Props/SwimRing/Swim ring_2.png"
-dest_files=["res://.godot/imported/Swim ring_2.png-c7225251e8d2df14f3fd86741dbf2084.s3tc.ctex"]
+source_file="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/WashMachine.png"
+dest_files=["res://.godot/imported/WashMachine.png-382f14a3b72ac90091e03d144fee8076.s3tc.ctex"]
 
 [params]
 
