@@ -1,14 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbx10gs5u8elq"]
+[gd_scene load_steps=15 format=3 uid="uid://dbx10gs5u8elq"]
 
+[ext_resource type="Texture2D" uid="uid://c3x6lw2venorl" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_1.png" id="1_k3hpy"]
 [ext_resource type="Texture2D" uid="uid://dgygk47kx4lst" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP3_1.png" id="1_ksexr"]
 [ext_resource type="Texture2D" uid="uid://cduukranpj8pq" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP3_2.png" id="2_1mv2a"]
+[ext_resource type="Texture2D" uid="uid://desnekh4u8b1u" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_2.png" id="2_bfdwm"]
 [ext_resource type="Script" uid="uid://cp5rad2ejix0a" path="res://Scripts/GUI/texture_hp.gd" id="2_x84f7"]
+[ext_resource type="Texture2D" uid="uid://bootq8tl7d3nx" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_3.png" id="3_4x0lj"]
+[ext_resource type="Texture2D" uid="uid://daxlq0l0tj6no" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_4.png" id="4_7y0ba"]
+[ext_resource type="Texture2D" uid="uid://c7t3po1i7gbff" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_5.png" id="5_7w8oo"]
+[ext_resource type="Texture2D" uid="uid://bbaifof22lt7a" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_6.png" id="6_quudp"]
+[ext_resource type="Texture2D" uid="uid://b1aq2eg0qd41b" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_7.png" id="7_kog0h"]
+[ext_resource type="Texture2D" uid="uid://bv2i8ka6lntbs" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_8.png" id="8_3u2pb"]
+[ext_resource type="Texture2D" uid="uid://dff371d6afc0q" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_9.png" id="9_2uig6"]
+[ext_resource type="Texture2D" uid="uid://bdnaro7k8nyk7" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_10.png" id="10_lyvxd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_44mr8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ksexr")
+"texture": ExtResource("1_k3hpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bfdwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4x0lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7y0ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7w8oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_quudp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kog0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3u2pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2uig6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lyvxd")
 }],
 "loop": false,
 "name": &"P1_Hit",
@@ -24,7 +61,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1mv2a")
+"texture": ExtResource("1_k3hpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bfdwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4x0lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7y0ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7w8oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_quudp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kog0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3u2pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2uig6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lyvxd")
 }],
 "loop": false,
 "name": &"P2_Hit",
@@ -42,5 +106,5 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 position = Vector2(139, 118)
 sprite_frames = SubResource("SpriteFrames_44mr8")
-animation = &"P1_Hit"
+animation = &"P2_Hit"
 script = ExtResource("2_x84f7")

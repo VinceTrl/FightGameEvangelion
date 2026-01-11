@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ccq8u40edk25l"]
+[gd_scene load_steps=29 format=3 uid="uid://ccq8u40edk25l"]
 
 [ext_resource type="Script" uid="uid://cnkheeds0wrh" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_umlfk"]
 [ext_resource type="Texture2D" uid="uid://c638bakjdtbln" path="res://Resources/Gradients/Player2_DamageEffect_Pink.tres" id="2_porba"]
@@ -11,9 +11,19 @@
 [ext_resource type="Script" uid="uid://rypcejv8gl2c" path="res://Scripts/GUI/PlayerRoundUI.gd" id="7_fnjrm"]
 [ext_resource type="Texture2D" uid="uid://dq3u6ohwutdkm" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP2_2.png" id="7_vic8l"]
 [ext_resource type="Texture2D" uid="uid://cmxfyydt0jdgi" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP1_1.png" id="8_0nv5t"]
+[ext_resource type="Texture2D" uid="uid://c3x6lw2venorl" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_1.png" id="8_4mskk"]
 [ext_resource type="Texture2D" uid="uid://bldhvt87d6e4x" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP1_2.png" id="9_pmx6q"]
+[ext_resource type="Texture2D" uid="uid://desnekh4u8b1u" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_2.png" id="9_whpd1"]
+[ext_resource type="Texture2D" uid="uid://bootq8tl7d3nx" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_3.png" id="10_7ocov"]
+[ext_resource type="Texture2D" uid="uid://daxlq0l0tj6no" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_4.png" id="11_onq76"]
+[ext_resource type="Texture2D" uid="uid://c7t3po1i7gbff" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_5.png" id="12_v2vv6"]
+[ext_resource type="Texture2D" uid="uid://bbaifof22lt7a" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_6.png" id="13_fr4bd"]
 [ext_resource type="Texture2D" uid="uid://dl4mte7rb6fup" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Player_2.png" id="13_lba1f"]
 [ext_resource type="Texture2D" uid="uid://bm3edlyew80g" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Kiki_Head_2.png" id="14_ungtg"]
+[ext_resource type="Texture2D" uid="uid://b1aq2eg0qd41b" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_7.png" id="14_wf6xj"]
+[ext_resource type="Texture2D" uid="uid://bv2i8ka6lntbs" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_8.png" id="15_auq2i"]
+[ext_resource type="Texture2D" uid="uid://dff371d6afc0q" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_9.png" id="16_c7uns"]
+[ext_resource type="Texture2D" uid="uid://bdnaro7k8nyk7" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_10.png" id="17_xk88w"]
 
 [sub_resource type="Curve" id="Curve_13v2t"]
 _data = [Vector2(0, 1), 19.2646, 8.5177e-07, 1, 0, Vector2(1, 0), -3.47398, 0.0, 0, 0]
@@ -23,7 +33,34 @@ point_count = 2
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_6ftx2")
+"texture": ExtResource("8_4mskk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_whpd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ocov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_onq76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v2vv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fr4bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wf6xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_auq2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_c7uns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xk88w")
 }],
 "loop": false,
 "name": &"P1_Hit",
@@ -39,7 +76,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_vic8l")
+"texture": ExtResource("8_4mskk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_whpd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ocov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_onq76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v2vv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fr4bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wf6xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_auq2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_c7uns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xk88w")
 }],
 "loop": false,
 "name": &"P2_Hit",
@@ -58,7 +122,34 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_0nv5t")
+"texture": ExtResource("8_4mskk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_whpd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ocov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_onq76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v2vv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fr4bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wf6xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_auq2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_c7uns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xk88w")
 }],
 "loop": false,
 "name": &"P1_Hit",
@@ -74,7 +165,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_pmx6q")
+"texture": ExtResource("8_4mskk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_whpd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ocov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_onq76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v2vv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fr4bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wf6xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_auq2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_c7uns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xk88w")
 }],
 "loop": false,
 "name": &"P2_Hit",
@@ -121,27 +239,11 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -985.714
-offset_top = 1241.43
+offset_top = 1322.86
 offset_right = -352.714
-offset_bottom = 1421.43
+offset_bottom = 1502.86
 grow_horizontal = 0
 texture = ExtResource("4_sxuqw")
-
-[node name="KIKI2" type="TextureRect" parent="TextureBackgroundHP"]
-layout_mode = 0
-offset_left = 125.714
-offset_top = -110.0
-offset_right = 503.714
-offset_bottom = 41.0
-texture = ExtResource("13_lba1f")
-
-[node name="KIKI head 2" type="TextureRect" parent="TextureBackgroundHP"]
-layout_mode = 0
-offset_left = 414.286
-offset_top = -152.857
-offset_right = 817.286
-offset_bottom = 139.143
-texture = ExtResource("14_ungtg")
 
 [node name="ControlHP" type="Control" parent="TextureBackgroundHP"]
 layout_mode = 1
@@ -159,6 +261,22 @@ grow_vertical = 2
 position = Vector2(575.071, 172.286)
 animation = &"P2_Idle"
 playerIndex = 2
+
+[node name="KIKI head 2" type="TextureRect" parent="TextureBackgroundHP/ControlHP"]
+layout_mode = 0
+offset_left = 470.0
+offset_top = -80.0
+offset_right = 873.0
+offset_bottom = 212.0
+texture = ExtResource("14_ungtg")
+
+[node name="KIKI2" type="TextureRect" parent="TextureBackgroundHP/ControlHP"]
+layout_mode = 0
+offset_left = 161.428
+offset_top = -28.5715
+offset_right = 539.428
+offset_bottom = 122.429
+texture = ExtResource("13_lba1f")
 
 [node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
 position = Vector2(430.786, 160.857)
