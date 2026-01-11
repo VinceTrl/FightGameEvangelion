@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd04ovk8t6feu"]
+[gd_scene load_steps=9 format=3 uid="uid://bd04ovk8t6feu"]
 
 [ext_resource type="Script" uid="uid://rbtlmn7u1pl" path="res://Scripts/Gameplay/trap_heart.gd" id="1_l1fk1"]
 [ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="1_ogd58"]
 [ext_resource type="PackedScene" uid="uid://2whp7jbymhuk" path="res://Assets/Meshes/Props/Heart/ItemHeartContainer.fbx" id="2_c1kcw"]
+[ext_resource type="PackedScene" uid="uid://bg6cgt1w4kuov" path="res://Scenes/VFX/item_glow.tscn" id="4_7nu5k"]
 
 [sub_resource type="Curve" id="Curve_riyve"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -35,6 +36,9 @@ positionCurveZ = SubResource("Curve_yyclk")
 
 [node name="ItemHeartContainer" parent="Visual/Animation" instance=ExtResource("2_c1kcw")]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
+
+[node name="ItemGlow" parent="Visual/Animation" instance=ExtResource("4_7nu5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0341559)
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2

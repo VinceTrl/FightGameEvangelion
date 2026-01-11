@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bs6eigat3lyci"]
+[gd_scene load_steps=37 format=3 uid="uid://bs6eigat3lyci"]
 
 [ext_resource type="Script" uid="uid://c6m7vbkknig2s" path="res://Scripts/Gameplay/pick_up.gd" id="1_8536p"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="1_pepgg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://siboucvt8jf0" path="res://Assets/Shaders/warning_shader.tres" id="4_uaybe"]
 [ext_resource type="Texture2D" uid="uid://c8n1885byqlc3" path="res://Assets/Sprites/Items/Bullet.png" id="5_5d5as"]
 [ext_resource type="Texture2D" uid="uid://c78fbhwykfes5" path="res://Assets/Sprites/Items/Ammo.png" id="6_5ojiq"]
+[ext_resource type="PackedScene" uid="uid://bg6cgt1w4kuov" path="res://Scenes/VFX/item_glow.tscn" id="6_middy"]
 
 [sub_resource type="Curve" id="Curve_jkujo"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -222,6 +223,9 @@ shaded = true
 sprite_frames = SubResource("SpriteFrames_eqyg0")
 autoplay = "default"
 frame_progress = 0.521281
+
+[node name="ItemGlow" parent="VisualHolder/Visual/NodeShaker/AnimatedSprite3D" instance=ExtResource("6_middy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0669764)
 
 [node name="Sprite3D" type="Sprite3D" parent="VisualHolder/Visual/NodeShaker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00594343, -0.0101355, 0.066128)

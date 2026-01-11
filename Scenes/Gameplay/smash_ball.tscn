@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://1s7868dthyoc"]
+[gd_scene load_steps=14 format=3 uid="uid://1s7868dthyoc"]
 
 [ext_resource type="Script" uid="uid://dth1pc7jfyjni" path="res://Scripts/Gameplay/smash_ball_item.gd" id="1_kspie"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_vifah"]
 [ext_resource type="Resource" uid="uid://bgvu6c31k2dbe" path="res://Resources/PostProcessAnims/Glitch/DamageGlitch.tres" id="2_5njag"]
+[ext_resource type="Texture2D" uid="uid://c0ph7x1vlhpbo" path="res://Assets/Sprites/Vfx/Glow/item_glow.png" id="3_ek7dd"]
 [ext_resource type="Script" uid="uid://cg2f0qymkqehu" path="res://Scripts/Utilities/ScreenBorderDetection3D.gd" id="3_m7qlv"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_l6hae"]
 
@@ -48,6 +49,11 @@ randomBounceAngleAmount = 40.0
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 mesh = SubResource("SphereMesh_kspie")
 surface_material_override/0 = SubResource("StandardMaterial3D_kspie")
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.526459)
+texture_filter = 0
+texture = ExtResource("3_ek7dd")
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("1_vifah")
