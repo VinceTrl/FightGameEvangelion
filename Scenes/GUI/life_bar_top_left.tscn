@@ -251,25 +251,25 @@ offset_bottom = -58.5718
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
-position = Vector2(114.286, 162.857)
-animation = &"P1_Idle"
-
 [node name="KIKI_Head" type="TextureRect" parent="TextureBackgroundHP/ControlHP"]
 layout_mode = 0
-offset_left = -175.714
-offset_top = -87.1425
-offset_right = 227.286
-offset_bottom = 204.858
+offset_left = -177.143
+offset_top = -94.2853
+offset_right = 225.857
+offset_bottom = 197.715
 texture = ExtResource("14_s7lo4")
 
 [node name="KIKI_1" type="TextureRect" parent="TextureBackgroundHP/ControlHP"]
 layout_mode = 0
 offset_left = 187.143
-offset_top = -44.2852
+offset_top = -44.2853
 offset_right = 534.143
 offset_bottom = 118.714
 texture = ExtResource("15_yclad")
+
+[node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
+position = Vector2(114.286, 162.857)
+animation = &"P1_Idle"
 
 [node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_jt636")]
 position = Vector2(258.571, 151.429)
