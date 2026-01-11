@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdvwx0kkjddp"]
+[gd_scene load_steps=14 format=3 uid="uid://bdvwx0kkjddp"]
 
 [ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="1_dwokd"]
 [ext_resource type="Script" uid="uid://bovawk4lew2it" path="res://Scripts/Gameplay/heart.gd" id="1_jef0d"]
 [ext_resource type="PackedScene" uid="uid://2whp7jbymhuk" path="res://Assets/Meshes/Props/Heart/ItemHeartContainer.fbx" id="2_0yx3e"]
+[ext_resource type="PackedScene" uid="uid://bg6cgt1w4kuov" path="res://Scenes/VFX/item_glow.tscn" id="4_dvh17"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="4_lhiya"]
 [ext_resource type="Script" uid="uid://cvtsnlxtxaxyx" path="res://Scripts/Gameplay/Fishing/FishHookTarget.gd" id="5_71r1n"]
 
@@ -54,6 +55,9 @@ collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visual/Animation/ItemHeartContainer/StaticBody3D"]
 shape = SubResource("BoxShape3D_mlopj")
+
+[node name="ItemGlow" parent="Visual/Animation/ItemHeartContainer" instance=ExtResource("4_dvh17")]
+transform = Transform3D(0.038, 0, 0, 0, 0.038, 0, 0, 0, 0.038, 0, 0, -0.0022168)
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("4_lhiya")
