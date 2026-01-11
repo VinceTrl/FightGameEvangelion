@@ -5,6 +5,7 @@ extends Control
 #@onready var ammoContainer: HBoxContainer = $CanvasLayer/AmmoBar/Ammo
 @onready var lifeContainer: Control = $TextureBackgroundHP/ControlHP
 @onready var ammoContainer: HBoxContainer = $TextureBackgroundHP/AmmoContainer
+@onready var player_ammo: Control = $TextureBackgroundHP/PlayerAmmo
 
 
 @export var playerIndex = 0
@@ -28,6 +29,9 @@ func _ready() -> void:
 		push_error("player not found in player BAR GUI: " + str(self.name))
 		return
 		
+	if(player_ammo):
+		player_ammo.SetPlayer(player)
+	
 	player.OnPlayerTakeDamage.connect(UpdateLifeBar)
 	player.OnPlayerDeath.connect(UpdateLifeBar)
 	player.OnPlayerLifeChanged.connect(UpdateLifeBar)

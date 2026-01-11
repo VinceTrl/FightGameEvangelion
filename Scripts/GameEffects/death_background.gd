@@ -12,11 +12,12 @@ func _ready() -> void:
 	pass
 	
 func _process(delta: float) -> void:
-	if(Input.is_action_just_pressed("DebugKey")):
-		SetBackgroundOnPlayer(Manager.gameManager.players[0])
-
-	if(Input.is_action_just_released("DebugKey")):
-		HideBackground()
+	#if(Input.is_action_just_pressed("DebugKey")):
+		#SetBackgroundOnPlayer(Manager.gameManager.players[0])
+#
+	#if(Input.is_action_just_released("DebugKey")):
+		#HideBackground()
+	pass
 		
 func PlayRandomAnim():
 	var animations = animation_player.get_animation_list()
