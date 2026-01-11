@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://v8op4kmw1yn0"]
+
+[ext_resource type="Texture2D" uid="uid://8k2p4vt4pk00" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeach_Wood04.png" id="1_kfy14"]
+
+[resource]
+albedo_texture = ExtResource("1_kfy14")
+emission_energy_multiplier = 0.2
+emission_texture = ExtResource("1_kfy14")

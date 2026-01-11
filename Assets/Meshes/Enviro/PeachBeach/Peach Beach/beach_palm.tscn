@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy51701osxojk"]
+
+[ext_resource type="PackedScene" uid="uid://dn6nwafjlk624" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Beach_Palm.fbx" id="1_l5fsa"]
+[ext_resource type="Material" uid="uid://drkguncf57mrd" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/M_PalmTree.tres" id="2_iviq1"]
+
+[node name="Beach_Palm" instance=ExtResource("1_l5fsa")]
+
+[node name="Beach_Palm" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_iviq1")
