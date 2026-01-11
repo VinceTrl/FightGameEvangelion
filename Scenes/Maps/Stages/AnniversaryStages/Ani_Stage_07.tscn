@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhaye72kx2pug"]
+[gd_scene load_steps=11 format=3 uid="uid://bhaye72kx2pug"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_ot161"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_6ugkb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dx8w30oi2ennb" path="res://Scenes/Meshes/machine.tscn" id="4_f4ubu"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_4fjne"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_5ebhv"]
+[ext_resource type="Texture2D" uid="uid://bs81jr8tgdtvv" path="res://Assets/Sprites/Vfx/T_Gradient_Radial.png" id="6_6ugkb"]
 
 [sub_resource type="Animation" id="Animation_ot161"]
 resource_name = "Floating"
@@ -180,6 +181,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 [node name="Wash" parent="Gameplay/Objects/RotationRoot" instance=ExtResource("4_f4ubu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.731164, 0)
 
+[node name="Sprite3D" type="Sprite3D" parent="Gameplay/Objects/RotationRoot/Wash"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70727, 0)
+pixel_size = 0.015
+texture = ExtResource("6_6ugkb")
+
 [node name="PenPenLocations" type="Node3D" parent="Gameplay"]
 
 [node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
@@ -205,6 +211,9 @@ script = ExtResource("5_4fjne")
 [node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95277, 2.53234, 0)
 script = ExtResource("5_4fjne")
+
+[node name="Wash2" parent="." instance=ExtResource("4_f4ubu")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 1.24312, 0, -1.49483, -4.2182)
 
 [node name="Level" type="Node3D" parent="."]
 
