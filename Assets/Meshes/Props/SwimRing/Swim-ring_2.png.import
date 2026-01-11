@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0wk2qavsvyfw"
-path.s3tc="res://.godot/imported/Swim ring_2.png-c7225251e8d2df14f3fd86741dbf2084.s3tc.ctex"
+uid="uid://de2h74o43iyy1"
+path.s3tc="res://.godot/imported/Swim-ring_2.png-76389dbf91ee09403359b7fb538bb7ac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Props/SwimRing/Swim ring_2.png"
-dest_files=["res://.godot/imported/Swim ring_2.png-c7225251e8d2df14f3fd86741dbf2084.s3tc.ctex"]
+source_file="res://Assets/Meshes/Props/SwimRing/Swim-ring_2.png"
+dest_files=["res://.godot/imported/Swim-ring_2.png-76389dbf91ee09403359b7fb538bb7ac.s3tc.ctex"]
 
 [params]
 

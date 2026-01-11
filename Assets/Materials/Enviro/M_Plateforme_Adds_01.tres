@@ -7,3 +7,4 @@ albedo_texture = ExtResource("1_bmjqa")
 emission_enabled = true
 emission_energy_multiplier = 0.3
 emission_texture = ExtResource("1_bmjqa")
+texture_filter = 0

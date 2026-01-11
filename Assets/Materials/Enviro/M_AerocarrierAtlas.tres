@@ -6,3 +6,4 @@
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
 emission_texture = ExtResource("1_sodl3")
+texture_filter = 0

@@ -7,3 +7,4 @@ albedo_texture = ExtResource("1_ckcda")
 emission_enabled = true
 emission_energy_multiplier = 0.5
 emission_texture = ExtResource("1_ckcda")
+texture_filter = 1

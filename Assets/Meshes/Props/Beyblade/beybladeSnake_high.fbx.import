@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxxd5gxnke66u"
-path="res://.godot/imported/duck.fbx-beb262ec6bc4bb714fab71abafa488e1.scn"
+uid="uid://cgiikd1drn46u"
+path="res://.godot/imported/beybladeSnake_high.fbx-c61efb1b9dd1eabb693cc7aa87c48265.scn"
 
 [deps]
 
-source_file="res://Assets/Meshes/Props/Ducks/duck.fbx"
-dest_files=["res://.godot/imported/duck.fbx-beb262ec6bc4bb714fab71abafa488e1.scn"]
+source_file="res://Assets/Meshes/Props/Beyblade/beybladeSnake_high.fbx"
+dest_files=["res://.godot/imported/beybladeSnake_high.fbx-c61efb1b9dd1eabb693cc7aa87c48265.scn"]
 
 [params]
 
@@ -41,4 +41,4 @@ _subresources={}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
-fbx/naming_version=1
+fbx/naming_version=2
