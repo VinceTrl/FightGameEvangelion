@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mqdcgccgmvd"]
+[gd_scene load_steps=11 format=3 uid="uid://mqdcgccgmvd"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_yfhfw"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_f46y1"]
@@ -6,6 +6,153 @@
 [ext_resource type="PackedScene" uid="uid://dx8w30oi2ennb" path="res://Scenes/Meshes/machine.tscn" id="4_yfhfw"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_ocir1"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_ehp2l"]
+[ext_resource type="PackedScene" uid="uid://ln8x7tl7bxlr" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/wash_machine.tscn" id="7_f46y1"]
+
+[sub_resource type="Animation" id="Animation_4wxa4"]
+resource_name = "Floating"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.33617, 0, 1.3305, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.00851, 8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 1.33617, 0, 0.119525, -1.33617, 0, 1.3305, 0, 0, -1.3305, 0, 0, 0),
+"times": PackedFloat32Array(0, 4.00851, 8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anim:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.33617, 0, 1.3305, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.00851, 8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anim:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.685949, 0, 1.32188, 0, 0, -1.32188, 0, 0.658838, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.05785, 6.02349, 8)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anim:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.685949, 0, 1.32188, 0, 0, -1.32188, 0, 0.658838, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.05785, 6.02349, 8)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("anim:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.233333, 0.0213421, 0.174707, -0.685949, 0, 1.32188, 0, -0.19122, -1.32188, 0, 0.658838, 0, 0, -0.233333, -0.0269496, 0.25, 0),
+"times": PackedFloat32Array(0, 2.05785, 6.02349, 8)
+}
+
+[sub_resource type="Animation" id="Animation_6oci7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anim:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anim:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anim:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("anim:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ocir1"]
+_data = {
+&"Floating": SubResource("Animation_4wxa4"),
+&"RESET": SubResource("Animation_6oci7")
+}
 
 [node name="Ani_Stage_06" type="Node3D"]
 script = ExtResource("1_yfhfw")
@@ -137,3 +284,50 @@ light_energy = 3.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 57.86
+
+[node name="WashMachine_Background" type="Node3D" parent="."]
+
+[node name="WashMachine" type="Node3D" parent="WashMachine_Background"]
+transform = Transform3D(0.552752, 0, -0.833346, 0, 1, 0, 0.833346, 0, 0.552752, 3.74435, 0.26757, 0.942358)
+
+[node name="anim" type="Node3D" parent="WashMachine_Background/WashMachine"]
+
+[node name="SM_WashMachine" parent="WashMachine_Background/WashMachine/anim" instance=ExtResource("7_f46y1")]
+transform = Transform3D(0.00356408, 0.349259, -0.0224873, -0.332355, -0.00366935, -0.109666, -0.10967, 0.0224704, 0.331614, -0.662338, -0.140506, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WashMachine_Background/WashMachine/anim"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ocir1")
+}
+autoplay = "Floating"
+
+[node name="WashMachine3" type="Node3D" parent="WashMachine_Background"]
+transform = Transform3D(0.991165, 0, 0.132637, 0, 1, 0, -0.132637, 0, 0.991165, -1.17382, 0.388283, 0.818135)
+
+[node name="anim" type="Node3D" parent="WashMachine_Background/WashMachine3"]
+
+[node name="SM_WashMachine" parent="WashMachine_Background/WashMachine3/anim" instance=ExtResource("7_f46y1")]
+transform = Transform3D(0.0194087, 0.299365, -0.00203786, 0.0170654, -0.00314517, -0.299498, -0.298885, 0.0192603, -0.0172328, -0.662338, -0.140506, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WashMachine_Background/WashMachine3/anim"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ocir1")
+}
+autoplay = "Floating"
+
+[node name="WashMachine2" type="Node3D" parent="WashMachine_Background"]
+transform = Transform3D(0.552752, 0, -0.833346, 0, 1, 0, 0.833346, 0, 0.552752, -4.29601, -0.0453053, 0.196477)
+
+[node name="anim" type="Node3D" parent="WashMachine_Background/WashMachine2"]
+
+[node name="SM_WashMachine" parent="WashMachine_Background/WashMachine2/anim" instance=ExtResource("7_f46y1")]
+transform = Transform3D(-0.372718, -0.0333245, -0.141319, -0.0384347, 0.398079, 0.00749741, 0.140016, 0.020565, -0.374129, 0.204517, -0.339125, 0.0969241)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WashMachine_Background/WashMachine2/anim"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ocir1")
+}
+autoplay = "Floating"

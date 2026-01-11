@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0jspyevviqd7"]
+[gd_scene load_steps=14 format=3 uid="uid://b0jspyevviqd7"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_vi1qd"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_75p6w"]
@@ -8,9 +8,156 @@
 [ext_resource type="PackedScene" uid="uid://l167uu8l3k8h" path="res://Scenes/Gameplay/duck.tscn" id="6_x30ta"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="7_d33a2"]
 [ext_resource type="PackedScene" uid="uid://dghphu03vg5of" path="res://Scenes/GUI/duck_text.tscn" id="8_cyjor"]
+[ext_resource type="PackedScene" uid="uid://bxxd5gxnke66u" path="res://Assets/Meshes/Props/Ducks/duck.fbx" id="9_kqkkl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4n6iy"]
 size = Vector3(1, 10, 0.445)
+
+[sub_resource type="Animation" id="Animation_vqlxn"]
+resource_name = "Duck"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 3, 2),
+"points": PackedFloat32Array(-5.06496, 0, 0, 1.30954, 0, -5.06496, -0.982158, 0, 0.982158, 0, -5.06496, -1.32783, 0, 0, 0),
+"times": PackedFloat32Array(0.0878883, 4.01652, 8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 3, 2),
+"points": PackedFloat32Array(1.37028, 0, 0, 1.30954, 0, 1.75043, -0.982158, 0, 0.982158, 0, 1.37028, -1.32783, 0, 0, 0),
+"times": PackedFloat32Array(0.0878883, 4.01652, 8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 3, 2),
+"points": PackedFloat32Array(-6.94447, 0, 0, 1.30954, 0, -6.94447, -0.982158, 0, 0.982158, 0, -6.94447, -1.32783, 0, 0, 0),
+"times": PackedFloat32Array(0.0878883, 4.01652, 8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0.0263622, 0, 0, 0.7959, 0, 0.103139, -0.7959, 0, 0.54911, 0, 0.0263622, -0.546764, 0.0548657, 0.431637, -0.0433132, -0.0889866, -0.407205, 0, 0.914452, 0, 0.0263622, -0.914452, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3877, 4.03503, 5.25664, 8)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 2, 3, 2, 2),
+"points": PackedFloat32Array(-1.5708, 0, 0, 0.7959, 0, -1.5708, -0.7959, 0, 0.54911, 0, -1.5708, -0.305403, 0, 0.305403, 0, -1.5708, -0.407205, 0, 0.914452, 0, -1.5708, -0.914452, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3877, 4.03503, 5.25664, 8)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(2, 2, 3, 2, 2),
+"points": PackedFloat32Array(-1.15514e-09, 0, 0, 0.7959, 0, -4.52579e-09, -0.7959, 0, 0.54911, 0, -1.15514e-09, -0.305403, 0, 0.305403, 0, 3.89572e-09, -0.407205, 0, 0.914452, 0, -1.15514e-09, -0.914452, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3877, 4.03503, 5.25664, 8)
+}
+
+[sub_resource type="Animation" id="Animation_fnl38"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-5.06496, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.37028, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-6.94447, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.0263622, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.15514e-09, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_afw6v"]
+_data = {
+&"Duck": SubResource("Animation_vqlxn"),
+&"RESET": SubResource("Animation_fnl38")
+}
 
 [node name="Ani_Stage_05" type="Node3D"]
 script = ExtResource("1_vi1qd")
@@ -169,3 +316,29 @@ spot_range = 15.0
 spot_angle = 57.86
 
 [node name="DuckText" parent="." instance=ExtResource("8_cyjor")]
+
+[node name="Duck" type="Node3D" parent="."]
+
+[node name="Node3D2" type="Node3D" parent="Duck"]
+transform = Transform3D(0.663195, 0, -0.748447, 0, 1, 0, 0.748447, 0, 0.663195, 4.59925, 0, 4.60753)
+
+[node name="duck" parent="Duck/Node3D2" instance=ExtResource("9_kqkkl")]
+transform = Transform3D(-3.05767e-08, -0.0184514, -0.699757, -8.0832e-10, 0.699757, -0.0184514, 0.7, 2.06467e-12, -3.05873e-08, -5.06496, 1.37028, -6.94447)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Duck/Node3D2/duck"]
+libraries = {
+&"": SubResource("AnimationLibrary_afw6v")
+}
+autoplay = "Duck"
+
+[node name="Node3D3" type="Node3D" parent="Duck"]
+transform = Transform3D(0.661142, 0, 0.750261, 0, 1, 0, -0.750261, 0, 0.661142, 1.67222, 0, -2.81794)
+
+[node name="duck" parent="Duck/Node3D3" instance=ExtResource("9_kqkkl")]
+transform = Transform3D(-3.05767e-08, -0.0184514, -0.699757, -8.0832e-10, 0.699757, -0.0184514, 0.7, 2.06467e-12, -3.05873e-08, -5.06496, 1.37028, -6.94447)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Duck/Node3D3/duck"]
+libraries = {
+&"": SubResource("AnimationLibrary_afw6v")
+}
+autoplay = "Duck"
