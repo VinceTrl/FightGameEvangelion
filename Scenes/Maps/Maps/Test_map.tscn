@@ -12,11 +12,11 @@
 [ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="8_oqd8u"]
 [ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="9_a77w8"]
 [ext_resource type="Resource" uid="uid://4kux6idtqvus" path="res://Resources/Spawnables/TrapHeart.tres" id="10_fwq1n"]
-[ext_resource type="Resource" uid="uid://brq2qcfwowmsx" path="res://Resources/Spawnables/Penpen.tres" id="11_5nu7v"]
 [ext_resource type="Resource" uid="uid://5mwafnwjmudh" path="res://Resources/Spawnables/Bloc.tres" id="12_r4gs8"]
 [ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="13_mj8fs"]
 [ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="14_5j2rv"]
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="15_u5o35"]
+[ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="20_0s7yt"]
 [ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/TestMap.tres" id="20_bhy2f"]
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="21_e4ph7"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="21_uv2n1"]
@@ -43,7 +43,7 @@ enviro = [NodePath("Enviro")]
 lights = [NodePath("Lighting")]
 
 [node name="SpawnManager" parent="." instance=ExtResource("1_3v2v2")]
-items = Array[ExtResource("3_0s7yt")]([ExtResource("5_2ndgt"), ExtResource("6_egxmt"), ExtResource("7_3dkcm"), ExtResource("8_oqd8u"), ExtResource("9_a77w8"), ExtResource("10_fwq1n"), ExtResource("11_5nu7v"), ExtResource("12_r4gs8"), ExtResource("13_mj8fs"), ExtResource("14_5j2rv"), ExtResource("15_u5o35")])
+items = Array[ExtResource("3_0s7yt")]([ExtResource("5_2ndgt"), ExtResource("6_egxmt"), ExtResource("7_3dkcm"), ExtResource("8_oqd8u"), ExtResource("9_a77w8"), ExtResource("10_fwq1n"), ExtResource("12_r4gs8"), ExtResource("13_mj8fs"), ExtResource("14_5j2rv"), ExtResource("15_u5o35")])
 
 [node name="Enviro" type="Node3D" parent="."]
 
@@ -72,6 +72,9 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 
 [node name="StageSpawner" parent="Stage" instance=ExtResource("21_uv2n1")]
 map = ExtResource("20_bhy2f")
+
+[node name="KillVolume" parent="Stage" instance=ExtResource("20_0s7yt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="PostProcess" type="CanvasLayer" parent="."]
 script = ExtResource("21_e4ph7")
