@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bldh0i8oemqbq"]
+
+[ext_resource type="PackedScene" uid="uid://c536u7h8t0nal" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/Sources/SlapBros_Beach_Beam_2.fbx" id="1_6vu1y"]
+[ext_resource type="Material" uid="uid://bdjhxgubav86y" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/M_Beach_Kit_Wood02.tres" id="2_q80hw"]
+
+[node name="SlapBros_Beach_Beam_2" instance=ExtResource("1_6vu1y")]
+
+[node name="SlapBros_Beach_Beam_2" parent="." index="0"]
+material_override = ExtResource("2_q80hw")
