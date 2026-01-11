@@ -9,8 +9,8 @@
 
 [sub_resource type="Animation" id="Animation_ot161"]
 resource_name = "Floating"
-length = 12.0
-loop_mode = 1
+length = 6.0
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -18,10 +18,10 @@ tracks/0/path = NodePath("..:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 6, 12),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.14159), Vector3(0, 0, 6.28319)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.14159), Vector3(0, 0, 6.28319), Vector3(0, 0, 9.42478), Vector3(0, 0, 12.5664)]
 }
 
 [sub_resource type="Animation" id="Animation_6ugkb"]
@@ -56,27 +56,24 @@ overrideMaxCamZ = 6.0
 [node name="GameplayLogic" type="Node3D" parent="Gameplay"]
 
 [node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01013, 1.439, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01013, 1.439, 0)
 script = ExtResource("2_6ugkb")
 
 [node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91558, 1.439, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00677, 1.71849, 0)
 script = ExtResource("2_6ugkb")
 playerID = 2
 
 [node name="Objects" type="Node3D" parent="Gameplay"]
 
 [node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_oddy2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99839, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00161, 3.3, 0)
 
 [node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_oddy2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00218, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99782, 3.3, 0)
 
 [node name="RotationRoot" type="Node3D" parent="Gameplay/Objects"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.700328, -0.189946)
-
-[node name="Wash" parent="Gameplay/Objects/RotationRoot" instance=ExtResource("4_f4ubu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.47162, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.5, -0.19)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gameplay/Objects/RotationRoot"]
 root_node = NodePath("../Wash")
@@ -85,53 +82,103 @@ libraries = {
 }
 autoplay = "Floating"
 
-[node name="Marker3D" type="RemoteTransform3D" parent="Gameplay/Objects/RotationRoot"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6, 0, 0)
-remote_path = NodePath("../../WoodPlatform6")
-update_rotation = false
-update_scale = false
+[node name="Root" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
 
-[node name="Marker3D2" type="RemoteTransform3D" parent="Gameplay/Objects/RotationRoot"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 6, 0)
-remote_path = NodePath("../../WoodPlatform13")
-update_rotation = false
-update_scale = false
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Marker3D5" type="RemoteTransform3D" parent="Gameplay/Objects/RotationRoot"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4, 0, 0)
-remote_path = NodePath("../../WoodPlatform11")
-update_rotation = false
-update_scale = false
+[node name="Root2" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Marker3D6" type="RemoteTransform3D" parent="Gameplay/Objects/RotationRoot"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4, 0, 0)
-remote_path = NodePath("../../WoodPlatform13")
-update_rotation = false
-update_scale = false
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root2" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects" instance=ExtResource("6_5ebhv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -0.299672, -0.189946)
+[node name="Root5" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform8" parent="Gameplay/Objects" instance=ExtResource("6_5ebhv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.299672, -0.189946)
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root5" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="WoodPlatform9" parent="Gameplay/Objects" instance=ExtResource("6_5ebhv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.299672, -0.189946)
+[node name="Root6" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform10" parent="Gameplay/Objects" instance=ExtResource("6_5ebhv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.299672, -0.189946)
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root6" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="WoodPlatform6" parent="Gameplay/Objects" instance=ExtResource("6_5ebhv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.700328, -0.189946)
+[node name="Root7" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(-5.96046e-08, -1, 0, 1, -5.96046e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform11" parent="Gameplay/Objects" instance=ExtResource("6_5ebhv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.700328, -0.189946)
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root7" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="WoodPlatform12" parent="Gameplay/Objects" instance=ExtResource("6_5ebhv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.700328, -0.189946)
+[node name="Root8" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(-0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform13" parent="Gameplay/Objects" instance=ExtResource("6_5ebhv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.700328, -0.189946)
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root8" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root9" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root9" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root12" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(-0.965926, -0.258819, 0, 0.258819, -0.965926, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root12" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root13" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(-1, 2.98023e-08, 0, -2.98023e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root13" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root14" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(-0.965926, 0.258819, 0, -0.258819, -0.965926, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root14" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root17" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root17" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root18" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root18" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root19" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root19" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root20" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root20" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root23" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root23" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root24" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root24" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Wash" parent="Gameplay/Objects/RotationRoot" instance=ExtResource("4_f4ubu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.731164, 0)
 
 [node name="PenPenLocations" type="Node3D" parent="Gameplay"]
 
