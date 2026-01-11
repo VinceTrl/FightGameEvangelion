@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://boj5ugai0mquv"
+path="res://.godot/imported/chainsaw-man-intro.gif-dc16dbe515f771233800ac63b2b44fae.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/chainsaw-man-intro.gif"
+dest_files=["res://.godot/imported/chainsaw-man-intro.gif-dc16dbe515f771233800ac63b2b44fae.tres"]
+
+[params]
+

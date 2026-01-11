@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://bc08x36lopkiw"
+path="res://.godot/imported/cat-union.gif-b0cff8227e92722d4aceb3a9495bf94b.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/cat-union.gif"
+dest_files=["res://.godot/imported/cat-union.gif-b0cff8227e92722d4aceb3a9495bf94b.tres"]
+
+[params]
+

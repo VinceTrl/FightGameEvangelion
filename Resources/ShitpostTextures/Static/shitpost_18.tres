@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://03ukwmen760m"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_2yd6h"]
+[ext_resource type="Texture2D" uid="uid://cvomuqy0xgabv" path="res://Assets/Shitpost/Source/alimentation-saine-avogel-1580x770.jpg" id="2_w2r6v"]
+
+[resource]
+script = ExtResource("1_2yd6h")
+name = &"SP_Evangelion"
+texture = ExtResource("2_w2r6v")
+type = 0
+size = 0.4
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"

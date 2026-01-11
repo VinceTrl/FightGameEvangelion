@@ -1,6 +1,7 @@
 extends Node
 
 enum PlatformSpawnType {Random, Scripted, None}
+enum ShitpostType{Shitpost,RDR,Gaucho,Glitch}
 
 func GetAveragePosition(nodes: Array) -> Vector3:
 	var total_position := Vector3.ZERO

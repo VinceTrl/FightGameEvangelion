@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://dui2pj4gx0tcb"
+path="res://.godot/imported/denji-reze.gif-6556b44af909c2624518f8e670f489b7.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/denji-reze.gif"
+dest_files=["res://.godot/imported/denji-reze.gif-6556b44af909c2624518f8e670f489b7.tres"]
+
+[params]
+

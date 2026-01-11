@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://cql2qn6ir2i3l"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_0kkgx"]
+[ext_resource type="Texture2D" uid="uid://boj5ugai0mquv" path="res://Assets/Shitpost/GIF/Smash/chainsaw-man-intro.gif" id="2_xx46i"]
+
+[resource]
+script = ExtResource("1_0kkgx")
+name = &"SP_GIF"
+texture = ExtResource("2_xx46i")
+type = 0
+size = 0.4
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"

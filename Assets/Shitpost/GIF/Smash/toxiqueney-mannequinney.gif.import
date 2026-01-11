@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://cxegcyvpilvsh"
+path="res://.godot/imported/toxiqueney-mannequinney.gif-751e35425b3d28dc071ff80b2aaf8f16.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/toxiqueney-mannequinney.gif"
+dest_files=["res://.godot/imported/toxiqueney-mannequinney.gif-751e35425b3d28dc071ff80b2aaf8f16.tres"]
+
+[params]
+

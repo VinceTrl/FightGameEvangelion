@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://dl85d275fhfsi"
+path="res://.godot/imported/ssbu-king-k-rool.gif-8d3fdf7c83e1f25c465c57f162b99517.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/ssbu-king-k-rool.gif"
+dest_files=["res://.godot/imported/ssbu-king-k-rool.gif-8d3fdf7c83e1f25c465c57f162b99517.tres"]
+
+[params]
+

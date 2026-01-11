@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://b5kk8qs0fusgr"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_vbwqj"]
+[ext_resource type="Texture2D" uid="uid://cp5gnfblxbki7" path="res://Assets/Shitpost/GIF/Smash/reze-tongue-out-reze-chainsaw-man-moving-her-head.gif" id="2_vbwqj"]
+
+[resource]
+script = ExtResource("1_vbwqj")
+name = &"SP_GIF"
+texture = ExtResource("2_vbwqj")
+type = 0
+size = 0.4
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://1fe0c00ym342"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_k85e5"]
+[ext_resource type="Texture2D" uid="uid://cqnwadjlis6g7" path="res://Assets/Shitpost/Evangelion/ELO3.jpg" id="2_k85e5"]
+
+[resource]
+script = ExtResource("1_k85e5")
+name = &"Shitpost"
+texture = ExtResource("2_k85e5")
+type = 2
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"
