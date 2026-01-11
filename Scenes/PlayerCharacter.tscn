@@ -1,10 +1,10 @@
-[gd_scene load_steps=80 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=81 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" uid="uid://1nqqf1x2wfer" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
 [ext_resource type="Material" uid="uid://btyojimllct1t" path="res://Assets/Materials/Sprites/M_KikiFighter.tres" id="3_4fxgw"]
 [ext_resource type="Script" uid="uid://dm773sfq0e16w" path="res://Scripts/GameEffects/SpriteEffects.gd" id="4_1nn6i"]
-[ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/KikiFighter/SpriteKikiYellow.png" id="4_pudg7"]
+[ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/KikiFighter/SpriteKikiRed.png" id="5_a28o5"]
 [ext_resource type="Script" uid="uid://v6yo0bskmrwy" path="res://Scripts/Player/States/States.gd" id="5_hmp2k"]
 [ext_resource type="Script" uid="uid://b45hun7n2hih3" path="res://Scripts/Player/States/IdleState.gd" id="6_726n8"]
 [ext_resource type="Script" uid="uid://be58ged7iq63w" path="res://Scripts/Player/States/LockedState.gd" id="6_85275"]
@@ -748,6 +748,38 @@ tracks/0/keys = {
 "values": [144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155]
 }
 
+[sub_resource type="Animation" id="Animation_uhhuy"]
+resource_name = "Ledgegrab"
+length = 0.2
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [162, 163, 164, 165, 166, 167]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PlayerAudio/Sfx_Dash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_bbblq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jxbaw"]
 _data = {
 &"Attack": SubResource("Animation_7hbhv"),
@@ -764,6 +796,7 @@ _data = {
 &"Idle": SubResource("Animation_fq32u"),
 &"Jump": SubResource("Animation_spgss"),
 &"JumpStart": SubResource("Animation_sw63w"),
+&"Ledgegrab": SubResource("Animation_uhhuy"),
 &"Move": SubResource("Animation_ltgkn"),
 &"RESET": SubResource("Animation_dvjaj"),
 &"Shoot": SubResource("Animation_qjx5s"),
@@ -819,7 +852,7 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_ubpar")
 healthPoints = 3
-spritesheet = ExtResource("4_pudg7")
+spritesheet = ExtResource("5_a28o5")
 runSpeed = 4.0
 deceleration = 1.045
 dropInputTime = 0.5
@@ -857,9 +890,9 @@ frequency = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.039245, 0)
 material_override = ExtResource("3_4fxgw")
 texture_filter = 0
-texture = ExtResource("4_pudg7")
+texture = ExtResource("5_a28o5")
 hframes = 9
-vframes = 18
+vframes = 19
 script = ExtResource("4_1nn6i")
 hitColor = Color(1, 1, 1, 1)
 
@@ -885,7 +918,6 @@ script = ExtResource("6_85275")
 
 [node name="Ledgegrab" type="Node" parent="StateMachine"]
 script = ExtResource("16_i7cct")
-ledgeGrabDuration = 0.1
 snapToPosition = SubResource("Curve_l16ew")
 
 [node name="Idle" type="Node" parent="StateMachine"]
@@ -986,6 +1018,7 @@ script = ExtResource("28_oqnrj")
 maxAmmo = 7
 startAmmo = 5
 reloadOverTime = false
+reloadTime = 6.0
 
 [node name="HitboxUp" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190702, 0)

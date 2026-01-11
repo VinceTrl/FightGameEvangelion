@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1s7868dthyoc"]
+[gd_scene load_steps=13 format=3 uid="uid://1s7868dthyoc"]
 
 [ext_resource type="Script" uid="uid://dth1pc7jfyjni" path="res://Scripts/Gameplay/smash_ball_item.gd" id="1_kspie"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_vifah"]
@@ -10,15 +10,24 @@
 _data = [Vector2(0, 1), 0.0, -9.73966, 0, 0, Vector2(0.106628, 0.298295), -1.22051, -1.22051, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Curve" id="Curve_5njag"]
+_data = [Vector2(0, 1), 0.0, -14.1526, 0, 1, Vector2(0.0662824, 0.0619318), 0.0, 0.0, 0, 0, Vector2(0.126801, 1), 0.0, 0.0, 0, 0, Vector2(0.181556, 0.283523), 0.0, 0.0, 0, 0, Vector2(0.256484, 0.844886), -1.13252, -1.13252, 0, 0, Vector2(0.795389, 0), -1.64037, -1.64037, 0, 0, Vector2(0.835735, 0.793182), 0.0, 0.0, 0, 0, Vector2(0.899135, 0.26875), 0.0, 0.0, 0, 0, Vector2(0.956772, 0.615909), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.912932, 0.0, 0, 0]
+point_count = 10
+
 [sub_resource type="SphereMesh" id="SphereMesh_kspie"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kspie"]
 albedo_color = Color(0, 1, 0, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_5njag"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_dm8be"]
 size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_el7w4"]
+albedo_color = Color(0.392157, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_el7w4"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
 
 [node name="SmashBall" type="Node3D" node_paths=PackedStringArray("hurtbox", "screenNotifier", "screenMarginDetector", "ballMesh")]
 script = ExtResource("1_kspie")
@@ -26,22 +35,19 @@ hurtbox = NodePath("Hurtbox")
 screenNotifier = NodePath("VisibleOnScreenNotifier3D")
 screenMarginDetector = NodePath("ScreenDetection3D")
 ballMesh = NodePath("MeshInstance3D")
-lifePoints = 10
 minBallSpeed = 2.0
-maxBallSpeed = 4.5
+maxBallSpeed = 3.71
 damageGlitchEffect = ExtResource("2_5njag")
-hurtTime = 0.5
+hurtTime = 0.705
 hurtSpeedCurve = SubResource("Curve_l6hae")
+hurtScale = 0.1
+hurtScaleCurve = SubResource("Curve_5njag")
 randomBounceAngleAmount = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 mesh = SubResource("SphereMesh_kspie")
 surface_material_override/0 = SubResource("StandardMaterial3D_kspie")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 0.287708, 0, 0, 0, 0.491455, 0.514381, 0, 0)
-mesh = SubResource("BoxMesh_5njag")
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("1_vifah")
@@ -63,9 +69,19 @@ metadata/_custom_type_script = "uid://cg2f0qymkqehu"
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216492, 0)
+visible = false
 billboard = 1
 text = "debug"
 font_size = 16
 outline_size = 8
 
 [node name="CameraTarget" parent="." instance=ExtResource("4_l6hae")]
+autoRegister = false
+
+[node name="TrailEmitter" type="TrailEmitter" parent="."]
+material = SubResource("StandardMaterial3D_el7w4")
+curve = SubResource("Curve_el7w4")
+num_points = 4
+noise_scale = 0.235
+size = 0.062
+update_interval = 0.05

@@ -53,7 +53,7 @@ func EnterState():
 		print("RESULT : "  + str(result))
 		ledgegrabPosition = Player.global_position
 		targetPosition = endPos
-		Player.animator.play("Dash")
+		Player.animator.play("Ledgegrab")
 	else:
 		Player.ChangeState(Player.States.Fall)
 	

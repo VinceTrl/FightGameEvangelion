@@ -29,8 +29,9 @@ point_count = 2
 [node name="GameCamera" type="Node3D"]
 script = ExtResource("1_cpg4t")
 minDistZ = 1.75
+maxDistZ = 5.0
 zDistCurve = SubResource("Curve_qrsff")
-cameraOffset = Vector3(0, 0.04, 0)
+cameraOffset = Vector3(0, -0.04, 0)
 cameraSmoothnessX = 1.75
 cameraSmoothnessY = 0.85
 cameraSmoothnessZ = 0.38
@@ -39,6 +40,9 @@ cameraClampMax = Vector2(10, 3)
 cameraClampMin = Vector2(-5, -1)
 defaultZoom = ExtResource("2_e3wng")
 zoomParams = Array[ExtResource("2_jjh8l")]([ExtResource("2_e3wng"), ExtResource("4_45u5i"), ExtResource("5_k8ve0"), ExtResource("6_5okmd"), ExtResource("7_ng602")])
+marginHorizontal = 200
+marginVertical = 200
+distanceInMargin = 10.0
 
 [node name="CameraShake" type="Node3D" parent="."]
 script = ExtResource("2_xo7ej")

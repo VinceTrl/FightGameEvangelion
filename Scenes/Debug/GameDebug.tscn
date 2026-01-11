@@ -6,6 +6,8 @@
 script = ExtResource("1_ag8n1")
 debugMap = true
 mapIndex = 1
-stageIndex = 8
+debugStage = true
+stageIndex = 6
 playerDebugID = Array[int]([1])
+debugCamera = true
 debugActiveLineThickness = 0.05

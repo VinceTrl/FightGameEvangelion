@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_t7mcu")
 itemName = &"SLAP"
-scenePath = &"res://Scenes/Gameplay/slap_item.tscn"
-spawnOnGround = true
+scenePath = &"res://Scenes/Gameplay/smash_ball.tscn"
+spawnOnGround = false
 groundOffset = Vector3(0, 0, 0)
 spawnOncePerGame = true
 isUniqueInstance = false

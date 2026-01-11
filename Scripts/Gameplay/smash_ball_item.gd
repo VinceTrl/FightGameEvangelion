@@ -15,12 +15,15 @@ extends Node3D
 @export var damageGlitchEffect: GlitchParameters
 @export var hurtTime:float = 1
 @export var hurtSpeedCurve:Curve
+@export var hurtScale:float = 0.5
+@export var hurtScaleCurve:Curve
 
 @export_category("Screen Border Bounce settings")
 enum BounceType{RandomInverseAngle,InverseContact}
 @export var bounceType:BounceType
 @export var randomBounceAngleAmount:float = 30
 
+var baseScale:float
 var currentDir:Vector3
 var currentSpeed:float = 0.0
 var canMove:bool = false
@@ -33,6 +36,7 @@ signal OnSmashBallDestroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	baseScale = ballMesh.scale.y
 	ConnectSignals()
 	SetRandomDirection()
 	canMove = true
@@ -48,6 +52,7 @@ func ConnectSignals():
 func _process(delta: float) -> void:
 	Move(delta)
 	ballMesh.global_rotation.z = GetBallRotation()
+	SetBallScale()
 	
 	
 func OnExitMargins(dir:ScreenDetection3D.ScreenDirection):
@@ -96,7 +101,6 @@ func HitScreenBorder(normal:Vector3):
 	
 func GetCurrentSpeed(speedRatio:float) -> float:
 	var speed:float = lerp(minBallSpeed,maxBallSpeed,speedRatio)
-	print("SPEED :" + str(speed))
 	return speed
 	
 func GetSpeedRatio() -> float:
@@ -114,11 +118,24 @@ func Move(delta:float):
 	
 	var nextPos = ((currentDir * GetCurrentSpeed(GetSpeedRatio())) * delta)
 	global_position += nextPos #lerp(global_position,nextPos,0.5)
-	DebugDraw3D.draw_arrow(global_position,global_position + currentDir,Color.REBECCA_PURPLE,0.2)
+	#DebugDraw3D.draw_arrow(global_position,global_position + currentDir,Color.REBECCA_PURPLE,0.02)
 	
 	
-func GetBallRotation() -> float :
+func GetBallRotation() -> float:
 	return lerp_angle(global_rotation.z,atan2(currentDir.y,currentDir.x),1)
+	
+func SetBallScale():
+	if(!timer):return
+	
+	if(timer.time_left == 0): ballMesh.scale.y = baseScale
+	
+	var _timeProgress = hurtTime - timer.time_left
+	var _progressRatio = _timeProgress/hurtTime
+	var _curveValue = hurtScaleCurve.sample(_progressRatio);
+	var _scale = lerp(baseScale,hurtScale,_curveValue)
+	
+	ballMesh.scale.y = _scale
+	
 	
 func OnHit(hitbox : Hitbox):
 	print("SMASH BALL HURT")
@@ -129,11 +146,23 @@ func OnHit(hitbox : Hitbox):
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	Manager.postProcessEffects.GlitchEffect(damageGlitchEffect)
 	
+	if(hitbox.owner is PlayerCharacter):
+			print("HIT BY PLAYER")
+	
 	if(lifePoints > 0):
 		var origin := Vector3(hitbox.global_position.x,hitbox.global_position.y,global_position.z)
 		currentDir = (global_position - origin).normalized()
 		StartHurtTimer()
 	else:
+		var target:Node3D
+		if(hitbox.owner is PlayerCharacter):
+			var player := hitbox.owner as PlayerCharacter
+			target = Manager.gameManager.GetPlayerOpponent(player)
+			print("DESTROY BY PLAYER")
+		else:
+			target = Manager.gameManager.GetRandomPlayer()
+			
+		Manager.gameManager.eva.StartSlap(target)
 		OnSmashBallDestroyed.emit()
 		queue_free()
 		

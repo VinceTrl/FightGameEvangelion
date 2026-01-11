@@ -105,22 +105,28 @@ func StartSlap(_target:Node3D):
 	audio_alarm.play()
 	
 	#SPAWN_WARNING
-	SpawnWarning(target)
+	if(target):
+		SpawnWarning(target)
 	
 	await animPlayerChore.animation_finished
 	
 	
-	slapWarning.SetWarningToAllTargets()
+	if(slapWarning):
+		slapWarning.SetWarningToAllTargets()
+		slapWarning.StopFollow()
 	
 	#movement
 	#GoTowardsPosition(targetPos,timeToReachTarget)
 	#await get_tree().create_timer(timeToReachTarget,true,false,false).timeout
 	
 	#Launch Slap
-	slapWarning.StopFollow()
+	
 	crosshair.queue_free()
-	var targetPos = Vector3(global_position.x,target.global_position.y,global_position.z) + evaSlapOffset
-	GoTowardsPosition(targetPos,0.75,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR)
+	
+	if(target):
+		var targetPos = Vector3(global_position.x,target.global_position.y,global_position.z) + evaSlapOffset
+		GoTowardsPosition(targetPos,0.75,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR)
+		
 	animPlayer.play("Armature|Slap_Hit")
 	animPlayer.speed_scale = 0.5
 	animPlayerChore.play("AnimLight_Slap_Hit")
