@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx8w30oi2ennb"]
+[gd_scene load_steps=8 format=3 uid="uid://dx8w30oi2ennb"]
 
 [ext_resource type="ArrayMesh" uid="uid://6ro3ljs8yfp5" path="res://Assets/Meshes/Props/Trophee/WashBarTrophé.obj" id="1_b5g53"]
 [ext_resource type="Script" uid="uid://bjur7smhqpufy" path="res://Scripts/Gameplay/BumperAnimation.gd" id="1_w0q86"]
 [ext_resource type="Script" uid="uid://devahp3jju1bf" path="res://Scripts/Gameplay/Bumper.gd" id="2_a0ntq"]
 [ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="2_l0bd5"]
+[ext_resource type="PackedScene" uid="uid://pc4ayrcj5bv6" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/wash_machine.tscn" id="4_l0bd5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0jl7"]
 size = Vector3(2.63, 0.752, 3)
@@ -22,8 +23,12 @@ maxScale = Vector3(1.5, 1.5, 1.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BumperVisualRoot"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+visible = false
 mesh = ExtResource("1_b5g53")
 skeleton = NodePath("../..")
+
+[node name="SM_WashMachine" parent="BumperVisualRoot" instance=ExtResource("4_l0bd5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Bumper" type="Area3D" parent="."]
 collision_layer = 0
