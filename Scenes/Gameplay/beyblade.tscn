@@ -5,7 +5,7 @@
 [ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="3_2snwk"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="3_qtif3"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="4_h6thn"]
-[ext_resource type="PackedScene" uid="uid://cjjcq3icl5bft" path="res://Scenes/Gameplay/beyblade_snake.tscn" id="4_he7th"]
+[ext_resource type="PackedScene" uid="uid://ctn0ijdhhkhpc" path="res://Scenes/Gameplay/beyblade_snake.tscn" id="4_he7th"]
 [ext_resource type="PackedScene" uid="uid://sddtfc33krlr" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="7_627sr"]
 
 [sub_resource type="Curve" id="Curve_nnnkc"]

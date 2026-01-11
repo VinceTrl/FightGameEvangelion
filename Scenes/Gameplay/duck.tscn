@@ -37,7 +37,7 @@ nodeToShake = NodePath(".")
 frequency = 1.0
 
 [node name="duck" parent="Visual/NodeShaker" instance=ExtResource("1_c20ec")]
-transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, 0.05, 0, -0.05, -2.18557e-09, 0, 0, 0)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 6.661338e-16, 0, -6.661338e-16, 0.05, 0, 0, 0)
 
 [node name="VFX_Fire01_mecha" parent="Visual/NodeShaker/duck" instance=ExtResource("8_ank3h")]
 transform = Transform3D(-4.37114e-07, -10, 4.37114e-07, 0, -4.37114e-07, -10, 10, -4.37114e-07, 1.91069e-14, 0, 0, 0)

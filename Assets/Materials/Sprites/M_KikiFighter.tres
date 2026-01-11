@@ -1,14 +1,14 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://btyojimllct1t"]
 
-[ext_resource type="Shader" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="1_wkg1k"]
-[ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/KikiFighter/SpriteKikiYellow.png" id="2_d0f24"]
+[ext_resource type="Shader" uid="uid://c5kny5412ow0u" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="1_wkg1k"]
+[ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/KikiFighter/SpriteKikiRed.png" id="2_mbn2g"]
 
 [resource]
 render_priority = -1
 shader = ExtResource("1_wkg1k")
+shader_parameter/sprite_texture = ExtResource("2_mbn2g")
 shader_parameter/additiveColor = Color(0, 0, 0, 1)
 shader_parameter/multiplyColor = Color(1, 1, 1, 1)
 shader_parameter/alpha = 1.0
 shader_parameter/secondLayerIntensity = 0.0
 shader_parameter/secondLayerUVScaling = 100.0
-shader_parameter/sprite_texture = ExtResource("2_d0f24")

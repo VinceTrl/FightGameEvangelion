@@ -1,9 +1,10 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ds6flgxfm1r4s"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://2qfywkhlf4p8"]
 
-[ext_resource type="Texture2D" uid="uid://rhw0x6a3tlrs" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/WashMachine_Diff.png" id="1_ixte5"]
+[ext_resource type="Texture2D" uid="uid://6w20xlxfshc" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/WashMachine.png" id="1_ixte5"]
 
 [resource]
 albedo_texture = ExtResource("1_ixte5")
 emission_enabled = true
 emission_energy_multiplier = 0.5
 emission_texture = ExtResource("1_ixte5")
+texture_filter = 0

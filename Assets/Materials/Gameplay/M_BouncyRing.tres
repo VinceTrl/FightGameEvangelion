@@ -6,3 +6,4 @@
 diffuse_mode = 3
 specular_mode = 1
 albedo_texture = ExtResource("1_gqtmv")
+texture_filter = 0

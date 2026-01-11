@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8og47l6b1nhc"]
+
+[ext_resource type="Texture2D" uid="uid://bv3lhc6ml543t" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/WashMachine_Sand_Diff.png" id="1_im6vq"]
+
+[resource]
+albedo_texture = ExtResource("1_im6vq")

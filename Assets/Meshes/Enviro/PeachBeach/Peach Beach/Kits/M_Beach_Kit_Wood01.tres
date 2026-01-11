@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bcj1e54m02tyo"]
+
+[ext_resource type="Texture2D" uid="uid://csb60e4iktyad" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeach_Wood01.png" id="1_4vsyn"]
+
+[resource]
+albedo_color = Color(0.93, 0.78244, 0.6138, 1)
+albedo_texture = ExtResource("1_4vsyn")
+emission_energy_multiplier = 0.1
+emission_texture = ExtResource("1_4vsyn")

@@ -1,18 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctb65dyncmbxe"]
+[gd_scene load_steps=4 format=3 uid="uid://ctb65dyncmbxe"]
 
 [ext_resource type="PackedScene" uid="uid://f85ubw8ij48m" path="res://Assets/Meshes/Enviro/WoodPlatform/wood_float_platform.fbx" id="1_6uxky"]
+[ext_resource type="PackedScene" uid="uid://br5pkokainmxc" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plateform_1.tscn" id="1_og6bt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aof3p"]
 size = Vector3(4.2, 2.495, 4)
 
 [node name="WoodPlatform" type="Node3D"]
 
-[node name="wood_float_platform" parent="." instance=ExtResource("1_6uxky")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.125, 0, 0, 0)
+[node name="SlapBros_Beach_Plateform_1" parent="." instance=ExtResource("1_og6bt")]
+transform = Transform3D(0.242784, 0, 0, 0, 0.242784, 0, 0, 0, 0.242784, -0.0232521, 0.0238888, -0.238973)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="wood_float_platform" groups=["Ledgegrab"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="SlapBros_Beach_Plateform_1" groups=["Ledgegrab"]]
+transform = Transform3D(1.02972, 0, 0, 0, 1.02972, 0, 0, 0, 0.514861, 0.0957729, -0.0983952, 0.984302)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wood_float_platform/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SlapBros_Beach_Plateform_1/StaticBody3D"]
 shape = SubResource("BoxShape3D_aof3p")
+
+[node name="wood_float_platform" parent="." instance=ExtResource("1_6uxky")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.125, 0, 0, 0)
+visible = false
