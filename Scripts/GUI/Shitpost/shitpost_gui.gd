@@ -6,7 +6,8 @@ extends Control
 @export var imageSize: float = 0.5
 @export var debugMode = false
 
-@onready var texture_holder_root: Control = $CanvasLayer/TextureHolderRoot
+@export var shitpostImages:Array[ShitpostImage]
+
 var textureHolders: Array[TextureRect] = []
 var gifHolders: Array[ShitpostWindow] = []
 var currentIndex
@@ -18,6 +19,7 @@ signal OnRandomImageSetInvisible
 func _ready() -> void:
 	GetAllTextureHolders()
 	call_deferred("ResetTexture")
+	#LoadShitpost()
 	#ResetTexture()
 	#RandomTextureLoop()
 	#OnRandomImageSetInvisible.connect(RandomTextureLoop)
@@ -25,6 +27,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	Debug()
+	
+func LoadShitpost():
+	for file in DirAccess.get_files_at("res://Resources/ShitpostTextures/"):
+		print("SHITPOST GUI >>> FOUND FILE : " + file)
+		var image = ResourceLoader.load("res://Resources/ShitpostTextures/"+file)
+		if(image is ShitpostImage):
+			shitpostImages.append(image)
+			print("SHITPOST GUI >>> FOUND SHITPOST : " + image.name)
 	
 func Debug():
 	if(!debugMode): return
@@ -45,6 +55,24 @@ func ResetTexture():
 		gif.visible = false
 	
 func ShowRandomImage(duration: float = 3.0):
+	
+	#TEST 
+	var shitpost:ShitpostImage = shitpostImages.pick_random()
+	var window := GetAvailableGifHolder()
+	SetShitpostWindow(window,shitpost)
+	
+	SetRandomPositionOnScreen(window)
+	window.visible = true
+	emit_signal("OnRandomImageSetVisible")
+	await  get_tree().create_timer(duration,true,false,true).timeout
+	window.visible = false
+	emit_signal("OnRandomImageSetInvisible")
+	print("SET TIME OUT : " + str(window))
+	
+	return
+	
+	
+	#TEST
 	
 	#get a random image
 	var texture = GetRandomTexture()
@@ -90,14 +118,14 @@ func GetRandomTexture() -> Texture2D:
 	return textures[random_index]
 	
 #Set a new CompressedTexture in a TextureRect
-func LoadNewTexture(texture: TextureRect, newTexture: CompressedTexture2D):
+func LoadNewTexture(texture: TextureRect, newTexture: CompressedTexture2D,size:float = imageSize):
 	
 	texture.stretch_mode = TextureRect.STRETCH_SCALE
 	texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	
 	texture.texture = newTexture
 	#newTexture.get_size()
-	var newSize = newTexture.get_size() * imageSize
+	var newSize = newTexture.get_size() * size
 	
 	#texture.queue_redraw()
 	texture.size = newSize
@@ -109,6 +137,9 @@ func LoadNewTexture(texture: TextureRect, newTexture: CompressedTexture2D):
 #Set a new AnimatedTexture in a ShitpostWindow
 func LoadNewGIF(window: ShitpostWindow, newTexture: Texture2D):
 	window.LoadNewTexture(newTexture)
+	
+func SetShitpostWindow(window: ShitpostWindow, newTexture: ShitpostImage):
+	window.SetPanel(newTexture)
 	
 	
 func GetAvailableTextureHolder() -> TextureRect:

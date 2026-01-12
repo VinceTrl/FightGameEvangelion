@@ -7,6 +7,7 @@ const TRANSITION_SCREEN = preload("res://Scenes/GUI/transition_screen.tscn")
 const TITLE_SCREEN = preload("res://Scenes/GUI/title_screen.tscn")
 const MUSIC_MANAGER = preload("res://Scenes/Managers/music_manager.tscn")
 const GAME_DEBUG = preload("res://Scenes/Debug/GameDebug.tscn")
+const SHITPOST_GUI = preload("res://Scenes/GUI/shitpost_gui.tscn")
 
 var gameManager : GameManager
 var timeManager: TimeManager
@@ -18,6 +19,7 @@ var spawnManager: SpawnManager
 var scoreManager: ScoreManager
 var gameDebug: GameDebug
 var titleScreen: TitleScreen
+var shitpostGUI:ShitpostGUI
 var musicManager
 
 var transitionInstance
@@ -54,6 +56,10 @@ func _ready() -> void:
 	var _gameDebug = GAME_DEBUG.instantiate()
 	add_child(_gameDebug)
 	gameDebug = _gameDebug
+	
+	var _shitpostGUI = SHITPOST_GUI.instantiate()
+	add_child(_shitpostGUI)
+	shitpostGUI = _shitpostGUI
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

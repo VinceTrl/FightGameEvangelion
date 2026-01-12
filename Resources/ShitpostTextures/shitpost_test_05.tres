@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://c1wxjvlfp8gp5"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_2tvhx"]
+[ext_resource type="Texture2D" uid="uid://b3mth673b81vv" path="res://Assets/GUI/Images/BSA-Title.png" id="2_2tvhx"]
+
+[resource]
+script = ExtResource("1_2tvhx")
+name = &"Shitpost"
+texture = ExtResource("2_2tvhx")
+type = 3
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"

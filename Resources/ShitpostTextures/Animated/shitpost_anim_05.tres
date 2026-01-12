@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://d187jbngrxmeu"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_psjw3"]
+[ext_resource type="Texture2D" uid="uid://dui2pj4gx0tcb" path="res://Assets/Shitpost/GIF/Smash/denji-reze.gif" id="2_ssqxc"]
+
+[resource]
+script = ExtResource("1_psjw3")
+name = &"SP_GIF"
+texture = ExtResource("2_ssqxc")
+type = 0
+size = 0.4
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"

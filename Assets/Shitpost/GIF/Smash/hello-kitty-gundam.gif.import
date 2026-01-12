@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://dhwjinewmle31"
+path="res://.godot/imported/hello-kitty-gundam.gif-e36afc4ff2138df65e6a2d1252d2587c.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/hello-kitty-gundam.gif"
+dest_files=["res://.godot/imported/hello-kitty-gundam.gif-e36afc4ff2138df65e6a2d1252d2587c.tres"]
+
+[params]
+

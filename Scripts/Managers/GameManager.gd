@@ -5,7 +5,6 @@ extends Node
 @onready var vibrationManager: VibrationManager = $VibrationManager
 @onready var timeManager: TimeManager = $TimeManager
 @onready var game_timer: Timer = $GameTimer
-@onready var shitpost_gui: ShitpostGUI = $ShitpostGUI
 @onready var platform_manager: Node = $PlatformManager
 @onready var death_background: DeathBackground = $DeathBackground
 var spawn_manager: SpawnManager

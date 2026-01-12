@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://cf2lnpylxvl83"
+path="res://.godot/imported/nina-the-killer.gif-29c899c98b431f0c3248c2512a8f54d6.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/nina-the-killer.gif"
+dest_files=["res://.godot/imported/nina-the-killer.gif-29c899c98b431f0c3248c2512a8f54d6.tres"]
+
+[params]
+

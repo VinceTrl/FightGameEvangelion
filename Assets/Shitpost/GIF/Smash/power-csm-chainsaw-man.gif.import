@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://5ucm7vq1icdr"
+path="res://.godot/imported/power-csm-chainsaw-man.gif-1ca0684d15ebe986a7b326c2be991f05.tres"
+
+[deps]
+
+source_file="res://Assets/Shitpost/GIF/Smash/power-csm-chainsaw-man.gif"
+dest_files=["res://.godot/imported/power-csm-chainsaw-man.gif-1ca0684d15ebe986a7b326c2be991f05.tres"]
+
+[params]
+

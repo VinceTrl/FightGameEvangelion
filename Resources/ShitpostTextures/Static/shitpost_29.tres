@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://dreo3vf7qcuxe"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_mrebv"]
+[ext_resource type="Texture2D" uid="uid://dkwkjkhdpx7kw" path="res://Assets/Shitpost/Source/get-in-loser-karl-marx-communism-meme-funny-mens-t-shirt.jpg" id="2_4yhbq"]
+
+[resource]
+script = ExtResource("1_mrebv")
+name = &"SP_Evangelion"
+texture = ExtResource("2_4yhbq")
+type = 2
+size = 0.4
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"

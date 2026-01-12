@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://dpp1y0oyoouyx"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_m3hog"]
+[ext_resource type="Texture2D" uid="uid://d22umma1r4atk" path="res://Assets/Shitpost/GIF/Smash/yoshi-mario.gif" id="2_qxnml"]
+
+[resource]
+script = ExtResource("1_m3hog")
+name = &"SP_GIF"
+texture = ExtResource("2_qxnml")
+type = 0
+size = 0.4
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"
