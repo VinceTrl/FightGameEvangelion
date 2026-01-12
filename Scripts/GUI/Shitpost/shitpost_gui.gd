@@ -164,13 +164,15 @@ func SetRandomPositionOnScreen(texture: Control):
 	var screen_size = get_size()
 	var image_size = texture.get_size()
 
+	var margin = 200
+	
 	#random limits
 	var max_x = screen_size.x - image_size.x
 	var max_y = screen_size.y - image_size.y
 
 	# random pos
-	var random_x = randi_range(0,max_x)
-	var random_y = randi_range(0,max_y)
+	var random_x = randi_range(0+margin,max_x-margin)
+	var random_y = randi_range(0+margin,max_y-margin)
 	#randi() % int(max_y)
 
 	# Set Texture pos

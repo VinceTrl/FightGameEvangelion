@@ -31,6 +31,7 @@ settings/addon_root_folder="res://addons/debug_draw_3d"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 
 [editor_plugins]
 
@@ -44,6 +45,10 @@ import/blender/enabled=false
 
 PenpenLocation=""
 Ledgegrab=""
+
+[importer_defaults]
+
+import_gif_to_animated_texture={}
 
 [input]
 

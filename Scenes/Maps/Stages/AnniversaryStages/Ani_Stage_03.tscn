@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b8to22k0bf58q" path="res://Assets/Meshes/Props/Pool/swimming_pool.fbx" id="6_4t43o"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_h6ksb"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="7_gwjxb"]
-[ext_resource type="Shader" uid="uid://b7xkfiv6jkyhq" path="res://Scenes/Maps/Stages/AnniversaryStages/WaterShader.gdshader" id="7_j24wt"]
+[ext_resource type="Shader" path="res://Scenes/Maps/Stages/AnniversaryStages/WaterShader.gdshader" id="7_j24wt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_chbuj"]
 size = Vector3(3.98096, 1, 1.96704)

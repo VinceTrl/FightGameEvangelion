@@ -8,5 +8,5 @@ script = ExtResource("1_pkp8d")
 name = &"SP_Evangelion"
 texture = ExtResource("2_hcsk3")
 type = 0
-size = 0.4
+size = 0.3
 metadata/_custom_type_script = "uid://dyq6katrb0xdl"

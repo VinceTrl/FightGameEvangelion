@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://bitc2qlob2wwv"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_4xv8k"]
+[ext_resource type="Texture2D" uid="uid://7b0ikc24u5my" path="res://Assets/Shitpost/Source/GOCHISME3.jpg" id="2_4xv8k"]
+
+[resource]
+script = ExtResource("1_4xv8k")
+name = &"SP_Evangelion"
+texture = ExtResource("2_4xv8k")
+type = 2
+size = 0.5
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"

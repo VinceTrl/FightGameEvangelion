@@ -8,5 +8,5 @@ script = ExtResource("1_6qx8i")
 name = &"SP_GIF"
 texture = ExtResource("2_nv12a")
 type = 2
-size = 0.4
+size = 0.5
 metadata/_custom_type_script = "uid://dyq6katrb0xdl"
