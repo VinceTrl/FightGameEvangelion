@@ -231,12 +231,12 @@ spot_angle = 50.36
 spot_angle_attenuation = 0.341511
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" index="1"]
-transform = Transform3D(0.00138903, 0.751846, 0.659338, -0.0902982, -0.65655, 0.748858, 0.995914, -0.0605772, 0.0669784, -4.03105, 66.8239, 1.13687e-13)
+transform = Transform3D(0.507632, 0.727818, 0.461076, 0.321627, -0.65655, 0.682274, 0.799291, -0.19805, -0.567372, -4.03105, 66.8239, 1.13687e-13)
 light_color = Color(1, 0.913333, 0.35, 1)
 shadow_enabled = true
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lighting" index="2"]
-transform = Transform3D(0.659177, 0.41433, -0.627548, 0.0692474, 0.797528, 0.599295, 0.748793, -0.438498, 0.497021, -107.68, 194.28, 361.635)
+transform = Transform3D(-0.0849675, 0.603269, -0.792999, 0.0692474, 0.797528, 0.599295, 0.993975, -0.00399253, -0.109539, -91.5612, 252.529, -59.0558)
 light_color = Color(0.874465, 0.698985, 0.455866, 1)
 light_energy = 50.0
 shadow_enabled = true
@@ -244,11 +244,28 @@ shadow_bias = 0.3
 spot_range = 652.994
 spot_angle = 58.1256
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Lighting" index="3"]
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lighting" index="3"]
+transform = Transform3D(-0.983685, 0.137067, -0.116521, 0.0510955, 0.833884, 0.549569, 0.172493, 0.534649, -0.827283, 199.362, 188.64, -357.87)
+light_color = Color(0.874465, 0.698985, 0.455866, 1)
+light_energy = 500.0
+shadow_enabled = true
+shadow_bias = 0.3
+spot_range = 652.994
+spot_angle = 58.1256
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lighting" index="4"]
 transform = Transform3D(0.829436, -0.0799381, -0.552852, 0.48526, 0.593341, 0.642237, 0.276691, -0.800972, 0.53093, -149.132, 81.9394, 34.9864)
 light_color = Color(0.859209, 0.79928, 0.424054, 1)
-light_energy = 20.0
+light_energy = 10.0
 spot_range = 192.742
+spot_angle_attenuation = 1.27456
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lighting" index="5"]
+transform = Transform3D(0.640257, 0.113482, -0.759732, -0.227562, 0.972653, -0.0464899, 0.73368, 0.202652, 0.648572, -164.396, -27.9826, -10.6331)
+light_color = Color(0.86, 0.83936, 0.7052, 1)
+light_energy = 5.0
+spot_range = 192.742
+spot_angle = 85.1903
 spot_angle_attenuation = 1.27456
 
 [node name="Sun" type="Sprite3D" parent="." index="17"]
@@ -265,7 +282,7 @@ transform = Transform3D(5.77466, 0.559062, 9.93565, -0.021856, 11.488, -0.633707
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000521822, -0.168841, -1.5425e-07)
 
 [node name="WashingMachine_Sand2" parent="Meshes/SandMachine" index="1" instance=ExtResource("6_x02or")]
-transform = Transform3D(0.900494, -0.0350217, -0.131161, 0.0370087, 0.909849, 0.0111443, 0.130614, -0.0163501, 0.901106, -0.0188534, -0.320146, 5.51524)
+transform = Transform3D(0.683359, -0.0522393, -0.696661, 0.0697894, 0.974757, -0.00463566, 0.695122, -0.0465093, 0.685337, -0.92464, -0.25215, 6.24518)
 
 [node name="WashingMachine_Sand3" parent="Meshes/SandMachine" index="2" instance=ExtResource("6_x02or")]
 transform = Transform3D(0.187185, 0.0304618, -0.554151, -0.098321, 0.577391, -0.00147227, 0.546209, 0.0934947, 0.189642, -0.142542, -1.00714, 1.5173)
@@ -274,10 +291,10 @@ transform = Transform3D(0.187185, 0.0304618, -0.554151, -0.098321, 0.577391, -0.
 transform = Transform3D(0.612463, -0.0492362, -0.00608403, 0.0495596, 0.603796, 0.102699, -0.00225072, -0.102854, 0.605796, -0.288363, -0.753793, -1.73507)
 
 [node name="WashingMachine_Sand4" parent="Meshes/SandMachine" index="4" instance=ExtResource("6_x02or")]
-transform = Transform3D(-0.0116778, -0.0017195, 0.517548, -0.00557109, 0.51765, 0.00159414, -0.517521, -0.00553367, -0.0116956, -0.348545, -1.00657, 4.03554)
+transform = Transform3D(0.325737, -0.0166094, 0.449714, 0.000476164, 0.555173, 0.0201594, -0.450021, -0.0114349, 0.325537, -0.222191, -0.980342, 4.77361)
 
 [node name="WashingMachine_Sand6" parent="Meshes/SandMachine" index="5" instance=ExtResource("6_x02or")]
-transform = Transform3D(0.234361, -0.0125084, 0.461425, -0.00201776, 0.517459, 0.0150522, -0.461591, -0.00861279, 0.234211, -0.891727, -0.846957, 6.94768)
+transform = Transform3D(0.499563, -0.0238242, 0.241853, 0.0122423, 0.554627, 0.0293474, -0.242715, -0.0210607, 0.499268, -2.58002, -0.866987, 6.90976)
 
 [node name="Beach_Palm2" parent="Meshes" index="1" instance=ExtResource("9_bm5u6")]
 transform = Transform3D(-2.44086, 0.00314477, 1.96967, 0.217313, 3.11775, 0.264321, -1.95766, 0.34217, -2.42651, -70.8565, 4.87457, 28.8912)

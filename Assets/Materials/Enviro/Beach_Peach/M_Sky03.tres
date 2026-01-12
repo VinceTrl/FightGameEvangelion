@@ -6,7 +6,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_0d8mq")
-shader_parameter/soundIntensity = 10.0
+shader_parameter/soundIntensity = 0.0
 shader_parameter/equalizer00 = 0.25
 shader_parameter/equalizer01 = 0.3
 shader_parameter/equalizer02 = 0.3

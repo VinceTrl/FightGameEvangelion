@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bjur7smhqpufy" path="res://Scripts/Gameplay/BumperAnimation.gd" id="1_w0q86"]
 [ext_resource type="Script" uid="uid://devahp3jju1bf" path="res://Scripts/Gameplay/Bumper.gd" id="2_a0ntq"]
 [ext_resource type="Curve" uid="uid://jys1flmpwocm" path="res://Resources/Curves/OutBounceCurve.tres" id="2_l0bd5"]
-[ext_resource type="PackedScene" uid="uid://ln8x7tl7bxlr" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/wash_machine.tscn" id="4_l0bd5"]
+[ext_resource type="PackedScene" uid="uid://pc4ayrcj5bv6" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/wash_machine.tscn" id="4_l0bd5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0jl7"]
 size = Vector3(2.63, 0.752, 3)
