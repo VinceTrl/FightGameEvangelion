@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2vd6n57sf46"]
+
+[ext_resource type="PackedScene" uid="uid://bvuxy2gxfwkbu" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/SlapBros_Penpen_Beach.fbx" id="1_uwqux"]
+[ext_resource type="Material" uid="uid://bbicmo1vkrevv" path="res://Assets/Materials/Enviro/M_PenpenAtlas.tres" id="2_n2gi0"]
+
+[node name="SlapBros_Penpen_Beach" instance=ExtResource("1_uwqux")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0.716398, 1.02167, -0.0254979)
+
+[node name="Skeleton3D" parent="Armature" index="1"]
+bones/0/rotation = Quaternion(0.707107, 8.42937e-08, 8.42937e-08, 0.707107)
+bones/1/position = Vector3(-6.20455e-05, -0.0246787, -0.000254978)
+bones/1/rotation = Quaternion(0.00014379, 0.0340762, 0.999321, -0.0139842)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(-4.74291e-10, 0.0113568, -2.84645e-12)
+bones/2/rotation = Quaternion(-0.0604595, -0.0422114, -0.37154, 0.925484)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/position = Vector3(-3.15001e-09, 0.0129049, -5.63823e-10)
+bones/3/rotation = Quaternion(0.487062, 0.114956, 0.105757, 0.859285)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/position = Vector3(-4.74291e-10, 0.0113568, -2.84645e-12)
+bones/5/rotation = Quaternion(0.0999896, -0.00997204, 0.366331, 0.925043)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/position = Vector3(-3.3877e-10, 0.0129916, -2.70462e-10)
+bones/6/rotation = Quaternion(0.382205, -0.225502, -0.0881704, 0.891793)
+bones/6/scale = Vector3(1, 1, 1)
+bones/8/position = Vector3(-9.90971e-05, -0.003619, -0.0327349)
+bones/8/rotation = Quaternion(2.30978e-07, -1.74336e-07, 0.999987, 0.00511521)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/position = Vector3(0.00590033, 0.0114356, 0.0172558)
+bones/9/rotation = Quaternion(3.159e-08, 2.79895e-08, 0.0934703, 0.995622)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/position = Vector3(7.74984e-10, 0.00646561, -7.72622e-10)
+bones/10/rotation = Quaternion(7.74635e-08, 6.94159e-09, 0.00968459, 0.999953)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/position = Vector3(3.66027e-16, 0.00610506, -1.52588e-09)
+bones/11/rotation = Quaternion(-1.02629e-14, -1.32349e-23, -4.51997e-17, 1)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/position = Vector3(8.67362e-19, 0.00510149, 3.46945e-18)
+bones/12/rotation = Quaternion(-2.19606e-22, -1.32349e-23, 4.13577e-25, 1)
+bones/12/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.112943, -0.01941, 0.788217, -0.604633)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/position = Vector3(2.05412e-09, 0.00621122, 1.64247e-11)
+bones/15/rotation = Quaternion(0.117677, 0.0274813, 0.0660623, 0.990471)
+bones/15/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(0.530174, 0.361845, 0.649234, 0.408018)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/position = Vector3(-3.17656e-09, 0.00592314, 6.18752e-12)
+bones/18/rotation = Quaternion(0.192733, -0.153617, 0.0784316, 0.965973)
+bones/18/scale = Vector3(1, 1, 1)
+bones/20/position = Vector3(0.000260292, -0.0236424, 0.00127372)
+bones/20/rotation = Quaternion(0.148626, 0.00871582, -0.00522511, 0.988841)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/position = Vector3(5.96047e-11, 0.0035427, 0.00377501)
+bones/21/rotation = Quaternion(0.760765, 5.41552e-07, 6.34285e-07, 0.649028)
+bones/21/scale = Vector3(1, 1, 1)
+
+[node name="Head2" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="eyes" parent="Armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Bec_Top" parent="Armature/Skeleton3D" index="2"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Haris" parent="Armature/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Bec_Bot" parent="Armature/Skeleton3D" index="4"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Body" parent="Armature/Skeleton3D" index="5"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Pattes" parent="Armature/Skeleton3D" index="6"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Clope" parent="Armature/Skeleton3D" index="7"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Dent_Top" parent="Armature/Skeleton3D" index="8"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Dent_Bot" parent="Armature/Skeleton3D" index="9"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="Grillz" parent="Armature/Skeleton3D" index="10"]
+surface_material_override/0 = ExtResource("2_n2gi0")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Armature|ArmatureAction"

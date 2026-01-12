@@ -216,3 +216,6 @@ transform = Transform3D(0.25075, 0.0196914, 0.0216176, -0.0135171, 0.375098, 0.0
 
 [node name="SlapBros_Beach_Plank_8" parent="Art" instance=ExtResource("20_a38fr")]
 transform = Transform3D(0.450803, 0, 0.0194145, 0, 0.451221, 0, -0.0194145, 0, 0.450803, 0.262187, -0.402716, 0.591297)
+
+[node name="SlapBros_Beach_Plank_3" parent="." instance=ExtResource("20_a38fr")]
+transform = Transform3D(0.200274, 0.0748226, 0, -0.0455635, 0.328881, 0, 0, 0, 0.312718, 1.99618, 0.577745, 0.552583)
