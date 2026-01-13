@@ -22,7 +22,7 @@ script = ExtResource("1_bavvx")
 imageSize = 0.5
 windowPanel = NodePath("PanelContainer")
 texture = ExtResource("2_bavvx")
-texture_rect = NodePath("../../../../../../../../../../../../../../DockHSplitRight/DockVSplitRightL/DockSlotRightUL/Inspector/@EditorInspector@6486/@VBoxContainer@6472/@VBoxContainer@6485/@EditorInspectorSection@42877/@VBoxContainer@42878")
+texture_rect = NodePath("PanelContainer/TextureRect")
 glitch_style = ExtResource("5_nc7w6")
 glitch_minSize = Vector2i(200, 200)
 shitpost_style = ExtResource("1_34o5a")
@@ -42,3 +42,7 @@ offset_top = -264.0
 offset_right = 264.0
 grow_vertical = 0
 theme_override_styles/panel = ExtResource("5_ivjee")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+expand_mode = 2

@@ -268,3 +268,5 @@ position = Vector2(584, 332)
 sprite_frames = SubResource("SpriteFrames_m7vd8")
 animation = &"transition"
 autoplay = "transition"
+frame = 59
+frame_progress = 1.0
