@@ -243,60 +243,200 @@ stretch_mode = 5
 
 [node name="ShitpostWindow" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow2" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow3" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow4" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow5" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow6" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow7" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow8" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow9" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow10" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow11" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow12" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow13" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow14" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow15" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow16" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow17" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow18" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow19" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="ShitpostWindow20" parent="." instance=ExtResource("46_8ddlr")]
 layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 0

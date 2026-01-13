@@ -61,7 +61,8 @@ func ShowRandomImage(duration: float = 3.0):
 	var window := GetAvailableGifHolder()
 	SetShitpostWindow(window,shitpost)
 	
-	SetRandomPositionOnScreen(window)
+	var size := shitpost.texture.get_size() * shitpost.size
+	SetRandomPositionOnScreen(window,size)
 	window.visible = true
 	emit_signal("OnRandomImageSetVisible")
 	await  get_tree().create_timer(duration,true,false,true).timeout
@@ -157,22 +158,31 @@ func GetAvailableGifHolder() -> ShitpostWindow:
 	return null
 	
 #Set a new random position inside the screen for a TextureRect
-func SetRandomPositionOnScreen(texture: Control):
+func SetRandomPositionOnScreen(texture: Control,imageSize:Vector2 = Vector2.ZERO):
 	randomize()
 	#texture.scale = Vector2.ONE
 	
 	var screen_size = get_size()
 	var image_size = texture.get_size()
+	
+	if(imageSize !=Vector2.ZERO):
+		image_size = imageSize
 
-	var margin = 200
+	var margin = 50
+	
+	print("TEXTURE POS : SCREEN = " + str(screen_size))
+	print("TEXTURE POS : IMAGE = " + str(image_size))
 	
 	#random limits
 	var max_x = screen_size.x - image_size.x
 	var max_y = screen_size.y - image_size.y
 
+	print("TEXTURE POS : MAX-X = " + str(max_x))
+	print("TEXTURE POS : MAX-Y = " + str(max_y))
+	
 	# random pos
-	var random_x = randi_range(0+margin,max_x-margin)
-	var random_y = randi_range(0+margin,max_y-margin)
+	var random_x = randi_range(0,max_x)
+	var random_y = randi_range(0,max_y)
 	#randi() % int(max_y)
 
 	# Set Texture pos
