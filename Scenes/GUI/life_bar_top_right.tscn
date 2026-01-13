@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ccq8u40edk25l"]
+[gd_scene load_steps=30 format=3 uid="uid://ccq8u40edk25l"]
 
 [ext_resource type="Script" uid="uid://cnkheeds0wrh" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_umlfk"]
 [ext_resource type="Texture2D" uid="uid://c638bakjdtbln" path="res://Resources/Gradients/Player2_DamageEffect_Pink.tres" id="2_porba"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bv2i8ka6lntbs" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_8.png" id="15_auq2i"]
 [ext_resource type="Texture2D" uid="uid://dff371d6afc0q" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_9.png" id="16_c7uns"]
 [ext_resource type="Texture2D" uid="uid://bdnaro7k8nyk7" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_10.png" id="17_xk88w"]
+[ext_resource type="PackedScene" uid="uid://co07psem7bw36" path="res://Scenes/GUI/player_ammo_gui.tscn" id="25_whpd1"]
 
 [sub_resource type="Curve" id="Curve_13v2t"]
 _data = [Vector2(0, 1), 19.2646, 8.5177e-07, 1, 0, Vector2(1, 0), -3.47398, 0.0, 0, 0]
@@ -291,6 +292,7 @@ animation = &"P2_Idle"
 playerIndex = 2
 
 [node name="AmmoContainer" type="HBoxContainer" parent="TextureBackgroundHP"]
+visible = false
 layout_mode = 0
 offset_left = 144.286
 offset_top = 175.714
@@ -354,3 +356,14 @@ horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("7_fnjrm")
 playerID = 2
+
+[node name="PlayerAmmo" parent="TextureBackgroundHP" instance=ExtResource("25_whpd1")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 118.571
+offset_top = -15.7171
+offset_right = 158.571
+offset_bottom = 24.2829
+grow_horizontal = 1

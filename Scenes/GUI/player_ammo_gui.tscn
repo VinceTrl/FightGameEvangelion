@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://co07psem7bw36"]
+
+[ext_resource type="Script" uid="uid://dh86dt7qyii37" path="res://Scripts/GUI/PlayerAmmoTextGUI.gd" id="1_1ab7q"]
+[ext_resource type="FontFile" uid="uid://cjxwtlu1dgvak" path="res://Assets/GUI/Fonts/PRESSSTART2P-REGULAR.TTF" id="2_h4d27"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_umgcs"]
+font_size = 64
+
+[node name="PlayerAmmo" type="Control" node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_1ab7q")
+label = NodePath("VBoxContainer/AmmoAmountText")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -103.0
+offset_top = 29.9985
+offset_right = 88.9999
+offset_bottom = 93.9985
+scale = Vector2(0.714289, 0.714293)
+
+[node name="AmmoAmountText" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h4d27")
+text = "3/7"
+label_settings = SubResource("LabelSettings_umgcs")
+horizontal_alignment = 1

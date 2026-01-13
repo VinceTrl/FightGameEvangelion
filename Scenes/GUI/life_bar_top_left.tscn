@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://r3ads2h4cewh"]
+[gd_scene load_steps=30 format=3 uid="uid://r3ads2h4cewh"]
 
 [ext_resource type="Script" uid="uid://cnkheeds0wrh" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
 [ext_resource type="Texture2D" uid="uid://i8srkr0pioyq" path="res://Resources/Gradients/Player1_DamageEffect_Yellow.tres" id="2_i8cx7"]
@@ -20,12 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://bbaifof22lt7a" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_6.png" id="13_a13c5"]
 [ext_resource type="Texture2D" uid="uid://ckuqbn6akd7ae" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Kiki_Head_1.png" id="14_s7lo4"]
 [ext_resource type="Texture2D" uid="uid://b1aq2eg0qd41b" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_7.png" id="14_xl48i"]
-[ext_resource type="Script" uid="uid://dh86dt7qyii37" path="res://Scripts/GUI/PlayerAmmoTextGUI.gd" id="15_673ed"]
 [ext_resource type="Texture2D" uid="uid://bv2i8ka6lntbs" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_8.png" id="15_dnq12"]
 [ext_resource type="Texture2D" uid="uid://bxlhkwai42hik" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Player_1.png" id="15_yclad"]
 [ext_resource type="Texture2D" uid="uid://dff371d6afc0q" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_9.png" id="16_jfj8p"]
 [ext_resource type="Texture2D" uid="uid://bdnaro7k8nyk7" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/Hit/GUI_HP_Hit_10.png" id="17_cr2dr"]
-[ext_resource type="FontFile" uid="uid://cjxwtlu1dgvak" path="res://Assets/GUI/Fonts/PRESSSTART2P-REGULAR.TTF" id="26_nysvd"]
+[ext_resource type="PackedScene" uid="uid://co07psem7bw36" path="res://Scenes/GUI/player_ammo_gui.tscn" id="25_di8ro"]
 
 [sub_resource type="Curve" id="Curve_ugew3"]
 _data = [Vector2(0, 1), 19.2646, 8.5177e-07, 1, 0, Vector2(1, 0), -3.47398, 0.0, 0, 0]
@@ -213,9 +212,6 @@ animations = [{
 font = ExtResource("5_j8biq")
 font_size = 120
 
-[sub_resource type="LabelSettings" id="LabelSettings_umgcs"]
-font_size = 64
-
 [node name="LifeBarRoot_TopLeft" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -343,32 +339,5 @@ horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("6_y7uc4")
 
-[node name="PlayerAmmo" type="Control" parent="TextureBackgroundHP" node_paths=PackedStringArray("label")]
+[node name="PlayerAmmo" parent="TextureBackgroundHP" instance=ExtResource("25_di8ro")]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
-script = ExtResource("15_673ed")
-label = NodePath("VBoxContainer/AmmoAmountText")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureBackgroundHP/PlayerAmmo"]
-layout_mode = 0
-offset_left = -103.0
-offset_top = 29.9985
-offset_right = 88.9999
-offset_bottom = 93.9985
-scale = Vector2(0.714289, 0.714293)
-
-[node name="AmmoAmountText" type="Label" parent="TextureBackgroundHP/PlayerAmmo/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("26_nysvd")
-text = "3/7"
-label_settings = SubResource("LabelSettings_umgcs")
-horizontal_alignment = 1
