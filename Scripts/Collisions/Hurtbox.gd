@@ -44,6 +44,10 @@ func _on_area_entered(hitbox : Hitbox) -> void:
 func HitVfx(hitbox:Hitbox):
 	var vfx = VFX_2D_IMPACT.instantiate()
 	var total = owner.global_position + hitbox.owner.global_position
+	
+	if(hitbox.type == Hitbox.DamageType.Tooth):
+		total = owner.global_position
+		
 	var targetPosition = total / 2
 	vfx.global_position = targetPosition
 	get_tree().current_scene.add_child(vfx)

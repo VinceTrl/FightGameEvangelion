@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://dyqrd26u8lp8x"]
+[gd_scene load_steps=130 format=3 uid="uid://dyqrd26u8lp8x"]
 
 [ext_resource type="Script" uid="uid://8clh5dgovq3u" path="res://Scripts/GUI/Shitpost/shitpost_gui.gd" id="1_fljbo"]
 [ext_resource type="Texture2D" uid="uid://uyxpod7dbnun" path="res://Assets/Shitpost/Evangelion/Screenshot_2025-06-10-03-23-13-35_1c337646f29875672b5a61192b9010f9.png" id="2_jctm3"]
@@ -92,7 +92,6 @@
 [ext_resource type="Resource" uid="uid://b1utlohvnm3wj" path="res://Resources/ShitpostTextures/Static/shitpost_13.tres" id="89_e7lpr"]
 [ext_resource type="Resource" uid="uid://cpfsj0tt44sp1" path="res://Resources/ShitpostTextures/Static/shitpost_14.tres" id="90_82nxw"]
 [ext_resource type="Resource" uid="uid://chq7eh2n5h0hq" path="res://Resources/ShitpostTextures/Static/shitpost_15.tres" id="91_5d4xe"]
-[ext_resource type="Resource" uid="uid://cxncqwedhiro" path="res://Resources/ShitpostTextures/Static/shitpost_16.tres" id="92_fpmdh"]
 [ext_resource type="Resource" uid="uid://d4dkreye8vbmt" path="res://Resources/ShitpostTextures/Static/shitpost_17.tres" id="93_pb0il"]
 [ext_resource type="Resource" uid="uid://03ukwmen760m" path="res://Resources/ShitpostTextures/Static/shitpost_18.tres" id="94_17uqn"]
 [ext_resource type="Resource" uid="uid://digicbv15aavu" path="res://Resources/ShitpostTextures/Static/shitpost_19.tres" id="95_541qj"]
@@ -101,7 +100,6 @@
 [ext_resource type="Resource" uid="uid://d112ckmrcy4hm" path="res://Resources/ShitpostTextures/Static/shitpost_22.tres" id="98_it0bc"]
 [ext_resource type="Resource" uid="uid://b70svcc61nwdf" path="res://Resources/ShitpostTextures/Static/shitpost_23.tres" id="99_ch31x"]
 [ext_resource type="Resource" uid="uid://c4jw160mannns" path="res://Resources/ShitpostTextures/Static/shitpost_24.tres" id="100_2i6o6"]
-[ext_resource type="Resource" uid="uid://denup1bs07soj" path="res://Resources/ShitpostTextures/Static/shitpost_25.tres" id="101_hmbr0"]
 [ext_resource type="Resource" uid="uid://dhok5yl2aal6f" path="res://Resources/ShitpostTextures/Static/shitpost_26.tres" id="102_wglav"]
 [ext_resource type="Resource" uid="uid://biuqr1ljk0ejo" path="res://Resources/ShitpostTextures/Static/shitpost_27.tres" id="103_fh24o"]
 [ext_resource type="Resource" uid="uid://b2mdyvmqeuhu8" path="res://Resources/ShitpostTextures/Static/shitpost_28.tres" id="104_3qaw7"]
@@ -116,13 +114,12 @@
 [ext_resource type="Resource" uid="uid://b3val6elwmt0y" path="res://Resources/ShitpostTextures/Static/shitpost_37.tres" id="113_aop1x"]
 [ext_resource type="Resource" uid="uid://c4p7v1ps5oyhq" path="res://Resources/ShitpostTextures/Static/shitpost_38.tres" id="114_iqivf"]
 [ext_resource type="Resource" uid="uid://hsft8jurxv24" path="res://Resources/ShitpostTextures/Static/shitpost_39.tres" id="115_a2gbb"]
-[ext_resource type="Resource" uid="uid://gp4dmrdfke52" path="res://Resources/ShitpostTextures/Static/shitpost_40.tres" id="116_1klc5"]
 [ext_resource type="Resource" uid="uid://bc6q1m5nkwwxr" path="res://Resources/ShitpostTextures/Static/shitpost_41.tres" id="117_bai1d"]
 [ext_resource type="Resource" uid="uid://c7lg651dl7hsl" path="res://Resources/ShitpostTextures/Static/shitpost_42.tres" id="118_44o80"]
+[ext_resource type="Texture2D" uid="uid://d1l2qvo2closl" path="res://Assets/Shitpost/Source/Screenshot_2025-06-10-03-21-20-29_1c337646f29875672b5a61192b9010f9.jpg" id="119_1vvem"]
 [ext_resource type="Resource" uid="uid://od0t1helyx2i" path="res://Resources/ShitpostTextures/Static/shitpost_43.tres" id="119_qesdt"]
 [ext_resource type="Resource" uid="uid://s5x80htiat4" path="res://Resources/ShitpostTextures/Static/shitpost_44.tres" id="120_g1gfr"]
 [ext_resource type="Resource" uid="uid://d1q2ruke1g8b3" path="res://Resources/ShitpostTextures/Static/shitpost_45.tres" id="121_fg1mu"]
-[ext_resource type="Resource" uid="uid://ct77lchan6p51" path="res://Resources/ShitpostTextures/Static/shitpost_46.tres" id="122_h1hdv"]
 [ext_resource type="Resource" uid="uid://chsako3jcqjk3" path="res://Resources/ShitpostTextures/Static/shitpost_47.tres" id="123_5rvsh"]
 [ext_resource type="Resource" uid="uid://gbmbjt2ab7tg" path="res://Resources/ShitpostTextures/Static/shitpost_48.tres" id="124_e7lpr"]
 [ext_resource type="Resource" uid="uid://q3ei78k42bh5" path="res://Resources/ShitpostTextures/Static/shitpost_49.tres" id="125_82nxw"]
@@ -131,6 +128,14 @@
 [ext_resource type="Resource" uid="uid://bitc2qlob2wwv" path="res://Resources/ShitpostTextures/Static/shitpost_52.tres" id="128_pb0il"]
 [ext_resource type="Resource" uid="uid://bc7cigh5vu5jm" path="res://Resources/ShitpostTextures/Static/shitpost_53.tres" id="129_17uqn"]
 [ext_resource type="Resource" uid="uid://c86p8wvi4hb5v" path="res://Resources/ShitpostTextures/Static/shitpost_54.tres" id="130_541qj"]
+
+[sub_resource type="Resource" id="Resource_3lckm"]
+script = ExtResource("55_3aq8c")
+name = &"SP_Evangelion"
+texture = ExtResource("119_1vvem")
+type = 0
+size = 0.4
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"
 
 [node name="ShitpostGUI" type="Control"]
 layout_mode = 3
@@ -143,7 +148,7 @@ script = ExtResource("1_fljbo")
 textures = Array[Texture2D]([ExtResource("17_rqudw"), ExtResource("16_wvwx1"), ExtResource("4_bkkub"), ExtResource("14_a16vh"), ExtResource("13_0pp8o"), ExtResource("12_s2bre"), ExtResource("18_oljaw"), ExtResource("20_och3k"), ExtResource("21_uus88"), ExtResource("11_54yhn"), ExtResource("10_d4ak8"), ExtResource("9_2rng2"), ExtResource("8_cv82v"), ExtResource("7_tyv51"), ExtResource("6_joa1k"), ExtResource("19_fee6v"), ExtResource("5_h5u70"), ExtResource("4_cagmx"), ExtResource("3_fwi6f"), ExtResource("2_jctm3"), ExtResource("22_qxmfy"), ExtResource("23_sqbul"), ExtResource("24_c62ho"), ExtResource("25_cm780"), ExtResource("26_fvjcx"), ExtResource("27_cwdv6"), ExtResource("28_yw1kb"), ExtResource("29_x4paf"), ExtResource("30_2qli4"), ExtResource("31_dn8pt"), ExtResource("32_tii0o"), ExtResource("33_cbp0v"), ExtResource("3_fwi6f"), ExtResource("29_x4paf"), ExtResource("30_2qli4"), ExtResource("31_dn8pt"), ExtResource("32_tii0o"), ExtResource("33_cbp0v"), ExtResource("34_a2xfs"), ExtResource("35_ni7ay"), ExtResource("36_t15np"), ExtResource("22_qxmfy"), ExtResource("22_qxmfy"), ExtResource("37_yk8kj"), ExtResource("37_yk8kj"), ExtResource("38_sj7r4"), ExtResource("38_sj7r4"), ExtResource("39_246c6"), ExtResource("40_ftb2m"), ExtResource("41_gkqgf"), ExtResource("42_8u2y4"), ExtResource("43_1iqcn"), ExtResource("44_p4nx5"), ExtResource("45_vsjr1"), ExtResource("46_eyk60"), ExtResource("47_jv208"), ExtResource("48_x1p6f"), ExtResource("49_k401x"), ExtResource("50_shmmb"), ExtResource("51_t07pd"), ExtResource("52_3aq8c"), ExtResource("53_65biy"), ExtResource("54_cqdp6")])
 imageSize = 0.4
 debugMode = true
-shitpostImages = Array[ExtResource("55_3aq8c")]([ExtResource("56_udbpx"), ExtResource("57_ohgn1"), ExtResource("58_b58yi"), ExtResource("59_mf8f6"), ExtResource("60_awvyv"), ExtResource("61_e2ynj"), ExtResource("62_hdqgr"), ExtResource("63_2a8j1"), ExtResource("64_tw8ot"), ExtResource("65_n610j"), ExtResource("66_3q285"), ExtResource("67_2rwn6"), ExtResource("68_340hv"), ExtResource("69_avkrk"), ExtResource("70_vvyfq"), ExtResource("71_d04mx"), ExtResource("72_ud7ix"), ExtResource("73_j00vv"), ExtResource("74_jfe3q"), ExtResource("75_uj2ej"), ExtResource("76_8mdv6"), ExtResource("56_65biy"), ExtResource("78_v4l5b"), ExtResource("79_cglsf"), ExtResource("80_sci5j"), ExtResource("81_8lthe"), ExtResource("82_xirrk"), ExtResource("83_6yx1k"), ExtResource("84_1vvem"), ExtResource("85_3lckm"), ExtResource("86_y703j"), ExtResource("87_h1hdv"), ExtResource("88_5rvsh"), ExtResource("89_e7lpr"), ExtResource("90_82nxw"), ExtResource("91_5d4xe"), ExtResource("92_fpmdh"), ExtResource("93_pb0il"), ExtResource("94_17uqn"), ExtResource("95_541qj"), ExtResource("96_et85h"), ExtResource("97_b6v5a"), ExtResource("98_it0bc"), ExtResource("99_ch31x"), ExtResource("100_2i6o6"), ExtResource("101_hmbr0"), ExtResource("102_wglav"), ExtResource("103_fh24o"), ExtResource("104_3qaw7"), ExtResource("105_t4bju"), ExtResource("106_c5pmt"), ExtResource("107_uisf4"), ExtResource("108_uunse"), ExtResource("109_2xr0k"), ExtResource("110_krkx7"), ExtResource("111_mx7hi"), ExtResource("112_x0ne5"), ExtResource("113_aop1x"), ExtResource("114_iqivf"), ExtResource("115_a2gbb"), ExtResource("116_1klc5"), ExtResource("117_bai1d"), ExtResource("118_44o80"), ExtResource("119_qesdt"), ExtResource("120_g1gfr"), ExtResource("121_fg1mu"), ExtResource("122_h1hdv"), ExtResource("123_5rvsh"), ExtResource("124_e7lpr"), ExtResource("125_82nxw"), ExtResource("126_5d4xe"), ExtResource("127_fpmdh"), ExtResource("128_pb0il"), ExtResource("129_17uqn"), ExtResource("130_541qj")])
+shitpostImages = Array[ExtResource("55_3aq8c")]([ExtResource("56_udbpx"), ExtResource("57_ohgn1"), ExtResource("58_b58yi"), ExtResource("59_mf8f6"), ExtResource("60_awvyv"), ExtResource("61_e2ynj"), ExtResource("62_hdqgr"), ExtResource("63_2a8j1"), ExtResource("64_tw8ot"), ExtResource("65_n610j"), ExtResource("66_3q285"), ExtResource("67_2rwn6"), ExtResource("68_340hv"), ExtResource("69_avkrk"), ExtResource("70_vvyfq"), ExtResource("71_d04mx"), ExtResource("72_ud7ix"), ExtResource("73_j00vv"), ExtResource("74_jfe3q"), ExtResource("75_uj2ej"), ExtResource("76_8mdv6"), ExtResource("56_65biy"), ExtResource("78_v4l5b"), ExtResource("79_cglsf"), ExtResource("80_sci5j"), ExtResource("81_8lthe"), ExtResource("82_xirrk"), ExtResource("83_6yx1k"), ExtResource("84_1vvem"), ExtResource("85_3lckm"), ExtResource("86_y703j"), ExtResource("87_h1hdv"), ExtResource("88_5rvsh"), ExtResource("89_e7lpr"), ExtResource("90_82nxw"), ExtResource("91_5d4xe"), ExtResource("93_pb0il"), ExtResource("94_17uqn"), ExtResource("95_541qj"), ExtResource("96_et85h"), ExtResource("97_b6v5a"), ExtResource("98_it0bc"), ExtResource("99_ch31x"), ExtResource("100_2i6o6"), ExtResource("102_wglav"), ExtResource("103_fh24o"), ExtResource("104_3qaw7"), ExtResource("105_t4bju"), ExtResource("106_c5pmt"), ExtResource("107_uisf4"), ExtResource("108_uunse"), ExtResource("109_2xr0k"), ExtResource("110_krkx7"), ExtResource("111_mx7hi"), ExtResource("112_x0ne5"), ExtResource("113_aop1x"), ExtResource("114_iqivf"), ExtResource("115_a2gbb"), ExtResource("117_bai1d"), ExtResource("118_44o80"), ExtResource("119_qesdt"), ExtResource("120_g1gfr"), ExtResource("121_fg1mu"), SubResource("Resource_3lckm"), ExtResource("123_5rvsh"), ExtResource("124_e7lpr"), ExtResource("125_82nxw"), ExtResource("126_5d4xe"), ExtResource("127_fpmdh"), ExtResource("128_pb0il"), ExtResource("129_17uqn"), ExtResource("130_541qj")])
 
 [node name="TextureHolder" type="TextureRect" parent="."]
 layout_mode = 0
