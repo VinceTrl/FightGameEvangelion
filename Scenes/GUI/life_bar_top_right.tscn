@@ -240,9 +240,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -985.714
-offset_top = 1322.86
+offset_top = 1300.0
 offset_right = -352.714
-offset_bottom = 1502.86
+offset_bottom = 1480.0
 grow_horizontal = 0
 texture = ExtResource("4_sxuqw")
 
@@ -276,7 +276,8 @@ grow_vertical = 2
 
 [node name="TextureHP" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
 position = Vector2(575.071, 172.286)
-animation = &"P2_Idle"
+frame = 9
+frame_progress = 1.0
 playerIndex = 2
 
 [node name="TextureHP2" parent="TextureBackgroundHP/ControlHP" instance=ExtResource("5_egxum")]
@@ -342,6 +343,7 @@ texture = ExtResource("7_7j4th")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="TextureBackgroundHP"]
+visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0

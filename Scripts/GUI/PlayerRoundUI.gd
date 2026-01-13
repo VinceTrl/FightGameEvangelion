@@ -1,12 +1,14 @@
 extends Label
 
 @export var playerID = 1
+@export var textColor:Color = Color.MAGENTA
 var Icons: Array[NodePath]
 
 var roundWon = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	modulate = textColor
 	UpdateIcons()
 	UpdateScore()
 	#Manager.scoreManager.connect("onScoreUpdated",UpdateIcons)

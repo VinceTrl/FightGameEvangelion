@@ -230,9 +230,9 @@ alphaCurve = SubResource("Curve_ugew3")
 [node name="TextureBackgroundHP" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 317.143
-offset_top = 1322.86
+offset_top = 1300.0
 offset_right = 950.143
-offset_bottom = 1502.86
+offset_bottom = 1480.0
 texture = ExtResource("4_g5yp7")
 
 [node name="ControlHP" type="Control" parent="TextureBackgroundHP"]
@@ -321,16 +321,21 @@ layout_mode = 2
 texture = ExtResource("6_fw131")
 stretch_mode = 5
 
-[node name="Round" type="Label" parent="TextureBackgroundHP"]
+[node name="PlayerAmmo" parent="TextureBackgroundHP" instance=ExtResource("25_di8ro")]
 layout_mode = 1
-anchors_preset = 11
+
+[node name="Round" type="Label" parent="TextureBackgroundHP"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -43.0
-offset_top = -161.429
-offset_right = 147.0
-offset_bottom = -27.4285
+anchor_bottom = 0.5
+offset_left = 36.9999
+offset_top = -67.1457
+offset_right = 118.0
+offset_bottom = 66.8548
 grow_horizontal = 0
 grow_vertical = 2
 text = "0"
@@ -338,6 +343,3 @@ label_settings = SubResource("LabelSettings_by4q8")
 horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("6_y7uc4")
-
-[node name="PlayerAmmo" parent="TextureBackgroundHP" instance=ExtResource("25_di8ro")]
-layout_mode = 1

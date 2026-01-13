@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5amqm6jpeons"]
+[gd_scene load_steps=13 format=3 uid="uid://c5amqm6jpeons"]
 
 [ext_resource type="PackedScene" uid="uid://bus7pxl8e5mmg" path="res://Scenes/GUI/fight_text.tscn" id="1_gskd5"]
 [ext_resource type="Script" uid="uid://bnnr6dw1o8jcu" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
@@ -9,6 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://r3ads2h4cewh" path="res://Scenes/GUI/life_bar_top_left.tscn" id="8_ehwck"]
 [ext_resource type="PackedScene" uid="uid://ilo5r2bvattv" path="res://Scenes/GUI/hit_text_effect.tscn" id="9_e53dv"]
 [ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="9_wcwep"]
+[ext_resource type="FontFile" uid="uid://cp0r1d01w0cc7" path="res://Assets/GUI/Fonts/medium.otf" id="10_p756i"]
+[ext_resource type="Script" uid="uid://rypcejv8gl2c" path="res://Scripts/GUI/PlayerRoundUI.gd" id="11_dph56"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5qj23"]
+font = ExtResource("10_p756i")
+font_size = 80
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 16)
 
 [node name="MasterGUI" type="Control"]
 layout_mode = 3
@@ -80,3 +89,38 @@ offset_right = -300.0
 grow_horizontal = 0
 playerIndex = 1
 color = Color(1, 0, 0.435294, 1)
+
+[node name="Round_P1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.0
+offset_top = 77.0
+offset_right = -125.0
+offset_bottom = 157.0
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_5qj23")
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("11_dph56")
+textColor = Color(1, 0.682353, 0, 1)
+
+[node name="Round_P2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 122.0
+offset_top = 79.0
+offset_right = 202.0
+offset_bottom = 159.0
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_5qj23")
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("11_dph56")
+playerID = 2
+textColor = Color(1, 0, 0.435294, 1)
