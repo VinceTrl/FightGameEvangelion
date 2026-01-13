@@ -17,7 +17,7 @@
 [ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="14_5j2rv"]
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="15_u5o35"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="20_0s7yt"]
-[ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/TestMap.tres" id="20_bhy2f"]
+[ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/BeachMap.tres" id="20_bhy2f"]
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="21_e4ph7"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="21_uv2n1"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="22_mdkoo"]

@@ -1,7 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://b1syavad6jdov"]
 
-[ext_resource type="Script" uid="uid://sdembkohc8gu" path="res://Scenes/VFX/VFXOneShot.gd" id="1_5a7xs"]
+[ext_resource type="Script" uid="uid://sdembkohc8gu" path="res://Scripts/VFX/VFXOneShot.gd" id="1_5a7xs"]
 [ext_resource type="Shader" uid="uid://bhvt3i8u56aah" path="res://Assets/Shaders/FX_minecraft_Block_Hit.tres" id="2_ftm1k"]
+
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_46ypu"]
 load_path = "res://.godot/imported/Voronoi01.png-2a08d4c27c4781e753924625baf495e2.s3tc.ctex"
