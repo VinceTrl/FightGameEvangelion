@@ -7,3 +7,4 @@ albedo_color = Color(0.93, 0.78244, 0.6138, 1)
 albedo_texture = ExtResource("1_4vsyn")
 emission_energy_multiplier = 0.1
 emission_texture = ExtResource("1_4vsyn")
+texture_filter = 0

@@ -118,7 +118,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-495.46, -31.5197)
+graph_offset = Vector2(-857.01, 210.462)
 modes/diffuse = 3
 modes/specular = 1
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_3cjke")

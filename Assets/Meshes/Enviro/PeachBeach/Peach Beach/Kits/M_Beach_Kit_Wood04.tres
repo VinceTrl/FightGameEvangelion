@@ -6,3 +6,4 @@
 albedo_texture = ExtResource("1_kfy14")
 emission_energy_multiplier = 0.2
 emission_texture = ExtResource("1_kfy14")
+texture_filter = 0

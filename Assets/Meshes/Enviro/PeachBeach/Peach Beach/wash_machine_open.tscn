@@ -315,7 +315,7 @@ material_override = ExtResource("2_7sod1")
 material_override = ExtResource("2_7sod1")
 
 [node name="Cylinder_002" parent="." index="6"]
-transform = Transform3D(9.70084, 6.48224, 99.3171, -99.5094, 2.58049, 9.55121, -1.94373, -99.7563, 6.70077, -1.37101, 1.55318, 0.0214463)
+transform = Transform3D(9.70084, 6.48224, 99.3171, -99.5094, 2.58049, 9.5512, -1.94373, -99.7563, 6.70077, -1.37101, 1.55318, 0.0214463)
 material_override = ExtResource("2_7sod1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cylinder_002" index="0"]
@@ -428,16 +428,36 @@ modulate = Color(0.38, 0.1216, 0.21204, 1)
 texture = ExtResource("5_t51u4")
 
 [node name="Sprite3D4" type="Sprite3D" parent="Node3D" index="4"]
-transform = Transform3D(0.0289396, 0.223397, -0.242009, -0.0450111, 0.310257, 0.170188, 0.295189, 0.0254074, 0.0496766, -0.394074, -0.568404, -0.342081)
+transform = Transform3D(0.012836, 0.226899, -0.241401, -0.21104, 0.225975, 0.118987, 0.212832, 0.210388, 0.132544, -0.263847, -0.610644, -0.417956)
 modulate = Color(0.514843, 0.374375, 0.191685, 1)
 texture = ExtResource("5_t51u4")
 
-[node name="Sprite3D6" type="Sprite3D" parent="Node3D" index="5"]
+[node name="Sprite3D7" type="Sprite3D" parent="Node3D" index="5"]
+transform = Transform3D(0.00597007, -0.293625, -0.0441816, -0.162347, -0.107044, 0.0823858, -0.226499, 0.0689854, -0.060216, -0.349579, -0.544104, 0.460831)
+modulate = Color(0.35, 0.35, 0.35, 1)
+texture = ExtResource("4_6q4uu")
+
+[node name="Sprite3D8" type="Sprite3D" parent="Node3D" index="6"]
+transform = Transform3D(-0.0152451, 0.352017, -0.117487, -0.280137, 0.0365381, 0.103463, 0.106257, 0.146834, 0.255914, -0.329571, -0.239047, -0.687003)
+modulate = Color(0.38, 0.1216, 0.21204, 1)
+texture = ExtResource("5_t51u4")
+
+[node name="Sprite3D9" type="Sprite3D" parent="Node3D" index="7"]
+transform = Transform3D(-0.0573701, -0.340765, -0.124591, -0.270938, -0.00241013, 0.128799, -0.115332, 0.17517, -0.240599, -0.436191, -0.334031, 0.703205)
+modulate = Color(0.28, 0.28, 0.28, 1)
+texture = ExtResource("5_t51u4")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Node3D" index="8"]
 transform = Transform3D(-0.0126249, 0.179631, -0.198345, 0.249749, 0.0446212, 0.0132875, 0.0384075, -0.231107, -0.151601, -0.249748, -0.222146, 0.697154)
 modulate = Color(0.441607, 0.513252, 0.526208, 1)
 texture = ExtResource("5_t51u4")
 
-[node name="Sprite3D3" type="Sprite3D" parent="Node3D" index="6"]
-transform = Transform3D(0.163995, 0.138805, -0.00799507, -0.100358, 0.126736, 0.141744, 0.0962231, -0.104386, 0.161461, -0.33301, -0.642972, -0.581098)
+[node name="Sprite3D3" type="Sprite3D" parent="Node3D" index="9"]
+transform = Transform3D(0.163434, 0.139408, -0.00893078, -0.100318, 0.126693, 0.141811, 0.0972138, -0.103632, 0.161353, -0.33301, -0.642972, -0.581098)
 modulate = Color(0.38, 0.1216, 0.21204, 1)
+texture = ExtResource("3_6hgxj")
+
+[node name="Sprite3D10" type="Sprite3D" parent="Node3D" index="10"]
+transform = Transform3D(0.187956, 0.104343, 0.00320784, 0.0777131, -0.144267, 0.139186, 0.0697014, -0.120519, -0.163835, -0.732392, -0.606913, 0.633876)
+modulate = Color(0.27, 0.27, 0.27, 1)
 texture = ExtResource("3_6hgxj")

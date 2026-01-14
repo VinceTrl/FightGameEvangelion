@@ -1,9 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://mpfb28vilhty"]
 
-[ext_resource type="Texture2D" uid="uid://blivoh33aiw7n" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeach_Wood03.png" id="1_7y8yb"]
+[ext_resource type="Texture2D" uid="uid://cg6htj0b8fw5o" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeach_Wood03.png" id="1_7y8yb"]
 
 [resource]
 albedo_color = Color(1, 0.943167, 0.89, 1)
 albedo_texture = ExtResource("1_7y8yb")
 emission_energy_multiplier = 0.2
 emission_texture = ExtResource("1_7y8yb")
+texture_filter = 0
