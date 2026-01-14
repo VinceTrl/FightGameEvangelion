@@ -41,7 +41,10 @@ func SpawnMap(mapIndex:int):
 		print("WRONG MAP INDEX")
 		return
 		
-	var mapData = load(str(maps[mapIndex].mapScenePath))
-	var map = mapData.instantiate()
-	add_child(map)
+	#var mapData = load(str(maps[mapIndex].mapScenePath))
+	var mapData = MapGlobal.InstantiateMap(maps[mapIndex].mapName)
+	
+	#var map = mapData.instantiate()
+	#add_child(map)
+	add_child(mapData)
 	currentMap = maps[mapIndex]

@@ -19,9 +19,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Manager="*res://Scripts/Managers/Manager.gd"
-Global="*res://Scripts/Managers/Global.gd"
+Manager="*res://Scripts/Managers/Global/Manager.gd"
+Global="*res://Scripts/Managers/Global/Global.gd"
 GlobalPostProcessData="*res://Scripts/GameEffects/PostProcessAnimationParams/GlobalPostProcessData.gd"
+MapGlobal="*res://Scripts/Managers/Global/map_global.gd"
 
 [debug_draw_3d]
 
