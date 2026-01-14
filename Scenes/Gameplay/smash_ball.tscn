@@ -1,11 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://1s7868dthyoc"]
+[gd_scene load_steps=16 format=3 uid="uid://1s7868dthyoc"]
 
 [ext_resource type="Script" uid="uid://dth1pc7jfyjni" path="res://Scripts/Gameplay/smash_ball_item.gd" id="1_kspie"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_vifah"]
 [ext_resource type="Resource" uid="uid://bgvu6c31k2dbe" path="res://Resources/PostProcessAnims/Glitch/DamageGlitch.tres" id="2_5njag"]
 [ext_resource type="Texture2D" uid="uid://c0ph7x1vlhpbo" path="res://Assets/Sprites/Vfx/Glow/item_glow.png" id="3_ek7dd"]
 [ext_resource type="Script" uid="uid://cg2f0qymkqehu" path="res://Scripts/Utilities/ScreenBorderDetection3D.gd" id="3_m7qlv"]
+[ext_resource type="PackedScene" uid="uid://0rubkmfl86a" path="res://Scenes/Gameplay/smash_ball_mesh.tscn" id="4_br1fn"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_l6hae"]
+[ext_resource type="Texture2D" uid="uid://ckuqbn6akd7ae" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Kiki_Head_1.png" id="5_1q0v4"]
+[ext_resource type="Texture2D" uid="uid://bm3edlyew80g" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Kiki_Head_2.png" id="6_7mxb4"]
 
 [sub_resource type="Curve" id="Curve_l6hae"]
 _data = [Vector2(0, 1), 0.0, -9.73966, 0, 0, Vector2(0.106628, 0.298295), -1.22051, -1.22051, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -15,10 +18,19 @@ point_count = 3
 _data = [Vector2(0, 1), 0.0, -14.1526, 0, 1, Vector2(0.0662824, 0.0619318), 0.0, 0.0, 0, 0, Vector2(0.126801, 1), 0.0, 0.0, 0, 0, Vector2(0.181556, 0.283523), 0.0, 0.0, 0, 0, Vector2(0.256484, 0.844886), -1.13252, -1.13252, 0, 0, Vector2(0.795389, 0), -1.64037, -1.64037, 0, 0, Vector2(0.835735, 0.793182), 0.0, 0.0, 0, 0, Vector2(0.899135, 0.26875), 0.0, 0.0, 0, 0, Vector2(0.956772, 0.615909), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.912932, 0.0, 0, 0]
 point_count = 10
 
-[sub_resource type="SphereMesh" id="SphereMesh_kspie"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kspie"]
-albedo_color = Color(0, 1, 0, 1)
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmhto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1q0v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7mxb4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dm8be"]
 size = Vector3(0.25, 0.25, 0.25)
@@ -47,13 +59,24 @@ randomBounceAngleAmount = 40.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-mesh = SubResource("SphereMesh_kspie")
-surface_material_override/0 = SubResource("StandardMaterial3D_kspie")
 
 [node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -0.526459)
+transform = Transform3D(3.25198, 0, 0, 0, 3.08782, 0, 0, 0, 4, 0, 0, 0.576534)
 texture_filter = 0
 texture = ExtResource("3_ek7dd")
+
+[node name="SmashBall" parent="MeshInstance3D" instance=ExtResource("4_br1fn")]
+transform = Transform3D(-3.0598e-08, 0.7, 3.0598e-08, 0, -3.0598e-08, 0.7, 0.7, 3.0598e-08, 1.33748e-15, 0, 0, 0.676867)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160937, 0)
+alpha_cut = 3
+alpha_scissor_threshold = 0.394
+alpha_hash_scale = 0.01
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mmhto")
+autoplay = "default"
+frame_progress = 0.769533
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("1_vifah")

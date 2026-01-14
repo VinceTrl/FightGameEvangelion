@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://0rubkmfl86a"]
+
+[ext_resource type="PackedScene" uid="uid://41eg8bprv1sg" path="res://Assets/Meshes/Props/SmashBall/SmashBall.fbx" id="1_2nns3"]
+[ext_resource type="Material" uid="uid://dvg8pchyps7mq" path="res://Assets/Materials/Enviro/M_SmashBall_White.tres" id="2_uwkaw"]
+[ext_resource type="Material" uid="uid://ehdx7tlecfjs" path="res://Assets/Materials/Enviro/M_SmashBall_Black.tres" id="3_sp40o"]
+
+[node name="SmashBall" instance=ExtResource("1_2nns3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Cube_001" parent="." index="0"]
+material_override = ExtResource("2_uwkaw")
+
+[node name="Sphere_001" parent="." index="1"]
+material_override = ExtResource("3_sp40o")

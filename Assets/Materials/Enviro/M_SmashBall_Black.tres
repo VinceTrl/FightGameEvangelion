@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ehdx7tlecfjs"]
+
+[ext_resource type="Texture2D" uid="uid://c1ml8f5tsoase" path="res://Sources/Textures/T_Plateforme_ADD_01.png" id="1_m2etn"]
+
+[resource]
+albedo_texture = ExtResource("1_m2etn")
+emission_enabled = true
+emission_energy_multiplier = 0.3
+emission_texture = ExtResource("1_m2etn")
+texture_filter = 0
