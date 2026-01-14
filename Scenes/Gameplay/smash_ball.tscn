@@ -18,6 +18,16 @@ point_count = 3
 _data = [Vector2(0, 1), 0.0, -14.1526, 0, 1, Vector2(0.0662824, 0.0619318), 0.0, 0.0, 0, 0, Vector2(0.126801, 1), 0.0, 0.0, 0, 0, Vector2(0.181556, 0.283523), 0.0, 0.0, 0, 0, Vector2(0.256484, 0.844886), -1.13252, -1.13252, 0, 0, Vector2(0.795389, 0), -1.64037, -1.64037, 0, 0, Vector2(0.835735, 0.793182), 0.0, 0.0, 0, 0, Vector2(0.899135, 0.26875), 0.0, 0.0, 0, 0, Vector2(0.956772, 0.615909), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.912932, 0.0, 0, 0]
 point_count = 10
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dm8be"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_el7w4"]
+albedo_color = Color(0.392157, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_el7w4"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mmhto"]
 animations = [{
 "frames": [{
@@ -32,22 +42,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dm8be"]
-size = Vector3(0.25, 0.25, 0.25)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_el7w4"]
-albedo_color = Color(0.392157, 1, 1, 1)
-
-[sub_resource type="Curve" id="Curve_el7w4"]
-_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
-point_count = 2
-
 [node name="SmashBall" type="Node3D" node_paths=PackedStringArray("hurtbox", "screenNotifier", "screenMarginDetector", "ballMesh")]
 script = ExtResource("1_kspie")
 hurtbox = NodePath("Hurtbox")
 screenNotifier = NodePath("VisibleOnScreenNotifier3D")
 screenMarginDetector = NodePath("ScreenDetection3D")
 ballMesh = NodePath("MeshInstance3D")
+maxLifePoint = 4
 minBallSpeed = 2.0
 maxBallSpeed = 3.71
 damageGlitchEffect = ExtResource("2_5njag")
@@ -67,16 +68,6 @@ texture = ExtResource("3_ek7dd")
 
 [node name="SmashBall" parent="MeshInstance3D" instance=ExtResource("4_br1fn")]
 transform = Transform3D(-3.0598e-08, 0.7, 3.0598e-08, 0, -3.0598e-08, 0.7, 0.7, 3.0598e-08, 1.33748e-15, 0, 0, 0.676867)
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160937, 0)
-alpha_cut = 3
-alpha_scissor_threshold = 0.394
-alpha_hash_scale = 0.01
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_mmhto")
-autoplay = "default"
-frame_progress = 0.769533
 
 [node name="Hurtbox" type="Area3D" parent="."]
 script = ExtResource("1_vifah")
@@ -114,3 +105,14 @@ num_points = 4
 noise_scale = 0.235
 size = 0.062
 update_interval = 0.05
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.0402342, 0)
+alpha_cut = 3
+alpha_scissor_threshold = 0.394
+alpha_hash_scale = 0.01
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mmhto")
+autoplay = "default"
+frame = 1
+frame_progress = 0.222551

@@ -7,7 +7,9 @@ extends Node3D
 @export var ballMesh:Node3D
 
 @export_category("Settings")
-@export var lifePoints: int = 3
+@export var minLifePoint:int = 1
+@export var maxLifePoint:int = 3
+var lifePoints: int = 3
 @export var minBallSpeed:float = 4.0
 @export var maxBallSpeed:float = 8.0
 
@@ -36,6 +38,7 @@ signal OnSmashBallDestroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	lifePoints = randi_range(minLifePoint,maxLifePoint)
 	baseScale = ballMesh.scale.y
 	ConnectSignals()
 	SetRandomDirection()
@@ -51,7 +54,7 @@ func ConnectSignals():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	Move(delta)
-	ballMesh.global_rotation.z = GetBallRotation()
+	#ballMesh.global_rotation.z = GetBallRotation()
 	SetBallScale()
 	
 	
