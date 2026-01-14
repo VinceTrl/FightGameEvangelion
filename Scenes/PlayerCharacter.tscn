@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=82 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" uid="uid://1nqqf1x2wfer" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -804,8 +804,12 @@ _data = {
 &"Taunt": SubResource("Animation_hobpm")
 }
 
-[sub_resource type="Curve" id="Curve_l16ew"]
-_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+[sub_resource type="Curve" id="Curve_uhhuy"]
+_data = [Vector2(0.501199, 0), 0.0, 2.00481, 0, 1, Vector2(1, 1), 2.00481, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_a28o5"]
+_data = [Vector2(0, 0), 0.0, 1.98571, 0, 1, Vector2(0.503597, 1), 1.98571, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_gijy7"]
@@ -918,7 +922,8 @@ script = ExtResource("6_85275")
 
 [node name="Ledgegrab" type="Node" parent="StateMachine"]
 script = ExtResource("16_i7cct")
-snapToPosition = SubResource("Curve_l16ew")
+snapToPositionX = SubResource("Curve_uhhuy")
+snapToPositionY = SubResource("Curve_a28o5")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("6_726n8")

@@ -1,7 +1,9 @@
 extends PlayerState
 
 @export var ledgeGrabDuration = 0.2
-@export var snapToPosition:Curve
+@export var offset:Vector3 = Vector3(0,0.2,0)
+@export var snapToPositionX:Curve
+@export var snapToPositionY:Curve
 
 var ledgegrabPosition
 var targetPosition
@@ -48,7 +50,7 @@ func EnterState():
 	
 	
 	if result and result.collider.is_in_group("Ledgegrab"):
-		endPos = result.position
+		endPos = result.position + offset
 		canLedge = true
 		print("RESULT : "  + str(result))
 		ledgegrabPosition = Player.global_position
@@ -87,12 +89,14 @@ func SnapPosition():
 	while timer.time_left > 0.0:
 		var _timeProgress = ledgeGrabDuration - timer.time_left 
 		var _ratio = _timeProgress/ledgeGrabDuration
-		var _transCurveValue = snapToPosition.sample(_ratio)
+		var _transCurveValueX = snapToPositionX.sample(_ratio)
+		var _transCurveValueY = snapToPositionY.sample(_ratio)
 		
-		var targetX = lerp(ledgegrabPosition.x,targetPosition.x,_transCurveValue)
-		var targetY = lerp(ledgegrabPosition.y,targetPosition.y,_transCurveValue)
-		var targetZ = lerp(ledgegrabPosition.z,targetPosition.z,_transCurveValue)
+		var targetX = lerp(ledgegrabPosition.x,targetPosition.x,_transCurveValueX)
+		var targetY = lerp(ledgegrabPosition.y,targetPosition.y,_transCurveValueY)
+		var targetZ = lerp(ledgegrabPosition.z,targetPosition.z,_transCurveValueX)
 		
+		print("LEDGE GRAB SNAPPING")
 		Player.global_position = Vector3(targetX,targetY,targetZ)
 		
 		await get_tree().process_frame
