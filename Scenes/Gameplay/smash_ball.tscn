@@ -48,6 +48,7 @@ hurtbox = NodePath("Hurtbox")
 screenNotifier = NodePath("VisibleOnScreenNotifier3D")
 screenMarginDetector = NodePath("ScreenDetection3D")
 ballMesh = NodePath("MeshInstance3D")
+minLifePoint = 2
 maxLifePoint = 4
 minBallSpeed = 2.0
 maxBallSpeed = 3.71
