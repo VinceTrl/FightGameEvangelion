@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://mqdcgccgmvd"]
+[gd_scene load_steps=24 format=3 uid="uid://mqdcgccgmvd"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_yfhfw"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_f46y1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dx8w30oi2ennb" path="res://Scenes/Meshes/machine.tscn" id="4_yfhfw"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_ocir1"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_ehp2l"]
+[ext_resource type="PackedScene" uid="uid://q6hqa6nqy6tk" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/wash_machine_open.tscn" id="7_8m5br"]
 [ext_resource type="PackedScene" uid="uid://pc4ayrcj5bv6" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/wash_machine.tscn" id="7_f46y1"]
 [ext_resource type="PackedScene" uid="uid://bgtkufl3mhsvv" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_1.tscn" id="8_pqgvf"]
 [ext_resource type="PackedScene" uid="uid://dn4o2i18mh0aa" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_6.tscn" id="9_8m5br"]
@@ -298,6 +299,9 @@ spot_range = 15.0
 spot_angle = 57.86
 
 [node name="WashMachine_Background" type="Node3D" parent="."]
+
+[node name="SM_WashMachine_Open" parent="WashMachine_Background" instance=ExtResource("7_8m5br")]
+transform = Transform3D(0.196348, -0.0893061, 0.256314, -0.254831, 0.0482692, 0.212029, -0.0934555, -0.319248, -0.0396429, 2.60497, -0.115037, 1.7359)
 
 [node name="WashMachine" type="Node3D" parent="WashMachine_Background"]
 transform = Transform3D(0.552752, 0, -0.833346, 0, 1, 0, 0.833346, 0, 0.552752, 3.74435, 0.26757, 0.942358)
