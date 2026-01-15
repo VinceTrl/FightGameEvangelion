@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=83 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" uid="uid://1nqqf1x2wfer" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
@@ -780,6 +780,24 @@ tracks/0/keys = {
 "values": [144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155]
 }
 
+[sub_resource type="Animation" id="Animation_a28o5"]
+resource_name = "Victory"
+length = 0.8
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533332, 0.666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [171, 172, 173, 174, 175, 176]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jxbaw"]
 _data = {
 &"Attack": SubResource("Animation_7hbhv"),
@@ -801,7 +819,8 @@ _data = {
 &"RESET": SubResource("Animation_dvjaj"),
 &"Shoot": SubResource("Animation_qjx5s"),
 &"StartChargeShoot": SubResource("Animation_rysxc"),
-&"Taunt": SubResource("Animation_hobpm")
+&"Taunt": SubResource("Animation_hobpm"),
+&"Victory": SubResource("Animation_a28o5")
 }
 
 [sub_resource type="Curve" id="Curve_uhhuy"]
@@ -896,7 +915,7 @@ material_override = ExtResource("3_4fxgw")
 texture_filter = 0
 texture = ExtResource("5_a28o5")
 hframes = 9
-vframes = 19
+vframes = 20
 script = ExtResource("4_1nn6i")
 hitColor = Color(1, 1, 1, 1)
 

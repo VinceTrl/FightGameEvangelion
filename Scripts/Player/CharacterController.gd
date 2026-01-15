@@ -638,7 +638,7 @@ func OnFightFinished():
 	ChangeState(States.Locked)
 	canChangeState = false
 	if(waitAnim): await animator.animation_finished
-	animator.play("Taunt")
+	animator.play("Victory")
 
 func _on_melee_hitbox_on_hit() -> void:
 	Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"HitVibration")
