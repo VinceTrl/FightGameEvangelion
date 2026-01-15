@@ -1,14 +1,65 @@
-[gd_scene load_steps=16 format=3 uid="uid://1s7868dthyoc"]
+[gd_scene load_steps=44 format=3 uid="uid://1s7868dthyoc"]
 
 [ext_resource type="Script" uid="uid://dth1pc7jfyjni" path="res://Scripts/Gameplay/smash_ball_item.gd" id="1_kspie"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_vifah"]
 [ext_resource type="Resource" uid="uid://bgvu6c31k2dbe" path="res://Resources/PostProcessAnims/Glitch/DamageGlitch.tres" id="2_5njag"]
+[ext_resource type="AudioStream" uid="uid://p60smo02damw" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Bayonetta_JP.wav" id="2_glb4x"]
+[ext_resource type="AudioStream" uid="uid://pc8eydnpann2" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Captain.wav" id="3_35nhn"]
 [ext_resource type="Texture2D" uid="uid://c0ph7x1vlhpbo" path="res://Assets/Sprites/Vfx/Glow/item_glow.png" id="3_ek7dd"]
 [ext_resource type="Script" uid="uid://cg2f0qymkqehu" path="res://Scripts/Utilities/ScreenBorderDetection3D.gd" id="3_m7qlv"]
 [ext_resource type="PackedScene" uid="uid://0rubkmfl86a" path="res://Scenes/Gameplay/smash_ball_mesh.tscn" id="4_br1fn"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_l6hae"]
+[ext_resource type="AudioStream" uid="uid://c4y63h8de7io7" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_KoopaJr.wav" id="4_l6lki"]
 [ext_resource type="Texture2D" uid="uid://ckuqbn6akd7ae" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Kiki_Head_1.png" id="5_1q0v4"]
+[ext_resource type="AudioStream" uid="uid://snfecqahsdh3" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Link.wav" id="5_bslb2"]
 [ext_resource type="Texture2D" uid="uid://bm3edlyew80g" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_Kiki_Head_2.png" id="6_7mxb4"]
+[ext_resource type="AudioStream" uid="uid://ckcgbu165bpmj" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Lizardon.wav" id="6_dw3w2"]
+[ext_resource type="AudioStream" uid="uid://dilx6vogbhv6j" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Lucina.wav" id="7_yup4q"]
+[ext_resource type="AudioStream" uid="uid://df7g2kfck464w" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Luigi.wav" id="8_ybmgs"]
+[ext_resource type="AudioStream" uid="uid://c1crjwa5rxyx6" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Mario.wav" id="9_uiswc"]
+[ext_resource type="AudioStream" uid="uid://b06ivso3prph8" path="res://Assets/Sounds/SFX/SmashBrosSounds/snd_se_Wsmash_checkpoint_mass_01.wav" id="10_bul86"]
+[ext_resource type="AudioStream" uid="uid://ccy7q6pryk2j2" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Palutena.wav" id="10_rvdhm"]
+[ext_resource type="AudioStream" uid="uid://ij1im764jk04" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Peach.wav" id="11_635w8"]
+[ext_resource type="AudioStream" uid="uid://d0355n2d7jyg0" path="res://Assets/Sounds/SFX/SmashBrosSounds/snd_se_Wsmash_checkpoint_mass_02.wav" id="11_yrgjs"]
+[ext_resource type="AudioStream" uid="uid://cd1htvubja5rg" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Pikachu.wav" id="12_1do43"]
+[ext_resource type="AudioStream" uid="uid://bau2bpssk6xes" path="res://Assets/Sounds/SFX/SmashBrosSounds/snd_se_Wsmash_checkpoint_mass_03.wav" id="12_7sdsy"]
+[ext_resource type="AudioStream" uid="uid://djuiyq8qrb5ur" path="res://Assets/Sounds/SFX/SmashBrosSounds/snd_se_Wsmash_checkpoint_mass_04.wav" id="13_8ky0w"]
+[ext_resource type="AudioStream" uid="uid://crigiaxkgf1eu" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Purin_FR.wav" id="13_ym1i7"]
+[ext_resource type="AudioStream" uid="uid://7bcl0gm42fnc" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Cloud.wav" id="14_n3k1t"]
+[ext_resource type="AudioStream" uid="uid://bf2ndr2s45kol" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Ryu_JP.wav" id="15_3erme"]
+[ext_resource type="AudioStream" uid="uid://dna15gvyo757c" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Yoshi.wav" id="16_e32as"]
+[ext_resource type="AudioStream" uid="uid://w3egbggw2us0" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Dedede.wav" id="17_fucfk"]
+[ext_resource type="AudioStream" uid="uid://dyr0e1wg0p5dk" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Diddy.wav" id="18_x846q"]
+[ext_resource type="AudioStream" uid="uid://cqdp02kxbrutp" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Donkey.wav" id="19_aoftr"]
+[ext_resource type="AudioStream" uid="uid://cma70kkmbulwd" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Duckhunt.wav" id="20_ke2uh"]
+[ext_resource type="AudioStream" uid="uid://dutgccn6w3bml" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Falco_JP.wav" id="21_yokur"]
+[ext_resource type="AudioStream" uid="uid://ku3vaip12foe" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Ike.wav" id="22_2rvsj"]
+[ext_resource type="AudioStream" uid="uid://cy557c6r30jtw" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Kirby.wav" id="23_vnajn"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gr0yq"]
+streams_count = 22
+stream_0/stream = ExtResource("2_glb4x")
+stream_1/stream = ExtResource("3_35nhn")
+stream_2/stream = ExtResource("14_n3k1t")
+stream_3/stream = ExtResource("17_fucfk")
+stream_4/stream = ExtResource("18_x846q")
+stream_5/stream = ExtResource("19_aoftr")
+stream_6/stream = ExtResource("20_ke2uh")
+stream_7/stream = ExtResource("21_yokur")
+stream_8/stream = ExtResource("22_2rvsj")
+stream_9/stream = ExtResource("23_vnajn")
+stream_10/stream = ExtResource("4_l6lki")
+stream_11/stream = ExtResource("5_bslb2")
+stream_12/stream = ExtResource("6_dw3w2")
+stream_13/stream = ExtResource("7_yup4q")
+stream_14/stream = ExtResource("8_ybmgs")
+stream_15/stream = ExtResource("9_uiswc")
+stream_16/stream = ExtResource("10_rvdhm")
+stream_17/stream = ExtResource("11_635w8")
+stream_18/stream = ExtResource("12_1do43")
+stream_19/stream = ExtResource("13_ym1i7")
+stream_20/stream = ExtResource("15_3erme")
+stream_21/stream = ExtResource("16_e32as")
 
 [sub_resource type="Curve" id="Curve_l6hae"]
 _data = [Vector2(0, 1), 0.0, -9.73966, 0, 0, Vector2(0.106628, 0.298295), -1.22051, -1.22051, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -42,12 +93,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SmashBall" type="Node3D" node_paths=PackedStringArray("hurtbox", "screenNotifier", "screenMarginDetector", "ballMesh")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hog2f"]
+streams_count = 4
+stream_0/stream = ExtResource("10_bul86")
+stream_1/stream = ExtResource("11_yrgjs")
+stream_2/stream = ExtResource("12_7sdsy")
+stream_3/stream = ExtResource("13_8ky0w")
+
+[node name="SmashBall" type="Node3D" node_paths=PackedStringArray("hurtbox", "screenNotifier", "screenMarginDetector", "ballMesh", "hitSFX")]
 script = ExtResource("1_kspie")
 hurtbox = NodePath("Hurtbox")
 screenNotifier = NodePath("VisibleOnScreenNotifier3D")
 screenMarginDetector = NodePath("ScreenDetection3D")
 ballMesh = NodePath("MeshInstance3D")
+hitSFX = NodePath("AudioStreamPlayer3D")
+voiceAudio = SubResource("AudioStreamRandomizer_gr0yq")
 minLifePoint = 2
 maxLifePoint = 4
 minBallSpeed = 2.0
@@ -117,3 +177,7 @@ sprite_frames = SubResource("SpriteFrames_mmhto")
 autoplay = "default"
 frame = 1
 frame_progress = 0.222551
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_hog2f")
+bus = &"SFX"

@@ -88,3 +88,10 @@ func GetRandomPlayer() -> PlayerCharacter:
 	randomize()
 	var ranIndex = randi_range(0,players.size()-1)
 	return players[ranIndex]
+	
+	
+func GetPlayerFromIndex(index:int) -> PlayerCharacter:
+	for player in players:
+		if(player.playerID == index):
+			return player
+	return null

@@ -1,4 +1,7 @@
-[gd_resource type="Animation" format=3 uid="uid://dtmbwtt01mnmx"]
+[gd_resource type="Animation" load_steps=3 format=3 uid="uid://dtmbwtt01mnmx"]
+
+[ext_resource type="AudioStream" uid="uid://5fe4dmd1myfy" path="res://Assets/Sounds/SFX/SmashBrosSounds/se_ridley_final04.wav" id="1_1d7d5"]
+[ext_resource type="AudioStream" uid="uid://cvvuawh7yk7y1" path="res://Assets/Sounds/SFX/SmashBrosSounds/se_ridley_final01.wav" id="1_rpwwd"]
 
 [resource]
 resource_name = "Armature|Slap_Hit"
@@ -1406,3 +1409,48 @@ tracks/198/keys = {
 "method": &"EndSlapHitBox"
 }]
 }
+tracks/199/type = "audio"
+tracks/199/imported = false
+tracks/199/enabled = true
+tracks/199/path = NodePath("../../AudioSlapHit")
+tracks/199/interp = 1
+tracks/199/loop_wrap = true
+tracks/199/keys = {
+"clips": [{
+"end_offset": 1.05,
+"start_offset": 0.0,
+"stream": ExtResource("1_1d7d5")
+}],
+"times": PackedFloat32Array(0.933333)
+}
+tracks/199/use_blend = true
+tracks/200/type = "audio"
+tracks/200/imported = false
+tracks/200/enabled = true
+tracks/200/path = NodePath("../../AudioSlapAnticipation")
+tracks/200/interp = 1
+tracks/200/loop_wrap = true
+tracks/200/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_rpwwd")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/200/use_blend = true
+tracks/201/type = "audio"
+tracks/201/imported = false
+tracks/201/enabled = true
+tracks/201/path = NodePath("../../AudioSlap")
+tracks/201/interp = 1
+tracks/201/loop_wrap = true
+tracks/201/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_1d7d5")
+}],
+"times": PackedFloat32Array(0.733333)
+}
+tracks/201/use_blend = true

@@ -5,6 +5,12 @@ extends Node3D
 @export var screenNotifier:VisibleOnScreenNotifier3D
 @export var screenMarginDetector:ScreenDetection3D
 @export var ballMesh:Node3D
+@export var hitSFX:AudioStreamPlayer3D
+
+@export var voiceAudio:AudioStreamRandomizer
+const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
+
+
 
 @export_category("Settings")
 @export var minLifePoint:int = 1
@@ -149,10 +155,12 @@ func OnHit(hitbox : Hitbox):
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	Manager.postProcessEffects.GlitchEffect(damageGlitchEffect)
 	
+	
 	if(hitbox.owner is PlayerCharacter):
 			print("HIT BY PLAYER")
 	
 	if(lifePoints > 0):
+		hitSFX.play()
 		var origin := Vector3(hitbox.global_position.x,hitbox.global_position.y,global_position.z)
 		currentDir = (global_position - origin).normalized()
 		StartHurtTimer()
@@ -167,6 +175,17 @@ func OnHit(hitbox : Hitbox):
 			
 		Manager.gameManager.eva.StartSlap(target)
 		OnSmashBallDestroyed.emit()
+		
+		#SFX
+		var hitAudio = AUDIO_SCENE.instantiate()
+		get_tree().get_root().add_child(hitAudio)
+		hitAudio.StartAudio(hitSFX.stream,0.0)
+		
+		#voice audio
+		var audio = AUDIO_SCENE.instantiate()
+		get_tree().get_root().add_child(audio)
+		audio.StartAudio(voiceAudio)
+		
 		queue_free()
 		
 		

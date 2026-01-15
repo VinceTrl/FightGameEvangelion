@@ -127,6 +127,12 @@ transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 
 [node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root6" instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
+[node name="Root10" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root10" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
 [node name="Root7" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
 transform = Transform3D(-5.96046e-08, -1, 0, 1, -5.96046e-08, 0, 0, 0, 1, 0, 0, 0)
 
@@ -197,6 +203,12 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 transform = Transform3D(0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root20" instance=ExtResource("6_5ebhv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
+
+[node name="Root21" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+transform = Transform3D(0.5, 0.866026, 0, -0.866026, 0.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root21" instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
 [node name="Root23" type="Node3D" parent="Gameplay/Objects/RotationRoot"]

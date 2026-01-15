@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://r3ads2h4cewh"]
+[gd_scene load_steps=31 format=3 uid="uid://r3ads2h4cewh"]
 
 [ext_resource type="Script" uid="uid://cnkheeds0wrh" path="res://Scripts/GUI/PlayerBarGUI.gd" id="1_m1rj3"]
 [ext_resource type="Texture2D" uid="uid://i8srkr0pioyq" path="res://Resources/Gradients/Player1_DamageEffect_Yellow.tres" id="2_i8cx7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbx10gs5u8elq" path="res://Scenes/GUI/texture_hp_Left.tscn" id="5_jt636"]
 [ext_resource type="Texture2D" uid="uid://oiaiuee3giwu" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP2_1.png" id="6_673ed"]
 [ext_resource type="Texture2D" uid="uid://cxym3v1v584ej" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Ammo_P1.png" id="6_fw131"]
+[ext_resource type="Script" uid="uid://dtw8b7tsmflb4" path="res://Scripts/GUI/kiki_head_gui.gd" id="6_nysvd"]
 [ext_resource type="Script" uid="uid://rypcejv8gl2c" path="res://Scripts/GUI/PlayerRoundUI.gd" id="6_y7uc4"]
 [ext_resource type="Texture2D" uid="uid://dq3u6ohwutdkm" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP2_2.png" id="7_umgcs"]
 [ext_resource type="Texture2D" uid="uid://cmxfyydt0jdgi" path="res://Assets/Sprites/GUI/KikiGUI/NEW_UI/GUI_HP1_1.png" id="8_41b8j"]
@@ -247,13 +248,15 @@ offset_bottom = -58.5718
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="KIKI_Head" type="TextureRect" parent="TextureBackgroundHP/ControlHP"]
+[node name="KIKI_Head" type="TextureRect" parent="TextureBackgroundHP/ControlHP" node_paths=PackedStringArray("controlToShake")]
 layout_mode = 0
 offset_left = -177.143
 offset_top = -94.2853
 offset_right = 225.857
 offset_bottom = 197.715
 texture = ExtResource("14_s7lo4")
+script = ExtResource("6_nysvd")
+controlToShake = NodePath(".")
 
 [node name="KIKI_1" type="TextureRect" parent="TextureBackgroundHP/ControlHP"]
 layout_mode = 0
