@@ -10,14 +10,17 @@ func _ready() -> void:
 	Manager.gameManager.currentMap = self
 	
 func _process(delta: float) -> void:
-		
-	if(Input.is_action_just_pressed("DebugKey")):
-		SetEnviroVisibility(false)
-		
-	if(Input.is_action_just_released("DebugKey")):
-		SetEnviroVisibility(true)
+	pass
+	#if(Input.is_action_just_pressed("DebugKey")):
+		#SetEnviroVisibility(false)
+		#
+	#if(Input.is_action_just_released("DebugKey")):
+		#SetEnviroVisibility(true)
 	
 func SetEnviroVisibility(isVisible:bool):
+	for nodeInGroup in get_tree().get_nodes_in_group("Enviro"):
+		nodeInGroup.propagate_call("set_visible", [isVisible])
+		
 	for node in enviro:
 		node.propagate_call("set_visible", [isVisible])
 		

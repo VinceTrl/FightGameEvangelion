@@ -10,11 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="7_c4f48"]
 [ext_resource type="PackedScene" uid="uid://bs6eigat3lyci" path="res://Scenes/Gameplay/pick_up.tscn" id="9_qhjox"]
 
-[node name="Stage_07" type="Node3D"]
+[node name="Stage_07" type="Node3D" node_paths=PackedStringArray("levelRoot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.3, 0)
 script = ExtResource("1_w6xrg")
 fixedCameraZoom = true
 fixedCamZ = 3.61
+levelRoot = NodePath("Level")
 
 [node name="Gameplay" type="Node3D" parent="."]
 

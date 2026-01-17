@@ -66,11 +66,12 @@ subdivide_depth = 100
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fvu6"]
 size = Vector3(0.25, 9, 1.815)
 
-[node name="Ani_Stage_03" type="Node3D"]
+[node name="Ani_Stage_03" type="Node3D" node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_k0tsr")
 platformSpawnType = 1
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 6.0
+levelRoot = NodePath("Level")
 
 [node name="Gameplay" type="Node3D" parent="."]
 

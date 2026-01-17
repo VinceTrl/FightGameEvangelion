@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="6_245gn"]
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="8_vybks"]
 
-[node name="Stage_05" type="Node3D"]
+[node name="Stage_05" type="Node3D" node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_87mbl")
+levelRoot = NodePath("Level")
 
 [node name="Gameplay" type="Node3D" parent="."]
 

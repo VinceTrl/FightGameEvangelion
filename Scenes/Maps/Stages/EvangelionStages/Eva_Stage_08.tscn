@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dvqhlk4l25sd3" path="res://Scenes/Gameplay/shrek_item.tscn" id="9_walvn"]
 [ext_resource type="PackedScene" uid="uid://bdvwx0kkjddp" path="res://Scenes/Gameplay/heart.tscn" id="10_nnuc7"]
 
-[node name="Stage_08" type="Node3D"]
+[node name="Stage_08" type="Node3D" node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_xjiak")
+levelRoot = NodePath("Level")
 
 [node name="Gameplay" type="Node3D" parent="."]
 

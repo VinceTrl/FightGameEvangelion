@@ -60,6 +60,7 @@ func ShowRandomImage(duration: float = 3.0):
 	var shitpost:ShitpostImage = shitpostImages.pick_random()
 	var window := GetAvailableGifHolder()
 	SetShitpostWindow(window,shitpost)
+	print("TEXTURE SHITPOST : " + shitpost.resource_name)
 	
 	var size := shitpost.texture.get_size() * shitpost.size
 	SetRandomPositionOnScreen(window,size)
@@ -182,7 +183,7 @@ func SetRandomPositionOnScreen(texture: Control,imageSize:Vector2 = Vector2.ZERO
 	
 	# random pos
 	var random_x = randi_range(0,max_x)
-	var random_y = randi_range(0,max_y)
+	var random_y = randi_range(0+image_size.y,max_y)
 	#randi() % int(max_y)
 
 	# Set Texture pos

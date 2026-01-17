@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bciapmt83r2n4" path="res://Scenes/Meshes/platform_ship.tscn" id="5_nls0s"]
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="9_ao1an"]
 
-[node name="Stage_01" type="Node3D"]
+[node name="Stage_01" type="Node3D" node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_gicfg")
+levelRoot = NodePath("Level")
 
 [node name="Gameplay" type="Node3D" parent="."]
 

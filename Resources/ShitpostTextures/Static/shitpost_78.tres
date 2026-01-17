@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShitpostImage" load_steps=3 format=3 uid="uid://d1qs407oyl5cy"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_mkb78"]
+[ext_resource type="Texture2D" uid="uid://bhhylqdiq67vu" path="res://Assets/Shitpost/Source/RomiData/IMG_4548.jpg" id="2_mkb78"]
+
+[resource]
+script = ExtResource("1_mkb78")
+name = &"SP_Smash"
+texture = ExtResource("2_mkb78")
+type = 0
+size = 0.5
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"

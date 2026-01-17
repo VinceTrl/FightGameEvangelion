@@ -152,12 +152,13 @@ _data = {
 &"Platform": SubResource("Animation_qmil3")
 }
 
-[node name="Stage_03" type="Node3D" node_paths=PackedStringArray("scenario")]
+[node name="Stage_03" type="Node3D" node_paths=PackedStringArray("scenario", "levelRoot")]
 script = ExtResource("1_fve1k")
 platformSpawnType = 1
 scenario = NodePath("AnimationPlayer")
 fixedCameraZoom = true
 fixedCamZ = 3.665
+levelRoot = NodePath("Level")
 
 [node name="Gameplay" type="Node3D" parent="."]
 

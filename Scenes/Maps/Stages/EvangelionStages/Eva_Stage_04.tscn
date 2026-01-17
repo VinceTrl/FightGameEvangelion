@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bb43aheh8baf2" path="res://Assets/Meshes/Enviro/mesh_plateforme_03.tscn" id="7_byw3l"]
 [ext_resource type="PackedScene" uid="uid://bdvwx0kkjddp" path="res://Scenes/Gameplay/heart.tscn" id="8_qc36h"]
 
-[node name="Stage_04" type="Node3D"]
+[node name="Stage_04" type="Node3D" node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_6myig")
 platformSpawnType = 1
+levelRoot = NodePath("Gameplay/Objects/Blocks")
 
 [node name="Gameplay" type="Node3D" parent="."]
 
@@ -57,1135 +58,1137 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
 [node name="Spawner9" parent="Gameplay/Objects/Spawners" instance=ExtResource("3_nrba7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 0)
 
-[node name="Block12" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Blocks" type="Node3D" parent="Gameplay/Objects"]
+
+[node name="Block12" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block13" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block13" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block14" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block14" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block15" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block15" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block16" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block16" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block17" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block17" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block18" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block18" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block19" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block19" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block20" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block20" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block21" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block21" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block22" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block22" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block23" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block23" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block24" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block24" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block25" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block25" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block26" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block26" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block27" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block27" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block28" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block28" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block29" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block29" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block30" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block30" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block31" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block31" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block33" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block33" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block34" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block34" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block37" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block37" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block38" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block38" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block39" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block39" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block40" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block40" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block41" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block41" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block42" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block42" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block43" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block43" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block44" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block44" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block45" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block45" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block46" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block46" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block47" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block47" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block48" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block48" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block49" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block49" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block50" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block50" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block51" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block51" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block52" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block52" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block53" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block53" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block54" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block54" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block55" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block55" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block56" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block56" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block57" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block57" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block60" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block60" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block61" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block61" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block62" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block62" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block63" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block63" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block64" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block64" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block65" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block65" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block66" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block66" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block67" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block67" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block68" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block68" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block69" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block69" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block70" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block70" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block71" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block71" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block72" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block72" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block73" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block73" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block74" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block74" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block75" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block75" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block76" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block76" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block77" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block77" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block78" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block78" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block79" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block79" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block80" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block80" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block81" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block81" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block82" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block82" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block83" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block83" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block84" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block84" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block181" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block181" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block182" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block182" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block183" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block183" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block184" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block184" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block185" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block185" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block186" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block186" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block187" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block187" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block188" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block188" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block189" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block189" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block190" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block190" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block191" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block191" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block192" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block192" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block193" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block193" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block194" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block194" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block195" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block195" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block196" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block196" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block197" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block197" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block198" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block198" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block199" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block199" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block200" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block200" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block201" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block201" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block202" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block202" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block203" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block203" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block204" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block204" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block205" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block205" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block206" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block206" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block207" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block207" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block208" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block208" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block209" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block209" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block210" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block210" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block211" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block211" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block212" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block212" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block213" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block213" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block214" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block214" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block215" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block215" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block216" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block216" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block217" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block217" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block218" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block218" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block219" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block219" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block220" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block220" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block221" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block221" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block235" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block235" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.46073, 0)
 forceToGroundOnReady = false
 
-[node name="Block239" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block239" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 0.46073, 0)
 forceToGroundOnReady = false
 
-[node name="Block241" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block241" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 0.76073, 0)
 forceToGroundOnReady = false
 
-[node name="Block236" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block236" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.76073, 0)
 forceToGroundOnReady = false
 
-[node name="Block243" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block243" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block244" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block244" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block245" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block245" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block246" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block246" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block247" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block247" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block248" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block248" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block249" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block249" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block250" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block250" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block251" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block251" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block252" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block252" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block253" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block253" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block254" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block254" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block255" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block255" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block256" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block256" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block257" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block257" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block258" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block258" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block259" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block259" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block260" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block260" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block261" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block261" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block262" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block262" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block263" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block263" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block264" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block264" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block265" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block265" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block266" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block266" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block267" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block267" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block268" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block268" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block269" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block269" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block270" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block270" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block271" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block271" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block272" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block272" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block273" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block273" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block274" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block274" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block279" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block279" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block280" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block280" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block281" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block281" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block282" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block282" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block283" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block283" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block284" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block284" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block285" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block285" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block286" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block286" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block287" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block287" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block288" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block288" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -0.13927, 0)
 forceToGroundOnReady = false
 
-[node name="Block289" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block289" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block290" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block290" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block291" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block291" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block292" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block292" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block293" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block293" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block294" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block294" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -0.43927, 0)
 forceToGroundOnReady = false
 
-[node name="Block295" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block295" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block296" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block296" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block297" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block297" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block298" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block298" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block299" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block299" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block300" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block300" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block301" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block301" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block302" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block302" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block303" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block303" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block304" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block304" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block305" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block305" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block306" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block306" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block307" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block307" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block308" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block308" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block309" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block309" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block310" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block310" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block222" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block222" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block223" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block223" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block224" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block224" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block225" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block225" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block275" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block275" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block276" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block276" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block277" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block277" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block278" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block278" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block311" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block311" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block312" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block312" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block313" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block313" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block314" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block314" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block315" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block315" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block316" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block316" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block317" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block317" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block318" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block318" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block226" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block226" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block227" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block227" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block228" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block228" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block229" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block229" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block230" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block230" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block237" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block237" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0.46073, 0)
 forceToGroundOnReady = false
 
-[node name="Block240" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block240" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 0.46073, 0)
 forceToGroundOnReady = false
 
-[node name="Block242" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block242" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 0.76073, 0)
 forceToGroundOnReady = false
 
-[node name="Block238" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block238" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0.76073, 0)
 forceToGroundOnReady = false
 
-[node name="Block231" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block231" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block232" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block232" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block233" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block233" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block234" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block234" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.16073, 0)
 forceToGroundOnReady = false
 
-[node name="Block85" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block85" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block86" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block86" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block92" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block92" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block93" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block93" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block94" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block94" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block95" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block95" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block96" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block96" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block97" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block97" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block98" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block98" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block99" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block99" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block100" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block100" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block101" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block101" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block102" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block102" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block103" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block103" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block104" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block104" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block105" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block105" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block106" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block106" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block107" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block107" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block108" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block108" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block109" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block109" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block110" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block110" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block111" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block111" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block112" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block112" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block113" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block113" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block114" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block114" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block115" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block115" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block116" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block116" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block122" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block122" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block123" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block123" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block124" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block124" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block125" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block125" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block126" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block126" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block127" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block127" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block128" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block128" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block129" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block129" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block130" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block130" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block131" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block131" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block132" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block132" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block133" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block133" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block134" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block134" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block135" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block135" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block136" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block136" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block137" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block137" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block138" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block138" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block139" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block139" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block140" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block140" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block141" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block141" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block142" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block142" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block143" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block143" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block144" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block144" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block145" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block145" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block146" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block146" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block152" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block152" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block153" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block153" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block154" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block154" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block155" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block155" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block156" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block156" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -1.93927, 0)
 forceToGroundOnReady = false
 
-[node name="Block157" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block157" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block158" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block158" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block159" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block159" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block160" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block160" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block161" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block161" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -1.63927, 0)
 forceToGroundOnReady = false
 
-[node name="Block162" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block162" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block163" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block163" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block164" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block164" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block165" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block165" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block166" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block166" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -1.33927, 0)
 forceToGroundOnReady = false
 
-[node name="Block167" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block167" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block168" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block168" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block169" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block169" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block170" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block170" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block171" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block171" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -1.03927, 0)
 forceToGroundOnReady = false
 
-[node name="Block172" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block172" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block173" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block173" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block174" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block174" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block175" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block175" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -0.73927, 0)
 forceToGroundOnReady = false
 
-[node name="Block176" parent="Gameplay/Objects" instance=ExtResource("4_vto2e")]
+[node name="Block176" parent="Gameplay/Objects/Blocks" instance=ExtResource("4_vto2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -0.73927, 0)
 forceToGroundOnReady = false
 

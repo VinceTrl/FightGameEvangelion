@@ -26,11 +26,12 @@ size = Vector2(50, 50)
 subdivide_width = 100
 subdivide_depth = 100
 
-[node name="Ani_Stage_04" type="Node3D"]
+[node name="Ani_Stage_04" type="Node3D" node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_thu62")
 platformSpawnType = 1
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 6.0
+levelRoot = NodePath("Level")
 
 [node name="Gameplay" type="Node3D" parent="."]
 visible = false
@@ -143,6 +144,69 @@ visible = false
 mesh = SubResource("PlaneMesh_s5uxr")
 surface_material_override/0 = ExtResource("8_l2816")
 
+[node name="Art" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.899319, 0, 0)
+
+[node name="SlapBros_Beach_Beam_1" parent="Level/Art" instance=ExtResource("9_g5qny")]
+transform = Transform3D(0.520198, 0, 0, 0, 0.520198, 0, 0, 0, 0.520198, -3.27757, 0.885756, 0.458365)
+
+[node name="SlapBros_Beach_Beam_4" parent="Level/Art" instance=ExtResource("9_g5qny")]
+transform = Transform3D(-0.478003, 0, 0.205228, 0, 0.520198, 0, -0.205228, 0, -0.478003, -2.07518, 0.840155, 0.458365)
+
+[node name="SlapBros_Beach_Beam_8" parent="Level/Art" instance=ExtResource("9_g5qny")]
+transform = Transform3D(0.0744199, 0, 0.514847, 0, 0.618984, 0, -0.514847, 0, 0.0744199, 1.23727, 0.88416, 0.393561)
+
+[node name="SlapBros_Beach_Beam_6" parent="Level/Art" instance=ExtResource("10_d3866")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.44578, 1.98012, -0.764874)
+
+[node name="SlapBros_Beach_Beam_2" parent="Level/Art" instance=ExtResource("11_m401e")]
+transform = Transform3D(0.490875, 0, 0, 0, 0.47722, -0.114976, 0, 0.114976, 0.47722, -1.3722, 1.65711, -0.767714)
+
+[node name="SlapBros_Beach_rope_1" parent="Level/Art" instance=ExtResource("12_6582m")]
+transform = Transform3D(0.345344, 0, 0, 0, 0.345344, 0, 0, 0, 0.345344, -2.40684, 1.27662, -0.792308)
+
+[node name="SlapBros_Beach_rope_2" parent="Level/Art" instance=ExtResource("13_8f1wt")]
+transform = Transform3D(0.338989, 0.0641201, 0, -0.0641201, 0.338989, 0, 0, 0, 0.345, -0.585799, 1.18891, -0.777193)
+
+[node name="SlapBros_Beach_rope_3" parent="Level/Art" instance=ExtResource("13_8f1wt")]
+transform = Transform3D(0.340108, -0.0578913, 0, 0.0578913, 0.340108, 0, 0, 0, 0.345, 1.00373, 1.50689, -0.777193)
+
+[node name="SlapBros_Beach_Beam_5" parent="Level/Art" instance=ExtResource("14_jbq6k")]
+transform = Transform3D(0.342822, 0, 0, 0, 0.492229, -0.0577163, 0, 0.0878122, 0.323527, 0.185489, 1.71689, -0.699871)
+
+[node name="SlapBros_Beach_Beam_9" parent="Level/Art" instance=ExtResource("15_8kotr")]
+transform = Transform3D(0.499636, -0.0190893, 0, 0.0190893, 0.499636, 0, 0, 0, 0.5, -0.781005, 0.928567, 0.375199)
+
+[node name="SlapBros_Beach_Beam_10" parent="Level/Art" instance=ExtResource("15_8kotr")]
+transform = Transform3D(0.499022, 0.0312646, 0, -0.0312646, 0.499022, 0, 0, 0, 0.5, 1.76577, 2.05626, -0.788264)
+
+[node name="SlapBros_Beach_Plank_1" parent="Level/Art" instance=ExtResource("16_nyo2m")]
+transform = Transform3D(0.386296, -0.102867, 0.0139151, 0.1028, 0.386547, 0.00370303, -0.0143993, 0, 0.399741, -1.94327, 0.406527, 0.597212)
+
+[node name="SlapBros_Beach_Plank_3" parent="Level/Art" instance=ExtResource("16_nyo2m")]
+transform = Transform3D(0.393033, -0.0743284, 0, 0.0743284, 0.393033, 0, 0, 0, 0.4, -2.01888, 0.765495, -0.61964)
+
+[node name="SlapBros_Beach_Plank_5" parent="Level/Art" instance=ExtResource("16_nyo2m")]
+transform = Transform3D(0.393033, -0.0743284, 0, 0.0743284, 0.393033, 0, 0, 0, 0.4, -0.0369277, 0.765495, -0.61964)
+
+[node name="SlapBros_Beach_Plank_2" parent="Level/Art" instance=ExtResource("17_gkpis")]
+transform = Transform3D(0.368902, -0.0511142, 0, 0.0454981, 0.414438, 0, 0, 0, 0.3, -1.85851, -0.112061, 0.640005)
+
+[node name="SlapBros_Beach_Plank_4" parent="Level/Art" instance=ExtResource("17_gkpis")]
+transform = Transform3D(0.368902, -0.0511142, 0, 0.0454981, 0.414438, 0, 0, 0, 0.3, -1.40248, -0.0888571, -1.1197)
+
+[node name="SlapBros_Beach_Plank_6" parent="Level/Art" instance=ExtResource("18_7isa1")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.562976, 0.165885, 0.554337)
+
+[node name="SlapBros_Beach_Plank_9" parent="Level/Art" instance=ExtResource("18_7isa1")]
+transform = Transform3D(0.44716, 0, -0.0504732, 0, 0.45, 0, 0.0504732, 0, 0.44716, 0.791518, 0.165885, -0.92632)
+
+[node name="SlapBros_Beach_Plank_7" parent="Level/Art" instance=ExtResource("19_0dsif")]
+transform = Transform3D(0.25075, 0.0196914, 0.0216176, -0.0135171, 0.375098, 0.0124655, -0.0116894, -0.011354, 0.449308, -2.48657, -0.682595, 0.670713)
+
+[node name="SlapBros_Beach_Plank_8" parent="Level/Art" instance=ExtResource("20_a38fr")]
+transform = Transform3D(0.450803, 0, 0.0194145, 0, 0.451221, 0, -0.0194145, 0, 0.450803, 0.262187, -0.402716, 0.591297)
+
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting"]
@@ -153,69 +217,6 @@ distance_fade_enabled = true
 spot_range = 11.9927
 spot_angle = 43.7095
 spot_angle_attenuation = 0.000198304
-
-[node name="Art" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.899319, 0, 0)
-
-[node name="SlapBros_Beach_Beam_1" parent="Art" instance=ExtResource("9_g5qny")]
-transform = Transform3D(0.520198, 0, 0, 0, 0.520198, 0, 0, 0, 0.520198, -3.27757, 0.885756, 0.458365)
-
-[node name="SlapBros_Beach_Beam_4" parent="Art" instance=ExtResource("9_g5qny")]
-transform = Transform3D(-0.478003, 0, 0.205228, 0, 0.520198, 0, -0.205228, 0, -0.478003, -2.07518, 0.840155, 0.458365)
-
-[node name="SlapBros_Beach_Beam_8" parent="Art" instance=ExtResource("9_g5qny")]
-transform = Transform3D(0.0744199, 0, 0.514847, 0, 0.618984, 0, -0.514847, 0, 0.0744199, 1.23727, 0.88416, 0.393561)
-
-[node name="SlapBros_Beach_Beam_6" parent="Art" instance=ExtResource("10_d3866")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.44578, 1.98012, -0.764874)
-
-[node name="SlapBros_Beach_Beam_2" parent="Art" instance=ExtResource("11_m401e")]
-transform = Transform3D(0.490875, 0, 0, 0, 0.47722, -0.114976, 0, 0.114976, 0.47722, -1.3722, 1.65711, -0.767714)
-
-[node name="SlapBros_Beach_rope_1" parent="Art" instance=ExtResource("12_6582m")]
-transform = Transform3D(0.345344, 0, 0, 0, 0.345344, 0, 0, 0, 0.345344, -2.40684, 1.27662, -0.792308)
-
-[node name="SlapBros_Beach_rope_2" parent="Art" instance=ExtResource("13_8f1wt")]
-transform = Transform3D(0.338989, 0.0641201, 0, -0.0641201, 0.338989, 0, 0, 0, 0.345, -0.585799, 1.18891, -0.777193)
-
-[node name="SlapBros_Beach_rope_3" parent="Art" instance=ExtResource("13_8f1wt")]
-transform = Transform3D(0.340108, -0.0578913, 0, 0.0578913, 0.340108, 0, 0, 0, 0.345, 1.00373, 1.50689, -0.777193)
-
-[node name="SlapBros_Beach_Beam_5" parent="Art" instance=ExtResource("14_jbq6k")]
-transform = Transform3D(0.342822, 0, 0, 0, 0.492229, -0.0577163, 0, 0.0878122, 0.323527, 0.185489, 1.71689, -0.699871)
-
-[node name="SlapBros_Beach_Beam_9" parent="Art" instance=ExtResource("15_8kotr")]
-transform = Transform3D(0.499636, -0.0190893, 0, 0.0190893, 0.499636, 0, 0, 0, 0.5, -0.781005, 0.928567, 0.375199)
-
-[node name="SlapBros_Beach_Beam_10" parent="Art" instance=ExtResource("15_8kotr")]
-transform = Transform3D(0.499022, 0.0312646, 0, -0.0312646, 0.499022, 0, 0, 0, 0.5, 1.76577, 2.05626, -0.788264)
-
-[node name="SlapBros_Beach_Plank_1" parent="Art" instance=ExtResource("16_nyo2m")]
-transform = Transform3D(0.386296, -0.102867, 0.0139151, 0.1028, 0.386547, 0.00370303, -0.0143993, 0, 0.399741, -1.94327, 0.406527, 0.597212)
-
-[node name="SlapBros_Beach_Plank_3" parent="Art" instance=ExtResource("16_nyo2m")]
-transform = Transform3D(0.393033, -0.0743284, 0, 0.0743284, 0.393033, 0, 0, 0, 0.4, -2.01888, 0.765495, -0.61964)
-
-[node name="SlapBros_Beach_Plank_5" parent="Art" instance=ExtResource("16_nyo2m")]
-transform = Transform3D(0.393033, -0.0743284, 0, 0.0743284, 0.393033, 0, 0, 0, 0.4, -0.0369277, 0.765495, -0.61964)
-
-[node name="SlapBros_Beach_Plank_2" parent="Art" instance=ExtResource("17_gkpis")]
-transform = Transform3D(0.368902, -0.0511142, 0, 0.0454981, 0.414438, 0, 0, 0, 0.3, -1.85851, -0.112061, 0.640005)
-
-[node name="SlapBros_Beach_Plank_4" parent="Art" instance=ExtResource("17_gkpis")]
-transform = Transform3D(0.368902, -0.0511142, 0, 0.0454981, 0.414438, 0, 0, 0, 0.3, -1.40248, -0.0888571, -1.1197)
-
-[node name="SlapBros_Beach_Plank_6" parent="Art" instance=ExtResource("18_7isa1")]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.562976, 0.165885, 0.554337)
-
-[node name="SlapBros_Beach_Plank_9" parent="Art" instance=ExtResource("18_7isa1")]
-transform = Transform3D(0.44716, 0, -0.0504732, 0, 0.45, 0, 0.0504732, 0, 0.44716, 0.791518, 0.165885, -0.92632)
-
-[node name="SlapBros_Beach_Plank_7" parent="Art" instance=ExtResource("19_0dsif")]
-transform = Transform3D(0.25075, 0.0196914, 0.0216176, -0.0135171, 0.375098, 0.0124655, -0.0116894, -0.011354, 0.449308, -2.48657, -0.682595, 0.670713)
-
-[node name="SlapBros_Beach_Plank_8" parent="Art" instance=ExtResource("20_a38fr")]
-transform = Transform3D(0.450803, 0, 0.0194145, 0, 0.451221, 0, -0.0194145, 0, 0.450803, 0.262187, -0.402716, 0.591297)
 
 [node name="SlapBros_Beach_Plank_3" parent="." instance=ExtResource("20_a38fr")]
 transform = Transform3D(0.200274, 0.0748226, 0, -0.0455635, 0.328881, 0, 0, 0, 0.312718, 1.99618, 0.577745, 0.552583)
