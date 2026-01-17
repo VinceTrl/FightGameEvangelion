@@ -13,8 +13,11 @@ extends Node3D
 @export var moveDirection: Vector3 = Vector3.RIGHT
 @export var moveSpeed:float = 1
 
+signal DuckDestroyed
+
 var tween
 var canMove = true
+var isAttacking:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -64,11 +67,15 @@ func GetPlayerTarget() -> PlayerCharacter:
 		return Manager.gameManager.GetRandomPlayer()
 	
 func AttackPlayer(_playerTarget:PlayerCharacter):
+	if(isAttacking):return
+	
+	isAttacking = true
 	var targetPosition = _playerTarget.global_position
 	var time = Global.GetTimeToReachTargetWithSpeed(global_position,targetPosition,attackSpeed)
 	hitbox.ActiveHitBox()
 	await MoveToLocation(targetPosition,time)
 	hitbox.InactiveHitBox()
+	DuckDestroyed.emit()
 	queue_free()
 	
 func MoveToLocation(_targetPos:Vector3,_time:float):
