@@ -22,10 +22,12 @@ func _process(delta: float) -> void:
 	
 func MuteMusic():
 	stage_music.stream_paused = muteMusic
+	if(!muteMusic and !stage_music.playing):
+		stage_music.play()
 	
 func StartStageMusic():
 	print("START MUSIC")
-	stage_music.play()
+	if(!muteMusic): stage_music.play()
 	victory_sound.stop()
 
 func LaunchVoiceline():
