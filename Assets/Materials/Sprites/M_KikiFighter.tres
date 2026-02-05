@@ -1,7 +1,8 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://btyojimllct1t"]
 
 [ext_resource type="Shader" uid="uid://c5kny5412ow0u" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="1_wkg1k"]
-[ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/KikiFighter/SpriteKikiRed.png" id="2_mbn2g"]
+[ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiRed.png" id="2_mbn2g"]
+
 
 [resource]
 render_priority = -1

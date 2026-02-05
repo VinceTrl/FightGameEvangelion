@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_cpg5x"]
 [ext_resource type="PackedScene" uid="uid://kqpbwnd4vdet" path="res://Assets/Meshes/Characters/Penpen/Penpen_01.tscn" id="2_qpqa3"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_keetd"]
-[ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Slap_Cible.png" id="4_jrqso"]
+[ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="4_jrqso"]
 [ext_resource type="AudioStream" uid="uid://58ld363flnkm" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi1.wav" id="5_u337t"]
 [ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="5_v0tef"]
 [ext_resource type="AudioStream" uid="uid://b3yffj8vv6fxj" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi2.wav" id="6_1kjwj"]

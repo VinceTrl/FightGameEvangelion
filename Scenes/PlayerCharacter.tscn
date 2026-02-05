@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
 [ext_resource type="Material" uid="uid://btyojimllct1t" path="res://Assets/Materials/Sprites/M_KikiFighter.tres" id="3_4fxgw"]
 [ext_resource type="Script" uid="uid://dm773sfq0e16w" path="res://Scripts/GameEffects/SpriteEffects.gd" id="4_1nn6i"]
-[ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/KikiFighter/SpriteKikiRed.png" id="5_a28o5"]
+[ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiRed.png" id="5_a28o5"]
 [ext_resource type="Script" uid="uid://v6yo0bskmrwy" path="res://Scripts/Player/States/States.gd" id="5_hmp2k"]
 [ext_resource type="Script" uid="uid://b45hun7n2hih3" path="res://Scripts/Player/States/IdleState.gd" id="6_726n8"]
 [ext_resource type="Script" uid="uid://be58ged7iq63w" path="res://Scripts/Player/States/LockedState.gd" id="6_85275"]

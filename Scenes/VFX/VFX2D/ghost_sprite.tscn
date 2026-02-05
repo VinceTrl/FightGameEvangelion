@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6stct6m185jr" path="res://Scripts/GameEffects/ghost_sprite.gd" id="1_41t30"]
 [ext_resource type="Shader" uid="uid://c5kny5412ow0u" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="1_virw2"]
-[ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/KikiFighter/Player1/Sprites J1.png" id="2_g8y70"]
+[ext_resource type="Texture2D" uid="uid://dd564dhjqpsvi" path="res://Assets/Sprites/Characters/Placeholders/Sprites J1.png" id="2_g8y70"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ybsbp"]
 render_priority = -1

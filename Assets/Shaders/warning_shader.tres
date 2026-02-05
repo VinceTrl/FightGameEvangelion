@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=19 format=3 uid="uid://siboucvt8jf0"]
 
-[ext_resource type="Texture2D" uid="uid://y3ksoxaqfg3b" path="res://Assets/Sprites/Items/no-18-years-old_mask.png" id="1_r8xnk"]
+[ext_resource type="Texture2D" uid="uid://y3ksoxaqfg3b" path="res://Assets/Sprites/Items/Censored18/no-18-years-old_mask.png" id="1_r8xnk"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_1s1ug"]
 operator = 2

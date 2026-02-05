@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://b6tijrr6vutrp"]
 
-[ext_resource type="Texture2D" uid="uid://bjicya45sj4ns" path="res://Assets/Sprites/Items/no-18-years-old.png" id="1_6b7ee"]
+[ext_resource type="Texture2D" uid="uid://bjicya45sj4ns" path="res://Assets/Sprites/Items/Censored18/no-18-years-old.png" id="1_6b7ee"]
 [ext_resource type="Script" uid="uid://dkmj3ridxstpn" path="res://Scripts/Gameplay/censored_item.gd" id="1_ycu7o"]
 [ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="2_wgcyv"]
 [ext_resource type="Shader" uid="uid://siboucvt8jf0" path="res://Assets/Shaders/warning_shader.tres" id="3_4qfbi"]
-[ext_resource type="Texture2D" uid="uid://y3ksoxaqfg3b" path="res://Assets/Sprites/Items/no-18-years-old_mask.png" id="4_vc8xp"]
+[ext_resource type="Texture2D" uid="uid://y3ksoxaqfg3b" path="res://Assets/Sprites/Items/Censored18/no-18-years-old_mask.png" id="4_vc8xp"]
 [ext_resource type="PackedScene" uid="uid://bg6cgt1w4kuov" path="res://Scenes/VFX/item_glow.tscn" id="6_hd6pg"]
 
 [sub_resource type="Curve" id="Curve_bgo4n"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://brmxgb6qr55p2"]
 
 [ext_resource type="Script" uid="uid://xk4buyhewfq6" path="res://Scripts/VFX/ShootVFX.gd" id="1_keg2v"]
-[ext_resource type="Texture2D" uid="uid://cwi3hqlu0non7" path="res://Assets/Sprites/Vfx/Hit Effect 01 1.png" id="2_e0xx1"]
+[ext_resource type="Texture2D" uid="uid://cwi3hqlu0non7" path="res://Assets/Sprites/Vfx/Hit/Hit Effect 01 1.png" id="2_e0xx1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmocq"]
 atlas = ExtResource("2_e0xx1")

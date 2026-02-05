@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://dokiesf32ocl2" path="res://Assets/Materials/Enviro/M_penpen_White.tres" id="3_5st14"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="3_dj08w"]
 [ext_resource type="PackedScene" uid="uid://sddtfc33krlr" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="3_wncib"]
-[ext_resource type="Texture2D" uid="uid://dgeplckgt4xo5" path="res://Assets/Sprites/GUI/KikiGUI/GUI_Penpen_Cible.png" id="4_58mfr"]
+[ext_resource type="Texture2D" uid="uid://dgeplckgt4xo5" path="res://Assets/GUI/Sprites/KikiGUI/GUI_Penpen_Cible.png" id="4_58mfr"]
 [ext_resource type="Material" uid="uid://clgc6oj6jxrut" path="res://Assets/Materials/Enviro/M_penpen_black.tres" id="4_alllq"]
 [ext_resource type="Material" uid="uid://d2bvupxdhi7hm" path="res://Assets/Materials/Enviro/M_penpen_Bec.tres" id="5_4qwk6"]
 [ext_resource type="Material" uid="uid://ycx6lpvbaa07" path="res://Assets/Materials/Enviro/M_MetalRough.tres" id="7_g16ws"]

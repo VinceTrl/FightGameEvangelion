@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cj5ey4n7m20ia"]
 
 [ext_resource type="Script" uid="uid://uyroa6qvwffd" path="res://Scripts/Gameplay/eva_crosshair.gd" id="1_nxuwf"]
-[ext_resource type="Texture2D" uid="uid://b7tom7adsmn0h" path="res://Assets/Sprites/GUI/KikiGUI/BRUTALSLAP/CrosshairsSheet.png" id="2_0kk58"]
+[ext_resource type="Texture2D" uid="uid://b7tom7adsmn0h" path="res://Assets/GUI/Sprites/BRUTALSLAP/CrosshairsSheet.png" id="2_0kk58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbv38"]
 atlas = ExtResource("2_0kk58")

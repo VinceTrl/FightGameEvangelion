@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://cajciipmd7227"]
 
-[ext_resource type="StyleBox" uid="uid://dlmiu2kgm8ttl" path="res://Assets/Sprites/GUI/KikiGUI/Shitpost/style_box_window.tres" id="1_34o5a"]
+[ext_resource type="StyleBox" uid="uid://dlmiu2kgm8ttl" path="res://Assets/GUI/Resources/StyleBox/ShitpostWindowStyleBox/style_box_window.tres" id="1_34o5a"]
 [ext_resource type="Script" uid="uid://bpjnswalfqy4" path="res://Scripts/GUI/window_gif_gui.gd" id="1_bavvx"]
-[ext_resource type="Texture2D" uid="uid://b3mth673b81vv" path="res://Assets/GUI/Images/BSA-Title.png" id="2_bavvx"]
-[ext_resource type="StyleBox" uid="uid://ugloybir4no4" path="res://Assets/Sprites/GUI/KikiGUI/Shitpost/style_box_window_gaucho.tres" id="5_ivjee"]
-[ext_resource type="StyleBox" uid="uid://604ivkp1iykn" path="res://Assets/Sprites/GUI/KikiGUI/Shitpost/style_box_window_glitch.tres" id="5_nc7w6"]
-[ext_resource type="StyleBox" uid="uid://dfgf0nkvjiwp7" path="res://Assets/Sprites/GUI/KikiGUI/Shitpost/style_box_window_rdr.tres" id="6_issy0"]
+[ext_resource type="Texture2D" uid="uid://b3mth673b81vv" path="res://Assets/GUI/Placeholders/BSA-Title.png" id="2_bavvx"]
+[ext_resource type="StyleBox" uid="uid://ugloybir4no4" path="res://Assets/GUI/Resources/StyleBox/ShitpostWindowStyleBox/style_box_window_gaucho.tres" id="5_ivjee"]
+[ext_resource type="StyleBox" uid="uid://604ivkp1iykn" path="res://Assets/GUI/Resources/StyleBox/ShitpostWindowStyleBox/style_box_window_glitch.tres" id="5_nc7w6"]
+[ext_resource type="StyleBox" uid="uid://dfgf0nkvjiwp7" path="res://Assets/GUI/Resources/StyleBox/ShitpostWindowStyleBox/style_box_window_rdr.tres" id="6_issy0"]
 
 [node name="ShitpostWindow" type="Control" node_paths=PackedStringArray("windowPanel", "texture_rect")]
 layout_mode = 3

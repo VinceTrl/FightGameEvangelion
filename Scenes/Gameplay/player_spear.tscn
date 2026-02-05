@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://62jphhwnawdu"]
 
 [ext_resource type="Script" uid="uid://ehbmr8wrnltc" path="res://Scripts/Gameplay/player_spear.gd" id="1_bluxh"]
-[ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/KikiFighter/SpriteKikiYellow.png" id="2_wcb7u"]
+[ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiYellow.png" id="2_wcb7u"]
 [ext_resource type="Texture2D" uid="uid://rtbvltn3ylkd" path="res://Assets/Sprites/Vfx/T_VFX_Projectile.png" id="3_ua2go"]
 
 [sub_resource type="Animation" id="Animation_qph30"]

@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="2_ou272"]
 [ext_resource type="Material" uid="uid://dtq71w580dncu" path="res://Assets/Materials/Gameplay/BasePrototype_Blue.tres" id="3_2cxck"]
 [ext_resource type="Shader" uid="uid://siboucvt8jf0" path="res://Assets/Shaders/warning_shader.tres" id="4_uaybe"]
-[ext_resource type="Texture2D" uid="uid://c8n1885byqlc3" path="res://Assets/Sprites/Items/Bullet.png" id="5_5d5as"]
-[ext_resource type="Texture2D" uid="uid://c78fbhwykfes5" path="res://Assets/Sprites/Items/Ammo.png" id="6_5ojiq"]
+[ext_resource type="Texture2D" uid="uid://c8n1885byqlc3" path="res://Assets/Sprites/Items/Ammo/Bullet.png" id="5_5d5as"]
+[ext_resource type="Texture2D" uid="uid://c78fbhwykfes5" path="res://Assets/Sprites/Placeholders/Ammo.png" id="6_5ojiq"]
 [ext_resource type="PackedScene" uid="uid://bg6cgt1w4kuov" path="res://Scenes/VFX/item_glow.tscn" id="6_middy"]
 
 [sub_resource type="Curve" id="Curve_jkujo"]
