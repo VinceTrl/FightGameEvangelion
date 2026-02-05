@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_lq3oa"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="4_4rgyf"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_l3vcj"]
-[ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/NodePathFollow.gd" id="5_wiekq"]
+[ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/TRSEffects/NodePathFollow.gd" id="5_wiekq"]
 [ext_resource type="PackedScene" uid="uid://ba20ikpx0nyx0" path="res://Scenes/Gameplay/wario_mouth.tscn" id="6_qqxa0"]
 [ext_resource type="PackedScene" uid="uid://bgtkufl3mhsvv" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_1.tscn" id="8_5pkg6"]
 [ext_resource type="PackedScene" uid="uid://dn4o2i18mh0aa" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_6.tscn" id="9_astkc"]

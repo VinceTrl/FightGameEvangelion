@@ -36,7 +36,7 @@ func MoveToTarget(delta):
 	var from_center = global_pos - center
 	#var targetPosition = Vector3(moveTarget.global_position.x,moveTarget.global_position.y,0)
 	var direction = (targetPos - global_pos).normalized()
-	# Déplace légèrement ton objet dans la direction de la cible
+	# Déplace légèrement dans la direction target
 	var movement = global_pos + (direction * moveSpeed * delta)
 	
 	#DebugDraw3D.scoped_config().set_thickness(0.001)

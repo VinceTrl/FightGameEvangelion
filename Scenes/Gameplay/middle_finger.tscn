@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://0v8xynlbpg3q"]
 
-[ext_resource type="Script" uid="uid://hn1tivn8xiju" path="res://Scripts/Gameplay/middle_finger.gd" id="1_4e5qu"]
+[ext_resource type="Script" uid="uid://hn1tivn8xiju" path="res://Scripts/Gameplay/Items/middle_finger.gd" id="1_4e5qu"]
 [ext_resource type="Texture2D" uid="uid://by7quusi7ieus" path="res://Assets/Sprites/Items/MiddleFinger/lefty_middle_finger.png" id="1_s8dn0"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_caure"]
 [ext_resource type="AudioStream" uid="uid://dswir8bgow46t" path="res://Assets/Sounds/SFX/FGHTImpt_Anime Melee 1_01.wav" id="4_fuod2"]

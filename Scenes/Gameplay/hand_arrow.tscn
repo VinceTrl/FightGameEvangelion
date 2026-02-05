@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2tnd7xgw2l1"]
 
-[ext_resource type="Script" uid="uid://dejnyq1rt5n2n" path="res://Scripts/GameEffects/hand_arrow.gd" id="1_i3fvf"]
+[ext_resource type="Script" uid="uid://dejnyq1rt5n2n" path="res://Scripts/GameEffects/FirstPersonHand/hand_arrow.gd" id="1_i3fvf"]
 [ext_resource type="PackedScene" uid="uid://dy4h6k7bb6c51" path="res://Assets/Meshes/Props/Hand/hand_pointing.fbx" id="1_xrhjf"]
 
 [node name="HandArrow" type="Node3D"]

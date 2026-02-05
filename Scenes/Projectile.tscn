@@ -1,7 +1,7 @@
 [gd_scene load_steps=83 format=3 uid="uid://difa1tbhr27vn"]
 
-[ext_resource type="Script" uid="uid://dgfhro4eut85b" path="res://Scripts/Gameplay/Projectile.gd" id="1_imuxp"]
-[ext_resource type="Curve" uid="uid://bb47w0dbu6x4n" path="res://Scripts/Curves/projectileSpeedParry.tres" id="2_h0nys"]
+[ext_resource type="Script" uid="uid://dgfhro4eut85b" path="res://Scripts/Gameplay/Projectiles/Projectile.gd" id="1_imuxp"]
+[ext_resource type="Curve" uid="uid://bb47w0dbu6x4n" path="res://Resources/Curves/projectileSpeedParry.tres" id="2_h0nys"]
 [ext_resource type="Texture2D" uid="uid://4ccslecbenaq" path="res://Assets/Sprites/Placeholders/All_Fire_Bullet_Pixel_16x16_05.png" id="2_t0vlr"]
 [ext_resource type="Texture2D" uid="uid://cgq2a8jhgtqx2" path="res://Assets/Sprites/Projectiles/ProjectileSpriteSheet_32x32.png" id="3_xdjyt"]
 [ext_resource type="Texture2D" uid="uid://c4vuyvb6roinn" path="res://Assets/Sprites/Projectiles/ProjectileSpritesheet02_32x32.png" id="5_7g40w"]

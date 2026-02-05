@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://ch56ldgqymwtm"]
 
-[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="1_87yg7"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="1_87yg7"]
 [ext_resource type="PackedScene" uid="uid://b722wqbjwps3e" path="res://Assets/Meshes/Props/Poop/SM_Poop_01.fbx" id="1_c6ldi"]
-[ext_resource type="Script" uid="uid://cgubp02mo2igd" path="res://Scripts/Gameplay/poop.gd" id="1_g0msx"]
+[ext_resource type="Script" uid="uid://cgubp02mo2igd" path="res://Scripts/Gameplay/Items/poop.gd" id="1_g0msx"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_h0san"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pnro7"]

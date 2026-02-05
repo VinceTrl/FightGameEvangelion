@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b04nmwkumh84t"]
 
 [ext_resource type="PackedScene" uid="uid://cafpr105xx1q7" path="res://Sources/Meshes/AerocarrierV2.fbx" id="1_bwqfl"]
-[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="2_1p24s"]
+[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/TRSEffects/visual_holder.gd" id="2_1p24s"]
 [ext_resource type="Material" uid="uid://q4x3utqq7yat" path="res://Assets/Materials/Enviro/M_AerocarrierAtlas.tres" id="3_uliqr"]
 [ext_resource type="Script" uid="uid://byey3yvki8p1g" path="res://Scripts/Collisions/OneWayCollision.gd" id="4_fljpl"]
 

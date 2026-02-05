@@ -1,7 +1,7 @@
 [gd_scene load_steps=83 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" uid="uid://1nqqf1x2wfer" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
-[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="2_dme1j"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_dme1j"]
 [ext_resource type="Material" uid="uid://btyojimllct1t" path="res://Assets/Materials/Sprites/M_KikiFighter.tres" id="3_4fxgw"]
 [ext_resource type="Script" uid="uid://dm773sfq0e16w" path="res://Scripts/GameEffects/SpriteEffects.gd" id="4_1nn6i"]
 [ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiRed.png" id="5_a28o5"]
@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://c5lg1nob3adkr" path="res://Scripts/Player/States/AttackState.gd" id="13_utoig"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="14_fgxac"]
 [ext_resource type="Script" uid="uid://cd1r8pb2vusv0" path="res://Scripts/Player/States/HurtStates.gd" id="14_gm8e6"]
-[ext_resource type="Script" uid="uid://c8uuec0giclcl" path="res://Scripts/GameEffects/animation_ScaledToTime.gd" id="14_q4g8e"]
+[ext_resource type="Script" uid="uid://c8uuec0giclcl" path="res://Scripts/GameEffects/Animations/animation_ScaledToTime.gd" id="14_q4g8e"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="15_3tuu1"]
 [ext_resource type="Script" uid="uid://bp24yw4kye87q" path="res://Scripts/Player/States/ShootState.gd" id="15_ow3as"]
 [ext_resource type="Script" uid="uid://dc5bkmm3jd6ly" path="res://Scripts/Player/States/LedgegrabState.gd" id="16_i7cct"]

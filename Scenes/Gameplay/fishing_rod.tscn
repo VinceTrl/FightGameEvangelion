@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://c1t1l08xw8gyf" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishPullState.gd" id="4_fgn3p"]
 [ext_resource type="Script" uid="uid://b6d2s0twt05f8" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishThrowState.gd" id="5_3favy"]
 [ext_resource type="Script" uid="uid://cug5120y3o5xh" path="res://Scripts/Gameplay/Fishing/FishStateMachine/FishFishState.gd" id="6_20j83"]
-[ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/NodePathFollow.gd" id="12_agcee"]
+[ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/TRSEffects/NodePathFollow.gd" id="12_agcee"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1706i"]
 size = Vector3(0.405, 0.46, 1)

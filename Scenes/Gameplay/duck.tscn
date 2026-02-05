@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bxxd5gxnke66u" path="res://Assets/Meshes/Props/Ducks/duck.fbx" id="1_c20ec"]
 [ext_resource type="Script" uid="uid://cou43b2150coo" path="res://Scripts/Gameplay/Fishing/duck.gd" id="1_uo8j8"]
-[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="2_rthil"]
+[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/TRSEffects/visual_holder.gd" id="2_rthil"]
 [ext_resource type="Script" uid="uid://cvtsnlxtxaxyx" path="res://Scripts/Gameplay/Fishing/FishHookTarget.gd" id="2_x7xrh"]
-[ext_resource type="Curve" uid="uid://bejdsc83o57do" path="res://Scripts/Curves/speedCurve.tres" id="3_31it7"]
-[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="4_sj4j7"]
+[ext_resource type="Curve" uid="uid://bejdsc83o57do" path="res://Resources/Curves/speedCurve.tres" id="3_31it7"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="4_sj4j7"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="7_kxbjc"]
 [ext_resource type="PackedScene" uid="uid://sddtfc33krlr" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="8_ank3h"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvqhlk4l25sd3"]
 
-[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="1_ats3x"]
-[ext_resource type="Script" uid="uid://dhrcftuno7fkc" path="res://Scripts/Gameplay/shrek_item.gd" id="1_xekkg"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="1_ats3x"]
+[ext_resource type="Script" uid="uid://dhrcftuno7fkc" path="res://Scripts/Gameplay/Items/shrek_item.gd" id="1_xekkg"]
 [ext_resource type="PackedScene" uid="uid://cdv55byodmt2m" path="res://Assets/Meshes/Characters/Shrek/shrek.tscn" id="2_j27qo"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_1w6qf"]
 [ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="5_hl676"]

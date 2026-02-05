@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="6_ntebu"]
 [ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="7_jr222"]
 [ext_resource type="AudioStream" uid="uid://bstoo00pyxy2s" path="res://Assets/Sounds/SFX/DoudouSFX/SD_item.wav" id="8_xlcjj"]
-[ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/NodePathFollow.gd" id="9_i2msn"]
+[ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/TRSEffects/NodePathFollow.gd" id="9_i2msn"]
 [ext_resource type="Curve" uid="uid://cmki3s0tjmavg" path="res://Resources/Curves/EaseInOutLinear.tres" id="10_3ri35"]
 
 [node name="Spawner" type="Node3D"]

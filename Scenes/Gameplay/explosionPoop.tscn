@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ce2tjl78qku63"]
 
-[ext_resource type="Script" uid="uid://c2tafpkt7x7d0" path="res://Scripts/Gameplay/Explosion.gd" id="1_h560l"]
+[ext_resource type="Script" uid="uid://c2tafpkt7x7d0" path="res://Scripts/Gameplay/Projectiles/Explosion.gd" id="1_h560l"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="2_ep7vm"]
 [ext_resource type="Texture2D" uid="uid://b1ljgojtwt53y" path="res://Assets/Sprites/Vfx/Explosions/spritesheet_X_plosion.png" id="3_tj5jk"]
 [ext_resource type="AudioStream" uid="uid://chk2wvo6si26c" path="res://Assets/Sounds/SFX/DoudouSFX/SD_explosioncaca.wav" id="4_jpl6j"]

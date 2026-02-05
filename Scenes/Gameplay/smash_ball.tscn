@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://1s7868dthyoc"]
 
-[ext_resource type="Script" uid="uid://dth1pc7jfyjni" path="res://Scripts/Gameplay/smash_ball_item.gd" id="1_kspie"]
+[ext_resource type="Script" uid="uid://dth1pc7jfyjni" path="res://Scripts/Gameplay/Items/smash_ball_item.gd" id="1_kspie"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_vifah"]
 [ext_resource type="Resource" uid="uid://bgvu6c31k2dbe" path="res://Resources/PostProcessAnims/Glitch/DamageGlitch.tres" id="2_5njag"]
 [ext_resource type="AudioStream" uid="uid://p60smo02damw" path="res://Assets/Sounds/SFX/SmashBrosSounds/Voice/snd_se_Wsmash_get_Bayonetta_JP.wav" id="2_glb4x"]

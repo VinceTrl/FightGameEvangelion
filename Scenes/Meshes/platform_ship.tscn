@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cb0n0wkpi43q5" path="res://Scripts/Level/MovingPlatform.gd" id="1_vuq4s"]
 [ext_resource type="PackedScene" uid="uid://cafpr105xx1q7" path="res://Sources/Meshes/AerocarrierV2.fbx" id="2_mfhgm"]
-[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/visual_holder.gd" id="3_fjin5"]
+[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/TRSEffects/visual_holder.gd" id="3_fjin5"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_h3v5s"]
 [ext_resource type="Material" uid="uid://q4x3utqq7yat" path="res://Assets/Materials/Enviro/M_AerocarrierAtlas.tres" id="4_iesvs"]
 [ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="5_3g813"]

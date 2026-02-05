@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/block.gd" id="1_8fj4h"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_f7dpp"]
 [ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="3_0wkps"]
-[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/NodeShaker.gd" id="4_xulyr"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="4_xulyr"]
 [ext_resource type="PackedScene" uid="uid://b1syavad6jdov" path="res://Scenes/VFX/vfx_minecraft_bloc_hit.tscn" id="6_8fj4h"]
 [ext_resource type="PackedScene" uid="uid://v7cx5yy2c3k7" path="res://Scenes/Gameplay/minecraft_cake_block.tscn" id="6_s746l"]
 [ext_resource type="AudioStream" uid="uid://bgrm5be8bl5gb" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocHit.wav" id="7_1hpdu"]
