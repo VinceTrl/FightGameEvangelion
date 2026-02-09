@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene load_steps=84 format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" uid="uid://1nqqf1x2wfer" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_dme1j"]
@@ -848,10 +848,13 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.01617, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cr8h1"]
-size = Vector3(0.616932, 0.425266, 1)
+size = Vector3(0.8, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhhuy"]
+size = Vector3(0.779294, 0.610216, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jq5e"]
-size = Vector3(0.248138, 0.338379, 1)
+size = Vector3(0.4, 0.586621, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lnam8"]
 streams_count = 5
@@ -876,7 +879,7 @@ axis_lock_angular_z = true
 script = ExtResource("1_ubpar")
 healthPoints = 3
 spritesheet = ExtResource("5_a28o5")
-runSpeed = 4.0
+runSpeed = 3.75
 deceleration = 1.045
 dropInputTime = 0.5
 dashDuration = 0.3
@@ -910,7 +913,7 @@ magnitude = 0.1
 frequency = 1.0
 
 [node name="Sprite2D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.039245, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.0393853, 0)
 material_override = ExtResource("3_4fxgw")
 texture_filter = 0
 texture = ExtResource("5_a28o5")
@@ -920,7 +923,7 @@ script = ExtResource("4_1nn6i")
 hitColor = Color(1, 1, 1, 1)
 
 [node name="PlayerSpear" parent="." instance=ExtResource("6_vx25g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0308377, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0308377, 0)
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
@@ -978,8 +981,8 @@ damageGlitchEffect = ExtResource("30_k65qb")
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource("20_t6j6y")
-maxDashSpeed = 9.0
-dashDuration = 0.175
+maxDashSpeed = 10.0
+dashDuration = 0.2
 dashSpeedCurve = SubResource("Curve_8vhkr")
 dashMomentum = 0.5
 ghostInterval = 0.015
@@ -1045,7 +1048,7 @@ reloadOverTime = false
 reloadTime = 6.0
 
 [node name="HitboxUp" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190702, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.366055, 0)
 script = ExtResource("14_fgxac")
 isActive = false
 hitDirection = Vector3(0, 1, 0)
@@ -1060,12 +1063,12 @@ script = ExtResource("14_fgxac")
 isActive = false
 
 [node name="CollisionShapeHitbox" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198046, -0.0263424, 0)
-shape = SubResource("BoxShape3D_cr8h1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279227, 0.0661326, 0)
+shape = SubResource("BoxShape3D_uhhuy")
 disabled = true
 
 [node name="HitboxDown" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.204901, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25047, 0)
 script = ExtResource("14_fgxac")
 isActive = false
 hitDirection = Vector3(0, -1, 0)
@@ -1079,7 +1082,7 @@ collision_layer = 4
 script = ExtResource("15_3tuu1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0757026, 0)
 shape = SubResource("BoxShape3D_7jq5e")
 
 [node name="ShootPointRoot" type="Node3D" parent="."]
@@ -1141,7 +1144,7 @@ bus = &"SFX"
 [node name="LedgeRightUpper" type="RayCast3D" parent="LedgegrabRaycasts"]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
-target_position = Vector3(0.3, 0, 0)
+target_position = Vector3(0.325, 0, 0)
 hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.823529, 1, 0, 1)
@@ -1149,7 +1152,7 @@ debug_shape_custom_color = Color(0.823529, 1, 0, 1)
 [node name="LedgeLeftUpper" type="RayCast3D" parent="LedgegrabRaycasts"]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
-target_position = Vector3(-0.3, 0, 0)
+target_position = Vector3(-0.325, 0, 0)
 hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.823529, 1, 0, 1)
@@ -1157,7 +1160,7 @@ debug_shape_custom_color = Color(0.823529, 1, 0, 1)
 [node name="LedgeRightLower" type="RayCast3D" parent="LedgegrabRaycasts"]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
-target_position = Vector3(0.2, 0, 0)
+target_position = Vector3(0.25, 0, 0)
 hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.823529, 1, 0, 1)
@@ -1165,7 +1168,7 @@ debug_shape_custom_color = Color(0.823529, 1, 0, 1)
 [node name="LedgeLeftLower" type="RayCast3D" parent="LedgegrabRaycasts"]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
-target_position = Vector3(-0.2, 0, 0)
+target_position = Vector3(-0.25, 0, 0)
 hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.823529, 1, 0, 1)
@@ -1179,7 +1182,6 @@ collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.366727, 0.432952, 0.970629, 1)
-debug_shape_thickness = 1
 
 [node name="OneWayPlatformRayCast" type="RayCast3D" parent="RaycastHolder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.109699, 0)
