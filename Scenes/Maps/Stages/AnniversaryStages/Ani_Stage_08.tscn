@@ -1,0 +1,447 @@
+[gd_scene load_steps=24 format=3 uid="uid://0sje40b57nvv"]
+
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_xdhn0"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_vobi2"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_4b42o"]
+[ext_resource type="PackedScene" uid="uid://ci58vtgidf8at" path="res://Scenes/Gameplay/PyramidHead/pyramid_head.tscn" id="4_xdhn0"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_my1qu"]
+[ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_uq3if"]
+[ext_resource type="PackedScene" uid="uid://bgtkufl3mhsvv" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_1.tscn" id="7_20dtv"]
+[ext_resource type="PackedScene" uid="uid://dn4o2i18mh0aa" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_6.tscn" id="8_22yi5"]
+[ext_resource type="PackedScene" uid="uid://bldh0i8oemqbq" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_2.tscn" id="9_gpx2q"]
+[ext_resource type="PackedScene" uid="uid://cadgbgc07lh0p" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_rope_1.tscn" id="10_0n33i"]
+[ext_resource type="PackedScene" uid="uid://cg8gb5k6q6tcu" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_rope_2.tscn" id="11_m0aoq"]
+[ext_resource type="PackedScene" uid="uid://bk0cup5srm300" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_5.tscn" id="12_6fsi2"]
+[ext_resource type="PackedScene" uid="uid://b6u3w7fooi3po" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_7.tscn" id="13_7a4lb"]
+[ext_resource type="PackedScene" uid="uid://bg02nuf43lnyr" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_1.tscn" id="14_38n3b"]
+[ext_resource type="PackedScene" uid="uid://cd5riyxh8xk13" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_2.tscn" id="15_gfgf4"]
+[ext_resource type="PackedScene" uid="uid://c78r62pibgyme" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_5.tscn" id="16_jh6a0"]
+[ext_resource type="PackedScene" uid="uid://dqfgwv7cspf8o" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_4.tscn" id="17_0rdm3"]
+[ext_resource type="PackedScene" uid="uid://cwv4s0n65s5mm" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_3.tscn" id="18_sl6v3"]
+[ext_resource type="PackedScene" uid="uid://q6hqa6nqy6tk" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/wash_machine_open.tscn" id="19_3yxts"]
+[ext_resource type="PackedScene" uid="uid://pc4ayrcj5bv6" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/wash_machine.tscn" id="20_wbpf7"]
+
+[sub_resource type="Animation" id="Animation_4wxa4"]
+resource_name = "Floating"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.33617, 0, 1.3305, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.00851, 8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 1.33617, 0, 0.119525, -1.33617, 0, 1.3305, 0, 0, -1.3305, 0, 0, 0),
+"times": PackedFloat32Array(0, 4.00851, 8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anim:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.33617, 0, 1.3305, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.00851, 8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anim:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.685949, 0, 1.32188, 0, 0, -1.32188, 0, 0.658838, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.05785, 6.02349, 8)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anim:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.685949, 0, 1.32188, 0, 0, -1.32188, 0, 0.658838, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.05785, 6.02349, 8)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("anim:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.233333, 0.0213421, 0.174707, -0.685949, 0, 1.32188, 0, -0.19122, -1.32188, 0, 0.658838, 0, 0, -0.233333, -0.0269496, 0.25, 0),
+"times": PackedFloat32Array(0, 2.05785, 6.02349, 8)
+}
+
+[sub_resource type="Animation" id="Animation_6oci7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anim:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("anim:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anim:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("anim:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ocir1"]
+_data = {
+&"Floating": SubResource("Animation_4wxa4"),
+&"RESET": SubResource("Animation_6oci7")
+}
+
+[node name="Ani_Stage_06" type="Node3D" node_paths=PackedStringArray("levelRoot")]
+script = ExtResource("1_xdhn0")
+platformSpawnType = 1
+overrideMinCamZ = 4.0
+overrideMaxCamZ = 6.0
+levelRoot = NodePath("Level")
+
+[node name="Gameplay" type="Node3D" parent="."]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay"]
+
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.439, 0)
+script = ExtResource("2_vobi2")
+
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.439, 0)
+script = ExtResource("2_vobi2")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay"]
+
+[node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_4b42o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.998389, 4.3, 0)
+
+[node name="Spawner4" parent="Gameplay/Objects" instance=ExtResource("3_4b42o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00957, 4.3, 0)
+
+[node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_4b42o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00218, 4.3, 0)
+
+[node name="Spawner3" parent="Gameplay/Objects" instance=ExtResource("3_4b42o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01174, 4.3, 0)
+
+[node name="PyramidHead" parent="Gameplay/Objects" instance=ExtResource("4_xdhn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592162, 0.812945, 0)
+
+[node name="PenPenLocations" type="Node3D" parent="Gameplay"]
+
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37871, 0.252657, 0)
+script = ExtResource("5_my1qu")
+
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.627961, 0)
+script = ExtResource("5_my1qu")
+
+[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38339, 2.54319, 0)
+script = ExtResource("5_my1qu")
+
+[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25588, 2.73042, 0)
+script = ExtResource("5_my1qu")
+
+[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07223, 0.466167, 0)
+script = ExtResource("5_my1qu")
+
+[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95277, 2.53234, 0)
+script = ExtResource("5_my1qu")
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="ShipTargetPosition4" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
+
+[node name="ShipTargetPosition5" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
+
+[node name="ShipTargetPosition6" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
+
+[node name="WoodPlatform" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="WoodPlatform2" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+
+[node name="WoodPlatform3" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
+
+[node name="WoodPlatform4" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)
+
+[node name="WoodPlatform24" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 0)
+
+[node name="WoodPlatform25" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 0)
+
+[node name="WoodPlatform5" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+
+[node name="WoodPlatform6" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
+
+[node name="WoodPlatform7" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
+
+[node name="WoodPlatform8" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.509915)
+
+[node name="WoodPlatform9" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -0.509915)
+
+[node name="WoodPlatform10" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -0.509915)
+
+[node name="WoodPlatform11" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -0.509915)
+
+[node name="WoodPlatform23" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -0.509915)
+
+[node name="WoodPlatform12" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -0.509915)
+
+[node name="WoodPlatform13" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -0.509915)
+
+[node name="WoodPlatform14" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -0.509915)
+
+[node name="WoodPlatform15" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -0.509915)
+
+[node name="WoodPlatform16" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, -0.509915)
+
+[node name="WoodPlatform17" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -0.509915)
+
+[node name="WoodPlatform18" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -0.509915)
+
+[node name="WoodPlatform19" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 0.00061357)
+
+[node name="WoodPlatform20" parent="Level" instance=ExtResource("6_uq3if")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, 0.00061357)
+
+[node name="Art" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.113097)
+
+[node name="SlapBros_Beach_Beam_1" parent="Level/Art" instance=ExtResource("7_20dtv")]
+transform = Transform3D(0.520198, 0, 0, 0, 0.520198, 0, 0, 0, 0.520198, -3.27757, 0.775259, 0.458365)
+
+[node name="SlapBros_Beach_Beam_4" parent="Level/Art" instance=ExtResource("7_20dtv")]
+transform = Transform3D(-0.478003, 0, 0.205228, 0, 0.520198, 0, -0.205228, 0, -0.478003, -2.07518, 0.840155, 0.458365)
+
+[node name="SlapBros_Beach_Beam_8" parent="Level/Art" instance=ExtResource("7_20dtv")]
+transform = Transform3D(0.0744199, 0, 0.514847, 0, 0.618984, 0, -0.514847, 0, 0.0744199, -0.402781, 0.88416, 0.383237)
+
+[node name="SlapBros_Beach_Beam_11" parent="Level/Art" instance=ExtResource("7_20dtv")]
+transform = Transform3D(0.0713257, -0.17663, 0.493441, 0.021236, 0.593248, 0.146913, -0.514847, 0, 0.0744199, 3.29276, 0.88416, 0.383237)
+
+[node name="SlapBros_Beach_Beam_6" parent="Level/Art" instance=ExtResource("8_22yi5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.44578, 1.59088, -1.23763)
+
+[node name="SlapBros_Beach_Beam_2" parent="Level/Art" instance=ExtResource("9_gpx2q")]
+transform = Transform3D(0.490875, 0, 0, 0, 0.47722, -0.114976, 0, 0.114976, 0.47722, -1.3722, 1.65711, -1.24047)
+
+[node name="SlapBros_Beach_rope_1" parent="Level/Art" instance=ExtResource("10_0n33i")]
+transform = Transform3D(0.345344, 0, 0, 0, 0.345344, 0, 0, 0, 0.345344, -2.40684, 1.27662, -1.26506)
+
+[node name="SlapBros_Beach_rope_3" parent="Level/Art" instance=ExtResource("10_0n33i")]
+transform = Transform3D(0.345257, -0.0077807, 0, 0.0077807, 0.345257, 0, 0, 0, 0.345344, 1.23933, 1.39625, -1.25015)
+
+[node name="SlapBros_Beach_rope_2" parent="Level/Art" instance=ExtResource("11_m0aoq")]
+transform = Transform3D(0.338989, 0.0641201, 0, -0.0641201, 0.338989, 0, 0, 0, 0.345, -0.585799, 1.18891, -1.24995)
+
+[node name="SlapBros_Beach_rope_4" parent="Level/Art" instance=ExtResource("11_m0aoq")]
+transform = Transform3D(0.276673, 0.188514, 0, -0.188514, 0.276673, 0, 0, 0, 0.334792, 2.8701, 1.26983, -1.24995)
+
+[node name="SlapBros_Beach_Beam_5" parent="Level/Art" instance=ExtResource("12_6fsi2")]
+transform = Transform3D(0.342822, 0, 0, 0, 0.492229, -0.0577163, 0, 0.0878122, 0.323527, 0.185489, 1.80882, -1.15623)
+
+[node name="SlapBros_Beach_Beam_10" parent="Level/Art" instance=ExtResource("12_6fsi2")]
+transform = Transform3D(0.342822, 0, 0, 0, 0.499722, 0.010959, 0, -0.0166735, 0.328452, 2.69611, 0.871944, 0.348931)
+
+[node name="SlapBros_Beach_Beam_7" parent="Level/Art" instance=ExtResource("8_22yi5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.25178, 1.93899, -1.26825)
+
+[node name="SlapBros_Beach_Beam_3" parent="Level/Art" instance=ExtResource("7_20dtv")]
+transform = Transform3D(0.495149, 0.0694828, 0, -0.0690173, 0.491831, -0.0577806, -0.00802953, 0.05722, 0.49665, 3.68961, 1.54448, -1.23321)
+
+[node name="SlapBros_Beach_Beam_9" parent="Level/Art" instance=ExtResource("13_7a4lb")]
+transform = Transform3D(0.49794, -0.0453424, 0, 0.0453424, 0.49794, 0, 0, 0, 0.5, 1.40373, 0.741796, 0.375199)
+
+[node name="SlapBros_Beach_Plank_1" parent="Level/Art" instance=ExtResource("14_38n3b")]
+transform = Transform3D(0.386296, -0.102867, 0.0139151, 0.1028, 0.386547, 0.00370303, -0.0143993, 0, 0.399741, -1.94327, 0.406527, 0.597212)
+
+[node name="SlapBros_Beach_Plank_3" parent="Level/Art" instance=ExtResource("14_38n3b")]
+transform = Transform3D(0.393033, -0.0743284, 0, 0.0743284, 0.393033, 0, 0, 0, 0.4, -2.01888, 0.765495, -1.0924)
+
+[node name="SlapBros_Beach_Plank_4" parent="Level/Art" instance=ExtResource("14_38n3b")]
+transform = Transform3D(0.477172, -0.0573694, 0, 0.0691526, 0.395865, 0, 0, 0, 0.4, 1.38015, 0.735612, -1.0924)
+
+[node name="SlapBros_Beach_Plank_2" parent="Level/Art" instance=ExtResource("15_gfgf4")]
+transform = Transform3D(0.371697, 0, 0, 0, 0.417578, 0, 0, 0, 0.3, -1.84288, -0.680637, 0.640005)
+
+[node name="SlapBros_Beach_Plank_5" parent="Level/Art" instance=ExtResource("15_gfgf4")]
+transform = Transform3D(-0.370824, 0.0286052, 0, -0.0254623, -0.416597, 0, 0, 0, 0.3, 1.13718, -0.488317, 0.665641)
+
+[node name="SlapBros_Beach_Plank_6" parent="Level/Art" instance=ExtResource("16_jh6a0")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.562976, 0.165885, 0.554337)
+
+[node name="SlapBros_Beach_Plank_7" parent="Level/Art" instance=ExtResource("17_0rdm3")]
+transform = Transform3D(0.236482, -0.126183, 0.0216176, 0.0841612, 0.353948, 0.0124655, -0.0137129, -0.00374879, 0.449308, -1.17123, -0.217786, 0.362334)
+
+[node name="SlapBros_Beach_Plank_9" parent="Level/Art" instance=ExtResource("17_0rdm3")]
+transform = Transform3D(-0.304797, 0.0428044, -0.020393, -0.0407478, -0.320234, -0.002509, -0.0140545, 0.000154478, 0.449531, 1.86766, 0.525004, 0.678227)
+
+[node name="SlapBros_Beach_Plank_8" parent="Level/Art" instance=ExtResource("18_sl6v3")]
+transform = Transform3D(0.411325, 0, 0.0177143, 0, 0.411706, 0, -0.0177143, 0, 0.411325, -2.60113, 0.00257204, 0.625988)
+
+[node name="WashMachine_Background" type="Node3D" parent="Level/Art"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.113097)
+
+[node name="SM_WashMachine_Open" parent="Level/Art/WashMachine_Background" instance=ExtResource("19_3yxts")]
+transform = Transform3D(0.196348, -0.0893061, 0.256314, -0.254831, 0.0482692, 0.212029, -0.0934555, -0.319248, -0.0396429, 2.60497, -0.115037, 1.7359)
+
+[node name="WashMachine" type="Node3D" parent="Level/Art/WashMachine_Background"]
+transform = Transform3D(0.552752, 0, -0.833346, 0, 1, 0, 0.833346, 0, 0.552752, 3.74435, 0.26757, 0.942358)
+
+[node name="anim" type="Node3D" parent="Level/Art/WashMachine_Background/WashMachine"]
+
+[node name="SM_WashMachine" parent="Level/Art/WashMachine_Background/WashMachine/anim" instance=ExtResource("20_wbpf7")]
+transform = Transform3D(0.00356408, 0.349259, -0.0224873, -0.332355, -0.00366935, -0.109666, -0.10967, 0.0224704, 0.331614, -0.662338, -0.140506, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level/Art/WashMachine_Background/WashMachine/anim"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ocir1")
+}
+autoplay = "Floating"
+
+[node name="WashMachine3" type="Node3D" parent="Level/Art/WashMachine_Background"]
+transform = Transform3D(0.991165, 0, 0.132637, 0, 1, 0, -0.132637, 0, 0.991165, -1.17382, 0.388283, 0.818135)
+
+[node name="anim" type="Node3D" parent="Level/Art/WashMachine_Background/WashMachine3"]
+
+[node name="SM_WashMachine" parent="Level/Art/WashMachine_Background/WashMachine3/anim" instance=ExtResource("20_wbpf7")]
+transform = Transform3D(0.0194087, 0.299365, -0.00203786, 0.0170654, -0.00314517, -0.299498, -0.298885, 0.0192603, -0.0172328, -0.662338, -0.140506, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level/Art/WashMachine_Background/WashMachine3/anim"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ocir1")
+}
+autoplay = "Floating"
+
+[node name="WashMachine2" type="Node3D" parent="Level/Art/WashMachine_Background"]
+transform = Transform3D(0.552752, 0, -0.833346, 0, 1, 0, 0.833346, 0, 0.552752, -4.29601, -0.0453053, 1.62992)
+
+[node name="anim" type="Node3D" parent="Level/Art/WashMachine_Background/WashMachine2"]
+
+[node name="SM_WashMachine" parent="Level/Art/WashMachine_Background/WashMachine2/anim" instance=ExtResource("20_wbpf7")]
+transform = Transform3D(-0.372718, -0.0333245, -0.141319, -0.0384347, 0.398079, 0.00749741, 0.140016, 0.020565, -0.374129, 0.204517, -0.339125, 0.0969241)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Level/Art/WashMachine_Background/WashMachine2/anim"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ocir1")
+}
+autoplay = "Floating"
+
+[node name="Lighting" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
+
+[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.0107859, 0.999942, 0, -0.999942, 0.0107859, 0, 6.62258, 1.46718)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 57.86

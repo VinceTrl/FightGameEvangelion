@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ctn0ijdhhkhpc" path="res://Scenes/Gameplay/beyblade_snake.tscn" id="4_he7th"]
 [ext_resource type="PackedScene" uid="uid://sddtfc33krlr" path="res://Scenes/VFX/vfx_fire_02_Penpen.tscn" id="7_627sr"]
 
-
 [sub_resource type="Curve" id="Curve_nnnkc"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 1, Vector2(1, 1), 2.00597, 0.0, 0, 0]
 point_count = 2
