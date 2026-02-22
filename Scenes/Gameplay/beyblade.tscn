@@ -36,7 +36,7 @@ size = Vector3(0.551, 0.272, 0.625)
 height = 0.095
 radius = 0.264793
 
-[node name="Beyblade" type="CharacterBody3D" node_paths=PackedStringArray("spinNode", "tiltNode", "fireParticles", "fireRoot")]
+[node name="Beyblade" type="CharacterBody3D" node_paths=PackedStringArray("spinNode", "tiltNode", "fireParticles", "fireRoot") groups=["PyramidHeadTarget"]]
 collision_layer = 209
 axis_lock_linear_z = true
 axis_lock_angular_x = true

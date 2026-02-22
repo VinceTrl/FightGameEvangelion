@@ -46,6 +46,7 @@ import/blender/enabled=false
 PenpenLocation=""
 Ledgegrab=""
 Enviro=""
+PyramidHeadTarget=""
 
 [importer_defaults]
 

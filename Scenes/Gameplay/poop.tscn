@@ -90,7 +90,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_3a0fq"]
 size = Vector3(0.529678, 0.524429, 3.56488)
 
-[node name="Poop" type="RigidBody3D"]
+[node name="Poop" type="RigidBody3D" groups=["PyramidHeadTarget"]]
 collision_layer = 16
 collision_mask = 19
 axis_lock_linear_z = true

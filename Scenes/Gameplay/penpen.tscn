@@ -55,7 +55,7 @@ stream_2/stream = ExtResource("7_1xoy7")
 stream_3/stream = ExtResource("8_7wh5r")
 stream_4/stream = ExtResource("9_qo54p")
 
-[node name="Penpen" type="Node3D"]
+[node name="Penpen" type="Node3D" groups=["PyramidHeadTarget"]]
 script = ExtResource("1_fk4f2")
 healthPoints = 4
 hurtTime = 0.375

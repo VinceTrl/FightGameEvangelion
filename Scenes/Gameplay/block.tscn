@@ -14,7 +14,7 @@ size = Vector3(0.35, 0.35, 0.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_m21dq"]
 size = Vector3(0.3, 0.3, 0.3)
 
-[node name="Block" type="Node3D"]
+[node name="Block" type="Node3D" groups=["PyramidHeadTarget"]]
 script = ExtResource("1_1mwp6")
 
 [node name="Hurtbox" type="Area3D" parent="."]

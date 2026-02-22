@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://ci58vtgidf8at"]
+[gd_scene load_steps=24 format=3 uid="uid://ci58vtgidf8at"]
 
 [ext_resource type="ArrayMesh" uid="uid://lp2xbjsup0i0" path="res://Assets/Meshes/Characters/PyramidHead/PyramidHead.obj" id="1_bntb1"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="1_lb8b3"]
 [ext_resource type="Script" uid="uid://daorxd6imo8g1" path="res://Scripts/Gameplay/PyramidHead/pyramid_head.gd" id="1_qpnbp"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="3_k16dp"]
 [ext_resource type="Script" uid="uid://boe4peeex6mo5" path="res://Scripts/Components/Movement/movement_component.gd" id="4_grti4"]
-[ext_resource type="Script" uid="uid://da2w8m65pm28n" path="res://Scripts/Collisions/HurtBoxDectectionCast.gd" id="5_boo6r"]
+[ext_resource type="Script" uid="uid://da2w8m65pm28n" path="res://Scripts/Gameplay/PyramidHead/PyramidTargetDectection.gd" id="5_boo6r"]
 [ext_resource type="Script" uid="uid://dmborlwoj2oxs" path="res://Scripts/Gameplay/PyramidHead/PyramidStateMachine/PyramidHeadStateMachine.gd" id="5_eg18e"]
 [ext_resource type="Script" uid="uid://bxypg3wuf22lg" path="res://Scripts/Gameplay/PyramidHead/PyramidStateMachine/PyramidHead_Idle.gd" id="6_ld2gt"]
 [ext_resource type="Script" uid="uid://bkcai5thyyntj" path="res://Scripts/Gameplay/PyramidHead/PyramidStateMachine/PyramidHead_Move.gd" id="7_mo6nf"]
@@ -13,12 +13,173 @@
 [ext_resource type="Script" uid="uid://7t5v2nvf04j3" path="res://Scripts/Gameplay/PyramidHead/PyramidStateMachine/PyramidHead_Attack.gd" id="10_dka4h"]
 [ext_resource type="Script" uid="uid://davkegmks5tqe" path="res://Scripts/Components/Movement/flip_component.gd" id="10_ga1n5"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="13_6jam6"]
+[ext_resource type="Script" uid="uid://dn8mtii0h5hbr" path="res://Scripts/Components/OutOfBoundKill_Component.gd" id="13_b7vr3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k16dp"]
 radius = 0.231895
 
+[sub_resource type="Animation" id="Animation_0n0cj"]
+resource_name = "Attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NodeShaker/PyramidHead:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NodeShaker/PyramidHead:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.433333, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(-1.18305, 1.5708, 9.39625e-15), Vector3(0.581544, 1.5708, 4.25161e-15), Vector3(0.581544, 1.5708, 4.25161e-15), Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hitboxes/Hitbox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.433333, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"ActiveHitBox"
+}, {
+"args": [],
+"method": &"InactiveHitBox"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes/Hitbox/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_6jam6"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NodeShaker/PyramidHead:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NodeShaker/PyramidHead:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b7vr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NodeShaker/PyramidHead:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NodeShaker/PyramidHead:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hitboxes/Hitbox/CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qeyci"]
+resource_name = "Walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NodeShaker/PyramidHead:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NodeShaker/PyramidHead:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 1.8326, 0), Vector3(0, 1.5708, 0), Vector3(0, 1.309, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e3sed"]
+_data = {
+&"Attack": SubResource("Animation_0n0cj"),
+&"Idle": SubResource("Animation_6jam6"),
+&"RESET": SubResource("Animation_b7vr3"),
+&"Walk": SubResource("Animation_qeyci")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_grti4"]
-size = Vector3(2, 2, 3)
+size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ga1n5"]
 size = Vector3(2, 1.8, 2.5)
@@ -26,7 +187,7 @@ size = Vector3(2, 1.8, 2.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_by8ij"]
 size = Vector3(0.75, 1.85, 1)
 
-[node name="PyramidHead" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine", "movement", "flip", "hurtboxDetection", "obstacleDetectionCast", "groundDetection")]
+[node name="PyramidHead" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine", "movement", "flip", "animation", "targetDetection", "obstacleDetectionCast", "groundDetection")]
 collision_layer = 2
 axis_lock_linear_z = true
 axis_lock_angular_x = true
@@ -36,7 +197,8 @@ script = ExtResource("1_qpnbp")
 stateMachine = NodePath("StateMachine")
 movement = NodePath("Components/MovementComponent")
 flip = NodePath("Components/FlipComponent")
-hurtboxDetection = NodePath("Raycast/HurtboxRayCast")
+animation = NodePath("Visual/AnimationPlayer")
+targetDetection = NodePath("Raycast/TargetCast")
 obstacleDetectionCast = NodePath("Raycast/ObstacleDetection")
 groundDetection = NodePath("Raycast/GroundDetection")
 
@@ -51,33 +213,46 @@ script = ExtResource("1_lb8b3")
 metadata/_custom_type_script = "uid://boswmyv0w3oxy"
 
 [node name="PyramidHead" type="MeshInstance3D" parent="Visual/NodeShaker"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0, 0, 0)
 mesh = ExtResource("1_bntb1")
 skeleton = NodePath("../../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual"]
+libraries = {
+&"": SubResource("AnimationLibrary_e3sed")
+}
 
 [node name="Hitboxes" type="Node3D" parent="."]
 
 [node name="Hitbox" type="Area3D" parent="Hitboxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00075, 0.998929, 0)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("3_k16dp")
+owner_id = 20
+type = 3
 isActive = false
 randomID = true
+hitForce = 3.0
 metadata/_custom_type_script = "uid://chlkng7i45f53"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0103594, 0, 0)
 shape = SubResource("BoxShape3D_grti4")
+disabled = true
 debug_color = Color(0.992206, 0.0829675, 1.92523e-07, 0.42)
 
 [node name="Raycast" type="Node3D" parent="."]
 
-[node name="HurtboxRayCast" type="ShapeCast3D" parent="Raycast"]
+[node name="TargetCast" type="ShapeCast3D" parent="Raycast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 shape = SubResource("BoxShape3D_ga1n5")
 target_position = Vector3(0, 0, 0)
-collision_mask = 32
+collision_mask = 23
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0.596078, 0, 1)
 script = ExtResource("5_boo6r")
+drawDebugCast = true
 metadata/_custom_type_script = "uid://da2w8m65pm28n"
 
 [node name="ObstacleDetection" type="ShapeCast3D" parent="Raycast"]
@@ -121,11 +296,17 @@ hitbox = NodePath("../../Hitboxes/Hitbox")
 [node name="MovementComponent" type="Node" parent="Components" node_paths=PackedStringArray("character")]
 script = ExtResource("4_grti4")
 character = NodePath("../..")
+speed = 1.0
 
 [node name="FlipComponent" type="Node" parent="Components" node_paths=PackedStringArray("movement", "flipNodes")]
 script = ExtResource("10_ga1n5")
 movement = NodePath("../MovementComponent")
 flipNodes = [NodePath("../../Hitboxes"), NodePath("../../Visual"), NodePath("../../Raycast")]
+
+[node name="OutOfBoundComponent" type="Node" parent="Components" node_paths=PackedStringArray("parent")]
+script = ExtResource("13_b7vr3")
+parent = NodePath("../..")
+killLimit = -10.0
 
 [node name="CameraTarget" parent="." instance=ExtResource("13_6jam6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1854, 0)

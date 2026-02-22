@@ -1,13 +1,19 @@
 extends PyramidHeadState
 
 @export var attackTime:float = 1.0
-@export var hitbox:Hitbox #TEMP
+@export var hitbox:Hitbox
 var timer:SceneTreeTimer
 
 func EnterState():
 	Name = "Attack"
 	Character.movement.currentDirection = Vector3.ZERO
-	hitbox.ActiveHitBox() #TEMP
+	
+	if(Character.flip.IsFacingRight()):
+		hitbox.hitDirection = Vector3.RIGHT
+	else:
+		hitbox.hitDirection = Vector3.LEFT
+	
+	Character.animation.play("Attack")
 	AttackTimer()
 		
 func AttackTimer():

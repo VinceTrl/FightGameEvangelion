@@ -2,7 +2,7 @@ class_name Hurtbox
 extends Area3D
 
 const VFX_2D_IMPACT = preload("res://Scenes/VFX/VFX2D/vfx_2d_impact_medium.tscn")
-@onready var collision_shape: CollisionShape3D = $CollisionShape2D
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
 @export var owner_id = 1
 @export var randomID = false
@@ -12,7 +12,7 @@ signal OnHurtboxTakeDamage(hitbox : Hitbox)
 signal OnHurtboxHit
 
 func _init() -> void:
-	collision_layer = 32 #was at 0
+	collision_layer = 0 #was at 0
 	collision_mask = 4
 	
 

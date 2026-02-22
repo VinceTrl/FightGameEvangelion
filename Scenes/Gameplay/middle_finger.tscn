@@ -8,7 +8,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_wt1hv"]
 size = Vector3(0.546387, 0.52356, 1)
 
-[node name="MiddleFinger" type="Node3D"]
+[node name="MiddleFinger" type="Node3D" groups=["PyramidHeadTarget"]]
 script = ExtResource("1_4e5qu")
 lifeTime = 20.0
 followScale = Vector3(5, 5, 5)

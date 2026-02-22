@@ -5,6 +5,7 @@ var timer:SceneTreeTimer
 
 func EnterState():
 	Name = "Roam"
+	Character.animation.play("Walk")
 	SetRandomDirection()
 	RoamTimer()
 		
@@ -22,7 +23,8 @@ func RoamTimer():
 		Character.ChangeState(StateMachine.Idle)
 
 func ExitState():
-	Character.movement.currentDirection = Vector3.ZERO
+	#Character.movement.currentDirection = Vector3.ZERO
+	pass
 	
 func Update(delta: float):
 	Character.ProcessObstacleDetection()

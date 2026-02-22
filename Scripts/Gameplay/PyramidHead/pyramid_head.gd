@@ -6,8 +6,9 @@ extends CharacterBody3D
 @export var stateMachine:PyramidHeadStateMachine
 @export var movement:MovementComponent
 @export var flip:FlipComponent
+@export var animation:AnimationPlayer
 @export_category("Detections")
-@export var hurtboxDetection:HurtboxDetectionCast
+@export var targetDetection:PyramidHeadTargetDetection
 @export var obstacleDetectionCast:ShapeCast3D
 @export var groundDetection:RayCast3D
 
@@ -50,8 +51,8 @@ func _process(delta: float) -> void:
 	
 	
 func ProcessTargetDetection():
-	hurtboxDetection.ProcessHurtBoxDetection()
-	if(hurtboxDetection.hurtboxInCast):
+	targetDetection.ProcessDetection()
+	if(targetDetection.targetInCast):
 		print("PH : TARGET DETECTED")
 		ChangeState(stateMachine.Attack)
 		
