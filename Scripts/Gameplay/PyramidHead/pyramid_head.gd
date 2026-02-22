@@ -17,6 +17,8 @@ var currentState:PyramidHeadState
 var previousState:PyramidHeadState
 
 func _ready() -> void:
+	obstacleDetectionCast.add_exception(self)
+	targetDetection.add_exception(self)
 	InitStateMachine()
 	ChangeState(stateMachine.Idle)
 	pass
@@ -54,7 +56,7 @@ func ProcessTargetDetection():
 	targetDetection.ProcessDetection()
 	if(targetDetection.targetInCast):
 		print("PH : TARGET DETECTED")
-		ChangeState(stateMachine.Attack)
+		ChangeState(stateMachine.AttackAnticipation)
 		
 #inverse direction if an obstacle is in front of the character
 func ProcessObstacleDetection():

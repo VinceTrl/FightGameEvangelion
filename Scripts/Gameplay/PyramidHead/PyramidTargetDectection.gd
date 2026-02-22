@@ -41,5 +41,5 @@ func DebugCast():
 	if(is_colliding()):
 		for collision in get_collision_count():
 			var position := get_collision_point(collision)
-			DebugDraw3D.draw_sphere(position,0.2,Color.CHARTREUSE)
+			DebugDraw3D.draw_sphere(position,0.1,Color.GREEN)
 			#DebugDraw3D.draw_square(position,0.2,Color.CRIMSON)

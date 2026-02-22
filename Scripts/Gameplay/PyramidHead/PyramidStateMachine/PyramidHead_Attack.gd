@@ -1,6 +1,7 @@
 extends PyramidHeadState
 
 @export var attackTime:float = 1.0
+@export var attackMoveSpeed:float = 3.0
 @export var hitbox:Hitbox
 var timer:SceneTreeTimer
 
@@ -21,6 +22,17 @@ func AttackTimer():
 	await timer.timeout
 	if(Character.currentState == StateMachine.Attack):
 		Character.ChangeState(StateMachine.Idle)
+		
+		
+#function called in animation
+func StartAttackMovement():
+	Character.movement.speed = attackMoveSpeed
+	Character.movement.currentDirection = hitbox.hitDirection
+	
+#function called in animation
+func StopAttackMovement():
+	Character.movement.ResetSpeed()
+	Character.movement.currentDirection = Vector3.ZERO
 
 func ExitState():
 	hitbox.InactiveHitBox()

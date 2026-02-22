@@ -9,5 +9,4 @@ mapIndex = 1
 debugStage = true
 stageIndex = 7
 playerDebugID = Array[int]([1])
-debugHitboxShape = true
 debugActiveLineThickness = 0.05

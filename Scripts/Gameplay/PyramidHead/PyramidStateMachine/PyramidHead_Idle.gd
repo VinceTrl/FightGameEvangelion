@@ -1,6 +1,9 @@
 extends PyramidHeadState
 
-@export var idleTime:float = 3.0
+@export var idleTimeMin:float = 1.0
+@export var idleTimeMax:float = 3.0
+var idleTime:float = 3.0
+
 var timer:SceneTreeTimer
 
 func EnterState():
@@ -17,6 +20,7 @@ func Update(delta: float):
 	pass
 
 func IdleTimer():
+	idleTime = randf_range(idleTimeMin,idleTimeMax)
 	timer = get_tree().create_timer(idleTime)
 	await timer.timeout
 	if(Character.currentState == StateMachine.Idle):

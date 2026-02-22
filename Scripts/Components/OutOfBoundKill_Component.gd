@@ -18,4 +18,4 @@ func ProcessCheckOutOfBound():
 	if(!checkOutOfBound):return
 	if(parent.global_position.y < killLimit):
 		checkOutOfBound = false
-		queue_free()
+		parent.queue_free()

@@ -23,7 +23,7 @@ texture_filter = 0
 render_priority = 1
 texture = ExtResource("1_s8dn0")
 
-[node name="Hurtbox" type="Area3D" parent="."]
+[node name="Hurtbox" type="Area3D" parent="." groups=["PyramidHeadTarget"]]
 script = ExtResource("2_caure")
 randomID = true
 

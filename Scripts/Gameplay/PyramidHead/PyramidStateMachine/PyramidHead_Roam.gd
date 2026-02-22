@@ -1,6 +1,8 @@
 extends PyramidHeadState
 
-@export var roamTime:float = 5.0
+@export var roamTimeMin:float = 3.0
+@export var roamTimeMax:float = 7.0
+var roamTime:float = 5.0
 var timer:SceneTreeTimer
 
 func EnterState():
@@ -17,6 +19,7 @@ func SetRandomDirection():
 		Character.movement.currentDirection = Vector3.LEFT
 		
 func RoamTimer():
+	roamTime = randf_range(roamTimeMin,roamTimeMax)
 	timer = get_tree().create_timer(roamTime)
 	await timer.timeout
 	if(Character.currentState == StateMachine.Roam):

@@ -1,10 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://0sje40b57nvv"]
+[gd_scene load_steps=25 format=3 uid="uid://0sje40b57nvv"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_xdhn0"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_vobi2"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_4b42o"]
 [ext_resource type="PackedScene" uid="uid://ci58vtgidf8at" path="res://Scenes/Gameplay/PyramidHead/pyramid_head.tscn" id="4_xdhn0"]
-[ext_resource type="PackedScene" uid="uid://ma1a8w06qfh8" path="res://Scenes/Gameplay/beyblade.tscn" id="5_4b42o"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_my1qu"]
 [ext_resource type="PackedScene" uid="uid://0v8xynlbpg3q" path="res://Scenes/Gameplay/middle_finger.tscn" id="6_03mot"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="6_uq3if"]
@@ -205,9 +204,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01174, 4.3, 0)
 
 [node name="PyramidHead" parent="Gameplay/Objects" instance=ExtResource("4_xdhn0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592162, 0.812945, 0)
-
-[node name="Beyblade" parent="Gameplay/Objects" instance=ExtResource("5_4b42o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.38583, 0)
 
 [node name="MiddleFinger" parent="Gameplay/Objects" instance=ExtResource("6_03mot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
