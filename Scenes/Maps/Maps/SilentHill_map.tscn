@@ -1,0 +1,63 @@
+[gd_scene load_steps=22 format=3 uid="uid://w65qsbjg6t2o"]
+
+[ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_kduwq"]
+[ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="2_oejxh"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="3_tinxj"]
+[ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="4_j7try"]
+[ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="5_2viw2"]
+[ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="6_jm63t"]
+[ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="7_jfeg2"]
+[ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="8_30qur"]
+[ext_resource type="Resource" uid="uid://4kux6idtqvus" path="res://Resources/Spawnables/TrapHeart.tres" id="9_acfw1"]
+[ext_resource type="Resource" uid="uid://5mwafnwjmudh" path="res://Resources/Spawnables/Bloc.tres" id="10_o0xtj"]
+[ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="11_ui5xy"]
+[ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="12_wngnh"]
+[ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_d8iam"]
+[ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="17_07c4o"]
+[ext_resource type="PackedScene" uid="uid://bqcq0tbw3y3t6" path="res://Scenes/Maps/Environment/SilentHillEnviro.tscn" id="17_oejxh"]
+[ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="18_kduwq"]
+[ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="19_q64bo"]
+[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="20_16dku"]
+[ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="21_usxhk"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
+
+[sub_resource type="Environment" id="Environment_p4aet"]
+ambient_light_source = 2
+ambient_light_color = Color(0.808998, 0.808998, 0.808998, 1)
+
+[node name="SilentHillMap" type="Node3D" node_paths=PackedStringArray("enviro", "lights")]
+script = ExtResource("1_kduwq")
+enviro = [NodePath("Enviro")]
+lights = [NodePath("Lighting")]
+
+[node name="SpawnManager" parent="." instance=ExtResource("2_oejxh")]
+items = Array[ExtResource("3_tinxj")]([ExtResource("4_j7try"), ExtResource("5_2viw2"), ExtResource("6_jm63t"), ExtResource("7_jfeg2"), ExtResource("8_30qur"), ExtResource("9_acfw1"), ExtResource("10_o0xtj"), ExtResource("11_ui5xy"), ExtResource("12_wngnh"), ExtResource("13_d8iam")])
+
+[node name="Enviro" type="Node3D" parent="."]
+
+[node name="SilentHillEnviro" parent="Enviro" instance=ExtResource("17_oejxh")]
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Stage" type="Node" parent="."]
+
+[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom"]
+shape = SubResource("WorldBoundaryShape3D_e2grd")
+
+[node name="StageSpawner" parent="Stage" instance=ExtResource("17_07c4o")]
+map = ExtResource("18_kduwq")
+
+[node name="KillVolume" parent="Stage" instance=ExtResource("19_q64bo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="PostProcess" type="CanvasLayer" parent="."]
+script = ExtResource("20_16dku")
+configuration = ExtResource("21_usxhk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p4aet")

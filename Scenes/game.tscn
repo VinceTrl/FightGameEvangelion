@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene load_steps=17 format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" uid="uid://34on5dhs343x" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/BeachMap.tres" id="6_3xkmj"]
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiYellow.png" id="7_j3bm8"]
+[ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="7_nb51f"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 [ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
@@ -33,7 +34,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" type="Node" parent="."]
 script = ExtResource("3_dv241")
-maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("6_3xkmj")])
+maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("6_3xkmj"), ExtResource("7_nb51f")])
 
 [node name="Gameplay" type="Node" parent="."]
 
