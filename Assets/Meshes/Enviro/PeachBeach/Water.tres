@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bdcd1a0gn4kpe"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdcd1a0gn4kpe"]
 
 [ext_resource type="Texture2D" uid="uid://gec61e6ukjel" path="res://Assets/Meshes/Enviro/PeachBeach/WaterStylized.png" id="1_qecw8"]
 

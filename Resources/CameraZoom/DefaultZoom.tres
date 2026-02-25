@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ZoomParameters" load_steps=4 format=3 uid="uid://cgaw0g5mdfmxf"]
+[gd_resource type="Resource" script_class="ZoomParameters" format=3 uid="uid://cgaw0g5mdfmxf"]
 
 [ext_resource type="Script" uid="uid://cmc5xe8vg5dr3" path="res://Scripts/Camera/ZoomParams.gd" id="1_2bexw"]
 
@@ -12,9 +12,5 @@ point_count = 3
 
 [resource]
 script = ExtResource("1_2bexw")
-zoomName = &"DefaultZoom"
-zoomDuration = 2.0
-zoomDistance = 1.0
 zoomCurve = SubResource("Curve_putxy")
 translationCurve = SubResource("Curve_56qo3")
-targetOffset = Vector3(0, 0, 0)

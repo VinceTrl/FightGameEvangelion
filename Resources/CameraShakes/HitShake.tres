@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ShakeParameters" load_steps=3 format=3 uid="uid://du6y5q0t43v7t"]
+[gd_resource type="Resource" script_class="ShakeParameters" format=3 uid="uid://du6y5q0t43v7t"]
 
 [ext_resource type="Script" uid="uid://c411xrcd3f3th" path="res://Scripts/Camera/ShakeParams.gd" id="1_0fabb"]
 

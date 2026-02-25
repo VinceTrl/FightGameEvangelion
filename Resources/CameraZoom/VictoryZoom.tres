@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ZoomParameters" load_steps=4 format=3 uid="uid://v7kb7424kuor"]
+[gd_resource type="Resource" script_class="ZoomParameters" format=3 uid="uid://v7kb7424kuor"]
 
 [ext_resource type="Script" uid="uid://cmc5xe8vg5dr3" path="res://Scripts/Camera/ZoomParams.gd" id="1_paks2"]
 

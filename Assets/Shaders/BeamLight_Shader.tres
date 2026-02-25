@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=14 format=3 uid="uid://b7n1sap6b6ihc"]
+[gd_resource type="VisualShader" format=3 uid="uid://b7n1sap6b6ihc"]
 
 [ext_resource type="Texture2D" uid="uid://ob1tdxt0qhpy" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/T_BEAMLIGHT.png" id="1_ep1u3"]
 
@@ -45,73 +45,6 @@ default_value_enabled = true
 default_value = 1.0
 
 [resource]
-code = "shader_type spatial;
-render_mode blend_add, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
-
-uniform float Speed = 1.0;
-uniform sampler2D tex_frg_3;
-uniform vec4 ColorParameter : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
-uniform float Intensity = 10.0;
-
-
-
-void fragment() {
-// ColorConstant:16
-	vec4 n_out16p0 = vec4(0.000000, 0.000000, 0.000000, 1.000000);
-
-
-// Input:4
-	float n_out4p0 = TIME;
-
-
-// FloatParameter:8
-	float n_out8p0 = Speed;
-
-
-// FloatOp:7
-	float n_out7p0 = n_out4p0 * n_out8p0;
-
-
-// Input:10
-	vec2 n_out10p0 = UV;
-
-
-// VectorDecompose:11
-	float n_out11p0 = n_out10p0.x;
-	float n_out11p1 = n_out10p0.y;
-
-
-// VectorCompose:5
-	vec2 n_out5p0 = vec2(n_out7p0, n_out11p1);
-
-
-// Texture2D:3
-	vec4 n_out3p0 = texture(tex_frg_3, n_out5p0);
-
-
-// ColorParameter:13
-	vec4 n_out13p0 = ColorParameter;
-
-
-// VectorOp:12
-	vec3 n_out12p0 = vec3(n_out3p0.xyz) * vec3(n_out13p0.xyz);
-
-
-// FloatParameter:15
-	float n_out15p0 = Intensity;
-
-
-// VectorOp:14
-	vec3 n_out14p0 = n_out12p0 * vec3(n_out15p0);
-
-
-// Output:0
-	ALBEDO = vec3(n_out16p0.xyz);
-	EMISSION = n_out14p0;
-
-
-}
-"
 modes/blend = 1
 nodes/fragment/0/position = Vector2(560, 80)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_orq7x")

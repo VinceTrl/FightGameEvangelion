@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GlitchParameters" load_steps=3 format=3 uid="uid://b1kr6ya4e857u"]
+[gd_resource type="Resource" script_class="GlitchParameters" format=3 uid="uid://b1kr6ya4e857u"]
 
 [ext_resource type="Script" uid="uid://dxothgk58nro3" path="res://Scripts/GameEffects/PostProcessAnimationParams/GlitchParameters.gd" id="1_5iowo"]
 

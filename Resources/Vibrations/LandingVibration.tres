@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="VibrationParameters" load_steps=4 format=3 uid="uid://cgyhiargslct2"]
+[gd_resource type="Resource" script_class="VibrationParameters" format=3 uid="uid://cgyhiargslct2"]
 
 [ext_resource type="Script" uid="uid://cfx6xx0cjmmm1" path="res://Scripts/GameEffects/Vibration/VibrationParameters.gd" id="1_1xd51"]
 
@@ -16,4 +16,3 @@ vibrationName = &"LandingVibration"
 duration = 0.15
 weakMagnitude = SubResource("Curve_4d4lh")
 strongMagnitude = SubResource("Curve_b0h5e")
-loop = false

@@ -1,11 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://behe6ldn8esst"]
+[gd_scene format=3 uid="uid://behe6ldn8esst"]
 
 [ext_resource type="Script" uid="uid://cl5ui8gkjtf8s" path="res://Scripts/Managers/GameDebug.gd" id="1_ag8n1"]
 
-[node name="GameDebug" type="Node"]
+[node name="GameDebug" type="Node" unique_id=1767165627]
 script = ExtResource("1_ag8n1")
-debugMap = true
 mapIndex = 2
-debugStage = true
 playerDebugID = Array[int]([1])
 debugActiveLineThickness = 0.05

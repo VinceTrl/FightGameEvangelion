@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="VibrationParameters" load_steps=4 format=3 uid="uid://bjmhqldjfsex5"]
+[gd_resource type="Resource" script_class="VibrationParameters" format=3 uid="uid://bjmhqldjfsex5"]
 
 [ext_resource type="Script" uid="uid://cfx6xx0cjmmm1" path="res://Scripts/GameEffects/Vibration/VibrationParameters.gd" id="1_r3xsn"]
 
@@ -16,4 +16,3 @@ vibrationName = &"ShootVibration"
 duration = 0.7
 weakMagnitude = SubResource("Curve_4d4lh")
 strongMagnitude = SubResource("Curve_b0h5e")
-loop = false

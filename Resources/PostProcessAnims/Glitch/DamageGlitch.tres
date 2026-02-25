@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GlitchParameters" load_steps=3 format=3 uid="uid://bgvu6c31k2dbe"]
+[gd_resource type="Resource" script_class="GlitchParameters" format=3 uid="uid://bgvu6c31k2dbe"]
 
 [ext_resource type="Script" uid="uid://dxothgk58nro3" path="res://Scripts/GameEffects/PostProcessAnimationParams/GlitchParameters.gd" id="1_a8dyc"]
 
@@ -12,7 +12,6 @@ glitchName = &"Damage"
 glitchEffectTime = 0.18
 glitchAnimationCurve = SubResource("Curve_0823w")
 GlitchRange = 0.025
-GlitchNoiseQuality = 250.0
 GlitchIntenity = 0.014
 GlitchOffset = 0.007
 GlitchColorOffset = 1.601

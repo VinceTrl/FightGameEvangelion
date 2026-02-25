@@ -1,24 +1,24 @@
-[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://gf5mwn4dvi6f"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://gf5mwn4dvi6f"]
 
 [ext_resource type="Shader" path="res://Scenes/Maps/Stages/AnniversaryStages/WaterShader.gdshader" id="1_djkm2"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j24wt"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ngn2h"]
-as_normal_map = true
 noise = SubResource("FastNoiseLite_j24wt")
+as_normal_map = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cqo42"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_verwq"]
-as_normal_map = true
 noise = SubResource("FastNoiseLite_cqo42")
+as_normal_map = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_hag3a"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j24wt"]
-seamless = true
 noise = SubResource("FastNoiseLite_hag3a")
+seamless = true
 
 [resource]
 render_priority = 0
