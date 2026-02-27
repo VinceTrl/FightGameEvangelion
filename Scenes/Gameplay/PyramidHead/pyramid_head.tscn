@@ -402,7 +402,6 @@ collision_mask = 23
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0.596078, 0, 1)
 script = ExtResource("5_boo6r")
-drawDebugCast = true
 metadata/_custom_type_script = "uid://da2w8m65pm28n"
 
 [node name="ObstacleDetection" type="ShapeCast3D" parent="Raycast" unique_id=2123161786]
