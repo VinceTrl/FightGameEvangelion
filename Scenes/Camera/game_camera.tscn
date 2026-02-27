@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://diwhygl1ho1la"]
+[gd_scene format=3 uid="uid://diwhygl1ho1la"]
 
 [ext_resource type="Script" uid="uid://2yxjqjvkj34j" path="res://Scripts/Camera/GameCamera.gd" id="1_cpg4t"]
 [ext_resource type="Resource" uid="uid://cgaw0g5mdfmxf" path="res://Resources/CameraZoom/DefaultZoom.tres" id="2_e3wng"]
@@ -26,15 +26,15 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, -2.43313, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="GameCamera" type="Node3D"]
+[node name="GameCamera" type="Node3D" unique_id=1059389221]
 script = ExtResource("1_cpg4t")
 minDistZ = 1.75
 maxDistZ = 5.0
 zDistCurve = SubResource("Curve_qrsff")
 cameraOffset = Vector3(0, -0.04, 0)
 cameraSmoothnessX = 1.75
-cameraSmoothnessY = 0.85
-cameraSmoothnessZ = 0.38
+cameraSmoothnessY = 0.5
+cameraSmoothnessZ = 0.35
 canClampPosition = false
 cameraClampMax = Vector2(10, 3)
 cameraClampMin = Vector2(-5, -1)
@@ -44,17 +44,17 @@ marginHorizontal = 200
 marginVertical = 200
 distanceInMargin = 10.0
 
-[node name="CameraShake" type="Node3D" parent="."]
+[node name="CameraShake" type="Node3D" parent="." unique_id=2091339316]
 script = ExtResource("2_xo7ej")
 magnitudeOverTime = SubResource("Curve_t0je2")
 shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d"), ExtResource("14_p6ck8")])
 
-[node name="Camera3D" type="Camera3D" parent="CameraShake"]
+[node name="Camera3D" type="Camera3D" parent="CameraShake" unique_id=718838934]
 environment = ExtResource("16_3rs5q")
 size = 4.896
 near = 0.005
 
-[node name="CENTER_DEBUG_LABEL" type="Label3D" parent="."]
+[node name="CENTER_DEBUG_LABEL" type="Label3D" parent="." unique_id=1096614814]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.772981)
 visible = false
 billboard = 1
@@ -64,14 +64,14 @@ text = "CAM_TARGET
 font_size = 16
 outline_size = 6
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=101474064]
 layer = 128
 
-[node name="DEBUG_VALUES" type="Label" parent="CanvasLayer"]
+[node name="DEBUG_VALUES" type="Label" parent="CanvasLayer" unique_id=1020051639]
 offset_right = 42.0
 offset_bottom = 23.0
 
-[node name="Cam_Center" type="Sprite3D" parent="."]
+[node name="Cam_Center" type="Sprite3D" parent="." unique_id=1013428605]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -2.11005)
 visible = false
 pixel_size = 0.001

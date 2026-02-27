@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ci58vtgidf8at"]
+[gd_scene format=3 uid="uid://ci58vtgidf8at"]
 
 [ext_resource type="ArrayMesh" uid="uid://lp2xbjsup0i0" path="res://Assets/Meshes/Characters/PyramidHead/PyramidHead.obj" id="1_bntb1"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="1_lb8b3"]
@@ -19,6 +19,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k16dp"]
 radius = 0.231895
+height = 1.8
 
 [sub_resource type="Animation" id="Animation_qgami"]
 resource_name = "Attack"
@@ -329,15 +330,15 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_grti4"]
-size = Vector3(2, 2, 2)
+size = Vector3(2, 1.9165039, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ga1n5"]
 size = Vector3(2, 1.8, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_by8ij"]
-size = Vector3(0.75, 1.85, 1)
+size = Vector3(0.75, 1.6, 1)
 
-[node name="PyramidHead" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine", "movement", "flip", "animation", "targetDetection", "obstacleDetectionCast", "groundDetection")]
+[node name="PyramidHead" type="CharacterBody3D" unique_id=441335741 node_paths=PackedStringArray("stateMachine", "movement", "flip", "animation", "targetDetection", "obstacleDetectionCast", "groundDetection")]
 collision_layer = 3
 axis_lock_linear_z = true
 axis_lock_angular_x = true
@@ -352,30 +353,28 @@ targetDetection = NodePath("Raycast/TargetCast")
 obstacleDetectionCast = NodePath("Raycast/ObstacleDetection")
 groundDetection = NodePath("Raycast/GroundDetection")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00805, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2140916051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_k16dp")
 
-[node name="Visual" type="Node3D" parent="."]
+[node name="Visual" type="Node3D" parent="." unique_id=1585131695]
 
-[node name="NodeShaker" type="Node3D" parent="Visual" node_paths=PackedStringArray("nodeToShake")]
+[node name="NodeShaker" type="Node3D" parent="Visual" unique_id=1979268223 node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("1_lb8b3")
 nodeToShake = NodePath(".")
 metadata/_custom_type_script = "uid://boswmyv0w3oxy"
 
-[node name="PyramidHead" type="MeshInstance3D" parent="Visual/NodeShaker"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0, 0, 0)
+[node name="PyramidHead" type="MeshInstance3D" parent="Visual/NodeShaker" unique_id=658124043]
+transform = Transform3D(-3.221791e-06, 0, 0.89, 0, 0.89, 0, -0.89, 0, -3.221791e-06, 0, 0, 0)
 mesh = ExtResource("1_bntb1")
 skeleton = NodePath("../../..")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual"]
-libraries = {
-&"": SubResource("AnimationLibrary_e3sed")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=1317052896]
+libraries/ = SubResource("AnimationLibrary_e3sed")
 
-[node name="Hitboxes" type="Node3D" parent="."]
+[node name="Hitboxes" type="Node3D" parent="." unique_id=2014696143]
 
-[node name="Hitbox" type="Area3D" parent="Hitboxes"]
+[node name="Hitbox" type="Area3D" parent="Hitboxes" unique_id=1171378424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00075, 0.998929, 0)
 collision_layer = 4
 collision_mask = 4
@@ -387,15 +386,15 @@ randomID = true
 hitForce = 3.0
 metadata/_custom_type_script = "uid://chlkng7i45f53"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0103594, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/Hitbox" unique_id=1479719444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0103594065, -0.041748047, 0)
 shape = SubResource("BoxShape3D_grti4")
 disabled = true
 debug_color = Color(0.992206, 0.0829675, 1.92523e-07, 0.42)
 
-[node name="Raycast" type="Node3D" parent="."]
+[node name="Raycast" type="Node3D" parent="." unique_id=1051462356]
 
-[node name="TargetCast" type="ShapeCast3D" parent="Raycast"]
+[node name="TargetCast" type="ShapeCast3D" parent="Raycast" unique_id=574514270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 shape = SubResource("BoxShape3D_ga1n5")
 target_position = Vector3(0, 0, 0)
@@ -406,59 +405,58 @@ script = ExtResource("5_boo6r")
 drawDebugCast = true
 metadata/_custom_type_script = "uid://da2w8m65pm28n"
 
-[node name="ObstacleDetection" type="ShapeCast3D" parent="Raycast"]
+[node name="ObstacleDetection" type="ShapeCast3D" parent="Raycast" unique_id=2123161786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 1, 0)
 shape = SubResource("BoxShape3D_by8ij")
 target_position = Vector3(0, 0, 0)
 debug_shape_custom_color = Color(0, 0, 0.780392, 1)
 
-[node name="GroundDetection" type="RayCast3D" parent="Raycast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32548, 0, 0)
+[node name="GroundDetection" type="RayCast3D" parent="Raycast" unique_id=845620834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.05, 0)
 hit_from_inside = true
 debug_shape_custom_color = Color(0, 0, 0.752941, 1)
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." unique_id=1640439291]
 script = ExtResource("5_eg18e")
-debugState = true
 drawDebugOffset = Vector3(0, 1, 0.5)
 metadata/_custom_type_script = "uid://dmborlwoj2oxs"
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=225458060]
 script = ExtResource("6_ld2gt")
 
-[node name="Move" type="Node" parent="StateMachine"]
+[node name="Move" type="Node" parent="StateMachine" unique_id=1205219823]
 script = ExtResource("7_mo6nf")
 
-[node name="Roam" type="Node" parent="StateMachine"]
+[node name="Roam" type="Node" parent="StateMachine" unique_id=1098953220]
 script = ExtResource("8_by8ij")
 
-[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("hitbox")]
+[node name="Attack" type="Node" parent="StateMachine" unique_id=688128722 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("10_dka4h")
 attackMoveSpeed = 4.0
 hitbox = NodePath("../../Hitboxes/Hitbox")
 
-[node name="AttackAnticipation" type="Node" parent="StateMachine"]
+[node name="AttackAnticipation" type="Node" parent="StateMachine" unique_id=1958295187]
 script = ExtResource("11_qeyci")
 
-[node name="Dance" type="Node" parent="StateMachine"]
+[node name="Dance" type="Node" parent="StateMachine" unique_id=934427367]
 script = ExtResource("12_0n0cj")
 
-[node name="Components" type="Node" parent="."]
+[node name="Components" type="Node" parent="." unique_id=1742014547]
 
-[node name="MovementComponent" type="Node" parent="Components" node_paths=PackedStringArray("character")]
+[node name="MovementComponent" type="Node" parent="Components" unique_id=1213077415 node_paths=PackedStringArray("character")]
 script = ExtResource("4_grti4")
 character = NodePath("../..")
 speed = 1.0
 
-[node name="FlipComponent" type="Node" parent="Components" node_paths=PackedStringArray("movement", "flipNodes")]
+[node name="FlipComponent" type="Node" parent="Components" unique_id=1297683079 node_paths=PackedStringArray("movement", "flipNodes")]
 script = ExtResource("10_ga1n5")
 movement = NodePath("../MovementComponent")
 flipNodes = [NodePath("../../Hitboxes"), NodePath("../../Visual"), NodePath("../../Raycast")]
 
-[node name="OutOfBoundComponent" type="Node" parent="Components" node_paths=PackedStringArray("parent")]
+[node name="OutOfBoundComponent" type="Node" parent="Components" unique_id=1327222120 node_paths=PackedStringArray("parent")]
 script = ExtResource("13_b7vr3")
 parent = NodePath("../..")
 killLimit = -10.0
 
-[node name="CameraTarget" parent="." instance=ExtResource("13_6jam6")]
+[node name="CameraTarget" parent="." unique_id=80203240 instance=ExtResource("13_6jam6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1854, 0)

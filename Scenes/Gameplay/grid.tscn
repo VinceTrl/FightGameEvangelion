@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ctjn7rcqrj1yk"]
+
+[ext_resource type="Script" uid="uid://d1vx0jhskek1b" path="res://Scripts/Gameplay/Door/grid.gd" id="1_fshq4"]
+[ext_resource type="PackedScene" uid="uid://brpu1sohv2lgv" path="res://Assets/Meshes/Props/Grid/d09.mdl.fbx" id="2_jvu1f"]
+
+[sub_resource type="Curve" id="Curve_fshq4"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jvu1f"]
+size = Vector3(0.2, 2, 1)
+
+[node name="Grid" type="Node3D" unique_id=920142866 node_paths=PackedStringArray("root")]
+script = ExtResource("1_fshq4")
+root = NodePath("DoorRoot")
+translateOffset = Vector3(0, 2, 0)
+translateCurve = SubResource("Curve_fshq4")
+
+[node name="DoorRoot" type="Node3D" parent="." unique_id=840578734]
+
+[node name="d09_mdl" parent="DoorRoot" unique_id=1010210712 instance=ExtResource("2_jvu1f")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.05, 2, 0.625)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorRoot" unique_id=1684750230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+collision_layer = 193
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorRoot/StaticBody3D" unique_id=1277758510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24685872, 0)
+shape = SubResource("BoxShape3D_jvu1f")
