@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://ci58vtgidf8at" path="res://Scenes/Gameplay/PyramidHead/pyramid_head.tscn" id="4_d6vkt"]
 [ext_resource type="PackedScene" uid="uid://ctjn7rcqrj1yk" path="res://Scenes/Gameplay/grid.tscn" id="5_il36h"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="6_fbbp7"]
+[ext_resource type="Texture2D" uid="uid://0na7afj0eu5u" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_003 copy.jpg" id="7_4u0nx"]
 [ext_resource type="PackedScene" uid="uid://bt01122omko6w" path="res://Scenes/Meshes/Blockout/Wall_2M.tscn" id="7_32x60"]
 [ext_resource type="PackedScene" uid="uid://cdcmogywacklp" path="res://Scenes/Meshes/Blockout/slim_platform.tscn" id="8_w8q40"]
+[ext_resource type="Texture2D" uid="uid://c8m7jhbom17ue" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_004 copy.jpg" id="9_d6vkt"]
+[ext_resource type="PackedScene" uid="uid://bwpa86pj2o1k2" path="res://Assets/Meshes/Props/SilentHillProps/SH3_Pillar/bg_bg_fre_resized.tscn" id="9_lvdcg"]
 
 [sub_resource type="Animation" id="Animation_pt1go"]
 resource_name = "GridLoop"
@@ -167,10 +170,28 @@ _data = {
 &"GridLoop": SubResource("Animation_pt1go")
 }
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_d6vkt"]
+size = Vector2(4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il36h"]
+albedo_texture = ExtResource("7_4u0nx")
+
 [sub_resource type="BoxMesh" id="BoxMesh_pt1go"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6vkt"]
+albedo_texture = ExtResource("9_d6vkt")
+uv1_scale = Vector3(20, 1, 1)
+uv1_offset = Vector3(0, 0.5, 0)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pfgos"]
 data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4u0nx"]
+albedo_texture = ExtResource("7_4u0nx")
+uv1_world_triplanar = true
+texture_filter = 0
+stencil_flags = 2
+stencil_reference = 2
 
 [node name="SH_Stage_03" type="Node3D" unique_id=387473971 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_xnk1p")
@@ -300,6 +321,57 @@ light_color = Color(0.7053841, 0.55436206, 0.29308987, 1)
 shadow_enabled = true
 omni_range = 2.0677168
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Art" unique_id=482166098]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4, 1.5, -0.5)
+mesh = SubResource("PlaneMesh_d6vkt")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/Art/MeshInstance3D" unique_id=2122616466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = SubResource("PlaneMesh_d6vkt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level/Art/MeshInstance3D" unique_id=405579174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = SubResource("PlaneMesh_d6vkt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/Art" unique_id=1648451179]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4, 5.5, -0.5)
+mesh = SubResource("PlaneMesh_d6vkt")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/Art/MeshInstance3D2" unique_id=952078344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = SubResource("PlaneMesh_d6vkt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level/Art/MeshInstance3D2" unique_id=1051040884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = SubResource("PlaneMesh_d6vkt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level/Art" unique_id=723704034]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4, 9.5, -0.5)
+mesh = SubResource("PlaneMesh_d6vkt")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/Art/MeshInstance3D3" unique_id=1717241510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = SubResource("PlaneMesh_d6vkt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level/Art/MeshInstance3D3" unique_id=545097171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = SubResource("PlaneMesh_d6vkt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+
 [node name="Blockout" type="Node3D" parent="Level" unique_id=1597386834]
 
 [node name="Wall" parent="Level/Blockout" unique_id=487859882 instance=ExtResource("7_32x60")]
@@ -327,7 +399,7 @@ transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -0.25, 3, 0)
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 0.25, 3, 0)
 
 [node name="Wall11" parent="Level/Blockout" unique_id=1715944402 instance=ExtResource("7_32x60")]
-transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -0.25, 5, 0)
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -0.24703455, 4.0045276, 0)
 
 [node name="Wall15" parent="Level/Blockout" unique_id=283383444 instance=ExtResource("7_32x60")]
 transform = Transform3D(-2.1855694e-08, -2, 0, 0.5, -8.742278e-08, 0, 0, 0, 1, -4, 6.25, 0)
@@ -342,7 +414,7 @@ transform = Transform3D(-2.1855694e-08, -2, 0, 0.5, -8.742278e-08, 0, 0, 0, 1, 4
 transform = Transform3D(-2.1855694e-08, -2, 0, 0.5, -8.742278e-08, 0, 0, 0, 1, 4, 6.7500005, 0)
 
 [node name="Wall12" parent="Level/Blockout" unique_id=1233556302 instance=ExtResource("7_32x60")]
-transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 0.25, 5, 0)
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 0.25, 4, 0)
 
 [node name="Wall13" parent="Level/Blockout" unique_id=236696747 instance=ExtResource("7_32x60")]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -0.25, 7, 0)
@@ -359,6 +431,7 @@ transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 5.25, 7, 0)
 [node name="Ground" type="CSGMesh3D" parent="Level/Blockout" unique_id=1352657506]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_pt1go")
+material = SubResource("StandardMaterial3D_d6vkt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground" unique_id=1857113268 groups=["Ledgegrab"]]
 collision_layer = 193
@@ -370,6 +443,7 @@ shape = SubResource("ConcavePolygonShape3D_pfgos")
 [node name="Ground2" type="CSGMesh3D" parent="Level/Blockout" unique_id=1759463261]
 transform = Transform3D(12, 0, 0, 0, 2.727929, 0, 0, 0, 1, 0, 8.319245, 0)
 mesh = SubResource("BoxMesh_pt1go")
+material = SubResource("StandardMaterial3D_4u0nx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground2" unique_id=109300685 groups=["Ledgegrab"]]
 collision_layer = 193
@@ -389,6 +463,21 @@ transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -4, 4, 0)
 
 [node name="SlimPlatformBlockout10" parent="Level/Blockout" unique_id=1935629187 instance=ExtResource("8_w8q40")]
 transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 4, 4, 0)
+
+[node name="bg_bg_fre_resized" parent="Level/Blockout" unique_id=1923664650 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -0.00089883804, 10.121334, 0.031980038)
+
+[node name="bg_bg_fre_resized2" parent="Level/Blockout" unique_id=391187358 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 6.1213346, 0.031980038)
+
+[node name="bg_bg_fre_resized3" parent="Level/Blockout" unique_id=1857889185 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 3.1213346, 0.031980038)
+
+[node name="bg_bg_fre_resized4" parent="Level/Blockout" unique_id=1200291485 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.499101, 6.1213346, 0.031980038)
+
+[node name="bg_bg_fre_resized5" parent="Level/Blockout" unique_id=582658852 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.499101, 3.1213346, 0.031980038)
 
 [node name="Lighting" type="Node3D" parent="." unique_id=1606325515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
