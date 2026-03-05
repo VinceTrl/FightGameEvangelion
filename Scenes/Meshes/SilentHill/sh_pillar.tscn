@@ -1,0 +1,61 @@
+[gd_scene format=4 uid="uid://mpincs0teseg"]
+
+[ext_resource type="Texture2D" uid="uid://bb80eyme2b11p" path="res://Assets/Meshes/Props/SilentHillProps/SH3_Pillar/bg_bg_fre_5.png" id="1_jgyro"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibt3i"]
+resource_name = "mat_4"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_jgyro")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3n5lj"]
+_surfaces = [{
+"aabb": AABB(-2, 0.5, -2, 4, 12, 4),
+"format": 34359742465,
+"index_count": 72,
+"index_data": PackedByteArray("CgABAAIAAQAKAAsACwAGAAEAAgAMAAoADAACAAMACQADAAYAAwAJAAwABgALAAkACAAKAAwADQALAAoACgAIAA0ADgAJAAsACwANAA4ADwAMAAkADAAPAAgACQAOAA8ABQANAAgADQAFAAAAAAAOAA0ACAAHAAUABwAIAA8ADgAAAAQADwAEAAcABAAPAA4A"),
+"lods": [3.7495873, PackedByteArray("AAABAAIAAQAAAAQAAgAIAAAABQAAAAgACAACAAMACAAHAAUAAwAHAAgABAAJAAEACQAEAAcABwADAAkABgABAAkACQADAAYA"), 10.529146, PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABQAAAAMABAAGAAEAAwAHAAUABgAEAAcABwADAAYA")],
+"name": "mat_4",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAQAAASEEAAABAAAAAQAAAAD8AAADAAAAAQAAAAD8AAABAAAAAwAAAAD8AAABAAAAAQAAASEEAAADAAAAAwAAASEEAAABAAAAAwAAAAD8AAADAAAAAwAAASEEAAADAAAAAwAAACEEAAABAAAAAwAAAkEAAAADAAAAAQAAAkEAAAABAAAAAQAAAkEAAAADAAAAAwAAAkEAAAABAAAAAQAAACEEAAABAAAAAQAAACEEAAADAAAAAwAAACEEAAADA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b4dh3"]
+resource_name = "geometry_6c8a1636_ff39_481b_a9f7_09ae20989ae3"
+_surfaces = [{
+"aabb": AABB(-2, 0.5, -2, 4, 12, 4),
+"attribute_data": PackedByteArray("C7B/PwywPz85QEA/AHSAOguwfz8AdIA6OUBAPwywPz85QAA/AHSAOjlAQD8AdIA6OUAAPwywPz85QEA/DLA/Pwuwfz8MsD8/C7B/PwB0gDo5QEA/DLA/PzlAAD8AdIA6OUBAPwB0gDo5QAA/DLA/PzlAQD8YYP8+OUBAPwB0gDoLsH8/MMB+PjlAAD8wwH4+C7B/PzDAfj45QEA/MMB+Pguwfz8YYP8+OUBAPxhg/z45QEA/MMB+PjlAAD8wwH4+OUAAPxhg/z4LsH8/GGD/PjlAQD8wwH4+C7B/PzDAfj45QEA/MMB+PjlAQD8YYP8+OUAAPxhg/z4="),
+"format": 34359742487,
+"index_count": 72,
+"index_data": PackedByteArray("EgABAAIAAQASABMAFAATABIAEwAUABUAAAAVABQAFQAAAAMAFgAEAA8ABAAWABcADgAXABYAFwAOABgABwAYAA4AGAAHAAYADgAIAAcACAAOABkAGgAZAA4AGQAaABsABQAQABoAEAAFAAkAHAALAAwACwAcABEAHQARABwAEQAdAB4ACgAeAB0AHgAKAA0A"),
+"lods": [3.7495873, PackedByteArray("AAABAAIAAQAAAAMADgAEAA8ABAAOAAYABwAGAA4ADgAIAAcABQAIAA4ACAAFABAAEAAFAAkACwAMABEACgARAAwAEQAKAA0A"), 10.529146, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABwAGAAUABQAIAAcACAAFAAkACgALAAwACwAKAA0A")],
+"material": SubResource("StandardMaterial3D_ibt3i"),
+"name": "mat_4",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 31,
+"vertex_data": PackedByteArray("AAAAQAAASEEAAABAAAAAQAAAAD8AAADAAAAAQAAAAD8AAABAAAAAQAAASEEAAADAAAAAQAAAAD8AAABAAAAAwAAAAD8AAABAAAAAQAAASEEAAABAAAAAwAAASEEAAABAAAAAwAAASEEAAADAAAAAwAAAAD8AAADAAAAAQAAASEEAAADAAAAAwAAAAD8AAADAAAAAQAAAAD8AAADAAAAAwAAASEEAAADAAAAAwAAACEEAAABAAAAAwAAAAD8AAABAAAAAwAAAkEAAAADAAAAAwAAAkEAAAADAAAAAQAAAkEAAAABAAAAAQAAAkEAAAADAAAAAQAAACEEAAABAAAAAQAAACEEAAADAAAAAwAAAkEAAAABAAAAAQAAAkEAAAABAAAAAQAAACEEAAABAAAAAwAAACEEAAADAAAAAwAAAkEAAAABAAAAAwAAAkEAAAADAAAAAQAAAkEAAAADAAAAAQAAACEEAAADAAAAAwAAACEEAAADA////f/9//7////9//3//v////3//f/+/////f/9//7//f/9/AAD/vwAA/3///////3//fwAA/78AQP9/AAD+3wAA/3//////AAD/f///////////////v/////////+//////////7//////////v/8//38AAP/f/3//fwAA/78AAP4//v//3wAA/z/+//6f////f/9//7////9//3//v////3//f/+/////f/9//7//f/9/AAD/v/9//38AAP+//3//fwAA/78AAP9//////wAA/3//////AAAAwP7//5//////////v/////////+//////////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3n5lj")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pstrb"]
+points = PackedVector3Array(-2, 0.5, -2, 2, 0.5, -2, -2, 0.5, 2, -2, 12.5, -2, 2, 0.5, 2, 2, 12.5, -2, -2, 12.5, 2, 2, 12.5, 2)
+
+[node name="SH_Pillar" type="Node3D" unique_id=1579720155]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=675799092]
+transform = Transform3D(0.202, 0, 0, 0, 0.168, 0, 0, 0, 0.202, 0.012000024, -0.085, 0)
+mesh = SubResource("ArrayMesh_b4dh3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1719179285 groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=166524252]
+shape = SubResource("ConvexPolygonShape3D_pstrb")

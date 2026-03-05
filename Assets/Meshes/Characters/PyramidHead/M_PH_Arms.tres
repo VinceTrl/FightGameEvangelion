@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2mf5um0286v6"]
+
+[ext_resource type="Texture2D" uid="uid://cfcneipxb2wm4" path="res://Assets/Meshes/Characters/PyramidHead/arms.png" id="1_7c2rg"]
+
+[resource]
+albedo_texture = ExtResource("1_7c2rg")

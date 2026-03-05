@@ -48,13 +48,42 @@ shadow_mesh = SubResource("ArrayMesh_oeh88")
 [node name="bg_bg_fre_resized" unique_id=1923664650 instance=ExtResource("1_0mi2o")]
 transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="node_c9f657a6_be97_460c_9a04_325f0916acf5" parent="." index="0" unique_id=1355524856]
+[node name="node_c9f657a6_be97_460c_9a04_325f0916acf5" parent="." index="0" unique_id=460199410]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 3.774895e-08, 0, -3.774895e-08, 0.5, 0, 0, 0)
 
-[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh11" type="MeshInstance3D" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(862815908) index="3" unique_id=924308009]
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh0" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="0" unique_id=331717326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56918836, 0)
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh1" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="1" unique_id=223571260]
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh10" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="2" unique_id=694871050]
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh11" type="MeshInstance3D" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="3" unique_id=924308009]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 5.231753e-08, 0.59844285, 0)
+visible = false
 mesh = SubResource("ArrayMesh_72trr")
 skeleton = NodePath("")
 
-[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh3" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(862815908) index="5" unique_id=2138724752]
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh2" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="4" unique_id=1219681339]
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh3" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="5" unique_id=633253616]
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh4" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="6" unique_id=1516059145]
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh5" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="7" unique_id=616829181]
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh6" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="8" unique_id=537742519]
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh7" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="9" unique_id=115247846]
+visible = false
+
+[node name="node_7bed0fd6_bd34_4e19_946e_283a33d65153_mesh8" parent="node_c9f657a6_be97_460c_9a04_325f0916acf5/node_53a25e21_c974_43a3_9e17_c08d803fd37c/node_bfe3a2c5_6974_4aa1_85ff_ab58eca60551/node_7bed0fd6_bd34_4e19_946e_283a33d65153" parent_id_path=PackedInt32Array(2001518779) index="10" unique_id=243425438]
 visible = false

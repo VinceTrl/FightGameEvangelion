@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4g402867uroe"]
+
+[ext_resource type="Texture2D" uid="uid://3qr6xipbcov7" path="res://Assets/Meshes/Props/SilentHillProps/Textures/TilesTextures/SH_Tiles_Full.png" id="1_yxluy"]
+[ext_resource type="PackedScene" uid="uid://bt01122omko6w" path="res://Scenes/Meshes/Blockout/Wall_2M.tscn" id="2_o0gl3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eglyb"]
+size = Vector3(0.5, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oin8r"]
+albedo_texture = ExtResource("1_yxluy")
+uv1_scale = Vector3(2, 2, 1)
+
+[node name="SH_Wall" type="Node3D" unique_id=1158381061]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2093153638]
+mesh = SubResource("BoxMesh_eglyb")
+skeleton = NodePath("../Wall")
+surface_material_override/0 = SubResource("StandardMaterial3D_oin8r")
+
+[node name="Wall" parent="." unique_id=487859882 instance=ExtResource("2_o0gl3")]

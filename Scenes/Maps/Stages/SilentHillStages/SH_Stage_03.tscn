@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="6_fbbp7"]
 [ext_resource type="Texture2D" uid="uid://0na7afj0eu5u" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_003 copy.jpg" id="7_4u0nx"]
 [ext_resource type="PackedScene" uid="uid://bt01122omko6w" path="res://Scenes/Meshes/Blockout/Wall_2M.tscn" id="7_32x60"]
+[ext_resource type="PackedScene" uid="uid://d4g402867uroe" path="res://Scenes/Meshes/SilentHill/sh_wall.tscn" id="8_il36h"]
 [ext_resource type="PackedScene" uid="uid://cdcmogywacklp" path="res://Scenes/Meshes/Blockout/slim_platform.tscn" id="8_w8q40"]
 [ext_resource type="Texture2D" uid="uid://c8m7jhbom17ue" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_004 copy.jpg" id="9_d6vkt"]
 [ext_resource type="PackedScene" uid="uid://bwpa86pj2o1k2" path="res://Assets/Meshes/Props/SilentHillProps/SH3_Pillar/bg_bg_fre_resized.tscn" id="9_lvdcg"]
@@ -170,11 +171,12 @@ _data = {
 &"GridLoop": SubResource("Animation_pt1go")
 }
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_d6vkt"]
-size = Vector2(4, 4)
+[sub_resource type="PlaneMesh" id="PlaneMesh_il36h"]
+size = Vector2(40, 40)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il36h"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbbp7"]
 albedo_texture = ExtResource("7_4u0nx")
+uv1_scale = Vector3(12, 12, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pt1go"]
 
@@ -321,56 +323,34 @@ light_color = Color(0.7053841, 0.55436206, 0.29308987, 1)
 shadow_enabled = true
 omni_range = 2.0677168
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Art" unique_id=482166098]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4, 1.5, -0.5)
-mesh = SubResource("PlaneMesh_d6vkt")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="SH_Wall" parent="Level/Art" unique_id=1158381061 instance=ExtResource("8_il36h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24795699, 3, 0.11462401)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/Art/MeshInstance3D" unique_id=2122616466]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-mesh = SubResource("PlaneMesh_d6vkt")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="SH_Wall2" parent="Level/Art" unique_id=207798352 instance=ExtResource("8_il36h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.252043, 3, 0.11462401)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level/Art/MeshInstance3D" unique_id=405579174]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-mesh = SubResource("PlaneMesh_d6vkt")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="SH_Wall3" parent="Level/Art" unique_id=3529458 instance=ExtResource("8_il36h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24795699, 6.9624557, 0.11462401)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/Art" unique_id=1648451179]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4, 5.5, -0.5)
-mesh = SubResource("PlaneMesh_d6vkt")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="SH_Wall4" parent="Level/Art" unique_id=480827558 instance=ExtResource("8_il36h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.252043, 6.9624557, 0.11462401)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/Art/MeshInstance3D2" unique_id=952078344]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-mesh = SubResource("PlaneMesh_d6vkt")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="SH_Wall5" parent="Level/Art" unique_id=1089574407 instance=ExtResource("8_il36h")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -4.002043, 6.2124557, 0.11462401)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level/Art/MeshInstance3D2" unique_id=1051040884]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-mesh = SubResource("PlaneMesh_d6vkt")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="SH_Wall6" parent="Level/Art" unique_id=371126220 instance=ExtResource("8_il36h")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -4.002043, 6.7124557, 0.11462401)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level/Art" unique_id=723704034]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4, 9.5, -0.5)
-mesh = SubResource("PlaneMesh_d6vkt")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="SH_Wall7" parent="Level/Art" unique_id=2018491486 instance=ExtResource("8_il36h")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.9979572, 6.7124557, 0.11462401)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/Art/MeshInstance3D3" unique_id=1717241510]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-mesh = SubResource("PlaneMesh_d6vkt")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="SH_Wall8" parent="Level/Art" unique_id=168276533 instance=ExtResource("8_il36h")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.9979572, 6.2124557, 0.11462401)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level/Art/MeshInstance3D3" unique_id=545097171]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-mesh = SubResource("PlaneMesh_d6vkt")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_il36h")
+[node name="Background" type="MeshInstance3D" parent="Level/Art" unique_id=560103726]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5)
+mesh = SubResource("PlaneMesh_il36h")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbbp7")
 
 [node name="Blockout" type="Node3D" parent="Level" unique_id=1597386834]
 
@@ -440,6 +420,18 @@ collision_mask = 0
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground/StaticBody3D" unique_id=1109801989]
 shape = SubResource("ConcavePolygonShape3D_pfgos")
 
+[node name="Ground3" type="CSGMesh3D" parent="Level/Blockout" unique_id=1516675]
+transform = Transform3D(12, 0, 0, 0, 2.9, 0, 0, 0, 1, 0, -2.5, 0)
+mesh = SubResource("BoxMesh_pt1go")
+material = SubResource("StandardMaterial3D_d6vkt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground3" unique_id=1764533108 groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground3/StaticBody3D" unique_id=1932499660]
+shape = SubResource("ConcavePolygonShape3D_pfgos")
+
 [node name="Ground2" type="CSGMesh3D" parent="Level/Blockout" unique_id=1759463261]
 transform = Transform3D(12, 0, 0, 0, 2.727929, 0, 0, 0, 1, 0, 8.319245, 0)
 mesh = SubResource("BoxMesh_pt1go")
@@ -474,10 +466,10 @@ transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 
 transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 3.1213346, 0.031980038)
 
 [node name="bg_bg_fre_resized4" parent="Level/Blockout" unique_id=1200291485 instance=ExtResource("9_lvdcg")]
-transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.499101, 6.1213346, 0.031980038)
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 6.1213346, 0.031980038)
 
 [node name="bg_bg_fre_resized5" parent="Level/Blockout" unique_id=582658852 instance=ExtResource("9_lvdcg")]
-transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.499101, 3.1213346, 0.031980038)
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 3.1213346, 0.031980038)
 
 [node name="Lighting" type="Node3D" parent="." unique_id=1606325515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)

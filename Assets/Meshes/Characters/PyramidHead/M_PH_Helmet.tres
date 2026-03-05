@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0d0v8srt88jo"]
+
+[ext_resource type="Texture2D" uid="uid://dcpbo1khunsmm" path="res://Assets/Meshes/Characters/PyramidHead/helmet.png" id="1_rksc5"]
+
+[resource]
+albedo_texture = ExtResource("1_rksc5")

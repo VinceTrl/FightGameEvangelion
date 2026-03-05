@@ -14,7 +14,7 @@ func EnterState():
 	else:
 		hitbox.hitDirection = Vector3.LEFT
 	
-	Character.animation.play("Attack")
+	#Character.animation.play("Attack")
 	AttackTimer()
 		
 func AttackTimer():
