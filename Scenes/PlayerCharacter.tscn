@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://ch75cwblkhlni"]
+[gd_scene format=3 uid="uid://ch75cwblkhlni"]
 
 [ext_resource type="Script" uid="uid://1nqqf1x2wfer" path="res://Scripts/Player/CharacterController.gd" id="1_ubpar"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_dme1j"]
@@ -869,7 +869,7 @@ streams_count = 2
 stream_0/stream = ExtResource("42_4e748")
 stream_1/stream = ExtResource("42_af708")
 
-[node name="Player" type="CharacterBody3D" groups=["PyramidHeadTarget"]]
+[node name="Player" type="CharacterBody3D" unique_id=2134775144 groups=["PyramidHeadTarget"]]
 collision_layer = 2
 collision_mask = 0
 axis_lock_linear_z = true
@@ -890,10 +890,10 @@ chargeAttackTime = 1.25
 attackForceCurve = SubResource("Curve_ou6xi")
 chargeShootTime = 3.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=969492704]
 layer = 128
 
-[node name="DEBUG_VALUES" type="Label" parent="CanvasLayer"]
+[node name="DEBUG_VALUES" type="Label" parent="CanvasLayer" unique_id=1861126739]
 z_index = 200
 anchors_preset = 1
 anchor_left = 1.0
@@ -902,17 +902,17 @@ offset_left = -242.0
 offset_bottom = 23.0
 grow_horizontal = 0
 
-[node name="Collider" type="CollisionShape3D" parent="."]
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=862268796]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0209117, 0)
 shape = SubResource("CapsuleShape3D_fu4u0")
 
-[node name="NodeShaker" type="Node3D" parent="." node_paths=PackedStringArray("nodeToShake")]
+[node name="NodeShaker" type="Node3D" parent="." unique_id=1314668046 node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("2_dme1j")
 nodeToShake = NodePath("../Sprite2D")
 magnitude = 0.1
 frequency = 1.0
 
-[node name="Sprite2D" type="Sprite3D" parent="."]
+[node name="Sprite2D" type="Sprite3D" parent="." unique_id=1571587711]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.0393853, 0)
 material_override = ExtResource("3_4fxgw")
 texture_filter = 0
@@ -922,64 +922,62 @@ vframes = 20
 script = ExtResource("4_1nn6i")
 hitColor = Color(1, 1, 1, 1)
 
-[node name="PlayerSpear" parent="." instance=ExtResource("6_vx25g")]
+[node name="PlayerSpear" parent="." unique_id=1420395720 instance=ExtResource("6_vx25g")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0308377, 0)
 
-[node name="Animator" type="AnimationPlayer" parent="."]
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=1851627904]
 root_node = NodePath("../Sprite2D")
-libraries = {
-&"": SubResource("AnimationLibrary_jxbaw")
-}
+libraries/ = SubResource("AnimationLibrary_jxbaw")
 next/JumpStart = &"Jump"
 script = ExtResource("14_q4g8e")
 ignoreTimeScale = false
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Animator"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Animator" unique_id=965132780]
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." unique_id=83922936]
 script = ExtResource("5_hmp2k")
 
-[node name="Locked" type="Node" parent="StateMachine"]
+[node name="Locked" type="Node" parent="StateMachine" unique_id=839709219]
 script = ExtResource("6_85275")
 
-[node name="Ledgegrab" type="Node" parent="StateMachine"]
+[node name="Ledgegrab" type="Node" parent="StateMachine" unique_id=1327794521]
 script = ExtResource("16_i7cct")
 snapToPositionX = SubResource("Curve_uhhuy")
 snapToPositionY = SubResource("Curve_a28o5")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=838237765]
 script = ExtResource("6_726n8")
 
-[node name="Run" type="Node" parent="StateMachine"]
+[node name="Run" type="Node" parent="StateMachine" unique_id=1404669871]
 script = ExtResource("7_y4pfp")
 
-[node name="Jump" type="Node" parent="StateMachine"]
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1600182061]
 script = ExtResource("8_g4l1g")
 
-[node name="Bounce" type="Node" parent="StateMachine"]
+[node name="Bounce" type="Node" parent="StateMachine" unique_id=887620266]
 script = ExtResource("20_oot65")
 
-[node name="JumpPeak" type="Node" parent="StateMachine"]
+[node name="JumpPeak" type="Node" parent="StateMachine" unique_id=342509499]
 script = ExtResource("9_qpdmo")
 
-[node name="Fall" type="Node" parent="StateMachine"]
+[node name="Fall" type="Node" parent="StateMachine" unique_id=1755079321]
 script = ExtResource("10_cy8xa")
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="StateMachine" unique_id=887389155]
 script = ExtResource("13_utoig")
 
-[node name="Shoot" type="Node" parent="StateMachine"]
+[node name="Shoot" type="Node" parent="StateMachine" unique_id=998557922]
 script = ExtResource("15_ow3as")
 additiveRecoil = 3.0
 recoilCurve = SubResource("Curve_gijy7")
 recoilAdditiveCurve = SubResource("Curve_7yxmx")
 
-[node name="Hurt" type="Node" parent="StateMachine"]
+[node name="Hurt" type="Node" parent="StateMachine" unique_id=2031754449]
 script = ExtResource("14_gm8e6")
 hurtDuration = 0.25
 damageGlitchEffect = ExtResource("30_k65qb")
 
-[node name="Dash" type="Node" parent="StateMachine"]
+[node name="Dash" type="Node" parent="StateMachine" unique_id=260102926]
 script = ExtResource("20_t6j6y")
 maxDashSpeed = 10.0
 dashDuration = 0.2
@@ -987,161 +985,161 @@ dashSpeedCurve = SubResource("Curve_8vhkr")
 dashMomentum = 0.5
 ghostInterval = 0.015
 
-[node name="Death" type="Node" parent="StateMachine"]
+[node name="Death" type="Node" parent="StateMachine" unique_id=1766270244]
 script = ExtResource("27_vfu8l")
 glitchEffect = ExtResource("33_hpf16")
 
-[node name="ChargingAttack" type="Node" parent="StateMachine"]
+[node name="ChargingAttack" type="Node" parent="StateMachine" unique_id=686577720]
 script = ExtResource("32_r0xa3")
 
-[node name="ChargeShoot" type="Node" parent="StateMachine"]
+[node name="ChargeShoot" type="Node" parent="StateMachine" unique_id=1713895212]
 script = ExtResource("35_8paei")
 
-[node name="KnockBack" type="Node" parent="StateMachine"]
+[node name="KnockBack" type="Node" parent="StateMachine" unique_id=1738660593]
 script = ExtResource("37_h0gmo")
 knockbackDuration = 0.2
 knockbackSpeedCurve = SubResource("Curve_dt2x8")
 
-[node name="Taunt" type="Node" parent="StateMachine"]
+[node name="Taunt" type="Node" parent="StateMachine" unique_id=953209833]
 script = ExtResource("32_b3v0a")
 
-[node name="Timers" type="Node" parent="."]
+[node name="Timers" type="Node" parent="." unique_id=1721187466]
 
-[node name="JumpBuffer" type="Timer" parent="Timers"]
+[node name="JumpBuffer" type="Timer" parent="Timers" unique_id=1417123872]
 one_shot = true
 
-[node name="CoyoteTimer" type="Timer" parent="Timers"]
+[node name="CoyoteTimer" type="Timer" parent="Timers" unique_id=913164229]
 one_shot = true
 
-[node name="DashTimer" type="Timer" parent="Timers"]
+[node name="DashTimer" type="Timer" parent="Timers" unique_id=500330053]
 one_shot = true
 
-[node name="DashBuffer" type="Timer" parent="Timers"]
+[node name="DashBuffer" type="Timer" parent="Timers" unique_id=501887015]
 one_shot = true
 
-[node name="RecoilTimer" type="Timer" parent="Timers"]
+[node name="RecoilTimer" type="Timer" parent="Timers" unique_id=169449159]
 one_shot = true
 
-[node name="AttackBuffer" type="Timer" parent="Timers"]
+[node name="AttackBuffer" type="Timer" parent="Timers" unique_id=572245667]
 one_shot = true
 
-[node name="HurtTimer" type="Timer" parent="Timers"]
+[node name="HurtTimer" type="Timer" parent="Timers" unique_id=1363928210]
 one_shot = true
 
-[node name="ReloadTimer" type="Timer" parent="Timers"]
+[node name="ReloadTimer" type="Timer" parent="Timers" unique_id=850083654]
 one_shot = true
 
-[node name="ChargeAttackTimer" type="Timer" parent="Timers"]
+[node name="ChargeAttackTimer" type="Timer" parent="Timers" unique_id=274877155]
 one_shot = true
 
-[node name="ChargeShootTimer" type="Timer" parent="Timers"]
+[node name="ChargeShootTimer" type="Timer" parent="Timers" unique_id=698783462]
 one_shot = true
 
-[node name="KnockbackTimer" type="Timer" parent="Timers"]
+[node name="KnockbackTimer" type="Timer" parent="Timers" unique_id=1521752150]
 one_shot = true
 
-[node name="PlayerAmmo" type="Node" parent="."]
+[node name="PlayerAmmo" type="Node" parent="." unique_id=922214363]
 script = ExtResource("28_oqnrj")
 maxAmmo = 7
 startAmmo = 5
 reloadOverTime = false
 reloadTime = 6.0
 
-[node name="HitboxUp" type="Area3D" parent="."]
+[node name="HitboxUp" type="Area3D" parent="." unique_id=2012882086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.366055, 0)
 script = ExtResource("14_fgxac")
 isActive = false
 hitDirection = Vector3(0, 1, 0)
 
-[node name="CollisionShapeHitboxUp" type="CollisionShape3D" parent="HitboxUp"]
+[node name="CollisionShapeHitboxUp" type="CollisionShape3D" parent="HitboxUp" unique_id=98852743]
 shape = SubResource("BoxShape3D_cr8h1")
 disabled = true
 
-[node name="Hitbox" type="Area3D" parent="."]
+[node name="Hitbox" type="Area3D" parent="." unique_id=95156596]
 collision_layer = 4
 script = ExtResource("14_fgxac")
 isActive = false
 
-[node name="CollisionShapeHitbox" type="CollisionShape3D" parent="Hitbox"]
+[node name="CollisionShapeHitbox" type="CollisionShape3D" parent="Hitbox" unique_id=228254732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279227, 0.0661326, 0)
 shape = SubResource("BoxShape3D_uhhuy")
 disabled = true
 
-[node name="HitboxDown" type="Area3D" parent="."]
+[node name="HitboxDown" type="Area3D" parent="." unique_id=1827117146]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25047, 0)
 script = ExtResource("14_fgxac")
 isActive = false
 hitDirection = Vector3(0, -1, 0)
 
-[node name="CollisionShapeHitboxDown" type="CollisionShape3D" parent="HitboxDown"]
+[node name="CollisionShapeHitboxDown" type="CollisionShape3D" parent="HitboxDown" unique_id=737684610]
 shape = SubResource("BoxShape3D_cr8h1")
 disabled = true
 
-[node name="Hurtbox" type="Area3D" parent="."]
+[node name="Hurtbox" type="Area3D" parent="." unique_id=281787874]
 collision_layer = 4
 script = ExtResource("15_3tuu1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1985773683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0757026, 0)
 shape = SubResource("BoxShape3D_7jq5e")
 
-[node name="ShootPointRoot" type="Node3D" parent="."]
+[node name="ShootPointRoot" type="Node3D" parent="." unique_id=136375148]
 
-[node name="ShootPoint" type="Marker3D" parent="ShootPointRoot"]
+[node name="ShootPoint" type="Marker3D" parent="ShootPointRoot" unique_id=72335860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0775437, -0.139844, 0)
 
-[node name="PlayerAudio" type="Node" parent="."]
+[node name="PlayerAudio" type="Node" parent="." unique_id=805557854]
 
-[node name="Sfx" type="AudioStreamPlayer" parent="PlayerAudio"]
+[node name="Sfx" type="AudioStreamPlayer" parent="PlayerAudio" unique_id=1575507864]
 bus = &"SFX"
 
-[node name="Sfx_Attack" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Attack" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=288311444]
 volume_db = 10.0
 bus = &"SFX"
 
-[node name="Sfx_Contact" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Contact" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=1851878681]
 stream = ExtResource("35_32tav")
 volume_db = 41.861
 bus = &"SFX"
 
-[node name="Sfx_AttackChargeReady" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_AttackChargeReady" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=1094068542]
 stream = ExtResource("36_tkpog")
 bus = &"SFX"
 
-[node name="Sfx_Jump" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Jump" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=176267508]
 bus = &"SFX"
 
-[node name="Sfx_Shoot" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Shoot" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=458244172]
 volume_db = -2.0
 bus = &"SFX"
 
-[node name="Sfx_ChargeShoot" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_ChargeShoot" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=1995181825]
 bus = &"SFX"
 
-[node name="Sfx_Dash" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Dash" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=1292085865]
 bus = &"SFX"
 
-[node name="Sfx_Hurt" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Hurt" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=283837401]
 volume_db = -8.0
 bus = &"SFX"
 
-[node name="Sfx_Death" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Death" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=1237981510]
 bus = &"SFX"
 
-[node name="Sfx_Move" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Move" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=707668463]
 bus = &"SFX"
 
-[node name="Sfx_Mi" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Mi" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=456144051]
 stream = SubResource("AudioStreamRandomizer_lnam8")
 bus = &"SFX"
 
-[node name="Sfx_Kiki" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="Sfx_Kiki" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=1267623365]
 stream = SubResource("AudioStreamRandomizer_yh1nb")
 bus = &"SFX"
 
-[node name="LedgegrabRaycasts" type="Node3D" parent="."]
+[node name="LedgegrabRaycasts" type="Node3D" parent="." unique_id=1852345305]
 
-[node name="LedgeRightUpper" type="RayCast3D" parent="LedgegrabRaycasts"]
+[node name="LedgeRightUpper" type="RayCast3D" parent="LedgegrabRaycasts" unique_id=967974260]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
 target_position = Vector3(0.325, 0, 0)
@@ -1149,7 +1147,7 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.823529, 1, 0, 1)
 
-[node name="LedgeLeftUpper" type="RayCast3D" parent="LedgegrabRaycasts"]
+[node name="LedgeLeftUpper" type="RayCast3D" parent="LedgegrabRaycasts" unique_id=268046320]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160142, 0)
 target_position = Vector3(-0.325, 0, 0)
@@ -1157,7 +1155,7 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.823529, 1, 0, 1)
 
-[node name="LedgeRightLower" type="RayCast3D" parent="LedgegrabRaycasts"]
+[node name="LedgeRightLower" type="RayCast3D" parent="LedgegrabRaycasts" unique_id=1480198918]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
 target_position = Vector3(0.25, 0, 0)
@@ -1165,7 +1163,7 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.823529, 1, 0, 1)
 
-[node name="LedgeLeftLower" type="RayCast3D" parent="LedgegrabRaycasts"]
+[node name="LedgeLeftLower" type="RayCast3D" parent="LedgegrabRaycasts" unique_id=1282126186]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0773905, 0)
 target_position = Vector3(-0.25, 0, 0)
@@ -1173,9 +1171,9 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.823529, 1, 0, 1)
 
-[node name="RaycastHolder" type="Node3D" parent="."]
+[node name="RaycastHolder" type="Node3D" parent="." unique_id=1221794190]
 
-[node name="BackPlayerDetection" type="RayCast3D" parent="RaycastHolder"]
+[node name="BackPlayerDetection" type="RayCast3D" parent="RaycastHolder" unique_id=1382043201]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.148455, 0, 0)
 target_position = Vector3(-0.5, 0, 0)
 collision_mask = 2
@@ -1183,13 +1181,13 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0.366727, 0.432952, 0.970629, 1)
 
-[node name="OneWayPlatformRayCast" type="RayCast3D" parent="RaycastHolder"]
+[node name="OneWayPlatformRayCast" type="RayCast3D" parent="RaycastHolder" unique_id=1940362628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.109699, 0)
 target_position = Vector3(0, -0.3, 0)
 debug_shape_custom_color = Color(0.451456, 0.650862, 0, 1)
 script = ExtResource("47_uhhuy")
 
-[node name="GroundLocation" type="Marker3D" parent="."]
+[node name="GroundLocation" type="Marker3D" parent="." unique_id=553003326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.200597, 0)
 gizmo_extents = 0.38
 

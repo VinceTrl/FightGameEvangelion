@@ -7,7 +7,7 @@ var timer:SceneTreeTimer
 func EnterState():
 	Name = "AttackAnticipation"
 	Character.movement.currentDirection = Vector3.ZERO
-	Character.animation.play("Attack")
+	Character.animation.play("PH_AnimationLibrary/AttackMelee")
 	StateTimer()
 		
 func StateTimer():

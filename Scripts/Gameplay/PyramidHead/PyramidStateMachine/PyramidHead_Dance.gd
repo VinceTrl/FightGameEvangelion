@@ -6,7 +6,8 @@ var timer:SceneTreeTimer
 func EnterState():
 	Name = "Dance"
 	Character.movement.currentDirection = Vector3.ZERO
-	Character.animation.play("Dance")
+	#Character.animation.play("PH_AnimationLibrary/Dance")
+	RandomDance()
 	StateTimer()
 	
 func ExitState():
@@ -20,3 +21,15 @@ func StateTimer():
 	await timer.timeout
 	if(Character.currentState == StateMachine.Dance):
 		Character.ChangeState(StateMachine.Idle)
+		
+func RandomDance():
+	var rng = randi_range(1,3)
+	match rng:
+		1:
+			Character.animation.play("PH_AnimationLibrary/Dance")
+		2:
+			Character.animation.play("PH_AnimationLibrary/Dance_HipHop")
+		3:
+			Character.animation.play("PH_AnimationLibrary/Dance_Step")
+	
+	pass

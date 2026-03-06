@@ -7,7 +7,7 @@ var timer:SceneTreeTimer
 
 func EnterState():
 	Name = "Roam"
-	Character.animation.play("Walk")
+	Character.animation.play("PH_AnimationLibrary/Walk")
 	SetRandomDirection()
 	RoamTimer()
 		

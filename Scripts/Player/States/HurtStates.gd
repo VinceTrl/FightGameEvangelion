@@ -32,7 +32,7 @@ func EnterState():
 	hurtTimer.start(hurtTime)
 	Player.Ammo.AddTime()
 	
-	ImpactFx()
+	#ImpactFx()
 	
 	#Hurt effects
 	Manager.gameCamera.FocusTargetZoom(Player,Manager.gameCamera.GetZoomParamFromName("HitZoom"))

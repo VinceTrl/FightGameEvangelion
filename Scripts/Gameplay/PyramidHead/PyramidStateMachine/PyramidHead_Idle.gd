@@ -9,7 +9,7 @@ var timer:SceneTreeTimer
 func EnterState():
 	Name = "Idle"
 	Character.movement.currentDirection = Vector3.ZERO
-	Character.animation.play("Idle")
+	Character.animation.play("PH_AnimationLibrary/Idle")
 	IdleTimer()
 	
 func ExitState():
