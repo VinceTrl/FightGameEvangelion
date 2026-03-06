@@ -201,7 +201,7 @@ func DetectTargetInForbiddenMargins() -> float:
 	for node in cameraTargets:
 		var screen_pos = camera.unproject_position(node.global_position)
 		var viewport_size = get_viewport().size
-		var distanceRatio:float = 0.0 
+		var distanceRatio:float = 0.0
 
 		if screen_pos.x < marginHorizontal:
 			distanceRatio = screen_pos.x / marginHorizontal

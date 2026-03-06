@@ -72,7 +72,6 @@ environment = SubResource("Environment_p4aet")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2043859368]
 layer = -100
-visible = false
 
 [node name="DarkFog" type="ColorRect" parent="CanvasLayer" unique_id=2105010215]
 material = SubResource("ShaderMaterial_kduwq")
