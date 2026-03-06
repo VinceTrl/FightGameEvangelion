@@ -76,7 +76,7 @@ var isInvicible: bool = false
 @export var maxJumps = 2
 @export var fallGravityMultiplier = 1.5
 var isAboutToDrop:bool = false
-@export var dropInputTime:float = 1.0
+@export var dropInputTime:float = 0.5
 @export_group("")
 
 #ledgegrab variable
@@ -357,7 +357,7 @@ func HandleLanding():
 		
 func HandleDrop():
 	if(one_way_platform_ray_cast.is_on_one_way_platform()):
-		if(keyDownPressed and !isAboutToDrop):
+		if(keyDown and !isAboutToDrop):
 			print("DROP : is about to drop")
 			isAboutToDrop = true
 			await get_tree().create_timer(dropInputTime,true,false,true).timeout
