@@ -246,7 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.907838, 0.0010709763, 0)
 
 [node name="Grids" type="Node3D" parent="Gameplay/Objects" unique_id=1438096924]
 
-[node name="GridAnimation" type="AnimationPlayer" parent="Gameplay/Objects/Grids" unique_id=510278331]
+[node name="GridOrchester" type="AnimationPlayer" parent="Gameplay/Objects/Grids" unique_id=510278331]
 libraries/ = SubResource("AnimationLibrary_pfgos")
 autoplay = &"GridLoop"
 
@@ -349,8 +349,24 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.99
 
 [node name="Background" type="MeshInstance3D" parent="Level/Art" unique_id=560103726]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5)
+visible = false
 mesh = SubResource("PlaneMesh_il36h")
 surface_material_override/0 = SubResource("StandardMaterial3D_fbbp7")
+
+[node name="bg_bg_fre_resized" parent="Level/Art" unique_id=1923664650 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -0.00089883804, 10.121334, 0.14507703)
+
+[node name="bg_bg_fre_resized2" parent="Level/Art" unique_id=391187358 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 6.1213346, 0.14507703)
+
+[node name="bg_bg_fre_resized3" parent="Level/Art" unique_id=1857889185 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 3.1213346, 0.14507703)
+
+[node name="bg_bg_fre_resized4" parent="Level/Art" unique_id=1200291485 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 6.1213346, 0.14507703)
+
+[node name="bg_bg_fre_resized5" parent="Level/Art" unique_id=582658852 instance=ExtResource("9_lvdcg")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 3.1213346, 0.14507703)
 
 [node name="Blockout" type="Node3D" parent="Level" unique_id=1597386834]
 
@@ -455,21 +471,6 @@ transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -4, 4, 0)
 
 [node name="SlimPlatformBlockout10" parent="Level/Blockout" unique_id=1935629187 instance=ExtResource("8_w8q40")]
 transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 4, 4, 0)
-
-[node name="bg_bg_fre_resized" parent="Level/Blockout" unique_id=1923664650 instance=ExtResource("9_lvdcg")]
-transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -0.00089883804, 10.121334, 0.031980038)
-
-[node name="bg_bg_fre_resized2" parent="Level/Blockout" unique_id=391187358 instance=ExtResource("9_lvdcg")]
-transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 6.1213346, 0.031980038)
-
-[node name="bg_bg_fre_resized3" parent="Level/Blockout" unique_id=1857889185 instance=ExtResource("9_lvdcg")]
-transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 3.1213346, 0.031980038)
-
-[node name="bg_bg_fre_resized4" parent="Level/Blockout" unique_id=1200291485 instance=ExtResource("9_lvdcg")]
-transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 6.1213346, 0.031980038)
-
-[node name="bg_bg_fre_resized5" parent="Level/Blockout" unique_id=582658852 instance=ExtResource("9_lvdcg")]
-transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 3.1213346, 0.031980038)
 
 [node name="Lighting" type="Node3D" parent="." unique_id=1606325515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)

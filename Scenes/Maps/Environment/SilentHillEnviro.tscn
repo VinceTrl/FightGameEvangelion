@@ -1,5 +1,14 @@
 [gd_scene format=3 uid="uid://bqcq0tbw3y3t6"]
 
+[ext_resource type="Texture2D" uid="uid://0na7afj0eu5u" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_003 copy.jpg" id="1_77u8w"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h3i8l"]
+size = Vector2(40, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rho7"]
+albedo_texture = ExtResource("1_77u8w")
+uv1_scale = Vector3(12, 12, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_y3bmo"]
 size = Vector2(1024, 768)
 
@@ -7,6 +16,11 @@ size = Vector2(1024, 768)
 albedo_color = Color(0.8218921, 0.00014518641, 7.9512e-05, 1)
 
 [node name="SilentHillEnviro" type="Node3D" unique_id=720497613]
+
+[node name="Background" type="MeshInstance3D" parent="." unique_id=1721070592]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5)
+mesh = SubResource("PlaneMesh_h3i8l")
+surface_material_override/0 = SubResource("StandardMaterial3D_0rho7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1012669417]
 transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 6.99382e-07, -16)

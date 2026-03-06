@@ -4,21 +4,134 @@
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_vgfps"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_xqqyk"]
 [ext_resource type="PackedScene" uid="uid://ci58vtgidf8at" path="res://Scenes/Gameplay/PyramidHead/pyramid_head.tscn" id="4_3pgvw"]
-[ext_resource type="PackedScene" uid="uid://0v8xynlbpg3q" path="res://Scenes/Gameplay/middle_finger.tscn" id="5_3whsc"]
+[ext_resource type="PackedScene" uid="uid://ctjn7rcqrj1yk" path="res://Scenes/Gameplay/grid.tscn" id="5_cvfy7"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="6_4fjng"]
+[ext_resource type="PackedScene" uid="uid://cdcmogywacklp" path="res://Scenes/Meshes/Blockout/slim_platform.tscn" id="7_bxcrv"]
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="7_nhyuj"]
-[ext_resource type="PackedScene" uid="uid://bgtkufl3mhsvv" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_1.tscn" id="8_l1c6o"]
-[ext_resource type="PackedScene" uid="uid://dn4o2i18mh0aa" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_6.tscn" id="9_cudxk"]
-[ext_resource type="PackedScene" uid="uid://bldh0i8oemqbq" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_2.tscn" id="10_rck1b"]
-[ext_resource type="PackedScene" uid="uid://cadgbgc07lh0p" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_rope_1.tscn" id="11_utowf"]
-[ext_resource type="PackedScene" uid="uid://cg8gb5k6q6tcu" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_rope_2.tscn" id="12_578m3"]
-[ext_resource type="PackedScene" uid="uid://bk0cup5srm300" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_5.tscn" id="13_7siva"]
-[ext_resource type="PackedScene" uid="uid://b6u3w7fooi3po" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_beam_7.tscn" id="14_tnfsq"]
-[ext_resource type="PackedScene" uid="uid://bg02nuf43lnyr" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_1.tscn" id="15_3vade"]
-[ext_resource type="PackedScene" uid="uid://cd5riyxh8xk13" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_2.tscn" id="16_5hg3p"]
-[ext_resource type="PackedScene" uid="uid://c78r62pibgyme" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_5.tscn" id="17_i5hds"]
-[ext_resource type="PackedScene" uid="uid://dqfgwv7cspf8o" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_4.tscn" id="18_elj1v"]
-[ext_resource type="PackedScene" uid="uid://cwv4s0n65s5mm" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_3.tscn" id="19_cy4hm"]
+[ext_resource type="PackedScene" uid="uid://bt01122omko6w" path="res://Scenes/Meshes/Blockout/Wall_2M.tscn" id="8_cvfy7"]
+[ext_resource type="Texture2D" uid="uid://c8m7jhbom17ue" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_004 copy.jpg" id="9_ncqbq"]
+
+[sub_resource type="Animation" id="Animation_cvfy7"]
+resource_name = "GridLoop"
+length = 40.0
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grid_Pit_R")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 20, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grid_Pit_L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666666, 10.066667, 20.066668, 30.066666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grid")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(35.133335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"OpenGrid"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grid2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(35.133335),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"OpenGrid"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../Lighting/OmniLight_Pit:light_color")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 10, 21, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.40694207, 0.6605102, 0.23908073, 1), Color(0.7660364, 0.110880055, 0.08098029, 1), Color(0.40694207, 0.6605102, 0.23908073, 1), Color(0.7660364, 0.110880055, 0.08098029, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ncqbq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Lighting/OmniLight_Pit:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.40694207, 0.6605102, 0.23908073, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ncqbq"]
+_data = {
+&"GridLoop": SubResource("Animation_cvfy7"),
+&"RESET": SubResource("Animation_ncqbq")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_xrydc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qtrq5"]
+albedo_texture = ExtResource("9_ncqbq")
+uv1_scale = Vector3(20, 1, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_glmyt"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
 
 [node name="SH_Stage_01" type="Node3D" unique_id=1521335912 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_pis4s")
@@ -32,36 +145,51 @@ levelRoot = NodePath("Level")
 [node name="GameplayLogic" type="Node3D" parent="Gameplay" unique_id=195865740]
 
 [node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=1178496646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.439, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 0)
 script = ExtResource("2_vgfps")
 
 [node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=1046587326]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.439, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3, 0)
 script = ExtResource("2_vgfps")
 playerID = 2
 
 [node name="Objects" type="Node3D" parent="Gameplay" unique_id=1600455192]
 
 [node name="Spawner" parent="Gameplay/Objects" unique_id=59144826 instance=ExtResource("3_xqqyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.998389, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0016109943, 5.3, 0)
 
 [node name="Spawner4" parent="Gameplay/Objects" unique_id=303981552 instance=ExtResource("3_xqqyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00957, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00957, 5.3, 0)
 
 [node name="Spawner2" parent="Gameplay/Objects" unique_id=1592076703 instance=ExtResource("3_xqqyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00218, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0021799803, 3.3000002, 0)
 
 [node name="Spawner3" parent="Gameplay/Objects" unique_id=1420561125 instance=ExtResource("3_xqqyk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01174, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01174, 5.3, 0)
 
 [node name="PyramidHead" parent="Gameplay/Objects" unique_id=657903175 instance=ExtResource("4_3pgvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592162, 0.812945, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7274604, 4.051071, 0)
 
-[node name="MiddleFinger" parent="Gameplay/Objects" unique_id=811250432 instance=ExtResource("5_3whsc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+[node name="PyramidHead2" parent="Gameplay/Objects" unique_id=441335741 instance=ExtResource("4_3pgvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.051071, 0)
 
-[node name="MiddleFinger2" parent="Gameplay/Objects" unique_id=168663910 instance=ExtResource("5_3whsc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+[node name="Grids" type="Node3D" parent="Gameplay/Objects" unique_id=448605280]
+
+[node name="Grid_Pit_R" parent="Gameplay/Objects/Grids" unique_id=920142866 instance=ExtResource("5_cvfy7")]
+transform = Transform3D(-4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 3.821371e-15, 0, 8.742278e-08, -1, 0, 1.9488474, -1.7484555e-07)
+
+[node name="Grid_Pit_L" parent="Gameplay/Objects/Grids" unique_id=535975466 instance=ExtResource("5_cvfy7")]
+transform = Transform3D(1.3113416e-07, -1, -8.742278e-08, -1, -1.3113416e-07, -1.1464112e-14, 0, 8.742278e-08, -1, 0, 1.9488478, -1.7484555e-07)
+
+[node name="GridOrchester" type="AnimationPlayer" parent="Gameplay/Objects/Grids" unique_id=1782116275]
+libraries/ = SubResource("AnimationLibrary_ncqbq")
+autoplay = &"GridLoop"
+
+[node name="Grid" parent="Gameplay/Objects/Grids" unique_id=1834962746 instance=ExtResource("5_cvfy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 0)
+
+[node name="Grid2" parent="Gameplay/Objects/Grids" unique_id=1734647664 instance=ExtResource("5_cvfy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 0)
 
 [node name="PenPenLocations" type="Node3D" parent="Gameplay" unique_id=752571391]
 
@@ -91,165 +219,107 @@ script = ExtResource("6_4fjng")
 
 [node name="Level" type="Node3D" parent="." unique_id=357320446]
 
-[node name="ShipTargetPosition4" type="Node3D" parent="Level" unique_id=143185796]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
-
-[node name="ShipTargetPosition5" type="Node3D" parent="Level" unique_id=1946527599]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
-
-[node name="ShipTargetPosition6" type="Node3D" parent="Level" unique_id=403954517]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
-
-[node name="WoodPlatform" parent="Level" unique_id=606572894 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="WoodPlatform2" parent="Level" unique_id=1161374769 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
-
-[node name="WoodPlatform3" parent="Level" unique_id=1199640499 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
-
-[node name="WoodPlatform4" parent="Level" unique_id=273989880 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)
-
-[node name="WoodPlatform24" parent="Level" unique_id=878146339 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 0)
+[node name="ShipTargetPosition" type="Node3D" parent="Level" unique_id=143185796]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, 4.8490973, 0.147627)
 
 [node name="WoodPlatform25" parent="Level" unique_id=1088153575 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 0)
-
-[node name="WoodPlatform5" parent="Level" unique_id=599590939 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
-
-[node name="WoodPlatform6" parent="Level" unique_id=1929627328 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
-
-[node name="WoodPlatform7" parent="Level" unique_id=1523211904 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
-
-[node name="WoodPlatform8" parent="Level" unique_id=2125068756 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.509915)
-
-[node name="WoodPlatform9" parent="Level" unique_id=1889708651 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -0.509915)
-
-[node name="WoodPlatform10" parent="Level" unique_id=1458367680 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -0.509915)
-
-[node name="WoodPlatform11" parent="Level" unique_id=662543802 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -0.509915)
-
-[node name="WoodPlatform23" parent="Level" unique_id=2049355841 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -0.509915)
-
-[node name="WoodPlatform12" parent="Level" unique_id=407906855 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -0.509915)
-
-[node name="WoodPlatform13" parent="Level" unique_id=1567219583 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -0.509915)
-
-[node name="WoodPlatform14" parent="Level" unique_id=1131128074 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -0.509915)
-
-[node name="WoodPlatform15" parent="Level" unique_id=688903159 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -0.509915)
-
-[node name="WoodPlatform16" parent="Level" unique_id=1361071630 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, -0.509915)
-
-[node name="WoodPlatform17" parent="Level" unique_id=260844252 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -0.509915)
-
-[node name="WoodPlatform18" parent="Level" unique_id=14269603 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -0.509915)
-
-[node name="WoodPlatform19" parent="Level" unique_id=483559184 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 0.00061357)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
 
 [node name="WoodPlatform20" parent="Level" unique_id=1693794075 instance=ExtResource("7_nhyuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, 0.00061357)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0.00061357)
 
 [node name="Art" type="Node3D" parent="Level" unique_id=1181769684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.113097)
 
-[node name="SlapBros_Beach_Beam_1" parent="Level/Art" unique_id=528677529 instance=ExtResource("8_l1c6o")]
-transform = Transform3D(0.520198, 0, 0, 0, 0.520198, 0, 0, 0, 0.520198, -3.27757, 0.775259, 0.458365)
+[node name="Blockout" type="Node3D" parent="Level" unique_id=1126783156]
 
-[node name="SlapBros_Beach_Beam_4" parent="Level/Art" unique_id=2025433514 instance=ExtResource("8_l1c6o")]
-transform = Transform3D(-0.478003, 0, 0.205228, 0, 0.520198, 0, -0.205228, 0, -0.478003, -2.07518, 0.840155, 0.458365)
+[node name="SlimPlatformBlockout" parent="Level/Blockout" unique_id=273015209 instance=ExtResource("7_bxcrv")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -3, 3, 0)
 
-[node name="SlapBros_Beach_Beam_8" parent="Level/Art" unique_id=974029905 instance=ExtResource("8_l1c6o")]
-transform = Transform3D(0.0744199, 0, 0.514847, 0, 0.618984, 0, -0.514847, 0, 0.0744199, -0.402781, 0.88416, 0.383237)
+[node name="SlimPlatformBlockout3" parent="Level/Blockout" unique_id=1838220889 instance=ExtResource("7_bxcrv")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -2, 3.95, 0)
 
-[node name="SlapBros_Beach_Beam_11" parent="Level/Art" unique_id=195472225 instance=ExtResource("8_l1c6o")]
-transform = Transform3D(0.0713257, -0.17663, 0.493441, 0.021236, 0.593248, 0.146913, -0.514847, 0, 0.0744199, 3.29276, 0.88416, 0.383237)
+[node name="SlimPlatformBlockout4" parent="Level/Blockout" unique_id=685257664 instance=ExtResource("7_bxcrv")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 3.95, 0)
 
-[node name="SlapBros_Beach_Beam_6" parent="Level/Art" unique_id=400151036 instance=ExtResource("9_cudxk")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.44578, 1.59088, -1.23763)
+[node name="SlimPlatformBlockout5" parent="Level/Blockout" unique_id=1366092120 instance=ExtResource("7_bxcrv")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 2, 3.95, 0)
 
-[node name="SlapBros_Beach_Beam_2" parent="Level/Art" unique_id=1412534289 instance=ExtResource("10_rck1b")]
-transform = Transform3D(0.490875, 0, 0, 0, 0.47722, -0.114976, 0, 0.114976, 0.47722, -1.3722, 1.65711, -1.24047)
+[node name="SlimPlatformBlockout2" parent="Level/Blockout" unique_id=921464202 instance=ExtResource("7_bxcrv")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 3, 3, 0)
 
-[node name="SlapBros_Beach_rope_1" parent="Level/Art" unique_id=1786320808 instance=ExtResource("11_utowf")]
-transform = Transform3D(0.345344, 0, 0, 0, 0.345344, 0, 0, 0, 0.345344, -2.40684, 1.27662, -1.26506)
+[node name="Wall" parent="Level/Blockout" unique_id=487859882 instance=ExtResource("8_cvfy7")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -3.25, 3, 0)
 
-[node name="SlapBros_Beach_rope_3" parent="Level/Art" unique_id=561021651 instance=ExtResource("11_utowf")]
-transform = Transform3D(0.345257, -0.0077807, 0, 0.0077807, 0.345257, 0, 0, 0, 0.345344, 1.23933, 1.39625, -1.25015)
+[node name="Wall8" parent="Level/Blockout" unique_id=205403895 instance=ExtResource("8_cvfy7")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -3.75, 3, 0)
 
-[node name="SlapBros_Beach_rope_2" parent="Level/Art" unique_id=1192003794 instance=ExtResource("12_578m3")]
-transform = Transform3D(0.338989, 0.0641201, 0, -0.0641201, 0.338989, 0, 0, 0, 0.345, -0.585799, 1.18891, -1.24995)
+[node name="Wall5" parent="Level/Blockout" unique_id=1525823118 instance=ExtResource("8_cvfy7")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -4.25, 5, 0)
 
-[node name="SlapBros_Beach_rope_4" parent="Level/Art" unique_id=1661188441 instance=ExtResource("12_578m3")]
-transform = Transform3D(0.276673, 0.188514, 0, -0.188514, 0.276673, 0, 0, 0, 0.334792, 2.8701, 1.26983, -1.24995)
+[node name="Wall6" parent="Level/Blockout" unique_id=2078997606 instance=ExtResource("8_cvfy7")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -4.25, 3, 0)
 
-[node name="SlapBros_Beach_Beam_5" parent="Level/Art" unique_id=1347996548 instance=ExtResource("13_7siva")]
-transform = Transform3D(0.342822, 0, 0, 0, 0.492229, -0.0577163, 0, 0.0878122, 0.323527, 0.185489, 1.80882, -1.15623)
+[node name="Wall4" parent="Level/Blockout" unique_id=1278314397 instance=ExtResource("8_cvfy7")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 4.25, 5, 0)
 
-[node name="SlapBros_Beach_Beam_10" parent="Level/Art" unique_id=1323620542 instance=ExtResource("13_7siva")]
-transform = Transform3D(0.342822, 0, 0, 0, 0.499722, 0.010959, 0, -0.0166735, 0.328452, 2.69611, 0.871944, 0.348931)
+[node name="Wall7" parent="Level/Blockout" unique_id=668429832 instance=ExtResource("8_cvfy7")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 4.25, 3, 0)
 
-[node name="SlapBros_Beach_Beam_7" parent="Level/Art" unique_id=1634564809 instance=ExtResource("9_cudxk")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.25178, 1.93899, -1.26825)
+[node name="Wall2" parent="Level/Blockout" unique_id=791419921 instance=ExtResource("8_cvfy7")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 3.25, 3, 0)
 
-[node name="SlapBros_Beach_Beam_3" parent="Level/Art" unique_id=570132622 instance=ExtResource("8_l1c6o")]
-transform = Transform3D(0.495149, 0.0694828, 0, -0.0690173, 0.491831, -0.0577806, -0.00802953, 0.05722, 0.49665, 3.68961, 1.54448, -1.23321)
+[node name="Wall3" parent="Level/Blockout" unique_id=318495600 instance=ExtResource("8_cvfy7")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 3.75, 3, 0)
 
-[node name="SlapBros_Beach_Beam_9" parent="Level/Art" unique_id=329904084 instance=ExtResource("14_tnfsq")]
-transform = Transform3D(0.49794, -0.0453424, 0, 0.0453424, 0.49794, 0, 0, 0, 0.5, 1.40373, 0.741796, 0.375199)
+[node name="Ground" type="CSGMesh3D" parent="Level/Blockout" unique_id=1847900862]
+transform = Transform3D(9, 0, 0, 0, 3, 0, 0, 0, 1, -6, 0.5, 0)
+mesh = SubResource("BoxMesh_xrydc")
+material = SubResource("StandardMaterial3D_qtrq5")
 
-[node name="SlapBros_Beach_Plank_1" parent="Level/Art" unique_id=1095094406 instance=ExtResource("15_3vade")]
-transform = Transform3D(0.386296, -0.102867, 0.0139151, 0.1028, 0.386547, 0.00370303, -0.0143993, 0, 0.399741, -1.94327, 0.406527, 0.597212)
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground" unique_id=632248861 groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
 
-[node name="SlapBros_Beach_Plank_3" parent="Level/Art" unique_id=917827598 instance=ExtResource("15_3vade")]
-transform = Transform3D(0.393033, -0.0743284, 0, 0.0743284, 0.393033, 0, 0, 0, 0.4, -2.01888, 0.765495, -1.0924)
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground/StaticBody3D" unique_id=140784925]
+shape = SubResource("ConcavePolygonShape3D_glmyt")
 
-[node name="SlapBros_Beach_Plank_4" parent="Level/Art" unique_id=1455893217 instance=ExtResource("15_3vade")]
-transform = Transform3D(0.477172, -0.0573694, 0, 0.0691526, 0.395865, 0, 0, 0, 0.4, 1.38015, 0.735612, -1.0924)
+[node name="Ground3" type="CSGMesh3D" parent="Level/Blockout" unique_id=794785337]
+transform = Transform3D(9, 0, 0, 0, 3, 0, 0, 0, 1, 0, 7.5, 0)
+mesh = SubResource("BoxMesh_xrydc")
+material = SubResource("StandardMaterial3D_qtrq5")
 
-[node name="SlapBros_Beach_Plank_2" parent="Level/Art" unique_id=1179137568 instance=ExtResource("16_5hg3p")]
-transform = Transform3D(0.371697, 0, 0, 0, 0.417578, 0, 0, 0, 0.3, -1.84288, -0.680637, 0.640005)
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground3" unique_id=2059134396 groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
 
-[node name="SlapBros_Beach_Plank_5" parent="Level/Art" unique_id=1463855176 instance=ExtResource("16_5hg3p")]
-transform = Transform3D(-0.370824, 0.0286052, 0, -0.0254623, -0.416597, 0, 0, 0, 0.3, 1.13718, -0.488317, 0.665641)
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground3/StaticBody3D" unique_id=2029938268]
+shape = SubResource("ConcavePolygonShape3D_glmyt")
 
-[node name="SlapBros_Beach_Plank_6" parent="Level/Art" unique_id=1747159916 instance=ExtResource("17_i5hds")]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.562976, 0.165885, 0.554337)
+[node name="Ground2" type="CSGMesh3D" parent="Level/Blockout" unique_id=960949671]
+transform = Transform3D(9, 0, 0, 0, 3, 0, 0, 0, 1, 6, 0.5, 0)
+mesh = SubResource("BoxMesh_xrydc")
+material = SubResource("StandardMaterial3D_qtrq5")
 
-[node name="SlapBros_Beach_Plank_7" parent="Level/Art" unique_id=1911435514 instance=ExtResource("18_elj1v")]
-transform = Transform3D(0.236482, -0.126183, 0.0216176, 0.0841612, 0.353948, 0.0124655, -0.0137129, -0.00374879, 0.449308, -1.17123, -0.217786, 0.362334)
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground2" unique_id=2072271671 groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
 
-[node name="SlapBros_Beach_Plank_9" parent="Level/Art" unique_id=1480067792 instance=ExtResource("18_elj1v")]
-transform = Transform3D(-0.304797, 0.0428044, -0.020393, -0.0407478, -0.320234, -0.002509, -0.0140545, 0.000154478, 0.449531, 1.86766, 0.525004, 0.678227)
-
-[node name="SlapBros_Beach_Plank_8" parent="Level/Art" unique_id=1449684741 instance=ExtResource("19_cy4hm")]
-transform = Transform3D(0.411325, 0, 0.0177143, 0, 0.411706, 0, -0.0177143, 0, 0.411325, -2.60113, 0.00257204, 0.625988)
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground2/StaticBody3D" unique_id=252117202]
+shape = SubResource("ConcavePolygonShape3D_glmyt")
 
 [node name="Lighting" type="Node3D" parent="." unique_id=2141014380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
 
 [node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting" unique_id=1527670106]
-transform = Transform3D(1, 0, 0, 0, 0.0107859, 0.999942, 0, -0.999942, 0.0107859, 0, 6.62258, 1.46718)
+transform = Transform3D(1, 0, 0, 0, 0.0107859, 0.999942, 0, -0.999942, 0.0107859, 0, 5.8471084, 1.4588153)
 light_energy = 3.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 57.86
+
+[node name="OmniLight_Pit" type="OmniLight3D" parent="Lighting" unique_id=1230873648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0.5)
+light_color = Color(0.40694207, 0.6605102, 0.23908073, 1)
+shadow_enabled = true
+omni_range = 2.0677168
