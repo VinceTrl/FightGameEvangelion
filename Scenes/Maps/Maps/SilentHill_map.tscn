@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bqcq0tbw3y3t6" path="res://Scenes/Maps/Environment/SilentHillEnviro.tscn" id="17_oejxh"]
 [ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="18_kduwq"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="19_q64bo"]
-[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="20_16dku"]
+[ext_resource type="Script" uid="uid://df4x3l4luvmk4" path="res://addons/post_processing/node/post_process.gd" id="20_16dku"]
+[ext_resource type="Shader" uid="uid://c2jh88xkbdkav" path="res://Assets/Shaders/DarkFog_Shader.tres" id="20_u1xm0"]
+[ext_resource type="Script" uid="uid://bil8ntm4rhxjh" path="res://Scenes/PlayerPosToShader.gd" id="21_kduwq"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="21_usxhk"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
@@ -25,6 +27,12 @@
 [sub_resource type="Environment" id="Environment_p4aet"]
 ambient_light_source = 2
 ambient_light_color = Color(0.808998, 0.808998, 0.808998, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kduwq"]
+shader = ExtResource("20_u1xm0")
+shader_parameter/FogColor = Color(0, 0, 0, 1)
+shader_parameter/Player1Pos = Vector3(-0.29, -0.045, 0)
+shader_parameter/Player2Pos = Vector3(-0.425, 0, 0)
 
 [node name="SilentHillMap" type="Node3D" unique_id=557590797 node_paths=PackedStringArray("enviro", "lights")]
 script = ExtResource("1_kduwq")
@@ -61,3 +69,16 @@ configuration = ExtResource("21_usxhk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=364057458]
 environment = SubResource("Environment_p4aet")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2043859368]
+layer = -100
+
+[node name="DarkFog" type="ColorRect" parent="CanvasLayer" unique_id=2105010215]
+material = SubResource("ShaderMaterial_kduwq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("21_kduwq")
+metadata/_edit_use_anchors_ = true
