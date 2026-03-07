@@ -1,0 +1,375 @@
+[gd_scene format=3 uid="uid://ci71p4ynqqgv7"]
+
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_txluu"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_31jw1"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_i2atu"]
+[ext_resource type="PackedScene" uid="uid://ci58vtgidf8at" path="res://Scenes/Gameplay/PyramidHead/pyramid_head.tscn" id="4_hlgw5"]
+[ext_resource type="PackedScene" uid="uid://ctjn7rcqrj1yk" path="res://Scenes/Gameplay/grid.tscn" id="5_mnhab"]
+[ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="6_piwrf"]
+[ext_resource type="Texture2D" uid="uid://0na7afj0eu5u" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_003 copy.jpg" id="8_2cbhi"]
+[ext_resource type="PackedScene" uid="uid://bwpa86pj2o1k2" path="res://Assets/Meshes/Props/SilentHillProps/SH3_Pillar/bg_bg_fre_resized.tscn" id="9_21gdy"]
+[ext_resource type="PackedScene" uid="uid://bt01122omko6w" path="res://Scenes/Meshes/Blockout/Wall_2M.tscn" id="10_4l8ue"]
+[ext_resource type="Texture2D" uid="uid://c8m7jhbom17ue" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_004 copy.jpg" id="11_uukj6"]
+[ext_resource type="PackedScene" uid="uid://cdcmogywacklp" path="res://Scenes/Meshes/Blockout/slim_platform.tscn" id="12_awbv5"]
+
+[sub_resource type="Animation" id="Animation_2bbhx"]
+resource_name = "GridLoop"
+length = 50.0
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grid_Up_R")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15, 30, 40),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grid_Up_L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15, 30, 40),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grid_Down_R")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 15, 30, 40),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grid_Down_L")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 15, 30, 40),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txluu"]
+_data = {
+&"GridLoop": SubResource("Animation_2bbhx")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_il36h"]
+size = Vector2(40, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbbp7"]
+albedo_texture = ExtResource("8_2cbhi")
+uv1_scale = Vector3(12, 12, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pt1go"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6vkt"]
+albedo_texture = ExtResource("11_uukj6")
+uv1_scale = Vector3(20, 1, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pfgos"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[node name="SH_Stage_04" type="Node3D" unique_id=387473971 node_paths=PackedStringArray("levelRoot")]
+script = ExtResource("1_txluu")
+platformSpawnType = 1
+overrideMinCamZ = 4.0
+overrideMaxCamZ = 6.0
+levelRoot = NodePath("Level")
+
+[node name="Gameplay" type="Node3D" parent="." unique_id=860297043]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay" unique_id=1515193901]
+
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=1902911047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 4.5, 0)
+script = ExtResource("2_31jw1")
+
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=1846018631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, 0)
+script = ExtResource("2_31jw1")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay" unique_id=869097080]
+
+[node name="Spawner" parent="Gameplay/Objects" unique_id=183070904 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0016109943, 4.3, 0)
+
+[node name="Spawner2" parent="Gameplay/Objects" unique_id=1692401677 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49782, 4.3, 0)
+
+[node name="Spawner4" parent="Gameplay/Objects" unique_id=1427938038 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50218, 4.3, 0)
+
+[node name="Spawner3" parent="Gameplay/Objects" unique_id=167885057 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0117397, 0.8000002, 0)
+
+[node name="Spawner5" parent="Gameplay/Objects" unique_id=750317054 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98826027, 0.8000002, 0)
+
+[node name="PyramidHead" parent="Gameplay/Objects" unique_id=1929536559 instance=ExtResource("4_hlgw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09216213, 2.001071, 0)
+
+[node name="Grids" type="Node3D" parent="Gameplay/Objects" unique_id=1438096924]
+
+[node name="Grid_Up_R" parent="Gameplay/Objects/Grids" unique_id=920142866 instance=ExtResource("5_mnhab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3.503, 0)
+isOpen = true
+
+[node name="Grid_Down_R" parent="Gameplay/Objects/Grids" unique_id=2064576314 instance=ExtResource("5_mnhab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, -0.49700022, 0)
+isOpen = true
+
+[node name="Grid_Up_L" parent="Gameplay/Objects/Grids" unique_id=1204449075 instance=ExtResource("5_mnhab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3.503, 0)
+isOpen = true
+
+[node name="Grid_Down_L" parent="Gameplay/Objects/Grids" unique_id=1644264054 instance=ExtResource("5_mnhab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, -0.49700022, 0)
+isOpen = true
+
+[node name="GridOrchester" type="AnimationPlayer" parent="Gameplay/Objects/Grids" unique_id=1449356169]
+libraries/ = SubResource("AnimationLibrary_txluu")
+autoplay = &"GridLoop"
+
+[node name="PenPenLocations" type="Node3D" parent="Gameplay" unique_id=805126883]
+
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=2119280588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37871, 0.252657, 0)
+script = ExtResource("6_piwrf")
+
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=563423238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.627961, 0)
+script = ExtResource("6_piwrf")
+
+[node name="ShipTargetPosition" type="Node3D" parent="Gameplay" unique_id=14737875]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Level" type="Node3D" parent="." unique_id=1123102094]
+
+[node name="Art" type="Node3D" parent="Level" unique_id=635932883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.113097)
+
+[node name="Lights" type="Node3D" parent="Level/Art" unique_id=1761828140]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Level/Art/Lights" unique_id=2048380203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2.5, 0)
+light_color = Color(0.7053841, 0.55436206, 0.29308987, 1)
+omni_range = 1.1751434
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Level/Art/Lights" unique_id=1447634630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2.5, 0)
+light_color = Color(0.7053841, 0.55436206, 0.29308987, 1)
+omni_range = 1.1751434
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Level/Art/Lights" unique_id=138276299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, 0.5)
+light_color = Color(0.31954518, 0.6465239, 0.6080257, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 2.0677168
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Level/Art/Lights" unique_id=2076680653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0.5)
+light_color = Color(0.31954518, 0.6465239, 0.6080257, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 2.0677168
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Level/Art/Lights" unique_id=93576988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4.5, -1.4901161e-08)
+light_color = Color(0.48320073, 0.018850144, 0.0024390018, 1)
+shadow_enabled = true
+omni_range = 2.4340723
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Level/Art/Lights" unique_id=967177867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4.5, -1.4901161e-08)
+light_color = Color(0.48320073, 0.018850144, 0.0024390018, 1)
+shadow_enabled = true
+omni_range = 2.4340723
+
+[node name="Background" type="MeshInstance3D" parent="Level/Art" unique_id=560103726]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5)
+visible = false
+mesh = SubResource("PlaneMesh_il36h")
+surface_material_override/0 = SubResource("StandardMaterial3D_fbbp7")
+
+[node name="bg_bg_fre_resized" parent="Level/Art" unique_id=1923664650 instance=ExtResource("9_21gdy")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -0.00089883804, 27.4858, 0.14507703)
+
+[node name="bg_bg_fre_resized2" parent="Level/Art" unique_id=391187358 instance=ExtResource("9_21gdy")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 23.4858, 0.14507703)
+
+[node name="bg_bg_fre_resized3" parent="Level/Art" unique_id=1857889185 instance=ExtResource("9_21gdy")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 20.4858, 0.14507703)
+
+[node name="bg_bg_fre_resized4" parent="Level/Art" unique_id=1200291485 instance=ExtResource("9_21gdy")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 23.4858, 0.14507703)
+
+[node name="bg_bg_fre_resized5" parent="Level/Art" unique_id=582658852 instance=ExtResource("9_21gdy")]
+transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 20.4858, 0.14507703)
+
+[node name="Blockout" type="Node3D" parent="Level" unique_id=1597386834]
+
+[node name="Wall2" parent="Level/Blockout" unique_id=343101549 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 1.75, 2.5, 0)
+
+[node name="Wall13" parent="Level/Blockout" unique_id=487859882 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 2.25, 2.5, 0)
+
+[node name="Wall3" parent="Level/Blockout" unique_id=1871376337 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(-2.1855694e-08, -2, 0, 0.5, -8.742278e-08, 0, 0, 0, 1, 1, 1.75, 0)
+
+[node name="Wall4" parent="Level/Blockout" unique_id=1165371565 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(-2.1855694e-08, -2, 0, 0.5, -8.742278e-08, 0, 0, 0, 1, -1, 1.7499999, 0)
+
+[node name="Wall5" parent="Level/Blockout" unique_id=622142019 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -1.75, 2.5, 0)
+
+[node name="Wall9" parent="Level/Blockout" unique_id=981568036 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -2.25, 2.5, 0)
+
+[node name="Wall6" parent="Level/Blockout" unique_id=759695295 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -4.75, 1, 0)
+
+[node name="Wall7" parent="Level/Blockout" unique_id=747645647 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -4.75, 3, 0)
+
+[node name="Wall8" parent="Level/Blockout" unique_id=1808231390 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -4.75, 5, 0)
+
+[node name="Wall10" parent="Level/Blockout" unique_id=1728002268 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 4.75, 1, 0)
+
+[node name="Wall11" parent="Level/Blockout" unique_id=876500103 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 4.75, 3, 0)
+
+[node name="Wall12" parent="Level/Blockout" unique_id=1471935755 instance=ExtResource("10_4l8ue")]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 4.75, 5, 0)
+
+[node name="Ground" type="CSGMesh3D" parent="Level/Blockout" unique_id=1352657506]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_pt1go")
+material = SubResource("StandardMaterial3D_d6vkt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground" unique_id=1857113268 groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground/StaticBody3D" unique_id=1109801989]
+shape = SubResource("ConcavePolygonShape3D_pfgos")
+
+[node name="Ground2" type="CSGMesh3D" parent="Level/Blockout" unique_id=73980075]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+mesh = SubResource("BoxMesh_pt1go")
+material = SubResource("StandardMaterial3D_d6vkt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground2" unique_id=44042454 groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground2/StaticBody3D" unique_id=1518058140]
+shape = SubResource("ConcavePolygonShape3D_pfgos")
+
+[node name="Ground3" type="CSGMesh3D" parent="Level/Blockout" unique_id=1516675]
+transform = Transform3D(12, 0, 0, 0, 2.9, 0, 0, 0, 1, 0, -2.5, 0)
+mesh = SubResource("BoxMesh_pt1go")
+material = SubResource("StandardMaterial3D_d6vkt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Blockout/Ground3" unique_id=1764533108 groups=["Ledgegrab"]]
+collision_layer = 193
+collision_mask = 0
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground3/StaticBody3D" unique_id=1932499660]
+shape = SubResource("ConcavePolygonShape3D_pfgos")
+
+[node name="SlimPlatformBlockout6" parent="Level/Blockout" unique_id=273015209 instance=ExtResource("12_awbv5")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 3.5, 1.5500001, 0)
+
+[node name="SlimPlatformBlockout7" parent="Level/Blockout" unique_id=1334850726 instance=ExtResource("12_awbv5")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 3.5, 3.45, 0)
+
+[node name="SlimPlatformBlockout9" parent="Level/Blockout" unique_id=1627107051 instance=ExtResource("12_awbv5")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -3.5, 3.45, 0)
+
+[node name="SlimPlatformBlockout3" parent="Level/Blockout" unique_id=1427007506 instance=ExtResource("12_awbv5")]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -3.5, 1.5500001, 0)
+
+[node name="Lighting" type="Node3D" parent="." unique_id=1606325515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
+
+[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting" unique_id=8830469]
+transform = Transform3D(1, 0, 0, 0, 0.12888213, 0.9916599, 0, -0.9916599, 0.12888213, 0, 5.733313, 1.363878)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 57.86
+
+[node name="Spotlight_HornyJail" type="SpotLight3D" parent="Lighting" unique_id=1492141096]
+transform = Transform3D(1, 0, 0, 0, 0.7489095, 0.66267234, 0, -0.66267234, 0.7489095, 0, 4.733313, 2.363878)
+light_color = Color(1, 0.5254902, 0.94509804, 1)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 3.5817096
+spot_angle = 27.813599

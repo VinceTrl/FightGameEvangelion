@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bqcq0tbw3y3t6" path="res://Scenes/Maps/Environment/SilentHillEnviro.tscn" id="17_oejxh"]
 [ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="18_kduwq"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="19_q64bo"]
-[ext_resource type="Script" uid="uid://df4x3l4luvmk4" path="res://addons/post_processing/node/post_process.gd" id="20_16dku"]
+[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="20_16dku"]
 [ext_resource type="Shader" uid="uid://c2jh88xkbdkav" path="res://Assets/Shaders/DarkFog_Shader.tres" id="20_u1xm0"]
 [ext_resource type="Script" uid="uid://bil8ntm4rhxjh" path="res://Scenes/PlayerPosToShader.gd" id="21_kduwq"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="21_usxhk"]

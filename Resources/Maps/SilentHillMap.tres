@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_y7twk")
 mapName = &"SilentHill"
-mapScenePath = &"res://Scenes/Maps/Maps/Test_map.tscn"
-stagePaths = Array[String](["res://Scenes/Maps/Stages/SilentHillStages/SH_Stage_01.tscn", "res://Scenes/Maps/Stages/SilentHillStages/SH_Stage_02.tscn", "res://Scenes/Maps/Stages/SilentHillStages/SH_Stage_03.tscn"])
+mapScenePath = &"res://Scenes/Maps/Maps/SilentHill_map.tscn"
+stagePaths = Array[String](["res://Scenes/Maps/Stages/SilentHillStages/SH_Stage_01.tscn", "res://Scenes/Maps/Stages/SilentHillStages/SH_Stage_02.tscn", "res://Scenes/Maps/Stages/SilentHillStages/SH_Stage_03.tscn", "res://Scenes/Maps/Stages/SilentHillStages/SH_Stage_04.tscn"])

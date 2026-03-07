@@ -4,6 +4,7 @@ extends ShapeCast3D
 
 @export var alwaysProcessDetection:bool = false
 @export var drawDebugCast:bool = false
+@export var obstacleDetectionOrigin:Node3D
 
 var targetInCast:bool = false
 
@@ -26,7 +27,8 @@ func ProcessDetection():
 		var targetDetected:bool = false
 		for collision in get_collision_count():
 			if(get_collider(collision).is_in_group("PyramidHeadTarget")):
-				targetDetected = true
+				if(!CheckObstacle(get_collision_point(collision))):
+					targetDetected = true
 		if(!targetInCast and targetDetected):
 			targetInCast = true
 		elif(targetInCast and targetDetected):
@@ -43,3 +45,36 @@ func DebugCast():
 			var position := get_collision_point(collision)
 			DebugDraw3D.draw_sphere(position,0.1,Color.GREEN)
 			#DebugDraw3D.draw_square(position,0.2,Color.CRIMSON)
+			
+			
+func CheckObstacle(targetPos:Vector3) -> bool:
+	#create raycast
+	var queryStart: Vector3 = obstacleDetectionOrigin.global_position
+	var queryEnd : Vector3 = targetPos
+	
+	var space_state = get_world_3d().direct_space_state
+	var queryMask = mask_from_layers([1])
+	print("MASK = " + str(queryMask))
+	var query = PhysicsRayQueryParameters3D.create(queryStart,queryEnd,queryMask)
+	var result = space_state.intersect_ray(query)
+	
+	if(drawDebugCast):
+		DebugDraw3D.draw_line(queryStart,queryEnd,Color.RED,2)
+	
+	if result:
+		print("RESULT : "  + str(result))
+		if(result.collider.is_in_group("PyramidHeadTarget")):
+			return false
+		if(drawDebugCast):
+			DebugDraw3D.draw_sphere(result.position,0.1,Color.RED,2)
+		
+		return true
+	else:
+		print("NO RESULT")
+		return false
+
+func mask_from_layers(layers: Array[int]) -> int:
+	var mask := 0
+	for layer in layers:
+		mask |= 1 << (layer - 1) # Active corresponding bit layer
+	return mask
