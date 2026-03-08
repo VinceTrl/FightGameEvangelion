@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bi2pd8mrk31u2"]
+[gd_scene format=3 uid="uid://bi2pd8mrk31u2"]
 
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_28bjl"]
 [ext_resource type="PackedScene" uid="uid://8a00sh66ihoa" path="res://Scenes/Enviro.tscn" id="1_eofbn"]
@@ -23,6 +23,7 @@
 [ext_resource type="Material" uid="uid://l1r613a3gttm" path="res://Assets/Materials/Enviro/M_EVA.tres" id="19_6y040"]
 [ext_resource type="Texture2D" uid="uid://cblvbndapp82q" path="res://Sources/Textures/T_BrutalSlap.png" id="20_5wmnn"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="21_mnhne"]
+[ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="24_g24qb"]
 
 [sub_resource type="Animation" id="Animation_j54aa"]
 resource_name = "AnimLightPolici"
@@ -589,14 +590,14 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
-[node name="EvangelionMap" type="Node3D" node_paths=PackedStringArray("enviro", "lights")]
+[node name="EvangelionMap" type="Node3D" unique_id=921328617 node_paths=PackedStringArray("enviro", "lights")]
 script = ExtResource("1_jb52f")
 enviro = [NodePath("Enviro/Meshes")]
 lights = [NodePath("LightingOld")]
 
-[node name="SpawnManager" parent="." instance=ExtResource("1_28bjl")]
+[node name="SpawnManager" parent="." unique_id=1238903481 instance=ExtResource("1_28bjl")]
 
-[node name="Enviro" parent="." instance=ExtResource("1_eofbn")]
+[node name="Enviro" parent="." unique_id=1677223273 instance=ExtResource("1_eofbn")]
 transform = Transform3D(3, 0, 0, 0, 2.30766, -1.91695, 0, 1.91695, 2.30766, 0, -4.34559, -6.257)
 
 [node name="Camera3D" parent="Enviro" index="0"]
@@ -606,14 +607,14 @@ process_priority = 1
 transform = Transform3D(13.9424, 0, 0, 0, 9.53674e-07, -13.9424, 0, 13.9424, 4.29153e-06, 0, -2.55109, -34.2328)
 visible = false
 
-[node name="BackgroundPlane" type="MeshInstance3D" parent="Enviro/Camera3D" index="1"]
+[node name="BackgroundPlane" type="MeshInstance3D" parent="Enviro/Camera3D" index="1" unique_id=559519429]
 transform = Transform3D(2.48788, 0, 0, 0, -5.96046e-08, -2.48788, 0, 2.48788, -5.96046e-08, 0, -7.94695, -70.6949)
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("2_dbumj")
 surface_material_override/0 = ExtResource("3_j0ixo")
 
-[node name="AudioStreamHelper" type="Node3D" parent="Enviro/Camera3D/BackgroundPlane"]
+[node name="AudioStreamHelper" type="Node3D" parent="Enviro/Camera3D/BackgroundPlane" unique_id=1686117849]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.68596, 15.7371, 0.0832739)
 script = ExtResource("4_55tvq")
 Multiplier = 1.0
@@ -663,40 +664,61 @@ spot_range = 49.3115
 transform = Transform3D(1.59308, 0, 0, 0, 1.59308, 0, 0, 0, 1.59308, 0, -3.01737, -3.63236)
 
 [node name="City Pivot" parent="Enviro/Meshes/R/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+transform = Transform3D(1, 0, 0, 0, -0.7188433, -0.69517267, 0, 0.69517267, -0.7188433, 0, -4.34849, 0)
+
+[node name="Anim_CityRotation" parent="Enviro/Meshes/R/CityRight/City Pivot" index="0"]
+autoplay = &"CityLoop"
+
+[node name="Anim_CityRotation_mid" parent="Enviro/Meshes/R/CityRight2/City PivotMid" index="1"]
+autoplay = &"Anim_CityRotation_Mid"
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Meshes/R/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="Anim_CityRotation_slow" parent="Enviro/Meshes/R/CityRight3/City PivotSlow" index="1"]
+autoplay = &"Anim_CityRotation_slow"
+
 [node name="City Pivot" parent="Enviro/Meshes/R2/CityRight" index="0"]
-transform = Transform3D(1, 0, 0, 0, -0.718843, -0.695173, 0, 0.695173, -0.718843, 0, -4.34849, 0)
+transform = Transform3D(1, 0, 0, 0, -0.7188433, -0.69517267, 0, 0.69517267, -0.7188433, 0, -4.34849, 0)
+
+[node name="Anim_CityRotation" parent="Enviro/Meshes/R2/CityRight/City Pivot" index="0"]
+autoplay = &"CityLoop"
+
+[node name="Anim_CityRotation_mid" parent="Enviro/Meshes/R2/CityRight2/City PivotMid" index="1"]
+autoplay = &"Anim_CityRotation_Mid"
 
 [node name="Mesh_buildingsLoop_03" parent="Enviro/Meshes/R2/CityRight3/City PivotSlow" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="Anim_CityRotation_slow" parent="Enviro/Meshes/R2/CityRight3/City PivotSlow" index="1"]
+autoplay = &"Anim_CityRotation_slow"
+
 [node name="SM_Road" parent="Enviro/Meshes" index="2"]
 transform = Transform3D(0.882625, 0, 0, 0, 0.882625, 0, 0, 0, 0.882625, 0, -3.74486, -2.28042)
 
-[node name="LightingOld" type="Node3D" parent="."]
+[node name="AnimationPlayer" parent="Enviro/Meshes/SM_Road" index="2"]
+autoplay = &"Road"
 
-[node name="Old" type="Node3D" parent="LightingOld"]
+[node name="LightingOld" type="Node3D" parent="." unique_id=1844371049]
+
+[node name="Old" type="Node3D" parent="LightingOld" unique_id=35693103]
 visible = false
 
-[node name="BackgroundMesh" type="MeshInstance3D" parent="LightingOld/Old"]
+[node name="BackgroundMesh" type="MeshInstance3D" parent="LightingOld/Old" unique_id=330712019]
 transform = Transform3D(-0.0794317, 0.0450254, 0.547176, 0.0994026, 0.51173, -0.0236528, -0.41578, 0.11374, -0.110189, -0.182486, -1.39818, -13.1081)
 visible = false
 material_override = ExtResource("3_j0ixo")
 mesh = ExtResource("2_dbumj")
 skeleton = NodePath("../..")
 
-[node name="SpotLight3D7" type="SpotLight3D" parent="LightingOld/Old"]
+[node name="SpotLight3D7" type="SpotLight3D" parent="LightingOld/Old" unique_id=1900952728]
 transform = Transform3D(1, 0, 0, 0, 0.888585, 0.458712, 0, -0.458712, 0.888585, 0, 9.1072, 3.70326)
 light_energy = 50.0
 shadow_enabled = true
 spot_range = 15.2065
 spot_angle = 47.6542
 
-[node name="SpotBuildingsRight" type="SpotLight3D" parent="LightingOld/Old"]
+[node name="SpotBuildingsRight" type="SpotLight3D" parent="LightingOld/Old" unique_id=1327531627]
 transform = Transform3D(-0.0636048, 0.206663, -0.976343, 0.960705, 0.277543, -0.00383839, 0.270184, -0.938222, -0.216195, -5.67032, 4.90765, -29.3489)
 light_color = Color(0.510236, 0.861405, 0.761492, 1)
 light_energy = 200.0
@@ -704,7 +726,7 @@ light_volumetric_fog_energy = 1.087
 spot_range = 49.2912
 spot_angle = 50.291
 
-[node name="SpotBuildingsLeft" type="SpotLight3D" parent="LightingOld/Old"]
+[node name="SpotBuildingsLeft" type="SpotLight3D" parent="LightingOld/Old" unique_id=1295061631]
 transform = Transform3D(0.550074, -0.571853, 0.608607, 0.596174, -0.241435, -0.765693, 0.584803, 0.784023, 0.208117, 0, -5.9291, -4.49585)
 light_color = Color(0.510236, 0.861405, 0.761492, 1)
 light_energy = 200.0
@@ -712,7 +734,7 @@ light_volumetric_fog_energy = 1.087
 spot_range = 56.6485
 spot_angle = 50.291
 
-[node name="SpotScat" type="SpotLight3D" parent="LightingOld/Old"]
+[node name="SpotScat" type="SpotLight3D" parent="LightingOld/Old" unique_id=426801599]
 transform = Transform3D(1, 0, 0, 0, 0.469009, -0.883193, 0, 0.883193, 0.469009, 0, -6.92803, -2.7011)
 light_color = Color(0.42, 1, 0.777667, 1)
 light_energy = 60.0
@@ -720,9 +742,9 @@ light_volumetric_fog_energy = 10.0
 spot_range = 21.5625
 spot_angle = 54.9228
 
-[node name="LightPolice" type="SpotLight3D" parent="LightingOld"]
+[node name="LightPolice" type="SpotLight3D" parent="LightingOld" unique_id=763270231]
 transform = Transform3D(0.906314, 0.400353, -0.135324, -0.363608, 0.901919, 0.233092, 0.21537, -0.16205, 0.962993, 42.1571, 5.61998, 1.54712)
-light_energy = 2e+06
+light_energy = 2000000.0
 light_volumetric_fog_energy = 0.3
 shadow_enabled = true
 spot_range = 90.0893
@@ -730,15 +752,13 @@ spot_attenuation = 2.05
 spot_angle = 48.24
 spot_angle_attenuation = 303.142
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LightingOld/LightPolice"]
-libraries = {
-&"": SubResource("AnimationLibrary_1tnc3")
-}
-autoplay = "AnimLightPolici"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LightingOld/LightPolice" unique_id=836331747]
+libraries/ = SubResource("AnimationLibrary_1tnc3")
+autoplay = &"AnimLightPolici"
 
-[node name="LightPolice2" type="SpotLight3D" parent="LightingOld"]
+[node name="LightPolice2" type="SpotLight3D" parent="LightingOld" unique_id=1865391378]
 transform = Transform3D(0.886733, -0.133809, 0.442492, -0.108426, 0.870291, 0.480456, -0.449385, -0.474014, 0.757208, -26.6016, 14.6853, 0.337787)
-light_energy = 2e+06
+light_energy = 2000000.0
 light_volumetric_fog_energy = 0.3
 shadow_enabled = true
 spot_range = 114.523
@@ -746,15 +766,13 @@ spot_attenuation = 2.07
 spot_angle = 48.24
 spot_angle_attenuation = 303.142
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LightingOld/LightPolice2"]
-libraries = {
-&"": SubResource("AnimationLibrary_1tnc3")
-}
-autoplay = "AnimLightPolici"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LightingOld/LightPolice2" unique_id=1163454186]
+libraries/ = SubResource("AnimationLibrary_1tnc3")
+autoplay = &"AnimLightPolici"
 
-[node name="Lightfront" type="Node3D" parent="LightingOld"]
+[node name="Lightfront" type="Node3D" parent="LightingOld" unique_id=2113230171]
 
-[node name="Light" type="SpotLight3D" parent="LightingOld/Lightfront"]
+[node name="Light" type="SpotLight3D" parent="LightingOld/Lightfront" unique_id=974316385]
 transform = Transform3D(0.981894, -0.176849, 0.0678848, 0.152169, 0.522935, -0.83868, 0.11282, 0.833825, 0.540378, 0.944686, -3.86866, 5.47348)
 light_color = Color(1, 0.884124, 0.944117, 1)
 light_energy = 50.0
@@ -764,7 +782,7 @@ spot_attenuation = -0.57
 spot_angle = 48.24
 spot_angle_attenuation = 303.142
 
-[node name="Light3" type="SpotLight3D" parent="LightingOld/Lightfront"]
+[node name="Light3" type="SpotLight3D" parent="LightingOld/Lightfront" unique_id=1201929389]
 transform = Transform3D(0.981894, -0.176849, 0.0678848, 0.183823, 0.976091, -0.115995, -0.0457481, 0.126374, 0.990927, 0.427924, 0.869918, 5.16438)
 light_color = Color(1, 0.884124, 0.944117, 1)
 light_energy = 50.0
@@ -773,7 +791,7 @@ spot_attenuation = -0.57
 spot_angle = 43.5938
 spot_angle_attenuation = 303.142
 
-[node name="Light2" type="SpotLight3D" parent="LightingOld/Lightfront"]
+[node name="Light2" type="SpotLight3D" parent="LightingOld/Lightfront" unique_id=1553646502]
 transform = Transform3D(0.981894, -0.176849, 0.0678848, 0.152169, 0.522935, -0.83868, 0.11282, 0.833825, 0.540378, 0.944686, -2.99429, -1.55692)
 light_color = Color(1, 0.884124, 0.944117, 1)
 light_energy = 50.0
@@ -783,13 +801,34 @@ spot_attenuation = -0.57
 spot_angle = 48.24
 spot_angle_attenuation = 303.142
 
-[node name="EVA" parent="." node_paths=PackedStringArray("animPlayerChore") instance=ExtResource("5_82r76")]
+[node name="EVA" parent="." unique_id=1446312520 node_paths=PackedStringArray("animPlayerChore") instance=ExtResource("5_82r76")]
 transform = Transform3D(0.998719, -0.0305181, -0.0403521, 0, 0.797584, -0.603208, 0.0505929, 0.602436, 0.796562, 0.410762, 0.446429, -26.7202)
 animPlayerChore = NodePath("../SLAP_Choregraphie/AnimLight_Slap")
 slapStartPauseDuration = 1.0
 
+[node name="Robot Pivot" parent="EVA" index="0"]
+transform = Transform3D(0.99866, 0.038799323, 0.034232162, -0.034986738, 0.99378294, -0.10569619, -0.03812026, 0.10435697, 0.993809, 0.0536268, 1.89316, 0)
+
 [node name="Robot_eva_03" parent="EVA/Robot Pivot" index="0"]
 transform = Transform3D(3.97652, -0.16614, -0.0076868, 0.119421, 2.98024, -2.63521, 0.115759, 2.63268, 2.98262, 0, -3, -5)
+
+[node name="BoneAttachment3D_LeftArm" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="2"]
+transform = Transform3D(-0.096579455, 0.760593, -0.6420052, 0.1198656, -0.6314381, -0.76610583, -0.9880812, -0.15094441, -0.030185, 0.76558965, 5.601322, 0.20716342)
+
+[node name="BoneAttachment3D2_RightArm" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.28440815, -0.8208003, 0.49537766, -0.38861984, -0.5710642, -0.72309065, 0.8764055, 0.013139315, -0.4813946, -0.69768935, 5.649996, 0.397314)
+
+[node name="BoneAttachment3D3_LeftFoot" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="4"]
+transform = Transform3D(-0.86452913, 0.48407012, 0.1351507, -0.3181851, -0.735329, 0.5983726, 0.38903457, 0.47430757, 0.789737, 0.47545823, 0.48459923, -0.5735271)
+
+[node name="BoneAttachment3D4_RightFoot" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="5"]
+transform = Transform3D(-0.6677962, -0.6395098, -0.38088775, 0.23824245, -0.6684283, 0.70458806, -0.7051871, 0.37977773, 0.5987321, -0.6284194, 0.35113502, -0.3616739)
+
+[node name="BoneAttachment_Hitbox" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="6"]
+transform = Transform3D(-0.32646295, 0.7285731, -0.60216534, -0.1657, -0.67131853, -0.7224091, -0.93057257, -0.13606101, 0.33988515, 2.3810174, 4.4966054, 0.17992313)
+
+[node name="BoneAttachment_Head" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D" index="7"]
+transform = Transform3D(0.98857355, 0.14616412, -0.036856547, 0.009114062, 0.18610035, 0.98248845, 0.15046357, -0.97159797, 0.18264171, 0.027677216, 5.759775, 0.23713285)
 
 [node name="EyeVener" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/BoneAttachment_Head" index="0"]
 visible = false
@@ -797,9 +836,15 @@ visible = false
 [node name="EyeUwu" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/BoneAttachment_Head" index="1"]
 visible = false
 
-[node name="SLAP_Choregraphie" type="Node3D" parent="."]
+[node name="AnimationPlayer" parent="EVA/Robot Pivot/Robot_eva_03" index="1"]
+autoplay = &"Armature|Idle"
 
-[node name="Light_Slap_Intro_Scat" type="SpotLight3D" parent="SLAP_Choregraphie"]
+[node name="Anim_Robot" parent="EVA/Robot Pivot" index="1"]
+autoplay = &"Anim_Robot"
+
+[node name="SLAP_Choregraphie" type="Node3D" parent="." unique_id=763326764]
+
+[node name="Light_Slap_Intro_Scat" type="SpotLight3D" parent="SLAP_Choregraphie" unique_id=908975008]
 transform = Transform3D(1, 0, 0, 0, -0.719631, -0.694357, 0, 0.694357, -0.719631, 2.66887, -1.72133, -23.5076)
 visible = false
 light_color = Color(0.910901, 0.51332, 0.728794, 1)
@@ -808,19 +853,17 @@ light_volumetric_fog_energy = 150.0
 spot_range = 27.023
 spot_angle = 63.9011
 
-[node name="Light_Slap_Intro_Rim" type="SpotLight3D" parent="SLAP_Choregraphie"]
+[node name="Light_Slap_Intro_Rim" type="SpotLight3D" parent="SLAP_Choregraphie" unique_id=745026788]
 transform = Transform3D(0.730192, 0.166455, 0.662655, -0.0915929, 0.984963, -0.146489, -0.677075, 0.0462709, 0.734458, 5.67125, 3.31718, -0.192606)
 visible = false
 light_energy = 8.052
 light_size = 0.121
 spot_range = 8.35071
 
-[node name="AnimLight_Slap" type="AnimationPlayer" parent="SLAP_Choregraphie"]
-libraries = {
-&"": SubResource("AnimationLibrary_y03qi")
-}
+[node name="AnimLight_Slap" type="AnimationPlayer" parent="SLAP_Choregraphie" unique_id=1719616191]
+libraries/ = SubResource("AnimationLibrary_y03qi")
 
-[node name="Light_Slap_PreHit_Rim" type="SpotLight3D" parent="SLAP_Choregraphie"]
+[node name="Light_Slap_PreHit_Rim" type="SpotLight3D" parent="SLAP_Choregraphie" unique_id=1693334721]
 transform = Transform3D(-0.568913, -0.270525, 0.77663, 0.797615, 0.0485793, 0.601207, -0.20037, 0.961486, 0.188138, 20.026, 16.9368, -2.87612)
 visible = false
 light_color = Color(1, 0, 0, 1)
@@ -829,7 +872,7 @@ light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 spot_range = 52.6637
 
-[node name="Light_Slap_PreHit_RedLight" type="SpotLight3D" parent="SLAP_Choregraphie"]
+[node name="Light_Slap_PreHit_RedLight" type="SpotLight3D" parent="SLAP_Choregraphie" unique_id=659467504]
 transform = Transform3D(-0.508171, 0.433542, 0.74418, 0.860899, 0.280579, 0.424415, -0.0247998, 0.856339, -0.515818, 3.58091, 1.98516, -2.01544)
 visible = false
 light_color = Color(1, 0, 0, 1)
@@ -839,7 +882,7 @@ shadow_enabled = true
 spot_range = 12.9284
 spot_angle = 59.8843
 
-[node name="BrutalSlapHolder" type="Control" parent="SLAP_Choregraphie"]
+[node name="BrutalSlapHolder" type="Control" parent="SLAP_Choregraphie" unique_id=709339481]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -848,7 +891,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="SLAP_Choregraphie/BrutalSlapHolder"]
+[node name="TextureRect" type="TextureRect" parent="SLAP_Choregraphie/BrutalSlapHolder" unique_id=2002791071]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -857,30 +900,33 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("20_5wmnn")
 
-[node name="BrutalSlapAlert" type="Control" parent="SLAP_Choregraphie"]
+[node name="BrutalSlapAlert" type="Control" parent="SLAP_Choregraphie" unique_id=1463769909]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect2" type="TextureRect" parent="SLAP_Choregraphie/BrutalSlapAlert"]
+[node name="TextureRect2" type="TextureRect" parent="SLAP_Choregraphie/BrutalSlapAlert" unique_id=1395016591]
 layout_mode = 0
 offset_top = 168.0
 offset_right = 1920.0
 offset_bottom = 423.0
 texture = ExtResource("8_jmlfj")
 
-[node name="Stage" type="Node" parent="."]
+[node name="Stage" type="Node" parent="." unique_id=605659899]
 
-[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage"]
+[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage" unique_id=1985498017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 collision_mask = 15
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom" unique_id=1886487214]
 shape = SubResource("WorldBoundaryShape3D_e2grd")
 
-[node name="StageSpawner" parent="Stage" instance=ExtResource("21_mnhne")]
+[node name="StageSpawner" parent="Stage" unique_id=1045037608 instance=ExtResource("21_mnhne")]
+
+[node name="TimerOutSpawners" parent="." unique_id=861694759 instance=ExtResource("24_g24qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [editable path="Enviro"]
 [editable path="EVA"]

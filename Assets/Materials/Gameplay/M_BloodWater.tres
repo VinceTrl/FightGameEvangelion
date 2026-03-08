@@ -1,0 +1,46 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bsk7xctkitbrk"]
+
+[ext_resource type="Shader" path="res://Scenes/Maps/Stages/AnniversaryStages/WaterShader.gdshader" id="1_yiefs"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j24wt"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ngn2h"]
+noise = SubResource("FastNoiseLite_j24wt")
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cqo42"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_verwq"]
+noise = SubResource("FastNoiseLite_cqo42")
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hag3a"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j24wt"]
+noise = SubResource("FastNoiseLite_hag3a")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_yiefs")
+shader_parameter/albedo = Color(0.62465, 0, 0.042508252, 1)
+shader_parameter/albedo2 = Color(0.6627451, 0, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/opacity = 0.950000045125
+shader_parameter/wave = SubResource("NoiseTexture2D_j24wt")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_ngn2h")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_verwq")
+shader_parameter/wave_direction = Vector2(-3, 1)
+shader_parameter/wave_direction2 = Vector2(0, 3)
+shader_parameter/time_scale = 0.06999999843536
+shader_parameter/noise_scale = 4.0
+shader_parameter/height_scale = 0.255
+shader_parameter/color_deep = Color(0.36117572, 0.06512712, 0.076142184, 1)
+shader_parameter/color_shallow = Color(0.8755264, 0, 0.09746543, 1)
+shader_parameter/beers_law = 2.645
+shader_parameter/depth_offset = 20.0
+shader_parameter/edge_scale = 0.345
+shader_parameter/near = 1.0
+shader_parameter/far = 40.0
+shader_parameter/edge_color = Color(0.33097753, 0.0053517967, 0.0056616203, 1)

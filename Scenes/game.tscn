@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3o22n6bo51hk"]
+[gd_scene format=3 uid="uid://c3o22n6bo51hk"]
 
 [ext_resource type="Script" uid="uid://34on5dhs343x" path="res://Scripts/Managers/GameScene.gd" id="1_2jg1a"]
 [ext_resource type="PackedScene" uid="uid://ch75cwblkhlni" path="res://Scenes/PlayerCharacter.tscn" id="1_rog66"]
@@ -14,7 +14,6 @@
 [ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="7_nb51f"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
-[ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="17_avc87"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rfxrm"]
 render_priority = -1
@@ -26,48 +25,45 @@ shader_parameter/alpha = 1.0
 shader_parameter/secondLayerIntensity = 0.0
 shader_parameter/secondLayerUVScaling = 100.0
 
-[node name="Game" type="Node3D"]
+[node name="Game" type="Node3D" unique_id=1564307774]
 script = ExtResource("1_2jg1a")
 
-[node name="GameManager" parent="." instance=ExtResource("5_r45th")]
+[node name="GameManager" parent="." unique_id=945093400 instance=ExtResource("5_r45th")]
 unique_name_in_owner = true
 
-[node name="MapManager" type="Node" parent="."]
+[node name="MapManager" type="Node" parent="." unique_id=389733307]
 script = ExtResource("3_dv241")
 maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("6_3xkmj"), ExtResource("7_nb51f")])
 
-[node name="Gameplay" type="Node" parent="."]
+[node name="Gameplay" type="Node" parent="." unique_id=1867581352]
 
-[node name="GameCamera" parent="Gameplay" node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
+[node name="GameCamera" parent="Gameplay" unique_id=1982141253 node_paths=PackedStringArray("player1", "player2") instance=ExtResource("4_sx5sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 player1 = NodePath("../Player")
 player2 = NodePath("../Player2")
 cameraClampMin = Vector2(-5, 0)
 
-[node name="Player" parent="Gameplay" instance=ExtResource("1_rog66")]
+[node name="Player" parent="Gameplay" unique_id=1221952648 instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.318534, 1.715, 0)
 spritesheet = ExtResource("7_j3bm8")
 
-[node name="Player2" parent="Gameplay" instance=ExtResource("1_rog66")]
+[node name="Player2" parent="Gameplay" unique_id=1754892820 instance=ExtResource("1_rog66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2585, 1.63538, 0)
 playerID = 2
 startFacingRight = false
 collisionLayer = 8
 
-[node name="Sprite2D" parent="Gameplay/Player2" index="3"]
+[node name="Sprite2D" parent="Gameplay/Player2" index="3" unique_id=1571587711]
 material_override = SubResource("ShaderMaterial_rfxrm")
 
-[node name="Sfx_Contact" parent="Gameplay/Player2/PlayerAudio" index="2"]
+[node name="Sfx_Contact" parent="Gameplay/Player2/PlayerAudio" parent_id_path=PackedInt32Array(1754892820, 805557854) index="2" unique_id=1851878681]
 stream = null
 
-[node name="KillVolume" parent="Gameplay" instance=ExtResource("8_u84ky")]
+[node name="KillVolume" parent="Gameplay" unique_id=630851901 instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
-[node name="TimerOutSpawners" parent="Gameplay" instance=ExtResource("17_avc87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+[node name="GUI" type="Node" parent="." unique_id=356643276]
 
-[node name="GUI" type="Node" parent="."]
-
-[node name="MasterGUI" parent="GUI" instance=ExtResource("16_cim6e")]
+[node name="MasterGUI" parent="GUI" unique_id=341890886 instance=ExtResource("16_cim6e")]
 
 [editable path="Gameplay/Player2"]

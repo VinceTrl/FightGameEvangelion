@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://byba7fkh2hq5p"]
+
+[ext_resource type="Script" uid="uid://bsesddvqyyybr" path="res://Scripts/Gameplay/Spawn/TimerOut_VolumeKill.gd" id="1_venjx"]
+[ext_resource type="Material" uid="uid://bsk7xctkitbrk" path="res://Assets/Materials/Gameplay/M_BloodWater.tres" id="1_xanhi"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="3_0e0ue"]
+
+[sub_resource type="Curve" id="Curve_0e0ue"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tinxj"]
+size = Vector2(100, 100)
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_xanhi"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_h1gld"]
+
+[node name="BloodSea" type="Node3D" unique_id=920480580 node_paths=PackedStringArray("root")]
+script = ExtResource("1_venjx")
+root = NodePath(".")
+translateOffset = Vector3(0, 20, 0)
+translateDuration = 30.0
+translateCurve = SubResource("Curve_0e0ue")
+
+[node name="BloodPlane" type="MeshInstance3D" parent="." unique_id=904634860]
+mesh = SubResource("PlaneMesh_tinxj")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("1_xanhi")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="BloodPlane" unique_id=1018821947]
+collision_layer = 193
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BloodPlane/AnimatableBody3D" unique_id=906526276]
+shape = SubResource("WorldBoundaryShape3D_xanhi")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=26998565]
+script = ExtResource("3_0e0ue")
+damage = 99
+type = 2
+randomID = true
+hitDirection = Vector3(0, 1, 0)
+hitForce = 2.0
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1893867750]
+shape = SubResource("WorldBoundaryShape3D_h1gld")

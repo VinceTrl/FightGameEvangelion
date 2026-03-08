@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bq5o5cen08wou"]
+[gd_scene format=3 uid="uid://bq5o5cen08wou"]
 
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="1_3v2v2"]
 [ext_resource type="Material" uid="uid://bdcd1a0gn4kpe" path="res://Assets/Meshes/Enviro/PeachBeach/Water.tres" id="1_oniah"]
@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="15_u5o35"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="20_0s7yt"]
 [ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/BeachMap.tres" id="20_bhy2f"]
+[ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="20_fn3o4"]
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="21_e4ph7"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="21_uv2n1"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="22_mdkoo"]
@@ -37,48 +38,51 @@ subdivide_depth = 100
 ambient_light_source = 2
 ambient_light_color = Color(0.808998, 0.808998, 0.808998, 1)
 
-[node name="TestMap" type="Node3D" node_paths=PackedStringArray("enviro", "lights")]
+[node name="TestMap" type="Node3D" unique_id=454490010 node_paths=PackedStringArray("enviro", "lights")]
 script = ExtResource("1_qoa21")
 enviro = [NodePath("Enviro")]
 lights = [NodePath("Lighting")]
 
-[node name="SpawnManager" parent="." instance=ExtResource("1_3v2v2")]
+[node name="SpawnManager" parent="." unique_id=1575374684 instance=ExtResource("1_3v2v2")]
 items = Array[ExtResource("3_0s7yt")]([ExtResource("5_2ndgt"), ExtResource("6_egxmt"), ExtResource("7_3dkcm"), ExtResource("8_oqd8u"), ExtResource("9_a77w8"), ExtResource("10_fwq1n"), ExtResource("12_r4gs8"), ExtResource("13_mj8fs"), ExtResource("14_5j2rv"), ExtResource("15_u5o35")])
 
-[node name="Enviro" type="Node3D" parent="."]
+[node name="Enviro" type="Node3D" parent="." unique_id=1794683627]
 
-[node name="PeachBeachMap" parent="Enviro" instance=ExtResource("3_2ndgt")]
+[node name="PeachBeachMap" parent="Enviro" unique_id=369944411 instance=ExtResource("3_2ndgt")]
 transform = Transform3D(0.0382237, 0.00114923, 0.145044, 0.00735124, 0.149787, -0.00312413, -0.144861, 0.00790446, 0.0381134, -2.4032, 1.62675, -44.6887)
 
-[node name="WaterPlane" type="CSGMesh3D" parent="Enviro/PeachBeachMap"]
+[node name="WaterPlane" type="CSGMesh3D" parent="Enviro/PeachBeachMap" unique_id=221827938]
 transform = Transform3D(1, -5.21541e-08, -1.04308e-07, -1.67638e-08, 0.999947, -0.0104894, 2.83122e-07, 0.0104896, 0.999943, -1.88351e-05, 0.282819, 0.374477)
 mesh = SubResource("PlaneMesh_boel5")
 
-[node name="WaterPlane" type="MeshInstance3D" parent="Enviro"]
+[node name="WaterPlane" type="MeshInstance3D" parent="Enviro" unique_id=1100344558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295127, -4.02583)
 mesh = SubResource("PlaneMesh_3dkcm")
 surface_material_override/0 = ExtResource("5_egxmt")
 
-[node name="Lighting" type="Node3D" parent="."]
+[node name="Lighting" type="Node3D" parent="." unique_id=4532615]
 
-[node name="Stage" type="Node" parent="."]
+[node name="Stage" type="Node" parent="." unique_id=378727772]
 
-[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage"]
+[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage" unique_id=1105511469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 collision_mask = 15
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom" unique_id=1166247137]
 shape = SubResource("WorldBoundaryShape3D_e2grd")
 
-[node name="StageSpawner" parent="Stage" instance=ExtResource("21_uv2n1")]
+[node name="StageSpawner" parent="Stage" unique_id=1969802241 instance=ExtResource("21_uv2n1")]
 map = ExtResource("20_bhy2f")
 
-[node name="KillVolume" parent="Stage" instance=ExtResource("20_0s7yt")]
+[node name="KillVolume" parent="Stage" unique_id=1464682114 instance=ExtResource("20_0s7yt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="PostProcess" type="CanvasLayer" parent="."]
+[node name="TimerOutSpawners" parent="." unique_id=1918714644 instance=ExtResource("20_fn3o4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=10194407]
 script = ExtResource("21_e4ph7")
 configuration = ExtResource("22_mdkoo")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1703340359]
 environment = SubResource("Environment_p4aet")

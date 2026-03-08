@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="11_ui5xy"]
 [ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="12_wngnh"]
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_d8iam"]
+[ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="15_oejxh"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="17_07c4o"]
 [ext_resource type="PackedScene" uid="uid://bqcq0tbw3y3t6" path="res://Scenes/Maps/Environment/SilentHillEnviro.tscn" id="17_oejxh"]
 [ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="18_kduwq"]
@@ -62,6 +63,9 @@ map = ExtResource("18_kduwq")
 
 [node name="KillVolume" parent="Stage" unique_id=421022714 instance=ExtResource("19_q64bo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="BloodSea" parent="." unique_id=920480580 instance=ExtResource("15_oejxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1459144192]
 script = ExtResource("20_16dku")
