@@ -65,7 +65,7 @@ map = ExtResource("18_kduwq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="BloodSea" parent="." unique_id=920480580 instance=ExtResource("15_oejxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1459144192]
 script = ExtResource("20_16dku")
