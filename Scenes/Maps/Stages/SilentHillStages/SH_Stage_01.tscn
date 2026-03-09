@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="7_nhyuj"]
 [ext_resource type="PackedScene" uid="uid://bt01122omko6w" path="res://Scenes/Meshes/Blockout/Wall_2M.tscn" id="8_cvfy7"]
 [ext_resource type="Texture2D" uid="uid://c8m7jhbom17ue" path="res://Assets/Meshes/Props/SilentHillProps/Textures/hp125.map_tex_004 copy.jpg" id="9_ncqbq"]
+[ext_resource type="PackedScene" uid="uid://boifrfx0aal7g" path="res://Assets/Meshes/Enviro/SilentHill/slap_sh_plateform_add_01.tscn" id="11_ncqbq"]
 
 [sub_resource type="Animation" id="Animation_cvfy7"]
 resource_name = "GridLoop"
@@ -234,19 +235,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.113097)
 [node name="Blockout" type="Node3D" parent="Level" unique_id=1126783156]
 
 [node name="SlimPlatformBlockout" parent="Level/Blockout" unique_id=273015209 instance=ExtResource("7_bxcrv")]
-transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -3, 3, 0)
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -3, 3, -0.01642704)
 
 [node name="SlimPlatformBlockout3" parent="Level/Blockout" unique_id=1838220889 instance=ExtResource("7_bxcrv")]
-transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -2, 3.95, 0)
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, -2, 3.95, -0.019873738)
 
 [node name="SlimPlatformBlockout4" parent="Level/Blockout" unique_id=685257664 instance=ExtResource("7_bxcrv")]
-transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 3.95, 0)
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 3.95, -0.019873738)
 
 [node name="SlimPlatformBlockout5" parent="Level/Blockout" unique_id=1366092120 instance=ExtResource("7_bxcrv")]
-transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 2, 3.95, 0)
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 2, 3.95, -0.019873738)
 
 [node name="SlimPlatformBlockout2" parent="Level/Blockout" unique_id=921464202 instance=ExtResource("7_bxcrv")]
-transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 3, 3, 0)
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 3, 3, -0.034023046)
 
 [node name="Wall" parent="Level/Blockout" unique_id=487859882 instance=ExtResource("8_cvfy7")]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -3.25, 3, 0)
@@ -323,3 +324,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0.5)
 light_color = Color(0.40694207, 0.6605102, 0.23908073, 1)
 shadow_enabled = true
 omni_range = 2.0677168
+
+[node name="Enviro" type="Node3D" parent="." unique_id=878442241]
+
+[node name="Slap_SH_PlateformAdd_01" parent="." unique_id=64536517 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9545674, 3.0604975, 0.52034223)
+
+[node name="Slap_SH_PlateformAdd_02" parent="." unique_id=62303642 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.034759, 3.0604975, 0.52034223)
+
+[node name="Slap_SH_PlateformAdd_03" parent="." unique_id=450979402 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0203586, 3.976823, 0.520342)
+
+[node name="Slap_SH_PlateformAdd_04" parent="." unique_id=2087347515 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0446986, 3.976823, 0.520342)
+
+[node name="Slap_SH_PlateformAdd_06" parent="." unique_id=1159152780 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.005068, 6.0004945, 0.520342)
+
+[node name="Slap_SH_PlateformAdd_07" parent="." unique_id=632035507 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0158653, 6.0004945, 0.520342)
+
+[node name="Slap_SH_PlateformAdd_08" parent="." unique_id=996711612 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015286684, 6.0004945, 0.520342)
+
+[node name="Slap_SH_PlateformAdd_09" parent="." unique_id=1044717371 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9584687, 6.0004945, 0.520342)
+
+[node name="Slap_SH_PlateformAdd_05" parent="." unique_id=1550438420 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9423119, 3.976823, 0.520342)
+
+[node name="Slap_SH_PlateformAdd_10" parent="." unique_id=1911773096 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9545674, 3.0604975, -0.41086495)
+
+[node name="Slap_SH_PlateformAdd_11" parent="." unique_id=1488594779 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.034759, 3.0604975, -0.41086495)
+
+[node name="Slap_SH_PlateformAdd_12" parent="." unique_id=1411619121 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0203586, 3.976823, -0.4108652)
+
+[node name="Slap_SH_PlateformAdd_13" parent="." unique_id=1456102954 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0446986, 3.976823, -0.4108652)
+
+[node name="Slap_SH_PlateformAdd_14" parent="." unique_id=229110086 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.005068, 6.0004945, -0.4108652)
+
+[node name="Slap_SH_PlateformAdd_15" parent="." unique_id=2049421115 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0158653, 6.0004945, -0.4108652)
+
+[node name="Slap_SH_PlateformAdd_16" parent="." unique_id=1644285511 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015286684, 6.0004945, -0.4108652)
+
+[node name="Slap_SH_PlateformAdd_17" parent="." unique_id=1391822813 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9584687, 6.0004945, -0.4108652)
+
+[node name="Slap_SH_PlateformAdd_18" parent="." unique_id=1256121964 instance=ExtResource("11_ncqbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9423119, 3.976823, -0.4108652)

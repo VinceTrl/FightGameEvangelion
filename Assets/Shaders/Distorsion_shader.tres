@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=22 format=3 uid="uid://bh25tvdribvre"]
+[gd_resource type="VisualShader" format=3 uid="uid://bh25tvdribvre"]
 
 [ext_resource type="Texture2D" uid="uid://bs81jr8tgdtvv" path="res://Assets/Sprites/Vfx/T_Gradient_Radial.png" id="1_8curt"]
 
@@ -79,101 +79,6 @@ op_type = 2
 constant = 1.0
 
 [resource]
-code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_disabled, unshaded, shadows_disabled;
-
-uniform vec2 Speed = vec2(0.000000, 0.300000);
-uniform sampler2D Noise : repeat_enable;
-uniform float DistorsionIntensity = 0.0;
-uniform sampler2D screen_tex_frg_6 : hint_screen_texture;
-uniform sampler2D Alpha;
-
-
-
-void fragment() {
-// Input:10
-	vec2 n_out10p0 = SCREEN_UV;
-
-
-// Input:21
-	vec2 n_out21p0 = UV;
-
-
-// VectorOp:26
-	vec2 n_in26p1 = vec2(0.30000, 0.30000);
-	vec2 n_out26p0 = n_out21p0 * n_in26p1;
-
-
-// Vector2Parameter:23
-	vec2 n_out23p0 = Speed;
-
-
-// Input:24
-	float n_out24p0 = TIME;
-
-
-// VectorOp:25
-	vec2 n_out25p0 = n_out23p0 * vec2(n_out24p0);
-
-
-// VectorOp:22
-	vec2 n_out22p0 = n_out26p0 + n_out25p0;
-
-
-	vec4 n_out11p0;
-// Texture2D:11
-	n_out11p0 = texture(Noise, n_out22p0);
-
-
-// VectorDecompose:14
-	float n_out14p0 = n_out11p0.x;
-	float n_out14p1 = n_out11p0.y;
-	float n_out14p2 = n_out11p0.z;
-	float n_out14p3 = n_out11p0.w;
-
-
-// FloatOp:27
-	float n_in27p0 = 1.00000;
-	float n_out27p0 = n_in27p0 - n_out14p0;
-
-
-// FloatParameter:16
-	float n_out16p0 = DistorsionIntensity;
-
-
-// FloatOp:18
-	float n_out18p0 = n_out27p0 * n_out16p0;
-
-
-// VectorOp:19
-	vec2 n_out19p0 = n_out10p0 + vec2(n_out18p0);
-
-
-	vec4 n_out6p0;
-// Texture2D:6
-	n_out6p0 = texture(screen_tex_frg_6, n_out19p0);
-
-
-	vec4 n_out3p0;
-// Texture2D:3
-	n_out3p0 = texture(Alpha, UV);
-
-
-// VectorDecompose:4
-	float n_out4p0 = n_out3p0.x;
-	float n_out4p1 = n_out3p0.y;
-	float n_out4p2 = n_out3p0.z;
-	float n_out4p3 = n_out3p0.w;
-
-
-// Output:0
-	ALBEDO = vec3(n_out6p0.xyz);
-	ALPHA = n_out4p3;
-
-
-}
-"
-graph_offset = Vector2(-1129.76, 137.398)
 modes/specular = 2
 flags/unshaded = true
 flags/shadows_disabled = true
