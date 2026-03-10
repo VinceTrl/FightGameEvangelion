@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cq3mwgjyef0ol"]
+
+[ext_resource type="PackedScene" uid="uid://cilq4a8xyj8e8" path="res://Assets/Meshes/Enviro/SilentHill/Slap_SH_Pendule.fbx" id="1_8rxhl"]
+[ext_resource type="Material" uid="uid://cvfffcg76hmf2" path="res://Assets/Materials/Enviro/M_SilentHill_Atlas02.tres" id="2_ifr2d"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8rxhl"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[node name="Slap_SH_Pendule" unique_id=1224392345 instance=ExtResource("1_8rxhl")]
+
+[node name="Slap_SH_Pendule" parent="." index="0" unique_id=1512479866]
+surface_material_override/0 = ExtResource("2_ifr2d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=518054477 groups=["Ledgegrab"]]
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 193
+collision_mask = 0
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=959770672]
+shape = SubResource("ConcavePolygonShape3D_8rxhl")

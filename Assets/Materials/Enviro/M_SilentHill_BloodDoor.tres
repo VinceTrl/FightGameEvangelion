@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqya2hvdn6aoo"]
+
+[ext_resource type="Texture2D" uid="uid://bs1r4vytafn81" path="res://Assets/Meshes/Enviro/SilentHill/T_SilentHill_Door01.jpg" id="1_hrijs"]
+
+[resource]
+albedo_texture = ExtResource("1_hrijs")

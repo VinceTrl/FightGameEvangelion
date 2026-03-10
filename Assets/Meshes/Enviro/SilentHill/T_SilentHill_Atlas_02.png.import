@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwp0va1m80rod"
-path.s3tc="res://.godot/imported/pc_base3_2.png-667b20f3d8e1d8a839188cdae6a2cc3c.s3tc.ctex"
+uid="uid://cg8rhykwpvbjv"
+path.s3tc="res://.godot/imported/T_SilentHill_Atlas_02.png-e549f16b4d78c83a06fa1e960c3fe3c8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/pc_base3_2.png"
-dest_files=["res://.godot/imported/pc_base3_2.png-667b20f3d8e1d8a839188cdae6a2cc3c.s3tc.ctex"]
+source_file="res://Assets/Meshes/Enviro/SilentHill/T_SilentHill_Atlas_02.png"
+dest_files=["res://.godot/imported/T_SilentHill_Atlas_02.png-e549f16b4d78c83a06fa1e960c3fe3c8.s3tc.ctex"]
 
 [params]
 

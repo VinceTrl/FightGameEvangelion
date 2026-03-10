@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://nrsn75ls1yhy"]
+
+[ext_resource type="PackedScene" uid="uid://cgynrqayboyo1" path="res://Assets/Meshes/Enviro/SilentHill/Slap_SH_Wall_01.fbx" id="1_0vqe7"]
+[ext_resource type="Material" uid="uid://cvfffcg76hmf2" path="res://Assets/Materials/Enviro/M_SilentHill_Atlas02.tres" id="2_qiubl"]
+
+[node name="Slap_SH_Wall_01" unique_id=1333882796 instance=ExtResource("1_0vqe7")]
+
+[node name="Slap_SH_Wall_01" parent="." index="0" unique_id=843746242]
+surface_material_override/0 = ExtResource("2_qiubl")

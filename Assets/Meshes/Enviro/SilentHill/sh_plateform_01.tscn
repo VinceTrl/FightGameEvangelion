@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cj7lo45niojuv"]
+
+[ext_resource type="PackedScene" uid="uid://5vyglfmi1u0e" path="res://Assets/Meshes/Enviro/SilentHill/Slap_SH_Plateform_01.fbx" id="1_45djb"]
+[ext_resource type="Material" uid="uid://cyp4aqahduagu" path="res://Assets/Materials/Enviro/M_SilentHill_Atlas.tres" id="3_yiig7"]
+[ext_resource type="Script" uid="uid://byey3yvki8p1g" path="res://Scripts/Collisions/OneWayCollision.gd" id="4_7f6ib"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c06mm"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[node name="Slap_SH_Plateform_01" unique_id=1236175901 instance=ExtResource("1_45djb")]
+
+[node name="Slap_SH_Plateform_01" parent="." index="0" unique_id=1568507010]
+transform = Transform3D(1, 0, 0, 0, 1, -4.371139e-08, 0, 4.371139e-08, 1, -1.0010421, 0.056389928, -0.49656367)
+surface_material_override/0 = ExtResource("3_yiig7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1521271047]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 193
+collision_mask = 0
+script = ExtResource("4_7f6ib")
+shapeSize = Vector3(2.5, 0.25, 1)
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1941231907]
+shape = SubResource("ConcavePolygonShape3D_c06mm")

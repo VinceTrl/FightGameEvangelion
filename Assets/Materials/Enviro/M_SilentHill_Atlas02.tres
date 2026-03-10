@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cvfffcg76hmf2"]
+
+[ext_resource type="Texture2D" uid="uid://cg8rhykwpvbjv" path="res://Assets/Meshes/Enviro/SilentHill/T_SilentHill_Atlas_02.png" id="1_ndy60"]
+
+[resource]
+albedo_texture = ExtResource("1_ndy60")
