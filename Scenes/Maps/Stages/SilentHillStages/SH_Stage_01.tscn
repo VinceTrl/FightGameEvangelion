@@ -293,7 +293,7 @@ omni_range = 2.0677168
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1635902)
 
 [node name="Slap_SH_Add_clim2" parent="Enviro" unique_id=948764201 instance=ExtResource("9_qtrq5")]
-transform = Transform3D(-6.87209e-08, 1.572151, 0, -1.572151, -6.87209e-08, 0, 0, 0, 1.572151, 3.1104784, 2.264583, 0.49999994)
+transform = Transform3D(-6.87209e-08, 1.572151, 0, -1.572151, -6.87209e-08, 0, 0, 0, 1.572151, 3.1104784, 3.4186635, 0.49999994)
 
 [node name="Slap_SH_Add_clim3" parent="Enviro" unique_id=571331032 instance=ExtResource("9_qtrq5")]
 transform = Transform3D(1.1531571, -1.30460585e-08, -4.8688555e-08, 4.8688552e-08, -1.7183378e-08, 1.1531569, -1.3046066e-08, -1.1531571, 3.436677e-08, 2.0262372, 4.995634, -0.3543529)
