@@ -25,7 +25,7 @@ tracks/0/path = NodePath("Grid")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 5.0333333, 10.066667, 15.066667, 20.133331, 25.133331, 30.166668),
+"times": PackedFloat32Array(0.0333333, 5.0333333, 10.066667, 15.066667, 20.133331, 25, 30.166668),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
@@ -57,13 +57,10 @@ tracks/1/path = NodePath("Grid2")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.13333333, 5.133333, 10.166668, 15.166668, 20.233332, 25.233332, 30.266666),
+"times": PackedFloat32Array(0.0666666, 5.0666666, 10.333333, 15.166667, 20, 24.9, 30.266666),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
-"method": &"OpenGrid"
-}, {
-"args": [],
 "method": &"CloseGrid"
 }, {
 "args": [],
@@ -77,6 +74,9 @@ tracks/1/keys = {
 }, {
 "args": [],
 "method": &"CloseGrid"
+}, {
+"args": [],
+"method": &"OpenGrid"
 }, {
 "args": [],
 "method": &"OpenGrid"
@@ -141,13 +141,10 @@ tracks/4/path = NodePath("Grid3")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.13333344, 5.2, 10.4, 15.233334, 20.066668, 25.066668, 30.6),
+"times": PackedFloat32Array(0.099999905, 5.1, 10.133333, 15.066667, 20, 25, 30.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
-"method": &"CloseGrid"
-}, {
-"args": [],
 "method": &"OpenGrid"
 }, {
 "args": [],
@@ -161,6 +158,9 @@ tracks/4/keys = {
 }, {
 "args": [],
 "method": &"OpenGrid"
+}, {
+"args": [],
+"method": &"CloseGrid"
 }, {
 "args": [],
 "method": &"OpenGrid"
@@ -225,10 +225,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.998389, 3.3000002, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00218, 3.3000002, 0)
 
 [node name="Spawner3" parent="Gameplay/Objects" unique_id=167885057 instance=ExtResource("3_4u0nx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0117397, 6.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6, 0)
+
+[node name="Spawner9" parent="Gameplay/Objects" unique_id=1007146251 instance=ExtResource("3_4u0nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 6, 0)
 
 [node name="Spawner4" parent="Gameplay/Objects" unique_id=588873627 instance=ExtResource("3_4u0nx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00957, 6.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 6, 0)
+
+[node name="Spawner10" parent="Gameplay/Objects" unique_id=252002738 instance=ExtResource("3_4u0nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 6, 0)
 
 [node name="Spawner5" parent="Gameplay/Objects" unique_id=800978134 instance=ExtResource("3_4u0nx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0117397, 1.3000002, 0)
@@ -321,6 +327,18 @@ omni_range = 2.0677168
 [node name="OmniLight3D4" type="OmniLight3D" parent="Level/Art/Lights" unique_id=1153685742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5.5, 0)
 light_color = Color(0.7053841, 0.55436206, 0.29308987, 1)
+shadow_enabled = true
+omni_range = 2.0677168
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Level/Art/Lights" unique_id=574778314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33461, 1.8983154, 0)
+light_color = Color(0.30555072, 0.6455301, 0.6321614, 1)
+shadow_enabled = true
+omni_range = 2.0677168
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Level/Art/Lights" unique_id=191545917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22649527, 1.8983154, 0)
+light_color = Color(0.30588236, 0.64705884, 0.6313726, 1)
 shadow_enabled = true
 omni_range = 2.0677168
 

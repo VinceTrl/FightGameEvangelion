@@ -15,6 +15,7 @@ var pyramidHead:PyramidHead
 @onready var Attack: PyramidHeadState = $Attack
 @onready var AttackAnticipation: PyramidHeadState = $AttackAnticipation
 @onready var Dance: PyramidHeadState = $Dance
+@onready var InfiniteDance: PyramidHeadState = $InfiniteDance
 
 func _process(delta: float) -> void:
 	DebugState()

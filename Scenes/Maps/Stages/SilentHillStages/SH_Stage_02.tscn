@@ -204,6 +204,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0117397, 6.3, 0)
 [node name="Spawner4" parent="Gameplay/Objects" unique_id=588873627 instance=ExtResource("3_mkoxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00957, 6.3, 0)
 
+[node name="Spawner11" parent="Gameplay/Objects" unique_id=940596498 instance=ExtResource("3_mkoxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5095701, 6.3, 0)
+
+[node name="Spawner12" parent="Gameplay/Objects" unique_id=1628995418 instance=ExtResource("3_mkoxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4904299, 6.3, 0)
+
 [node name="Spawner5" parent="Gameplay/Objects" unique_id=800978134 instance=ExtResource("3_mkoxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0117397, 1.3000002, 0)
 

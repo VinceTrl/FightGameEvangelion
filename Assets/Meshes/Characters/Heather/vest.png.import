@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da8tp0x1sj8jq"
-path.s3tc="res://.godot/imported/PeachBeach_Wood01.png-c82f89fcee462d49e416f891ecc8f396.s3tc.ctex"
+uid="uid://bfo1hll5cgdm4"
+path.s3tc="res://.godot/imported/vest.png-c1a1934df9107c7fa5bd1b117a6d63e0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/PeachBeach_Wood01.png"
-dest_files=["res://.godot/imported/PeachBeach_Wood01.png-c82f89fcee462d49e416f891ecc8f396.s3tc.ctex"]
+source_file="res://Assets/Meshes/Characters/Heather/vest.png"
+dest_files=["res://.godot/imported/vest.png-c1a1934df9107c7fa5bd1b117a6d63e0.s3tc.ctex"]
 
 [params]
 

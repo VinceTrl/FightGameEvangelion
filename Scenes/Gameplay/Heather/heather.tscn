@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://bphk6pxc5xi3h"]
+
+[ext_resource type="PackedScene" uid="uid://na425i6u0m1" path="res://Assets/Meshes/Characters/Heather/Heather.glb" id="1_2tdhn"]
+[ext_resource type="Script" uid="uid://b27n5fly5fmn4" path="res://Scripts/Gameplay/Items/DancingCharacter.gd" id="2_7vvjc"]
+[ext_resource type="Texture2D" uid="uid://bhyank5cnl3m4" path="res://Assets/Meshes/Characters/Heather/hair.png" id="2_bapdx"]
+[ext_resource type="Texture2D" uid="uid://b3805jx3145vi" path="res://Assets/Meshes/Characters/Heather/head.png" id="3_7vvjc"]
+[ext_resource type="Texture2D" uid="uid://oahempf58qou" path="res://Assets/Meshes/Characters/Heather/skirt.png" id="4_q15a4"]
+[ext_resource type="Texture2D" uid="uid://bfo1hll5cgdm4" path="res://Assets/Meshes/Characters/Heather/vest.png" id="5_o4hhg"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="6_bapdx"]
+[ext_resource type="Script" uid="uid://y5lj4rmum1er" path="res://Scripts/Components/Dance_Area.gd" id="8_o4hhg"]
+[ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="8_q15a4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dsvl1"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_bapdx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2x7ap"]
+albedo_texture = ExtResource("3_7vvjc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl6xi"]
+albedo_texture = ExtResource("4_q15a4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ss4na"]
+albedo_texture = ExtResource("5_o4hhg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7vvjc"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q15a4"]
+size = Vector3(0.35, 1.5, 0.34)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o4hhg"]
+size = Vector3(2, 1, 2)
+
+[node name="Heather" unique_id=1410217053 node_paths=PackedStringArray("anim_player") instance=ExtResource("1_2tdhn")]
+script = ExtResource("2_7vvjc")
+anim_player = NodePath("AnimationPlayer")
+animations = PackedStringArray("Dance01", "Dance02", "Dance04", "Dance05", "Dance06", "Dance07", "Dance08", "Dance09", "HeadSpinning")
+
+[node name="Armature" parent="." index="0" unique_id=460738168]
+transform = Transform3D(0.6, 0, 0, 0, -2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=2036928569]
+bones/0/position = Vector3(-0.025432568, -0.12884875, -1.0128427)
+bones/0/rotation = Quaternion(-0.60252357, -0.029315008, 0.01853319, 0.7973472)
+bones/1/rotation = Quaternion(-0.013277475, 0.0058539226, -0.013287351, 0.9998064)
+bones/2/rotation = Quaternion(0.005230448, 0.016650403, -0.019609576, 0.9996554)
+bones/3/rotation = Quaternion(0.0052463724, 0.016673032, -0.019586144, 0.9996554)
+bones/4/rotation = Quaternion(0.0035272161, 0.0007783165, 0.026261372, 0.9996486)
+bones/5/rotation = Quaternion(-0.0051071737, 0.047924727, -0.037951425, 0.9981167)
+bones/7/rotation = Quaternion(0.5525428, 0.44190586, -0.56453526, 0.42510667)
+bones/8/rotation = Quaternion(0.43499255, -0.17093252, 0.3327705, 0.8190405)
+bones/9/rotation = Quaternion(0.008653387, 0.0037698373, 0.27635324, 0.9610098)
+bones/10/rotation = Quaternion(-0.09888455, 0.2781613, 0.35818934, 0.88574755)
+bones/11/rotation = Quaternion(0.14556372, 0.025860798, 0.19803007, 0.9689823)
+bones/12/rotation = Quaternion(0.014856142, -0.003984582, -0.04240101, 0.9989823)
+bones/13/rotation = Quaternion(-0.02050757, 0.0010143744, 0.054425765, 0.9983067)
+bones/15/rotation = Quaternion(-5.222138e-05, -0.002180906, 0.023870856, 0.9997127)
+bones/16/rotation = Quaternion(4.687925e-05, 0.003256612, -0.03329896, 0.99944013)
+bones/17/rotation = Quaternion(-0.0001110263, 0.0037139081, -0.010963826, 0.999933)
+bones/19/rotation = Quaternion(0.5250166, -0.43303967, 0.6356215, 0.36444426)
+bones/20/rotation = Quaternion(0.4187624, 0.06403773, -0.025968779, 0.90546286)
+bones/21/rotation = Quaternion(0.048854645, -0.0038121496, -0.5984843, 0.7996346)
+bones/22/rotation = Quaternion(0.25115037, -0.27148676, 0.28184402, 0.8853149)
+bones/23/rotation = Quaternion(0.15737647, -0.028404342, -0.19286321, 0.96810627)
+bones/24/rotation = Quaternion(0.016170157, 0.0009479327, 0.029702248, 0.99942756)
+bones/25/rotation = Quaternion(-0.02130468, -0.0029648847, -0.0060391994, 0.9997504)
+bones/27/rotation = Quaternion(-0.00012615645, 0.005593296, -0.022552392, 0.9997301)
+bones/28/rotation = Quaternion(8.347098e-05, -0.004475775, 0.026457267, 0.99964)
+bones/29/rotation = Quaternion(-8.605532e-05, -0.0032518075, 0.018618504, 0.99982136)
+bones/31/rotation = Quaternion(0.07342506, 0.32253453, 0.94252753, 0.047139324)
+bones/32/rotation = Quaternion(-0.3939784, -0.11007158, -0.053505033, 0.91093504)
+bones/33/rotation = Quaternion(0.5579252, -0.24296892, 0.12296744, 0.7839417)
+bones/34/rotation = Quaternion(0.41391373, 0.08862493, -0.03038085, 0.90548223)
+bones/36/rotation = Quaternion(-0.060033884, -0.0077005946, 0.997056, -0.047075532)
+bones/37/rotation = Quaternion(-0.15081723, 0.09433154, -0.0008538756, 0.98405033)
+bones/38/rotation = Quaternion(0.59202677, 0.14444913, -0.011717241, 0.7927809)
+bones/39/rotation = Quaternion(0.4406419, -0.09276078, 0.027191889, 0.8924633)
+
+[node name="hair_008" parent="Armature/Skeleton3D" index="0" unique_id=184353140]
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_dsvl1")
+
+[node name="head_016" parent="Armature/Skeleton3D" index="1" unique_id=1115381571]
+surface_material_override/0 = SubResource("StandardMaterial3D_2x7ap")
+
+[node name="skirt_001" parent="Armature/Skeleton3D" index="2" unique_id=1230427580]
+surface_material_override/0 = SubResource("StandardMaterial3D_tl6xi")
+
+[node name="vest_001" parent="Armature/Skeleton3D" index="3" unique_id=94332269]
+surface_material_override/0 = SubResource("StandardMaterial3D_ss4na")
+
+[node name="BoneAttachment_HandLeft" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="4" unique_id=62579997]
+transform = Transform3D(0.70566237, -0.16505356, -0.68905586, 0.28074107, 0.9580278, 0.0580252, 0.65055734, -0.23439217, 0.7223814, 0.21113755, 0.47059098, -1.0967954)
+bone_name = "mixamorig_LeftHandIndex1"
+bone_idx = 15
+
+[node name="Hitbox" type="Area3D" parent="Armature/Skeleton3D/BoneAttachment_HandLeft" index="0" unique_id=1114166627]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+script = ExtResource("6_bapdx")
+damage = 0
+owner_id = 130
+isActive = false
+randomID = true
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment_HandLeft/Hitbox" index="0" unique_id=1325386479]
+shape = SubResource("BoxShape3D_7vvjc")
+
+[node name="BoneAttachment_HandRight" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="5" unique_id=273878227]
+transform = Transform3D(0.69607633, -0.09276758, 0.71194893, 0.68069565, 0.40061492, -0.61331964, -0.22832085, 0.911538, 0.34200513, -0.35944742, 0.24258092, -1.0183094)
+bone_name = "mixamorig_RightHandIndex1"
+bone_idx = 27
+
+[node name="Hitbox" type="Area3D" parent="Armature/Skeleton3D/BoneAttachment_HandRight" index="0" unique_id=1200489164]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+script = ExtResource("6_bapdx")
+damage = 0
+owner_id = 130
+isActive = false
+randomID = true
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment_HandRight/Hitbox" index="0" unique_id=659521127]
+shape = SubResource("BoxShape3D_7vvjc")
+
+[node name="BoneAttachment_FootLeft" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="6" unique_id=252438335]
+transform = Transform3D(-0.6780511, 0.45726457, 0.5754618, 0.73475146, 0.44264013, 0.514014, -0.019682243, 0.77134895, -0.6361083, -0.13030963, -0.1291169, -0.15161458)
+bone_name = "mixamorig_LeftFoot"
+bone_idx = 33
+
+[node name="Hitbox" type="Area3D" parent="Armature/Skeleton3D/BoneAttachment_FootLeft" index="0" unique_id=1519510132]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+script = ExtResource("6_bapdx")
+damage = 0
+owner_id = 130
+isActive = false
+randomID = true
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment_FootLeft/Hitbox" index="0" unique_id=1004810245]
+shape = SubResource("BoxShape3D_7vvjc")
+
+[node name="BoneAttachment_FootRight" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="7" unique_id=2056082716]
+transform = Transform3D(-0.7838626, -0.4355788, -0.44252753, -0.61823416, 0.48108786, 0.62156373, -0.057845354, 0.76080626, -0.6463965, 0.007821821, -0.50530666, -0.15750495)
+bone_name = "mixamorig_RightFoot"
+bone_idx = 38
+
+[node name="Hitbox" type="Area3D" parent="Armature/Skeleton3D/BoneAttachment_FootRight" index="0" unique_id=2085395239]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+script = ExtResource("6_bapdx")
+damage = 0
+owner_id = 130
+isActive = false
+randomID = true
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/BoneAttachment_FootRight/Hitbox" index="0" unique_id=1521861206]
+shape = SubResource("BoxShape3D_7vvjc")
+
+[node name="BoneAttachment_Collision" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="8" unique_id=294702157]
+transform = Transform3D(0.9975943, 0.005771192, -0.06908184, 0.06488074, 0.27324378, 0.95975435, 0.02441511, -0.96192753, 0.27221197, -0.025432568, -0.12884875, -1.0128427)
+bone_name = "mixamorig_Hips"
+bone_idx = 0
+
+[node name="Body" type="AnimatableBody3D" parent="." index="1" unique_id=145188643]
+transform = Transform3D(0.5999999, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.6, 0)
+collision_layer = 18
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body" index="0" unique_id=664560328]
+shape = SubResource("BoxShape3D_q15a4")
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=1933584672]
+blend_times = [&"Dance01", &"Dance01", 0.5, &"Dance01", &"Dance02", 0.5, &"Dance01", &"Dance03", 0.5, &"Dance01", &"Dance04", 0.5, &"Dance01", &"Dance05", 0.5, &"Dance01", &"Dance06", 0.5, &"Dance01", &"Dance07", 0.5, &"Dance01", &"Dance08", 0.5, &"Dance01", &"Dance09", 0.5, &"Dance01", &"HeadSpinning", 0.5, &"Dance02", &"Dance01", 0.5, &"Dance02", &"Dance02", 0.5, &"Dance02", &"Dance03", 0.5, &"Dance02", &"Dance04", 0.5, &"Dance02", &"Dance05", 0.5, &"Dance02", &"Dance06", 0.5, &"Dance02", &"Dance07", 0.5, &"Dance02", &"Dance08", 0.5, &"Dance02", &"Dance09", 0.5, &"Dance02", &"HeadSpinning", 0.5, &"Dance03", &"Dance01", 0.5, &"Dance03", &"Dance02", 0.5, &"Dance03", &"Dance03", 0.5, &"Dance03", &"Dance04", 0.5, &"Dance03", &"Dance05", 0.5, &"Dance03", &"Dance06", 0.5, &"Dance03", &"Dance07", 0.5, &"Dance03", &"Dance08", 0.5, &"Dance03", &"Dance09", 0.5, &"Dance03", &"HeadSpinning", 0.5, &"Dance04", &"Dance01", 0.5, &"Dance04", &"Dance02", 0.5, &"Dance04", &"Dance03", 0.5, &"Dance04", &"Dance04", 0.5, &"Dance04", &"Dance05", 0.5, &"Dance04", &"Dance06", 0.5, &"Dance04", &"Dance07", 0.5, &"Dance04", &"Dance08", 0.5, &"Dance04", &"Dance09", 0.5, &"Dance04", &"HeadSpinning", 0.5, &"Dance05", &"Dance01", 0.5, &"Dance05", &"Dance02", 0.5, &"Dance05", &"Dance03", 0.5, &"Dance05", &"Dance04", 0.5, &"Dance05", &"Dance05", 0.5, &"Dance05", &"Dance06", 0.5, &"Dance05", &"Dance07", 0.5, &"Dance05", &"Dance08", 0.5, &"Dance05", &"Dance09", 0.5, &"Dance05", &"HeadSpinning", 0.5, &"Dance06", &"Dance01", 0.5, &"Dance06", &"Dance02", 0.5, &"Dance06", &"Dance03", 0.5, &"Dance06", &"Dance04", 0.5, &"Dance06", &"Dance05", 0.5, &"Dance06", &"Dance06", 0.5, &"Dance06", &"Dance07", 0.5, &"Dance06", &"Dance08", 0.5, &"Dance06", &"Dance09", 0.5, &"Dance06", &"HeadSpinning", 0.5, &"Dance07", &"Dance01", 0.5, &"Dance07", &"Dance02", 0.5, &"Dance07", &"Dance03", 0.5, &"Dance07", &"Dance04", 0.5, &"Dance07", &"Dance05", 0.5, &"Dance07", &"Dance06", 0.5, &"Dance07", &"Dance07", 0.5, &"Dance07", &"Dance08", 0.5, &"Dance07", &"Dance09", 0.5, &"Dance07", &"HeadSpinning", 0.5, &"Dance08", &"Dance01", 0.5, &"Dance08", &"Dance02", 0.5, &"Dance08", &"Dance03", 0.5, &"Dance08", &"Dance04", 0.5, &"Dance08", &"Dance05", 0.5, &"Dance08", &"Dance06", 0.5, &"Dance08", &"Dance07", 0.5, &"Dance08", &"Dance08", 0.5, &"Dance08", &"Dance09", 0.5, &"Dance08", &"HeadSpinning", 0.5, &"Dance09", &"Dance01", 0.5, &"Dance09", &"Dance02", 0.5, &"Dance09", &"Dance03", 0.5, &"Dance09", &"Dance04", 0.5, &"Dance09", &"Dance05", 0.5, &"Dance09", &"Dance06", 0.5, &"Dance09", &"Dance07", 0.5, &"Dance09", &"Dance08", 0.5, &"Dance09", &"Dance09", 0.5, &"Dance09", &"HeadSpinning", 0.5, &"HeadSpinning", &"Dance01", 0.5, &"HeadSpinning", &"Dance02", 0.5, &"HeadSpinning", &"Dance03", 0.5, &"HeadSpinning", &"Dance04", 0.5, &"HeadSpinning", &"Dance05", 0.5, &"HeadSpinning", &"Dance06", 0.5, &"HeadSpinning", &"Dance07", 0.5, &"HeadSpinning", &"Dance08", 0.5, &"HeadSpinning", &"Dance09", 0.5, &"HeadSpinning", &"HeadSpinning", 0.5]
+
+[node name="DanceArea" type="Area3D" parent="." index="3" unique_id=1797168240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 0
+collision_mask = 211
+script = ExtResource("8_o4hhg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DanceArea" index="0" unique_id=1894247907]
+shape = SubResource("BoxShape3D_o4hhg")
+
+[node name="GroundMagnet" parent="." index="4" unique_id=820120 instance=ExtResource("8_q15a4")]
+auto_align_on_ready = false
+auto_align_on_update = false

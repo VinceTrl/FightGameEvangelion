@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://btehy28ek6vi4" path="res://Scripts/Gameplay/PyramidHead/PyramidStateMachine/PyramidHead_AttackAnticipation.gd" id="11_qeyci"]
 [ext_resource type="Script" uid="uid://hrsy2vlwkxov" path="res://Scripts/Gameplay/PyramidHead/PyramidStateMachine/PyramidHead_Dance.gd" id="12_0n0cj"]
 [ext_resource type="Script" uid="uid://dn8mtii0h5hbr" path="res://Scripts/Components/OutOfBoundKill_Component.gd" id="13_b7vr3"]
+[ext_resource type="Script" uid="uid://ly4div6vq1ka" path="res://Scripts/Gameplay/PyramidHead/PyramidStateMachine/PyramidHead_InfiniteDance.gd" id="17_qlja4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k16dp"]
 radius = 0.231895
@@ -848,6 +849,9 @@ attackChance = 0.6
 
 [node name="Dance" type="Node" parent="StateMachine" unique_id=934427367]
 script = ExtResource("12_0n0cj")
+
+[node name="InfiniteDance" type="Node" parent="StateMachine" unique_id=1392327685]
+script = ExtResource("17_qlja4")
 
 [node name="Components" type="Node" parent="." unique_id=1742014547]
 

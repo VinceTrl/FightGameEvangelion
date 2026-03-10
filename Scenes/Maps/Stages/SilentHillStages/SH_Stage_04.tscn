@@ -159,11 +159,23 @@ playerID = 2
 [node name="Spawner" parent="Gameplay/Objects" unique_id=183070904 instance=ExtResource("3_i2atu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0016109943, 4.3, 0)
 
+[node name="Spawner8" parent="Gameplay/Objects" unique_id=118700999 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.998389, 4.3, 0)
+
+[node name="Spawner9" parent="Gameplay/Objects" unique_id=678200024 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.001611, 4.3, 0)
+
 [node name="Spawner2" parent="Gameplay/Objects" unique_id=1692401677 instance=ExtResource("3_i2atu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49782, 4.3, 0)
 
 [node name="Spawner4" parent="Gameplay/Objects" unique_id=1427938038 instance=ExtResource("3_i2atu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50218, 4.3, 0)
+
+[node name="Spawner6" parent="Gameplay/Objects" unique_id=364224094 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50218, 2.8000002, 0)
+
+[node name="Spawner7" parent="Gameplay/Objects" unique_id=478454596 instance=ExtResource("3_i2atu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49782, 2.8000002, 0)
 
 [node name="Spawner3" parent="Gameplay/Objects" unique_id=167885057 instance=ExtResource("3_i2atu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0117397, 0.8000002, 0)

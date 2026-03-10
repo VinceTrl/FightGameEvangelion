@@ -2,15 +2,21 @@ class_name PyramidHead
 
 extends CharacterBody3D
 
-@export_category("Components")
+
+@export_category("Settings")
+@export var startInInfiniteDance:bool = false
+
+@export_group("References")
+#@export_category("Components")
 @export var stateMachine:PyramidHeadStateMachine
 @export var movement:MovementComponent
 @export var flip:FlipComponent
 @export var animation:AnimationPlayer
-@export_category("Detections")
+#@export_category("Detections")
 @export var targetDetection:PyramidHeadTargetDetection
 @export var obstacleDetectionCast:ShapeCast3D
 @export var groundDetection:RayCast3D
+@export_group("References")
 
 
 var currentState:PyramidHeadState
@@ -20,8 +26,11 @@ func _ready() -> void:
 	obstacleDetectionCast.add_exception(self)
 	targetDetection.add_exception(self)
 	InitStateMachine()
-	ChangeState(stateMachine.Idle)
-	pass
+	
+	if(startInInfiniteDance):
+		ChangeState(stateMachine.InfiniteDance)
+	else:
+		ChangeState(stateMachine.Idle)
 	
 	
 func InitStateMachine():
@@ -46,6 +55,9 @@ func ChangeState(nextState:PyramidHeadState):
 		currentState.EnterState()
 		#print("Pyramid State change from: "+ previousState.Name + " to: " + currentState.Name)
 		return
+		
+func ResetState():
+	ChangeState(stateMachine.Idle)
 
 func _process(delta: float) -> void:
 	currentState.Update(delta)
