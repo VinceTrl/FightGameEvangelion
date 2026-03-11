@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dowg8p6igno0u"]
+
+[ext_resource type="PackedScene" uid="uid://blih1fplnv8kh" path="res://Assets/Meshes/Enviro/SilentHill/Slap_SH_Cheminee_01.fbx" id="1_a4l4p"]
+[ext_resource type="Material" uid="uid://cvfffcg76hmf2" path="res://Assets/Materials/Enviro/M_SilentHill_Atlas02.tres" id="2_vldhb"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_onh2e"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[node name="Slap_SH_Cheminee_01" unique_id=91271986 instance=ExtResource("1_a4l4p")]
+
+[node name="Slap_SH_Cheminee_01" parent="." index="0" unique_id=1558056934]
+surface_material_override/0 = ExtResource("2_vldhb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1292629810 groups=["Ledgegrab"]]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0.5, 1, -0.5)
+collision_layer = 193
+collision_mask = 0
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=42375132]
+shape = SubResource("ConcavePolygonShape3D_onh2e")

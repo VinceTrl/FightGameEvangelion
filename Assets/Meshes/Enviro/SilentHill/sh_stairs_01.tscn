@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cnjvra0c4klaa"]
+
+[ext_resource type="PackedScene" uid="uid://cwf03mjjdoxpt" path="res://Assets/Meshes/Enviro/SilentHill/Slap_SH_Stairs_01.fbx" id="1_6y7qe"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dvm2k"]
+data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[node name="Slap_SH_Stairs_01" unique_id=2074013230 instance=ExtResource("1_6y7qe")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=2000348635 groups=["Ledgegrab"]]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 1, 1.5, 0.25, -0.5)
+collision_layer = 193
+collision_mask = 0
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1941562594]
+shape = SubResource("ConcavePolygonShape3D_dvm2k")
