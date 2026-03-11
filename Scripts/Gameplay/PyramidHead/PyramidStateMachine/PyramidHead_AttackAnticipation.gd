@@ -1,5 +1,7 @@
 extends PyramidHeadState
 
+@export var alertSprite:Node3D
+
 @export var anticipationTime:float = 0.75
 @export_range(0.0,1.0,0.01) var attackChance:float = 0.75
 var timer:SceneTreeTimer
@@ -8,6 +10,7 @@ func EnterState():
 	Name = "AttackAnticipation"
 	Character.movement.currentDirection = Vector3.ZERO
 	Character.animation.play("PH_AnimationLibrary/AttackMelee")
+	alertSprite.visible = true
 	StateTimer()
 		
 func StateTimer():
@@ -22,6 +25,7 @@ func StateTimer():
 			Character.ChangeState(StateMachine.Dance)
 
 func ExitState():
+	alertSprite.visible = false
 	Character.movement.currentDirection = Vector3.ZERO
 	
 func Update(delta: float):

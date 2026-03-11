@@ -3,6 +3,7 @@ extends PyramidHeadState
 @export var attackTime:float = 1.0
 @export var attackMoveSpeed:float = 3.0
 @export var hitbox:Hitbox
+@export var trailAnimation:AnimationPlayer
 var timer:SceneTreeTimer
 
 func EnterState():
@@ -14,7 +15,7 @@ func EnterState():
 	else:
 		hitbox.hitDirection = Vector3.LEFT
 	
-	#Character.animation.play("Attack")
+	trailAnimation.play("Trail")
 	AttackTimer()
 		
 func AttackTimer():

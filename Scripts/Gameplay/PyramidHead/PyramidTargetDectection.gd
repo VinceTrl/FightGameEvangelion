@@ -26,9 +26,11 @@ func ProcessDetection():
 	if(is_colliding()):
 		var targetDetected:bool = false
 		for collision in get_collision_count():
-			if(get_collider(collision).is_in_group("PyramidHeadTarget")):
-				if(!CheckObstacle(get_collision_point(collision))):
-					targetDetected = true
+			var col = get_collider(collision)
+			if(col):
+				if(col.is_in_group("PyramidHeadTarget")):
+					if(!CheckObstacle(get_collision_point(collision))):
+						targetDetected = true
 		if(!targetInCast and targetDetected):
 			targetInCast = true
 		elif(targetInCast and targetDetected):
