@@ -6,6 +6,5 @@
 script = ExtResource("1_ag8n1")
 debugMap = true
 mapIndex = 3
-debugStage = true
 playerDebugID = Array[int]([1])
 debugActiveLineThickness = 0.05
