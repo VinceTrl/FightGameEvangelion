@@ -9,7 +9,7 @@ data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0
 
 [node name="Slap_SH_Plateform_01" unique_id=1236175901 instance=ExtResource("1_45djb")]
 
-[node name="Slap_SH_Plateform_01" parent="." index="0" unique_id=1568507010]
+[node name="Slap_SH_Plateform_01" parent="." index="0" unique_id=1971623217]
 transform = Transform3D(1, 0, 0, 0, 1, -4.371139e-08, 0, 4.371139e-08, 1, -1.0010421, 0.056389928, -0.49656367)
 surface_material_override/0 = ExtResource("3_yiig7")
 
@@ -18,7 +18,7 @@ transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 193
 collision_mask = 0
 script = ExtResource("4_7f6ib")
-shapeSize = Vector3(2.5, 0.25, 1)
+shapeSize = Vector3(2, 0.25, 1)
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1941231907]
 shape = SubResource("ConcavePolygonShape3D_c06mm")

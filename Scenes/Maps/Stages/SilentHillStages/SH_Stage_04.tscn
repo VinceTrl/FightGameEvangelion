@@ -361,7 +361,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4795203, 1.51192, 1.1925389)
 
 [node name="Slap_SH_Stairs_01" parent="Enviro/Slap_SH_Cheminee_01" unique_id=2074013230 instance=ExtResource("12_piwrf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0.08220279)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0.14024723)
 
 [node name="Slap_SH_Cheminee_02" parent="Enviro" unique_id=1066470251 instance=ExtResource("11_mnhab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5204797, 1.51192, 1.1925389)

@@ -869,7 +869,7 @@ streams_count = 2
 stream_0/stream = ExtResource("42_4e748")
 stream_1/stream = ExtResource("42_af708")
 
-[node name="Player" type="CharacterBody3D" unique_id=2134775144 groups=["PyramidHeadTarget"]]
+[node name="Player" type="CharacterBody3D" unique_id=2134775144 node_paths=PackedStringArray("dropRaycasts") groups=["PyramidHeadTarget"]]
 collision_layer = 2
 collision_mask = 0
 axis_lock_linear_z = true
@@ -877,11 +877,12 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_ubpar")
+dropRaycasts = [NodePath("RaycastHolder/OneWayPlatformRayCast"), NodePath("RaycastHolder/OneWayPlatformRayCast_R"), NodePath("RaycastHolder/OneWayPlatformRayCast_L")]
 healthPoints = 3
 spritesheet = ExtResource("5_a28o5")
 runSpeed = 3.75
 deceleration = 1.045
-dropInputTime = 0.35
+dropInputTime = 0.15
 dashDuration = 0.3
 attackSpeedMax = 12.0
 attackSpeedForceCurve = SubResource("Curve_qv1t1")
@@ -1183,6 +1184,18 @@ debug_shape_custom_color = Color(0.366727, 0.432952, 0.970629, 1)
 
 [node name="OneWayPlatformRayCast" type="RayCast3D" parent="RaycastHolder" unique_id=1940362628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.109699, 0)
+target_position = Vector3(0, -0.3, 0)
+debug_shape_custom_color = Color(0.451456, 0.650862, 0, 1)
+script = ExtResource("47_uhhuy")
+
+[node name="OneWayPlatformRayCast_R" type="RayCast3D" parent="RaycastHolder" unique_id=1635130102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, -0.11, 0)
+target_position = Vector3(0, -0.3, 0)
+debug_shape_custom_color = Color(0.451456, 0.650862, 0, 1)
+script = ExtResource("47_uhhuy")
+
+[node name="OneWayPlatformRayCast_L" type="RayCast3D" parent="RaycastHolder" unique_id=1557680200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09, -0.11, 0)
 target_position = Vector3(0, -0.3, 0)
 debug_shape_custom_color = Color(0.451456, 0.650862, 0, 1)
 script = ExtResource("47_uhhuy")

@@ -42,6 +42,12 @@ const SD_GROUND_HIT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_GroundHit.wa
 const VFX_2D_LANDING = preload("res://Scenes/VFX/VFX2D/vfx_2d_landing.tscn")
 const VFX_2D_HEAL = preload("res://Scenes/VFX/VFX2D/vfx_2d_heal.tscn")
 
+
+@export_group("References")
+@export var dropRaycasts:Array[OneWayPlatformRaycast]
+
+@export_group("")
+
 @export var playerID = 1
 
 var gameManager: Manager
@@ -198,6 +204,8 @@ func _ready():
 	player_spear.sprite_3d.texture = spritesheet
 	SetCollisionLayer()
 	one_way_platform_ray_cast.set_mask(collisionLayer)
+	for dropCast in dropRaycasts:
+		dropCast.set_mask(collisionLayer)
 	
 	gameManager = Manager
 	Manager.gameManager.RegisterPlayer(self)
@@ -363,8 +371,12 @@ func HandleDrop():
 			await get_tree().create_timer(dropInputTime,true,false,true).timeout
 			print("DROP : drop timer finished")
 			if(keyDown and one_way_platform_ray_cast.is_on_one_way_platform()):
-				var platform := one_way_platform_ray_cast.get_platform()
-				platform.ForceDrop(self)
+				for dropCast in dropRaycasts:
+					if(dropCast.is_on_one_way_platform()):
+						dropCast.get_platform().ForceDrop(self)
+						
+				#var platform := one_way_platform_ray_cast.get_platform()
+				#platform.ForceDrop(self)
 				
 			isAboutToDrop = false
 			print("DROP : RESET")
