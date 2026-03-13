@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_mkoxr"]
 [ext_resource type="PackedScene" uid="uid://ci58vtgidf8at" path="res://Scenes/Gameplay/PyramidHead/pyramid_head.tscn" id="4_qb1d0"]
 [ext_resource type="PackedScene" uid="uid://ctjn7rcqrj1yk" path="res://Scenes/Gameplay/grid.tscn" id="5_pt1go"]
+[ext_resource type="Script" uid="uid://ut5lm1x40eyq" path="res://Scripts/Gameplay/PyramidHead/pyramid_head_spawn.gd" id="6_gxjmg"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="6_sd1bi"]
 [ext_resource type="PackedScene" uid="uid://bt01122omko6w" path="res://Scenes/Meshes/Blockout/Wall_2M.tscn" id="7_pt1go"]
 [ext_resource type="PackedScene" uid="uid://nrsn75ls1yhy" path="res://Assets/Meshes/Enviro/SilentHill/sh_wall_01.tscn" id="8_8olut"]
@@ -167,8 +168,24 @@ _data = {
 
 [sub_resource type="BoxMesh" id="BoxMesh_pt1go"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e786j"]
+load_path = "res://.godot/imported/hp125.map_tex_004 copy.jpg-0c6dcbff08eb3a06ec96b9b473ea880d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxjmg"]
+albedo_texture = SubResource("CompressedTexture2D_e786j")
+uv1_scale = Vector3(20, 1, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pfgos"]
 data = PackedVector3Array(-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2p4yv"]
+load_path = "res://.godot/imported/hp125.map_tex_004 copy.jpg-0c6dcbff08eb3a06ec96b9b473ea880d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xyx5"]
+albedo_texture = SubResource("CompressedTexture2D_2p4yv")
+uv1_scale = Vector3(20, 1, 1)
+uv1_offset = Vector3(0, 0.5, 0)
 
 [node name="SH_Stage_02" type="Node3D" unique_id=387473971 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_f4ld1")
@@ -255,6 +272,20 @@ isOpen = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 2.0031412, 0)
 isOpen = true
 
+[node name="PyramidHeadSpawn" type="Node" parent="Gameplay/Objects" unique_id=623929711 node_paths=PackedStringArray("spawnPoints", "pyramidHead")]
+script = ExtResource("6_gxjmg")
+spawnPoints = [NodePath("PH_SpawnPoint_01"), NodePath("PH_SpawnPoint_02"), NodePath("PH_SpawnPoint_03")]
+pyramidHead = NodePath("../PyramidHead")
+
+[node name="PH_SpawnPoint_01" type="Node3D" parent="Gameplay/Objects/PyramidHeadSpawn" unique_id=1180403583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.0073020943, 0)
+
+[node name="PH_SpawnPoint_02" type="Node3D" parent="Gameplay/Objects/PyramidHeadSpawn" unique_id=806468414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2198622, 2.002353, 0)
+
+[node name="PH_SpawnPoint_03" type="Node3D" parent="Gameplay/Objects/PyramidHeadSpawn" unique_id=1347113284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4792175, 4.05, 0)
+
 [node name="PenPenLocations" type="Node3D" parent="Gameplay" unique_id=805126883]
 
 [node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=2119280588]
@@ -292,14 +323,15 @@ transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -5.25, 5, 0)
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 5.25, 5, 0)
 
 [node name="Wall7" parent="Level" unique_id=1936144226 instance=ExtResource("7_pt1go")]
-transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -5.25, 7, 0)
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, -5.25, 6.5, -0.023670971)
 
 [node name="Wall8" parent="Level" unique_id=253888221 instance=ExtResource("7_pt1go")]
-transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 5.25, 7, 0)
+transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 5.25, 7, -0.019358665)
 
 [node name="Ground" type="CSGMesh3D" parent="Level" unique_id=1352657506]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_pt1go")
+material = SubResource("StandardMaterial3D_gxjmg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Ground" unique_id=1857113268 groups=["Ledgegrab"]]
 collision_layer = 193
@@ -311,6 +343,7 @@ shape = SubResource("ConcavePolygonShape3D_pfgos")
 [node name="Ground2" type="CSGMesh3D" parent="Level" unique_id=1759463261]
 transform = Transform3D(12, 0, 0, 0, 2.727929, 0, 0, 0, 1, 0, 8.5, 0)
 mesh = SubResource("BoxMesh_pt1go")
+material = SubResource("StandardMaterial3D_5xyx5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/Ground2" unique_id=109300685 groups=["Ledgegrab"]]
 collision_layer = 193

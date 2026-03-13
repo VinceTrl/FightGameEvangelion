@@ -293,12 +293,15 @@ transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 
 
 [node name="Wall10" parent="Level/Blockout" unique_id=1728002268 instance=ExtResource("10_4l8ue")]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 4.75, 1, 0)
+visible = false
 
 [node name="Wall11" parent="Level/Blockout" unique_id=876500103 instance=ExtResource("10_4l8ue")]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 4.75, 3, 0)
+visible = false
 
 [node name="Wall12" parent="Level/Blockout" unique_id=1471935755 instance=ExtResource("10_4l8ue")]
 transform = Transform3D(0.5, 0, 0, 0, 2, 0, 0, 0, 1, 4.75, 5, 0)
+visible = false
 
 [node name="Ground" type="CSGMesh3D" parent="Level/Blockout" unique_id=1352657506]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -458,6 +461,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.5855353, 1.2065349)
 
 [node name="Slap_SH_Wall_06" parent="Enviro" unique_id=692517650 instance=ExtResource("16_j1t1v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3.4590628, 1.2387266)
+
+[node name="Slap_SH_Wall_07" parent="Enviro" unique_id=26241100 instance=ExtResource("16_j1t1v")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1.191174)
+
+[node name="Slap_SH_Wall_08" parent="Enviro" unique_id=1352199575 instance=ExtResource("16_j1t1v")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1.5855353, 1.2065349)
+
+[node name="Slap_SH_Wall_09" parent="Enviro" unique_id=411318278 instance=ExtResource("16_j1t1v")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3.4590628, 1.2387266)
 
 [node name="Slap_SH_Wall_01" parent="." unique_id=1333882796 instance=ExtResource("14_hlgw5")]
 transform = Transform3D(1.0765854, 0, 0, 0, 1.0765854, 0, 0, 0, 1.0765854, -2.1820755, 3.5073419, -0.24669792)
