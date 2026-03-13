@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bum1hdiqypqo4" path="res://Assets/Meshes/Enviro/SilentHill/sh_plateform_02.tscn" id="8_q3d4o"]
 [ext_resource type="PackedScene" uid="uid://cq3mwgjyef0ol" path="res://Assets/Meshes/Enviro/SilentHill/sh_pendule.tscn" id="9_e786j"]
 [ext_resource type="PackedScene" uid="uid://b5mnrhvyyuri6" path="res://Assets/Meshes/Enviro/SilentHill/Slap_SH_Wall_03.fbx" id="10_8olut"]
+[ext_resource type="PackedScene" uid="uid://dcdy12jxm77v7" path="res://Assets/Meshes/Enviro/SilentHill/sh_lamp_01.tscn" id="13_2p4yv"]
+[ext_resource type="PackedScene" uid="uid://dtqmoya5fre2m" path="res://Assets/Meshes/Enviro/SilentHill/sh_border.tscn" id="13_gxjmg"]
+[ext_resource type="PackedScene" uid="uid://j03t8wedl0qp" path="res://Assets/Meshes/Enviro/SilentHill/sh_add_clim.tscn" id="15_5xyx5"]
 
 [sub_resource type="Animation" id="Animation_pt1go"]
 resource_name = "GridLoop"
@@ -430,6 +433,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 0.740794)
 [node name="Slap_SH_Plateform_17" parent="Enviro" unique_id=1854223170 instance=ExtResource("8_q3d4o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, 0.740794)
 
+[node name="Slap_SH_Plateform_31" parent="Enviro" unique_id=957979110 instance=ExtResource("8_q3d4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 7, 0.740794)
+
+[node name="Slap_SH_Plateform_32" parent="Enviro" unique_id=107439564 instance=ExtResource("8_q3d4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.740794)
+
+[node name="Slap_SH_Plateform_33" parent="Enviro" unique_id=527692425 instance=ExtResource("8_q3d4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 7, 0.740794)
+
+[node name="Slap_SH_Plateform_34" parent="Enviro" unique_id=696520256 instance=ExtResource("8_q3d4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, 0.740794)
+
+[node name="Slap_SH_Plateform_35" parent="Enviro" unique_id=233062871 instance=ExtResource("8_q3d4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 7, 0.740794)
+
 [node name="Slap_SH_Plateform_21" parent="Enviro" unique_id=194221104 instance=ExtResource("8_q3d4o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.952353, 0.740794)
 
@@ -469,3 +487,129 @@ light_energy = 3.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 57.86
+
+[node name="SLAP_SH_Lamp03" parent="Lighting" unique_id=1316980762 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6086783, 4.0424013, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp03" unique_id=1130418925]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp04" parent="Lighting" unique_id=953573870 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0303898, 4.0424013, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp04" unique_id=2139044242]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp05" parent="Lighting" unique_id=613255544 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88823926, 4.0424013, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp05" unique_id=690015384]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp06" parent="Lighting" unique_id=477194567 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6086783, 2.006899, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp06" unique_id=162589225]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp07" parent="Lighting" unique_id=1258133568 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0303898, 2.006899, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp07" unique_id=1481116805]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp10" parent="Lighting" unique_id=278719357 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9436283, 2.006899, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp10" unique_id=59559883]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp11" parent="Lighting" unique_id=668728805 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5958195, 2.006899, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp11" unique_id=1527292602]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp12" parent="Lighting" unique_id=1938397812 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84860563, 4.0424013, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp12" unique_id=1342897163]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp13" parent="Lighting" unique_id=189513555 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9436283, 4.0424013, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp13" unique_id=1002118534]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="SLAP_SH_Lamp14" parent="Lighting" unique_id=1560585020 instance=ExtResource("13_2p4yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5958195, 4.0424013, 0.36456716)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting/SLAP_SH_Lamp14" unique_id=1436507521]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0053265095, 1.0638266, -0.008036256)
+light_color = Color(1, 0.7213333, 0.56, 1)
+spot_range = 1.3
+spot_angle = 70.8
+
+[node name="Slap_SH_Border" parent="." unique_id=60702788 instance=ExtResource("13_gxjmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.314905, -0.9852141, 0.5582341)
+
+[node name="Slap_SH_Border2" parent="." unique_id=933779580 instance=ExtResource("13_gxjmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18509483, -0.9852141, 0.5582341)
+
+[node name="Slap_SH_Border3" parent="." unique_id=827143148 instance=ExtResource("13_gxjmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.314905, 7.014786, 0.5582341)
+
+[node name="Slap_SH_Border4" parent="." unique_id=1594514010 instance=ExtResource("13_gxjmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18509483, 7.014786, 0.5582341)
+
+[node name="Slap_SH_Border5" parent="." unique_id=1027418913 instance=ExtResource("13_gxjmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.314905, 8.014786, 0.5582341)
+
+[node name="Slap_SH_Border6" parent="." unique_id=843467226 instance=ExtResource("13_gxjmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18509483, 8.014786, 0.5582341)
+
+[node name="Slap_SH_Add_clim" parent="." unique_id=1151901606 instance=ExtResource("15_5xyx5")]
+transform = Transform3D(-5.2900827e-08, 1.1926297, 0, -1.2102299, -5.21315e-08, 0, 0, 0, 1, -4.688147, 6.297496, -0.46187544)
+
+[node name="Slap_SH_Add_clim2" parent="." unique_id=1517756881 instance=ExtResource("15_5xyx5")]
+transform = Transform3D(-5.818874e-08, 1.3118436, 0, -1.3312032, -5.7342508e-08, 0, 0, 0, 1.0999589, -4.927483, 0.33130038, -0.46187544)
+
+[node name="Slap_SH_Add_clim3" parent="." unique_id=766313345 instance=ExtResource("15_5xyx5")]
+transform = Transform3D(-5.818874e-08, 1.3118436, 0, -1.3312032, -5.7342508e-08, 0, 0, 0, 1.0999589, -4.927483, 0.996902, -0.46187544)
+
+[node name="Slap_SH_Add_clim4" parent="." unique_id=1494441165 instance=ExtResource("15_5xyx5")]
+transform = Transform3D(-5.818874e-08, 1.3118436, 0, -1.3312032, -5.7342508e-08, 0, 0, 0, 1.0999589, -4.927483, 1.6406877, -0.46187544)
+
+[node name="Slap_SH_Add_clim7" parent="." unique_id=2024799002 instance=ExtResource("15_5xyx5")]
+transform = Transform3D(-5.818874e-08, 1.3118436, 0, -1.3312032, -5.7342508e-08, 0, 0, 0, 1.0999589, 4.2371855, 1.6406873, -0.46187544)
+
+[node name="Slap_SH_Add_clim8" parent="." unique_id=1720697358 instance=ExtResource("15_5xyx5")]
+transform = Transform3D(1.6408213, 0, 0, 0, 1.6169591, 0, 0, 0, 1.355793, 0.51696, -0.050592512, -0.46187496)

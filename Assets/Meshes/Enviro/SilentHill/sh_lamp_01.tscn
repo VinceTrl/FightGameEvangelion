@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dcdy12jxm77v7"]
+
+[ext_resource type="PackedScene" uid="uid://bmwgxi7ow73iv" path="res://Assets/Meshes/Enviro/SilentHill/SLAP_SH_Lamp01.fbx" id="1_7va1b"]
+[ext_resource type="Material" uid="uid://cyp4aqahduagu" path="res://Assets/Materials/Enviro/M_SilentHill_Atlas.tres" id="2_20n1x"]
+
+[node name="SLAP_SH_Lamp01" unique_id=1316980762 instance=ExtResource("1_7va1b")]
+
+[node name="SLAP_SH_Lamp01" parent="." index="0" unique_id=1259144983]
+surface_material_override/0 = ExtResource("2_20n1x")

@@ -1,5 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0jcpjl67p6ni"]
+[gd_scene format=3 uid="uid://c0jcpjl67p6ni"]
 
 [ext_resource type="PackedScene" uid="uid://dnpcmkm3cj1vo" path="res://Assets/Meshes/Props/Minecraft/minecraft_grass_block.fbx" id="1_yu1s1"]
+[ext_resource type="Texture2D" uid="uid://uhsy3qllm32h" path="res://Assets/Meshes/Props/Minecraft/Grass_Block_TEX.png" id="2_7bfpt"]
 
-[node name="minecraft_grass_block" instance=ExtResource("1_yu1s1")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tty52"]
+albedo_texture = ExtResource("2_7bfpt")
+emission_enabled = true
+emission = Color(0.23, 0.23, 0.23, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_7bfpt")
+
+[node name="minecraft_grass_block" unique_id=631489104 instance=ExtResource("1_yu1s1")]
+
+[node name="Grass_Block_Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tty52")

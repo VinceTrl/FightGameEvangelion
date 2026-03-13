@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bwpa86pj2o1k2" path="res://Assets/Meshes/Props/SilentHillProps/SH3_Pillar/bg_bg_fre_resized.tscn" id="9_lvdcg"]
 [ext_resource type="PackedScene" uid="uid://cj7lo45niojuv" path="res://Assets/Meshes/Enviro/SilentHill/sh_plateform_01.tscn" id="12_fbbp7"]
 [ext_resource type="PackedScene" uid="uid://v574rpbq0buo" path="res://Assets/Meshes/Enviro/SilentHill/Slap_SH_PlateformAdd_01.fbx" id="13_32x60"]
+[ext_resource type="PackedScene" uid="uid://j03t8wedl0qp" path="res://Assets/Meshes/Enviro/SilentHill/sh_add_clim.tscn" id="14_32x60"]
 
 [sub_resource type="Animation" id="Animation_pt1go"]
 resource_name = "GridLoop"
@@ -599,6 +600,15 @@ transform = Transform3D(1.2287759, 0, 0, 0, 1.429, 0, 0, 0, 0.988, 0.5141766, 6.
 [node name="Slap_SH_PlateformAdd_32" parent="Enviro" unique_id=1607660295 instance=ExtResource("13_32x60")]
 transform = Transform3D(1.2287759, 0, 0, 0, 1.429, 0, 0, 0, 0.988, -3.009862, 6.9861093, 1.2476282)
 
+[node name="Slap_SH_PlateformAdd_45" parent="Enviro" unique_id=2070321767 instance=ExtResource("13_32x60")]
+transform = Transform3D(2.088919, -1.4210855e-14, 0, 1.4210855e-14, 2.4293, 0, 0, 0, 1.6796, -6.0769243, 0.07537079, 1.3067098)
+
+[node name="Slap_SH_PlateformAdd_46" parent="Enviro" unique_id=1755642805 instance=ExtResource("13_32x60")]
+transform = Transform3D(2.088919, -1.4210855e-14, 0, 1.4210855e-14, 2.4293, 0, 0, 0, 1.6796, -1.8990862, 0.075371146, 1.3067098)
+
+[node name="Slap_SH_PlateformAdd_47" parent="Enviro" unique_id=411052621 instance=ExtResource("13_32x60")]
+transform = Transform3D(2.088919, -1.4210855e-14, 0, 1.4210855e-14, 2.4293, 0, 0, 0, 1.6796, 2.2787514, 0.075371504, 1.3067098)
+
 [node name="Slap_SH_PlateformAdd_33" parent="Enviro" unique_id=1382060467 instance=ExtResource("13_32x60")]
 transform = Transform3D(-4.1178005e-08, 0, 0.988, 0, 1.429, 0, -0.94204295, 0, -4.318685e-08, -2.883247, 6.9861093, 1.2476282)
 
@@ -638,3 +648,15 @@ light_energy = 3.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 57.86
+
+[node name="Slap_SH_Add_clim" parent="." unique_id=1151901606 instance=ExtResource("14_32x60")]
+transform = Transform3D(-6.2125636e-08, 1.4212689, 0, -1.4212689, -6.2125636e-08, 0, 0, 0, 1.4212689, -4.921314, 0.3721831, -0.4134097)
+
+[node name="Slap_SH_Add_clim2" parent="." unique_id=897205921 instance=ExtResource("14_32x60")]
+transform = Transform3D(-6.2125636e-08, 1.4212689, 0, -1.4212689, -6.2125636e-08, 0, 0, 0, 1.4212689, -2.062764, 6.4711056, -0.4134097)
+
+[node name="Slap_SH_Add_clim3" parent="." unique_id=1683850914 instance=ExtResource("14_32x60")]
+transform = Transform3D(-6.2125636e-08, -1.4212689, 0, -1.4212689, 6.2125636e-08, 0, 0, 0, 1.4212689, 4.952436, 0.35870075, -0.4134097)
+
+[node name="Slap_SH_Add_clim4" parent="." unique_id=643274804 instance=ExtResource("14_32x60")]
+transform = Transform3D(-6.2125636e-08, -1.4212689, 0, -1.4212689, 6.2125636e-08, 0, 0, 0, 1.4212689, 4.952436, 4.3505583, -0.4134097)

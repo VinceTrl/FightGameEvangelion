@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dtqmoya5fre2m"]
+
+[ext_resource type="PackedScene" uid="uid://cgxinpldhdr5q" path="res://Assets/Meshes/Enviro/SilentHill/Slap_SH_Border.fbx" id="1_yjhcu"]
+[ext_resource type="Material" uid="uid://cyp4aqahduagu" path="res://Assets/Materials/Enviro/M_SilentHill_Atlas.tres" id="2_qn5ii"]
+
+[node name="Slap_SH_Border" unique_id=60702788 instance=ExtResource("1_yjhcu")]
+
+[node name="Slap_SH_Border" parent="." index="0" unique_id=827584076]
+surface_material_override/0 = ExtResource("2_qn5ii")
