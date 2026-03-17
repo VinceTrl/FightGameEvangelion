@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://dyqrd26u8lp8x"]
+[gd_scene format=3 uid="uid://dyqrd26u8lp8x"]
 
 [ext_resource type="Script" uid="uid://8clh5dgovq3u" path="res://Scripts/GUI/Shitpost/shitpost_gui.gd" id="1_fljbo"]
 [ext_resource type="PackedScene" uid="uid://cajciipmd7227" path="res://Scenes/GUI/window_gif_gui.tscn" id="46_8ddlr"]
@@ -58,28 +58,50 @@
 [ext_resource type="Resource" uid="uid://cxw1ngse3sdfd" path="res://Resources/ShitpostTextures/Static/shitpost_93.tres" id="92_6yx1k"]
 [ext_resource type="Resource" uid="uid://d4dkreye8vbmt" path="res://Resources/ShitpostTextures/Static/shitpost_17.tres" id="93_pb0il"]
 [ext_resource type="Resource" uid="uid://c15qthuiw1dy2" path="res://Resources/ShitpostTextures/Static/shitpost_95.tres" id="94_3lckm"]
+[ext_resource type="Resource" uid="uid://ckykfka23scm1" path="res://Resources/ShitpostTextures/Static/shitpost_97.tres" id="94_6iyge"]
 [ext_resource type="Resource" uid="uid://03ukwmen760m" path="res://Resources/ShitpostTextures/Static/shitpost_18.tres" id="94_17uqn"]
 [ext_resource type="Resource" uid="uid://digicbv15aavu" path="res://Resources/ShitpostTextures/Static/shitpost_19.tres" id="95_541qj"]
+[ext_resource type="Resource" uid="uid://dcm4wxax6bjyd" path="res://Resources/ShitpostTextures/Static/shitpost_98.tres" id="95_r6a5f"]
 [ext_resource type="Resource" uid="uid://bh5nuk7f3fsd8" path="res://Resources/ShitpostTextures/Static/shitpost_96.tres" id="95_y703j"]
 [ext_resource type="Resource" uid="uid://dp3c3jjgni4eo" path="res://Resources/ShitpostTextures/Static/shitpost_20.tres" id="96_et85h"]
+[ext_resource type="Resource" uid="uid://38ha4ns8d73s" path="res://Resources/ShitpostTextures/Static/shitpost_99.tres" id="96_khann"]
+[ext_resource type="Resource" uid="uid://cvkda1grgaa0m" path="res://Resources/ShitpostTextures/Static/shitpost_100.tres" id="97_awfx5"]
 [ext_resource type="Resource" uid="uid://djtk2d1wjui37" path="res://Resources/ShitpostTextures/Static/shitpost_21.tres" id="97_b6v5a"]
+[ext_resource type="Resource" uid="uid://cywhaska6hdxu" path="res://Resources/ShitpostTextures/Static/shitpost_101.tres" id="98_dptgs"]
 [ext_resource type="Resource" uid="uid://d112ckmrcy4hm" path="res://Resources/ShitpostTextures/Static/shitpost_22.tres" id="98_it0bc"]
 [ext_resource type="Resource" uid="uid://b70svcc61nwdf" path="res://Resources/ShitpostTextures/Static/shitpost_23.tres" id="99_ch31x"]
+[ext_resource type="Resource" uid="uid://dvywtsk7kbmpt" path="res://Resources/ShitpostTextures/Static/shitpost_102.tres" id="99_kassk"]
 [ext_resource type="Resource" uid="uid://c4jw160mannns" path="res://Resources/ShitpostTextures/Static/shitpost_24.tres" id="100_2i6o6"]
+[ext_resource type="Resource" uid="uid://c0ilroaby33c8" path="res://Resources/ShitpostTextures/Static/shitpost_103.tres" id="100_v4l5b"]
+[ext_resource type="Resource" uid="uid://juo5j36vm6m7" path="res://Resources/ShitpostTextures/Static/shitpost_104.tres" id="101_cglsf"]
+[ext_resource type="Resource" uid="uid://b75j1l553evcy" path="res://Resources/ShitpostTextures/Static/shitpost_105.tres" id="102_sci5j"]
 [ext_resource type="Resource" uid="uid://dhok5yl2aal6f" path="res://Resources/ShitpostTextures/Static/shitpost_26.tres" id="102_wglav"]
+[ext_resource type="Resource" uid="uid://b7rrpf06cvsh8" path="res://Resources/ShitpostTextures/Static/shitpost_106.tres" id="103_8lthe"]
 [ext_resource type="Resource" uid="uid://biuqr1ljk0ejo" path="res://Resources/ShitpostTextures/Static/shitpost_27.tres" id="103_fh24o"]
 [ext_resource type="Resource" uid="uid://b2mdyvmqeuhu8" path="res://Resources/ShitpostTextures/Static/shitpost_28.tres" id="104_3qaw7"]
+[ext_resource type="Resource" uid="uid://cmjyqxd7j83p7" path="res://Resources/ShitpostTextures/Static/shitpost_107.tres" id="104_xirrk"]
+[ext_resource type="Resource" uid="uid://ry13x1hgp788" path="res://Resources/ShitpostTextures/Static/shitpost_108.tres" id="105_6yx1k"]
 [ext_resource type="Resource" uid="uid://dreo3vf7qcuxe" path="res://Resources/ShitpostTextures/Static/shitpost_29.tres" id="105_t4bju"]
+[ext_resource type="Resource" uid="uid://bt6lanhxpnduq" path="res://Resources/ShitpostTextures/Static/shitpost_109.tres" id="106_1vvem"]
 [ext_resource type="Resource" uid="uid://b5b0tp88x5c4l" path="res://Resources/ShitpostTextures/Static/shitpost_30.tres" id="106_c5pmt"]
+[ext_resource type="Resource" uid="uid://bppe5sumbxd84" path="res://Resources/ShitpostTextures/Static/shitpost_110.tres" id="107_3lckm"]
 [ext_resource type="Resource" uid="uid://dqgh52qxeou73" path="res://Resources/ShitpostTextures/Static/shitpost_31.tres" id="107_uisf4"]
 [ext_resource type="Resource" uid="uid://dnpm11ylcghnx" path="res://Resources/ShitpostTextures/Static/shitpost_32.tres" id="108_uunse"]
+[ext_resource type="Resource" uid="uid://bsklb205ba2m8" path="res://Resources/ShitpostTextures/Static/shitpost_111.tres" id="108_y703j"]
 [ext_resource type="Resource" uid="uid://c1leck4ewvbqe" path="res://Resources/ShitpostTextures/Static/shitpost_33.tres" id="109_2xr0k"]
+[ext_resource type="Resource" uid="uid://vqs6koai8udw" path="res://Resources/ShitpostTextures/Static/shitpost_112.tres" id="109_h1hdv"]
+[ext_resource type="Resource" uid="uid://niv74jxms26c" path="res://Resources/ShitpostTextures/Static/shitpost_113.tres" id="110_5rvsh"]
 [ext_resource type="Resource" uid="uid://be7y4d3f7tkmb" path="res://Resources/ShitpostTextures/Static/shitpost_34.tres" id="110_krkx7"]
+[ext_resource type="Resource" uid="uid://dgtt3uiyfgrim" path="res://Resources/ShitpostTextures/Static/shitpost_114.tres" id="111_e7lpr"]
 [ext_resource type="Resource" uid="uid://cora3xrbs0te5" path="res://Resources/ShitpostTextures/Static/shitpost_35.tres" id="111_mx7hi"]
+[ext_resource type="Resource" uid="uid://wpyjqc0x5cqs" path="res://Resources/ShitpostTextures/Static/shitpost_115.tres" id="112_82nxw"]
 [ext_resource type="Resource" uid="uid://bqx5s1l2mkee1" path="res://Resources/ShitpostTextures/Static/shitpost_36.tres" id="112_x0ne5"]
+[ext_resource type="Resource" uid="uid://ugh237katcuw" path="res://Resources/ShitpostTextures/Static/shitpost_116.tres" id="113_5d4xe"]
 [ext_resource type="Resource" uid="uid://b3val6elwmt0y" path="res://Resources/ShitpostTextures/Static/shitpost_37.tres" id="113_aop1x"]
+[ext_resource type="Resource" uid="uid://ccnte5tnfmry7" path="res://Resources/ShitpostTextures/Static/shitpost_117.tres" id="114_fpmdh"]
 [ext_resource type="Resource" uid="uid://c4p7v1ps5oyhq" path="res://Resources/ShitpostTextures/Static/shitpost_38.tres" id="114_iqivf"]
 [ext_resource type="Resource" uid="uid://hsft8jurxv24" path="res://Resources/ShitpostTextures/Static/shitpost_39.tres" id="115_a2gbb"]
+[ext_resource type="Resource" uid="uid://xhpcn8yxu00n" path="res://Resources/ShitpostTextures/Static/shitpost_118.tres" id="115_pb0il"]
 [ext_resource type="Resource" uid="uid://bc6q1m5nkwwxr" path="res://Resources/ShitpostTextures/Static/shitpost_41.tres" id="117_bai1d"]
 [ext_resource type="Resource" uid="uid://c7lg651dl7hsl" path="res://Resources/ShitpostTextures/Static/shitpost_42.tres" id="118_44o80"]
 [ext_resource type="Texture2D" uid="uid://d1l2qvo2closl" path="res://Assets/Shitpost/Source/Screenshot_2025-06-10-03-21-20-29_1c337646f29875672b5a61192b9010f9.jpg" id="119_1vvem"]
@@ -99,11 +121,9 @@
 script = ExtResource("55_3aq8c")
 name = &"SP_Evangelion"
 texture = ExtResource("119_1vvem")
-type = 0
-size = 0.4
 metadata/_custom_type_script = "uid://dyq6katrb0xdl"
 
-[node name="ShitpostGUI" type="Control"]
+[node name="ShitpostGUI" type="Control" unique_id=1653891839]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,13 +133,13 @@ grow_vertical = 2
 script = ExtResource("1_fljbo")
 imageSize = 0.4
 debugMode = true
-shitpostImages = Array[ExtResource("55_3aq8c")]([ExtResource("56_65biy"), ExtResource("78_v4l5b"), ExtResource("79_cglsf"), ExtResource("80_sci5j"), ExtResource("81_8lthe"), ExtResource("82_xirrk"), ExtResource("83_6yx1k"), ExtResource("84_1vvem"), ExtResource("85_3lckm"), ExtResource("86_y703j"), ExtResource("87_h1hdv"), ExtResource("88_5rvsh"), ExtResource("89_e7lpr"), ExtResource("90_82nxw"), ExtResource("91_5d4xe"), ExtResource("93_pb0il"), ExtResource("94_17uqn"), ExtResource("95_541qj"), ExtResource("96_et85h"), ExtResource("97_b6v5a"), ExtResource("98_it0bc"), ExtResource("99_ch31x"), ExtResource("100_2i6o6"), ExtResource("102_wglav"), ExtResource("103_fh24o"), ExtResource("104_3qaw7"), ExtResource("105_t4bju"), ExtResource("106_c5pmt"), ExtResource("107_uisf4"), ExtResource("108_uunse"), ExtResource("109_2xr0k"), ExtResource("110_krkx7"), ExtResource("111_mx7hi"), ExtResource("112_x0ne5"), ExtResource("113_aop1x"), ExtResource("114_iqivf"), ExtResource("115_a2gbb"), ExtResource("117_bai1d"), ExtResource("118_44o80"), ExtResource("119_qesdt"), ExtResource("120_g1gfr"), ExtResource("121_fg1mu"), SubResource("Resource_3lckm"), ExtResource("123_5rvsh"), ExtResource("124_e7lpr"), ExtResource("125_82nxw"), ExtResource("126_5d4xe"), ExtResource("127_fpmdh"), ExtResource("128_pb0il"), ExtResource("129_17uqn"), ExtResource("130_541qj"), ExtResource("54_65biy"), ExtResource("55_cqdp6"), ExtResource("56_6kdfr"), ExtResource("57_i3vum"), ExtResource("58_1jvj7"), ExtResource("59_hgq3t"), ExtResource("60_qdpxi"), ExtResource("61_uj2ej"), ExtResource("62_8mdv6"), ExtResource("63_dt58w"), ExtResource("64_l6r45"), ExtResource("65_3mmup"), ExtResource("66_eb4xu"), ExtResource("67_kjdjq"), ExtResource("68_mb0da"), ExtResource("69_a7da8"), ExtResource("70_vn8cc"), ExtResource("71_jcjv0"), ExtResource("72_ppn1h"), ExtResource("73_g7wmf"), ExtResource("74_pjpms"), ExtResource("75_288wv"), ExtResource("76_a6x4v"), ExtResource("77_43gbu"), ExtResource("78_hpc50"), ExtResource("79_noajm"), ExtResource("81_6iyge"), ExtResource("82_r6a5f"), ExtResource("83_khann"), ExtResource("84_awfx5"), ExtResource("85_dptgs"), ExtResource("86_kassk"), ExtResource("87_v4l5b"), ExtResource("88_cglsf"), ExtResource("89_sci5j"), ExtResource("90_8lthe"), ExtResource("91_xirrk"), ExtResource("92_6yx1k"), ExtResource("94_3lckm"), ExtResource("95_y703j")])
+shitpostImages = Array[ExtResource("55_3aq8c")]([ExtResource("56_65biy"), ExtResource("78_v4l5b"), ExtResource("79_cglsf"), ExtResource("80_sci5j"), ExtResource("81_8lthe"), ExtResource("82_xirrk"), ExtResource("83_6yx1k"), ExtResource("84_1vvem"), ExtResource("85_3lckm"), ExtResource("86_y703j"), ExtResource("87_h1hdv"), ExtResource("88_5rvsh"), ExtResource("89_e7lpr"), ExtResource("90_82nxw"), ExtResource("91_5d4xe"), ExtResource("93_pb0il"), ExtResource("94_17uqn"), ExtResource("95_541qj"), ExtResource("96_et85h"), ExtResource("97_b6v5a"), ExtResource("98_it0bc"), ExtResource("99_ch31x"), ExtResource("100_2i6o6"), ExtResource("102_wglav"), ExtResource("103_fh24o"), ExtResource("104_3qaw7"), ExtResource("105_t4bju"), ExtResource("106_c5pmt"), ExtResource("107_uisf4"), ExtResource("108_uunse"), ExtResource("109_2xr0k"), ExtResource("110_krkx7"), ExtResource("111_mx7hi"), ExtResource("112_x0ne5"), ExtResource("113_aop1x"), ExtResource("114_iqivf"), ExtResource("115_a2gbb"), ExtResource("117_bai1d"), ExtResource("118_44o80"), ExtResource("119_qesdt"), ExtResource("120_g1gfr"), ExtResource("121_fg1mu"), SubResource("Resource_3lckm"), ExtResource("123_5rvsh"), ExtResource("124_e7lpr"), ExtResource("125_82nxw"), ExtResource("126_5d4xe"), ExtResource("127_fpmdh"), ExtResource("128_pb0il"), ExtResource("129_17uqn"), ExtResource("130_541qj"), ExtResource("54_65biy"), ExtResource("55_cqdp6"), ExtResource("56_6kdfr"), ExtResource("57_i3vum"), ExtResource("58_1jvj7"), ExtResource("59_hgq3t"), ExtResource("60_qdpxi"), ExtResource("61_uj2ej"), ExtResource("62_8mdv6"), ExtResource("63_dt58w"), ExtResource("64_l6r45"), ExtResource("65_3mmup"), ExtResource("66_eb4xu"), ExtResource("67_kjdjq"), ExtResource("68_mb0da"), ExtResource("69_a7da8"), ExtResource("70_vn8cc"), ExtResource("71_jcjv0"), ExtResource("72_ppn1h"), ExtResource("73_g7wmf"), ExtResource("74_pjpms"), ExtResource("75_288wv"), ExtResource("76_a6x4v"), ExtResource("77_43gbu"), ExtResource("78_hpc50"), ExtResource("79_noajm"), ExtResource("81_6iyge"), ExtResource("82_r6a5f"), ExtResource("83_khann"), ExtResource("84_awfx5"), ExtResource("85_dptgs"), ExtResource("86_kassk"), ExtResource("87_v4l5b"), ExtResource("88_cglsf"), ExtResource("89_sci5j"), ExtResource("90_8lthe"), ExtResource("91_xirrk"), ExtResource("92_6yx1k"), ExtResource("94_3lckm"), ExtResource("95_y703j"), ExtResource("94_6iyge"), ExtResource("95_r6a5f"), ExtResource("96_khann"), ExtResource("97_awfx5"), ExtResource("98_dptgs"), ExtResource("99_kassk"), ExtResource("100_v4l5b"), ExtResource("101_cglsf"), ExtResource("102_sci5j"), ExtResource("103_8lthe"), ExtResource("104_xirrk"), ExtResource("105_6yx1k"), ExtResource("106_1vvem"), ExtResource("107_3lckm"), ExtResource("108_y703j"), ExtResource("109_h1hdv"), ExtResource("110_5rvsh"), ExtResource("111_e7lpr"), ExtResource("112_82nxw"), ExtResource("113_5d4xe"), ExtResource("114_fpmdh"), ExtResource("115_pb0il")])
 
-[node name="TextureHolder" type="TextureRect" parent="."]
+[node name="TextureHolder" type="TextureRect" parent="." unique_id=179870677]
 layout_mode = 0
 stretch_mode = 5
 
-[node name="TextureHolder2" type="TextureRect" parent="."]
+[node name="TextureHolder2" type="TextureRect" parent="." unique_id=786959369]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -129,7 +149,7 @@ offset_bottom = -540.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="TextureHolder3" type="TextureRect" parent="."]
+[node name="TextureHolder3" type="TextureRect" parent="." unique_id=985332340]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -139,7 +159,7 @@ offset_bottom = -754.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="TextureHolder4" type="TextureRect" parent="."]
+[node name="TextureHolder4" type="TextureRect" parent="." unique_id=969894038]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -149,7 +169,7 @@ offset_bottom = -754.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="TextureHolder5" type="TextureRect" parent="."]
+[node name="TextureHolder5" type="TextureRect" parent="." unique_id=1886063703]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -159,7 +179,7 @@ offset_bottom = -754.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="TextureHolder6" type="TextureRect" parent="."]
+[node name="TextureHolder6" type="TextureRect" parent="." unique_id=1695045487]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -169,7 +189,7 @@ offset_bottom = -754.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="TextureHolder7" type="TextureRect" parent="."]
+[node name="TextureHolder7" type="TextureRect" parent="." unique_id=890924863]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -179,7 +199,7 @@ offset_bottom = -754.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="TextureHolder8" type="TextureRect" parent="."]
+[node name="TextureHolder8" type="TextureRect" parent="." unique_id=276371609]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -189,7 +209,7 @@ offset_bottom = -754.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="TextureHolder9" type="TextureRect" parent="."]
+[node name="TextureHolder9" type="TextureRect" parent="." unique_id=927449248]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -199,7 +219,7 @@ offset_bottom = -754.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="TextureHolder10" type="TextureRect" parent="."]
+[node name="TextureHolder10" type="TextureRect" parent="." unique_id=189243588]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -209,9 +229,9 @@ offset_bottom = -754.0
 grow_vertical = 0
 stretch_mode = 5
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1892590737]
 
-[node name="ShitpostWindow" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow" parent="." unique_id=1629365734 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -223,7 +243,7 @@ offset_bottom = -1080.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow2" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow2" parent="." unique_id=325961780 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -233,7 +253,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow3" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow3" parent="." unique_id=1730563814 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -243,7 +263,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow4" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow4" parent="." unique_id=458100258 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -253,7 +273,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow5" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow5" parent="." unique_id=276455584 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -263,7 +283,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow6" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow6" parent="." unique_id=1339973631 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -273,7 +293,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow7" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow7" parent="." unique_id=1276216291 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -283,7 +303,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow8" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow8" parent="." unique_id=661585998 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -293,7 +313,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow9" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow9" parent="." unique_id=1652125014 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -303,7 +323,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow10" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow10" parent="." unique_id=1719375350 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -313,7 +333,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow11" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow11" parent="." unique_id=153624562 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -323,7 +343,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow12" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow12" parent="." unique_id=1080665464 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -333,7 +353,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow13" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow13" parent="." unique_id=1948415205 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -343,7 +363,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow14" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow14" parent="." unique_id=424108551 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -353,7 +373,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow15" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow15" parent="." unique_id=2116258209 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -363,7 +383,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow16" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow16" parent="." unique_id=225505883 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -373,7 +393,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow17" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow17" parent="." unique_id=1770150455 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -383,7 +403,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow18" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow18" parent="." unique_id=1759648673 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -393,7 +413,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow19" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow19" parent="." unique_id=983668166 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -403,7 +423,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow20" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow20" parent="." unique_id=958250858 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -413,7 +433,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow21" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow21" parent="." unique_id=18887668 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -423,7 +443,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow22" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow22" parent="." unique_id=130331878 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -433,7 +453,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow23" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow23" parent="." unique_id=303709621 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -443,7 +463,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow24" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow24" parent="." unique_id=1932777712 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -453,7 +473,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow25" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow25" parent="." unique_id=635315288 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -463,7 +483,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow26" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow26" parent="." unique_id=486920683 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -473,7 +493,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow27" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow27" parent="." unique_id=1890114751 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -483,7 +503,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow28" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow28" parent="." unique_id=739828050 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -493,7 +513,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow29" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow29" parent="." unique_id=335854905 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -503,7 +523,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow30" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow30" parent="." unique_id=1353994612 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -513,7 +533,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow31" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow31" parent="." unique_id=262675369 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -523,7 +543,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow32" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow32" parent="." unique_id=2027283396 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -533,7 +553,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow33" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow33" parent="." unique_id=1765619142 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -543,7 +563,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow34" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow34" parent="." unique_id=556406424 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -553,7 +573,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow35" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow35" parent="." unique_id=1910549179 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -563,7 +583,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow36" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow36" parent="." unique_id=874328188 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -573,7 +593,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow37" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow37" parent="." unique_id=327002515 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -583,7 +603,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow38" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow38" parent="." unique_id=708048954 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -593,7 +613,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow39" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow39" parent="." unique_id=488209697 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -603,7 +623,7 @@ anchor_bottom = 1.0
 grow_horizontal = 1
 grow_vertical = 0
 
-[node name="ShitpostWindow40" parent="." instance=ExtResource("46_8ddlr")]
+[node name="ShitpostWindow40" parent="." unique_id=506554848 instance=ExtResource("46_8ddlr")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0

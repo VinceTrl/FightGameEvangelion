@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShitpostImage" format=3 uid="uid://cywhaska6hdxu"]
+
+[ext_resource type="Script" uid="uid://dyq6katrb0xdl" path="res://Scripts/GUI/Shitpost/ShitpostImage.gd" id="1_kih4c"]
+[ext_resource type="Texture2D" uid="uid://bj37m1jfbcgm1" path="res://Assets/Shitpost/Source/SilentHill/649105834_26727989510159361_3263237715044848107_n.jpg" id="2_kih4c"]
+
+[resource]
+script = ExtResource("1_kih4c")
+name = &"SP_SilentHill"
+texture = ExtResource("2_kih4c")
+size = 0.725
+metadata/_custom_type_script = "uid://dyq6katrb0xdl"
