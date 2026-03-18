@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiYellow.png" id="7_j3bm8"]
 [ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="7_nb51f"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
-[ext_resource type="Script" uid="uid://ugj3nkt7ohd3" path="res://Scripts/Managers/ReplaySystem/game_screenshot.gd" id="15_nb51f"]
+[ext_resource type="PackedScene" uid="uid://ckteefgjio63s" path="res://Scenes/Managers/game_capture.tscn" id="15_nb51f"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rfxrm"]
@@ -67,10 +67,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
 [node name="MasterGUI" parent="GUI" unique_id=341890886 instance=ExtResource("16_cim6e")]
 
-[node name="Screenshot" type="Node" parent="." unique_id=271362851]
-script = ExtResource("15_nb51f")
-captureInterval = 0.25
-imageQuality = 0.1
-screenshotMaxLength = 30
+[node name="GameCapture" parent="." unique_id=978267008 instance=ExtResource("15_nb51f")]
 
 [editable path="Gameplay/Player2"]

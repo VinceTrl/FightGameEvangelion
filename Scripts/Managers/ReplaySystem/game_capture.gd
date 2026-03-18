@@ -1,7 +1,9 @@
+class_name GameCapture
+
 extends Node
 
 
-@export var captureInterval:float = 0.5
+@export var captureInterval:float = 0.1
 
 @export_range(0.0,1.0,0.01) var imageQuality:float = 0.75
 @export var folderName:String = "Screenshots"
@@ -23,10 +25,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(Input.is_action_just_pressed("TakeScreenshot")):
-		TakeScreenshot()
-		
-		
+	#if(Input.is_action_just_pressed("TakeScreenshot")):
+		#TakeScreenshot()
+	pass
+	
 func Capture():
 	if(!canCapture):return
 	await get_tree().create_timer(captureInterval,true,false,true).timeout
