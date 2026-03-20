@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bpnn6fhicph64"]
+
+[ext_resource type="Script" uid="uid://casqi5ihml06b" path="res://Scripts/Managers/fps_count_debug.gd" id="1_u468a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ws6a"]
+font_size = 32
+font_color = Color(0, 1, 0, 1)
+
+[node name="FPSCounter" type="Node" unique_id=1458728735]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1804568746]
+layer = 200
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=653717300]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "FPS : 60"
+label_settings = SubResource("LabelSettings_7ws6a")
+script = ExtResource("1_u468a")

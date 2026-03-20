@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://ckteefgjio63s" path="res://Scenes/Managers/game_capture.tscn" id="15_nb51f"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
+[ext_resource type="PackedScene" uid="uid://bpnn6fhicph64" path="res://Scenes/Utility/fps_counter.tscn" id="16_nnt18"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rfxrm"]
 render_priority = -1
@@ -34,7 +35,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" type="Node" parent="." unique_id=389733307]
 script = ExtResource("3_dv241")
-maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("5_fwmiy"), ExtResource("6_3xkmj"), ExtResource("7_nb51f"), ExtResource("7_nb51f"), ExtResource("7_nb51f"), ExtResource("7_nb51f"), ExtResource("7_nb51f"), ExtResource("7_nb51f"), ExtResource("7_nb51f")])
+maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("6_3xkmj"), ExtResource("7_nb51f")])
 
 [node name="Gameplay" type="Node" parent="." unique_id=1867581352]
 
@@ -68,5 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 [node name="MasterGUI" parent="GUI" unique_id=341890886 instance=ExtResource("16_cim6e")]
 
 [node name="GameCapture" parent="." unique_id=978267008 instance=ExtResource("15_nb51f")]
+
+[node name="FPSCounter" parent="." unique_id=1458728735 instance=ExtResource("16_nnt18")]
 
 [editable path="Gameplay/Player2"]

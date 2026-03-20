@@ -2,6 +2,8 @@ class_name GameDebug
 
 extends Node
 
+@export var debugFPS:bool = false
+
 @export_group("MAP DEBUG")
 ##if true : force the game to spawn a specific map with the index below
 @export var debugMap: bool = false

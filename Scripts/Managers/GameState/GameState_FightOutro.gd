@@ -11,7 +11,7 @@ func EnterState():
 	var timer = get_tree().create_timer(resultStateDelay,true,false,true)
 	await timer.timeout
 	#get_tree().reload_current_scene()
-	manager.ChangeGameState(GameState.FightResult)
+	manager.ChangeGameState(GameState.Replay)
 	
 func ExitState():
 	pass

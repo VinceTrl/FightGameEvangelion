@@ -20,7 +20,7 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(5, 16)
 
-[node name="MasterGUI" type="Control" unique_id=1401808938]
+[node name="MasterGUI" type="Control" unique_id=1401808938 node_paths=PackedStringArray("fight_text", "timer_root", "result_screen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,15 +28,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xuadb")
+fight_text = NodePath("FightText")
+timer_root = NodePath("TimerRoot")
+result_screen = NodePath("ResultScreen")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=748950606]
 layer = 99
 
-[node name="FightText" parent="CanvasLayer" unique_id=519219207 instance=ExtResource("1_gskd5")]
-
-[node name="TimerRoot" parent="CanvasLayer" unique_id=1777242314 instance=ExtResource("3_cd8f7")]
-offset_top = 33.635
-offset_bottom = 73.635
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=422070112]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8ak8g")
 
 [node name="TopBanner_WashBros" type="TextureRect" parent="CanvasLayer" unique_id=480973805]
 visible = false
@@ -60,16 +66,6 @@ offset_right = 1143.0
 offset_bottom = 43.95
 grow_horizontal = 2
 texture = ExtResource("5_dph56")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=422070112]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_8ak8g")
 
 [node name="LifeBarRoot_TopLeft" parent="." unique_id=976420155 instance=ExtResource("8_ehwck")]
 layout_mode = 0
@@ -104,14 +100,19 @@ grow_horizontal = 0
 playerIndex = 1
 color = Color(1, 0, 0.435294, 1)
 
+[node name="TimerRoot" parent="." unique_id=1777242314 instance=ExtResource("3_cd8f7")]
+layout_mode = 1
+offset_top = 33.635
+offset_bottom = 73.635
+
 [node name="Round_P1" type="Label" parent="." unique_id=1699815291]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -205.0
+offset_left = -208.0
 offset_top = 77.0
-offset_right = -125.0
+offset_right = -122.0
 offset_bottom = 157.0
 grow_horizontal = 2
 text = "0"
@@ -126,9 +127,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 122.0
+offset_left = 119.0
 offset_top = 79.0
-offset_right = 202.0
+offset_right = 205.0
 offset_bottom = 159.0
 grow_horizontal = 2
 text = "0"
@@ -138,3 +139,6 @@ vertical_alignment = 2
 script = ExtResource("11_dph56")
 playerID = 2
 textColor = Color(1, 0, 0.435294, 1)
+
+[node name="FightText" parent="." unique_id=519219207 instance=ExtResource("1_gskd5")]
+layout_mode = 1

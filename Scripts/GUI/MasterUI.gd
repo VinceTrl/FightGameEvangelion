@@ -2,11 +2,12 @@ class_name MasterUI
 extends Control
 
 
-@onready var fight_text: FightText = $CanvasLayer/FightText
-@onready var timer_root: Control = $CanvasLayer/TimerRoot
+@export_group("References")
+@export var fight_text: FightText
+@export var timer_root: Control
 #@onready var title_screen: TitleScreen = $CanvasLayer/TitleScreen
 #@onready var result_screen: ResultScreen = $CanvasLayer/ResultScreen
-@onready var result_screen: ResultScreen = $ResultScreen
+@export var result_screen: ResultScreen
 
 
 func _ready():

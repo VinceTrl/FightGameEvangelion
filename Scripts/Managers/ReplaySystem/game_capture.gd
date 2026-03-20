@@ -2,45 +2,53 @@ class_name GameCapture
 
 extends Node
 
-
 @export var captureInterval:float = 0.1
-
 @export_range(0.0,1.0,0.01) var imageQuality:float = 0.75
-@export var folderName:String = "Screenshots"
-@export var imageName:String = "screenshot_"
+@export var screenshotMaxLength:int = 60
+
+@export_group("References")
+@export var viewport:Viewport
+
+var folderName:String = "Screenshots"
+var imageName:String = "screenshot_"
+var folderPath:String
 
 var imageIndex:int = 0
-var canCapture:bool = true
+var canCapture:bool = false
 
 var screenshotPaths:PackedStringArray
-@export var screenshotMaxLength:int = 60
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CreateFolder()
 	ClearFolder()
-	Capture()
+	folderPath = GetFolderPath()
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#if(Input.is_action_just_pressed("TakeScreenshot")):
-		#TakeScreenshot()
+func StartCapture():
+	canCapture = true
+	Capture()
+	pass
+	
+func StopCapture():
+	canCapture = false
 	pass
 	
 func Capture():
 	if(!canCapture):return
 	await get_tree().create_timer(captureInterval,true,false,true).timeout
+	if(!canCapture):return
 	TakeScreenshot()
 	Capture()
 	
 func TakeScreenshot():
-	#await get_tree().process_frame
-	var imageName := GetImageName()
-	var path := GetFolderPath() + imageName
+	await RenderingServer.frame_post_draw
+	var path := folderPath + GetImageName()
 
-	var error = get_viewport().get_texture().get_image().save_jpg(path,imageQuality)
+	#var error = get_viewport().get_texture().get_image().save_jpg(path,imageQuality)
+	var error = viewport.get_texture().get_image().save_jpg(path,imageQuality)
 	
 	if(!error):
 		print("SCREENSHOT SAVED AT " + path)
@@ -49,6 +57,8 @@ func TakeScreenshot():
 			DeleteScreenshot(screenshotPaths[0])
 			screenshotPaths.remove_at(0)
 		screenshotPaths.append(path)
+	else:
+		print("ERROR WHILE TAKING SCREENSHOT")
 	
 func DeleteScreenshot(path:String):
 	if(FileAccess.file_exists(path)):

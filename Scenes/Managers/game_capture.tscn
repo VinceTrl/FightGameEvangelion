@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://ckteefgjio63s"]
 
 [ext_resource type="Script" uid="uid://ugj3nkt7ohd3" path="res://Scripts/Managers/ReplaySystem/game_capture.gd" id="1_epxs1"]
+[ext_resource type="Script" uid="uid://cmdbs01elfokm" path="res://Scripts/Managers/ReplaySystem/replay_manager.gd" id="1_nqd7e"]
+[ext_resource type="Script" uid="uid://bk6qf0l3s6rj8" path="res://Scripts/Managers/ReplaySystem/replay_camera.gd" id="2_nv681"]
 [ext_resource type="Script" uid="uid://ba1s81dx5sx0h" path="res://Scripts/Managers/ReplaySystem/game_replay.gd" id="2_v0jyv"]
 [ext_resource type="FontFile" uid="uid://cp0r1d01w0cc7" path="res://Assets/GUI/Fonts/medium.otf" id="3_hftf6"]
+[ext_resource type="Texture2D" uid="uid://dj36312ol1ygk" path="res://Assets/GUI/Sprites/ReplayScreen/MovieReelBorder.png" id="5_7d0f5"]
+[ext_resource type="Shader" uid="uid://dhs7yv0hcugjs" path="res://Assets/Shaders/Scrolling.tres" id="6_6c8fn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nv681"]
 font = ExtResource("3_hftf6")
@@ -49,18 +53,125 @@ _data = {
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v0jyv"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hftf6"]
+[sub_resource type="Animation" id="Animation_6c8fn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[node name="GameCapture" type="Node" unique_id=978267008]
+[sub_resource type="Animation" id="Animation_nqd7e"]
+resource_name = "Scroll"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1600, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ah4ht"]
+_data = {
+&"RESET": SubResource("Animation_6c8fn"),
+&"Scroll": SubResource("Animation_nqd7e")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqd7e"]
+render_priority = 0
+shader = ExtResource("6_6c8fn")
+shader_parameter/Speed = 0.2
+shader_parameter/Offset = 0.95
+shader_parameter/Texture = ExtResource("5_7d0f5")
+
+[sub_resource type="Animation" id="Animation_ah4ht"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1016)]
+}
+
+[sub_resource type="Animation" id="Animation_iyk6s"]
+resource_name = "Scroll"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1016), Vector2(-1600, 1016)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2tvly"]
+_data = {
+&"RESET": SubResource("Animation_ah4ht"),
+&"Scroll": SubResource("Animation_iyk6s")
+}
+
+[node name="GameCaptureManager" type="Node" unique_id=666244724 node_paths=PackedStringArray("gameCapture", "gameReplay")]
+script = ExtResource("1_nqd7e")
+gameCapture = NodePath("GameCapture")
+gameReplay = NodePath("GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture")
+
+[node name="GameCapture" type="Node" parent="." unique_id=978267008 node_paths=PackedStringArray("viewport")]
 script = ExtResource("1_epxs1")
 captureInterval = 0.05
-imageQuality = 0.05
-screenshotMaxLength = 45
+viewport = NodePath("CaptureCanvasLayer/SubViewportContainer/SubViewport")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=846562602]
-layer = 100
+[node name="CaptureCanvasLayer" type="CanvasLayer" parent="GameCapture" unique_id=846562602]
 
-[node name="ControlRoot" type="Control" parent="CanvasLayer" unique_id=1617133139]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="GameCapture/CaptureCanvasLayer" unique_id=292164534]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 988.0
+offset_top = 6.0
+offset_right = 2908.0
+offset_bottom = 1086.0
+grow_horizontal = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="GameCapture/CaptureCanvasLayer/SubViewportContainer" unique_id=240339359]
+handle_input_locally = false
+size = Vector2i(480, 270)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="GameCapture/CaptureCanvasLayer/SubViewportContainer/SubViewport" unique_id=317619777]
+script = ExtResource("2_nv681")
+
+[node name="ReplayCanvasLayer" type="CanvasLayer" parent="GameCapture" unique_id=33262325]
+layer = 99
+
+[node name="ControlRoot" type="Control" parent="GameCapture/ReplayCanvasLayer" unique_id=1617133139]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +179,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ControlRoot" unique_id=430079779 node_paths=PackedStringArray("gameCapture")]
+[node name="GameReplayTexture" type="TextureRect" parent="GameCapture/ReplayCanvasLayer/ControlRoot" unique_id=430079779 node_paths=PackedStringArray("gameCapture")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,7 +190,7 @@ script = ExtResource("2_v0jyv")
 frameInterval = 0.06
 gameCapture = NodePath("../../..")
 
-[node name="ReplayLabel" type="Label" parent="CanvasLayer/ControlRoot/TextureRect" unique_id=141177537]
+[node name="ReplayLabel" type="Label" parent="GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture" unique_id=141177537]
 layout_mode = 1
 offset_left = 30.0
 offset_top = 88.0
@@ -88,31 +199,40 @@ offset_bottom = 146.0
 text = "REPLAY"
 label_settings = SubResource("LabelSettings_nv681")
 
-[node name="LabelAnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ControlRoot/TextureRect/ReplayLabel" unique_id=1169487917]
+[node name="LabelAnimationPlayer" type="AnimationPlayer" parent="GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture/ReplayLabel" unique_id=1169487917]
 libraries/ = SubResource("AnimationLibrary_7d0f5")
 
-[node name="TopBorder" type="TextureRect" parent="CanvasLayer/ControlRoot/TextureRect" unique_id=823182363]
+[node name="ReplayBorder" type="TextureRect" parent="GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture" unique_id=823182363]
 material = SubResource("CanvasItemMaterial_v0jyv")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 60.0
+offset_right = 1920.0
+offset_bottom = 64.0
 grow_horizontal = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = SubResource("PlaceholderTexture2D_hftf6")
+texture = ExtResource("5_7d0f5")
+stretch_mode = 1
 
-[node name="BottomBorder" type="TextureRect" parent="CanvasLayer/ControlRoot/TextureRect" unique_id=968472866]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture/ReplayBorder" unique_id=973609055]
+libraries/ = SubResource("AnimationLibrary_ah4ht")
+autoplay = &"Scroll"
+
+[node name="TopBorder2" type="TextureRect" parent="GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture" unique_id=328634479]
+material = SubResource("ShaderMaterial_nqd7e")
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -947.0
-offset_top = -49.0
-offset_right = 953.0
-offset_bottom = 11.0
+offset_top = -64.0
+offset_right = 1920.0
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset_ratio = Vector2(0.5, 1)
-texture = SubResource("PlaceholderTexture2D_hftf6")
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_7d0f5")
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture/TopBorder2" unique_id=682154415]
+libraries/ = SubResource("AnimationLibrary_2tvly")
+autoplay = &"Scroll"

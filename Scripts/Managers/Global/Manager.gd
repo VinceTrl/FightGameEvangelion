@@ -20,6 +20,7 @@ var scoreManager: ScoreManager
 var gameDebug: GameDebug
 var titleScreen: TitleScreen
 var shitpostGUI:ShitpostGUI
+var replayManager:ReplayManager
 var musicManager
 
 var transitionInstance
@@ -30,6 +31,8 @@ var currentGameState : GameStates.GameState = GameStates.GameState.TitleScreen
 signal OnGameManagerReady()
 signal OnFightStart
 signal OnFightFinish
+signal OnReplayStart
+signal OnReplayFinshed
 signal OnGameStateChanged(_newState: GameStates.GameState)
 
 
