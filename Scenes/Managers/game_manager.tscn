@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c38gsdfy72awb"]
+[gd_scene format=3 uid="uid://c38gsdfy72awb"]
 
 [ext_resource type="Script" uid="uid://y01h447kxic" path="res://Scripts/Managers/GameManager.gd" id="1_6hf0t"]
 [ext_resource type="Script" uid="uid://b7d7q6uhyqy5j" path="res://Scripts/GameEffects/TimeEffects.gd" id="2_c8bkv"]
@@ -7,21 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://bah62ne6gthmy" path="res://Scenes/GUI/death_background.tscn" id="7_dd241"]
 [ext_resource type="Script" uid="uid://dhwcpplmkbemg" path="res://Scripts/Managers/platform_manager.gd" id="15_kouim"]
 
-[node name="GameManager" type="Node"]
+[node name="GameManager" type="Node" unique_id=1233268369]
 script = ExtResource("1_6hf0t")
 timeBeforeRestart = 5.0
 
-[node name="TimeManager" type="Node" parent="."]
+[node name="TimeManager" type="Node" parent="." unique_id=1752564827]
 script = ExtResource("2_c8bkv")
 
-[node name="GameTimer" type="Timer" parent="."]
+[node name="GameTimer" type="Timer" parent="." unique_id=113057031]
 one_shot = true
 
-[node name="VibrationManager" parent="." instance=ExtResource("3_otru3")]
+[node name="VibrationManager" parent="." unique_id=325529465 instance=ExtResource("3_otru3")]
 
-[node name="PostProcessEffects" parent="." instance=ExtResource("4_fa6t8")]
+[node name="PostProcessEffects" parent="." unique_id=1880075441 instance=ExtResource("4_fa6t8")]
 
-[node name="PlatformManager" type="Node" parent="."]
+[node name="PlatformManager" type="Node" parent="." unique_id=36041066]
 script = ExtResource("15_kouim")
 
-[node name="DeathBackground" parent="." instance=ExtResource("7_dd241")]
+[node name="DeathBackground" parent="." unique_id=1022482623 instance=ExtResource("7_dd241")]
