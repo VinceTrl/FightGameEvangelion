@@ -1,7 +1,7 @@
 extends Node
 
 var effect:AudioEffectRecord
-@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@export var audio_stream_player_3d: AudioStreamPlayer3D
 @export var replayDuration:float = 3.0
 
 var replayTimeCode:float = 0.0
