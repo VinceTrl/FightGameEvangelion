@@ -201,6 +201,7 @@ label_settings = SubResource("LabelSettings_nv681")
 
 [node name="LabelAnimationPlayer" type="AnimationPlayer" parent="GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture/ReplayLabel" unique_id=1169487917]
 libraries/ = SubResource("AnimationLibrary_7d0f5")
+autoplay = &"Blink"
 
 [node name="ReplayBorder" type="TextureRect" parent="GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture" unique_id=823182363]
 material = SubResource("CanvasItemMaterial_v0jyv")

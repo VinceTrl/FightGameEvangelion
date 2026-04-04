@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cmc5xe8vg5dr3" path="res://Scripts/Camera/ZoomParams.gd" id="1_paks2"]
 
 [sub_resource type="Curve" id="Curve_56qo3"]
-_data = [Vector2(0, 0), 0.0, 3.2832, 0, 0, Vector2(0.354067, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 1, 0]
+_data = [Vector2(0, 0), 0.0, -0.051730935, 0, 0, Vector2(0.24934384, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 1, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_putxy"]
@@ -13,8 +13,8 @@ point_count = 4
 [resource]
 script = ExtResource("1_paks2")
 zoomName = &"VictoryZoom"
-zoomDuration = 5.0
-zoomDistance = 1.375
+zoomDuration = 12.0
+zoomDistance = 1.5
 zoomCurve = SubResource("Curve_putxy")
 translationCurve = SubResource("Curve_56qo3")
 targetOffset = Vector3(0, -0.275, 0)
