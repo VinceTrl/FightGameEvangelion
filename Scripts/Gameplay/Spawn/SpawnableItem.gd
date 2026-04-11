@@ -8,4 +8,5 @@ class_name SpawnableItem
 @export var spawnOncePerGame: bool = false
 @export var isUniqueInstance: bool = false
 @export var spawnChance: int = 3
+@export var instanceScale:Vector3 = Vector3.ONE
 var resource

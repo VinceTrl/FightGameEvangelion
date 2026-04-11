@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://btgknalnysacc"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_tcp44"]
+[ext_resource type="Material" uid="uid://b1o0gn56dvpof" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT.tres" id="2_tcp44"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_1swjw"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="4_siisw"]
+[ext_resource type="Resource" uid="uid://ccccsgtkw4xgd" path="res://Resources/Spawnables/Explosion.tres" id="5_805t3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qsc3o"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="TntBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_tcp44")]
+healthPoints = 1
+spawner = NodePath("Spawner")
+spawnItem = ExtResource("5_805t3")
+
+[node name="minecraft_grass_block" parent="NodeShaker" index="0"]
+visible = false
+
+[node name="BoxMeshInstance" type="MeshInstance3D" parent="NodeShaker" index="1" unique_id=50695867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("BoxMesh_qsc3o")
+surface_material_override/0 = ExtResource("2_tcp44")
+
+[node name="Spawner" parent="." index="6" unique_id=1716012024 instance=ExtResource("3_1swjw")]
+items = Array[ExtResource("4_siisw")]([ExtResource("5_805t3")])
+registerOnManager = false

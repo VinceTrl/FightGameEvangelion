@@ -1,30 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhbrjxsivp186"]
+[gd_scene format=3 uid="uid://dhbrjxsivp186"]
 
 [ext_resource type="Script" uid="uid://4u34bup3e8f0" path="res://Scripts/Gameplay/Items/creeper.gd" id="1_35u60"]
 [ext_resource type="PackedScene" uid="uid://cm04skaagkxjw" path="res://Assets/Meshes/Characters/Creeper/creeper.fbx" id="1_b2e8f"]
 [ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="2_4yi8u"]
 
-[node name="Creeper" type="Node3D"]
+[node name="Creeper" type="Node3D" unique_id=357536691]
 script = ExtResource("1_35u60")
 
-[node name="Visual" type="Node3D" parent="."]
+[node name="Visual" type="Node3D" parent="." unique_id=1761667372]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333982, 0)
 
-[node name="creeper" parent="Visual" instance=ExtResource("1_b2e8f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+[node name="creeper" parent="Visual" unique_id=580999433 instance=ExtResource("1_b2e8f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.0066295266, 0)
 
-[node name="GroundMagnet" parent="." instance=ExtResource("2_4yi8u")]
-cast_distance = 6.0
+[node name="GroundMagnet" parent="." unique_id=290055891 instance=ExtResource("2_4yi8u")]
+auto_align_on_ready = false
 
-[node name="PlayerDetection" type="RayCast3D" parent="."]
+[node name="PlayerDetection" type="RayCast3D" parent="." unique_id=1539562079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521576, 0)
 target_position = Vector3(2, 0, 0)
 collision_mask = 2
 
-[node name="GroundCheckRight" type="RayCast3D" parent="."]
+[node name="GroundCheckRight" type="RayCast3D" parent="." unique_id=2000956625]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20044, 0, 0)
 target_position = Vector3(0, -0.25, 0)
 
-[node name="GroundCheckLeft" type="RayCast3D" parent="."]
+[node name="GroundCheckLeft" type="RayCast3D" parent="." unique_id=380949476]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.211107, 0, 0)
 target_position = Vector3(0, -0.25, 0)

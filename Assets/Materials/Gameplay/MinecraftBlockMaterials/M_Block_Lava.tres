@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d0eoso6rpl2yl"]
+
+[ext_resource type="Texture2D" uid="uid://dxt6g8dyxh8yg" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/lava_still.png" id="1_kp5qr"]
+
+[resource]
+albedo_texture = ExtResource("1_kp5qr")
+emission_enabled = true
+emission_texture = ExtResource("1_kp5qr")
+uv1_scale = Vector3(3, 0.05, 3)
+texture_filter = 0

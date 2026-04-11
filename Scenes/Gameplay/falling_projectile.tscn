@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpi5fu0v8iids"]
+[gd_scene format=3 uid="uid://dpi5fu0v8iids"]
 
 [ext_resource type="Script" uid="uid://iqfl3e7rvp0u" path="res://Scripts/Gameplay/Projectiles/falling_projectile.gd" id="1_tf2fl"]
 [ext_resource type="Texture2D" uid="uid://4ccslecbenaq" path="res://Assets/Sprites/Placeholders/All_Fire_Bullet_Pixel_16x16_05.png" id="2_uk7kn"]
@@ -46,7 +46,7 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_8e1fr"]
 size = Vector3(0.275635, 0.225372, 1)
 
-[node name="FallingProjectile" type="RigidBody3D"]
+[node name="FallingProjectile" type="RigidBody3D" unique_id=994719608]
 collision_layer = 8
 collision_mask = 3
 axis_lock_linear_z = true
@@ -60,22 +60,22 @@ script = ExtResource("1_tf2fl")
 moveSpeed = 0.5
 explosionScale = 3.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1411039642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0160751, -0.000854492, 0)
 shape = SubResource("BoxShape3D_doj7e")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1641921235]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_0u4xw")
 autoplay = "default"
 frame_progress = 0.499973
 
-[node name="Hurtbox" type="Area3D" parent="."]
+[node name="Hurtbox" type="Area3D" parent="." unique_id=877974933]
 script = ExtResource("3_iv472")
 randomID = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1172729453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00622559, -0.00364685, 0)
 shape = SubResource("BoxShape3D_8e1fr")
 

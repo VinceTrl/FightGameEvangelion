@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://nsy0qydxrren"]
+
+[ext_resource type="Texture2D" uid="uid://d3ggwra6t80ud" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_leaves.png" id="1_03eyc"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_jxoya"]
+
+[resource]
+transparency = 1
+albedo_color = Color(0.27450982, 0.6666667, 0.20784314, 1)
+albedo_texture = ExtResource("1_03eyc")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_jxoya")
+uv1_scale = Vector3(3, 3, 3)
+texture_filter = 0

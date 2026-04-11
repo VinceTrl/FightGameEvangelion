@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bla1bvkvy68xo"]
+
+[ext_resource type="Texture2D" uid="uid://pts5k34rl635" path="res://Assets/Sprites/Placeholders/MinecraftBackgroundPlaceholder.jpg" id="1_rk54l"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_31a1l"]
+size = Vector2(30, 16)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uw7j3"]
+shading_mode = 0
+albedo_texture = ExtResource("1_rk54l")
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rk54l"]
+size = Vector2(200, 200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31a1l"]
+shading_mode = 0
+albedo_color = Color(0.5372549, 0.69803923, 0.92156863, 1)
+
+[node name="MinecraftEnviro" type="Node3D" unique_id=1476158531]
+
+[node name="PlaceholderBackground" type="MeshInstance3D" parent="." unique_id=427118259]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.1855695e-07, -5)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_31a1l")
+surface_material_override/0 = SubResource("StandardMaterial3D_uw7j3")
+
+[node name="PlaceholderBackground2" type="MeshInstance3D" parent="." unique_id=45388807]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.9999995, -10.5)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_rk54l")
+surface_material_override/0 = SubResource("StandardMaterial3D_31a1l")

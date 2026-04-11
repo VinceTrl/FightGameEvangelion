@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cou4pt2e3dxps"]
+
+[ext_resource type="Texture2D" uid="uid://7hjlg3ctn17j" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/sand.png" id="1_8y6fp"]
+
+[resource]
+albedo_texture = ExtResource("1_8y6fp")
+uv1_scale = Vector3(3, 3, 3)
+texture_filter = 0

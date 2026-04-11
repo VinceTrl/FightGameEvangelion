@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cbyx12dot33pd"]
+
+[ext_resource type="ArrayMesh" uid="uid://xknagote4dqw" path="res://Assets/Meshes/Props/SonicProps/DashPad/Speedpad.obj" id="1_xr08v"]
+[ext_resource type="Material" uid="uid://c0l5yqyamm27t" path="res://Assets/Meshes/Props/SonicProps/DashPad/M_DashPad_01.tres" id="2_paylp"]
+[ext_resource type="Material" uid="uid://d7aqbnvksiy1" path="res://Assets/Meshes/Props/SonicProps/DashPad/M_DashPad_02.tres" id="3_n7v00"]
+
+[sub_resource type="Animation" id="Animation_7exlx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/1:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f4wkr"]
+resource_name = "Scroll"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/1:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6j6gd"]
+_data = {
+&"RESET": SubResource("Animation_7exlx"),
+&"Scroll": SubResource("Animation_f4wkr")
+}
+
+[node name="DashPad" type="Node3D" unique_id=333501549]
+
+[node name="Speedpad" type="MeshInstance3D" parent="." unique_id=1074650308]
+mesh = ExtResource("1_xr08v")
+surface_material_override/0 = ExtResource("2_paylp")
+surface_material_override/1 = ExtResource("3_n7v00")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Speedpad" unique_id=1963567915]
+libraries/ = SubResource("AnimationLibrary_6j6gd")
+autoplay = &"Scroll"

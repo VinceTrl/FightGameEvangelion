@@ -1,13 +1,8 @@
-[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://ccccsgtkw4xgd"]
+[gd_resource type="Resource" script_class="SpawnableItem" format=3 uid="uid://ccccsgtkw4xgd"]
 
 [ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_hn25t"]
 
 [resource]
 script = ExtResource("1_hn25t")
-itemName = &"EXPLOSION"
 scenePath = &"res://Scenes/Gameplay/explosion.tscn"
-spawnOnGround = false
-groundOffset = Vector3(0, 0, 0)
-spawnOncePerGame = false
-isUniqueInstance = false
-spawnChance = 3
+instanceScale = Vector3(2, 2, 2)

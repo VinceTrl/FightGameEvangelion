@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d7aqbnvksiy1"]
+
+[ext_resource type="Texture2D" uid="uid://bu3hs10003mxt" path="res://Assets/Meshes/Props/SonicProps/DashPad/T_DashPadArrow.png" id="1_od2fx"]
+
+[resource]
+albedo_texture = ExtResource("1_od2fx")
+detail_blend_mode = 1
+uv1_offset = Vector3(0, 0.86152923, 0)
+texture_filter = 0

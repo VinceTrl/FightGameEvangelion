@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c0l5yqyamm27t"]
+
+[ext_resource type="Texture2D" uid="uid://dww12u4vmymth" path="res://Assets/Meshes/Props/SonicProps/DashPad/b68ae7f3.png" id="1_4pysh"]
+
+[resource]
+albedo_texture = ExtResource("1_4pysh")

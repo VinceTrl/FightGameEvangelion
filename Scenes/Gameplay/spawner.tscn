@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://djdb3ocf1uv0i"]
+[gd_scene format=3 uid="uid://djdb3ocf1uv0i"]
 
 [ext_resource type="Script" uid="uid://dr2dhjdnsujlq" path="res://Scripts/Gameplay/Spawn/spawner.gd" id="1_y2u6x"]
 [ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="2_m4idx"]
@@ -11,30 +11,30 @@
 [ext_resource type="Script" uid="uid://dtwg3ixb8u6se" path="res://Scripts/GameEffects/TRSEffects/NodePathFollow.gd" id="9_i2msn"]
 [ext_resource type="Curve" uid="uid://cmki3s0tjmavg" path="res://Resources/Curves/EaseInOutLinear.tres" id="10_3ri35"]
 
-[node name="Spawner" type="Node3D"]
+[node name="Spawner" type="Node3D" unique_id=1304270749]
 script = ExtResource("1_y2u6x")
 items = Array[ExtResource("2_m4idx")]([ExtResource("4_14cl3"), ExtResource("5_ox188"), ExtResource("5_3if13"), ExtResource("6_ntebu"), ExtResource("7_jr222")])
 minControlCurve = 0.3
 maxControlCurve = 1.34
 verticalControlMultiplier = 1.745
 
-[node name="GroundRaycast" type="RayCast3D" parent="."]
+[node name="GroundRaycast" type="RayCast3D" parent="." unique_id=271406931]
 target_position = Vector3(0, -10, 0)
 debug_shape_custom_color = Color(0.970464, 0.487366, 0.833124, 1)
 debug_shape_thickness = 1
 
-[node name="PlayerRaycast" type="RayCast3D" parent="."]
+[node name="PlayerRaycast" type="RayCast3D" parent="." unique_id=1887406582]
 target_position = Vector3(0, -10, 0)
 collision_mask = 2
 collide_with_areas = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1443675324]
 stream = ExtResource("8_xlcjj")
 volume_db = -15.0
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="." unique_id=47554115]
 
-[node name="NodePathFollow" type="PathFollow3D" parent="Path3D"]
+[node name="NodePathFollow" type="PathFollow3D" parent="Path3D" unique_id=823942150]
 transform = Transform3D(7.54979e-08, -0.894418, -0.447209, 5.96046e-08, 0.447209, -0.894418, 1, 4.0871e-08, 8.70748e-08, 0, 0, 0)
 script = ExtResource("9_i2msn")
 pathFollowTime = 0.6

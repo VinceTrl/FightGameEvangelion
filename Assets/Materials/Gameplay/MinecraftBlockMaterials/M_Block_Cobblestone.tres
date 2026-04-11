@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://duwp53fooyt5w"]
+
+[ext_resource type="Texture2D" uid="uid://ymnpu8vq7kji" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/cobblestone.png" id="1_ntjv3"]
+
+[resource]
+albedo_texture = ExtResource("1_ntjv3")
+uv1_scale = Vector3(3, 3, 3)
+texture_filter = 0

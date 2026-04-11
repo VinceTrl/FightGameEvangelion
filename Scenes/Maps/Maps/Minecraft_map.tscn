@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bv8i5lvsp37qm"]
+
+[ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_oxu42"]
+[ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="2_biqso"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="3_hg4j4"]
+[ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="4_a6fen"]
+[ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="5_bajn7"]
+[ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="6_isrjx"]
+[ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="7_444ut"]
+[ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="8_r3chl"]
+[ext_resource type="Resource" uid="uid://4kux6idtqvus" path="res://Resources/Spawnables/TrapHeart.tres" id="9_oaeey"]
+[ext_resource type="Resource" uid="uid://5mwafnwjmudh" path="res://Resources/Spawnables/Bloc.tres" id="10_yhn4n"]
+[ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="11_vtb3s"]
+[ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="12_ui2uj"]
+[ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_4b3j0"]
+[ext_resource type="PackedScene" uid="uid://bla1bvkvy68xo" path="res://Scenes/Maps/Environment/MinecraftEnviro.tscn" id="15_oxu42"]
+[ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="16_x3ix5"]
+[ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="17_oxu42"]
+[ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="18_lbjjn"]
+[ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="19_bal6i"]
+[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="20_r32yb"]
+[ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="21_5rrsv"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
+
+[sub_resource type="Environment" id="Environment_p4aet"]
+ambient_light_source = 2
+ambient_light_color = Color(0.808998, 0.808998, 0.808998, 1)
+
+[node name="MinecraftMap" type="Node3D" unique_id=557590797 node_paths=PackedStringArray("enviro", "lights")]
+script = ExtResource("1_oxu42")
+enviro = [NodePath("Enviro")]
+lights = [NodePath("Lighting")]
+
+[node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_biqso")]
+items = Array[ExtResource("3_hg4j4")]([ExtResource("4_a6fen"), ExtResource("5_bajn7"), ExtResource("6_isrjx"), ExtResource("7_444ut"), ExtResource("8_r3chl"), ExtResource("9_oaeey"), ExtResource("10_yhn4n"), ExtResource("11_vtb3s"), ExtResource("12_ui2uj"), ExtResource("13_4b3j0")])
+
+[node name="Enviro" type="Node3D" parent="." unique_id=510669441]
+
+[node name="MinecraftEnviro" parent="Enviro" unique_id=1476158531 instance=ExtResource("15_oxu42")]
+
+[node name="Lighting" type="Node3D" parent="." unique_id=818802441]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting" unique_id=1801303179]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 7.303301, 7.596194)
+light_energy = 3.178
+spot_range = 26.0
+spot_angle = 34.55176
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lighting" unique_id=1260499988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3.5)
+light_energy = 5.0
+omni_range = 13.5
+
+[node name="Stage" type="Node" parent="." unique_id=1921753935]
+
+[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage" unique_id=815148033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom" unique_id=1874739394]
+shape = SubResource("WorldBoundaryShape3D_e2grd")
+
+[node name="StageSpawner" parent="Stage" unique_id=1769614628 instance=ExtResource("16_x3ix5")]
+map = ExtResource("17_oxu42")
+
+[node name="KillVolume" parent="Stage" unique_id=421022714 instance=ExtResource("18_lbjjn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="BloodSea" parent="." unique_id=920480580 instance=ExtResource("19_bal6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25.5, 0)
+
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=1459144192]
+script = ExtResource("20_r32yb")
+configuration = ExtResource("21_5rrsv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=364057458]
+environment = SubResource("Environment_p4aet")

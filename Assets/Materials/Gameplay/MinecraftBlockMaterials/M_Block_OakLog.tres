@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bguudkcmydlau"]
+
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="1_63nas"]
+[ext_resource type="Texture2D" uid="uid://bj0evl2epnbli" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_log.png" id="1_wr4jd"]
+
+[resource]
+albedo_texture = ExtResource("1_wr4jd")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("1_63nas")
+uv1_scale = Vector3(3, 3, 3)
+texture_filter = 0

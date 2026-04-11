@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ctcac5c1nbdp5"]
+
+[ext_resource type="PackedScene" uid="uid://djmqbtllkxnif" path="res://Scenes/Gameplay/MinecraftBlock/OakLog_block.tscn" id="1_ucujn"]
+[ext_resource type="PackedScene" uid="uid://dqwp4nckyqhrj" path="res://Scenes/Gameplay/MinecraftBlock/OakLeaf_block.tscn" id="2_dafen"]
+
+[node name="OakTree" type="Node3D" unique_id=859161625]
+
+[node name="OakLogBlock2" parent="." unique_id=137874936 instance=ExtResource("1_ucujn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="OakLogBlock7" parent="." unique_id=1588274387 instance=ExtResource("1_ucujn")]
+
+[node name="OakLogBlock3" parent="." unique_id=199960050 instance=ExtResource("1_ucujn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="OakLogBlock4" parent="." unique_id=1565383532 instance=ExtResource("1_ucujn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
+
+[node name="OakLogBlock5" parent="." unique_id=513944085 instance=ExtResource("1_ucujn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="OakLogBlock6" parent="." unique_id=617114289 instance=ExtResource("1_ucujn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="OakLeafBlock" parent="." unique_id=862293500 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.90000004, 0)
+
+[node name="OakLeafBlock2" parent="." unique_id=152867673 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.90000004, 0)
+
+[node name="OakLeafBlock6" parent="." unique_id=506829627 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.90000004, 0)
+
+[node name="OakLeafBlock15" parent="." unique_id=571028136 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.90000004, 0)
+
+[node name="OakLeafBlock3" parent="." unique_id=1822806241 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.2, 0)
+
+[node name="OakLeafBlock4" parent="." unique_id=155773447 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
+
+[node name="OakLeafBlock5" parent="." unique_id=1606706197 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.90000004, 0)
+
+[node name="OakLeafBlock7" parent="." unique_id=1436623242 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.2, 0)
+
+[node name="OakLeafBlock8" parent="." unique_id=2126352054 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.2, 0)
+
+[node name="OakLeafBlock9" parent="." unique_id=157661805 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="OakLeafBlock10" parent="." unique_id=379155183 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="OakLeafBlock11" parent="." unique_id=1477165140 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.2, 0)
+
+[node name="OakLeafBlock12" parent="." unique_id=1705002614 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.5, 0)
+
+[node name="OakLeafBlock13" parent="." unique_id=416375833 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.5, 0)
+
+[node name="OakLeafBlock18" parent="." unique_id=220989664 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="OakLeafBlock19" parent="." unique_id=1550708847 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.8, 0)
+
+[node name="OakLeafBlock20" parent="." unique_id=963546548 instance=ExtResource("2_dafen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.8, 0)

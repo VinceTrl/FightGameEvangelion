@@ -3,6 +3,7 @@ extends Node3D
 
 @export var items: Array[SpawnableItem] = []
 @export var registerOnManager = true
+@export var preloadItems:bool = true
 @export var canSpawnOnPlayer = false
 @export var forceSpawnOnGround = false
 
@@ -23,7 +24,8 @@ const VFX_2D_SPAWN_SMOKE = preload("res://Scenes/VFX/VFX2D/vfx_2d_spawn_smoke.ts
 const SPAWN_TRAIL = preload("res://Scenes/VFX/spawn_trail.tscn")
 
 func _ready() -> void:
-	PreloadResources()
+	if(preloadItems):
+		PreloadResources()
 	
 	if(registerOnManager):
 		Manager.spawnManager.RegisterSpawner(self)
@@ -67,6 +69,7 @@ func SpawnItem(_itemToSpawn: StringName = "EXPLOSION"):
 	
 	add_child(_itemInstance)
 	_itemInstance.global_position = _spawnPos
+	_itemInstance.scale = _item.instanceScale
 	
 func SpawnExternalItem(_itemToSpawn: SpawnableItem):
 	
@@ -97,6 +100,7 @@ func SpawnExternalItem(_itemToSpawn: SpawnableItem):
 	
 	get_tree().current_scene.add_child(_itemInstance)
 	_itemInstance.global_position = _spawnPos
+	_itemInstance.scale = _itemToSpawn.instanceScale
 	return _itemInstance
 	
 	

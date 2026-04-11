@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/BeachMap.tres" id="6_3xkmj"]
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiYellow.png" id="7_j3bm8"]
 [ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="7_nb51f"]
+[ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="8_ewbju"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="PackedScene" uid="uid://ckteefgjio63s" path="res://Scenes/Managers/game_capture.tscn" id="15_nb51f"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
@@ -35,7 +36,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" type="Node" parent="." unique_id=389733307]
 script = ExtResource("3_dv241")
-maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("6_3xkmj"), ExtResource("7_nb51f")])
+maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("6_3xkmj"), ExtResource("7_nb51f"), ExtResource("8_ewbju")])
 
 [node name="Gameplay" type="Node" parent="." unique_id=1867581352]
 

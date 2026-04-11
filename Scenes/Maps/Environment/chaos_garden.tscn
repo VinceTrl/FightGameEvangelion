@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bhdo65eo376rk"]
+
+[ext_resource type="ArrayMesh" uid="uid://nxlijmb8pn3w" path="res://Assets/Meshes/Enviro/Sonic/ChaosGarden/Chao Garden.obj" id="1_1ndt7"]
+[ext_resource type="ArrayMesh" uid="uid://bqogr778kqu4q" path="res://Assets/Meshes/Enviro/Sonic/ChaosLobbyExit/Chao Lobby Exit.obj" id="2_jqucl"]
+
+[node name="ChaosGarden" type="Node3D" unique_id=2129092476]
+
+[node name="ChaoGarden" type="MeshInstance3D" parent="." unique_id=2131413624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11257613, -1.1920929e-07, -0.1762619)
+mesh = ExtResource("1_1ndt7")
+
+[node name="ChaoLobbyExit" type="MeshInstance3D" parent="." unique_id=1631289353]
+transform = Transform3D(0.63622606, 0, -2.93176, 0, 2.9999998, 0, 2.93176, 0, 0.63622606, 68.994934, -0.27245712, -159.72643)
+mesh = ExtResource("2_jqucl")

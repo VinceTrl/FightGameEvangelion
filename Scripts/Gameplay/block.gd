@@ -4,6 +4,7 @@ extends Node3D
 @export var canTakeDamage:bool = true
 @export var forceToGroundOnReady = true
 @export var destroyDelay:float = 0.1
+@export var explosionDamageMultiplier:float = 10.0
 
 const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
 const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestroy.wav")
@@ -12,6 +13,10 @@ const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestro
 @onready var ground_magnet: ForceToGround = $GroundMagnet
 @onready var audio_hit: AudioStreamPlayer3D = $AudioHit
 @onready var vfx_minecraft_bloc_hit: VFXOneShot = $vfx_minecraft_bloc_hit
+
+@export_category("On Block Death Settings")
+@export var spawner:Spawner
+@export var spawnItem:SpawnableItem
 
 var isDead = false
 
@@ -28,7 +33,14 @@ func _process(delta: float) -> void:
 func TakeDamage(hitboxSource: Hitbox):
 	if(!canTakeDamage):return
 	#hitboxSource.DealDamage()
-	ChangeHealth(-hitboxSource.damage)
+	var damage:float = -hitboxSource.damage
+	
+	if(hitboxSource.type == Hitbox.DamageType.Explosion):
+		damage = damage * explosionDamageMultiplier
+	elif(hitboxSource.type == Hitbox.DamageType.Volume):
+		return
+		
+	ChangeHealth(damage)
 	
 func ChangeHealth(healthAmount:int = -1):
 	if(isDead): return
@@ -42,6 +54,11 @@ func ChangeHealth(healthAmount:int = -1):
 		var audio = AUDIO_SCENE.instantiate()
 		get_tree().current_scene.add_child(audio)
 		audio.StartAudio(SD_BLOC_DESTROY,0.0)
+		
+		#Spawn item on death if spawner and item are referenced
+		if(spawnItem and spawner):
+			spawner.SpawnExternalItem(spawnItem)
+		
 		await get_tree().create_timer(destroyDelay).timeout
 		queue_free()
 	else:
