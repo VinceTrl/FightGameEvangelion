@@ -17,6 +17,7 @@ extends Area3D
 var parentRedstone:RedstoneLink = null
 var childRedstones:Array[RedstoneLink]
 var redstoneSource:RedstoneLink
+var redstoneLinks:Array[RedstoneLink]
 
 signal TurnedOn
 signal TurnedOff
@@ -80,10 +81,12 @@ func PropagatePowerFromSource(source:RedstoneLink):
 		return
 		
 	var links := GetConnectedRedstoneLinks()
+	redstoneLinks.clear()
 	for link in links:
 		if(link.isActive and !link.isPowerSource):
 			if(link.isPowerOn != isPowerOn):
 				link.PropagatePowerFromSource(self)
+				redstoneLinks.append(link)
 				print("Redstone Spread Propagation to : " + str(source.owner.name))
 		
 func OnTurnedOn():

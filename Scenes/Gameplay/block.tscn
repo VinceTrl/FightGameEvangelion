@@ -8,23 +8,13 @@
 [ext_resource type="AudioStream" uid="uid://bgrm5be8bl5gb" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocHit.wav" id="6_yv8ff"]
 [ext_resource type="PackedScene" uid="uid://b1syavad6jdov" path="res://Scenes/VFX/vfx_minecraft_bloc_hit.tscn" id="7_lcmxf"]
 [ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="8_noedd"]
-[ext_resource type="Texture2D" uid="uid://bqfumm1bi4yia" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/redstone_dust_dot.png" id="9_v8a6n"]
-[ext_resource type="Script" uid="uid://ca4rbc0nnfcmb" path="res://Scripts/Gameplay/RedstoneSystem/Receiver/redstone_visual.gd" id="10_ctm5i"]
+[ext_resource type="PackedScene" uid="uid://hq437hff0hoh" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_visual.tscn" id="9_ii7fe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_50nyf"]
 size = Vector3(0.35, 0.35, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m21dq"]
 size = Vector3(0.3, 0.3, 0.3)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_3lxtp"]
-size = Vector2(0.3, 0.3)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mm851"]
-transparency = 1
-albedo_color = Color(1, 0, 0, 1)
-albedo_texture = ExtResource("9_v8a6n")
-texture_filter = 0
 
 [node name="Block" type="Node3D" unique_id=219668706 node_paths=PackedStringArray("redstoneLink") groups=["PyramidHeadTarget"]]
 script = ExtResource("1_1mwp6")
@@ -71,12 +61,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 
 [node name="RedstoneLinkArea" parent="RedStone" unique_id=1031951996 instance=ExtResource("8_noedd")]
 
-[node name="RedstoneVisual" type="Node3D" parent="RedStone" unique_id=1244573068]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RedStone/RedstoneVisual" unique_id=1772862980 node_paths=PackedStringArray("visualRootNode", "redstoneLink")]
-transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0.1603775)
-mesh = SubResource("PlaneMesh_3lxtp")
-surface_material_override/0 = SubResource("StandardMaterial3D_mm851")
-script = ExtResource("10_ctm5i")
-visualRootNode = NodePath(".")
-redstoneLink = NodePath("../../RedstoneLinkArea")
+[node name="RedstoneVisual" parent="RedStone" unique_id=1616474288 node_paths=PackedStringArray("redstoneLink") instance=ExtResource("9_ii7fe")]
+redstoneLink = NodePath("../RedstoneLinkArea")

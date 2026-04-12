@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://hq437hff0hoh"]
+
+[ext_resource type="Texture2D" uid="uid://bqfumm1bi4yia" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/redstone_dust_dot.png" id="1_lrsvb"]
+[ext_resource type="Script" uid="uid://ca4rbc0nnfcmb" path="res://Scripts/Gameplay/RedstoneSystem/Receiver/redstone_visual.gd" id="2_yjo3o"]
+[ext_resource type="Texture2D" uid="uid://d2lul4bd3on3h" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/redstone_dust_line0.png" id="3_yjo3o"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3lxtp"]
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mm851"]
+transparency = 1
+albedo_color = Color(0.4117647, 0.4117647, 0.4117647, 1)
+albedo_texture = ExtResource("3_yjo3o")
+emission_enabled = true
+emission = Color(0.67230505, 1.8169359e-06, 3.85046e-07, 1)
+emission_energy_multiplier = 0.0
+emission_operator = 1
+emission_texture = ExtResource("3_yjo3o")
+texture_filter = 0
+
+[node name="RedstoneVisual" type="Node3D" unique_id=1616474288 node_paths=PackedStringArray("mesh")]
+script = ExtResource("2_yjo3o")
+mesh = NodePath("MeshInstance3D")
+onEnergyMultiplier = 6.0
+offAlbedo = Color(0.12836969, 0, 0.0008727639, 1)
+NoLinkTexture = ExtResource("1_lrsvb")
+LinkTexture = ExtResource("3_yjo3o")
+horizontalRot = Vector3(0, 90, 90)
+verticalRot = Vector3(90, -90, -90)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=771778082]
+transform = Transform3D(0.9999999, 0, 4.3711385e-08, 4.3711385e-08, 1.9106855e-15, -0.9999999, 0, 1, 1.9106853e-15, 0, 0, 0.1603775)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_3lxtp")
+surface_material_override/0 = SubResource("StandardMaterial3D_mm851")
