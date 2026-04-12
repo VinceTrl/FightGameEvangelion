@@ -56,6 +56,7 @@ PenpenLocation=""
 Ledgegrab=""
 Enviro=""
 PyramidHeadTarget=""
+Redstone=""
 
 [importer_defaults]
 
@@ -220,6 +221,7 @@ TakeScreenshot={
 3d_physics/layer_6="Hurtbox"
 3d_physics/layer_7="World_P1"
 3d_physics/layer_8="World_P2"
+3d_physics/layer_9="Redstone"
 
 [physics]
 

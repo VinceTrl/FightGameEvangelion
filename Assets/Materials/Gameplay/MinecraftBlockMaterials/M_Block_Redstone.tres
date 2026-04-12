@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cn62pigf32hqp"]
+
+[ext_resource type="Texture2D" uid="uid://ladlo573yr3y" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/redstone_block.png" id="1_akwdl"]
+
+[resource]
+albedo_texture = ExtResource("1_akwdl")
+emission_enabled = true
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("1_akwdl")
+uv1_scale = Vector3(3, 2, 3)
+texture_filter = 0

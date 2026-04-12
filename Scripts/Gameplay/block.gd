@@ -18,12 +18,18 @@ const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestro
 @export var spawner:Spawner
 @export var spawnItem:SpawnableItem
 
+@export_category("Redstone Settings")
+@export var redstoneActive:bool = false
+@export var redstoneLink:RedstoneLink
+
 var isDead = false
 
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
 	ground_magnet.auto_align_on_ready = forceToGroundOnReady
+	if(redstoneActive and redstoneLink):
+		redstoneLink.isActive = true
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,6 +64,10 @@ func ChangeHealth(healthAmount:int = -1):
 		#Spawn item on death if spawner and item are referenced
 		if(spawnItem and spawner):
 			spawner.SpawnExternalItem(spawnItem)
+			
+		if(redstoneActive):
+			redstoneLink.ChangePowerState(false)
+			pass
 		
 		await get_tree().create_timer(destroyDelay).timeout
 		queue_free()

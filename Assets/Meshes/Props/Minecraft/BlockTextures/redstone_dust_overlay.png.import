@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ladlo573yr3y"
-path.s3tc="res://.godot/imported/redstone_block.png-a571c7e3f688f071563448b206a4245d.s3tc.ctex"
+uid="uid://b4p7xjsmdq3h3"
+path.s3tc="res://.godot/imported/redstone_dust_overlay.png-177b50ff6c0fdcab1b4ebb46a739ff3e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Props/Minecraft/BlockTextures/redstone_block.png"
-dest_files=["res://.godot/imported/redstone_block.png-a571c7e3f688f071563448b206a4245d.s3tc.ctex"]
+source_file="res://Assets/Meshes/Props/Minecraft/BlockTextures/redstone_dust_overlay.png"
+dest_files=["res://.godot/imported/redstone_dust_overlay.png-177b50ff6c0fdcab1b4ebb46a739ff3e.s3tc.ctex"]
 
 [params]
 

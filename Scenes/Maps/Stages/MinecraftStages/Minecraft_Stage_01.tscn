@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_eje2x"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_8iyuf"]
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="4_ccuo4"]
+[ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="5_8s6f2"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="5_cq35q"]
 [ext_resource type="PackedScene" uid="uid://bnudpxlxiudb" path="res://Scenes/Gameplay/MinecraftBlock/cobblestone_block.tscn" id="6_rhns0"]
+[ext_resource type="PackedScene" uid="uid://dmts122fcskvs" path="res://Scenes/Gameplay/MinecraftBlock/redstone_block.tscn" id="6_x63nx"]
 [ext_resource type="PackedScene" uid="uid://b3tkj2g7tyws5" path="res://Scenes/Gameplay/MinecraftBlock/sand_block.tscn" id="7_a4lvm"]
 [ext_resource type="PackedScene" uid="uid://btgknalnysacc" path="res://Scenes/Gameplay/MinecraftBlock/tnt_block.tscn" id="8_adgui"]
 [ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="8_y4233"]
@@ -14,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dhbrjxsivp186" path="res://Scenes/Gameplay/creeper.tscn" id="11_xvoje"]
 [ext_resource type="PackedScene" uid="uid://ckf3p25anxo86" path="res://Scenes/Gameplay/MinecraftBlock/dirt_block.tscn" id="12_5ji8y"]
 [ext_resource type="PackedScene" uid="uid://ctcac5c1nbdp5" path="res://Scenes/Gameplay/MinecraftBlock/oak_tree.tscn" id="13_cxy13"]
+[ext_resource type="PackedScene" uid="uid://d8avdqua7ovj" path="res://Scenes/Gameplay/MinecraftBlock/grass_block.tscn" id="14_a377a"]
 
 [node name="MinecraftStage_01" type="Node3D" unique_id=176270937 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_v0co1")
@@ -65,10 +68,133 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 0)
 
 [node name="Creeper" parent="Gameplay/Objects" unique_id=920520710 instance=ExtResource("11_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 2.2571797, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999999, 4.3571796, 0)
 
 [node name="Creeper2" parent="Gameplay/Objects" unique_id=357536691 instance=ExtResource("11_xvoje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96645063, -1.9361882, 0)
+
+[node name="RedstoneLinkArea" parent="Gameplay/Objects" unique_id=1031951996 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 2.4, 0)
+isActive = true
+
+[node name="RedstoneLinkArea2" parent="Gameplay/Objects" unique_id=1671696394 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000001, 2.4, 0)
+isActive = true
+
+[node name="RedstoneLinkArea3" parent="Gameplay/Objects" unique_id=1329990936 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5000001, 1.5, 0)
+isActive = true
+
+[node name="RedstoneLinkArea11" parent="Gameplay/Objects" unique_id=509540721 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000002, 1.5, 0)
+isActive = true
+
+[node name="RedstoneLinkArea14" parent="Gameplay/Objects" unique_id=1745096055 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000002, 0.6, 0)
+isActive = true
+
+[node name="RedstoneLinkArea15" parent="Gameplay/Objects" unique_id=62958553 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000002, 0.90000004, 0)
+isActive = true
+
+[node name="RedstoneLinkArea22" parent="Gameplay/Objects" unique_id=1769623049 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000001, 1.5, 0)
+isActive = true
+
+[node name="RedstoneLinkArea23" parent="Gameplay/Objects" unique_id=357963920 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000001, 1.2, 0)
+isActive = true
+castLength = 0.3
+
+[node name="RedstoneLinkArea24" parent="Gameplay/Objects" unique_id=1402513090 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000001, 0.90000004, 0)
+isActive = true
+
+[node name="RedstoneLinkArea26" parent="Gameplay/Objects" unique_id=1384854069 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000001, 1.5, 0)
+isActive = true
+
+[node name="RedstoneLinkArea25" parent="Gameplay/Objects" unique_id=1588345096 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000001, 0.3, 0)
+isActive = true
+
+[node name="RedstoneLinkArea12" parent="Gameplay/Objects" unique_id=1034868059 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3000002, 2.7, 0)
+isActive = true
+
+[node name="RedstoneLinkArea4" parent="Gameplay/Objects" unique_id=1728315530 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.8, 0)
+isActive = true
+
+[node name="RedstoneLinkArea5" parent="Gameplay/Objects" unique_id=754598885 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.1999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea6" parent="Gameplay/Objects" unique_id=856770049 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.8999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea13" parent="Gameplay/Objects" unique_id=1312696213 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 0.2999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea7" parent="Gameplay/Objects" unique_id=274823686 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0.8999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea8" parent="Gameplay/Objects" unique_id=1813755841 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 0.8999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea9" parent="Gameplay/Objects" unique_id=1911237575 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999999, 0.8999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea16" parent="Gameplay/Objects" unique_id=462184595 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999999, 0.5999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea17" parent="Gameplay/Objects" unique_id=1089871479 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999999, 0.2999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea18" parent="Gameplay/Objects" unique_id=1122372624 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0.8999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea19" parent="Gameplay/Objects" unique_id=731354122 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea20" parent="Gameplay/Objects" unique_id=1928024305 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 1.1999999, 0)
+isActive = true
+
+[node name="RedstoneLinkArea21" parent="Gameplay/Objects" unique_id=1485922144 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1.8, 0)
+isActive = true
+
+[node name="RedstoneLinkArea10" parent="Gameplay/Objects" unique_id=1073198859 instance=ExtResource("5_8s6f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1999998, 1.5, 0)
+isActive = true
+
+[node name="RedstoneBlock" parent="Gameplay/Objects" unique_id=1588274387 instance=ExtResource("6_x63nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 1.3607321, 0)
+
+[node name="RedstoneBlock2" parent="Gameplay/Objects" unique_id=811424983 instance=ExtResource("6_x63nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.76073205, 0)
+
+[node name="RedstoneBlock5" parent="Gameplay/Objects" unique_id=621507312 instance=ExtResource("6_x63nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 2.2607322, 0)
+
+[node name="RedstoneBlock4" parent="Gameplay/Objects" unique_id=408788348 instance=ExtResource("6_x63nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 1.3607321, 0)
+
+[node name="RedstoneBlock6" parent="Gameplay/Objects" unique_id=1754154875 instance=ExtResource("6_x63nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000002, 0.16073203, 0)
+
+[node name="RedstoneBlock3" parent="Gameplay/Objects" unique_id=780631286 instance=ExtResource("6_x63nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2999997, 2.860732, 0)
 
 [node name="PenpenLocations" type="Node3D" parent="Gameplay" unique_id=1236989997]
 
@@ -103,7 +229,7 @@ script = ExtResource("5_cq35q")
 [node name="CobblestoneRow" type="Node3D" parent="Level/Blocks" unique_id=1157447530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, -0.7392701, 0)
 
-[node name="CobblestoneBlock" parent="Level/Blocks/CobblestoneRow" unique_id=1588274387 instance=ExtResource("6_rhns0")]
+[node name="CobblestoneBlock" parent="Level/Blocks/CobblestoneRow" unique_id=1052818895 instance=ExtResource("6_rhns0")]
 
 [node name="CobblestoneBlock2" parent="Level/Blocks/CobblestoneRow" unique_id=301525741 instance=ExtResource("6_rhns0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 0, 0)
@@ -961,6 +1087,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.16073203, 0)
 [node name="DirtBlock18" parent="Level/Blocks" unique_id=136058329 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.16073203, 0)
 
+[node name="DirtBlock54" parent="Level/Blocks" unique_id=1471774415 instance=ExtResource("12_5ji8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0.16073203, 0)
+
 [node name="DirtBlock51" parent="Level/Blocks" unique_id=1827294768 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.13926798, 0)
 
@@ -1017,6 +1146,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.13926798, 0)
 
 [node name="DirtBlock55" parent="Level/Blocks" unique_id=1221539874 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.16073203, 0)
+redstoneActive = true
 
 [node name="DirtBlock19" parent="Level/Blocks" unique_id=1812403579 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.46073204, 0)
@@ -1038,9 +1168,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, -0.13926798, 0)
 
 [node name="DirtBlock23" parent="Level/Blocks" unique_id=749259506 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0.16073203, 0)
+redstoneActive = true
 
 [node name="DirtBlock24" parent="Level/Blocks" unique_id=476008644 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0.46073204, 0)
+redstoneActive = true
 
 [node name="DirtBlock52" parent="Level/Blocks" unique_id=1650465604 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.46073204, 0)
@@ -1050,6 +1182,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.46073204, 0)
 
 [node name="DirtBlock25" parent="Level/Blocks" unique_id=1905747390 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0.76073205, 0)
+redstoneActive = true
 
 [node name="DirtBlock26" parent="Level/Blocks" unique_id=578826638 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.439268, 0)
@@ -1088,10 +1221,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000001, -0.13926798, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, -0.13926798, 0)
 
 [node name="Block15" parent="Level/Blocks" unique_id=246108378 instance=ExtResource("4_ccuo4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 1.360732, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 1.3607321, 0)
 
 [node name="Block16" parent="Level/Blocks" unique_id=844679180 instance=ExtResource("4_ccuo4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.360732, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1.360732, 0)
+redstoneActive = true
 
 [node name="Block32" parent="Level/Blocks" unique_id=119773752 instance=ExtResource("4_ccuo4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.06073, 0)
@@ -1122,12 +1256,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, -0.13926798, 0)
 
 [node name="Block37" parent="Level/Blocks" unique_id=560914356 instance=ExtResource("4_ccuo4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 1.360732, 0)
+redstoneActive = true
 
 [node name="Block38" parent="Level/Blocks" unique_id=477918399 instance=ExtResource("4_ccuo4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.360732, 0)
+redstoneActive = true
 
 [node name="Block39" parent="Level/Blocks" unique_id=181072237 instance=ExtResource("4_ccuo4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 1.360732, 0)
+redstoneActive = true
 
 [node name="Block40" parent="Level/Blocks" unique_id=2052218063 instance=ExtResource("4_ccuo4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 1.360732, 0)
@@ -1143,6 +1280,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, -0.13926801, 0)
 
 [node name="Block57" parent="Level/Blocks" unique_id=1483127231 instance=ExtResource("4_ccuo4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.06073, 0)
+redstoneActive = true
 
 [node name="Block58" parent="Level/Blocks" unique_id=1679943589 instance=ExtResource("4_ccuo4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.06073, 0)
@@ -1175,7 +1313,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 0.16073209, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9000006, 1.6607322, 0)
 
 [node name="OakTree3" parent="Level/Blocks" unique_id=1650471013 instance=ExtResource("13_cxy13")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5999994, 1.3607321, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.16073203, 0)
+
+[node name="GrassBlock" parent="Level/Blocks" unique_id=1815016863 instance=ExtResource("14_a377a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000001, 1.660732, 0)
+redstoneActive = true
+
+[node name="GrassBlock4" parent="Level/Blocks" unique_id=1253884645 instance=ExtResource("14_a377a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.860732, 0)
+redstoneActive = true
+
+[node name="GrassBlock2" parent="Level/Blocks" unique_id=1632726625 instance=ExtResource("14_a377a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3607321, 0)
+redstoneActive = true
+
+[node name="GrassBlock3" parent="Level/Blocks" unique_id=948275670 instance=ExtResource("14_a377a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000002, 0.46073204, 0)
 
 [node name="Poop" parent="." unique_id=334906660 instance=ExtResource("8_y4233")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15950894, 1.5463681, -0.010376)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3404913, 3.0463681, -0.010376)

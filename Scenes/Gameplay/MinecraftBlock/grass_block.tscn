@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d8avdqua7ovj"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_u21nq"]
+[ext_resource type="Material" uid="uid://cqewyxwxhpex7" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Grass.tres" id="2_u21nq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qsc3o"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="GrassBlock" unique_id=1588274387 instance=ExtResource("1_u21nq")]
+
+[node name="minecraft_grass_block" parent="NodeShaker" index="0"]
+visible = false
+
+[node name="BoxMeshInstance" type="MeshInstance3D" parent="NodeShaker" index="1" unique_id=50695867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("BoxMesh_qsc3o")
+surface_material_override/0 = ExtResource("2_u21nq")

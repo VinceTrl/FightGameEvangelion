@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dmts122fcskvs"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_2txt5"]
+[ext_resource type="Material" uid="uid://cn62pigf32hqp" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Redstone.tres" id="2_2txt5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qsc3o"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="RedstoneBlock" unique_id=1588274387 instance=ExtResource("1_2txt5")]
+healthPoints = 6
+redstoneActive = true
+
+[node name="minecraft_grass_block" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=86836191]
+visible = false
+
+[node name="BoxMeshInstance" type="MeshInstance3D" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=50695867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("BoxMesh_qsc3o")
+surface_material_override/0 = ExtResource("2_2txt5")
+
+[node name="RedstoneLinkArea" parent="RedStone" parent_id_path=PackedInt32Array(2103545783) index="0" unique_id=1031951996]
+isActive = true
+isPowerOn = true
+isPowerSource = true
