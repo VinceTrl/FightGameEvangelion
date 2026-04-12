@@ -5,6 +5,7 @@ extends Area3D
 @export var isActive:bool = false
 @export var isPowerOn:bool = false
 @export var isPowerSource:bool = false
+@export var canPropagatePower:bool = true
 @export var updateTick:float = 0.25
 @export var radius:float = 0.15
 @export var castLength:float = 0.3
@@ -28,14 +29,7 @@ func _ready() -> void:
 	TurnedOn.connect(OnTurnedOn)
 	TurnedOff.connect(OnTurnedOff)
 	PowerStateChanged.connect(OnPowerStateChanged)
-	#call_deferred("StartSource")
 	call_deferred("RedstoneUpdate")
-	
-	
-func StartSource():
-	if(isActive and isPowerOn):
-		GetRedstoneChildren()
-		PropagateStateInChild()
 	
 func _process(delta: float) -> void:
 	DebugRedstoneState()
@@ -52,54 +46,19 @@ func DebugRedstoneState():
 		var sourceColor := Color.BLUE_VIOLET
 		DebugDraw3D.draw_arrow(redstoneSource.global_position,global_position,sourceColor,0.05)
 	
-	#draw tree
-	#if(parentRedstone):
-		#var parentColor:Color = Color.BLACK
-		#DebugDraw3D.draw_arrow(global_position,parentRedstone.global_position,parentColor,0.05)
-		##DebugDraw3D.draw_line(global_position,parentRedstone.global_position,color)
-		#
-	#var childColor:Color = Color.BLUE_VIOLET
-	#for child in childRedstones:
-		#if(!child):return
-		#DebugDraw3D.draw_arrow(global_position,child.global_position,childColor,0.05)
-		##DebugDraw3D.draw_line(global_position,child.global_position,childColor)
-	
-	
+
 func RedstoneUpdate():
+	if(!isActive):return
 	await get_tree().create_timer(updateTick).timeout
 	if(isActive and isPowerSource):
+		print("Redstone source Update")
 		PropagatePowerFromSource(self)
 		
 	if(!isPowerSource and !redstoneSource):
 		ChangePowerState(false)
 		
 	RedstoneUpdate()
-	
-func ConnectParent(parent:RedstoneLink):
-	parentRedstone = parent
 
-#connect to all possible child
-func GetRedstoneChildren():
-	var links := GetConnectedRedstoneLinks()
-	for link in links:
-		ConnectChild(link)
-
-#connect a new child
-func ConnectChild(child:RedstoneLink):
-	if(!child):return
-	if(child == parentRedstone):return
-	if(!child.isActive):return
-	if(childRedstones.has(child)):return
-	
-	child.ConnectParent(self)
-	childRedstones.append(child)
-	child.tree_exiting.connect(RemoveChild)
-	print("Connect redstone child : " + str(child))
-	
-func RemoveChild(child:RedstoneLink):
-	if(!childRedstones.has(child)):return
-	childRedstones.erase(child)
-	
 func ChangePowerState(isOn:bool):
 	if(isOn == isPowerOn):return
 	isPowerOn = isOn
@@ -111,19 +70,21 @@ func ChangePowerState(isOn:bool):
 	else:
 		TurnedOff.emit()
 		
-func PropagateStateInChild():
-	for child in childRedstones:
-		if(!child):return
-		child.ChangePowerState(isPowerOn)
-		
 func PropagatePowerFromSource(source:RedstoneLink):
 	if(!source):return
+	print("Redstone Start Propagation from : " + str(source.owner.name))
 	redstoneSource = source
 	ChangePowerState(redstoneSource.isPowerOn)
+	
+	if(!canPropagatePower): 
+		return
+		
 	var links := GetConnectedRedstoneLinks()
 	for link in links:
-		if(link != redstoneSource and link.isActive):
-			link.PropagatePowerFromSource(self)
+		if(link.isActive and !link.isPowerSource):
+			if(link.isPowerOn != isPowerOn):
+				link.PropagatePowerFromSource(self)
+				print("Redstone Spread Propagation to : " + str(source.owner.name))
 		
 func OnTurnedOn():
 	#GetRedstoneChildren()
@@ -134,7 +95,6 @@ func OnTurnedOff():
 	pass
 	
 func OnPowerStateChanged(isOn:bool):
-	#PropagateStateInChild()
 	pass
 	
 #get redstones links in every link directions
@@ -161,18 +121,18 @@ func CheckRestoneLink(castOrigin:Vector3,castLength:float,castDirection:Vector3)
 	query.exclude.append(get_rid())
 	var result = space_state.intersect_ray(query)
 	
-	#if(drawDebug):
-		#DebugDraw3D.draw_line(queryStart,queryEnd,Color.RED,6)
+	if(drawDebug):
+		DebugDraw3D.draw_line(queryStart,queryEnd,Color.RED,updateTick)
 	
 	if result:
 		print("REDSTONE RESULT FOUND...")
 		#print("REDSTONE RESULT FOUND : "  + str(result))
 		if(result.collider.is_in_group("Redstone")):
 			print("REDSTONE RESULT FOUND IN GROUP")
-			#if(drawDebug):
-				#DebugDraw3D.draw_sphere(result.position,0.1,Color.SKY_BLUE,6)
 			if(result.collider is RedstoneLink):
 				print("REGISTER REDSTONE RESULT : "  + str(result))
+				if(drawDebug):
+					DebugDraw3D.draw_sphere(result.position,0.05,Color.SKY_BLUE,updateTick)
 				return result.collider as RedstoneLink
 			else:
 				return null

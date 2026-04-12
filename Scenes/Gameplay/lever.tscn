@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://b36t01f3wjtbu"]
+
+[ext_resource type="Texture2D" uid="uid://cbsy6k41vmmfx" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/deepslate_top.png" id="1_vrpkd"]
+[ext_resource type="Script" uid="uid://cinkuktsvf5cv" path="res://Scripts/Gameplay/Interact/lever.gd" id="1_x75jw"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_7ktul"]
+[ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="4_vqd33"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ce6bq"]
+size = Vector3(0.3, 0.05, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ktul"]
+albedo_texture = ExtResource("1_vrpkd")
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_vrpkd"]
+size = Vector3(0.035, 0.3, 0.035)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si7v2"]
+albedo_color = Color(0.5254902, 0.3529412, 0.24313726, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_x75jw"]
+size = Vector3(0.04, 0.06, 0.04)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqd33"]
+albedo_color = Color(0.45490196, 0.41960785, 0.38431373, 1)
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_x75jw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vqd33"]
+resource_name = "TurnOff"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.7853982)]
+}
+
+[sub_resource type="Animation" id="Animation_bg5vo"]
+resource_name = "TurnOn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.78539807)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tknh3"]
+_data = {
+&"RESET": SubResource("Animation_x75jw"),
+&"TurnOff": SubResource("Animation_vqd33"),
+&"TurnOn": SubResource("Animation_bg5vo")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ktul"]
+size = Vector3(0.3, 0.3432373, 0.3)
+
+[node name="Lever" type="Node3D" unique_id=1140781995 node_paths=PackedStringArray("hurtbox", "redstoneLink", "animationPlayer")]
+script = ExtResource("1_x75jw")
+hurtbox = NodePath("Hurtbox")
+redstoneLink = NodePath("RedstoneLinkArea")
+animationPlayer = NodePath("Visual/LeverMeshPivot/AnimationPlayer")
+
+[node name="Visual" type="Node3D" parent="." unique_id=2113062526]
+
+[node name="LeverBase" type="MeshInstance3D" parent="Visual" unique_id=2045129119]
+transform = Transform3D(1, 0, 0, 0, 1.4468347, 0, 0, 0, 1, 0, 0.040319383, 0)
+mesh = SubResource("BoxMesh_ce6bq")
+skeleton = NodePath("../LeverMeshPivot/LeverMeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_7ktul")
+
+[node name="LeverMeshPivot" type="Node3D" parent="Visual" unique_id=1448646255]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0.040319383, 0)
+
+[node name="LeverMeshInstance3D" type="MeshInstance3D" parent="Visual/LeverMeshPivot" unique_id=721676260]
+transform = Transform3D(2.1332436, 0, 0, 0, 1, 0, 0, 0, 2.2870786, 0, 0.15, 0)
+mesh = SubResource("BoxMesh_vrpkd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_si7v2")
+
+[node name="LeverMeshTop" type="MeshInstance3D" parent="Visual/LeverMeshPivot/LeverMeshInstance3D" unique_id=1861978451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12335205, 0)
+mesh = SubResource("BoxMesh_x75jw")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vqd33")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual/LeverMeshPivot" unique_id=569977687]
+libraries/ = SubResource("AnimationLibrary_tknh3")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=2122156144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+script = ExtResource("2_7ktul")
+randomID = true
+metadata/_custom_type_script = "uid://be4u7kwwov65g"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1917298783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02161865, 0)
+shape = SubResource("BoxShape3D_7ktul")
+
+[node name="RedstoneLinkArea" parent="." unique_id=1031951996 instance=ExtResource("4_vqd33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+isActive = true
+isPowerSource = true

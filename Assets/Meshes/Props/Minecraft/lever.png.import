@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbsy6k41vmmfx"
-path.s3tc="res://.godot/imported/deepslate_top.png-948d13a80cfda345de60cfbf2b01559a.s3tc.ctex"
+uid="uid://1e1q80rkulhh"
+path.s3tc="res://.godot/imported/lever.png-6ca3c047eb4bd618589bc11220f54ab4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Props/Minecraft/BlockTextures/deepslate_top.png"
-dest_files=["res://.godot/imported/deepslate_top.png-948d13a80cfda345de60cfbf2b01559a.s3tc.ctex"]
+source_file="res://Assets/Meshes/Props/Minecraft/lever.png"
+dest_files=["res://.godot/imported/lever.png-6ca3c047eb4bd618589bc11220f54ab4.s3tc.ctex"]
 
 [params]
 

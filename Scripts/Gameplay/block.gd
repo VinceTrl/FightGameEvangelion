@@ -1,3 +1,5 @@
+class_name Block
+
 extends Node3D
 
 @export var healthPoints:int = 3
@@ -67,6 +69,7 @@ func ChangeHealth(healthAmount:int = -1):
 			
 		if(redstoneActive):
 			redstoneLink.ChangePowerState(false)
+			redstoneLink.PropagatePowerFromSource(redstoneLink)
 			pass
 		
 		await get_tree().create_timer(destroyDelay).timeout

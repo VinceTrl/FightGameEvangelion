@@ -1,20 +1,9 @@
 [gd_scene format=3 uid="uid://d3wxtxmcbjpi2"]
 
 [ext_resource type="Script" uid="uid://bt8jsyjekp4e2" path="res://Scripts/Gameplay/RedstoneSystem/redstone_link_area.gd" id="1_tlc2s"]
-[ext_resource type="Texture2D" uid="uid://bqfumm1bi4yia" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/redstone_dust_dot.png" id="2_ispeu"]
-[ext_resource type="Script" uid="uid://ca4rbc0nnfcmb" path="res://Scripts/Gameplay/RedstoneSystem/redstone_visual.gd" id="3_sn1n4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ispeu"]
 radius = 0.15
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_sn1n4"]
-size = Vector2(0.3, 0.3)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh4lj"]
-transparency = 1
-albedo_color = Color(1, 0, 0, 1)
-albedo_texture = ExtResource("2_ispeu")
-texture_filter = 0
 
 [node name="RedstoneLinkArea" type="Area3D" unique_id=1031951996 groups=["Redstone"]]
 collision_layer = 256
@@ -26,10 +15,3 @@ drawDebug = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=389159241]
 shape = SubResource("SphereShape3D_ispeu")
 debug_color = Color(0, 1, 0.5176471, 0.7176471)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=69064948 node_paths=PackedStringArray("redstone")]
-transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0.1603775)
-mesh = SubResource("PlaneMesh_sn1n4")
-surface_material_override/0 = SubResource("StandardMaterial3D_fh4lj")
-script = ExtResource("3_sn1n4")
-redstone = NodePath("../..")
