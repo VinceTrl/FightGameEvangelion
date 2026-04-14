@@ -27,6 +27,6 @@ script = ExtResource("15_kouim")
 
 [node name="DeathBackground" parent="." unique_id=1022482623 instance=ExtResource("7_dd241")]
 
-[node name="RedstoneManager" type="Node" parent="." unique_id=1984435090]
+[node name="BlockManager" type="Node" parent="." unique_id=1984435090]
 script = ExtResource("7_vlbu8")
 metadata/_custom_type_script = "uid://c0x3htqyu7mgf"

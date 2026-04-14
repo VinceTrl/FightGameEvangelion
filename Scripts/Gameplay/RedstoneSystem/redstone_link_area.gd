@@ -26,7 +26,6 @@ signal PowerStateChanged(isOn:bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Manager.gameManager.redstone_manager.RegisterRedstone(self)
 	TurnedOn.connect(OnTurnedOn)
 	TurnedOff.connect(OnTurnedOff)
 	PowerStateChanged.connect(OnPowerStateChanged)

@@ -7,7 +7,8 @@ extends Node
 @onready var game_timer: Timer = $GameTimer
 @onready var platform_manager: Node = $PlatformManager
 @onready var death_background: DeathBackground = $DeathBackground
-@onready var redstone_manager: RedstoneManager = $RedstoneManager
+@onready var block_manager: BlockManager = $BlockManager
+
 
 var spawn_manager: SpawnManager
 var currentMap: GameMap

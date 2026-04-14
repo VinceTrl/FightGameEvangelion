@@ -1,30 +1,26 @@
-class_name RedstoneManager
+class_name BlockManager
 
 extends Node
 
-var tick:float = 0.25
+var tick:float = 0.5
 
-var redstones:Array[RedstoneLink]
+var blocks:Array[Block]
 
-signal RedstoneUpdate
+signal BlockTicked
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	RedstoneTick()
+	BlockTick()
 	pass # Replace with function body.
 	
 	
-func RegisterRedstone(redstone:RedstoneLink):
-	if(!redstone):return
-	if(redstones.has(redstone)):return
-	redstones.append(redstone)
+func RegisterBlock(block:Block):
+	if(!block):return
+	if(blocks.has(block)):return
+	blocks.append(block)
 	pass
 
-func RedstoneTick():
+func BlockTick():
 	await get_tree().create_timer(tick).timeout
-	RedstoneUpdate.emit()
-	RedstoneTick()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	BlockTicked.emit()
+	BlockTick()

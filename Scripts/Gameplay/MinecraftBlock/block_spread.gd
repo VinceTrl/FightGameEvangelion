@@ -6,6 +6,7 @@ extends Node3D
 @export var blockSize:float = 0.3
 
 @export var excludeCollisions:CollisionObject3D
+@export var raycasts:Array[RayCast3D]
 @export var spreadDirections:Array[Vector3] = [Vector3.DOWN,Vector3.RIGHT,Vector3.LEFT]
 @export_flags_3d_physics var castLayers = 1
 
@@ -13,12 +14,14 @@ extends Node3D
 @export var drawDebug:bool = false
 
 var canUpdate:bool = true
+var current
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SpreadUpdate()
-	pass # Replace with function body.
+	for cast in raycasts:
+		cast.add_exception(excludeCollisions)
+	Manager.gameManager.block_manager.BlockTicked.connect(SpreadUpdate)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,20 +32,23 @@ func _process(delta: float) -> void:
 func SpreadUpdate():
 	if(!canUpdate):return
 	
-	#await get_tree().create_timer(spreadTick).timeout
 	var spawnedBlock:int = 0
 	
-	for direction in spreadDirections:
-		var isEmpty := CheckEmptySpaceInDirection(global_position,blockSize,direction)
+	for raycast in raycasts:
+		var isEmpty := CheckEmptySpace(raycast)
 		
 		if(isEmpty):
-			var spawnPos:Vector3 = owner.global_position + (direction.normalized() * blockSize)
+			var spawnPos:Vector3 = owner.global_position + raycast.target_position
 			SpawnBlock(spawnPos)
 			spawnedBlock += 1
+		else:
+			var col = raycast.get_collider()
+			print("SPREAD BLOCKED BY " + col.owner.name)
 			
-		await get_tree().create_timer(spreadTick).timeout
-		
-		if(spawnedBlock >= spreadDirections.size()): canUpdate = false
+			
+		if(spawnedBlock >= raycasts.size()):
+			print("LOCK UPDATES ON " + str(owner.name))
+			canUpdate = false
 		
 	SpreadUpdate()
 	
@@ -75,9 +81,13 @@ func CheckEmptySpaceInDirection(castOrigin:Vector3,castLength:float,castDirectio
 		return true
 		
 		
+func CheckEmptySpace(raycast:RayCast3D) -> bool:
+	return !raycast.is_colliding()
+	
+	
 func SpawnBlock(spawnPosition:Vector3):
 	var scene := blockScene.instantiate()
 	get_tree().current_scene.add_child(scene)
 	scene.global_position = spawnPosition
-	print("Spawned New Block")
+	print("Spawned New Block : " + str(scene.name))
 	pass

@@ -1032,9 +1032,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7999996, -2.539268, 0)
 [node name="WaterBlock17" parent="Level/Blocks" unique_id=551284073 instance=ExtResource("9_xvoje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4999995, -2.539268, 0)
 
-[node name="WaterBlock22" parent="Level/Blocks" unique_id=1998898591 instance=ExtResource("10_adgui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.660732, 0)
-
 [node name="DirtBlock" parent="Level/Blocks" unique_id=1356950867 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.439268, 0)
 
@@ -1314,6 +1311,9 @@ redstoneActive = true
 
 [node name="GrassBlock3" parent="Level/Blocks" unique_id=948275670 instance=ExtResource("14_a377a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000002, 0.46073204, 0)
+
+[node name="LavaBlock" parent="Level/Blocks" unique_id=66591931 instance=ExtResource("10_adgui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.13926798, 0)
 
 [node name="Poop" parent="." unique_id=334906660 instance=ExtResource("8_y4233")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3404913, 3.0463681, -0.010376)

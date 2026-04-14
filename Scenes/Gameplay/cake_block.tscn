@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq6bhap1jwxrm"]
+[gd_scene format=3 uid="uid://cq6bhap1jwxrm"]
 
-[ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/block.gd" id="1_8fj4h"]
+[ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/MinecraftBlock/block.gd" id="1_8fj4h"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_f7dpp"]
 [ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="3_0wkps"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="4_xulyr"]
