@@ -49,8 +49,6 @@ func SpreadUpdate():
 		if(spawnedBlock >= raycasts.size()):
 			print("LOCK UPDATES ON " + str(owner.name))
 			canUpdate = false
-		
-	SpreadUpdate()
 	
 
 
