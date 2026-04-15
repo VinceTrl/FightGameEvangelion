@@ -8,4 +8,4 @@ debugMap = true
 mapIndex = 3
 stageIndex = 1
 playerDebugID = Array[int]([1])
-debugActiveLineThickness = 0.05
+debugActiveLineThickness = 0.025

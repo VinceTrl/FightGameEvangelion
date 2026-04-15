@@ -2,8 +2,45 @@
 
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_eihy3"]
 [ext_resource type="Material" uid="uid://d0eoso6rpl2yl" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Lava.tres" id="2_eihy3"]
+[ext_resource type="Script" uid="uid://dr5x0bdu7jfx6" path="res://Scripts/Gameplay/MinecraftBlock/block_liquid_animation.gd" id="2_wcg62"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="3_rwskc"]
 [ext_resource type="Script" uid="uid://bly1j0bnty1o8" path="res://Scripts/Gameplay/MinecraftBlock/block_spread.gd" id="4_2dxx8"]
+
+[sub_resource type="Animation" id="Animation_wcg62"]
+resource_name = "LavaGrow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0, 1), Vector3(1, 0.1, 1), Vector3(1, 0.2, 1), Vector3(1, 0.3, 1), Vector3(1, 0.4, 1), Vector3(1, 0.5, 1), Vector3(1, 0.6, 1), Vector3(1, 0.7, 1), Vector3(1, 0.8, 1), Vector3(1, 0.9, 1), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4s1qt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hpvad"]
+_data = {
+&"LavaGrow": SubResource("Animation_wcg62"),
+&"RESET": SubResource("Animation_4s1qt")
+}
 
 [sub_resource type="BoxMesh" id="BoxMesh_qsc3o"]
 size = Vector3(0.3, 0.3, 0.3)
@@ -50,6 +87,7 @@ size = Vector3(0.325, 0.325, 0.325)
 
 [node name="LavaBlock" unique_id=1588274387 instance=ExtResource("1_eihy3")]
 canTakeDamage = false
+isLiquid = true
 
 [node name="StaticBody3D" parent="." index="1" unique_id=1373173204]
 collision_layer = 1
@@ -57,12 +95,25 @@ collision_layer = 1
 [node name="minecraft_grass_block" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=86836191]
 visible = false
 
-[node name="BoxMeshInstance" type="MeshInstance3D" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=50695867]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+[node name="LiquidAnimationPlayer" type="AnimationPlayer" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=288686585]
+root_node = NodePath("../LiquidScaleController_D")
+libraries/ = SubResource("AnimationLibrary_hpvad")
+
+[node name="LiquidScaleController_D" type="Node3D" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="2" unique_id=814758593 node_paths=PackedStringArray("block", "animation_player")]
+script = ExtResource("2_wcg62")
+block = NodePath("../..")
+animation_player = NodePath("../LiquidAnimationPlayer")
+
+[node name="LiquidScaleController_Up" type="Node3D" parent="NodeShaker/LiquidScaleController_D" index="0" unique_id=175580588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="BoxMeshInstance" type="MeshInstance3D" parent="NodeShaker/LiquidScaleController_D/LiquidScaleController_Up" index="0" unique_id=50695867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
 mesh = SubResource("BoxMesh_qsc3o")
+skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("2_eihy3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NodeShaker/BoxMeshInstance" index="0" unique_id=1447695175]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NodeShaker/LiquidScaleController_D/LiquidScaleController_Up/BoxMeshInstance" index="0" unique_id=1447695175]
 libraries/ = SubResource("AnimationLibrary_wcg62")
 autoplay = &"LavaFlow"
 
@@ -77,12 +128,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("BoxShape3D_2dxx8")
 debug_color = Color(0.956698, 0.13123322, 0.41744456, 0.41960785)
 
-[node name="BlockSpread" type="Node3D" parent="." index="8" unique_id=24732777 node_paths=PackedStringArray("excludeCollisions", "raycasts")]
+[node name="BlockSpread" type="Node3D" parent="." index="8" unique_id=24732777 node_paths=PackedStringArray("block", "excludeCollisions", "raycasts")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 script = ExtResource("4_2dxx8")
+block = NodePath("..")
 excludeCollisions = NodePath("../StaticBody3D")
-raycasts = [NodePath("RayCast_R"), NodePath("RayCast_L"), NodePath("RayCast_D")]
-castLayers = 209
+raycasts = [NodePath("RayCast_D"), NodePath("RayCast_L"), NodePath("RayCast_R")]
 drawDebug = true
 
 [node name="RayCast_R" type="RayCast3D" parent="BlockSpread" index="0" unique_id=64564531]

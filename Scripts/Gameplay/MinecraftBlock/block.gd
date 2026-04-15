@@ -24,11 +24,19 @@ const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestro
 @export var redstoneActive:bool = false
 @export var redstoneLink:RedstoneLink
 
+@export_category("Liquid Block Settings")
+@export var isLiquid:bool
+var originBlock:Block
+
 var isDead = false
 
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
+	
+	if(originBlock):
+		pass
+	
 	ground_magnet.auto_align_on_ready = forceToGroundOnReady
 	if(redstoneActive and redstoneLink):
 		redstoneLink.isActive = true

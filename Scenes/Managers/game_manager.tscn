@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c8kqnefy3vkr2" path="res://Scenes/Managers/vibration_manager.tscn" id="3_otru3"]
 [ext_resource type="PackedScene" uid="uid://bwvyar8y8lpaw" path="res://Scenes/Gameplay/post_process_effects.tscn" id="4_fa6t8"]
 [ext_resource type="PackedScene" uid="uid://bah62ne6gthmy" path="res://Scenes/GUI/death_background.tscn" id="7_dd241"]
-[ext_resource type="Script" uid="uid://c0x3htqyu7mgf" path="res://Scripts/Gameplay/RedstoneSystem/RedstoneManager.gd" id="7_vlbu8"]
+[ext_resource type="Script" uid="uid://c0x3htqyu7mgf" path="res://Scripts/Gameplay/MinecraftBlock/BlockManager.gd" id="7_vlbu8"]
 [ext_resource type="Script" uid="uid://dhwcpplmkbemg" path="res://Scripts/Managers/platform_manager.gd" id="15_kouim"]
 
 [node name="GameManager" type="Node" unique_id=1233268369]
