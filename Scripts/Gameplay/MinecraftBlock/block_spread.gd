@@ -1,13 +1,14 @@
+class_name BlockSpread
+
 extends Node3D
 
 @export var block:Block
-@export var blockScene:PackedScene = preload("uid://bja86rnp5peep")
-
+@export var blockScene:PackedScene
+@export var sideBlock:bool = false
 @export var blockSize:float = 0.3
 
 @export var excludeCollisions:CollisionObject3D
 @export var raycasts:Array[RayCast3D]
-@export var drawDebug:bool = false
 
 var canUpdate:bool = true
 var currentRaycastIndex:int = 0
@@ -26,7 +27,8 @@ func _ready() -> void:
 	for cast in raycasts:
 		cast.add_exception(excludeCollisions)
 	blockManager = Manager.gameManager.block_manager
-	blockManager.BlockTicked.connect(SpreadUpdate)
+	#blockScene = load(blockScene.resource_path)
+	#blockManager.BlockTicked.connect(SpreadUpdate)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,7 +52,7 @@ func SpreadUpdate():
 			spawnedBlock += 1
 	else:
 		var col = raycast.get_collider()
-		print("SPREAD BLOCKED BY " + col.owner.name)
+		#print("SPREAD BLOCKED BY " + col.owner.name)
 		
 	if(spawnedBlock >= raycasts.size()):
 		print("LOCK UPDATES ON " + str(owner.name))
@@ -68,6 +70,7 @@ func SpawnBlock(spawnPosition:Vector3):
 	
 	if(scene is Block):
 		scene.originBlock = block
+		scene.isSide = sideBlock
 
 	get_tree().current_scene.add_child(scene)
 	scene.global_position = spawnPosition

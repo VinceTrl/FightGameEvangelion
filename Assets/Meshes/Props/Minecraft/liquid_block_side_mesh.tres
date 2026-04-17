@@ -1,0 +1,15 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://msw4g5bduftm"]
+
+[ext_resource type="Material" uid="uid://d0eoso6rpl2yl" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Lava.tres" id="1_nak2f"]
+
+[resource]
+_surfaces = [{
+"aabb": AABB(0, 0, -0.3, 0.3, 0.3, 0.3),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAgD8AAAA+AAAAP1ZVVT8AAIA/AAAAPwAAgD8AAIA/AACAPwAAAD8AAAAAAAAAPwAAAAAAAMA+AAAAAAAAgD8AAAAAAAAAPwAAAD9WVVU/AAAAAAAAAD4AAIA/AAAAPgAAgD8AAIA+AACAPwAAAD4AAAAAAAAAPgAAAAAAAAAAAACAPwAAgD8AAAA/AACAPwAAAD9WVVU/AAAAAAAAwD4AAIA/AADAPgAAgD8AAAA/AAAAAAAAgD4AAIA/AACAPgAAgD8AAMA+AAAAP1ZVVT8AAAA/AACAPwAAAAAAAIA/AACAPwAAwD4AAAAAAADAPgAAAAAAAIA+AACAPwAAgD4AAAAAAACAPgAAAAAAAAA+"),
+"format": 34359738391,
+"material": ExtResource("1_nak2f"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAACamZm+AAAAAJqZmT6amZm+mpmZPs3MzD2amZm+AAAAAJqZmT6amZm+AAAAAAAAAACamZm+AAAAAAAAAACamZm+AAAAAAAAAAAAAAAAmpmZPgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJqZmT4AAAAAmpmZPs3MzD0AAAAAAAAAAJqZmT4AAAAAAAAAAJqZmT6amZm+mpmZPs3MzD2amZm+AAAAAJqZmT6amZm+AAAAAJqZmT4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACamZm+mpmZPgAAAACamZm+mpmZPs3MzD2amZm+mpmZPgAAAAAAAAAAmpmZPgAAAACamZm+AAAAAAAAAACamZm+mpmZPs3MzD0AAAAAmpmZPs3MzD2amZm+mpmZPgAAAACamZm+mpmZPs3MzD0AAAAAmpmZPgAAAAAAAAAAAAAAAAAAAAAAAAAAmpmZPgAAAACamZm+mpmZPgAAAAAAAAAAmpmZPs3MzD0AAAAAmpmZPs3MzD2amZm+mpmZPs3MzD0AAAAAAAAAAJqZmT4AAAAAAAD/f/////8AAP9//////wAA/3///////////wAA/7//////AAD/v/////8AAP+//38AAP//////fwAA//////9/AAD//////3//f////7//f/9//v//v/9//3////+/MrPLzP////8ys8vM/////zKzy8z/////AAD/f/////8AAP9//////wAA/3///////////wAA/7//////AAD/v/////8AAP+//38AAP//////fwAA//////9/AAD/////////f/////////9//////////3///////3//f////7//f/9/////v/9//3////+/////f/////////9//////////3//////MrPLzP////8ys8vM/////zKzy8z/////")
+}]

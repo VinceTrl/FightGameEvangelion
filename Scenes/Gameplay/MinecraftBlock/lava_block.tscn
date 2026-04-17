@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bja86rnp5peep"]
 
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_eihy3"]
+[ext_resource type="Script" uid="uid://bvvbfirrqg6lr" path="res://Scripts/Gameplay/MinecraftBlock/block_liquid.gd" id="2_50xhm"]
 [ext_resource type="Material" uid="uid://d0eoso6rpl2yl" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Lava.tres" id="2_eihy3"]
 [ext_resource type="Script" uid="uid://dr5x0bdu7jfx6" path="res://Scripts/Gameplay/MinecraftBlock/block_liquid_animation.gd" id="2_wcg62"]
+[ext_resource type="BoxMesh" uid="uid://6u8dxvmlmuua" path="res://Assets/Meshes/Props/Minecraft/proto_block_mesh.tres" id="3_hpvad"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="3_rwskc"]
 [ext_resource type="Script" uid="uid://bly1j0bnty1o8" path="res://Scripts/Gameplay/MinecraftBlock/block_spread.gd" id="4_2dxx8"]
+[ext_resource type="ArrayMesh" uid="uid://msw4g5bduftm" path="res://Assets/Meshes/Props/Minecraft/liquid_block_side_mesh.tres" id="5_50xhm"]
 
 [sub_resource type="Animation" id="Animation_wcg62"]
 resource_name = "LavaGrow"
@@ -41,9 +44,6 @@ _data = {
 &"LavaGrow": SubResource("Animation_wcg62"),
 &"RESET": SubResource("Animation_4s1qt")
 }
-
-[sub_resource type="BoxMesh" id="BoxMesh_qsc3o"]
-size = Vector3(0.3, 0.3, 0.3)
 
 [sub_resource type="Animation" id="Animation_rwskc"]
 resource_name = "LavaFlow"
@@ -85,9 +85,19 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_2dxx8"]
 size = Vector3(0.325, 0.325, 0.325)
 
-[node name="LavaBlock" unique_id=1588274387 instance=ExtResource("1_eihy3")]
+[node name="LavaBlock" unique_id=1588274387 node_paths=PackedStringArray("sideSpread", "bottomSpread", "leftRaycast", "rightRaycast", "downRaycast", "upRaycast", "leftGroundRaycast", "rightGroundRaycast") instance=ExtResource("1_eihy3")]
+script = ExtResource("2_50xhm")
+isSide = false
+canSpread = true
+sideSpread = NodePath("BlockSpreadSides")
+bottomSpread = NodePath("BlockSpreadDown")
+leftRaycast = NodePath("Raycasts/RayCast_L")
+rightRaycast = NodePath("Raycasts/RayCast_R")
+downRaycast = NodePath("Raycasts/RayCast_D")
+upRaycast = NodePath("Raycasts/RayCast_U")
+leftGroundRaycast = NodePath("Raycasts/RayCast_Ground_L")
+rightGroundRaycast = NodePath("Raycasts/RayCast_Ground_R")
 canTakeDamage = false
-isLiquid = true
 
 [node name="StaticBody3D" parent="." index="1" unique_id=1373173204]
 collision_layer = 1
@@ -96,24 +106,36 @@ collision_layer = 1
 visible = false
 
 [node name="LiquidAnimationPlayer" type="AnimationPlayer" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=288686585]
-root_node = NodePath("../LiquidScaleController_D")
+root_node = NodePath("../LiquidScaleController")
 libraries/ = SubResource("AnimationLibrary_hpvad")
 
-[node name="LiquidScaleController_D" type="Node3D" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="2" unique_id=814758593 node_paths=PackedStringArray("block", "animation_player")]
+[node name="LiquidScaleController" type="Node3D" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="2" unique_id=814758593 node_paths=PackedStringArray("block", "fullBlockMesh", "sideBlockMesh", "scalePivot")]
 script = ExtResource("2_wcg62")
 block = NodePath("../..")
-animation_player = NodePath("../LiquidAnimationPlayer")
+fullBlockMesh = NodePath("LiquidScaleController_Up/BoxMeshInstance")
+sideBlockMesh = NodePath("LiquidScaleController_Up/BoxMeshInstanceSide")
+scalePivot = NodePath(".")
 
-[node name="LiquidScaleController_Up" type="Node3D" parent="NodeShaker/LiquidScaleController_D" index="0" unique_id=175580588]
+[node name="LiquidScaleController_Up" type="Node3D" parent="NodeShaker/LiquidScaleController" index="0" unique_id=175580588]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
-[node name="BoxMeshInstance" type="MeshInstance3D" parent="NodeShaker/LiquidScaleController_D/LiquidScaleController_Up" index="0" unique_id=50695867]
+[node name="BoxMeshInstance" type="MeshInstance3D" parent="NodeShaker/LiquidScaleController/LiquidScaleController_Up" index="0" unique_id=50695867]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
-mesh = SubResource("BoxMesh_qsc3o")
+mesh = ExtResource("3_hpvad")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("2_eihy3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NodeShaker/LiquidScaleController_D/LiquidScaleController_Up/BoxMeshInstance" index="0" unique_id=1447695175]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NodeShaker/LiquidScaleController/LiquidScaleController_Up/BoxMeshInstance" index="0" unique_id=1447695175]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstanceSide" type="MeshInstance3D" parent="NodeShaker/LiquidScaleController/LiquidScaleController_Up" index="1" unique_id=745308190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.3, 0.15)
+mesh = ExtResource("5_50xhm")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("2_eihy3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NodeShaker/LiquidScaleController/LiquidScaleController_Up/BoxMeshInstanceSide" index="0" unique_id=2096198335]
 libraries/ = SubResource("AnimationLibrary_wcg62")
 autoplay = &"LavaFlow"
 
@@ -128,25 +150,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("BoxShape3D_2dxx8")
 debug_color = Color(0.956698, 0.13123322, 0.41744456, 0.41960785)
 
-[node name="BlockSpread" type="Node3D" parent="." index="8" unique_id=24732777 node_paths=PackedStringArray("block", "excludeCollisions", "raycasts")]
+[node name="BlockSpreadDown" type="Node3D" parent="." index="8" unique_id=24732777 node_paths=PackedStringArray("block", "excludeCollisions", "raycasts")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 script = ExtResource("4_2dxx8")
 block = NodePath("..")
 excludeCollisions = NodePath("../StaticBody3D")
-raycasts = [NodePath("RayCast_D"), NodePath("RayCast_L"), NodePath("RayCast_R")]
-drawDebug = true
+raycasts = [NodePath("../Raycasts/RayCast_D")]
 
-[node name="RayCast_R" type="RayCast3D" parent="BlockSpread" index="0" unique_id=64564531]
+[node name="BlockSpreadSides" type="Node3D" parent="." index="9" unique_id=831014420 node_paths=PackedStringArray("block", "excludeCollisions", "raycasts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+script = ExtResource("4_2dxx8")
+block = NodePath("..")
+sideBlock = true
+excludeCollisions = NodePath("../StaticBody3D")
+raycasts = [NodePath("../Raycasts/RayCast_R"), NodePath("../Raycasts/RayCast_L")]
+
+[node name="Raycasts" type="Node3D" parent="." index="10" unique_id=1982998029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="RayCast_R" type="RayCast3D" parent="Raycasts" index="0" unique_id=64564531]
 target_position = Vector3(0.3, 0, 0)
 hit_from_inside = true
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="RayCast_L" type="RayCast3D" parent="BlockSpread" index="1" unique_id=2086972297]
+[node name="RayCast_L" type="RayCast3D" parent="Raycasts" index="1" unique_id=2086972297]
 target_position = Vector3(-0.3, 0, 0)
 hit_from_inside = true
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="RayCast_D" type="RayCast3D" parent="BlockSpread" index="2" unique_id=1818133695]
+[node name="RayCast_D" type="RayCast3D" parent="Raycasts" index="2" unique_id=1818133695]
+target_position = Vector3(0, -0.3, 0)
+hit_from_inside = true
+debug_shape_custom_color = Color(0, 0, 1, 1)
+
+[node name="RayCast_U" type="RayCast3D" parent="Raycasts" index="3" unique_id=671847361]
+target_position = Vector3(0, 0.3, 0)
+hit_from_inside = true
+debug_shape_custom_color = Color(0, 0, 1, 1)
+
+[node name="RayCast_Ground_R" type="RayCast3D" parent="Raycasts" index="4" unique_id=151526639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+target_position = Vector3(0, -0.3, 0)
+hit_from_inside = true
+debug_shape_custom_color = Color(0, 0, 1, 1)
+
+[node name="RayCast_Ground_L" type="RayCast3D" parent="Raycasts" index="5" unique_id=1869821289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
 target_position = Vector3(0, -0.3, 0)
 hit_from_inside = true
 debug_shape_custom_color = Color(0, 0, 1, 1)

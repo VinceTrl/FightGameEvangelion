@@ -24,8 +24,6 @@ const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestro
 @export var redstoneActive:bool = false
 @export var redstoneLink:RedstoneLink
 
-@export_category("Liquid Block Settings")
-@export var isLiquid:bool
 var originBlock:Block
 
 var isDead = false
