@@ -1,8 +1,8 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cu75pqa4bmuqi"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cu75pqa4bmuqi"]
 
 [ext_resource type="Texture2D" uid="uid://idmye7qf6jbr" path="res://Assets/Meshes/Characters/Creeper/creeper.png" id="1_db1bn"]
 
 [resource]
-albedo_color = Color(0.26417, 0.969981, 0.255913, 1)
+albedo_color = Color(0.63603026, 0.9960734, 0.6113599, 1)
 albedo_texture = ExtResource("1_db1bn")
 texture_filter = 0

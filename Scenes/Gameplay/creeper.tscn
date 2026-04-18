@@ -1,30 +1,217 @@
-[gd_scene format=3 uid="uid://dhbrjxsivp186"]
+[gd_scene format=4 uid="uid://dhbrjxsivp186"]
 
-[ext_resource type="Script" uid="uid://4u34bup3e8f0" path="res://Scripts/Gameplay/Items/creeper.gd" id="1_35u60"]
-[ext_resource type="PackedScene" uid="uid://cm04skaagkxjw" path="res://Assets/Meshes/Characters/Creeper/creeper.fbx" id="1_b2e8f"]
-[ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="2_4yi8u"]
+[ext_resource type="Script" uid="uid://4u34bup3e8f0" path="res://Scripts/Gameplay/Creeper/creeper.gd" id="1_35u60"]
+[ext_resource type="Script" uid="uid://davkegmks5tqe" path="res://Scripts/Components/Movement/flip_component.gd" id="2_2so1e"]
+[ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="2_jiktw"]
+[ext_resource type="Script" uid="uid://boe4peeex6mo5" path="res://Scripts/Components/Movement/movement_component.gd" id="3_lhvbi"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="4_lhvbi"]
+[ext_resource type="Material" uid="uid://cu75pqa4bmuqi" path="res://Assets/Meshes/Characters/Creeper/M_Creeper.tres" id="6_mj3uu"]
+[ext_resource type="Script" uid="uid://bd22tgeapb6qp" path="res://Scripts/Gameplay/Creeper/CreeperStateMachine/CreeperStateMachine.gd" id="7_bqhep"]
+[ext_resource type="Script" uid="uid://bthhwujfkbll0" path="res://Scripts/Gameplay/Creeper/CreeperStateMachine/CreeperState_Idle.gd" id="8_swjsx"]
+[ext_resource type="Script" uid="uid://c33m7vfwxxh4v" path="res://Scripts/Gameplay/Creeper/CreeperStateMachine/CreeperState_Roam.gd" id="9_2bar6"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="9_jiktw"]
+[ext_resource type="Script" uid="uid://dguvlh10vr8u7" path="res://Scripts/Gameplay/Creeper/CreeperStateMachine/CreeperState_Chase.gd" id="10_55lj0"]
+[ext_resource type="Script" uid="uid://ccdcl3ugnhsx6" path="res://Scripts/Gameplay/Creeper/CreeperStateMachine/CreeperState_Ignite.gd" id="11_uo4qv"]
+[ext_resource type="Script" uid="uid://b5isf2df5tt8m" path="res://Scripts/Gameplay/Creeper/CreeperStateMachine/CreeperState_Explode.gd" id="12_b22qc"]
+[ext_resource type="Script" uid="uid://bktp6hhvgq3n0" path="res://Scripts/Gameplay/Creeper/CreeperStateMachine/CreeperState_Death.gd" id="13_k0qpd"]
+[ext_resource type="Script" uid="uid://7y6b2ioegg04" path="res://Scripts/Gameplay/Creeper/CreeperStateMachine/CreeperState_Hurt.gd" id="13_mj3uu"]
 
-[node name="Creeper" type="Node3D" unique_id=357536691]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqhep"]
+size = Vector3(0.3, 0.675, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jiktw"]
+size = Vector3(2, 0.8, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7nxxe"]
+_surfaces = [{
+"aabb": AABB(-0.1016, -0.1524, -0.3302, 0.2032, 0.3048, 0.6604),
+"format": 34359742465,
+"index_count": 216,
+"index_data": PackedByteArray("AAABAAIAAwABAAAAAgAEAAAAAQADAAUABQACAAEABgAEAAIAAgAFAAYABwAAAAQAAAAHAAMABAAGAAcABQADAAcABwAGAAUACAAJAAoACwAJAAgACgAMAAgACQALAA0ADQAKAAkADgAMAAoACgANAA4ADwAIAAwACAAPAAsADAAOAA8ADQALAA8ADwAOAA0AEAARABIAEwARABAAEgAUABAAEQATABUAFQASABEAFgAUABIAEgAVABYAFwAQABQAEAAXABMAFAAWABcAFQATABcAFwAWABUAGAAZABoAGwAZABgAGgAcABgAGQAbAB0AHQAaABkAHgAcABoAGgAdAB4AHwAYABwAGAAfABsAHAAeAB8AHQAbAB8AHwAeAB0AIAAhACIAIwAhACAAIgAkACAAIQAjACUAJQAiACEAJgAkACIAIgAlACYAJwAgACQAIAAnACMAJAAmACcAJQAjACcAJwAmACUAKAApACoAKwApACgAKgAsACgAKQArAC0ALQAqACkALgAsACoAKgAtAC4ALwAoACwAKAAvACsALAAuAC8ALQArAC8ALwAuAC0A"),
+"lods": [0.1047269, PackedByteArray("AAABAAIAAwABAAAAAgAEAAAAAQADAAUABQACAAEABgAEAAIAAgAFAAYABwAAAAQAAAAHAAMABAAGAAcABQADAAcABwAGAAUACAAJAAoACwAJAAgACgAMAAgACQALAA0ADQAKAAkADgAMAAoACgANAA4ADwAIAAwACAAPAAsADAAOAA8ADQALAA8ADwAOAA0A")],
+"name": "02 - Default",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("qRPQPawTUD00ETa+qRPQvawTUD00ETa+qRPQvaYTUL00ETa+qRPQvawTUD1KDAI+qRPQPaYTUL00ETa+qRPQvaYTUL1KDAI+qRPQPaYTUL1KDAI+qRPQPawTUD1KDAI+qRPQPakT0D1KDAI+qRPQvakT0D1KDAI+qRPQvakT0L1KDAI+qRPQvakT0D35D6k+qRPQPakT0L1KDAI+qRPQvakT0L35D6k+qRPQPakT0L35D6k+qRPQPakT0D35D6k+qRPQsakTUL35D6m+qRPQvakTUL35D6m+qRPQvb8OHL75D6m+qRPQvakTUL00ETa+qRPQsb8OHL75D6m+qRPQvb8OHL40ETa+qRPQsb8OHL40ETa+qRPQsakTUL00ETa+qRPQPakTUL35D6m+AAAAAKkTUL35D6m+AAAAAL8OHL75D6m+AAAAAKkTUL00ETa+qRPQPb8OHL75D6m+AAAAAL8OHL40ETa+qRPQPb8OHL40ETa+qRPQPakTUL00ETa+qRPQsb8OHD75D6m+qRPQvb8OHD75D6m+qRPQvakTUD35D6m+qRPQvb8OHD40ETa+qRPQsakTUD35D6m+qRPQvakTUD00ETa+qRPQsakTUD00ETa+qRPQsb8OHD40ETa+qRPQPb8OHD75D6m+AAAAAL8OHD75D6m+AAAAAKkTUD35D6m+AAAAAL8OHD40ETa+qRPQPakTUD35D6m+AAAAAKkTUD00ETa+qRPQPakTUD00ETa+qRPQPb8OHD40ETa+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kpxma"]
+resource_name = "Creeper"
+_surfaces = [{
+"aabb": AABB(-0.1016, -0.1524, -0.3302, 0.2032, 0.3048, 0.6604),
+"attribute_data": PackedByteArray("AAAQPwAAgD4AAOA+AACAPgAA4D4AAKA+yQ0QPwAAoD4AAOA+AACAPgAA4D4AAKA+AACgPgAAoD4AAKA+AACAPgAA4D4AAKA+AADgPgAAAD8AAKA+AAAAPwAAoD4AAKA+AAAAPwAAoD4AAAA/AAAAPwAA4D4AAAA/AADgPgAAoD4AACA/AACgPgAAID8AAAA/AAAAPwAAAD8AAAA/AACgPgAAoD4AAKA+AACgPgAAAD8AAIA+AAAAPwAAgD4AAKA+AADAPgAAAAAAAIA+AAAAAAAAgD4AAAA+AADAPgAAAD4AAIA+AAAAAAAAgD4AAAA+AAAAPgAAAD4AAAA+AAAAAAAAgD4AAAA+AACAPgAAgD4AAAA+AACAPgAAAD4AAAA+AADAPgAAAD4AAMA+AACAPgAAgD4AAIA+AACAPgAAAD4AAAA/AAAAPgAAAD8AAIA+AADAPgAAgD4AAMA+AAAAPv7//z0AAAA+AAAAPgAAgD4AAAAAAACAPgAAAAAAAAA+AABAPgAAgD4AAAA+AACAPgAAAD4AAKA+AABAPgAAoD4AAAA+AACAPgAAAD4AAKA+AACAPQAAoD4AAIA9AACAPgAAAD4AAKA+AAAAPmD3zz4AAIA9YPfPPgAAgD0AAKA+AABAPgAAoD4AAEA+YPfPPgAAAD5g988+AAAAPgAAoD4AAIA+AACgPgAAgD5g988+AABAPmD3zz4AAEA+AACgPgAAgD0AAKA+AACAPWD3zz4AAAAAYPfPPgAAAAAAAKA+AABAPgAAgD4AAAA+AACAPgAAAD4AAKA+AABAPgAAoD4AAAA+AACAPgAAAD4AAKA+AACAPQAAoD4AAIA9AACAPgAAAD4AAKA+AAAAPmD3zz4AAIA9YPfPPgAAgD0AAKA+AABAPgAAoD4AAEA+YPfPPgAAAD5g988+AAAAPgAAoD4AAIA+AACgPgAAgD5g988+AABAPmD3zz4AAEA+AACgPgAAgD0AAKA+AACAPWD3zz4AAAAAYPfPPgAAAAAAAKA+AABAPgAAgD4AAAA+AACAPgAAAD4AAKA+AABAPgAAoD4AAAA+AACAPgAAAD4AAKA+AACAPQAAoD4AAIA9AACAPgAAAD4AAKA+AAAAPmD3zz4AAIA9YPfPPgAAgD0AAKA+AABAPgAAoD4AAEA+YPfPPgAAAD5g988+AAAAPgAAoD4AAIA+AACgPgAAgD5g988+AABAPmD3zz4AAEA+AACgPgAAgD0AAKA+AACAPWD3zz4AAAAAYPfPPgAAAAAAAKA+AABAPgAAgD4AAAA+AACAPgAAAD4AAKA+AABAPgAAoD4AAAA+AACAPgAAAD4AAKA+AACAPQAAoD4AAIA9AACAPgAAAD4AAKA+AAAAPmD3zz4AAIA9YPfPPgAAgD0AAKA+AABAPgAAoD4AAEA+YPfPPgAAAD5g988+AAAAPgAAoD4AAIA+AACgPgAAgD5g988+AABAPmD3zz4AAEA+AACgPgAAgD0AAKA+AACAPWD3zz4AAAAAYPfPPgAAAAAAAKA+"),
+"format": 34359742487,
+"index_count": 216,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgBnAGQAaABpAGoAagBrAGgAbABtAG4AbgBvAGwAcABxAHIAcgBzAHAAdAB1AHYAdgB3AHQAeAB5AHoAegB7AHgAfAB9AH4AfgB/AHwAgACBAIIAggCDAIAAhACFAIYAhgCHAIQAiACJAIoAigCLAIgAjACNAI4AjgCPAIwA"),
+"lods": [0.1047269, PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwA")],
+"material": ExtResource("6_mj3uu"),
+"name": "02 - Default",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 144,
+"vertex_data": PackedByteArray("qRPQPawTUD00ETa+qRPQvawTUD00ETa+qRPQvaYTUL00ETa+qRPQPaYTUL00ETa+qRPQPawTUD1KDAI+qRPQPaYTUL1KDAI+qRPQvaYTUL1KDAI+qRPQvawTUD1KDAI+qRPQPaYTUL1KDAI+qRPQPaYTUL00ETa+qRPQvaYTUL00ETa+qRPQvaYTUL1KDAI+qRPQPawTUD1KDAI+qRPQPawTUD00ETa+qRPQPaYTUL00ETa+qRPQPaYTUL1KDAI+qRPQvawTUD1KDAI+qRPQvawTUD00ETa+qRPQPawTUD00ETa+qRPQPawTUD1KDAI+qRPQvaYTUL1KDAI+qRPQvaYTUL00ETa+qRPQvawTUD00ETa+qRPQvawTUD1KDAI+qRPQPakT0D1KDAI+qRPQvakT0D1KDAI+qRPQvakT0L1KDAI+qRPQPakT0L1KDAI+qRPQPakT0D35D6k+qRPQPakT0L35D6k+qRPQvakT0L35D6k+qRPQvakT0D35D6k+qRPQPakT0L35D6k+qRPQPakT0L1KDAI+qRPQvakT0L1KDAI+qRPQvakT0L35D6k+qRPQPakT0D35D6k+qRPQPakT0D1KDAI+qRPQPakT0L1KDAI+qRPQPakT0L35D6k+qRPQvakT0D35D6k+qRPQvakT0D1KDAI+qRPQPakT0D1KDAI+qRPQPakT0D35D6k+qRPQvakT0L35D6k+qRPQvakT0L1KDAI+qRPQvakT0D1KDAI+qRPQvakT0D35D6k+qRPQsakTUL35D6m+qRPQvakTUL35D6m+qRPQvb8OHL75D6m+qRPQsb8OHL75D6m+qRPQsakTUL00ETa+qRPQsb8OHL40ETa+qRPQvb8OHL40ETa+qRPQvakTUL00ETa+qRPQsb8OHL40ETa+qRPQsb8OHL75D6m+qRPQvb8OHL75D6m+qRPQvb8OHL40ETa+qRPQsakTUL00ETa+qRPQsakTUL35D6m+qRPQsb8OHL75D6m+qRPQsb8OHL40ETa+qRPQvakTUL00ETa+qRPQvakTUL35D6m+qRPQsakTUL35D6m+qRPQsakTUL00ETa+qRPQvb8OHL40ETa+qRPQvb8OHL75D6m+qRPQvakTUL35D6m+qRPQvakTUL00ETa+qRPQPakTUL35D6m+AAAAAKkTUL35D6m+AAAAAL8OHL75D6m+qRPQPb8OHL75D6m+qRPQPakTUL00ETa+qRPQPb8OHL40ETa+AAAAAL8OHL40ETa+AAAAAKkTUL00ETa+qRPQPb8OHL40ETa+qRPQPb8OHL75D6m+AAAAAL8OHL75D6m+AAAAAL8OHL40ETa+qRPQPakTUL00ETa+qRPQPakTUL35D6m+qRPQPb8OHL75D6m+qRPQPb8OHL40ETa+AAAAAKkTUL00ETa+AAAAAKkTUL35D6m+qRPQPakTUL35D6m+qRPQPakTUL00ETa+AAAAAL8OHL40ETa+AAAAAL8OHL75D6m+AAAAAKkTUL35D6m+AAAAAKkTUL00ETa+qRPQsb8OHD75D6m+qRPQvb8OHD75D6m+qRPQvakTUD35D6m+qRPQsakTUD35D6m+qRPQsb8OHD40ETa+qRPQsakTUD00ETa+qRPQvakTUD00ETa+qRPQvb8OHD40ETa+qRPQsakTUD00ETa+qRPQsakTUD35D6m+qRPQvakTUD35D6m+qRPQvakTUD00ETa+qRPQsb8OHD40ETa+qRPQsb8OHD75D6m+qRPQsakTUD35D6m+qRPQsakTUD00ETa+qRPQvb8OHD40ETa+qRPQvb8OHD75D6m+qRPQsb8OHD75D6m+qRPQsb8OHD40ETa+qRPQvakTUD00ETa+qRPQvakTUD35D6m+qRPQvb8OHD75D6m+qRPQvb8OHD40ETa+qRPQPb8OHD75D6m+AAAAAL8OHD75D6m+AAAAAKkTUD35D6m+qRPQPakTUD35D6m+qRPQPb8OHD40ETa+qRPQPakTUD00ETa+AAAAAKkTUD00ETa+AAAAAL8OHD40ETa+qRPQPakTUD00ETa+qRPQPakTUD35D6m+AAAAAKkTUD35D6m+AAAAAKkTUD00ETa+qRPQPb8OHD40ETa+qRPQPb8OHD75D6m+qRPQPakTUD35D6m+qRPQPakTUD00ETa+AAAAAL8OHD40ETa+AAAAAL8OHD75D6m+qRPQPb8OHD75D6m+qRPQPb8OHD40ETa+AAAAAKkTUD00ETa+AAAAAKkTUD35D6m+AAAAAL8OHD75D6m+AAAAAL8OHD40ETa+/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/////f/9///////9//3///////3//f///////f/9/////f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/vwAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/////f/9///////9//3///////3//f///////f/9/////f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/vwAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/////f/9///////9//3///////3//f///////f/9/////f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/vwAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/////f/9///////9//3///////3//f///////f/9/////f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/vwAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/////f/9///////9//3///////3//f///////f/9/////f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/vwAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/////f/9///////9//3///////3//f///////f/9/////f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/vwAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7nxxe")
+
+[sub_resource type="Animation" id="Animation_swjsx"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_ew8q0"]
+resource_name = "Ignite"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreeperMeshRoot/creeper/Creeper:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.63603026, 0.9960734, 0.6113599, 1), Color(0.8564728, 0.0001733429, 9.472132e-05, 1), Color(0.63603026, 0.9960734, 0.6113599, 1), Color(0.8564728, 0.0001733429, 9.472132e-05, 1), Color(0.63603026, 0.9960734, 0.6113599, 1), Color(0.8564728, 0.0001733429, 9.472132e-05, 1), Color(0.63603026, 0.9960734, 0.6113599, 1), Color(0.8564728, 0.0001733429, 9.472132e-05, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qrdf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreeperMeshRoot/creeper/Creeper:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.63603026, 0.9960734, 0.6113599, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jiktw"]
+_data = {
+&"Idle": SubResource("Animation_swjsx"),
+&"Ignite": SubResource("Animation_ew8q0"),
+&"RESET": SubResource("Animation_qrdf4")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bar6"]
+size = Vector3(0.35, 0.675, 0.5)
+
+[node name="Creeper" type="CharacterBody3D" unique_id=261367 node_paths=PackedStringArray("health", "groundDetection", "obstacleRaycasts", "targetDetection", "stateMachine", "movement", "flip", "animation")]
 script = ExtResource("1_35u60")
+health = NodePath("Components/HealthComponent")
+groundDetection = NodePath("Raycasts/GroundRaycast")
+obstacleRaycasts = [NodePath("Raycasts/ObstacleRaycast_Down"), NodePath("Raycasts/ObstacleRaycast_Up")]
+targetDetection = NodePath("Raycasts/TargetDetectionShapeCast")
+stateMachine = NodePath("CreeperStateMachine")
+movement = NodePath("Components/MovementComponent")
+flip = NodePath("Components/FlipComponent")
+animation = NodePath("Visual/NodeShaker/CreeperMeshRoot/creeper/AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1096209062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3259743, 0)
+shape = SubResource("BoxShape3D_bqhep")
+
+[node name="Components" type="Node" parent="." unique_id=1495332475]
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=594923234]
+script = ExtResource("2_jiktw")
+metadata/_custom_type_script = "uid://cw2bpx65nkj7h"
+
+[node name="MovementComponent" type="Node" parent="Components" unique_id=1849950124 node_paths=PackedStringArray("character")]
+script = ExtResource("3_lhvbi")
+character = NodePath("../..")
+speed = 0.5
+metadata/_custom_type_script = "uid://boe4peeex6mo5"
+
+[node name="FlipComponent" type="Node" parent="Components" unique_id=416095468 node_paths=PackedStringArray("movement", "flipNodes")]
+script = ExtResource("2_2so1e")
+movement = NodePath("../MovementComponent")
+flipNodes = [NodePath("../../Visual/NodeShaker/CreeperMeshRoot"), NodePath("../../Raycasts")]
+metadata/_custom_type_script = "uid://davkegmks5tqe"
+
+[node name="Raycasts" type="Node3D" parent="." unique_id=314685927]
+
+[node name="ObstacleRaycast_Down" type="RayCast3D" parent="Raycasts" unique_id=1539562079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07140131, 0)
+target_position = Vector3(0.5, 0, 0)
+
+[node name="ObstacleRaycast_Up" type="RayCast3D" parent="Raycasts" unique_id=1779320677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64001095, 0)
+target_position = Vector3(0.5, 0, 0)
+
+[node name="GroundRaycast" type="RayCast3D" parent="Raycasts" unique_id=2000956625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+target_position = Vector3(0, -0.9, 0)
+
+[node name="TargetDetectionShapeCast" type="ShapeCast3D" parent="Raycasts" unique_id=783405840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_jiktw")
+target_position = Vector3(1, 0, 0)
+collision_mask = 2
 
 [node name="Visual" type="Node3D" parent="." unique_id=1761667372]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333982, 0)
 
-[node name="creeper" parent="Visual" unique_id=580999433 instance=ExtResource("1_b2e8f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.0066295266, 0)
+[node name="NodeShaker" type="Node3D" parent="Visual" unique_id=334552653 node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("4_lhvbi")
+nodeToShake = NodePath(".")
+metadata/_custom_type_script = "uid://boswmyv0w3oxy"
 
-[node name="GroundMagnet" parent="." unique_id=290055891 instance=ExtResource("2_4yi8u")]
-auto_align_on_ready = false
+[node name="CreeperMeshRoot" type="Node3D" parent="Visual/NodeShaker" unique_id=635042841]
 
-[node name="PlayerDetection" type="RayCast3D" parent="." unique_id=1539562079]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521576, 0)
-target_position = Vector3(2, 0, 0)
-collision_mask = 2
+[node name="creeper" type="Node3D" parent="Visual/NodeShaker/CreeperMeshRoot" unique_id=580999433]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.0066295266, 0)
 
-[node name="GroundCheckRight" type="RayCast3D" parent="." unique_id=2000956625]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20044, 0, 0)
-target_position = Vector3(0, -0.25, 0)
+[node name="Creeper" type="MeshInstance3D" parent="Visual/NodeShaker/CreeperMeshRoot/creeper" unique_id=527592123]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, -2.439486e-09)
+mesh = SubResource("ArrayMesh_kpxma")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("6_mj3uu")
 
-[node name="GroundCheckLeft" type="RayCast3D" parent="." unique_id=380949476]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.211107, 0, 0)
-target_position = Vector3(0, -0.25, 0)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual/NodeShaker/CreeperMeshRoot/creeper" unique_id=2046830308]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_jiktw")
+
+[node name="CreeperStateMachine" type="Node" parent="." unique_id=1390104923]
+script = ExtResource("7_bqhep")
+debugState = true
+drawDebugOffset = Vector3(0, 0.5, 0.25)
+
+[node name="Idle" type="Node" parent="CreeperStateMachine" unique_id=1382768773]
+script = ExtResource("8_swjsx")
+
+[node name="Roam" type="Node" parent="CreeperStateMachine" unique_id=79383663]
+script = ExtResource("9_2bar6")
+roamTimeMin = 2.0
+roamTimeMax = 5.0
+
+[node name="Chase" type="Node" parent="CreeperStateMachine" unique_id=179715904]
+script = ExtResource("10_55lj0")
+
+[node name="Ignite" type="Node" parent="CreeperStateMachine" unique_id=1482684930]
+script = ExtResource("11_uo4qv")
+igniteTime = 1.5
+
+[node name="Explode" type="Node" parent="CreeperStateMachine" unique_id=852927519]
+script = ExtResource("12_b22qc")
+explosionScale = Vector3(2, 2, 2)
+
+[node name="Hurt" type="Node" parent="CreeperStateMachine" unique_id=1264256846]
+script = ExtResource("13_mj3uu")
+
+[node name="Death" type="Node" parent="CreeperStateMachine" unique_id=1091531405]
+script = ExtResource("13_k0qpd")
+
+[node name="Dance" type="Node" parent="CreeperStateMachine" unique_id=784371130]
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=861831074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32658616, 0)
+script = ExtResource("9_jiktw")
+metadata/_custom_type_script = "uid://be4u7kwwov65g"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1772962999]
+shape = SubResource("BoxShape3D_2bar6")
+debug_color = Color(0.7930224, 0.4165514, 0.2619403, 0.41960785)
