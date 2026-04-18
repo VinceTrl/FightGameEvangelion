@@ -4,9 +4,7 @@
 
 [resource]
 albedo_texture = ExtResource("1_busb4")
-emission_enabled = true
 emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
 emission_energy_multiplier = 0.48
 emission_texture = ExtResource("1_busb4")
-uv1_scale = Vector3(3, 3, 3)
 texture_filter = 0

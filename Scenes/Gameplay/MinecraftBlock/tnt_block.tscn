@@ -3,25 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_tcp44"]
 [ext_resource type="Material" uid="uid://b1o0gn56dvpof" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT.tres" id="2_tcp44"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_1swjw"]
+[ext_resource type="Material" uid="uid://ct0x7tjpyokcu" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT_Top.tres" id="4_ikq8d"]
 [ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="4_siisw"]
+[ext_resource type="Material" uid="uid://cxtrb6p5wjbo6" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT_Bottom.tres" id="5_82h5j"]
 [ext_resource type="Resource" uid="uid://ccccsgtkw4xgd" path="res://Resources/Spawnables/Explosion.tres" id="5_805t3"]
 [ext_resource type="Script" uid="uid://k2dv5h2y57o0" path="res://Scripts/Gameplay/RedstoneSystem/Receiver/redstone_receiver_tnt.gd" id="6_805t3"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_qsc3o"]
-size = Vector3(0.3, 0.3, 0.3)
 
 [node name="TntBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_tcp44")]
 healthPoints = 1
 spawner = NodePath("Spawner")
 spawnItem = ExtResource("5_805t3")
 
-[node name="minecraft_grass_block" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=86836191]
-visible = false
-
-[node name="BoxMeshInstance" type="MeshInstance3D" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=50695867]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-mesh = SubResource("BoxMesh_qsc3o")
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
 surface_material_override/0 = ExtResource("2_tcp44")
+surface_material_override/1 = ExtResource("4_ikq8d")
+surface_material_override/2 = ExtResource("5_82h5j")
 
 [node name="Spawner" parent="." index="6" unique_id=1716012024 instance=ExtResource("3_1swjw")]
 items = Array[ExtResource("4_siisw")]([ExtResource("5_805t3")])
@@ -29,9 +25,6 @@ registerOnManager = false
 
 [node name="RedstoneLinkArea" parent="RedStone" parent_id_path=PackedInt32Array(2103545783) index="0" unique_id=1031951996]
 isActive = true
-
-[node name="MeshInstance3D" parent="RedStone/RedstoneVisual" parent_id_path=PackedInt32Array(1244573068) index="0" unique_id=1772862980]
-alwaysHidden = true
 
 [node name="RedstoneReceiver_TNT" type="Node3D" parent="." index="8" unique_id=715020794 node_paths=PackedStringArray("block", "redstoneLink")]
 script = ExtResource("6_805t3")

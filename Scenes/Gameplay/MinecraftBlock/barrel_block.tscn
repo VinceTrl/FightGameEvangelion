@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cbrnhabrfiklv"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_qe8pi"]
+[ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="2_qe8pi"]
+[ext_resource type="Material" uid="uid://bi7q3xnthtq1g" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Barrel.tres" id="3_qe8pi"]
+[ext_resource type="Material" uid="uid://2mdsyt261gp6" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Barrel_Top.tres" id="4_n6g5k"]
+[ext_resource type="Material" uid="uid://borsa6p2156i7" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Barrel_Bottom.tres" id="5_ky2w4"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="6_1ryay"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="7_h7wgt"]
+[ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="8_ky2w4"]
+[ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="9_5s8jf"]
+[ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="10_g2xuh"]
+
+[node name="BarrelBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_qe8pi")]
+spawner = NodePath("Spawner")
+spawnChance = 0.5
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
+surface_material_override/0 = ExtResource("3_qe8pi")
+surface_material_override/1 = ExtResource("4_n6g5k")
+surface_material_override/2 = ExtResource("5_ky2w4")
+
+[node name="Spawner" parent="." index="6" unique_id=1716012024 instance=ExtResource("6_1ryay")]
+items = Array[ExtResource("7_h7wgt")]([ExtResource("2_qe8pi"), ExtResource("8_ky2w4"), ExtResource("9_5s8jf"), ExtResource("10_g2xuh")])
+registerOnManager = false

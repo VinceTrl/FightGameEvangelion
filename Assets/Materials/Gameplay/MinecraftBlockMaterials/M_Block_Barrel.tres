@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bi7q3xnthtq1g"]
+
+[ext_resource type="Texture2D" uid="uid://bjosahahwnctr" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/barrel_side.png" id="1_bqgpt"]
+
+[resource]
+albedo_texture = ExtResource("1_bqgpt")
+texture_filter = 0

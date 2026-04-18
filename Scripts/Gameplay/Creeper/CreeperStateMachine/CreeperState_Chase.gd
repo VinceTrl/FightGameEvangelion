@@ -3,6 +3,7 @@ extends CharacterState
 @export var igniteRange:float = 0.6
 @export var lostTime:float = 1.5
 @export var chaseSpeed:float = 0.75
+@export var characterCenter:Node3D
 
 var lostTimer:SceneTreeTimer
 
@@ -33,7 +34,7 @@ func GetMoveDirectionToTarget():
 	return direction.normalized()
 	
 func CheckTargetInRange():
-	var dist := character.global_position.distance_to(character.targetLastPosition)
+	var dist := characterCenter.global_position.distance_to(character.targetLastPosition)
 	if(dist <= igniteRange):
 		character.ChangeState(stateMachine.Ignite)
 		

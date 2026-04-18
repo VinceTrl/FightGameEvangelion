@@ -16,9 +16,10 @@ const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestro
 @onready var audio_hit: AudioStreamPlayer3D = $AudioHit
 @onready var vfx_minecraft_bloc_hit: VFXOneShot = $vfx_minecraft_bloc_hit
 
-@export_category("On Block Death Settings")
+@export_category("Spawn Settings")
 @export var spawner:Spawner
-@export var spawnItem:SpawnableItem
+@export_range(0.0,1.0,0.05) var spawnChance:float = 1.0
+#@export var spawnItem:SpawnableItem
 
 @export_category("Redstone Settings")
 @export var redstoneActive:bool = false
@@ -69,9 +70,9 @@ func ChangeHealth(healthAmount:int = -1):
 		get_tree().current_scene.add_child(audio)
 		audio.StartAudio(SD_BLOC_DESTROY,0.0)
 		
-		#Spawn item on death if spawner and item are referenced
-		if(spawnItem and spawner):
-			spawner.SpawnExternalItem(spawnItem)
+		#Spawn item on death if spawner is referenced
+		if(spawner):
+			Spawn()
 			
 		if(redstoneActive):
 			redstoneLink.ChangePowerState(false)
@@ -82,3 +83,9 @@ func ChangeHealth(healthAmount:int = -1):
 		queue_free()
 	else:
 		audio_hit.play()
+		
+func Spawn():
+	var spawnRng := randf_range(0.0,1.0)
+	if(spawnRng <= spawnChance):
+		var item:SpawnableItem = spawner.items.pick_random()
+		spawner.SpawnExternalItem(item)

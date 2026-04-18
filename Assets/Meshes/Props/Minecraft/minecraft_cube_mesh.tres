@@ -1,0 +1,98 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://dt2uhuqsydft1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtnsw"]
+resource_name = "Sides"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8pdg"]
+resource_name = "Top"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dncse"]
+resource_name = "Bottom"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fp3fa"]
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAQAFAAMABgAAAAQABwADAAUABQAGAAcABAAHAAYA"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "Cube"
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"attribute_data": PackedByteArray("AACAvwAAgLQAAAAAAAAAAAAAAAD+/38/AACAvwAAgD8AAABAAAAANAAAQEAAAAAAAABAQAIAgD8AAABAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAD+/38/AACAPwAAAAAAAABAAAAANAAAAEAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": SubResource("StandardMaterial3D_jtnsw"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEu6abRLumm0S7pptEu6abRDumm0Q7pptEu6abRLumm0Q7pptEu6abRLumm0S7pptEu6abRDumm0S7pptEO6abRLumm0Q7pptEO6abRDumm0Q7pptEO6abRDumm0S7pptEO6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7pptEO6abRDumm0S7/38AAP///7//fwAA/v//v/9/AAD///+//38AAP///78AAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP///3//f///////f/9///////9//3///////3//f////3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgL8BAIA/AACAvwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_h8pdg"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7/3//f/9/////f/9//3////9//3//f////3//f/9///8=")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAP7/fz8AAIA/AACAP/7/fz8AAABAAAAAtAAAAEA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_dncse"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7//////9//////////3//////////f/////////9///8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_fp3fa")

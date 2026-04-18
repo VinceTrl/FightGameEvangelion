@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dnac8phmk5c0p"]
+
+[ext_resource type="Texture2D" uid="uid://c0nbdt60svj34" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/grass_block_side.png" id="1_a72vj"]
+[ext_resource type="Texture2D" uid="uid://d0ju0u0tmqpf3" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/grass_block_top.png" id="1_t16lp"]
+
+[resource]
+albedo_color = Color(0.23529412, 0.4117647, 0.19215687, 1)
+albedo_texture = ExtResource("1_t16lp")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("1_a72vj")
+texture_filter = 0

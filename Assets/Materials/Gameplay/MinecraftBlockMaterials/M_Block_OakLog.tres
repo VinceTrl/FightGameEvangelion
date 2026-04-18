@@ -8,5 +8,4 @@ albedo_texture = ExtResource("1_wr4jd")
 emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
 emission_energy_multiplier = 0.48
 emission_texture = ExtResource("1_63nas")
-uv1_scale = Vector3(3, 3, 3)
 texture_filter = 0

@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ckf3p25anxo86" path="res://Scenes/Gameplay/MinecraftBlock/dirt_block.tscn" id="12_5ji8y"]
 [ext_resource type="PackedScene" uid="uid://ctcac5c1nbdp5" path="res://Scenes/Gameplay/MinecraftBlock/oak_tree.tscn" id="13_cxy13"]
 [ext_resource type="PackedScene" uid="uid://d8avdqua7ovj" path="res://Scenes/Gameplay/MinecraftBlock/grass_block.tscn" id="14_a377a"]
+[ext_resource type="PackedScene" uid="uid://cbrnhabrfiklv" path="res://Scenes/Gameplay/MinecraftBlock/barrel_block.tscn" id="18_m3306"]
 
 [node name="MinecraftStage_01" type="Node3D" unique_id=176270937 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_v0co1")
@@ -42,34 +43,34 @@ playerID = 2
 [node name="Spawners" type="Node3D" parent="Gameplay/Objects" unique_id=408438714]
 
 [node name="Spawner" parent="Gameplay/Objects/Spawners" unique_id=999612376 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 4.36073, 0)
 
-[node name="Spawner2" parent="Gameplay/Objects/Spawners" unique_id=815313360 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 0)
+[node name="Spawner2" parent="Gameplay/Objects/Spawners" unique_id=1304270749 instance=ExtResource("3_8iyuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.36073, 0)
 
-[node name="Spawner3" parent="Gameplay/Objects/Spawners" unique_id=1903873474 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, 0)
+[node name="Spawner3" parent="Gameplay/Objects/Spawners" unique_id=626666859 instance=ExtResource("3_8iyuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 4.36073, 0)
 
-[node name="Spawner4" parent="Gameplay/Objects/Spawners" unique_id=1638422742 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 0)
+[node name="Spawner4" parent="Gameplay/Objects/Spawners" unique_id=1107148835 instance=ExtResource("3_8iyuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 4.36073, 0)
 
-[node name="Spawner5" parent="Gameplay/Objects/Spawners" unique_id=1423519877 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+[node name="Spawner5" parent="Gameplay/Objects/Spawners" unique_id=1400528372 instance=ExtResource("3_8iyuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, 4.36073, 0)
 
-[node name="Spawner6" parent="Gameplay/Objects/Spawners" unique_id=1262551996 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 0)
+[node name="Spawner6" parent="Gameplay/Objects/Spawners" unique_id=1038945624 instance=ExtResource("3_8iyuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000003, 4.36073, 0)
 
-[node name="Spawner7" parent="Gameplay/Objects/Spawners" unique_id=191065415 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 0)
-
-[node name="Spawner8" parent="Gameplay/Objects/Spawners" unique_id=1557714280 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
-
-[node name="Spawner9" parent="Gameplay/Objects/Spawners" unique_id=1146392608 instance=ExtResource("3_8iyuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 0)
+[node name="Spawner7" parent="Gameplay/Objects/Spawners" unique_id=550571182 instance=ExtResource("3_8iyuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 4.36073, 0)
 
 [node name="Creeper2" parent="Gameplay/Objects" unique_id=357536691 instance=ExtResource("11_xvoje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70081335, 1.3724877, 0)
+
+[node name="Creeper3" parent="Gameplay/Objects" unique_id=261367 instance=ExtResource("11_xvoje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1991868, 1.6724877, 0)
+
+[node name="Creeper4" parent="Gameplay/Objects" unique_id=1105742323 instance=ExtResource("11_xvoje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0991867, -1.9275124, 0)
 
 [node name="RedstoneLinkArea" parent="Gameplay/Objects" unique_id=1031951996 instance=ExtResource("5_8s6f2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 2.4, 0)
@@ -1293,6 +1294,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1999998, -0.13926798, 0)
 
 [node name="LavaBlock2" parent="Level/Blocks" unique_id=1752372894 instance=ExtResource("10_adgui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -0.13926798, 0)
+
+[node name="BarrelBlock" parent="Level/Blocks" unique_id=589645725 instance=ExtResource("18_m3306")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 1.3607321, 0)
+
+[node name="BarrelBlock2" parent="Level/Blocks" unique_id=209519343 instance=ExtResource("18_m3306")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.16073203, 0)
+
+[node name="BarrelBlock3" parent="Level/Blocks" unique_id=921526149 instance=ExtResource("18_m3306")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.46073204, 0)
+
+[node name="BarrelBlock4" parent="Level/Blocks" unique_id=1694312593 instance=ExtResource("18_m3306")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0.16073203, 0)
+
+[node name="BarrelBlock5" parent="Level/Blocks" unique_id=147396536 instance=ExtResource("18_m3306")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2000003, 1.660732, 0)
 
 [node name="Poop" parent="." unique_id=334906660 instance=ExtResource("8_y4233")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3404913, 3.0463681, -0.010376)

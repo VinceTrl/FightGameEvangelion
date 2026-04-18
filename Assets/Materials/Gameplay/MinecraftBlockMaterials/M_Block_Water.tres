@@ -5,6 +5,6 @@
 [resource]
 albedo_color = Color(0.15294118, 0.26666668, 0.827451, 1)
 albedo_texture = ExtResource("1_dwgme")
-uv1_scale = Vector3(3, 0.094, 3)
+uv1_scale = Vector3(1, 0.094, 1)
 texture_filter = 0
 distance_fade_min_distance = 1.3

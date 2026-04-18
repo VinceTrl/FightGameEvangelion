@@ -102,9 +102,6 @@ canTakeDamage = false
 [node name="StaticBody3D" parent="." index="1" unique_id=1373173204]
 collision_layer = 1
 
-[node name="minecraft_grass_block" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=86836191]
-visible = false
-
 [node name="LiquidAnimationPlayer" type="AnimationPlayer" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=288686585]
 root_node = NodePath("../LiquidScaleController")
 libraries/ = SubResource("AnimationLibrary_hpvad")
@@ -138,6 +135,9 @@ surface_material_override/0 = ExtResource("2_eihy3")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NodeShaker/LiquidScaleController/LiquidScaleController_Up/BoxMeshInstanceSide" index="0" unique_id=2096198335]
 libraries/ = SubResource("AnimationLibrary_wcg62")
 autoplay = &"LavaFlow"
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="3" unique_id=13657721]
+visible = false
 
 [node name="Hitbox" type="Area3D" parent="." index="6" unique_id=842055217]
 script = ExtResource("3_rwskc")

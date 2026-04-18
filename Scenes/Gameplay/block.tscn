@@ -5,8 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="3_57dtm"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="3_q3etx"]
 [ext_resource type="PackedScene" uid="uid://c0jcpjl67p6ni" path="res://Scenes/Gameplay/minecraft_grass_block.tscn" id="5_1hayc"]
+[ext_resource type="ArrayMesh" uid="uid://dt2uhuqsydft1" path="res://Assets/Meshes/Props/Minecraft/minecraft_cube_mesh.tres" id="6_mm851"]
 [ext_resource type="AudioStream" uid="uid://bgrm5be8bl5gb" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocHit.wav" id="6_yv8ff"]
 [ext_resource type="PackedScene" uid="uid://b1syavad6jdov" path="res://Scenes/VFX/vfx_minecraft_bloc_hit.tscn" id="7_lcmxf"]
+[ext_resource type="Material" uid="uid://cqewyxwxhpex7" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Grass.tres" id="7_mm851"]
+[ext_resource type="Material" uid="uid://ck1hf5s8w0d2l" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Dirt.tres" id="8_3lxtp"]
+[ext_resource type="Material" uid="uid://dnac8phmk5c0p" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Grass_Top.tres" id="8_ii26g"]
 [ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="8_noedd"]
 [ext_resource type="PackedScene" uid="uid://hq437hff0hoh" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_visual.tscn" id="9_ii7fe"]
 
@@ -48,6 +52,14 @@ nodeToShake = NodePath(".")
 
 [node name="minecraft_grass_block" parent="NodeShaker" unique_id=86836191 instance=ExtResource("5_1hayc")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+visible = false
+
+[node name="BlockMesh" type="MeshInstance3D" parent="NodeShaker" unique_id=13657721]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.15, 0)
+mesh = ExtResource("6_mm851")
+surface_material_override/0 = ExtResource("7_mm851")
+surface_material_override/1 = ExtResource("8_ii26g")
+surface_material_override/2 = ExtResource("8_3lxtp")
 
 [node name="AudioHit" type="AudioStreamPlayer3D" parent="." unique_id=96755585]
 stream = ExtResource("6_yv8ff")

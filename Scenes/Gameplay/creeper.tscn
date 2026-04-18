@@ -20,7 +20,7 @@
 size = Vector3(0.3, 0.675, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jiktw"]
-size = Vector3(2, 0.8, 1)
+size = Vector3(2.25, 0.8, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7nxxe"]
 _surfaces = [{
@@ -55,6 +55,21 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7nxxe")
+
+[sub_resource type="Animation" id="Animation_mj3uu"]
+resource_name = "Hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreeperMeshRoot/creeper/Creeper:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0.63603026, 0.9960734, 0.6113599, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_swjsx"]
 resource_name = "Idle"
@@ -91,10 +106,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jiktw"]
 _data = {
+&"Hurt": SubResource("Animation_mj3uu"),
 &"Idle": SubResource("Animation_swjsx"),
 &"Ignite": SubResource("Animation_ew8q0"),
 &"RESET": SubResource("Animation_qrdf4")
 }
+
+[sub_resource type="Curve" id="Curve_mj3uu"]
+_data = [Vector2(0, 1), 0.0, -4.2515717, 0, 0, Vector2(0.7500001, 0), -0.080231965, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bar6"]
 size = Vector3(0.35, 0.675, 0.5)
@@ -177,8 +197,8 @@ libraries/ = SubResource("AnimationLibrary_jiktw")
 
 [node name="CreeperStateMachine" type="Node" parent="." unique_id=1390104923]
 script = ExtResource("7_bqhep")
-debugState = true
 drawDebugOffset = Vector3(0, 0.5, 0.25)
+drawDebugTextSize = 20
 
 [node name="Idle" type="Node" parent="CreeperStateMachine" unique_id=1382768773]
 script = ExtResource("8_swjsx")
@@ -188,8 +208,10 @@ script = ExtResource("9_2bar6")
 roamTimeMin = 2.0
 roamTimeMax = 5.0
 
-[node name="Chase" type="Node" parent="CreeperStateMachine" unique_id=179715904]
+[node name="Chase" type="Node" parent="CreeperStateMachine" unique_id=179715904 node_paths=PackedStringArray("characterCenter")]
 script = ExtResource("10_55lj0")
+igniteRange = 0.7
+characterCenter = NodePath("../../Center")
 
 [node name="Ignite" type="Node" parent="CreeperStateMachine" unique_id=1482684930]
 script = ExtResource("11_uo4qv")
@@ -199,8 +221,11 @@ igniteTime = 1.5
 script = ExtResource("12_b22qc")
 explosionScale = Vector3(2, 2, 2)
 
-[node name="Hurt" type="Node" parent="CreeperStateMachine" unique_id=1264256846]
+[node name="Hurt" type="Node" parent="CreeperStateMachine" unique_id=1264256846 node_paths=PackedStringArray("nodeShaker")]
 script = ExtResource("13_mj3uu")
+knockbackSpeedMin = 0.0
+knockbackSpeedCurve = SubResource("Curve_mj3uu")
+nodeShaker = NodePath("../../Visual/NodeShaker")
 
 [node name="Death" type="Node" parent="CreeperStateMachine" unique_id=1091531405]
 script = ExtResource("13_k0qpd")
@@ -209,9 +234,14 @@ script = ExtResource("13_k0qpd")
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=861831074]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32658616, 0)
+collision_layer = 4
 script = ExtResource("9_jiktw")
+randomID = true
 metadata/_custom_type_script = "uid://be4u7kwwov65g"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1772962999]
 shape = SubResource("BoxShape3D_2bar6")
 debug_color = Color(0.7930224, 0.4165514, 0.2619403, 0.41960785)
+
+[node name="Center" type="Marker3D" parent="." unique_id=1149182408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
