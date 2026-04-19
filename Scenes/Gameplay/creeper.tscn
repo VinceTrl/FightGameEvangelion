@@ -119,9 +119,10 @@ point_count = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bar6"]
 size = Vector3(0.35, 0.675, 0.5)
 
-[node name="Creeper" type="CharacterBody3D" unique_id=261367 node_paths=PackedStringArray("health", "groundDetection", "obstacleRaycasts", "targetDetection", "stateMachine", "movement", "flip", "animation")]
+[node name="Creeper" type="CharacterBody3D" unique_id=261367 node_paths=PackedStringArray("health", "creeperMesh", "groundDetection", "obstacleRaycasts", "targetDetection", "stateMachine", "movement", "flip", "animation")]
 script = ExtResource("1_35u60")
 health = NodePath("Components/HealthComponent")
+creeperMesh = NodePath("Visual/NodeShaker/CreeperMeshRoot/creeper/Creeper")
 groundDetection = NodePath("Raycasts/GroundRaycast")
 obstacleRaycasts = [NodePath("Raycasts/ObstacleRaycast_Down"), NodePath("Raycasts/ObstacleRaycast_Up")]
 targetDetection = NodePath("Raycasts/TargetDetectionShapeCast")
@@ -178,6 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333982, 0)
 [node name="NodeShaker" type="Node3D" parent="Visual" unique_id=334552653 node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("4_lhvbi")
 nodeToShake = NodePath(".")
+shakeTime = 0.5
 metadata/_custom_type_script = "uid://boswmyv0w3oxy"
 
 [node name="CreeperMeshRoot" type="Node3D" parent="Visual/NodeShaker" unique_id=635042841]

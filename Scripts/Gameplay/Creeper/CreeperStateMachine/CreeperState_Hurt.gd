@@ -34,7 +34,9 @@ func EnterState():
 	Manager.timeManager.freezeFrame(0.001,freezeFrameDuration)
 	Manager.gameCamera.camShake.AskCamShake("HitShake")
 	nodeShaker.NodeShake()
-	character.animation.play("Hurt")
+	
+	if(!character.isIgnited):
+		character.animation.play("Hurt")
 	
 	#update health and check death
 	character.health.ChangeHealth(-hitbox.damage)

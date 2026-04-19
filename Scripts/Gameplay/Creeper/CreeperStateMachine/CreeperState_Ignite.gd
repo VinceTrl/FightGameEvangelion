@@ -7,6 +7,7 @@ func EnterState():
 	stateName = "CREEPER IGNITE"
 	character.movement.currentDirection = Vector3.ZERO #stop movement
 	character.animation.play("Ignite")
+	character.isIgnited = true
 	await get_tree().create_timer(igniteTime).timeout
 	character.ChangeState(stateMachine.Explode)
 	pass
