@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ibuyncxr2exd"
-path.s3tc="res://.godot/imported/ladder.png-6eff47a65af1760434b9ee7012d66420.s3tc.ctex"
+uid="uid://c1u16f55bm2gc"
+path.s3tc="res://.godot/imported/rail.png-8c18785ace780d2b1c0609311409465d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Props/Minecraft/BlockTextures/ladder.png"
-dest_files=["res://.godot/imported/ladder.png-6eff47a65af1760434b9ee7012d66420.s3tc.ctex"]
+source_file="res://Assets/Meshes/Props/Minecraft/BlockTextures/rail.png"
+dest_files=["res://.godot/imported/rail.png-8c18785ace780d2b1c0609311409465d.s3tc.ctex"]
 
 [params]
 

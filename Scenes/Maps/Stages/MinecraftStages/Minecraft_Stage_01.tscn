@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://btgknalnysacc" path="res://Scenes/Gameplay/MinecraftBlock/tnt_block.tscn" id="8_adgui"]
 [ext_resource type="PackedScene" uid="uid://cjtmoa56o6hxv" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/Minecart.tscn" id="8_clpey"]
 [ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="8_y4233"]
+[ext_resource type="PackedScene" uid="uid://c2ejqg735aq6g" path="res://Scenes/Gameplay/MinecraftBlock/rail_area.tscn" id="9_1osut"]
 [ext_resource type="PackedScene" uid="uid://dr8uiky4jkepx" path="res://Scenes/Gameplay/MinecraftBlock/water_block.tscn" id="9_xvoje"]
 [ext_resource type="PackedScene" uid="uid://bja86rnp5peep" path="res://Scenes/Gameplay/MinecraftBlock/lava_block.tscn" id="10_adgui"]
 [ext_resource type="PackedScene" uid="uid://dhbrjxsivp186" path="res://Scenes/Gameplay/creeper.tscn" id="11_xvoje"]
@@ -66,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000003, 4.36073, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 4.36073, 0)
 
 [node name="Creeper2" parent="Gameplay/Objects" unique_id=357536691 instance=ExtResource("11_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70081335, 1.3724877, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2008133, 0.785741, 0)
 
 [node name="Creeper3" parent="Gameplay/Objects" unique_id=261367 instance=ExtResource("11_xvoje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1991868, 1.6724877, 0)
@@ -223,6 +224,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8977604, 3.7719424, 0)
 
 [node name="Minecart4" parent="Gameplay/Objects" unique_id=1078040091 instance=ExtResource("8_clpey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9968758, 0.2668693, 0)
+
+[node name="RailArea" parent="Gameplay/Objects" unique_id=308615010 instance=ExtResource("9_1osut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3609618, 0)
+
+[node name="RailArea2" parent="Gameplay/Objects" unique_id=708085497 instance=ExtResource("9_1osut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.3609618, 0)
 
 [node name="PenpenLocations" type="Node3D" parent="Gameplay" unique_id=1236989997]
 
@@ -1331,4 +1338,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000001, 0.17398345, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1.3739835, 0)
 
 [node name="Poop" parent="." unique_id=334906660 instance=ExtResource("8_y4233")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3404913, 3.0463681, -0.010376)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.840491, 2.7463684, -0.010376)

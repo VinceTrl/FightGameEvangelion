@@ -3,16 +3,17 @@
 [ext_resource type="Script" uid="uid://rijharimj3h8" path="res://Scripts/GameEffects/PhysicObject.gd" id="1_0te1p"]
 [ext_resource type="Texture2D" uid="uid://bdcaad58jrf1g" path="res://Assets/Meshes/Props/Minecraft/minecraft-minecart-2nd/source/model_0.png" id="2_telgw"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="3_1qrtw"]
+[ext_resource type="Script" uid="uid://c73jesfgywphq" path="res://Scripts/Gameplay/MinecraftBlock/rail_detection.gd" id="4_telgw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0te1p"]
-friction = 0.2
-bounce = 0.3
+friction = 0.11
+bounce = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0te1p"]
-size = Vector3(0.3824951, 0.050317384, 1)
+size = Vector3(0.382, 0.05, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_telgw"]
-size = Vector3(0.07633667, 0.23114625, 1)
+size = Vector3(0.076, 0.206, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkae0"]
 resource_name = "material_0"
@@ -187,6 +188,9 @@ shadow_mesh = SubResource("ArrayMesh_narju")
 [sub_resource type="BoxShape3D" id="BoxShape3D_uffgu"]
 size = Vector3(0.4199707, 0.24022657, 0.685)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qrtw"]
+size = Vector3(0.4, 0.1, 0.5)
+
 [node name="Minecart" type="RigidBody3D" unique_id=1587775244]
 collision_layer = 193
 collision_mask = 19
@@ -196,7 +200,6 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_0te1p")
-gravity_scale = 1.31
 script = ExtResource("1_0te1p")
 impulseForce = 2.0
 freezeOnHit = true
@@ -207,11 +210,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006957948, 0.023388676, 0)
 shape = SubResource("BoxShape3D_0te1p")
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=619960354]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17163634, 0.14029324, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172, 0.154, 0)
 shape = SubResource("BoxShape3D_telgw")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="." unique_id=1840458973]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17147037, 0.14029324, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17147037, 0.15367234, 0)
 shape = SubResource("BoxShape3D_telgw")
 
 [node name="blockbench_export" type="Node3D" parent="." unique_id=1715849993]
@@ -253,3 +256,11 @@ metadata/_custom_type_script = "uid://be4u7kwwov65g"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00063478947, 0.10913476, 0)
 shape = SubResource("BoxShape3D_uffgu")
 debug_color = Color(0.9514573, 0.15469226, 0.4079886, 0.41960785)
+
+[node name="RailDetection" type="Area3D" parent="." unique_id=1229368382 node_paths=PackedStringArray("rigidbody")]
+script = ExtResource("4_telgw")
+rigidbody = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RailDetection" unique_id=1943603209]
+shape = SubResource("BoxShape3D_1qrtw")
+debug_color = Color(0.9517719, 2.9841065e-06, 0.5644275, 0.41960785)
