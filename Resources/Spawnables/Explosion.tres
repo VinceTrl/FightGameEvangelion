@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_hn25t")
 scenePath = &"res://Scenes/Gameplay/explosion.tscn"
-instanceScale = Vector3(2, 2, 2)
+instanceScale = Vector3(2.5, 2.5, 2.5)

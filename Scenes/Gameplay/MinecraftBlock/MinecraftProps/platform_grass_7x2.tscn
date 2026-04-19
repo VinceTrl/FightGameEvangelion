@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bgc565hxcpr6b"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_rixme"]
+[ext_resource type="PackedScene" uid="uid://ckf3p25anxo86" path="res://Scenes/Gameplay/MinecraftBlock/dirt_block.tscn" id="2_gtm6f"]
+
+[node name="Platform_Grass_7x2" type="Node3D" unique_id=158288893]
+
+[node name="Block" parent="." unique_id=219668706 instance=ExtResource("1_rixme")]
+
+[node name="Block2" parent="." unique_id=1823651590 instance=ExtResource("1_rixme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+
+[node name="Block3" parent="." unique_id=344188068 instance=ExtResource("1_rixme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
+
+[node name="Block4" parent="." unique_id=1109191498 instance=ExtResource("1_rixme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 0)
+
+[node name="Block5" parent="." unique_id=196339529 instance=ExtResource("1_rixme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+
+[node name="Block6" parent="." unique_id=347587171 instance=ExtResource("1_rixme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+
+[node name="Block7" parent="." unique_id=544195815 instance=ExtResource("1_rixme")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90000004, 0, 0)
+
+[node name="DirtBlock" parent="." unique_id=1588274387 instance=ExtResource("2_gtm6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+
+[node name="DirtBlock2" parent="." unique_id=319703273 instance=ExtResource("2_gtm6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.3, 0)
+
+[node name="DirtBlock3" parent="." unique_id=739210778 instance=ExtResource("2_gtm6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.3, 0)
+
+[node name="DirtBlock4" parent="." unique_id=84321943 instance=ExtResource("2_gtm6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, -0.3, 0)
+
+[node name="DirtBlock5" parent="." unique_id=915701116 instance=ExtResource("2_gtm6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90000004, -0.3, 0)
+
+[node name="DirtBlock6" parent="." unique_id=1624775382 instance=ExtResource("2_gtm6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -0.3, 0)
+
+[node name="DirtBlock7" parent="." unique_id=1850981227 instance=ExtResource("2_gtm6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.3, 0)

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://btvf04ngntlqh"]
+
+[ext_resource type="PackedScene" uid="uid://bnudpxlxiudb" path="res://Scenes/Gameplay/MinecraftBlock/cobblestone_block.tscn" id="1_668jj"]
+
+[node name="Platform_Cobblestone_5x4" type="Node3D" unique_id=1544287573]
+
+[node name="CobblestoneBlock" parent="." unique_id=1588274387 instance=ExtResource("1_668jj")]
+
+[node name="CobblestoneBlock2" parent="." unique_id=63155177 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+
+[node name="CobblestoneBlock3" parent="." unique_id=1129016335 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+
+[node name="CobblestoneBlock4" parent="." unique_id=1786576582 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
+
+[node name="CobblestoneBlock5" parent="." unique_id=1402522374 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 0)
+
+[node name="CobblestoneBlock6" parent="." unique_id=1510276086 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0)
+
+[node name="CobblestoneBlock7" parent="." unique_id=1271239754 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.3, 0)
+
+[node name="CobblestoneBlock8" parent="." unique_id=1851973086 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="CobblestoneBlock9" parent="." unique_id=1294425457 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, 0)
+
+[node name="CobblestoneBlock10" parent="." unique_id=483127594 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, 0)
+
+[node name="CobblestoneBlock11" parent="." unique_id=463590353 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.3, 0)
+
+[node name="CobblestoneBlock12" parent="." unique_id=1147274445 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.3, 0)
+
+[node name="CobblestoneBlock13" parent="." unique_id=1599905784 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+
+[node name="CobblestoneBlock14" parent="." unique_id=1174892827 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.3, 0)
+
+[node name="CobblestoneBlock15" parent="." unique_id=1241085097 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -0.3, 0)
+
+[node name="CobblestoneBlock16" parent="." unique_id=840116982 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -0.6, 0)
+
+[node name="CobblestoneBlock17" parent="." unique_id=977815877 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.6, 0)
+
+[node name="CobblestoneBlock18" parent="." unique_id=595492857 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+
+[node name="CobblestoneBlock19" parent="." unique_id=944925061 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.6, 0)
+
+[node name="CobblestoneBlock20" parent="." unique_id=1120949179 instance=ExtResource("1_668jj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.6, 0)

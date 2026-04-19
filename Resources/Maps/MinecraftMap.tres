@@ -6,4 +6,4 @@
 script = ExtResource("1_ugvm2")
 mapName = &"Minecraft"
 mapScenePath = &"res://Scenes/Maps/Maps/Minecraft_map.tscn"
-stagePaths = Array[String](["res://Scenes/Maps/Stages/MinecraftStages/Minecraft_Stage_01.tscn", "res://Scenes/Maps/Stages/MinecraftStages/Minecraft_Stage_02.tscn", "res://Scenes/Maps/Stages/MinecraftStages/Minecraft_Stage_02.tscn"])
+stagePaths = Array[String](["res://Scenes/Maps/Stages/MinecraftStages/Minecraft_Stage_01.tscn", "res://Scenes/Maps/Stages/MinecraftStages/Minecraft_Stage_02.tscn", "res://Scenes/Maps/Stages/MinecraftStages/Minecraft_Stage_03.tscn"])

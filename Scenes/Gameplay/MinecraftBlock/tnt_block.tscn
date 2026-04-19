@@ -12,7 +12,6 @@
 [node name="TntBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_tcp44")]
 healthPoints = 1
 spawner = NodePath("Spawner")
-spawnItem = ExtResource("5_805t3")
 
 [node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
 surface_material_override/0 = ExtResource("2_tcp44")

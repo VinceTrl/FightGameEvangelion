@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://c5qr1d02lvdoi"]
+
+[ext_resource type="PackedScene" uid="uid://djmqbtllkxnif" path="res://Scenes/Gameplay/MinecraftBlock/OakLog_block.tscn" id="1_yhfmd"]
+[ext_resource type="PackedScene" uid="uid://xkjrt0g6fmqp" path="res://Scenes/Gameplay/MinecraftBlock/OakDoor_block.tscn" id="2_b5gl7"]
+[ext_resource type="PackedScene" uid="uid://bnudpxlxiudb" path="res://Scenes/Gameplay/MinecraftBlock/cobblestone_block.tscn" id="3_x075o"]
+[ext_resource type="PackedScene" uid="uid://g5fnd6em0pw0" path="res://Scenes/Gameplay/MinecraftBlock/OakPlanks_block.tscn" id="4_sfakg"]
+
+[node name="SmallHouse" type="Node3D" unique_id=859161625]
+
+[node name="OakLogBlock2" parent="." unique_id=137874936 instance=ExtResource("1_yhfmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, 0)
+
+[node name="OakLogBlock7" parent="." unique_id=1588274387 instance=ExtResource("1_yhfmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+
+[node name="OakLogBlock3" parent="." unique_id=199960050 instance=ExtResource("1_yhfmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.6, 0)
+
+[node name="OakLogBlock8" parent="." unique_id=1658732178 instance=ExtResource("1_yhfmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.90000004, 0)
+
+[node name="OakLogBlock9" parent="." unique_id=1607052858 instance=ExtResource("1_yhfmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.90000004, 0)
+
+[node name="OakLogBlock4" parent="." unique_id=1565383532 instance=ExtResource("1_yhfmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0)
+
+[node name="OakLogBlock5" parent="." unique_id=513944085 instance=ExtResource("1_yhfmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.6, 0)
+
+[node name="OakLogBlock6" parent="." unique_id=617114289 instance=ExtResource("1_yhfmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 0)
+
+[node name="OakDoorBlock" parent="." unique_id=936135692 instance=ExtResource("2_b5gl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="CobblestoneBlock" parent="." unique_id=63667300 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+
+[node name="CobblestoneBlock2" parent="." unique_id=455336712 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, 0)
+
+[node name="CobblestoneBlock3" parent="." unique_id=1290731412 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.6, 0)
+
+[node name="CobblestoneBlock7" parent="." unique_id=1308001026 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.90000004, 0)
+
+[node name="CobblestoneBlock8" parent="." unique_id=2073705292 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
+
+[node name="CobblestoneBlock9" parent="." unique_id=327545548 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.90000004, 0)
+
+[node name="CobblestoneBlock4" parent="." unique_id=1914436232 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.6, 0)
+
+[node name="CobblestoneBlock5" parent="." unique_id=1171318509 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.3, 0)
+
+[node name="CobblestoneBlock6" parent="." unique_id=1342227405 instance=ExtResource("3_x075o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
+
+[node name="OakLogBlock" parent="CobblestoneBlock6" unique_id=620159326 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+
+[node name="OakLogBlock2" parent="CobblestoneBlock6" unique_id=408445077 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.2, 0)
+
+[node name="OakLogBlock3" parent="CobblestoneBlock6" unique_id=2011759796 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="OakLogBlock4" parent="CobblestoneBlock6" unique_id=64984832 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.2, 0)
+
+[node name="OakLogBlock5" parent="CobblestoneBlock6" unique_id=488907128 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.2, 0)
+
+[node name="OakLogBlock6" parent="CobblestoneBlock6" unique_id=1528978408 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.2, 0)
+
+[node name="OakLogBlock7" parent="CobblestoneBlock6" unique_id=1940084461 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 1.2, 0)
+
+[node name="OakLogBlock8" parent="CobblestoneBlock6" unique_id=1638948585 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.2, 0)
+
+[node name="OakLogBlock9" parent="CobblestoneBlock6" unique_id=1074214938 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 1.5, 0)
+
+[node name="OakLogBlock10" parent="CobblestoneBlock6" unique_id=878193916 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.8, 0)
+
+[node name="OakLogBlock12" parent="CobblestoneBlock6" unique_id=668531621 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="OakLogBlock13" parent="CobblestoneBlock6" unique_id=76240014 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.5, 0)
+
+[node name="OakLogBlock14" parent="CobblestoneBlock6" unique_id=890716728 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="OakLogBlock15" parent="CobblestoneBlock6" unique_id=2058438692 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.5, 0)
+
+[node name="OakLogBlock16" parent="CobblestoneBlock6" unique_id=1441936206 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.5, 0)
+
+[node name="OakLogBlock17" parent="CobblestoneBlock6" unique_id=403776026 instance=ExtResource("4_sfakg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.8, 0)
