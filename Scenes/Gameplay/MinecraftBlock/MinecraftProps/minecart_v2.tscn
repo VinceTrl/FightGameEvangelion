@@ -1,12 +1,12 @@
-[gd_scene format=4 uid="uid://cjtmoa56o6hxv"]
+[gd_scene format=4 uid="uid://cbntwq3xn0kjy"]
 
-[ext_resource type="Script" uid="uid://rijharimj3h8" path="res://Scripts/GameEffects/PhysicObject.gd" id="1_0te1p"]
-[ext_resource type="Texture2D" uid="uid://bdcaad58jrf1g" path="res://Assets/Meshes/Props/Minecraft/minecraft-minecart-2nd/source/model_0.png" id="2_telgw"]
-[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="3_1qrtw"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0te1p"]
-friction = 0.11
-bounce = 0.2
+[ext_resource type="Script" uid="uid://cvn7ipi0o4b0d" path="res://Scripts/Gameplay/MinecraftBlock/minecart.gd" id="1_orv7y"]
+[ext_resource type="Texture2D" uid="uid://bdcaad58jrf1g" path="res://Assets/Meshes/Props/Minecraft/minecraft-minecart-2nd/source/model_0.png" id="2_hig06"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="3_lsjeo"]
+[ext_resource type="Script" uid="uid://c73jesfgywphq" path="res://Scripts/Gameplay/MinecraftBlock/rail_detection.gd" id="4_pq3f6"]
+[ext_resource type="Script" uid="uid://boe4peeex6mo5" path="res://Scripts/Components/Movement/movement_component.gd" id="5_bxi4y"]
+[ext_resource type="Texture2D" uid="uid://c740c3328eh8d" path="res://Assets/Sprites/Slip_01.png" id="6_hig06"]
+[ext_resource type="Script" uid="uid://baejcfwqs5k37" path="res://Scripts/Gameplay/CharacterBase/CharacterStateMachine/CharacterStateMachine.gd" id="7_lsjeo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0te1p"]
 size = Vector3(0.382, 0.05, 0.5)
@@ -20,7 +20,7 @@ transparency = 2
 alpha_scissor_threshold = 0.05
 alpha_antialiasing_mode = 0
 cull_mode = 2
-albedo_texture = ExtResource("2_telgw")
+albedo_texture = ExtResource("2_hig06")
 texture_filter = 0
 texture_repeat = false
 
@@ -187,19 +187,19 @@ shadow_mesh = SubResource("ArrayMesh_narju")
 [sub_resource type="BoxShape3D" id="BoxShape3D_uffgu"]
 size = Vector3(0.4199707, 0.24022657, 0.685)
 
-[node name="Minecart" type="RigidBody3D" unique_id=1587775244]
-collision_layer = 193
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qrtw"]
+size = Vector3(0.4, 0.1, 0.5)
+
+[node name="Minecart" type="CharacterBody3D" unique_id=151200487 node_paths=PackedStringArray("railDetection", "movement")]
+collision_layer = 209
 collision_mask = 19
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-mass = 0.5
-physics_material_override = SubResource("PhysicsMaterial_0te1p")
-script = ExtResource("1_0te1p")
-impulseForce = 2.0
-freezeOnHit = true
-metadata/_custom_type_script = "uid://rijharimj3h8"
+script = ExtResource("1_orv7y")
+railDetection = NodePath("RailDetection")
+movement = NodePath("MovementComponent")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=1759597412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006957948, 0.023388676, 0)
@@ -244,7 +244,7 @@ mesh = SubResource("ArrayMesh_fel8h")
 skeleton = NodePath("")
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=1669142634]
-script = ExtResource("3_1qrtw")
+script = ExtResource("3_lsjeo")
 randomID = true
 metadata/_custom_type_script = "uid://be4u7kwwov65g"
 
@@ -252,3 +252,25 @@ metadata/_custom_type_script = "uid://be4u7kwwov65g"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00063478947, 0.10913476, 0)
 shape = SubResource("BoxShape3D_uffgu")
 debug_color = Color(0.9514573, 0.15469226, 0.4079886, 0.41960785)
+
+[node name="RailDetection" type="Area3D" parent="." unique_id=1229368382 node_paths=PackedStringArray("movement")]
+script = ExtResource("4_pq3f6")
+movement = NodePath("../MovementComponent")
+onRailSpeed = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RailDetection" unique_id=1943603209]
+shape = SubResource("BoxShape3D_1qrtw")
+debug_color = Color(0.9517719, 2.9841065e-06, 0.5644275, 0.41960785)
+
+[node name="MovementComponent" type="Node" parent="." unique_id=310670693 node_paths=PackedStringArray("character")]
+script = ExtResource("5_bxi4y")
+character = NodePath("..")
+acceleration = 0.32
+metadata/_custom_type_script = "uid://boe4peeex6mo5"
+
+[node name="EmptyStateMachine" type="Node" parent="." unique_id=1495845078]
+script = ExtResource("7_lsjeo")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=273523077]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.25073242, 0)
+texture = ExtResource("6_hig06")

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhbrjxsivp186" path="res://Scenes/Gameplay/creeper.tscn" id="4_wa4jv"]
 [ext_resource type="PackedScene" uid="uid://b36t01f3wjtbu" path="res://Scenes/Gameplay/lever.tscn" id="7_qpmwr"]
 [ext_resource type="PackedScene" uid="uid://cjtmoa56o6hxv" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/Minecart.tscn" id="8_0ptoe"]
+[ext_resource type="PackedScene" uid="uid://cbntwq3xn0kjy" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/minecart_v2.tscn" id="8_oftt7"]
 [ext_resource type="PackedScene" uid="uid://c2ejqg735aq6g" path="res://Scenes/Gameplay/MinecraftBlock/rail_area.tscn" id="9_s6qvt"]
 [ext_resource type="Script" uid="uid://coygm2c565w7g" path="res://Scripts/Gameplay/Penpen/penpen_location.gd" id="10_fkujx"]
 [ext_resource type="PackedScene" uid="uid://bnudpxlxiudb" path="res://Scenes/Gameplay/MinecraftBlock/cobblestone_block.tscn" id="11_lyd2v"]
@@ -63,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90000004, 0.6, 0)
 
 [node name="Minecart2" parent="Gameplay/Objects" unique_id=2068528866 instance=ExtResource("8_0ptoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43781137, 2.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3378115, 2.1, 0)
 
 [node name="Minecart3" parent="Gameplay/Objects" unique_id=1289215611 instance=ExtResource("8_0ptoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8977604, 3.7719424, 0)
@@ -158,6 +159,15 @@ railDirection = Vector3(-1, 0, 0)
 [node name="RailArea22" parent="Gameplay/Objects" unique_id=1617420535 instance=ExtResource("9_s6qvt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, 0.3, 0)
 railDirection = Vector3(-1, 0, 0)
+
+[node name="Minecart5" parent="Gameplay/Objects" unique_id=1755486416 instance=ExtResource("8_oftt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 1.5, 0)
+
+[node name="Minecart6" parent="Gameplay/Objects" unique_id=151200487 instance=ExtResource("8_oftt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 2.4, 0)
+
+[node name="Minecart7" parent="Gameplay/Objects" unique_id=528254887 instance=ExtResource("8_oftt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.2, 0)
 
 [node name="PenpenLocations" type="Node3D" parent="Gameplay" unique_id=1236989997]
 

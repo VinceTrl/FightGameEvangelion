@@ -843,7 +843,7 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.12501, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_dt2x8"]
+[sub_resource type="Curve" id="Curve_scwfu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.01617, 0.0, 0, 0]
 point_count = 2
 
@@ -1003,7 +1003,7 @@ script = ExtResource("35_8paei")
 [node name="KnockBack" type="Node" parent="StateMachine" unique_id=1738660593]
 script = ExtResource("37_h0gmo")
 knockbackDuration = 0.2
-knockbackSpeedCurve = SubResource("Curve_dt2x8")
+knockbackSpeedCurve = SubResource("Curve_scwfu")
 
 [node name="Taunt" type="Node" parent="StateMachine" unique_id=953209833]
 script = ExtResource("32_b3v0a")
