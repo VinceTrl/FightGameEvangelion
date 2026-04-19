@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="16_x3ix5"]
 [ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="17_oxu42"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="18_lbjjn"]
-[ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="19_bal6i"]
+[ext_resource type="PackedScene" uid="uid://ssuqamymma7s" path="res://Scenes/Gameplay/lava_block_sea.tscn" id="18_stoph"]
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="20_r32yb"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="21_5rrsv"]
 
@@ -67,8 +67,8 @@ map = ExtResource("17_oxu42")
 [node name="KillVolume" parent="Stage" unique_id=421022714 instance=ExtResource("18_lbjjn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
-[node name="BloodSea" parent="." unique_id=920480580 instance=ExtResource("19_bal6i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25.5, 0)
+[node name="LavaBlockSea" parent="." unique_id=920480580 instance=ExtResource("18_stoph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1459144192]
 script = ExtResource("20_r32yb")

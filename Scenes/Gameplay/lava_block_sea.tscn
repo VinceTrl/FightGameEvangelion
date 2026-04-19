@@ -1,0 +1,1055 @@
+[gd_scene format=3 uid="uid://ssuqamymma7s"]
+
+[ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="1_go8kg"]
+[ext_resource type="BoxMesh" uid="uid://6u8dxvmlmuua" path="res://Assets/Meshes/Props/Minecraft/proto_block_mesh.tres" id="2_2qcmr"]
+[ext_resource type="Material" uid="uid://d0eoso6rpl2yl" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Lava.tres" id="3_tldq6"]
+
+[sub_resource type="Animation" id="Animation_rwskc"]
+resource_name = "LavaFlow"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/0:uv1_offset")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.05, 0), Vector3(0, 0.10000001, 0), Vector3(0, 0.15, 0), Vector3(0, 0.2, 0), Vector3(0, 0.25, 0), Vector3(0, 0.3, 0), Vector3(0, 0.35, 0), Vector3(0, 0.4, 0), Vector3(0, 0.45, 0), Vector3(0, 0.5, 0), Vector3(0, 0.55, 0), Vector3(0, 0.6, 0), Vector3(0, 0.65, 0), Vector3(0, 0.7, 0), Vector3(0, 0.75, 0), Vector3(0, 0.8, 0), Vector3(0, 0.85, 0), Vector3(0, 0.9, 0), Vector3(0, 0.95, 0), Vector3(0, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2dxx8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/0:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wcg62"]
+_data = {
+&"LavaFlow": SubResource("Animation_rwskc"),
+&"RESET": SubResource("Animation_2dxx8")
+}
+
+[node name="LavaBlockSea" unique_id=920480580 instance=ExtResource("1_go8kg")]
+
+[node name="BloodPlane" parent="." index="0" unique_id=904634860]
+visible = false
+
+[node name="BoxMeshInstance" type="MeshInstance3D" parent="." index="2" unique_id=50695867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance" index="0" unique_id=1447695175]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance" index="1" unique_id=1323544524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance2" index="0" unique_id=1856048178]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance" index="2" unique_id=725307251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance3" index="0" unique_id=2130157892]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance" index="3" unique_id=2005844786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance4" index="0" unique_id=1606811838]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance" index="4" unique_id=1578292845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance5" index="0" unique_id=1182784319]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance" index="5" unique_id=744319856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance6" index="0" unique_id=179033565]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance" index="6" unique_id=1637341280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance7" index="0" unique_id=1171395833]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance" index="7" unique_id=1320102511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance8" index="0" unique_id=2057758567]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance" index="8" unique_id=1314154980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance9" index="0" unique_id=245315352]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance" index="9" unique_id=845607315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance10" index="0" unique_id=102975507]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance11" type="MeshInstance3D" parent="BoxMeshInstance" index="10" unique_id=1209587556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11" index="0" unique_id=687959710]
+root_node = NodePath("../../BoxMeshInstance11")
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="1" unique_id=936879023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance2" index="0" unique_id=2068192247]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="2" unique_id=1268212765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance3" index="0" unique_id=829695819]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="3" unique_id=507421671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance4" index="0" unique_id=363606981]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="4" unique_id=1665511123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance5" index="0" unique_id=1214947812]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="5" unique_id=1262226452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance6" index="0" unique_id=924339225]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="6" unique_id=882021599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance7" index="0" unique_id=1250188653]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="7" unique_id=1915988724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance8" index="0" unique_id=173359560]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="8" unique_id=1448020822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance9" index="0" unique_id=1995555785]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance11" index="9" unique_id=5974103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance11/BoxMeshInstance10" index="0" unique_id=103063835]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance12" type="MeshInstance3D" parent="BoxMeshInstance" index="11" unique_id=1032817081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12" index="0" unique_id=1661319252]
+root_node = NodePath("../../BoxMeshInstance11")
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="1" unique_id=1727181316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance2" index="0" unique_id=1821013810]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="2" unique_id=470603831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance3" index="0" unique_id=1041295491]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="3" unique_id=962451147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance4" index="0" unique_id=649228209]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="4" unique_id=1278425510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance5" index="0" unique_id=149892888]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="5" unique_id=53695391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance6" index="0" unique_id=935827437]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="6" unique_id=627095888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance7" index="0" unique_id=1471692105]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="7" unique_id=31167860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance8" index="0" unique_id=1048853367]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="8" unique_id=214185250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance9" index="0" unique_id=674746795]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance12" index="9" unique_id=1149689789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance12/BoxMeshInstance10" index="0" unique_id=732586818]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance13" type="MeshInstance3D" parent="BoxMeshInstance" index="12" unique_id=1521421265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13" index="0" unique_id=1374226734]
+root_node = NodePath("../../BoxMeshInstance11")
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="1" unique_id=412895077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance2" index="0" unique_id=894649845]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="2" unique_id=1438967403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance3" index="0" unique_id=1085305556]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="3" unique_id=1890681759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance4" index="0" unique_id=1586451545]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="4" unique_id=1333166339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance5" index="0" unique_id=673591975]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="5" unique_id=1708229123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance6" index="0" unique_id=182685132]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="6" unique_id=770899628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance7" index="0" unique_id=818410544]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="7" unique_id=755699983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance8" index="0" unique_id=261865117]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="8" unique_id=892853146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance9" index="0" unique_id=566437409]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance13" index="9" unique_id=1817531905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance13/BoxMeshInstance10" index="0" unique_id=595002160]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance14" type="MeshInstance3D" parent="BoxMeshInstance" index="13" unique_id=4025872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14" index="0" unique_id=700230037]
+root_node = NodePath("../../BoxMeshInstance11")
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="1" unique_id=145413724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance2" index="0" unique_id=1667072590]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="2" unique_id=117522130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance3" index="0" unique_id=1974202482]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="3" unique_id=1725650747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance4" index="0" unique_id=1958434053]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="4" unique_id=1372203756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance5" index="0" unique_id=332031988]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="5" unique_id=1356486843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance6" index="0" unique_id=335614704]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="6" unique_id=1207771435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance7" index="0" unique_id=656297685]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="7" unique_id=87431162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance8" index="0" unique_id=966384564]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="8" unique_id=16113999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance9" index="0" unique_id=653496557]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance/BoxMeshInstance14" index="9" unique_id=962810282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance/BoxMeshInstance14/BoxMeshInstance10" index="0" unique_id=862123678]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="." index="3" unique_id=1650822873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.000001, 0.15, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3" index="0" unique_id=1782296874]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance3" index="1" unique_id=936595776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance2" index="0" unique_id=1319165575]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance3" index="2" unique_id=1461716758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance3" index="0" unique_id=1069278499]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance3" index="3" unique_id=1659595292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance4" index="0" unique_id=810506465]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance3" index="4" unique_id=2122350834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance5" index="0" unique_id=997702180]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance3" index="5" unique_id=1433364119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance6" index="0" unique_id=295762318]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance3" index="6" unique_id=314644294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance7" index="0" unique_id=909798279]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance3" index="7" unique_id=938184228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance8" index="0" unique_id=995889918]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance3" index="8" unique_id=1761939342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance9" index="0" unique_id=1445907552]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance3" index="9" unique_id=765518043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance10" index="0" unique_id=996120559]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance11" type="MeshInstance3D" parent="BoxMeshInstance3" index="10" unique_id=373326858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11" index="0" unique_id=195556604]
+root_node = NodePath("../../BoxMeshInstance11")
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="1" unique_id=1973118464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance2" index="0" unique_id=2138509540]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="2" unique_id=873345556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance3" index="0" unique_id=643821019]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="3" unique_id=328558902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance4" index="0" unique_id=2044497364]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="4" unique_id=2039567604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance5" index="0" unique_id=1264227611]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="5" unique_id=941591226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance6" index="0" unique_id=1562978116]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="6" unique_id=382659233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance7" index="0" unique_id=1417227881]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="7" unique_id=1944144609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance8" index="0" unique_id=128696064]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="8" unique_id=28182586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance9" index="0" unique_id=91722138]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance11" index="9" unique_id=1616381021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance11/BoxMeshInstance10" index="0" unique_id=518454903]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance12" type="MeshInstance3D" parent="BoxMeshInstance3" index="11" unique_id=1057938301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12" index="0" unique_id=334114824]
+root_node = NodePath("../../BoxMeshInstance11")
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="1" unique_id=501193601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance2" index="0" unique_id=1731098589]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="2" unique_id=2032411112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance3" index="0" unique_id=572448957]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="3" unique_id=1288200064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance4" index="0" unique_id=1132635627]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="4" unique_id=1805721715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance5" index="0" unique_id=916037013]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="5" unique_id=716052276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance6" index="0" unique_id=517417233]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="6" unique_id=1835919060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance7" index="0" unique_id=2116084082]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="7" unique_id=255511540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance8" index="0" unique_id=1425677519]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="8" unique_id=1043342053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance9" index="0" unique_id=303938002]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance12" index="9" unique_id=888910930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance12/BoxMeshInstance10" index="0" unique_id=493861868]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance13" type="MeshInstance3D" parent="BoxMeshInstance3" index="12" unique_id=1102171370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13" index="0" unique_id=890039491]
+root_node = NodePath("../../BoxMeshInstance11")
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="1" unique_id=1696016039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance2" index="0" unique_id=1351207907]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="2" unique_id=1465779560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance3" index="0" unique_id=1784583027]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="3" unique_id=2020088782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance4" index="0" unique_id=1757946723]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="4" unique_id=245568960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance5" index="0" unique_id=1154842564]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="5" unique_id=1459160386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance6" index="0" unique_id=1096922447]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="6" unique_id=1893397724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance7" index="0" unique_id=281971059]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="7" unique_id=355658889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance8" index="0" unique_id=243873709]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="8" unique_id=436843300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance9" index="0" unique_id=459724208]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance13" index="9" unique_id=1610547044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance13/BoxMeshInstance10" index="0" unique_id=1636222667]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance14" type="MeshInstance3D" parent="BoxMeshInstance3" index="13" unique_id=846412017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14" index="0" unique_id=701792414]
+root_node = NodePath("../../BoxMeshInstance11")
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance2" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="1" unique_id=1044476514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance2" index="0" unique_id=298526203]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance3" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="2" unique_id=966675815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance3" index="0" unique_id=710364585]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance4" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="3" unique_id=5419188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance4" index="0" unique_id=902317782]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance5" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="4" unique_id=975879458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance5" index="0" unique_id=1406864023]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance6" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="5" unique_id=1745515879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance6" index="0" unique_id=1148730057]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance7" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="6" unique_id=254675568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance7" index="0" unique_id=502956251]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance8" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="7" unique_id=547499277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance8" index="0" unique_id=991952572]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance9" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="8" unique_id=1484196028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999999, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance9" index="0" unique_id=548654903]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
+
+[node name="BoxMeshInstance10" type="MeshInstance3D" parent="BoxMeshInstance3/BoxMeshInstance14" index="9" unique_id=931388474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 0, 0)
+mesh = ExtResource("2_2qcmr")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_tldq6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxMeshInstance3/BoxMeshInstance14/BoxMeshInstance10" index="0" unique_id=229456724]
+libraries/ = SubResource("AnimationLibrary_wcg62")
+autoplay = &"LavaFlow"
