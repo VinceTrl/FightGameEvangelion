@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://xkjrt0g6fmqp"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_lvb33"]
+[ext_resource type="Material" uid="uid://ckd3jt70ed5vh" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_OakDoor.tres" id="2_w8i6r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8i6r"]
+size = Vector3(0.325, 0.625, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lvb33"]
+size = Vector3(0.3, 0.6, 0.3)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lvb33"]
+material = ExtResource("2_w8i6r")
+size = Vector2(0.3, 0.6)
+
+[node name="OakDoorBlock" unique_id=1588274387 instance=ExtResource("1_lvb33")]
+
+[node name="Hurtbox" parent="." index="0" unique_id=2074267378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.023415431, 0)
+
+[node name="CollisionShape3D" parent="Hurtbox" index="0" unique_id=387102666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.276065, 0)
+shape = SubResource("BoxShape3D_w8i6r")
+
+[node name="CollisionShape3D" parent="StaticBody3D" parent_id_path=PackedInt32Array(1373173204) index="0" unique_id=1851698335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.300232, 0)
+shape = SubResource("BoxShape3D_lvb33")
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="2" unique_id=1217146229]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.3, 0.15)
+mesh = SubResource("PlaneMesh_lvb33")

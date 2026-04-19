@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://uve86dqmdawq"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_legll"]
+[ext_resource type="Material" uid="uid://xi43u8s4atli" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Deepslate.tres" id="2_legll"]
+[ext_resource type="Material" uid="uid://dbv81lku70omp" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Deepslate_Top.tres" id="3_75bag"]
+
+[node name="DeepslateBlock" unique_id=1588274387 instance=ExtResource("1_legll")]
+healthPoints = 8
+
+[node name="CollisionShape3D" parent="Hurtbox" parent_id_path=PackedInt32Array(2074267378) index="0" unique_id=387102666]
+debug_color = Color(0.6700784, 0.4698996, 0.53769726, 0.41960785)
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
+surface_material_override/0 = ExtResource("2_legll")
+surface_material_override/1 = ExtResource("3_75bag")
+surface_material_override/2 = ExtResource("2_legll")

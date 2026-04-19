@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dk6a1ljdktio6"]
+
+[ext_resource type="Texture2D" uid="uid://isy7l0ap3847" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_planks.png" id="1_km0aw"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_dgnk0"]
+
+[resource]
+albedo_texture = ExtResource("1_km0aw")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_dgnk0")
+texture_filter = 0

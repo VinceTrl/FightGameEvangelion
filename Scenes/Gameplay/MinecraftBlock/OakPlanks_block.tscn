@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://g5fnd6em0pw0"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_fctlp"]
+[ext_resource type="Material" uid="uid://dk6a1ljdktio6" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_OakPlanks.tres" id="2_k7j0y"]
+
+[node name="OakLogBlock" unique_id=1588274387 instance=ExtResource("1_fctlp")]
+healthPoints = 4
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
+surface_material_override/0 = ExtResource("2_k7j0y")
+surface_material_override/1 = ExtResource("2_k7j0y")
+surface_material_override/2 = ExtResource("2_k7j0y")

@@ -32,7 +32,7 @@ func EnterState():
 
 	#effect
 	Manager.timeManager.freezeFrame(0.001,freezeFrameDuration)
-	Manager.gameCamera.camShake.AskCamShake("HitShake")
+	Manager.gameCamera.camShake.AskCamShake(cameraShake)
 	nodeShaker.NodeShake()
 	
 	if(!character.isIgnited):

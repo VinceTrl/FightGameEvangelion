@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://yg04o4f1in21"]
+
+[ext_resource type="Texture2D" uid="uid://ddoqimuoultqb" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/cactus_top.png" id="1_5tw61"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_nvrkq"]
+
+[resource]
+albedo_texture = ExtResource("1_5tw61")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_nvrkq")
+texture_filter = 0

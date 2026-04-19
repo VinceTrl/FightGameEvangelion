@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckd3jt70ed5vh"]
+
+[ext_resource type="Texture2D" uid="uid://bvx628hr7xesg" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_door.png" id="1_asg8y"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_d850w"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_asg8y")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_d850w")
+uv1_scale = Vector3(0.6, 0.85, 1)
+uv1_offset = Vector3(0.2, 0.15, 0)
+texture_filter = 0

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cimu1c18nr1n2"]
+
+[ext_resource type="Texture2D" uid="uid://i030v0l5oxpf" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/crafting_table_front.png" id="1_a500a"]
+
+[resource]
+albedo_texture = ExtResource("1_a500a")
+texture_filter = 0

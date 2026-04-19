@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://m0l1r1kpdj32"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_eyx3c"]
+[ext_resource type="Material" uid="uid://shwvc5lvr11s" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Blackstone.tres" id="2_megko"]
+[ext_resource type="Material" uid="uid://qekrsnl8cjga" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Blackstone_Top.tres" id="3_17vc5"]
+
+[node name="BlackstoneBlock" unique_id=1588274387 instance=ExtResource("1_eyx3c")]
+healthPoints = 6
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
+surface_material_override/0 = ExtResource("2_megko")
+surface_material_override/1 = ExtResource("3_17vc5")
+surface_material_override/2 = ExtResource("2_megko")

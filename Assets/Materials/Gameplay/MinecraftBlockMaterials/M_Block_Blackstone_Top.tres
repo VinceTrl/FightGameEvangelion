@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://qekrsnl8cjga"]
+
+[ext_resource type="Texture2D" uid="uid://cfaagypd1n0oe" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/blackstone_top.png" id="1_nyvcl"]
+
+[resource]
+albedo_texture = ExtResource("1_nyvcl")
+texture_filter = 0

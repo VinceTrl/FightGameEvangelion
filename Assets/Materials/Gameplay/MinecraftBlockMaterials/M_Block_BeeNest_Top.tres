@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvhcoea8doyoj"]
+
+[ext_resource type="Texture2D" uid="uid://ba3en5sm4ksnk" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/bee_nest_front.png" id="1_671dy"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_gqbho"]
+
+[resource]
+albedo_texture = ExtResource("1_671dy")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_gqbho")
+texture_filter = 0

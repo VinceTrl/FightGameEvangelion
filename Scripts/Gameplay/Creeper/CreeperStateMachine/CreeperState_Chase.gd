@@ -9,11 +9,13 @@ var lostTimer:SceneTreeTimer
 
 func EnterState():
 	stateName = "CREEPER CHASE"
+	character.animation.play("Chase")
 	pass
 	
 func ExitState():
 	character.movement.currentDirection = Vector3.ZERO
 	character.movement.ResetSpeed()
+	character.animation.play("RESET")
 	pass
 	
 func ProcessState(delta: float):

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://1uovdwre076w"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_k0tmh"]
+[ext_resource type="Material" uid="uid://cimu1c18nr1n2" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_CraftTable.tres" id="2_p4v2t"]
+[ext_resource type="Material" uid="uid://7fo82gp23ae5" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_CraftTable_Top.tres" id="3_k0tmh"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="5_xwpmp"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="6_5c5at"]
+[ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="7_lnwuw"]
+[ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="8_50wy4"]
+[ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="9_5ufhj"]
+[ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="10_grj7j"]
+
+[node name="CraftTableBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_k0tmh")]
+spawner = NodePath("Spawner")
+spawnChance = 0.25
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
+surface_material_override/0 = ExtResource("2_p4v2t")
+surface_material_override/1 = ExtResource("3_k0tmh")
+surface_material_override/2 = ExtResource("3_k0tmh")
+
+[node name="Spawner" parent="." index="6" unique_id=1716012024 instance=ExtResource("5_xwpmp")]
+items = Array[ExtResource("6_5c5at")]([ExtResource("7_lnwuw"), ExtResource("8_50wy4"), ExtResource("9_5ufhj"), ExtResource("10_grj7j")])
+registerOnManager = false

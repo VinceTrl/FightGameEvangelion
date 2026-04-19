@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b81aia3gqmsi4"]
+
+[ext_resource type="Texture2D" uid="uid://cstgtc0jl2s4p" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/gray_concrete.png" id="1_dh3bm"]
+
+[resource]
+albedo_texture = ExtResource("1_dh3bm")
+texture_filter = 0

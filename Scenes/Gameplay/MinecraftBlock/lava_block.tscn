@@ -83,7 +83,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2dxx8"]
-size = Vector3(0.325, 0.325, 0.325)
+size = Vector3(0.31, 0.31, 0.3)
 
 [node name="LavaBlock" unique_id=1588274387 node_paths=PackedStringArray("sideSpread", "bottomSpread", "leftRaycast", "rightRaycast", "downRaycast", "upRaycast", "leftGroundRaycast", "rightGroundRaycast") instance=ExtResource("1_eihy3")]
 script = ExtResource("2_50xhm")

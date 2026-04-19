@@ -4,6 +4,10 @@ extends Node3D
 
 @export var isOn:bool = false
 
+@export_group("effect")
+@export var freezeFrameDuration:float = 0.05
+@export var cameraShake:String = "HitShake"
+
 @export_group("reference")
 @export var hurtbox:Hurtbox
 @export var redstoneLink:RedstoneLink
@@ -23,6 +27,8 @@ func ChangeState(on:bool):
 func TakeDamage(hitbox : Hitbox):
 	ChangeState(!isOn)
 	UpdateRedstonePower()
+	Manager.timeManager.freezeFrame(0.001,freezeFrameDuration)
+	Manager.gameCamera.camShake.AskCamShake(cameraShake)
 	
 func UpdateRedstonePower():
 	redstoneLink.isPowerOn = isOn

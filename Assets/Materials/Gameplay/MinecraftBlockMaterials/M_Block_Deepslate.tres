@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xi43u8s4atli"]
+
+[ext_resource type="Texture2D" uid="uid://sm567lidm5t8" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/deepslate.png" id="1_qef6y"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_ptw7a"]
+
+[resource]
+albedo_texture = ExtResource("1_qef6y")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_ptw7a")
+texture_filter = 0
