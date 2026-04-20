@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://c7ivof013fbpe"]
+
+[ext_resource type="Script" uid="uid://djs8utivusmj2" path="res://Scripts/Gameplay/Enderman/enderman.gd" id="1_3puyt"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_28513"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_alm5v"]
+[ext_resource type="ArrayMesh" uid="uid://cox180qog8qla" path="res://Assets/Meshes/Characters/Enderman/enderman.obj" id="2_fr7uy"]
+[ext_resource type="Material" uid="uid://bx6bsw3v8qsmh" path="res://Assets/Meshes/Characters/Enderman/M_Enderman.tres" id="3_oy8de"]
+[ext_resource type="Script" uid="uid://boe4peeex6mo5" path="res://Scripts/Components/Movement/movement_component.gd" id="4_oy8de"]
+[ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="5_3puyt"]
+[ext_resource type="Script" uid="uid://davkegmks5tqe" path="res://Scripts/Components/Movement/flip_component.gd" id="6_28513"]
+[ext_resource type="Script" uid="uid://ciqi0vk5qh7yn" path="res://Scripts/Gameplay/CharacterBase/CharacterStateMachine/CharacterState.gd" id="6_clp4r"]
+[ext_resource type="Script" uid="uid://dhtbplc5ij636" path="res://Scripts/Gameplay/Enderman/enderman_state_machine.gd" id="7_3puyt"]
+[ext_resource type="Script" uid="uid://dvpo6tsp4xuah" path="res://Scripts/Gameplay/Enderman/enderman_state_idle.gd" id="8_3puyt"]
+[ext_resource type="Script" uid="uid://ipvy5w7bxn6h" path="res://Scripts/Gameplay/Enderman/enderman_state_hurt.gd" id="11_bltcs"]
+[ext_resource type="Script" uid="uid://cbo3lnxd2nkbw" path="res://Scripts/Gameplay/Enderman/enderman_state_teleport.gd" id="12_j54lw"]
+[ext_resource type="Script" uid="uid://ro35fkk6mg6o" path="res://Scripts/Gameplay/Enderman/enderman_state_steal.gd" id="13_j54lw"]
+[ext_resource type="Script" uid="uid://b58urx2i80ebx" path="res://Scripts/Gameplay/Enderman/enderman_state_drop.gd" id="15_8d8yn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_clp4r"]
+radius = 0.1
+height = 1.45
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j54lw"]
+size = Vector3(0.3, 1.4839356, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_alm5v"]
+material = ExtResource("3_oy8de")
+size = Vector3(0.05, 1, 0.05)
+
+[node name="Enderman" type="CharacterBody3D" unique_id=880268240 node_paths=PackedStringArray("health", "holdSocket", "targetRaycast", "stateMachine", "movement")]
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_3puyt")
+health = NodePath("Components/HealthComponent")
+holdSocket = NodePath("FlipableNodes/HoldSocket")
+targetRaycast = NodePath("FlipableNodes/Raycasts/TargetRaycast")
+stateMachine = NodePath("CharacterStateMachine")
+movement = NodePath("Components/MovementComponent")
+metadata/_custom_type_script = "uid://c87rv5u7rab78"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1817219668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725, 0)
+shape = SubResource("CapsuleShape3D_clp4r")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1284322833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+script = ExtResource("2_alm5v")
+randomID = true
+metadata/_custom_type_script = "uid://be4u7kwwov65g"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1860585941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10773933, 0)
+shape = SubResource("BoxShape3D_j54lw")
+debug_color = Color(0.971669, 0, 0.44962704, 0.41960785)
+
+[node name="Visual" type="Node3D" parent="." unique_id=81458827]
+
+[node name="NodeShaker" type="Node3D" parent="Visual" unique_id=5621210 node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("2_28513")
+nodeToShake = NodePath(".")
+
+[node name="Enderman" type="MeshInstance3D" parent="Visual/NodeShaker" unique_id=1454269479]
+transform = Transform3D(9.735359e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 9.735359e-08, 0, 0, 0)
+mesh = ExtResource("2_fr7uy")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("3_oy8de")
+surface_material_override/1 = ExtResource("3_oy8de")
+surface_material_override/2 = ExtResource("3_oy8de")
+surface_material_override/3 = ExtResource("3_oy8de")
+surface_material_override/4 = ExtResource("3_oy8de")
+surface_material_override/5 = ExtResource("3_oy8de")
+surface_material_override/6 = ExtResource("3_oy8de")
+
+[node name="Components" type="Node" parent="." unique_id=1743929896]
+
+[node name="MovementComponent" type="Node" parent="Components" unique_id=1614716242 node_paths=PackedStringArray("character")]
+script = ExtResource("4_oy8de")
+character = NodePath("../..")
+metadata/_custom_type_script = "uid://boe4peeex6mo5"
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=685894160]
+script = ExtResource("5_3puyt")
+healthPoints = 10
+metadata/_custom_type_script = "uid://cw2bpx65nkj7h"
+
+[node name="FlipComponent" type="Node" parent="Components" unique_id=1244328133 node_paths=PackedStringArray("movement", "flipNodes")]
+script = ExtResource("6_28513")
+movement = NodePath("../MovementComponent")
+flipNodes = [NodePath("../../Visual"), NodePath("../../FlipableNodes")]
+metadata/_custom_type_script = "uid://davkegmks5tqe"
+
+[node name="FlipableNodes" type="Node3D" parent="." unique_id=2142360700]
+
+[node name="HoldSocket" type="Node3D" parent="FlipableNodes" unique_id=2047888173]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0.3, 0.3, 0)
+
+[node name="TEMP_Arm" type="MeshInstance3D" parent="FlipableNodes/HoldSocket" unique_id=79354954]
+transform = Transform3D(0.9912155, 0.13225639, 0, -0.13225639, 0.9912155, 0, 0, 0, 1, 0.09656895, 0.41381145, -0.14940262)
+mesh = SubResource("BoxMesh_alm5v")
+
+[node name="Raycasts" type="Node3D" parent="FlipableNodes" unique_id=259729432]
+
+[node name="TargetRaycast" type="RayCast3D" parent="FlipableNodes/Raycasts" unique_id=432980752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.5, 0)
+target_position = Vector3(0, -2, 0)
+collision_mask = 19
+hit_from_inside = true
+
+[node name="CharacterStateMachine" type="Node" parent="." unique_id=178713354]
+script = ExtResource("7_3puyt")
+debugState = true
+drawDebugOffset = Vector3(0, 0, 0.25)
+metadata/_custom_type_script = "uid://baejcfwqs5k37"
+
+[node name="Idle" type="Node" parent="CharacterStateMachine" unique_id=2131214516]
+script = ExtResource("8_3puyt")
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
+
+[node name="Teleport" type="Node" parent="CharacterStateMachine" unique_id=1048250072]
+script = ExtResource("12_j54lw")
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
+
+[node name="Hurt" type="Node" parent="CharacterStateMachine" unique_id=511376089 node_paths=PackedStringArray("nodeShaker")]
+script = ExtResource("11_bltcs")
+nodeShaker = NodePath("../../Visual/NodeShaker")
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
+
+[node name="Steal" type="Node" parent="CharacterStateMachine" unique_id=1040749714 node_paths=PackedStringArray("targetRaycast")]
+script = ExtResource("13_j54lw")
+targetRaycast = NodePath("../../FlipableNodes/Raycasts/TargetRaycast")
+stealDelay = 1.0
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
+
+[node name="Death" type="Node" parent="CharacterStateMachine" unique_id=2025316392]
+script = ExtResource("6_clp4r")
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
+
+[node name="Drop" type="Node" parent="CharacterStateMachine" unique_id=131415797 node_paths=PackedStringArray("targetRaycast")]
+script = ExtResource("15_8d8yn")
+targetRaycast = NodePath("../../FlipableNodes/Raycasts/TargetRaycast")
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"

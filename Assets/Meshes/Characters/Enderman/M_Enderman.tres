@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bx6bsw3v8qsmh"]
+
+[ext_resource type="Texture2D" uid="uid://r3r4nblar2ur" path="res://Assets/Meshes/Characters/Enderman/enderman.png" id="1_vbwhe"]
+
+[resource]
+albedo_texture = ExtResource("1_vbwhe")
+texture_filter = 0

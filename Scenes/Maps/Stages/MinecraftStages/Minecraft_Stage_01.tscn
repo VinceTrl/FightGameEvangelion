@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c2ejqg735aq6g" path="res://Scenes/Gameplay/MinecraftBlock/rail_area.tscn" id="9_1osut"]
 [ext_resource type="PackedScene" uid="uid://dr8uiky4jkepx" path="res://Scenes/Gameplay/MinecraftBlock/water_block.tscn" id="9_xvoje"]
 [ext_resource type="PackedScene" uid="uid://bja86rnp5peep" path="res://Scenes/Gameplay/MinecraftBlock/lava_block.tscn" id="10_adgui"]
+[ext_resource type="PackedScene" uid="uid://c7ivof013fbpe" path="res://Scenes/Characters/enderman.tscn" id="10_h266m"]
 [ext_resource type="PackedScene" uid="uid://dhbrjxsivp186" path="res://Scenes/Gameplay/creeper.tscn" id="11_xvoje"]
 [ext_resource type="PackedScene" uid="uid://ckf3p25anxo86" path="res://Scenes/Gameplay/MinecraftBlock/dirt_block.tscn" id="12_5ji8y"]
 [ext_resource type="PackedScene" uid="uid://ctcac5c1nbdp5" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/oak_tree.tscn" id="13_cxy13"]
@@ -112,10 +113,6 @@ castLength = 0.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.8, 0)
 isActive = true
 
-[node name="RedstoneLinkArea26" parent="Gameplay/Objects" unique_id=1384854069 instance=ExtResource("5_8s6f2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30000007, 1.5, 0)
-isActive = true
-
 [node name="RedstoneLinkArea25" parent="Gameplay/Objects" unique_id=1588345096 instance=ExtResource("5_8s6f2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000001, 0.3, 0)
 isActive = true
@@ -172,10 +169,6 @@ isActive = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1.8, 0)
 isActive = true
 
-[node name="RedstoneLinkArea10" parent="Gameplay/Objects" unique_id=1073198859 instance=ExtResource("5_8s6f2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.5, 0)
-isActive = true
-
 [node name="RedstoneLinkArea27" parent="Gameplay/Objects" unique_id=1477860785 instance=ExtResource("5_8s6f2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, 1.2, 0)
 isActive = true
@@ -203,7 +196,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000002, 0.16073203, 0)
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.3543816, 1.2042521, 0)
 
 [node name="Lever2" parent="Gameplay/Objects" unique_id=1098687273 instance=ExtResource("7_ekp8d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.8568134, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 3.4568133, 0)
 
 [node name="Lever3" parent="Gameplay/Objects" unique_id=1965250369 instance=ExtResource("7_ekp8d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 1.6568134, 0)
@@ -214,7 +207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, 0.15681332, 0)
 isOn = true
 
 [node name="Minecart" parent="Gameplay/Objects" unique_id=1587775244 instance=ExtResource("8_clpey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36482173, 3.1719427, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36482173, 3.7719426, 0)
 
 [node name="Minecart2" parent="Gameplay/Objects" unique_id=2068528866 instance=ExtResource("8_clpey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3378115, 2.7, 0)
@@ -226,10 +219,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8977604, 3.7719424, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9968758, 0.2668693, 0)
 
 [node name="RailArea" parent="Gameplay/Objects" unique_id=308615010 instance=ExtResource("9_1osut")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3609618, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1390382, 0)
 
 [node name="RailArea2" parent="Gameplay/Objects" unique_id=708085497 instance=ExtResource("9_1osut")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.3609618, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.1390382, 0)
+
+[node name="Enderman" parent="Gameplay/Objects" unique_id=880268240 instance=ExtResource("10_h266m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.5, 0)
 
 [node name="PenpenLocations" type="Node3D" parent="Gameplay" unique_id=1236989997]
 
@@ -857,7 +853,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, 2.5607321, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000001, 1.3607321, 0)
 
 [node name="TntBlock4" parent="Level/Blocks" unique_id=2041028489 instance=ExtResource("8_adgui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 2.860732, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 3.460732, 0)
 
 [node name="WaterBlock" parent="Level/Blocks" unique_id=770757744 instance=ExtResource("9_xvoje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1000004, -0.439268, 0)
@@ -1297,7 +1293,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.3607321, 0)
 redstoneActive = true
 
 [node name="GrassBlock4" parent="Level/Blocks" unique_id=1253884645 instance=ExtResource("14_a377a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.860732, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.460732, 0)
 redstoneActive = true
 
 [node name="GrassBlock2" parent="Level/Blocks" unique_id=1632726625 instance=ExtResource("14_a377a")]

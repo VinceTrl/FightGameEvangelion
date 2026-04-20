@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ds8aponsngy6p"]
+
+[ext_resource type="Texture2D" uid="uid://bqx73qtvk16ag" path="res://Assets/Meshes/Characters/Enderman/enderman_eyes.png" id="1_1q4bn"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_1q4bn")
+texture_filter = 0
