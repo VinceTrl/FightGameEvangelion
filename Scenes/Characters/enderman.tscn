@@ -12,22 +12,23 @@
 [ext_resource type="Script" uid="uid://dhtbplc5ij636" path="res://Scripts/Gameplay/Enderman/enderman_state_machine.gd" id="7_3puyt"]
 [ext_resource type="Script" uid="uid://dvpo6tsp4xuah" path="res://Scripts/Gameplay/Enderman/enderman_state_idle.gd" id="8_3puyt"]
 [ext_resource type="Script" uid="uid://ipvy5w7bxn6h" path="res://Scripts/Gameplay/Enderman/enderman_state_hurt.gd" id="11_bltcs"]
-[ext_resource type="Script" uid="uid://cbo3lnxd2nkbw" path="res://Scripts/Gameplay/Enderman/enderman_state_teleport.gd" id="12_j54lw"]
+[ext_resource type="Script" uid="uid://ms87mcetni62" path="res://Scripts/Gameplay/Enderman/enderman_state_wander.gd" id="11_euk8p"]
+[ext_resource type="Script" uid="uid://cbo3lnxd2nkbw" path="res://Scripts/Gameplay/Enderman/enderman_state_chase.gd" id="12_j54lw"]
 [ext_resource type="Script" uid="uid://ro35fkk6mg6o" path="res://Scripts/Gameplay/Enderman/enderman_state_steal.gd" id="13_j54lw"]
 [ext_resource type="Script" uid="uid://b58urx2i80ebx" path="res://Scripts/Gameplay/Enderman/enderman_state_drop.gd" id="15_8d8yn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_clp4r"]
-radius = 0.1
-height = 1.45
+radius = 0.076660156
+height = 0.725
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j54lw"]
-size = Vector3(0.3, 1.4839356, 1)
+size = Vector3(0.19, 1.1140742, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_alm5v"]
 material = ExtResource("3_oy8de")
 size = Vector3(0.05, 1, 0.05)
 
-[node name="Enderman" type="CharacterBody3D" unique_id=880268240 node_paths=PackedStringArray("health", "holdSocket", "targetRaycast", "stateMachine", "movement")]
+[node name="Enderman" type="CharacterBody3D" unique_id=880268240 node_paths=PackedStringArray("health", "holdSocket", "targetRaycast", "stateMachine", "movement", "flip")]
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -38,10 +39,11 @@ holdSocket = NodePath("FlipableNodes/HoldSocket")
 targetRaycast = NodePath("FlipableNodes/Raycasts/TargetRaycast")
 stateMachine = NodePath("CharacterStateMachine")
 movement = NodePath("Components/MovementComponent")
+flip = NodePath("Components/FlipComponent")
 metadata/_custom_type_script = "uid://c87rv5u7rab78"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1817219668]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36766946, 0)
 shape = SubResource("CapsuleShape3D_clp4r")
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=1284322833]
@@ -51,7 +53,7 @@ randomID = true
 metadata/_custom_type_script = "uid://be4u7kwwov65g"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1860585941]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10773933, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07705659, 0)
 shape = SubResource("BoxShape3D_j54lw")
 debug_color = Color(0.971669, 0, 0.44962704, 0.41960785)
 
@@ -62,7 +64,7 @@ script = ExtResource("2_28513")
 nodeToShake = NodePath(".")
 
 [node name="Enderman" type="MeshInstance3D" parent="Visual/NodeShaker" unique_id=1454269479]
-transform = Transform3D(9.735359e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 9.735359e-08, 0, 0, 0)
+transform = Transform3D(7.3015194e-08, 0, -0.375, 0, 0.375, 0, 0.375, 0, 7.3015194e-08, 0, 0, 0)
 mesh = ExtResource("2_fr7uy")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("3_oy8de")
@@ -78,6 +80,7 @@ surface_material_override/6 = ExtResource("3_oy8de")
 [node name="MovementComponent" type="Node" parent="Components" unique_id=1614716242 node_paths=PackedStringArray("character")]
 script = ExtResource("4_oy8de")
 character = NodePath("../..")
+speed = 0.2
 metadata/_custom_type_script = "uid://boe4peeex6mo5"
 
 [node name="HealthComponent" type="Node" parent="Components" unique_id=685894160]
@@ -93,20 +96,36 @@ metadata/_custom_type_script = "uid://davkegmks5tqe"
 
 [node name="FlipableNodes" type="Node3D" parent="." unique_id=2142360700]
 
-[node name="HoldSocket" type="Node3D" parent="FlipableNodes" unique_id=2047888173]
-transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0.3, 0.3, 0)
-
-[node name="TEMP_Arm" type="MeshInstance3D" parent="FlipableNodes/HoldSocket" unique_id=79354954]
-transform = Transform3D(0.9912155, 0.13225639, 0, -0.13225639, 0.9912155, 0, 0, 0, 1, 0.09656895, 0.41381145, -0.14940262)
+[node name="TEMP_Arm" type="MeshInstance3D" parent="FlipableNodes" unique_id=79354954]
+transform = Transform3D(0.19546196, -0.46021143, 0, 0.46021143, 0.19546196, 0, 0, 0, 0.5, 0.21613637, 0.7484203, -0.14940262)
 mesh = SubResource("BoxMesh_alm5v")
+skeleton = NodePath("../HoldSocket")
+
+[node name="HoldSocket" type="Node3D" parent="FlipableNodes" unique_id=2047888173]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0.24868149, 0.8311773, 0)
 
 [node name="Raycasts" type="Node3D" parent="FlipableNodes" unique_id=259729432]
 
 [node name="TargetRaycast" type="RayCast3D" parent="FlipableNodes/Raycasts" unique_id=432980752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22157192, 0.5077315, 0)
 target_position = Vector3(0, -2, 0)
 collision_mask = 19
 hit_from_inside = true
+
+[node name="ObstacleRaycast3" type="RayCast3D" parent="FlipableNodes/Raycasts" unique_id=11747669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6999999, 0)
+target_position = Vector3(0.5, 0, 0)
+debug_shape_custom_color = Color(0, 0.47058824, 0, 1)
+
+[node name="ObstacleRaycast4" type="RayCast3D" parent="FlipableNodes/Raycasts" unique_id=1357494747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39999992, 0)
+target_position = Vector3(0.5, 0, 0)
+debug_shape_custom_color = Color(0, 0.47058824, 0, 1)
+
+[node name="ObstacleRaycast5" type="RayCast3D" parent="FlipableNodes/Raycasts" unique_id=1072458454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999905, 0)
+target_position = Vector3(0.5, 0, 0)
+debug_shape_custom_color = Color(0, 0.47058824, 0, 1)
 
 [node name="CharacterStateMachine" type="Node" parent="." unique_id=178713354]
 script = ExtResource("7_3puyt")
@@ -118,8 +137,16 @@ metadata/_custom_type_script = "uid://baejcfwqs5k37"
 script = ExtResource("8_3puyt")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
-[node name="Teleport" type="Node" parent="CharacterStateMachine" unique_id=1048250072]
+[node name="Wander" type="Node" parent="CharacterStateMachine" unique_id=2067596698 node_paths=PackedStringArray("raycasts")]
+script = ExtResource("11_euk8p")
+wanderTimeMin = 1.5
+wanderTimeMax = 3.0
+raycasts = [NodePath("../../FlipableNodes/Raycasts/ObstacleRaycast3"), NodePath("../../FlipableNodes/Raycasts/ObstacleRaycast4"), NodePath("../../FlipableNodes/Raycasts/ObstacleRaycast5")]
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
+
+[node name="Chase" type="Node" parent="CharacterStateMachine" unique_id=1048250072 node_paths=PackedStringArray("stealRaycast")]
 script = ExtResource("12_j54lw")
+stealRaycast = NodePath("../../FlipableNodes/Raycasts/TargetRaycast")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="Hurt" type="Node" parent="CharacterStateMachine" unique_id=511376089 node_paths=PackedStringArray("nodeShaker")]
@@ -127,9 +154,9 @@ script = ExtResource("11_bltcs")
 nodeShaker = NodePath("../../Visual/NodeShaker")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
-[node name="Steal" type="Node" parent="CharacterStateMachine" unique_id=1040749714 node_paths=PackedStringArray("targetRaycast")]
+[node name="Steal" type="Node" parent="CharacterStateMachine" unique_id=1040749714 node_paths=PackedStringArray("stealRaycast")]
 script = ExtResource("13_j54lw")
-targetRaycast = NodePath("../../FlipableNodes/Raycasts/TargetRaycast")
+stealRaycast = NodePath("../../FlipableNodes/Raycasts/TargetRaycast")
 stealDelay = 1.0
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 

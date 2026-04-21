@@ -1,7 +1,7 @@
 extends CharacterState
 
 @export var targetRaycast:RayCast3D
-@export var dropDelay:float = 0.5
+@export var dropDelay:float = 1.0
 
 
 func EnterState():
@@ -9,7 +9,10 @@ func EnterState():
 	character.movement.currentDirection = Vector3.ZERO # stop moving
 	
 	character.DropItem()
+	
 	await get_tree().create_timer(dropDelay).timeout
+	character.SetSafeLocation()
+	character.Teleport(character.GetSafeLocation())
 	character.ChangeState(stateMachine.Idle)
 	
 func ExitState():

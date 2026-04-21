@@ -9,7 +9,7 @@ func EnterState():
 	var time := randf_range(idleTimeMin,idleTimeMax)
 	await get_tree().create_timer(time).timeout
 	if(character.currentState == self):
-		character.ChangeState(stateMachine.Steal) #change State
+		character.ChangeState(stateMachine.Wander) #change State
 	pass
 	
 func ExitState():

@@ -31,6 +31,8 @@ func EnterState():
 	#update health and check death
 	character.health.ChangeHealth(-hitbox.damage)
 	
+	character.DropItem()
+	
 	if(character.health.isDead):
 		DeathDelay()
 	
@@ -39,6 +41,11 @@ func EnterState():
 	
 func ProcessState(delta: float):
 	if(timer.time_left <= 0.0):
+		if(hitbox):
+			if(hitbox.owner is PlayerCharacter):
+				character.chaseTarget = hitbox.owner
+				character.ChangeState(stateMachine.Chase)
+				return
 		character.ChangeState(stateMachine.Idle)
 	
 	

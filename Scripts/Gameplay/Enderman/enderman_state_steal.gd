@@ -1,8 +1,7 @@
 extends CharacterState
 
-@export var targetRaycast:RayCast3D
+@export var stealRaycast:RayCast3D
 @export var stealDelay:float = 0.5
-@export var targetClass:Variant
 
 
 func EnterState():
@@ -11,9 +10,11 @@ func EnterState():
 	
 	StealTarget()
 	await get_tree().create_timer(stealDelay).timeout
-	#character.SetTeleportToSafeLocation()
-	#character.Teleport()
-	character.ChangeState(stateMachine.Drop)
+
+	character.SetSafeLocation()
+	character.Teleport(character.GetSafeLocation())
+	
+	character.ChangeState(stateMachine.Idle)
 	
 func ExitState():
 	pass
@@ -25,8 +26,8 @@ func PhysicsProcessState(delta: float):
 	pass
 	
 func StealTarget():
-	if(targetRaycast.is_colliding()):
-		var target = targetRaycast.get_collider()
+	if(stealRaycast.is_colliding()):
+		var target = stealRaycast.get_collider()
 		if(target.owner is Block):
 			character.StealTarget(target.owner)
 		elif(target is CharacterBody3D):
