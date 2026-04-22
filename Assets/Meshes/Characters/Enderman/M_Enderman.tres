@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://r3r4nblar2ur" path="res://Assets/Meshes/Characters/Enderman/enderman.png" id="1_vbwhe"]
 
 [resource]
+transparency = 1
 albedo_texture = ExtResource("1_vbwhe")
 texture_filter = 0

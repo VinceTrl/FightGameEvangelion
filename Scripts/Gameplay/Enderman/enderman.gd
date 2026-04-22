@@ -6,11 +6,13 @@ extends Character
 @export var health:HealthComponent
 @export var holdSocket:Node3D
 @export var targetRaycast:RayCast3D
+@export var raycasts:Array[RayCast3D]
 
 var chaseTarget:Node3D
 
 var isHoldingItem:bool = false
 var holdItem:Node3D
+var holdItemCollision:CollisionObject3D
 
 var safeLocation:Vector3
 var safeLocationCastHeight:float = 10
@@ -89,11 +91,16 @@ func Teleport(targetPosition:Vector3):
 
 #region Item Handle functions
 
-func StealTarget(target:Node3D):
+func StealTarget(target:Node3D,targetCol:CollisionObject3D):
 	target.global_position = holdSocket.global_position
 	target.reparent(holdSocket)
 	isHoldingItem = true
 	holdItem = target
+	
+	if(targetCol):
+		holdItemCollision = targetCol
+		for cast in raycasts:
+			cast.add_exception(holdItemCollision)
 	
 func ProcessHoldItem():
 	if(isHoldingItem):return
@@ -107,15 +114,26 @@ func DropItem():
 	if(!holdItem):
 		isHoldingItem = false
 		holdItem = null
+		holdItemCollision = null
+		for cast in raycasts:
+			cast.clear_exceptions()
 		return
 		
 	
 	holdItem.reparent(get_tree().current_scene)
-	holdItem.global_position = GetGroundLocation()
 	
+	if(holdItem is PlayerCharacter):
+		holdItem.scale = Vector3.ONE
+		holdItem.ChangeState(holdItem.States.Fall)
+	else:
+		holdItem.global_position = GetGroundLocation()
+		
 	isHoldingItem = false
 	holdItem = null
-	pass
+	holdItemCollision = null
+	
+	for cast in raycasts:
+		cast.clear_exceptions()
 	
 #endregion
 	

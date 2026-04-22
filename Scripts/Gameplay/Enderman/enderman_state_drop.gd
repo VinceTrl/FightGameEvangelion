@@ -9,6 +9,7 @@ func EnterState():
 	character.movement.currentDirection = Vector3.ZERO # stop moving
 	
 	character.DropItem()
+	character.animation.play("Idle")
 	
 	await get_tree().create_timer(dropDelay).timeout
 	character.SetSafeLocation()

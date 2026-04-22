@@ -3,7 +3,8 @@ extends CharacterState
 @export var wanderTimeMin:float = 0.5
 @export var wanderTimeMax:float = 1.5
 
-@export var raycasts:Array[RayCast3D]
+@export var frontRaycasts:Array[RayCast3D]
+@export var backRaycasts:Array[RayCast3D]
 
 var timer:SceneTreeTimer
 
@@ -19,17 +20,25 @@ func ExitState():
 	pass
 	
 func ProcessState(delta: float):
+	HandleAnimation()
 	CheckObstacles()
 	if(timer.time_left <= 0.0):
 		NextState()
 	pass
 	
 func PhysicsProcessState(delta: float):
+	#CheckObstacles()
 	pass
 	
 func CheckObstacles():
-	for raycast in raycasts:
+	var obstacleOnBack := false
+	
+	for raycast in backRaycasts:
 		if(raycast.is_colliding()):
+			obstacleOnBack = true
+	
+	for raycast in frontRaycasts:
+		if(raycast.is_colliding() and !obstacleOnBack):
 			character.movement.currentDirection = -character.movement.currentDirection
 			return
 
@@ -47,3 +56,15 @@ func NextState():
 			character.ChangeState(stateMachine.Drop) 
 		else:
 			character.ChangeState(stateMachine.Steal)
+			
+func HandleAnimation():
+	if(character.movement.isMoving):
+		if(character.isHoldingItem and character.animation.current_animation != "WalkWithItem"):
+			character.animation.play("WalkWithItem")
+		elif(!character.isHoldingItem and character.animation.current_animation != "Walk"):
+			character.animation.play("Walk")
+	else:
+		if(character.isHoldingItem and character.animation.current_animation != "Hold"):
+			character.animation.play("Hold")
+		elif(!character.isHoldingItem and character.animation.current_animation != "Idle"):
+			character.animation.play("Idle")

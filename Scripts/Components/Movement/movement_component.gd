@@ -8,6 +8,9 @@ extends Node
 @export var speed:float = 2.0
 @export var acceleration:float = 0.5
 @export var deceleration:float = 1.5
+
+@export_category("Jump settings")
+@export var jumpVelocity:float = 4.0
 @export var gravity:float = 6.0
 
 var iniSpeed:float
@@ -93,3 +96,7 @@ func GetKnockbackSpeed() -> float:
 	var _knockbackSpeed = lerp(0.0,knockbackForce,_curveValue)
 	
 	return _knockbackSpeed
+	
+func Jump():
+	if(character.is_on_floor()):
+		character.velocity.y = jumpVelocity

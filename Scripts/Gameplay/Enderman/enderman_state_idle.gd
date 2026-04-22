@@ -6,6 +6,7 @@ extends CharacterState
 func EnterState():
 	stateName = "IDLE"
 	character.movement.currentDirection = Vector3.ZERO # stop moving
+	HandleAnimation()
 	var time := randf_range(idleTimeMin,idleTimeMax)
 	await get_tree().create_timer(time).timeout
 	if(character.currentState == self):
@@ -20,3 +21,9 @@ func ProcessState(delta: float):
 	
 func PhysicsProcessState(delta: float):
 	pass
+
+func HandleAnimation():
+	if(character.isHoldingItem and character.animation.current_animation != "Hold"):
+		character.animation.play("Hold")
+	elif(!character.isHoldingItem and character.animation.current_animation != "Idle"):
+		character.animation.play("Idle")

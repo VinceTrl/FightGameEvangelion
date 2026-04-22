@@ -12,7 +12,7 @@ func EnterState():
 	await get_tree().create_timer(stealDelay).timeout
 
 	character.SetSafeLocation()
-	character.Teleport(character.GetSafeLocation())
+	#character.Teleport(character.GetSafeLocation())
 	
 	character.ChangeState(stateMachine.Idle)
 	
@@ -20,6 +20,7 @@ func ExitState():
 	pass
 	
 func ProcessState(delta: float):
+	HandleAnimation()
 	pass
 	
 func PhysicsProcessState(delta: float):
@@ -29,6 +30,22 @@ func StealTarget():
 	if(stealRaycast.is_colliding()):
 		var target = stealRaycast.get_collider()
 		if(target.owner is Block):
-			character.StealTarget(target.owner)
+			character.StealTarget(target.owner,target)
 		elif(target is CharacterBody3D):
-			character.StealTarget(target)
+			if(target is PlayerCharacter):
+				target.ChangeState(target.States.Stun)
+			character.StealTarget(target,target)
+			
+			
+			
+func HandleAnimation():
+	if(character.movement.isMoving):
+		if(character.isHoldingItem and character.animation.current_animation != "WalkWithItem"):
+			character.animation.play("WalkWithItem")
+		elif(!character.isHoldingItem and character.animation.current_animation != "Walk"):
+			character.animation.play("Walk")
+	else:
+		if(character.isHoldingItem and character.animation.current_animation != "Hold"):
+			character.animation.play("Hold")
+		elif(!character.isHoldingItem and character.animation.current_animation != "Idle"):
+			character.animation.play("Idle")

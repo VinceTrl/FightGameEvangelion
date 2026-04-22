@@ -26,7 +26,7 @@ func EnterState():
 	Manager.gameCamera.camShake.AskCamShake(cameraShake)
 	nodeShaker.NodeShake()
 	
-	#character.animation.play("Hurt")
+	character.animation.play("Hurt")
 	
 	#update health and check death
 	character.health.ChangeHealth(-hitbox.damage)

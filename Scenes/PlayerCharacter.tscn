@@ -37,6 +37,7 @@
 [ext_resource type="Resource" uid="uid://b1kr6ya4e857u" path="res://Resources/PostProcessAnims/Glitch/DeathGlitch.tres" id="33_hpf16"]
 [ext_resource type="Script" uid="uid://bnak6m8wqvbxw" path="res://Scripts/Player/States/ChargeShootState.gd" id="35_8paei"]
 [ext_resource type="AudioStream" uid="uid://blusygh4ja0nt" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Contact.wav" id="35_32tav"]
+[ext_resource type="Script" uid="uid://c2ts2tkuvo7s4" path="res://Scripts/Player/States/StunState.gd" id="35_a28o5"]
 [ext_resource type="AudioStream" uid="uid://58ld363flnkm" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi1.wav" id="35_oblwe"]
 [ext_resource type="AudioStream" uid="uid://b3yffj8vv6fxj" path="res://Assets/Sounds/SFX/DoudouSFX/Mi/SD_mi2.wav" id="36_j4mcl"]
 [ext_resource type="AudioStream" uid="uid://ca3j2rm8aj6c8" path="res://Assets/Sounds/SFX/MAGSpel_Anime Ability Ready 5_01.wav" id="36_tkpog"]
@@ -1007,6 +1008,9 @@ knockbackSpeedCurve = SubResource("Curve_scwfu")
 
 [node name="Taunt" type="Node" parent="StateMachine" unique_id=953209833]
 script = ExtResource("32_b3v0a")
+
+[node name="Stun" type="Node" parent="StateMachine" unique_id=657019750]
+script = ExtResource("35_a28o5")
 
 [node name="Timers" type="Node" parent="." unique_id=1721187466]
 

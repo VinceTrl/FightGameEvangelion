@@ -23,6 +23,7 @@ func ProcessState(delta: float):
 		character.ChangeState(stateMachine.Idle)
 		return
 		
+	HandleAnimation()
 	ChaseTarget()
 	ReachTarget()
 	pass
@@ -43,3 +44,15 @@ func ReachTarget():
 		if(col == target):
 			character.ChangeState(stateMachine.Steal)
 	pass
+	
+func HandleAnimation():
+	if(character.movement.isMoving):
+		if(character.isHoldingItem and character.animation.current_animation != "WalkWithItem"):
+			character.animation.play("WalkWithItem")
+		elif(!character.isHoldingItem and character.animation.current_animation != "Walk"):
+			character.animation.play("Walk")
+	else:
+		if(character.isHoldingItem and character.animation.current_animation != "Hold"):
+			character.animation.play("Hold")
+		elif(!character.isHoldingItem and character.animation.current_animation != "Idle"):
+			character.animation.play("Idle")
