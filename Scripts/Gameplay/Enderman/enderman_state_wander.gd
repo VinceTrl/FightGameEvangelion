@@ -32,15 +32,20 @@ func PhysicsProcessState(delta: float):
 	
 func CheckObstacles():
 	var obstacleOnBack := false
+	var obstacleOnFront := false
 	
 	for raycast in backRaycasts:
 		if(raycast.is_colliding()):
 			obstacleOnBack = true
 	
 	for raycast in frontRaycasts:
-		if(raycast.is_colliding() and !obstacleOnBack):
-			character.movement.currentDirection = -character.movement.currentDirection
-			return
+		if(raycast.is_colliding()):
+			obstacleOnFront = true
+			
+	if(obstacleOnFront and !obstacleOnBack and character.is_on_floor()):
+		character.movement.currentDirection = -character.movement.currentDirection
+	elif(obstacleOnFront and obstacleOnBack):
+		character.movement.Jump()
 
 func SetRandomDirection():
 	var direction := Vector3.RIGHT

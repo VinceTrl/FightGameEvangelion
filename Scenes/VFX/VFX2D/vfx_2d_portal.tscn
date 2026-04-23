@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://pbkef8ngst4f"]
+
+[ext_resource type="Texture2D" uid="uid://bmatiqcg87pb8" path="res://Assets/Sprites/Vfx/Portal/portal_sheet.png" id="1_2jbi1"]
+[ext_resource type="Script" uid="uid://bqsvlb8owoo24" path="res://Scripts/VFX/Vfx2D.gd" id="2_o74nu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o74nu"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44mn3"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsapf"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyhg7"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n7uc"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b43k"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hi7v"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d268b"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c6ho"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(256, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72e05"]
+atlas = ExtResource("1_2jbi1")
+region = Rect2(288, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jypu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o74nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44mn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsapf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyhg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n7uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b43k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hi7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d268b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c6ho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72e05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o74nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44mn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsapf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyhg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n7uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b43k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hi7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d268b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c6ho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72e05")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Vfx2DPortal" type="AnimatedSprite3D" unique_id=1742083362]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+pixel_size = 0.0033333
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+render_priority = 2
+sprite_frames = SubResource("SpriteFrames_jypu5")
+autoplay = "default"
+frame = 19
+frame_progress = 1.0
+script = ExtResource("2_o74nu")
+instanceScale = Vector3(5, 5, 5)

@@ -8,6 +8,9 @@ extends Character
 @export var targetRaycast:RayCast3D
 @export var raycasts:Array[RayCast3D]
 
+const VFX_2D_PORTAL = preload("uid://pbkef8ngst4f")
+
+
 var chaseTarget:Node3D
 
 var isHoldingItem:bool = false
@@ -62,7 +65,7 @@ func GetSafeLocation() -> Vector3:
 	query.hit_from_inside = true
 	var result = space_state.intersect_ray(query)
 	
-	DebugDraw3D.draw_line(queryStart,queryEnd,Color.REBECCA_PURPLE,6)
+	#DebugDraw3D.draw_line(queryStart,queryEnd,Color.REBECCA_PURPLE,6)
 	
 	if result:
 		return result.position
@@ -70,7 +73,7 @@ func GetSafeLocation() -> Vector3:
 		return safeLocation
 		
 func TakeDamage(hitbox:Hitbox):
-	if(currentState != stateMachine.Hurt):
+	if(currentState != stateMachine.Hurt and currentState != stateMachine.Death):
 		lastHitbox = hitbox
 		ChangeState(stateMachine.Hurt)
 		
@@ -83,8 +86,16 @@ func SetTeleportToSafeLocation():
 
 
 func Teleport(targetPosition:Vector3):
+	SpawnPortalVFX(global_position)
 	await get_tree().create_timer(teleportDelay).timeout
+	SpawnPortalVFX(targetPosition)
 	global_position = targetPosition
+	pass
+	
+func SpawnPortalVFX(pos:Vector3):
+	var portal := VFX_2D_PORTAL.instantiate()
+	get_tree().current_scene.add_child(portal)
+	portal.global_position = pos
 	pass
 	
 #endregion
@@ -152,7 +163,7 @@ func GetGroundLocation() -> Vector3:
 		#query.exclude.append(holdItem.rid)
 	var result = space_state.intersect_ray(query)
 	
-	DebugDraw3D.draw_line(queryStart,queryEnd,Color.ROSY_BROWN,6)
+	#DebugDraw3D.draw_line(queryStart,queryEnd,Color.ROSY_BROWN,6)
 	
 	if result:
 		return result.position

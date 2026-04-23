@@ -7,13 +7,13 @@
 [ext_resource type="Script" uid="uid://boe4peeex6mo5" path="res://Scripts/Components/Movement/movement_component.gd" id="4_oy8de"]
 [ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="5_3puyt"]
 [ext_resource type="Script" uid="uid://davkegmks5tqe" path="res://Scripts/Components/Movement/flip_component.gd" id="6_28513"]
-[ext_resource type="Script" uid="uid://ciqi0vk5qh7yn" path="res://Scripts/Gameplay/CharacterBase/CharacterStateMachine/CharacterState.gd" id="6_clp4r"]
 [ext_resource type="Script" uid="uid://dhtbplc5ij636" path="res://Scripts/Gameplay/Enderman/enderman_state_machine.gd" id="7_3puyt"]
 [ext_resource type="Script" uid="uid://dvpo6tsp4xuah" path="res://Scripts/Gameplay/Enderman/enderman_state_idle.gd" id="8_3puyt"]
 [ext_resource type="Script" uid="uid://ipvy5w7bxn6h" path="res://Scripts/Gameplay/Enderman/enderman_state_hurt.gd" id="11_bltcs"]
 [ext_resource type="Script" uid="uid://ms87mcetni62" path="res://Scripts/Gameplay/Enderman/enderman_state_wander.gd" id="11_euk8p"]
 [ext_resource type="Script" uid="uid://cbo3lnxd2nkbw" path="res://Scripts/Gameplay/Enderman/enderman_state_chase.gd" id="12_j54lw"]
 [ext_resource type="Script" uid="uid://ro35fkk6mg6o" path="res://Scripts/Gameplay/Enderman/enderman_state_steal.gd" id="13_j54lw"]
+[ext_resource type="Script" uid="uid://dr1we3c54po2f" path="res://Scripts/Gameplay/Enderman/enderman_state_death.gd" id="14_8d8yn"]
 [ext_resource type="Script" uid="uid://b58urx2i80ebx" path="res://Scripts/Gameplay/Enderman/enderman_state_drop.gd" id="15_8d8yn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_clp4r"]
@@ -74,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.24875796
 [node name="MovementComponent" type="Node" parent="Components" unique_id=1614716242 node_paths=PackedStringArray("character")]
 script = ExtResource("4_oy8de")
 character = NodePath("../..")
-speed = 0.2
+speed = 1.0
 metadata/_custom_type_script = "uid://boe4peeex6mo5"
 
 [node name="HealthComponent" type="Node" parent="Components" unique_id=685894160]
@@ -133,7 +133,6 @@ debug_shape_custom_color = Color(0.9764706, 0.9607843, 0, 1)
 
 [node name="CharacterStateMachine" type="Node" parent="." unique_id=178713354]
 script = ExtResource("7_3puyt")
-debugState = true
 drawDebugOffset = Vector3(0, 0, 0.25)
 metadata/_custom_type_script = "uid://baejcfwqs5k37"
 
@@ -166,7 +165,7 @@ stealDelay = 1.0
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="Death" type="Node" parent="CharacterStateMachine" unique_id=2025316392]
-script = ExtResource("6_clp4r")
+script = ExtResource("14_8d8yn")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="Drop" type="Node" parent="CharacterStateMachine" unique_id=131415797 node_paths=PackedStringArray("targetRaycast")]

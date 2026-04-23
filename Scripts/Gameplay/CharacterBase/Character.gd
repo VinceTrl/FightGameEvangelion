@@ -15,10 +15,12 @@ func _ready() -> void:
 	InitStateMachine()
 	
 func _process(delta: float) -> void:
-	currentState.ProcessState(delta)
+	if(currentState):
+		currentState.ProcessState(delta)
 	
 func _physics_process(delta: float) -> void:
-	currentState.PhysicsProcessState(delta)
+	if(currentState):
+		currentState.PhysicsProcessState(delta)
 
 func InitStateMachine():
 	stateMachine.character = self

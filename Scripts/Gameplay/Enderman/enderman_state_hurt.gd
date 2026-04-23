@@ -46,6 +46,8 @@ func ProcessState(delta: float):
 				character.chaseTarget = hitbox.owner
 				character.ChangeState(stateMachine.Chase)
 				return
+		character.SetSafeLocation()
+		character.Teleport(character.GetSafeLocation())
 		character.ChangeState(stateMachine.Idle)
 	
 	
