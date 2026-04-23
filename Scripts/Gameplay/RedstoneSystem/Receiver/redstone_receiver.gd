@@ -9,10 +9,14 @@ func _ready() -> void:
 	if(redstoneLink):
 		redstoneLink.TurnedOn.connect(OnTurnedOn)
 		redstoneLink.TurnedOff.connect(OnTurnedOff)
+		redstoneLink.Updated.connect(OnUpdated)
 
 
 func OnTurnedOn():
 	pass
 	
 func OnTurnedOff():
+	pass
+	
+func OnUpdated():
 	pass

@@ -150,6 +150,7 @@ metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="Chase" type="Node" parent="CharacterStateMachine" unique_id=1048250072 node_paths=PackedStringArray("stealRaycast")]
 script = ExtResource("12_j54lw")
+chaseSpeed = 1.5
 stealRaycast = NodePath("../../FlipableNodes/Raycasts/TargetRaycast")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 

@@ -1,6 +1,13 @@
 extends RedstoneReceiver
 
+@export var isInvisible:bool = false
+
+@export_group("mesh references")
 @export var mesh: MeshInstance3D
+@export var topLine:MeshInstance3D
+@export var bottomLine:MeshInstance3D
+@export var rightLine:MeshInstance3D
+@export var leftLine:MeshInstance3D
 
 @export_group("materials settings")
 @export_range(0.0,16.0,0.1) var onEnergyMultiplier:float = 1.0
@@ -16,38 +23,92 @@ extends RedstoneReceiver
 
 var material:Material
 
+var materials:Array[Material]
+
 func _ready() -> void:
 	super()
+	if(isInvisible):
+		queue_free()
+		return
 	call_deferred("InitVisual")
 		
 func InitVisual():
-	material = mesh.get_surface_override_material(0).duplicate()
-	mesh.set_surface_override_material(0,material)
+	InitMaterial(topLine)
+	InitMaterial(bottomLine)
+	InitMaterial(rightLine)
+	InitMaterial(leftLine)
 	
 	if(redstoneLink.isActive):
-		mesh.visible = true
+		#mesh.visible = true
 		UpdateMaterialEmission()
-		UpdateMaterialTexture()
+		UpdateMeshes()
+		#UpdateMaterialTexture()
 	else:
+		SetMeshesVisibility(false)
 		mesh.visible = false
+		
+func InitMaterial(meshInstance:MeshInstance3D):
+	var mat = meshInstance.get_surface_override_material(0).duplicate()
+	meshInstance.set_surface_override_material(0,mat)
+	materials.append(mat)
+		
+func SetMeshesVisibility(isVisible:bool):
+	topLine.visible = isVisible
+	bottomLine.visible = isVisible
+	leftLine.visible = isVisible
+	rightLine.visible = isVisible
+	
+	
+func UpdateMeshes():
+	topLine.visible = false
+	bottomLine.visible = false
+	rightLine.visible = false
+	leftLine.visible = false
+	
+	var links := redstoneLink.GetConnectedRedstoneLinks()
+	
+	for link in links:
+		#if up or down
+		if(link.isActive):
+			if(link.global_position.y != redstoneLink.global_position.y):
+				if(link.global_position.y > redstoneLink.global_position.y):
+					topLine.visible = true
+				else:
+					bottomLine.visible = true
+			else: # if right or left
+				if(link.global_position.x > redstoneLink.global_position.x):
+					rightLine.visible = true
+				else:
+					leftLine.visible = true
+	pass
 
 func OnTurnedOn():
 	UpdateMaterialEmission()
-	UpdateMaterialTexture()
+	#UpdateMaterialTexture()
 	pass
 	
 func OnTurnedOff():
 	UpdateMaterialEmission()
-	UpdateMaterialTexture()
+	#UpdateMaterialTexture()
+	pass
+	
+func OnUpdated():
+	UpdateMeshes()
 	pass
 	
 func UpdateMaterialEmission():
+	
+	var color := offAlbedo
+	var energy := offEnergyMultiplier
+	
 	if(redstoneLink.isPowerOn):
-		material.emission_energy_multiplier = onEnergyMultiplier
-		material.albedo_color = onAlbedo
-	else:
-		material.emission_energy_multiplier = offEnergyMultiplier
-		material.albedo_color = offAlbedo
+		energy = onEnergyMultiplier
+		color = onAlbedo
+		
+		
+	for mat in materials:
+		mat.emission_energy_multiplier = energy
+		mat.albedo_color = color
 	
 func UpdateMaterialTexture():
 	if(redstoneLink.redstoneSource):
@@ -61,4 +122,3 @@ func UpdateMaterialTexture():
 	else:
 		material.albedo_texture = NoLinkTexture
 		material.emission_texture = NoLinkTexture
-	pass

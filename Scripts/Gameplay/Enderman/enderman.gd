@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 	
 	var drawDebugOffset:Vector3 = Vector3(0.0,1.5,0.1)
 	var textColor:Color = Color.NAVY_BLUE
-	DebugDraw3D.draw_text(global_position+drawDebugOffset,holdItem.name,32,textColor)
+	#DebugDraw3D.draw_text(global_position+drawDebugOffset,holdItem.name,32,textColor)
 
 
 func SetSafeLocation():
@@ -135,6 +135,8 @@ func DropItem():
 	
 	if(holdItem is PlayerCharacter):
 		holdItem.scale = Vector3.ONE
+		holdItem.global_position.z = 0.0
+		holdItem.global_rotation = Vector3.ZERO
 		holdItem.ChangeState(holdItem.States.Fall)
 	else:
 		holdItem.global_position = GetGroundLocation()

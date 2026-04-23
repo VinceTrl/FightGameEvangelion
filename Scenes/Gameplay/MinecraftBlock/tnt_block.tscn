@@ -25,6 +25,9 @@ registerOnManager = false
 [node name="RedstoneLinkArea" parent="RedStone" parent_id_path=PackedInt32Array(2103545783) index="0" unique_id=1031951996]
 isActive = true
 
+[node name="RedstoneVisual" parent="RedStone" parent_id_path=PackedInt32Array(2103545783) index="1" unique_id=1616474288]
+isInvisible = true
+
 [node name="RedstoneReceiver_TNT" type="Node3D" parent="." index="8" unique_id=715020794 node_paths=PackedStringArray("block", "redstoneLink")]
 script = ExtResource("6_805t3")
 block = NodePath("..")

@@ -32,8 +32,8 @@ func PhysicsProcessState(delta: float):
 	pass
 	
 func ChaseTarget():
-	var direction := (target.global_position - character.global_position).normalized()
-	character.movement.currentDirection = direction
+	var direction := (target.global_position - character.global_position)
+	character.movement.currentDirection = direction.normalized()
 	
 func ReachTarget():
 	#if(character.global_position.distance_to(target.global_position) < targetReachedThreshold):

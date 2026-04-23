@@ -22,6 +22,7 @@ var redstoneLinks:Array[RedstoneLink]
 signal TurnedOn
 signal TurnedOff
 signal PowerStateChanged(isOn:bool)
+signal Updated
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +30,10 @@ func _ready() -> void:
 	TurnedOn.connect(OnTurnedOn)
 	TurnedOff.connect(OnTurnedOff)
 	PowerStateChanged.connect(OnPowerStateChanged)
+	
+	if(isPowerSource):
+		PropagatePowerFromSource(self)
+	
 	call_deferred("RedstoneUpdate")
 	
 func _process(delta: float) -> void:
@@ -57,6 +62,7 @@ func RedstoneUpdate():
 	if(!isPowerSource and !redstoneSource):
 		ChangePowerState(false)
 		
+	Updated.emit()
 	RedstoneUpdate()
 
 func ChangePowerState(isOn:bool):

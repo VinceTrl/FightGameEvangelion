@@ -18,9 +18,16 @@ emission_operator = 1
 emission_texture = ExtResource("3_yjo3o")
 texture_filter = 0
 
-[node name="RedstoneVisual" type="Node3D" unique_id=1616474288 node_paths=PackedStringArray("mesh")]
+[sub_resource type="PlaneMesh" id="PlaneMesh_yjo3o"]
+size = Vector2(0.3, 0.3)
+
+[node name="RedstoneVisual" type="Node3D" unique_id=1616474288 node_paths=PackedStringArray("mesh", "topLine", "bottomLine", "rightLine", "leftLine")]
 script = ExtResource("2_yjo3o")
 mesh = NodePath("MeshInstance3D")
+topLine = NodePath("MeshLine_U")
+bottomLine = NodePath("MeshLine_D")
+rightLine = NodePath("MeshLine_R")
+leftLine = NodePath("MeshLine_L")
 onEnergyMultiplier = 6.0
 offAlbedo = Color(0.12836969, 0, 0.0008727639, 1)
 NoLinkTexture = ExtResource("1_lrsvb")
@@ -30,6 +37,31 @@ verticalRot = Vector3(90, -90, -90)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=771778082]
 transform = Transform3D(0.9999999, 0, 4.3711385e-08, 4.3711385e-08, 1.9106855e-15, -0.9999999, 0, 1, 1.9106853e-15, 0, 0, 0.1603775)
+visible = false
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_3lxtp")
+surface_material_override/0 = SubResource("StandardMaterial3D_mm851")
+
+[node name="MeshLine_R" type="MeshInstance3D" parent="." unique_id=1846829713]
+transform = Transform3D(-1.2479418e-15, -3.3220655e-08, -0.5, -0.76, -3.3220655e-08, 1.776357e-15, -3.3220655e-08, 0.76, -2.1855694e-08, 0.07544467, 0, 0.16)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_yjo3o")
+surface_material_override/0 = SubResource("StandardMaterial3D_mm851")
+
+[node name="MeshLine_L" type="MeshInstance3D" parent="." unique_id=208593277]
+transform = Transform3D(-1.2479418e-15, -3.3220655e-08, -0.5, -0.76, -3.3220655e-08, 1.776357e-15, -3.3220655e-08, 0.76, -2.1855694e-08, -0.075, 0, 0.16)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_yjo3o")
+surface_material_override/0 = SubResource("StandardMaterial3D_mm851")
+
+[node name="MeshLine_U" type="MeshInstance3D" parent="." unique_id=419635785]
+transform = Transform3D(-0.86606747, -7.549791e-08, -3.300118e-15, 0, -2.1855696e-08, 0.5, -1.3077255e-07, 0.50000006, 2.1855694e-08, 0, 0.07517417, 0.15)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_yjo3o")
+surface_material_override/0 = SubResource("StandardMaterial3D_mm851")
+
+[node name="MeshLine_D" type="MeshInstance3D" parent="." unique_id=355291553]
+transform = Transform3D(-0.86606747, -7.549791e-08, -3.300118e-15, 0, -2.1855696e-08, 0.5, -1.3077255e-07, 0.50000006, 2.1855694e-08, 0, -0.086739466, 0.15)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_yjo3o")
 surface_material_override/0 = SubResource("StandardMaterial3D_mm851")
