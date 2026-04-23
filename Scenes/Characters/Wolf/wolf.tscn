@@ -1,0 +1,284 @@
+[gd_scene format=3 uid="uid://b3rsfwcpln6hm"]
+
+[ext_resource type="Script" uid="uid://cdaq4qf2syvgg" path="res://Scripts/Gameplay/Wolf/wolf.gd" id="1_tfpie"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_yyhtq"]
+[ext_resource type="PackedScene" uid="uid://dg8bkdx8h008r" path="res://Scenes/Characters/Wolf/wolf_character.tscn" id="3_gqpvw"]
+[ext_resource type="Script" uid="uid://boe4peeex6mo5" path="res://Scripts/Components/Movement/movement_component.gd" id="4_qymo3"]
+[ext_resource type="Script" uid="uid://davkegmks5tqe" path="res://Scripts/Components/Movement/flip_component.gd" id="5_hwwuk"]
+[ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="6_sc7l6"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="7_hwwuk"]
+[ext_resource type="Script" uid="uid://qsu1knp0w8eq" path="res://Scripts/Gameplay/Wolf/wolf_state_machine.gd" id="7_k4o3e"]
+[ext_resource type="Script" uid="uid://5uo1cfh1v2of" path="res://Scripts/Gameplay/Wolf/wolf_state_idle.gd" id="8_k4o3e"]
+[ext_resource type="Texture2D" uid="uid://cpojomj82e5e0" path="res://Assets/GUI/Sprites/Shitpost/WindowPanelGlitch.png" id="8_tfpie"]
+[ext_resource type="Script" uid="uid://dhwxd7qpv8ciw" path="res://Scripts/Gameplay/Wolf/wolf_state_roam.gd" id="9_8vkj0"]
+[ext_resource type="SpriteFrames" uid="uid://yp62wpwq8rqo" path="res://Assets/Sprites/BG/SpeedlinesBackground/HorizontalOrange/horizontal_lines_orange_sprite_frames.tres" id="9_rfa0v"]
+[ext_resource type="Texture2D" uid="uid://0gqgtmogta6n" path="res://Assets/Meshes/Characters/Wolf/wolf_portrait.png" id="10_k4o3e"]
+[ext_resource type="Shader" uid="uid://dstxwfspe88c1" path="res://Assets/Shaders/MaskShader2D.gdshader" id="12_d3q6b"]
+[ext_resource type="Texture2D" uid="uid://cpc7hfpmjjicg" path="res://Assets/Textures/Masks/BrushMask.jpg" id="13_unnx5"]
+[ext_resource type="Texture2D" uid="uid://bvvs6lb7m1chf" path="res://Assets/Meshes/Characters/Wolf/wolf_angry_portrait.png" id="14_5fr1j"]
+[ext_resource type="FontFile" uid="uid://cjxwtlu1dgvak" path="res://Assets/GUI/Fonts/PRESSSTART2P-REGULAR.TTF" id="15_d3q6b"]
+[ext_resource type="Texture2D" uid="uid://bvvexcmc3x55w" path="res://Assets/Shitpost/Source/images.jpg" id="17_2ts63"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qymo3"]
+size = Vector3(0.6, 0.43701172, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sc7l6"]
+size = Vector3(0.72924805, 0.48840332, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_unnx5"]
+font = ExtResource("15_d3q6b")
+font_size = 72
+font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3q6b"]
+font = ExtResource("15_d3q6b")
+font_size = 64
+font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7dhl"]
+shader = ExtResource("12_d3q6b")
+shader_parameter/mask_texture = ExtResource("13_unnx5")
+
+[node name="Wolf" type="CharacterBody3D" unique_id=1470715843 node_paths=PackedStringArray("stateMachine", "movement", "flip", "animation")]
+collision_layer = 193
+script = ExtResource("1_tfpie")
+stateMachine = NodePath("StateMachine")
+movement = NodePath("Components/MovementComponent")
+flip = NodePath("Components/FlipComponent")
+animation = NodePath("Visual/NodeShaker/Wolf/AnimationPlayer")
+metadata/_custom_type_script = "uid://c87rv5u7rab78"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=82638176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2197532, 0)
+shape = SubResource("BoxShape3D_qymo3")
+
+[node name="Visual" type="Node3D" parent="." unique_id=846442838]
+
+[node name="NodeShaker" type="Node3D" parent="Visual" unique_id=773035946 node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("2_yyhtq")
+nodeToShake = NodePath(".")
+
+[node name="Wolf" parent="Visual/NodeShaker" unique_id=132625083 instance=ExtResource("3_gqpvw")]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0, 0, 0)
+
+[node name="Raycasts" type="Node3D" parent="." unique_id=1402960340]
+
+[node name="Front" type="RayCast3D" parent="Raycasts" unique_id=521696681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15554225, 0.15, 0)
+target_position = Vector3(0.3, 0, 0)
+
+[node name="Front2" type="RayCast3D" parent="Raycasts" unique_id=1533307301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.156, 0.4, 0)
+target_position = Vector3(0.3, 0, 0)
+
+[node name="Back" type="RayCast3D" parent="Raycasts" unique_id=112118187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.187706, 0.4, 0)
+target_position = Vector3(-0.3, 0, 0)
+debug_shape_custom_color = Color(0, 0, 0.70980394, 1)
+
+[node name="Back2" type="RayCast3D" parent="Raycasts" unique_id=1398987103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.187706, 0.14432791, 0)
+target_position = Vector3(-0.3, 0, 0)
+debug_shape_custom_color = Color(0, 0, 0.70980394, 1)
+
+[node name="Components" type="Node" parent="." unique_id=1650138624]
+
+[node name="MovementComponent" type="Node" parent="Components" unique_id=1346888039 node_paths=PackedStringArray("character")]
+script = ExtResource("4_qymo3")
+character = NodePath("../..")
+metadata/_custom_type_script = "uid://boe4peeex6mo5"
+
+[node name="FlipComponent" type="Node" parent="Components" unique_id=1952301762 node_paths=PackedStringArray("movement", "flipNodes")]
+script = ExtResource("5_hwwuk")
+movement = NodePath("../MovementComponent")
+flipNodes = [NodePath("../../Visual/NodeShaker/Wolf")]
+metadata/_custom_type_script = "uid://davkegmks5tqe"
+
+[node name="HealthComponent" type="Node" parent="Components" unique_id=2084254793]
+script = ExtResource("6_sc7l6")
+healthPoints = 5
+metadata/_custom_type_script = "uid://cw2bpx65nkj7h"
+
+[node name="StateMachine" type="Node" parent="." unique_id=1414870722]
+script = ExtResource("7_k4o3e")
+metadata/_custom_type_script = "uid://baejcfwqs5k37"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1540124034]
+script = ExtResource("8_k4o3e")
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
+
+[node name="Roam" type="Node" parent="StateMachine" unique_id=23167957 node_paths=PackedStringArray("backRaycasts", "frontRaycasts")]
+script = ExtResource("9_8vkj0")
+backRaycasts = [NodePath("../../Raycasts/Back"), NodePath("../../Raycasts/Back2")]
+frontRaycasts = [NodePath("../../Raycasts/Front"), NodePath("../../Raycasts/Front2")]
+metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=964224393]
+script = ExtResource("7_hwwuk")
+randomID = true
+metadata/_custom_type_script = "uid://be4u7kwwov65g"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1715884253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013549805, 0.24193913, 0)
+shape = SubResource("BoxShape3D_sc7l6")
+debug_color = Color(0.9798612, 0, 0.38843694, 0.41960785)
+
+[node name="PackSpawnFeedback" type="Control" parent="." unique_id=1719487965]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PackSpawnFeedback" unique_id=202628338]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(957, 512)
+scale = Vector2(6.0000005, 2)
+sprite_frames = ExtResource("9_rfa0v")
+autoplay = "default"
+frame_progress = 0.40733752
+
+[node name="Control" type="Control" parent="PackSpawnFeedback/AnimatedSprite2D" unique_id=1592323279]
+clip_children = 2
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -82.5
+offset_right = -160.0
+offset_bottom = -82.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PackSpawnFeedback/AnimatedSprite2D/Control" unique_id=1226375810]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -305.8333
+offset_top = -87.0
+offset_right = -236.54688
+offset_bottom = 93.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("10_k4o3e")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="PackSpawnFeedback/AnimatedSprite2D/Control/TextureRect" unique_id=1104611819]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 54.333317
+offset_top = 26.5
+offset_right = 57.71353
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("14_5fr1j")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="PackSpawnFeedback/AnimatedSprite2D/Control/TextureRect" unique_id=1530496881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 114.83331
+offset_top = 3.0
+offset_right = 118.21353
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("14_5fr1j")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="PackSpawnFeedback/AnimatedSprite2D/Control/TextureRect" unique_id=307569726]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 171.49997
+offset_top = 20.0
+offset_right = 174.88019
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("14_5fr1j")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="PackSpawnFeedback/AnimatedSprite2D/Control/TextureRect" unique_id=863627903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 226.8333
+offset_top = 32.0
+offset_right = 230.2135
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("14_5fr1j")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="PackSpawnFeedback/AnimatedSprite2D" unique_id=297966358]
+visible = false
+position = Vector2(0.59924316, -12.5)
+scale = Vector2(0.6273408, 0.37109378)
+texture = ExtResource("8_tfpie")
+
+[node name="Label" type="Label" parent="PackSpawnFeedback" unique_id=1962059722]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -790.0
+offset_top = -266.0
+offset_right = 540.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.108210415
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "Mé waaaat ??!?"
+label_settings = SubResource("LabelSettings_unnx5")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PackSpawnFeedback" unique_id=1176581075]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = 121.00006
+offset_right = 1211.0
+offset_bottom = 216.00006
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.1134464
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "LES LOUPS !!!"
+label_settings = SubResource("LabelSettings_d3q6b")
+horizontal_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="PackSpawnFeedback" unique_id=1794791943]
+material = SubResource("ShaderMaterial_q7dhl")
+position = Vector2(2359, 183)
+scale = Vector2(2.5102963, 1.2578125)
+texture = ExtResource("17_2ts63")
+
+[editable path="Visual/NodeShaker/Wolf"]

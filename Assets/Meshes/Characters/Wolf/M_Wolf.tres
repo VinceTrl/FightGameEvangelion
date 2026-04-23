@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d0c356hvcr4cp"]
+
+[ext_resource type="Texture2D" uid="uid://60dkb71sr0es" path="res://Assets/Meshes/Characters/Wolf/wolf.png" id="1_wbor6"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_wbor6")
+texture_filter = 0

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqersyfs00ou6"]
+
+[ext_resource type="Texture2D" uid="uid://b2r8dmylhpr87" path="res://Assets/Meshes/Characters/Wolf/wolf_angry.png" id="1_7m3bi"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_7m3bi")
+emission_texture = ExtResource("1_7m3bi")
+texture_filter = 0

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://0hjmq7cwf45v"]
+
+[ext_resource type="PackedScene" uid="uid://dg8bkdx8h008r" path="res://Scenes/Characters/Wolf/wolf_character.tscn" id="1_qfa2i"]
+[ext_resource type="Material" uid="uid://bqersyfs00ou6" path="res://Assets/Meshes/Characters/Wolf/M_Wolf_Angry.tres" id="2_qfa2i"]
+
+[node name="WolfPortrait" type="Node3D" unique_id=80841078]
+
+[node name="Wolf" parent="." unique_id=132625083 instance=ExtResource("1_qfa2i")]
+
+[node name="head" parent="Wolf/Wolf/UpperBodyPivot/HeadPivot" parent_id_path=PackedInt32Array(132625083, 162109327) index="0" unique_id=2143033391]
+surface_material_override/0 = ExtResource("2_qfa2i")
+surface_material_override/1 = ExtResource("2_qfa2i")
+surface_material_override/2 = ExtResource("2_qfa2i")
+surface_material_override/3 = ExtResource("2_qfa2i")
+surface_material_override/4 = ExtResource("2_qfa2i")
+surface_material_override/5 = ExtResource("2_qfa2i")
+
+[node name="head2" parent="Wolf/Wolf/UpperBodyPivot/HeadPivot/head" index="0" unique_id=507548785]
+surface_material_override/0 = ExtResource("2_qfa2i")
+surface_material_override/1 = ExtResource("2_qfa2i")
+surface_material_override/2 = ExtResource("2_qfa2i")
+surface_material_override/3 = ExtResource("2_qfa2i")
+surface_material_override/4 = ExtResource("2_qfa2i")
+surface_material_override/5 = ExtResource("2_qfa2i")
+
+[node name="head3" parent="Wolf/Wolf/UpperBodyPivot/HeadPivot/head" index="1" unique_id=1034834068]
+surface_material_override/0 = ExtResource("2_qfa2i")
+surface_material_override/1 = ExtResource("2_qfa2i")
+surface_material_override/2 = ExtResource("2_qfa2i")
+surface_material_override/3 = ExtResource("2_qfa2i")
+surface_material_override/4 = ExtResource("2_qfa2i")
+surface_material_override/5 = ExtResource("2_qfa2i")
+
+[node name="head4" parent="Wolf/Wolf/UpperBodyPivot/HeadPivot/head" index="2" unique_id=78011285]
+surface_material_override/0 = ExtResource("2_qfa2i")
+surface_material_override/1 = ExtResource("2_qfa2i")
+surface_material_override/2 = ExtResource("2_qfa2i")
+surface_material_override/3 = ExtResource("2_qfa2i")
+surface_material_override/4 = ExtResource("2_qfa2i")
+surface_material_override/5 = ExtResource("2_qfa2i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1785965417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20478562, 1.0343618, 0.97667795)
+shadow_enabled = true
+omni_range = 39.533
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=528002541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68261725, 0.79888314, -0.43504506)
+light_color = Color(0.8784314, 0.07450981, 0, 1)
+shadow_enabled = true
+
+[editable path="Wolf"]

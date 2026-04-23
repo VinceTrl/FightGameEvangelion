@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_0u3uh"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_plols"]
 [ext_resource type="PackedScene" uid="uid://dhbrjxsivp186" path="res://Scenes/Gameplay/creeper.tscn" id="4_3c0pv"]
-[ext_resource type="PackedScene" uid="uid://c7ivof013fbpe" path="res://Scenes/Characters/enderman.tscn" id="5_0u3uh"]
+[ext_resource type="PackedScene" uid="uid://c7ivof013fbpe" path="res://Scenes/Characters/Enderman/enderman.tscn" id="5_0u3uh"]
 [ext_resource type="PackedScene" uid="uid://ckf3p25anxo86" path="res://Scenes/Gameplay/MinecraftBlock/dirt_block.tscn" id="5_lfs7e"]
 [ext_resource type="PackedScene" uid="uid://bgc565hxcpr6b" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/platform_grass_7x2.tscn" id="5_oy6gb"]
 [ext_resource type="PackedScene" uid="uid://uve86dqmdawq" path="res://Scenes/Gameplay/MinecraftBlock/deepslate_block.tscn" id="6_v663n"]

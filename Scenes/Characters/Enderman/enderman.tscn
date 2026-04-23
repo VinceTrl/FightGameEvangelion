@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://djs8utivusmj2" path="res://Scripts/Gameplay/Enderman/enderman.gd" id="1_3puyt"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_28513"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_alm5v"]
-[ext_resource type="PackedScene" uid="uid://cooya3ds61qyu" path="res://Scenes/Characters/enderman_character.tscn" id="4_8d8yn"]
+[ext_resource type="PackedScene" uid="uid://cooya3ds61qyu" path="res://Scenes/Characters/Enderman/enderman_character.tscn" id="4_8d8yn"]
 [ext_resource type="Script" uid="uid://boe4peeex6mo5" path="res://Scripts/Components/Movement/movement_component.gd" id="4_oy8de"]
 [ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="5_3puyt"]
 [ext_resource type="Script" uid="uid://davkegmks5tqe" path="res://Scripts/Components/Movement/flip_component.gd" id="6_28513"]
