@@ -3,7 +3,6 @@ extends Character
 var canMove = true
 
 @export_group("Creeper components") 
-@export var health:HealthComponent
 @export var creeperMesh:MeshInstance3D
 
 @export_group("Creeper Raycast components") 

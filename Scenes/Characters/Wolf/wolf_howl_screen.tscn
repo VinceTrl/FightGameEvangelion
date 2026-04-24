@@ -1,0 +1,600 @@
+[gd_scene format=3 uid="uid://1pvfkl5jtwwb"]
+
+[ext_resource type="SpriteFrames" uid="uid://yp62wpwq8rqo" path="res://Assets/Sprites/BG/SpeedlinesBackground/HorizontalOrange/horizontal_lines_orange_sprite_frames.tres" id="1_cy5hf"]
+[ext_resource type="Script" uid="uid://cr4eby572o177" path="res://Scripts/Gameplay/Wolf/wolf_howl_screen.gd" id="1_gffe8"]
+[ext_resource type="Texture2D" uid="uid://0gqgtmogta6n" path="res://Assets/Meshes/Characters/Wolf/wolf_portrait.png" id="2_gffe8"]
+[ext_resource type="Texture2D" uid="uid://bvvs6lb7m1chf" path="res://Assets/Meshes/Characters/Wolf/wolf_angry_portrait.png" id="3_0fn3c"]
+[ext_resource type="Script" uid="uid://bhpx2b0f34h21" path="res://Scripts/GameEffects/ShakeEffects/ControlGUIShaker.gd" id="4_cy5hf"]
+[ext_resource type="FontFile" uid="uid://cjxwtlu1dgvak" path="res://Assets/GUI/Fonts/PRESSSTART2P-REGULAR.TTF" id="5_bxvbo"]
+
+[sub_resource type="Animation" id="Animation_cy5hf"]
+resource_name = "In"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/Control:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.3333435, 165), Vector2(320, 165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D/Control:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(158.66666, -82.5), Vector2(-160, -82.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1920, 512), Vector2(957, 512)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 2), Vector2(6.0000005, 2)]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label_MeWaaat:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.057325453, 0.07633745, 0.09818518, -0.16080618, 0.926324, -0.099971116, 0.6048492, 0.051267236, -0.24247289, 1, -0.018913567, -0.11457503, 0.03662595, 0.11990404),
+"times": PackedFloat32Array(0.2176314, 0.31667104, 0.38770628)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label_MeWaaat:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.09733075, -0.251401, 0.93165255, -0.096553296, 0.58353317, 0.041013777, -0.2318154, 1.0035942, -0.014631599, -0.15987211, 0.032363385, 0.269118),
+"times": PackedFloat32Array(0.2176314, 0.31496212, 0.38855106)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatedSprite2D/Control/TextureWolfCenter/TextureWolfAngry:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatedSprite2D/Control/TextureWolfLeft:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0015741065, 0.60131085),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatedSprite2D/Control/TextureWolfRight:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Label_MeWaaat:label_settings:font_color")
+tracks/9/interp = 0
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.60771775, 0.6577177, 0.7077178, 0.7577177, 0.8077179, 0.8577179, 0.9077178, 0.9577178),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.056291588, 0.056291603, 0.056291595, 1), Color(1, 1, 1, 1), Color(0.99607843, 0.9019608, 0, 1), Color(0.003921569, 1, 0.85490197, 1), Color(0.0627451, 0.88235295, 0.003921569, 1), Color(1, 0, 0.99607843, 1), Color(0.8980392, 0, 0.078431375, 1), Color(0, 0.1764706, 0.74509805, 1), Color(0, 0, 0, 1)]
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label_Loup:scale:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.10546541, -0.26138613, 1.1302347, -0.08185375, -0.06557369, 0.04564929, 0.003643036, 1, -0.099169135, -0.38251364, 0.11176193, 0.17850637),
+"times": PackedFloat32Array(0.8722922, 0.94470125, 1.0816491)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label_Loup:scale:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.070835054, 0.16484442, 0.10546553, -0.28324333, 1.1302359, -0.07574189, 0.06921649, 0.058057666, -0.036429882, 1, -0.102317214, -0.3642987, 0.0645386, 0.086520195),
+"times": PackedFloat32Array(0.87071806, 0.9448858, 1.0832231)
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AnimatedSprite2D/Control/ControlShaker_Middle")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Label_Loup:label_settings:font_color")
+tracks/13/interp = 0
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.01897502, 1.1748126, 1.2248125, 1.2748127, 1.3248127, 1.3748126, 1.4248126, 1.4748132, 1.5248132, 1.5748131, 1.6248131, 1.6748133, 1.7248132, 1.7748127),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.056291588, 0.056291603, 0.056291595, 1), Color(0.056291588, 0.056291603, 0.056291595, 1), Color(0.05490196, 0.05490196, 0.05490196, 0), Color(1, 0.05490196, 0.05490196, 1), Color(1, 0.05490196, 0.05490196, 0), Color(0.056291588, 0.056291603, 0.056291595, 1), Color(0.05490196, 0.05490196, 0.05490196, 0), Color(0.056291588, 0.056291603, 0.056291595, 1), Color(0.05490196, 0.05490196, 0.05490196, 0), Color(1, 0.05490196, 0.05490196, 1), Color(1, 0.05490196, 0.05490196, 0), Color(0.056291588, 0.056291603, 0.056291595, 1), Color(0.05490196, 0.05490196, 0.05490196, 0), Color(0.05490196, 0.05490196, 0.05490196, 1)]
+}
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("AnimatedSprite2D/Control/ControlShaker_Left")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AnimatedSprite2D/Control/ControlShaker_Right")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_gffe8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D/Control:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D/Control:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-160, -82.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(957, 512)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6.0000005, 2)]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label_MeWaaat:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label_MeWaaat:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatedSprite2D/Control/TextureWolfCenter/TextureWolfAngry:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatedSprite2D/Control/TextureWolfLeft:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatedSprite2D/Control/TextureWolfRight:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Label_MeWaaat:label_settings:font_color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.056291588, 0.056291603, 0.056291595, 1)]
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label_Loup:scale:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label_Loup:scale:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Label_Loup:label_settings:font_color")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.056291588, 0.056291603, 0.056291595, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0fn3c"]
+_data = {
+&"In": SubResource("Animation_cy5hf"),
+&"RESET": SubResource("Animation_gffe8")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_unnx5"]
+font = ExtResource("5_bxvbo")
+font_size = 70
+font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3q6b"]
+font = ExtResource("5_bxvbo")
+font_size = 64
+font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[node name="WolfHowlScreen" type="Control" unique_id=269593752 node_paths=PackedStringArray("animation")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gffe8")
+animation = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1132057057]
+libraries/ = SubResource("AnimationLibrary_0fn3c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1069887632]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(957, 512)
+scale = Vector2(6.0000005, 2)
+sprite_frames = ExtResource("1_cy5hf")
+autoplay = "default"
+frame_progress = 0.40733752
+
+[node name="Control" type="Control" parent="AnimatedSprite2D" unique_id=1352492495]
+clip_children = 2
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -82.5
+offset_right = -160.0
+offset_bottom = -82.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlShaker_Middle" type="Control" parent="AnimatedSprite2D/Control" unique_id=2008705984 node_paths=PackedStringArray("controlToShake")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -9.5
+offset_right = 16.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_cy5hf")
+controlToShake = NodePath("../TextureWolfCenter/TextureWolfAngry")
+metadata/_custom_type_script = "uid://bhpx2b0f34h21"
+
+[node name="ControlShaker_Left" type="Control" parent="AnimatedSprite2D/Control" unique_id=2018041918 node_paths=PackedStringArray("controlToShake")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -9.5
+offset_right = 16.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_cy5hf")
+controlToShake = NodePath("../TextureWolfLeft/TextureWolfAngry")
+metadata/_custom_type_script = "uid://bhpx2b0f34h21"
+
+[node name="ControlShaker_Right" type="Control" parent="AnimatedSprite2D/Control" unique_id=16906198 node_paths=PackedStringArray("controlToShake")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -9.5
+offset_right = 16.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_cy5hf")
+controlToShake = NodePath("../TextureWolfRight/TextureWolfAngry")
+metadata/_custom_type_script = "uid://bhpx2b0f34h21"
+
+[node name="TextureWolfLeft" type="TextureRect" parent="AnimatedSprite2D/Control" unique_id=208747726]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -305.8333
+offset_top = -87.0
+offset_right = -235.83331
+offset_bottom = 93.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_gffe8")
+expand_mode = 5
+
+[node name="TextureWolfAngry" type="TextureRect" parent="AnimatedSprite2D/Control/TextureWolfLeft" unique_id=77613157]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -100.0
+offset_right = 2.833313
+offset_bottom = 157.775
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_0fn3c")
+expand_mode = 1
+
+[node name="TextureWolfCenter" type="TextureRect" parent="AnimatedSprite2D/Control" unique_id=1043438342]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -79.5
+offset_right = -129.0
+offset_bottom = 100.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_gffe8")
+expand_mode = 5
+
+[node name="TextureWolfAngry" type="TextureRect" parent="AnimatedSprite2D/Control/TextureWolfCenter" unique_id=705624955]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -100.0
+offset_right = 2.833313
+offset_bottom = 157.775
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_0fn3c")
+expand_mode = 1
+
+[node name="TextureWolfRight" type="TextureRect" parent="AnimatedSprite2D/Control" unique_id=1404843936]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -84.0
+offset_right = -26.5
+offset_bottom = 96.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_gffe8")
+expand_mode = 5
+
+[node name="TextureWolfAngry" type="TextureRect" parent="AnimatedSprite2D/Control/TextureWolfRight" unique_id=649083153]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -100.0
+offset_right = 2.833313
+offset_bottom = 157.775
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_0fn3c")
+expand_mode = 1
+
+[node name="Label_MeWaaat" type="Label" parent="." unique_id=1792937151]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -790.0
+offset_top = -266.0
+offset_right = 540.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.108210415
+scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "Mé waaaat ??!?"
+label_settings = SubResource("LabelSettings_unnx5")
+horizontal_alignment = 1
+
+[node name="Label_Loup" type="Label" parent="." unique_id=1433493360]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = 121.00006
+offset_right = 1211.0
+offset_bottom = 216.00006
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.1134464
+scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "LES LOUPS !!!"
+label_settings = SubResource("LabelSettings_d3q6b")
+horizontal_alignment = 1

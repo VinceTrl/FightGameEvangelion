@@ -9,7 +9,10 @@ extends CharacterState
 func EnterState():
 	stateName = "ROAM"
 	character.movement.currentDirection = Vector3.ZERO # stop moving
+	SetRandomDirection()
+	
 	character.animation.play("Walk")
+	
 	var time := randf_range(roamTimeMin,roamTimeMax)
 	await get_tree().create_timer(time).timeout
 	if(character.currentState == self):
@@ -21,6 +24,7 @@ func ExitState():
 	
 func ProcessState(delta: float):
 	CheckObstacles()
+	character.flip.ProcessFlip()
 	pass
 	
 func PhysicsProcessState(delta: float):

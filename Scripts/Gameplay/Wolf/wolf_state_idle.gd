@@ -10,7 +10,7 @@ func EnterState():
 	var time := randf_range(idleTimeMin,idleTimeMax)
 	await get_tree().create_timer(time).timeout
 	if(character.currentState == self):
-		character.ChangeState(stateMachine.Idle) #change State
+		NextState()
 	pass
 	
 func ExitState():
@@ -20,4 +20,11 @@ func ProcessState(delta: float):
 	pass
 	
 func PhysicsProcessState(delta: float):
+	pass
+
+func NextState():
+	if(character.isAngry):
+		character.ChangeState(stateMachine.DashAttack)
+	else:
+		character.ChangeState(stateMachine.Roam)
 	pass

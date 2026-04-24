@@ -3,7 +3,6 @@ extends Character
 @export var teleportDelay:float = 0.5
 
 @export_group("enderman components")
-@export var health:HealthComponent
 @export var holdSocket:Node3D
 @export var targetRaycast:RayCast3D
 @export var raycasts:Array[RayCast3D]

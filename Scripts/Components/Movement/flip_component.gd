@@ -23,3 +23,8 @@ func ProcessFlip():
 		
 func IsFacingRight() -> bool:
 	return currentScale > 0
+	
+func ResetFlip():
+	currentScale = 1
+	for node in flipNodes:
+		node.scale.x = 1

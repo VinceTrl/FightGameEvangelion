@@ -174,9 +174,8 @@ point_count = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bar6"]
 size = Vector3(0.35, 0.675, 0.5)
 
-[node name="Creeper" type="CharacterBody3D" unique_id=261367 node_paths=PackedStringArray("health", "creeperMesh", "groundDetection", "obstacleRaycasts", "targetDetection", "stateMachine", "movement", "flip", "animation")]
+[node name="Creeper" type="CharacterBody3D" unique_id=261367 node_paths=PackedStringArray("creeperMesh", "groundDetection", "obstacleRaycasts", "targetDetection", "stateMachine", "movement", "flip", "animation", "health")]
 script = ExtResource("1_35u60")
-health = NodePath("Components/HealthComponent")
 creeperMesh = NodePath("Visual/NodeShaker/CreeperMeshRoot/creeper/Creeper")
 groundDetection = NodePath("Raycasts/GroundRaycast")
 obstacleRaycasts = [NodePath("Raycasts/ObstacleRaycast_Down"), NodePath("Raycasts/ObstacleRaycast_Up")]
@@ -185,6 +184,7 @@ stateMachine = NodePath("CreeperStateMachine")
 movement = NodePath("Components/MovementComponent")
 flip = NodePath("Components/FlipComponent")
 animation = NodePath("Visual/NodeShaker/CreeperMeshRoot/creeper/AnimationPlayer")
+health = NodePath("Components/HealthComponent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1096209062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3259743, 0)

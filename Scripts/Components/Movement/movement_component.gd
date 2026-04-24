@@ -43,8 +43,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if(isKnockback):
 		ProcessKnockback()
+	else:
+		ProcessMovement()
 		
-	ProcessMovement()
 	ProcessGravity(delta)
 		
 	character.move_and_slide()
@@ -84,8 +85,9 @@ func ProcessKnockback():
 	if knockbackTimer.time_left <= 0: 
 		isKnockback = false
 	else:
-		speed = GetKnockbackSpeed()
-		currentDirection = knockbackDirection
+		#speed = GetKnockbackSpeed()
+		#currentDirection = knockbackDirection
+		character.velocity = knockbackDirection * GetKnockbackSpeed()
 
 func GetKnockbackSpeed() -> float:
 	if(knockbackTimer.time_left == 0): return 0.0

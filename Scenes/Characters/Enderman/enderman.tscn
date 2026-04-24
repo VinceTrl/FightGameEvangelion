@@ -23,13 +23,12 @@ height = 0.725
 [sub_resource type="BoxShape3D" id="BoxShape3D_j54lw"]
 size = Vector3(0.3, 1.114, 1)
 
-[node name="Enderman" type="CharacterBody3D" unique_id=880268240 node_paths=PackedStringArray("health", "holdSocket", "targetRaycast", "raycasts", "stateMachine", "movement", "flip", "animation")]
+[node name="Enderman" type="CharacterBody3D" unique_id=880268240 node_paths=PackedStringArray("holdSocket", "targetRaycast", "raycasts", "stateMachine", "movement", "flip", "animation", "health")]
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_3puyt")
-health = NodePath("Components/HealthComponent")
 holdSocket = NodePath("FlipableNodes/HoldSocket")
 targetRaycast = NodePath("FlipableNodes/Raycasts/TargetRaycast")
 raycasts = [NodePath("FlipableNodes/Raycasts/TargetRaycast"), NodePath("FlipableNodes/Raycasts/FrontRaycast_Up"), NodePath("FlipableNodes/Raycasts/FrontRaycast_Middle"), NodePath("FlipableNodes/Raycasts/FrontRaycast_Down"), NodePath("FlipableNodes/Raycasts/BackRaycast_Middle"), NodePath("FlipableNodes/Raycasts/BackRaycast_Down"), NodePath("FlipableNodes/Raycasts/BackRaycast_Up")]
@@ -37,6 +36,7 @@ stateMachine = NodePath("CharacterStateMachine")
 movement = NodePath("Components/MovementComponent")
 flip = NodePath("Components/FlipComponent")
 animation = NodePath("Visual/NodeShaker/EndermanCharacter/AnimationPlayer")
+health = NodePath("Components/HealthComponent")
 metadata/_custom_type_script = "uid://c87rv5u7rab78"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1817219668]

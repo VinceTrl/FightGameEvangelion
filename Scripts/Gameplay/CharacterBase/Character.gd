@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var movement:MovementComponent
 @export var flip:FlipComponent
 @export var animation:AnimationPlayer
+@export var health:HealthComponent
 
 var currentState:CharacterState
 var previousState:CharacterState
