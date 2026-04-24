@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dxcaay2i51g33"]
+
+[ext_resource type="PackedScene" uid="uid://b1qxipjljivqm" path="res://Assets/Meshes/Enviro/AnorLondo/AnorLondo.fbx" id="1_t7owx"]
+[ext_resource type="PackedScene" uid="uid://dlru2woa882mv" path="res://Assets/Meshes/Characters/Gwynevere/Gwynevere.fbx" id="2_wm3o7"]
+[ext_resource type="Texture2D" uid="uid://dbgko8cuteo1o" path="res://Assets/Shitpost/Source/RGmuKdh.jpeg" id="3_81jef"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_kdscx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dal4u"]
+transparency = 1
+albedo_texture = ExtResource("3_81jef")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[node name="Gwynevere\'s room" type="Node3D" unique_id=9870905]
+
+[node name="AnorLondo" parent="." unique_id=888943474 instance=ExtResource("1_t7owx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 13.620128, 0)
+
+[node name="Gwynevere" parent="AnorLondo" unique_id=863435591 instance=ExtResource("2_wm3o7")]
+transform = Transform3D(-0.1803647, 0, 0.98359984, 0, 1, 0, -0.98359984, 0, -0.1803647, -2.547433, -13.464365, -0.34767008)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="AnorLondo/Gwynevere" unique_id=1806652316]
+transform = Transform3D(1.145, 0, 0, 0, 1.145, 0, 0, 0, 1.145, 2.1971178, 3.89515, 3.6351917)
+mesh = SubResource("QuadMesh_kdscx")
+surface_material_override/0 = SubResource("StandardMaterial3D_dal4u")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=99266608]
+transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, 0, 12.495396, -10.345177)
+light_color = Color(0.89374214, 0.64688003, 3.85046e-07, 1)
+light_energy = 5.61
+light_negative = true
+spot_range = 33.165676
+spot_angle = 31.842173
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=297289307]
+transform = Transform3D(1, 0, 0, 0, 0.6262364, 0.7796332, 0, -0.7796332, 0.6262364, -1.9073486e-06, 17.636429, 15.309386)
+light_color = Color(0.7607843, 1, 0.9882353, 1)
+spot_range = 35.322906
+spot_attenuation = 0.13
+spot_angle = 25.196436
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=408286084]
+transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, -5.4330163, -0.21956825, 9.273907)
+light_color = Color(1, 0.43137255, 0, 1)
+shadow_enabled = true
+omni_range = 2.59
+omni_attenuation = 1.904
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1050176839]
+transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, 5.616464, -0.2195673, 9.273909)
+light_color = Color(1, 0.43137255, 0, 1)
+shadow_enabled = true
+omni_range = 2.59
+omni_attenuation = 1.904
