@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SpawnableItem" format=3 uid="uid://dpspq7qtc8pg3"]
+
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_th7bs"]
+
+[resource]
+script = ExtResource("1_th7bs")
+itemName = &"CREEPER"
+scenePath = &"res://Scenes/Gameplay/creeper.tscn"
+spawnOnGround = true

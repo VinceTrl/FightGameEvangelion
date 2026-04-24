@@ -9,9 +9,15 @@
 [ext_resource type="Resource" uid="uid://ccccsgtkw4xgd" path="res://Resources/Spawnables/Explosion.tres" id="5_805t3"]
 [ext_resource type="Script" uid="uid://k2dv5h2y57o0" path="res://Scripts/Gameplay/RedstoneSystem/Receiver/redstone_receiver_tnt.gd" id="6_805t3"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ikq8d"]
+size = Vector3(0.35, 0.35, 0.35)
+
 [node name="TntBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_tcp44")]
 healthPoints = 1
 spawner = NodePath("Spawner")
+
+[node name="CollisionShape3D" parent="Hurtbox" parent_id_path=PackedInt32Array(2074267378) index="0" unique_id=387102666]
+shape = SubResource("BoxShape3D_ikq8d")
 
 [node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
 surface_material_override/0 = ExtResource("2_tcp44")

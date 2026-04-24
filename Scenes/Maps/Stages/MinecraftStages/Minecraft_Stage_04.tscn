@@ -1,0 +1,950 @@
+[gd_scene format=3 uid="uid://wophemdn5dpr"]
+
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_ocaax"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_hmyv4"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_v1ogb"]
+[ext_resource type="PackedScene" uid="uid://ma1a8w06qfh8" path="res://Scenes/Gameplay/beyblade.tscn" id="4_r4nth"]
+[ext_resource type="PackedScene" uid="uid://btvf04ngntlqh" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/platform_cobblestone_5x4.tscn" id="6_c2kiy"]
+[ext_resource type="PackedScene" uid="uid://c7finsa37y56m" path="res://Scenes/Gameplay/MinecraftBlock/stone_block.tscn" id="7_7r3ee"]
+[ext_resource type="PackedScene" uid="uid://bnudpxlxiudb" path="res://Scenes/Gameplay/MinecraftBlock/cobblestone_block.tscn" id="9_pcno1"]
+[ext_resource type="PackedScene" uid="uid://dpygy6dyyfqtx" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/platform_deepslate_5x4.tscn" id="9_r4nth"]
+[ext_resource type="PackedScene" uid="uid://uve86dqmdawq" path="res://Scenes/Gameplay/MinecraftBlock/deepslate_block.tscn" id="10_vie2o"]
+[ext_resource type="PackedScene" uid="uid://c0xc7ty5ji5uw" path="res://Scenes/Gameplay/MinecraftBlock/deepslate_bricks_block.tscn" id="11_2r7q7"]
+[ext_resource type="PackedScene" uid="uid://btgknalnysacc" path="res://Scenes/Gameplay/MinecraftBlock/tnt_block.tscn" id="12_ocaax"]
+[ext_resource type="PackedScene" uid="uid://g5fnd6em0pw0" path="res://Scenes/Gameplay/MinecraftBlock/OakPlanks_block.tscn" id="15_ummlr"]
+[ext_resource type="PackedScene" uid="uid://bja86rnp5peep" path="res://Scenes/Gameplay/MinecraftBlock/lava_block.tscn" id="16_q0w8o"]
+
+[node name="MinecraftStage_02" type="Node3D" unique_id=176270937 node_paths=PackedStringArray("levelRoot")]
+script = ExtResource("1_ocaax")
+platformSpawnType = 2
+levelRoot = NodePath("Level")
+
+[node name="Gameplay" type="Node3D" parent="." unique_id=243763496]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay" unique_id=1611791962]
+
+[node name="PlayerSpawn" type="Marker3D" parent="Gameplay/GameplayLogic" unique_id=525546337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 0.90000004, 0)
+script = ExtResource("2_hmyv4")
+
+[node name="PlayerSpawn2" type="Marker3D" parent="Gameplay/GameplayLogic" unique_id=1036757476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0000002, 0.89999986, 0)
+script = ExtResource("2_hmyv4")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay" unique_id=107047886]
+
+[node name="Spawners" type="Node3D" parent="Gameplay/Objects" unique_id=408438714]
+
+[node name="Spawner" parent="Gameplay/Objects/Spawners" unique_id=999612376 instance=ExtResource("3_v1ogb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Spawner11" parent="Gameplay/Objects/Spawners" unique_id=16464408 instance=ExtResource("3_v1ogb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.3999999, 0)
+
+[node name="Spawner9" parent="Gameplay/Objects/Spawners" unique_id=710800449 instance=ExtResource("3_v1ogb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, 3.6, 0)
+
+[node name="Spawner10" parent="Gameplay/Objects/Spawners" unique_id=594951172 instance=ExtResource("3_v1ogb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.4999999, 0)
+
+[node name="Spawner5" parent="Gameplay/Objects/Spawners" unique_id=1688432 instance=ExtResource("3_v1ogb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5000001, 4.5, 0)
+
+[node name="Spawner6" parent="Gameplay/Objects/Spawners" unique_id=1304270749 instance=ExtResource("3_v1ogb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 3.6, 0)
+
+[node name="Spawner7" parent="Gameplay/Objects/Spawners" unique_id=569374726 instance=ExtResource("3_v1ogb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, -0.9000003, 0)
+
+[node name="Spawner8" parent="Gameplay/Objects/Spawners" unique_id=172023314 instance=ExtResource("3_v1ogb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000004, -0.60000026, 0)
+
+[node name="Beyblade" parent="Gameplay/Objects" unique_id=848849922 instance=ExtResource("4_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.48985124, 0)
+
+[node name="Beyblade2" parent="Gameplay/Objects" unique_id=580019986 instance=ExtResource("4_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.48985124, 0)
+
+[node name="Level" type="Node3D" parent="." unique_id=127464666]
+
+[node name="Blocks" type="Node3D" parent="Level" unique_id=579634443]
+
+[node name="CobblestoneBlock" parent="Level/Blocks" unique_id=201799770 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.500001, -1.2, 0)
+
+[node name="CobblestoneBlock9" parent="Level/Blocks" unique_id=1588274387 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.300001, -1.2, 0)
+
+[node name="CobblestoneBlock10" parent="Level/Blocks" unique_id=1716795764 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.000001, -1.2, 0)
+
+[node name="CobblestoneBlock13" parent="Level/Blocks" unique_id=204064540 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.100001, -2.1, 0)
+
+[node name="CobblestoneBlock14" parent="Level/Blocks" unique_id=902245203 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000105, -1.4999999, 0)
+
+[node name="CobblestoneBlock16" parent="Level/Blocks" unique_id=381206162 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.200001, -1.5, 0)
+
+[node name="CobblestoneBlock6" parent="Level/Blocks" unique_id=1492014165 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400001, -0.6, 0)
+
+[node name="CobblestoneBlock7" parent="Level/Blocks" unique_id=337297679 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.700001, -0.3, 0)
+
+[node name="CobblestoneBlock8" parent="Level/Blocks" unique_id=1998443175 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400001, -0.3, 0)
+
+[node name="LavaBlock29" parent="Level/Blocks" unique_id=1343070472 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 2.9999998, 0)
+
+[node name="LavaBlock42" parent="Level/Blocks" unique_id=756818314 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6999998, 0)
+
+[node name="LavaBlock111" parent="Level/Blocks" unique_id=605939415 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.6999998, 0)
+
+[node name="LavaBlock112" parent="Level/Blocks" unique_id=2114204265 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -1.7881393e-07, 0)
+
+[node name="LavaBlock113" parent="Level/Blocks" unique_id=1959833092 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -1.7881393e-07, 0)
+
+[node name="LavaBlock114" parent="Level/Blocks" unique_id=611141290 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -1.7881393e-07, 0)
+
+[node name="LavaBlock116" parent="Level/Blocks" unique_id=1870944100 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.7881393e-07, 0)
+
+[node name="LavaBlock117" parent="Level/Blocks" unique_id=842102734 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -1.7881393e-07, 0)
+
+[node name="LavaBlock118" parent="Level/Blocks" unique_id=634946582 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90000004, -1.7881393e-07, 0)
+
+[node name="LavaBlock119" parent="Level/Blocks" unique_id=792109780 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -1.7881393e-07, 0)
+
+[node name="LavaBlock120" parent="Level/Blocks" unique_id=1654581757 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -1.7881393e-07, 0)
+
+[node name="LavaBlock121" parent="Level/Blocks" unique_id=604875651 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7881393e-07, 0)
+
+[node name="LavaBlock115" parent="Level/Blocks" unique_id=118896445 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, -1.7881393e-07, 0)
+
+[node name="LavaBlock122" parent="Level/Blocks" unique_id=455216903 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8999999, -1.7881393e-07, 0)
+
+[node name="LavaBlock123" parent="Level/Blocks" unique_id=1874327403 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1999999, -1.7881393e-07, 0)
+
+[node name="LavaBlock124" parent="Level/Blocks" unique_id=1393318532 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1.7881393e-07, 0)
+
+[node name="LavaBlock43" parent="Level/Blocks" unique_id=587153922 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -4.5, 0)
+
+[node name="LavaBlock44" parent="Level/Blocks" unique_id=1940614480 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -4.2, 0)
+
+[node name="LavaBlock2" parent="Level/Blocks" unique_id=1864774898 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3.9, 0)
+
+[node name="LavaBlock27" parent="Level/Blocks" unique_id=1957207292 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -4.2, 0)
+
+[node name="LavaBlock28" parent="Level/Blocks" unique_id=613947254 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -4.2, 0)
+
+[node name="LavaBlock99" parent="Level/Blocks" unique_id=1596480395 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -4.5, 0)
+
+[node name="LavaBlock100" parent="Level/Blocks" unique_id=1476304225 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -4.5, 0)
+
+[node name="LavaBlock30" parent="Level/Blocks" unique_id=1754206866 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0999994, -4.5, 0)
+
+[node name="LavaBlock31" parent="Level/Blocks" unique_id=1160627239 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4999995, -4.5, 0)
+
+[node name="LavaBlock32" parent="Level/Blocks" unique_id=1226896797 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999996, -4.2, 0)
+
+[node name="LavaBlock33" parent="Level/Blocks" unique_id=1249317313 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999996, -4.5, 0)
+
+[node name="LavaBlock34" parent="Level/Blocks" unique_id=1928063402 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2999997, -4.5, 0)
+
+[node name="LavaBlock35" parent="Level/Blocks" unique_id=468545656 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2999997, -4.2, 0)
+
+[node name="LavaBlock38" parent="Level/Blocks" unique_id=2112247675 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000006, -4.5, 0)
+
+[node name="LavaBlock39" parent="Level/Blocks" unique_id=164491533 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000006, -4.2, 0)
+
+[node name="LavaBlock40" parent="Level/Blocks" unique_id=46429801 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000008, -4.5, 0)
+
+[node name="LavaBlock41" parent="Level/Blocks" unique_id=738702089 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000008, -4.2, 0)
+
+[node name="LavaBlock36" parent="Level/Blocks" unique_id=255887353 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -4.2, 0)
+
+[node name="LavaBlock93" parent="Level/Blocks" unique_id=910706087 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1999993, -4.5, 0)
+
+[node name="LavaBlock94" parent="Level/Blocks" unique_id=1973564412 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -4.2, 0)
+
+[node name="LavaBlock95" parent="Level/Blocks" unique_id=1338687413 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.799999, -4.5, 0)
+
+[node name="LavaBlock96" parent="Level/Blocks" unique_id=1875391952 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7999997, -4.2, 0)
+
+[node name="LavaBlock97" parent="Level/Blocks" unique_id=1445962293 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.399999, -4.5, 0)
+
+[node name="LavaBlock98" parent="Level/Blocks" unique_id=1702699365 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3999996, -4.2, 0)
+
+[node name="LavaBlock37" parent="Level/Blocks" unique_id=1861726932 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -4.2, 0)
+
+[node name="LavaBlock3" parent="Level/Blocks" unique_id=172466536 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, -3.9, 0)
+
+[node name="LavaBlock4" parent="Level/Blocks" unique_id=286339788 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -3.9, 0)
+
+[node name="LavaBlock5" parent="Level/Blocks" unique_id=724984066 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -3.9, 0)
+
+[node name="LavaBlock6" parent="Level/Blocks" unique_id=2061403458 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999996, -3.9, 0)
+
+[node name="LavaBlock7" parent="Level/Blocks" unique_id=547222159 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0999994, -3.9, 0)
+
+[node name="LavaBlock8" parent="Level/Blocks" unique_id=1257059101 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.799999, -3.9, 0)
+
+[node name="LavaBlock9" parent="Level/Blocks" unique_id=223586599 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.499999, -3.9, 0)
+
+[node name="LavaBlock10" parent="Level/Blocks" unique_id=1932893758 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.199999, -3.9, 0)
+
+[node name="LavaBlock11" parent="Level/Blocks" unique_id=532915188 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.899999, -3.9, 0)
+
+[node name="LavaBlock12" parent="Level/Blocks" unique_id=1028186645 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.599999, -3.9, 0)
+
+[node name="LavaBlock73" parent="Level/Blocks" unique_id=83193405 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, -4.2000003, 0)
+
+[node name="LavaBlock74" parent="Level/Blocks" unique_id=95581041 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -4.2000003, 0)
+
+[node name="LavaBlock75" parent="Level/Blocks" unique_id=1616117918 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -4.2000003, 0)
+
+[node name="LavaBlock76" parent="Level/Blocks" unique_id=39157549 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999996, -4.2000003, 0)
+
+[node name="LavaBlock77" parent="Level/Blocks" unique_id=1978956778 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0999994, -4.2000003, 0)
+
+[node name="LavaBlock78" parent="Level/Blocks" unique_id=1408883126 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.799999, -4.2000003, 0)
+
+[node name="LavaBlock79" parent="Level/Blocks" unique_id=1679725755 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.499999, -4.2000003, 0)
+
+[node name="LavaBlock80" parent="Level/Blocks" unique_id=261494985 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.199999, -4.2000003, 0)
+
+[node name="LavaBlock81" parent="Level/Blocks" unique_id=1959969880 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.899999, -4.2000003, 0)
+
+[node name="LavaBlock82" parent="Level/Blocks" unique_id=1639800037 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.599999, -4.2000003, 0)
+
+[node name="LavaBlock83" parent="Level/Blocks" unique_id=1881923886 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, -4.5000005, 0)
+
+[node name="LavaBlock84" parent="Level/Blocks" unique_id=1888602227 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -4.5000005, 0)
+
+[node name="LavaBlock85" parent="Level/Blocks" unique_id=2143617173 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -4.5000005, 0)
+
+[node name="LavaBlock86" parent="Level/Blocks" unique_id=1741253121 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999996, -4.5000005, 0)
+
+[node name="LavaBlock87" parent="Level/Blocks" unique_id=1118172440 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0999994, -4.5000005, 0)
+
+[node name="LavaBlock88" parent="Level/Blocks" unique_id=971165259 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.799999, -4.5000005, 0)
+
+[node name="LavaBlock89" parent="Level/Blocks" unique_id=1893391138 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.499999, -4.5000005, 0)
+
+[node name="LavaBlock90" parent="Level/Blocks" unique_id=1121694996 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.199999, -4.5000005, 0)
+
+[node name="LavaBlock91" parent="Level/Blocks" unique_id=349070784 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.899999, -4.5000005, 0)
+
+[node name="LavaBlock92" parent="Level/Blocks" unique_id=431847678 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.599999, -4.5000005, 0)
+
+[node name="LavaBlock13" parent="Level/Blocks" unique_id=229630352 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1999989, -3.9, 0)
+
+[node name="LavaBlock14" parent="Level/Blocks" unique_id=662965974 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89999884, -3.9, 0)
+
+[node name="LavaBlock15" parent="Level/Blocks" unique_id=349627846 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59999883, -3.9, 0)
+
+[node name="LavaBlock16" parent="Level/Blocks" unique_id=1607430271 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999882, -3.9, 0)
+
+[node name="LavaBlock17" parent="Level/Blocks" unique_id=1856302219 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1920929e-06, -3.9, 0)
+
+[node name="LavaBlock18" parent="Level/Blocks" unique_id=250870782 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3000012, -3.9, 0)
+
+[node name="LavaBlock19" parent="Level/Blocks" unique_id=171948321 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000012, -3.9, 0)
+
+[node name="LavaBlock20" parent="Level/Blocks" unique_id=1677243918 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000012, -3.9, 0)
+
+[node name="LavaBlock21" parent="Level/Blocks" unique_id=392285551 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2000012, -3.9, 0)
+
+[node name="LavaBlock22" parent="Level/Blocks" unique_id=1718817619 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5000012, -3.9, 0)
+
+[node name="LavaBlock23" parent="Level/Blocks" unique_id=1350914048 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000011, -3.9, 0)
+
+[node name="LavaBlock24" parent="Level/Blocks" unique_id=256622638 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.100001, -3.9, 0)
+
+[node name="LavaBlock25" parent="Level/Blocks" unique_id=1818036227 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400001, -3.9, 0)
+
+[node name="LavaBlock101" parent="Level/Blocks" unique_id=95389105 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400001, -4.2000003, 0)
+
+[node name="LavaBlock102" parent="Level/Blocks" unique_id=1528821297 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400001, -4.5000005, 0)
+
+[node name="LavaBlock26" parent="Level/Blocks" unique_id=1318044151 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.700001, -3.9, 0)
+
+[node name="LavaBlock45" parent="Level/Blocks" unique_id=417003903 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -4.2000003, 0)
+
+[node name="LavaBlock46" parent="Level/Blocks" unique_id=525543554 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4.2000003, 0)
+
+[node name="LavaBlock47" parent="Level/Blocks" unique_id=1818212733 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89999884, -4.2000003, 0)
+
+[node name="LavaBlock48" parent="Level/Blocks" unique_id=1366428426 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59999883, -4.2000003, 0)
+
+[node name="LavaBlock49" parent="Level/Blocks" unique_id=194625267 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999882, -4.2000003, 0)
+
+[node name="LavaBlock50" parent="Level/Blocks" unique_id=454963851 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1920929e-06, -4.2000003, 0)
+
+[node name="LavaBlock51" parent="Level/Blocks" unique_id=1721599963 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3000012, -4.2000003, 0)
+
+[node name="LavaBlock52" parent="Level/Blocks" unique_id=1736829633 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000012, -4.2000003, 0)
+
+[node name="LavaBlock53" parent="Level/Blocks" unique_id=142132985 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000012, -4.2000003, 0)
+
+[node name="LavaBlock54" parent="Level/Blocks" unique_id=1639331955 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2000012, -4.2000003, 0)
+
+[node name="LavaBlock55" parent="Level/Blocks" unique_id=483199198 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5000012, -4.2000003, 0)
+
+[node name="LavaBlock56" parent="Level/Blocks" unique_id=1153936439 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000011, -4.2000003, 0)
+
+[node name="LavaBlock57" parent="Level/Blocks" unique_id=904309990 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.100001, -4.2000003, 0)
+
+[node name="LavaBlock58" parent="Level/Blocks" unique_id=1786878219 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.700001, -4.2000003, 0)
+
+[node name="LavaBlock59" parent="Level/Blocks" unique_id=1001400995 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -4.5000005, 0)
+
+[node name="LavaBlock103" parent="Level/Blocks" unique_id=1597759038 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -4.2000003, 0)
+
+[node name="LavaBlock104" parent="Level/Blocks" unique_id=296385567 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -4.5000005, 0)
+
+[node name="LavaBlock105" parent="Level/Blocks" unique_id=779809571 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000001, -4.2000003, 0)
+
+[node name="LavaBlock106" parent="Level/Blocks" unique_id=723401975 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000001, -4.5000005, 0)
+
+[node name="LavaBlock107" parent="Level/Blocks" unique_id=455033686 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -4.2000003, 0)
+
+[node name="LavaBlock108" parent="Level/Blocks" unique_id=1917598775 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -4.5000005, 0)
+
+[node name="LavaBlock109" parent="Level/Blocks" unique_id=268124145 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -4.2000003, 0)
+
+[node name="LavaBlock110" parent="Level/Blocks" unique_id=410381244 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -4.5000005, 0)
+
+[node name="LavaBlock60" parent="Level/Blocks" unique_id=1052373261 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4.5000005, 0)
+
+[node name="LavaBlock61" parent="Level/Blocks" unique_id=774829326 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89999884, -4.5000005, 0)
+
+[node name="LavaBlock62" parent="Level/Blocks" unique_id=720415307 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59999883, -4.5000005, 0)
+
+[node name="LavaBlock63" parent="Level/Blocks" unique_id=1113896167 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999882, -4.5000005, 0)
+
+[node name="LavaBlock64" parent="Level/Blocks" unique_id=2069947430 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1920929e-06, -4.5000005, 0)
+
+[node name="LavaBlock65" parent="Level/Blocks" unique_id=1919653564 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3000012, -4.5000005, 0)
+
+[node name="LavaBlock66" parent="Level/Blocks" unique_id=1392269708 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000012, -4.5000005, 0)
+
+[node name="LavaBlock67" parent="Level/Blocks" unique_id=1645075173 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000012, -4.5000005, 0)
+
+[node name="LavaBlock68" parent="Level/Blocks" unique_id=1186924072 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2000012, -4.5000005, 0)
+
+[node name="LavaBlock69" parent="Level/Blocks" unique_id=1706167178 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5000012, -4.5000005, 0)
+
+[node name="LavaBlock70" parent="Level/Blocks" unique_id=502323030 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000011, -4.5000005, 0)
+
+[node name="LavaBlock71" parent="Level/Blocks" unique_id=836974285 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.100001, -4.5000005, 0)
+
+[node name="LavaBlock72" parent="Level/Blocks" unique_id=1846904188 instance=ExtResource("16_q0w8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.700001, -4.5000005, 0)
+
+[node name="StoneBlock" parent="Level/Blocks" unique_id=1235151774 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -0.3, 0)
+
+[node name="StoneBlock2" parent="Level/Blocks" unique_id=620491994 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.3, 0)
+
+[node name="StoneBlock3" parent="Level/Blocks" unique_id=2039471818 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, -0.3, 0)
+
+[node name="StoneBlock4" parent="Level/Blocks" unique_id=1162252984 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -0.3, 0)
+
+[node name="StoneBlock26" parent="Level/Blocks" unique_id=1547628551 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3999999, -0.3, 0)
+
+[node name="StoneBlock7" parent="Level/Blocks" unique_id=694222913 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4999999, -0.6, 0)
+
+[node name="StoneBlock8" parent="Level/Blocks" unique_id=1676992360 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3999999, -1.8000001, 0)
+
+[node name="StoneBlock15" parent="Level/Blocks" unique_id=824120252 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3999999, -1.5, 0)
+
+[node name="StoneBlock9" parent="Level/Blocks" unique_id=269857336 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6999998, -1.8, 0)
+
+[node name="StoneBlock10" parent="Level/Blocks" unique_id=915789825 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6999998, -1.5, 0)
+
+[node name="StoneBlock5" parent="Level/Blocks" unique_id=914301424 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.3, 0)
+
+[node name="StoneBlock6" parent="Level/Blocks" unique_id=351136948 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -0.3, 0)
+
+[node name="StoneBlock12" parent="Level/Blocks" unique_id=1554422418 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -0.3, 0)
+
+[node name="StoneBlock13" parent="Level/Blocks" unique_id=11055216 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -0.6, 0)
+
+[node name="StoneBlock14" parent="Level/Blocks" unique_id=748598586 instance=ExtResource("7_7r3ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 0, 0)
+
+[node name="Platform_Cobblestone_5x4" parent="Level/Blocks" unique_id=1544287573 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, 0.90000004, 0)
+
+[node name="Platform_Cobblestone_5x13" parent="Level/Blocks" unique_id=1570377621 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, 2.1000001, 0)
+
+[node name="Platform_Cobblestone_5x14" parent="Level/Blocks" unique_id=1778149114 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, 3.3000002, 0)
+
+[node name="Platform_Cobblestone_5x5" parent="Level/Blocks" unique_id=510304449 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0.90000004, 0)
+
+[node name="Platform_Cobblestone_5x15" parent="Level/Blocks" unique_id=1758177405 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 2.1000001, 0)
+
+[node name="Platform_Cobblestone_5x16" parent="Level/Blocks" unique_id=2126923509 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 3.3000002, 0)
+
+[node name="Platform_Cobblestone_5x17" parent="Level/Blocks" unique_id=1025051343 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 3.3000002, 0)
+
+[node name="Platform_Cobblestone_5x18" parent="Level/Blocks" unique_id=25495602 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 4.5, 0)
+
+[node name="Platform_Cobblestone_5x19" parent="Level/Blocks" unique_id=117832095 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.200001, 4.5, 0)
+
+[node name="Platform_Cobblestone_5x20" parent="Level/Blocks" unique_id=1326132387 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.200001, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x31" parent="Level/Blocks" unique_id=676741726 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7000003, 0.90000004, 0)
+
+[node name="Platform_Cobblestone_5x32" parent="Level/Blocks" unique_id=1574985592 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7000003, 2.1000001, 0)
+
+[node name="Platform_Cobblestone_5x33" parent="Level/Blocks" unique_id=1536559385 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7000003, 3.3000002, 0)
+
+[node name="Platform_Cobblestone_5x34" parent="Level/Blocks" unique_id=421033438 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.700001, 4.5, 0)
+
+[node name="Platform_Cobblestone_5x35" parent="Level/Blocks" unique_id=489275431 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.700001, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x21" parent="Level/Blocks" unique_id=1941770098 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000008, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x22" parent="Level/Blocks" unique_id=1473863138 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2000008, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x23" parent="Level/Blocks" unique_id=87232478 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999924, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x24" parent="Level/Blocks" unique_id=1563039702 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7999992, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x25" parent="Level/Blocks" unique_id=1634344502 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2999992, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x26" parent="Level/Blocks" unique_id=2116923357 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1999993, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x6" parent="Level/Blocks" unique_id=1417328429 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -0.29999995, 0)
+
+[node name="Platform_Cobblestone_5x8" parent="Level/Blocks" unique_id=840624658 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -0.29999995, 0)
+
+[node name="Platform_Cobblestone_5x12" parent="Level/Blocks" unique_id=1655169918 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 0.9000001, 0)
+
+[node name="Platform_Cobblestone_5x27" parent="Level/Blocks" unique_id=1104583805 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 2.1000001, 0)
+
+[node name="Platform_Cobblestone_5x28" parent="Level/Blocks" unique_id=1647552298 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 3.3000002, 0)
+
+[node name="Platform_Cobblestone_5x29" parent="Level/Blocks" unique_id=746145147 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 4.5, 0)
+
+[node name="Platform_Cobblestone_5x30" parent="Level/Blocks" unique_id=1462847879 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, 5.7, 0)
+
+[node name="Platform_Cobblestone_5x7" parent="Level/Blocks" unique_id=154624260 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4999996, -0.59999996, 0)
+
+[node name="Platform_Cobblestone_5x11" parent="Level/Blocks" unique_id=1702478464 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000004, 3, 0)
+
+[node name="Platform_Cobblestone_5x10" parent="Level/Blocks" unique_id=1556793495 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000004, -0.6, 0)
+
+[node name="Platform_Cobblestone_5x9" parent="Level/Blocks" unique_id=1111957995 instance=ExtResource("6_c2kiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0999997, 2.4, 0)
+
+[node name="Platform_Deepslate_5x4" parent="Level/Blocks" unique_id=1077284211 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000001, -1.8, 0)
+
+[node name="Platform_Deepslate_5x14" parent="Level/Blocks" unique_id=720497669 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -1.5, 0)
+
+[node name="Platform_Deepslate_5x15" parent="Level/Blocks" unique_id=1180522917 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, -2.7, 0)
+
+[node name="Platform_Deepslate_5x16" parent="Level/Blocks" unique_id=105555551 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -3, 0)
+
+[node name="Platform_Deepslate_5x5" parent="Level/Blocks" unique_id=1818647759 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000001, -2.7, 0)
+
+[node name="Platform_Deepslate_5x6" parent="Level/Blocks" unique_id=589686735 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59999996, -2.4, 0)
+
+[node name="Platform_Deepslate_5x7" parent="Level/Blocks" unique_id=1504679041 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -2.4, 0)
+
+[node name="Platform_Deepslate_5x8" parent="Level/Blocks" unique_id=810507689 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -1.5000001, 0)
+
+[node name="Platform_Deepslate_5x12" parent="Level/Blocks" unique_id=1021066087 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -1.5000001, 0)
+
+[node name="Platform_Deepslate_5x13" parent="Level/Blocks" unique_id=2040387927 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, -2.7000003, 0)
+
+[node name="Platform_Deepslate_5x10" parent="Level/Blocks" unique_id=272847802 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8999999, -2.7000003, 0)
+
+[node name="Platform_Deepslate_5x9" parent="Level/Blocks" unique_id=1026991630 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -0.30000007, 0)
+
+[node name="Platform_Deepslate_5x11" parent="Level/Blocks" unique_id=946447547 instance=ExtResource("9_r4nth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.30000007, 0)
+
+[node name="DeepslateBlock" parent="Level/Blocks" unique_id=483940036 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, -2.4, 0)
+
+[node name="DeepslateBlock2" parent="Level/Blocks" unique_id=1473966055 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -2.4, 0)
+
+[node name="DeepslateBlock4" parent="Level/Blocks" unique_id=1909390341 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4000003, -2.1000001, 0)
+
+[node name="DeepslateBlock5" parent="Level/Blocks" unique_id=482027562 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7000003, -2.1000001, 0)
+
+[node name="DeepslateBlock6" parent="Level/Blocks" unique_id=2044720478 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2000003, -1.2, 0)
+
+[node name="DeepslateBlock7" parent="Level/Blocks" unique_id=1873020948 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9000003, -1.2, 0)
+
+[node name="DeepslateBlock8" parent="Level/Blocks" unique_id=143080129 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000004, -1.2, 0)
+
+[node name="DeepslateBlock9" parent="Level/Blocks" unique_id=822861607 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3000004, -2.7, 0)
+
+[node name="DeepslateBlock12" parent="Level/Blocks" unique_id=199843754 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2000003, -3.6000001, 0)
+
+[node name="DeepslateBlock13" parent="Level/Blocks" unique_id=1481529499 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2000003, -3.3000002, 0)
+
+[node name="DeepslateBlock14" parent="Level/Blocks" unique_id=1698795283 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, -3.3000002, 0)
+
+[node name="DeepslateBlock15" parent="Level/Blocks" unique_id=342237961 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, -3.6000001, 0)
+
+[node name="DeepslateBlock16" parent="Level/Blocks" unique_id=944955513 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999977, -3.3000002, 0)
+
+[node name="DeepslateBlock17" parent="Level/Blocks" unique_id=362693508 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999998, -2.4, 0)
+
+[node name="DeepslateBlock19" parent="Level/Blocks" unique_id=1602553352 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -0.90000004, 0)
+
+[node name="DeepslateBlock20" parent="Level/Blocks" unique_id=1272563353 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, -0.90000004, 0)
+
+[node name="DeepslateBlock21" parent="Level/Blocks" unique_id=1244287822 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0, 0)
+
+[node name="DeepslateBlock25" parent="Level/Blocks" unique_id=920413133 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5000005, -1.5, 0)
+
+[node name="DeepslateBlock22" parent="Level/Blocks" unique_id=252714400 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, -0.6, 0)
+
+[node name="DeepslateBlock23" parent="Level/Blocks" unique_id=1796489634 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.90000004, 0)
+
+[node name="DeepslateBlock24" parent="Level/Blocks" unique_id=671632625 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.6, 0)
+
+[node name="DeepslateBlock10" parent="Level/Blocks" unique_id=725231518 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0000005, -3, 0)
+
+[node name="DeepslateBlock11" parent="Level/Blocks" unique_id=1365121681 instance=ExtResource("10_vie2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0000005, -2.7, 0)
+
+[node name="DeepslateBricksBlock" parent="Level/Blocks" unique_id=1904221541 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000001, 0, 0)
+
+[node name="DeepslateBricksBlock4" parent="Level/Blocks" unique_id=2073325692 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000001, 0.3, 0)
+
+[node name="DeepslateBricksBlock18" parent="Level/Blocks" unique_id=529581014 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="DeepslateBricksBlock19" parent="Level/Blocks" unique_id=825001953 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0.3, 0)
+
+[node name="DeepslateBricksBlock20" parent="Level/Blocks" unique_id=1590199475 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, 0)
+
+[node name="DeepslateBricksBlock21" parent="Level/Blocks" unique_id=1116330587 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0.3, 0)
+
+[node name="DeepslateBricksBlock22" parent="Level/Blocks" unique_id=2064296187 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="DeepslateBricksBlock23" parent="Level/Blocks" unique_id=926246290 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.3, 0)
+
+[node name="DeepslateBricksBlock24" parent="Level/Blocks" unique_id=493375013 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0, 0)
+
+[node name="DeepslateBricksBlock25" parent="Level/Blocks" unique_id=511811386 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0.3, 0)
+
+[node name="DeepslateBricksBlock5" parent="Level/Blocks" unique_id=1560935947 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, 0.3, 0)
+
+[node name="DeepslateBricksBlock6" parent="Level/Blocks" unique_id=749769762 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 0.3, 0)
+
+[node name="DeepslateBricksBlock7" parent="Level/Blocks" unique_id=112698913 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 0, 0)
+
+[node name="DeepslateBricksBlock8" parent="Level/Blocks" unique_id=1328509289 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000003, 0, 0)
+
+[node name="DeepslateBricksBlock9" parent="Level/Blocks" unique_id=392452993 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000003, 0, 0)
+
+[node name="DeepslateBricksBlock10" parent="Level/Blocks" unique_id=1752301798 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000004, 0, 0)
+
+[node name="DeepslateBricksBlock15" parent="Level/Blocks" unique_id=1049316468 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000004, 0.3, 0)
+
+[node name="DeepslateBricksBlock16" parent="Level/Blocks" unique_id=714302531 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000003, 0.3, 0)
+
+[node name="DeepslateBricksBlock17" parent="Level/Blocks" unique_id=614211766 instance=ExtResource("11_2r7q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000003, 0.3, 0)
+
+[node name="TntBlock" parent="Level/Blocks" unique_id=2121341432 instance=ExtResource("12_ocaax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 1.8, 0)
+
+[node name="TntBlock3" parent="Level/Blocks" unique_id=1752698895 instance=ExtResource("12_ocaax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 2.1000001, 0)
+
+[node name="TntBlock4" parent="Level/Blocks" unique_id=698135198 instance=ExtResource("12_ocaax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, 2.4, 0)
+
+[node name="TntBlock2" parent="Level/Blocks" unique_id=271912211 instance=ExtResource("12_ocaax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60000014, 2.1000001, 0)
+
+[node name="CobblestoneBlock2" parent="Level/Blocks" unique_id=422735495 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000001, 1.5, 0)
+
+[node name="CobblestoneBlock64" parent="Level/Blocks" unique_id=420728795 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 2.1, 0)
+
+[node name="CobblestoneBlock65" parent="Level/Blocks" unique_id=1716872240 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90000004, 2.1, 0)
+
+[node name="CobblestoneBlock66" parent="Level/Blocks" unique_id=1981195444 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.1, 0)
+
+[node name="CobblestoneBlock12" parent="Level/Blocks" unique_id=758227410 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.8, 0)
+
+[node name="CobblestoneBlock17" parent="Level/Blocks" unique_id=1456591238 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.5, 0)
+
+[node name="CobblestoneBlock18" parent="Level/Blocks" unique_id=1822933882 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000004, 1.8, 0)
+
+[node name="CobblestoneBlock19" parent="Level/Blocks" unique_id=1406444505 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000004, 2.1, 0)
+
+[node name="CobblestoneBlock20" parent="Level/Blocks" unique_id=1472068129 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000006, 1.8, 0)
+
+[node name="CobblestoneBlock21" parent="Level/Blocks" unique_id=1547193953 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000004, 2.1, 0)
+
+[node name="CobblestoneBlock33" parent="Level/Blocks" unique_id=1404408129 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000006, 2.1, 0)
+
+[node name="CobblestoneBlock49" parent="Level/Blocks" unique_id=2134324225 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000003, 2.1, 0)
+
+[node name="CobblestoneBlock50" parent="Level/Blocks" unique_id=336840193 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000003, 2.3999999, 0)
+
+[node name="CobblestoneBlock51" parent="Level/Blocks" unique_id=1037043003 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 2.4, 0)
+
+[node name="CobblestoneBlock22" parent="Level/Blocks" unique_id=376984338 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000002, 4.5, 0)
+
+[node name="CobblestoneBlock23" parent="Level/Blocks" unique_id=475747786 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000004, 4.2, 0)
+
+[node name="CobblestoneBlock24" parent="Level/Blocks" unique_id=1252607074 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2000004, 4.7999997, 0)
+
+[node name="CobblestoneBlock25" parent="Level/Blocks" unique_id=1463988666 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2999996, 3.2999997, 0)
+
+[node name="CobblestoneBlock38" parent="Level/Blocks" unique_id=1280643347 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000007, 4.2, 0)
+
+[node name="CobblestoneBlock39" parent="Level/Blocks" unique_id=474009189 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000007, 4.7999997, 0)
+
+[node name="CobblestoneBlock40" parent="Level/Blocks" unique_id=477572214 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000007, 4.4999995, 0)
+
+[node name="CobblestoneBlock41" parent="Level/Blocks" unique_id=74447146 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000007, 4.7999997, 0)
+
+[node name="CobblestoneBlock26" parent="Level/Blocks" unique_id=1823295015 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000004, 4.5, 0)
+
+[node name="CobblestoneBlock27" parent="Level/Blocks" unique_id=814816047 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000003, 4.8, 0)
+
+[node name="CobblestoneBlock28" parent="Level/Blocks" unique_id=84489029 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000004, 4.8, 0)
+
+[node name="CobblestoneBlock29" parent="Level/Blocks" unique_id=973238282 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000004, 4.8, 0)
+
+[node name="CobblestoneBlock30" parent="Level/Blocks" unique_id=951477414 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5000005, 4.8, 0)
+
+[node name="CobblestoneBlock31" parent="Level/Blocks" unique_id=540167907 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000005, 4.8, 0)
+
+[node name="CobblestoneBlock32" parent="Level/Blocks" unique_id=1392370727 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000006, 4.5, 0)
+
+[node name="CobblestoneBlock34" parent="Level/Blocks" unique_id=320139222 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0999997, 4.5, 0)
+
+[node name="CobblestoneBlock35" parent="Level/Blocks" unique_id=1387424814 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7999995, 4.8, 0)
+
+[node name="CobblestoneBlock36" parent="Level/Blocks" unique_id=910356854 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0999994, 4.8, 0)
+
+[node name="CobblestoneBlock37" parent="Level/Blocks" unique_id=1372675978 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999994, 4.8, 0)
+
+[node name="CobblestoneBlock42" parent="Level/Blocks" unique_id=1221063874 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0999994, 4.2000003, 0)
+
+[node name="CobblestoneBlock43" parent="Level/Blocks" unique_id=1260583000 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4999994, 4.8, 0)
+
+[node name="CobblestoneBlock44" parent="Level/Blocks" unique_id=1128965715 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7999995, 4.5, 0)
+
+[node name="CobblestoneBlock45" parent="Level/Blocks" unique_id=6579882 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 4.8, 0)
+
+[node name="CobblestoneBlock46" parent="Level/Blocks" unique_id=1133207487 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 1.5, 0)
+
+[node name="CobblestoneBlock47" parent="Level/Blocks" unique_id=753442237 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000003, 1.2, 0)
+
+[node name="CobblestoneBlock4" parent="Level/Blocks" unique_id=891753570 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.5, 0)
+
+[node name="CobblestoneBlock48" parent="Level/Blocks" unique_id=325589433 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000001, 1.5, 0)
+
+[node name="CobblestoneBlock52" parent="Level/Blocks" unique_id=322706834 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 2.3999999, 0)
+
+[node name="CobblestoneBlock53" parent="Level/Blocks" unique_id=948551066 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 2.3999999, 0)
+
+[node name="CobblestoneBlock54" parent="Level/Blocks" unique_id=1074086313 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 2.1, 0)
+
+[node name="CobblestoneBlock63" parent="Level/Blocks" unique_id=561244379 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 1.8, 0)
+
+[node name="CobblestoneBlock55" parent="Level/Blocks" unique_id=86630399 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 2.1, 0)
+
+[node name="CobblestoneBlock56" parent="Level/Blocks" unique_id=336093943 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9000001, 2.3999999, 0)
+
+[node name="CobblestoneBlock57" parent="Level/Blocks" unique_id=1692971058 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30000007, 2.1, 0)
+
+[node name="CobblestoneBlock58" parent="Level/Blocks" unique_id=421974541 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9000001, 2.6999998, 0)
+
+[node name="CobblestoneBlock59" parent="Level/Blocks" unique_id=64607878 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000001, 2.6999998, 0)
+
+[node name="CobblestoneBlock60" parent="Level/Blocks" unique_id=86136518 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000001, 2.3999999, 0)
+
+[node name="CobblestoneBlock61" parent="Level/Blocks" unique_id=1810477463 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 2.6999998, 0)
+
+[node name="CobblestoneBlock62" parent="Level/Blocks" unique_id=1017080879 instance=ExtResource("9_pcno1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 2.9999998, 0)
+
+[node name="OakLogBlock" parent="Level/Blocks" unique_id=2114574614 instance=ExtResource("15_ummlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30000007, -0.3, 0)
+
+[node name="OakLogBlock2" parent="Level/Blocks" unique_id=367820006 instance=ExtResource("15_ummlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000001, -0.3, 0)

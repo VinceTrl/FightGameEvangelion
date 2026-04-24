@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnableItem" format=3 uid="uid://dmec4tqcdblkt"]
+
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_8sxhe"]
+
+[resource]
+script = ExtResource("1_8sxhe")
+itemName = &"BLOCK TNT"
+scenePath = &"res://Scenes/Gameplay/MinecraftBlock/tnt_block.tscn"
+spawnOnGround = true
+spawnChance = 6

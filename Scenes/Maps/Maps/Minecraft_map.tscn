@@ -13,8 +13,12 @@
 [ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="11_vtb3s"]
 [ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="12_ui2uj"]
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_4b3j0"]
+[ext_resource type="Resource" uid="uid://dpspq7qtc8pg3" path="res://Resources/Spawnables/Creeper.tres" id="14_biqso"]
+[ext_resource type="Resource" uid="uid://dmec4tqcdblkt" path="res://Resources/Spawnables/Block_TNT.tres" id="15_hg4j4"]
 [ext_resource type="PackedScene" uid="uid://bla1bvkvy68xo" path="res://Scenes/Maps/Environment/MinecraftEnviro.tscn" id="15_oxu42"]
+[ext_resource type="Resource" uid="uid://b3erqvxb24nxq" path="res://Resources/Spawnables/Enderman.tres" id="16_a6fen"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="16_x3ix5"]
+[ext_resource type="Resource" uid="uid://bv022mcb3708n" path="res://Resources/Spawnables/Wolf.tres" id="17_bajn7"]
 [ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="17_oxu42"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="18_lbjjn"]
 [ext_resource type="PackedScene" uid="uid://ssuqamymma7s" path="res://Scenes/Gameplay/lava_block_sea.tscn" id="18_stoph"]
@@ -33,7 +37,7 @@ enviro = [NodePath("Enviro")]
 lights = [NodePath("Lighting")]
 
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_biqso")]
-items = Array[ExtResource("3_hg4j4")]([ExtResource("4_a6fen"), ExtResource("5_bajn7"), ExtResource("6_isrjx"), ExtResource("7_444ut"), ExtResource("8_r3chl"), ExtResource("9_oaeey"), ExtResource("10_yhn4n"), ExtResource("11_vtb3s"), ExtResource("12_ui2uj"), ExtResource("13_4b3j0")])
+items = Array[ExtResource("3_hg4j4")]([ExtResource("4_a6fen"), ExtResource("5_bajn7"), ExtResource("6_isrjx"), ExtResource("7_444ut"), ExtResource("8_r3chl"), ExtResource("9_oaeey"), ExtResource("10_yhn4n"), ExtResource("11_vtb3s"), ExtResource("12_ui2uj"), ExtResource("13_4b3j0"), ExtResource("14_biqso"), ExtResource("15_hg4j4"), ExtResource("16_a6fen"), ExtResource("17_bajn7")])
 
 [node name="Enviro" type="Node3D" parent="." unique_id=510669441]
 

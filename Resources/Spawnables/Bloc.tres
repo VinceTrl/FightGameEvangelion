@@ -1,13 +1,10 @@
-[gd_resource type="Resource" script_class="SpawnableItem" load_steps=2 format=3 uid="uid://5mwafnwjmudh"]
+[gd_resource type="Resource" script_class="SpawnableItem" format=3 uid="uid://5mwafnwjmudh"]
 
 [ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_r5dqw"]
 
 [resource]
 script = ExtResource("1_r5dqw")
 itemName = &"BLOC"
-scenePath = &"res://Scenes/Gameplay/block.tscn"
+scenePath = &"res://Scenes/Gameplay/MinecraftBlock/barrel_block.tscn"
 spawnOnGround = true
-groundOffset = Vector3(0, 0, 0)
-spawnOncePerGame = false
-isUniqueInstance = false
 spawnChance = 6

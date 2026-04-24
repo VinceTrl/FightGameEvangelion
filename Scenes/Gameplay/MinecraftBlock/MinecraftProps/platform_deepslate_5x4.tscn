@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dpygy6dyyfqtx"]
+
+[ext_resource type="PackedScene" uid="uid://uve86dqmdawq" path="res://Scenes/Gameplay/MinecraftBlock/deepslate_block.tscn" id="1_nygkx"]
+
+[node name="Platform_Deepslate_5x4" type="Node3D" unique_id=1544287573]
+
+[node name="DeepslateBlock" parent="." unique_id=1588274387 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="DeepslateBlock2" parent="." unique_id=461346249 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.3, 0)
+
+[node name="DeepslateBlock3" parent="." unique_id=669385913 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0)
+
+[node name="DeepslateBlock4" parent="." unique_id=369287015 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.3, 0)
+
+[node name="DeepslateBlock5" parent="." unique_id=1670554868 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.3, 0)
+
+[node name="DeepslateBlock6" parent="." unique_id=427227457 instance=ExtResource("1_nygkx")]
+
+[node name="DeepslateBlock7" parent="." unique_id=221094520 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
+
+[node name="DeepslateBlock8" parent="." unique_id=941860311 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, 0)
+
+[node name="DeepslateBlock9" parent="." unique_id=252782470 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+
+[node name="DeepslateBlock10" parent="." unique_id=2117425816 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+
+[node name="DeepslateBlock11" parent="." unique_id=1533234567 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+
+[node name="DeepslateBlock12" parent="." unique_id=891377154 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.3, 0)
+
+[node name="DeepslateBlock13" parent="." unique_id=1697924188 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -0.3, 0)
+
+[node name="DeepslateBlock14" parent="." unique_id=442879416 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.3, 0)
+
+[node name="DeepslateBlock15" parent="." unique_id=1275321918 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.3, 0)
+
+[node name="DeepslateBlock16" parent="." unique_id=1593768985 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+
+[node name="DeepslateBlock17" parent="." unique_id=1604632669 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.6, 0)
+
+[node name="DeepslateBlock18" parent="." unique_id=1438183960 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -0.6, 0)
+
+[node name="DeepslateBlock19" parent="." unique_id=860732537 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.6, 0)
+
+[node name="DeepslateBlock20" parent="." unique_id=186656092 instance=ExtResource("1_nygkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -0.6, 0)

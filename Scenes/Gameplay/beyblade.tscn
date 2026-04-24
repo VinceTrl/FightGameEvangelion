@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ma1a8w06qfh8"]
+[gd_scene format=3 uid="uid://ma1a8w06qfh8"]
 
 [ext_resource type="Script" uid="uid://bnfxedwkb4ml0" path="res://Scripts/Gameplay/Items/beyblade.gd" id="1_t1y04"]
 [ext_resource type="Script" uid="uid://bjur7smhqpufy" path="res://Scripts/GameEffects/Animations/BumperAnimation.gd" id="2_718lx"]
@@ -36,7 +36,7 @@ size = Vector3(0.551, 0.272, 0.625)
 height = 0.095
 radius = 0.264793
 
-[node name="Beyblade" type="CharacterBody3D" node_paths=PackedStringArray("spinNode", "tiltNode", "fireParticles", "fireRoot") groups=["PyramidHeadTarget"]]
+[node name="Beyblade" type="CharacterBody3D" unique_id=580019986 node_paths=PackedStringArray("spinNode", "tiltNode", "fireParticles", "fireRoot") groups=["PyramidHeadTarget"]]
 collision_layer = 209
 axis_lock_linear_z = true
 axis_lock_angular_x = true
@@ -56,26 +56,26 @@ fireParticles = NodePath("VFXs/VFX_Fire01_mecha")
 fireRoot = NodePath("VFXs")
 maxFireScale = Vector3(0.35, 0.35, 0.35)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1933610308]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00259277, -0.0524734, 0)
 shape = SubResource("BoxShape3D_ic0y2")
 
-[node name="TiltRoot" type="Node3D" parent="."]
+[node name="TiltRoot" type="Node3D" parent="." unique_id=567074374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.209936, 0)
 
-[node name="Visual" type="Node3D" parent="TiltRoot" node_paths=PackedStringArray("hurtBoxes")]
+[node name="Visual" type="Node3D" parent="TiltRoot" unique_id=1909986092 node_paths=PackedStringArray("hurtBoxes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.209936, 0)
 script = ExtResource("2_718lx")
 hurtBoxes = [NodePath("../../Hurtbox")]
 animationCurve = ExtResource("3_2snwk")
 maxScale = Vector3(1.2, 1.2, 1.2)
 
-[node name="SpinNode" type="Node3D" parent="TiltRoot/Visual"]
+[node name="SpinNode" type="Node3D" parent="TiltRoot/Visual" unique_id=31251035]
 
-[node name="beybladeSnake" parent="TiltRoot/Visual/SpinNode" instance=ExtResource("4_he7th")]
+[node name="beybladeSnake" parent="TiltRoot/Visual/SpinNode" unique_id=747882943 instance=ExtResource("4_he7th")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="TrailEmitter" type="TrailEmitter" parent="TiltRoot/Visual/SpinNode"]
+[node name="TrailEmitter" type="TrailEmitter" parent="TiltRoot/Visual/SpinNode" unique_id=1751333867]
 material = SubResource("StandardMaterial3D_he7th")
 curve = SubResource("Curve_tbgqv")
 gradient = SubResource("Gradient_uqyhy")
@@ -85,7 +85,7 @@ size = 0.02
 update_interval = 0.005
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.00984499, 0.272237)
 
-[node name="TrailEmitter2" type="TrailEmitter" parent="TiltRoot/Visual/SpinNode"]
+[node name="TrailEmitter2" type="TrailEmitter" parent="TiltRoot/Visual/SpinNode" unique_id=1815717219]
 material = SubResource("StandardMaterial3D_he7th")
 curve = SubResource("Curve_tbgqv")
 gradient = SubResource("Gradient_uqyhy")
@@ -95,32 +95,34 @@ size = 0.02
 update_interval = 0.005
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.00984499, -0.289441)
 
-[node name="VFXs" type="Node3D" parent="."]
+[node name="VFXs" type="Node3D" parent="." unique_id=56370712]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.068922, 0)
 
-[node name="VFX_Fire01_mecha" parent="VFXs" instance=ExtResource("7_627sr")]
+[node name="VFX_Fire01_mecha" parent="VFXs" unique_id=565719412 instance=ExtResource("7_627sr")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 startEmitting = false
 
-[node name="Hurtbox" type="Area3D" parent="."]
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1099140941]
 script = ExtResource("3_qtif3")
 randomID = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=319782298]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00311279, -0.0338745, 0)
 shape = SubResource("BoxShape3D_svkph")
+debug_color = Color(2.4546682e-06, 0.64444214, 0.28691828, 0.41960785)
 
-[node name="Hitbox" type="Area3D" parent="."]
+[node name="Hitbox" type="Area3D" parent="." unique_id=470037749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00467485, 0)
 script = ExtResource("4_h6thn")
 isActive = false
 randomID = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00808716, -0.0159245, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1208316033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00808716, -0.03587927, 0)
 shape = SubResource("CylinderShape3D_6h4qi")
+debug_color = Color(0.97948927, 0, 0.39148846, 0.41960785)
 
-[node name="DebugLabel" type="Label3D" parent="."]
+[node name="DebugLabel" type="Label3D" parent="." unique_id=603262049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.256573, 0.244282)
 text = "SPEED = 50.0
 SPIN = 1
@@ -129,24 +131,24 @@ DIR ; 1 1 1
 VELOCITY = 1 1 1"
 vertical_alignment = 2
 
-[node name="Raycasts" type="Node3D" parent="."]
+[node name="Raycasts" type="Node3D" parent="." unique_id=432296115]
 
-[node name="WallCheck_R" type="RayCast3D" parent="Raycasts"]
+[node name="WallCheck_R" type="RayCast3D" parent="Raycasts" unique_id=2134132202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145, 0, 0)
 target_position = Vector3(0.2, 0, 0)
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="WallCheck_L" type="RayCast3D" parent="Raycasts"]
+[node name="WallCheck_L" type="RayCast3D" parent="Raycasts" unique_id=1771240347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145, 0, 0)
 target_position = Vector3(-0.2, 0, 0)
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="GroundCheck_R" type="RayCast3D" parent="Raycasts"]
+[node name="GroundCheck_R" type="RayCast3D" parent="Raycasts" unique_id=2117034631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145, -0.115, 0)
 target_position = Vector3(0, -0.2, 0)
 debug_shape_custom_color = Color(1.44392e-07, 0.701049, 1.54018e-06, 1)
 
-[node name="GroundCheck_L" type="RayCast3D" parent="Raycasts"]
+[node name="GroundCheck_L" type="RayCast3D" parent="Raycasts" unique_id=2127036443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145, -0.115, 0)
 target_position = Vector3(0, -0.2, 0)
 debug_shape_custom_color = Color(1.44392e-07, 0.701049, 1.54018e-06, 1)

@@ -13,7 +13,9 @@
 [ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="11_ui5xy"]
 [ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="12_wngnh"]
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_d8iam"]
+[ext_resource type="Resource" uid="uid://dpspq7qtc8pg3" path="res://Resources/Spawnables/Creeper.tres" id="14_2viw2"]
 [ext_resource type="Resource" uid="uid://bf7tile8rgsc1" path="res://Resources/Spawnables/Heather.tres" id="15_2viw2"]
+[ext_resource type="Resource" uid="uid://dmec4tqcdblkt" path="res://Resources/Spawnables/Block_TNT.tres" id="15_jm63t"]
 [ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="15_oejxh"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="17_07c4o"]
 [ext_resource type="PackedScene" uid="uid://bqcq0tbw3y3t6" path="res://Scenes/Maps/Environment/SilentHillEnviro.tscn" id="17_oejxh"]
@@ -42,7 +44,7 @@ enviro = [NodePath("Enviro")]
 lights = [NodePath("Lighting")]
 
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_oejxh")]
-items = Array[ExtResource("3_tinxj")]([ExtResource("4_j7try"), ExtResource("5_2viw2"), ExtResource("6_jm63t"), ExtResource("7_jfeg2"), ExtResource("8_30qur"), ExtResource("9_acfw1"), ExtResource("10_o0xtj"), ExtResource("11_ui5xy"), ExtResource("12_wngnh"), ExtResource("13_d8iam"), ExtResource("15_2viw2")])
+items = Array[ExtResource("3_tinxj")]([ExtResource("4_j7try"), ExtResource("5_2viw2"), ExtResource("6_jm63t"), ExtResource("7_jfeg2"), ExtResource("8_30qur"), ExtResource("9_acfw1"), ExtResource("10_o0xtj"), ExtResource("11_ui5xy"), ExtResource("12_wngnh"), ExtResource("13_d8iam"), ExtResource("14_2viw2"), ExtResource("15_jm63t"), ExtResource("15_2viw2")])
 
 [node name="Enviro" type="Node3D" parent="." unique_id=510669441]
 

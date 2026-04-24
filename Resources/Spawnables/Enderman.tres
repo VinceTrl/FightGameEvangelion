@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnableItem" format=3 uid="uid://b3erqvxb24nxq"]
+
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_w3jtt"]
+
+[resource]
+script = ExtResource("1_w3jtt")
+itemName = &"ENDERMAN"
+scenePath = &"res://Scenes/Characters/Enderman/enderman.tscn"
+spawnOnGround = true
+spawnChance = 1
