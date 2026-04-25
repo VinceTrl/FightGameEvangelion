@@ -158,3 +158,4 @@ mesh = SubResource("PlaneMesh_g2fab")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1918842620]
 libraries/ = SubResource("AnimationLibrary_g2fab")
+autoplay = &"SpawnSpell"

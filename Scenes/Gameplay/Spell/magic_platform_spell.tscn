@@ -93,4 +93,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ps5at")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=2025831501]
 libraries/ = SubResource("AnimationLibrary_w0ql6")
-autoplay = &"ScaleIn"

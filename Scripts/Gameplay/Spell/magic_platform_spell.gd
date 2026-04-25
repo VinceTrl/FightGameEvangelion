@@ -6,8 +6,8 @@ extends Spell
 func _ready() -> void:
 	pass # Replace with function body.
 	
-func CastSpell(duration:float = lifeTime):
-	super(duration)
+func CastSpell(duration:float = lifeTime,target:Node3D = null):
+	super(duration,target)
 	animation_player.play("ScaleIn")
 	
 func DestroySpell():

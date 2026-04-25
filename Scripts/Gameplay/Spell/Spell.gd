@@ -4,12 +4,14 @@ extends Node3D
 
 @export var lifeTime:float = 5.0
 var lifeTimeTimer:SceneTreeTimer
+var spellTarget:Node3D
 
 func _process(delta: float) -> void:
 	ProcessSpell(delta)
 
-func CastSpell(duration:float = lifeTime):
+func CastSpell(duration:float = lifeTime,target:Node3D = null):
 	lifeTime = duration
+	spellTarget = target
 	StartLifeTime()
 	pass
 	

@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="19_6xnvc"]
 [ext_resource type="PackedScene" uid="uid://dyx6jlaren7re" path="res://Scenes/Characters/Mage/mage.tscn" id="19_kkmlt"]
 [ext_resource type="Resource" uid="uid://d282ym1u5ohem" path="res://Resources/Maps/DarkSoulsMap.tres" id="20_5fwcu"]
-[ext_resource type="PackedScene" uid="uid://rku5nbrgtd6i" path="res://Scenes/Gameplay/Spell/magic_platform_spell.tscn" id="20_f6ug2"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="21_c4hgn"]
 [ext_resource type="PackedScene" uid="uid://ssuqamymma7s" path="res://Scenes/Gameplay/lava_block_sea.tscn" id="22_xca43"]
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="23_fv422"]
@@ -48,15 +47,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -10.200001)
 
 [node name="Mage" parent="Enviro" unique_id=646494372 instance=ExtResource("19_kkmlt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.6, -7.5000005)
-
-[node name="MagicPlatformSpell" parent="Enviro" unique_id=1356057128 instance=ExtResource("20_f6ug2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
-
-[node name="MagicPlatformSpell2" parent="Enviro" unique_id=762341204 instance=ExtResource("20_f6ug2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.2, 0)
-
-[node name="MagicPlatformSpell3" parent="Enviro" unique_id=276380151 instance=ExtResource("20_f6ug2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.2, 0)
 
 [node name="Lighting" type="Node3D" parent="." unique_id=818802441]
 
