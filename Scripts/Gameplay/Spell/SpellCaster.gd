@@ -21,7 +21,7 @@ const SPELL_CAST_VFX = preload("uid://dpg80ckyq67o3")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	InitSpell()
-	TEMP_SpellTimer()
+	#TEMP_SpellTimer()
 	pass # Replace with function body.
 
 
