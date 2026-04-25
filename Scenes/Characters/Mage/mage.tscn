@@ -5,10 +5,25 @@
 [ext_resource type="Script" uid="uid://fltyy8e4315a" path="res://Scripts/Gameplay/Spell/SpellData.gd" id="3_a40iw"]
 [ext_resource type="PackedScene" uid="uid://rku5nbrgtd6i" path="res://Scenes/Gameplay/Spell/magic_platform_spell.tscn" id="4_qujs0"]
 [ext_resource type="PackedScene" uid="uid://bmktqinsrerkw" path="res://Scenes/VFX/spell_trail_vfx.tscn" id="5_qujs0"]
+[ext_resource type="PackedScene" uid="uid://ce5qiduai3m4v" path="res://Scenes/Gameplay/Spell/magic_fire_spell.tscn" id="5_ujnca"]
+[ext_resource type="PackedScene" uid="uid://d6y8hbx5iihi" path="res://Scenes/Gameplay/magic_armor.tscn" id="6_teluo"]
 
 [sub_resource type="Resource" id="Resource_ujnca"]
 script = ExtResource("3_a40iw")
 spellScene = ExtResource("4_qujs0")
+metadata/_custom_type_script = "uid://fltyy8e4315a"
+
+[sub_resource type="Resource" id="Resource_teluo"]
+script = ExtResource("3_a40iw")
+lifeTime = 10.0
+spellScene = ExtResource("5_ujnca")
+spawnOnGround = true
+metadata/_custom_type_script = "uid://fltyy8e4315a"
+
+[sub_resource type="Resource" id="Resource_d4wrx"]
+script = ExtResource("3_a40iw")
+lifeTime = -1.0
+spellScene = ExtResource("6_teluo")
 metadata/_custom_type_script = "uid://fltyy8e4315a"
 
 [node name="Mage" type="Node3D" unique_id=646494372]
@@ -94,10 +109,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1136.4, 1443.0001)
 
 [node name="SpellCaster" type="Node3D" parent="." unique_id=1598924479 node_paths=PackedStringArray("spellStartNode")]
 script = ExtResource("2_noksf")
-spells = Array[ExtResource("3_a40iw")]([SubResource("Resource_ujnca")])
+spells = Array[ExtResource("3_a40iw")]([SubResource("Resource_ujnca"), SubResource("Resource_teluo"), SubResource("Resource_d4wrx")])
 spellStartNode = NodePath("../Visual/Zelda/BoneAttachment3D/Marker3D")
 
 [node name="SpellTrailVFX" parent="SpellCaster" unique_id=254146121 instance=ExtResource("5_qujs0")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=28762118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 1.2)
+omni_range = 3.3000002
 
 [editable path="Visual/Zelda"]
 [editable path="SpellCaster/SpellTrailVFX"]

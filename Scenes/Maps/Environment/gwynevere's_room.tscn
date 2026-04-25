@@ -14,7 +14,7 @@ billboard_keep_scale = true
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t7owx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7owx"]
-size = Vector3(4, 10, 30)
+size = Vector3(4, 30, 30)
 
 [node name="Gwynevere\'s room" type="Node3D" unique_id=9870905]
 
@@ -69,14 +69,14 @@ collision_layer = 193
 shape = SubResource("WorldBoundaryShape3D_t7owx")
 
 [node name="Wall_L" type="StaticBody3D" parent="Collisions" unique_id=1818740605]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.381021, 3.4140124, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.381021, 13.314013, 3)
 collision_layer = 193
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Wall_L" unique_id=1511745657]
 shape = SubResource("BoxShape3D_t7owx")
 
 [node name="Wall_R" type="StaticBody3D" parent="Collisions" unique_id=374413740]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71898, 3.4140124, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71898, 13.314013, 3)
 collision_layer = 193
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Wall_R" unique_id=651151292]

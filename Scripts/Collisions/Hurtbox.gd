@@ -7,12 +7,14 @@ const VFX_2D_IMPACT = preload("res://Scenes/VFX/VFX2D/vfx_2d_impact_medium.tscn"
 @export var owner_id = 1
 @export var randomID = false
 @export var playVfxOnHit: bool = true
+@export var isActive:bool = true
+
 
 signal OnHurtboxTakeDamage(hitbox : Hitbox)
 signal OnHurtboxHit
 
 func _init() -> void:
-	collision_layer = 0 #was at 0
+	collision_layer = 4 #was at 0
 	collision_mask = 4
 	
 
@@ -30,6 +32,7 @@ func _on_area_entered(hitbox : Hitbox) -> void:
 	if (hitbox.owner == owner): return
 	if (hitbox.owner_id == owner_id): return
 	if (!hitbox.isActive):return
+	if(!isActive):return
 
 	hitbox.emit_signal("OnHitWithHurtbox",self)
 	hitbox.OnHitSuccess.emit()

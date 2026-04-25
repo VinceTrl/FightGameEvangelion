@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs6hriirg2shp"
-path.s3tc="res://.godot/imported/Slap Gui Anim0.png-23e334ba0d87fba12069744c4083e42a.s3tc.ctex"
+uid="uid://qya02rcb2bx3"
+path.s3tc="res://.godot/imported/VmagS_core.png-f63ab221aadee4d50e18ea1f9c327c15.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/GUI/Sprites/BRUTALSLAP/Slap Gui Anim0.png"
-dest_files=["res://.godot/imported/Slap Gui Anim0.png-23e334ba0d87fba12069744c4083e42a.s3tc.ctex"]
+source_file="res://Assets/Meshes/Props/MagicArmor/VmagS_core.png"
+dest_files=["res://.godot/imported/VmagS_core.png-f63ab221aadee4d50e18ea1f9c327c15.s3tc.ctex"]
 
 [params]
 

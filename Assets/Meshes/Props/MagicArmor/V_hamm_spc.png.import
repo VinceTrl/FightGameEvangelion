@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs6hriirg2shp"
-path.s3tc="res://.godot/imported/Slap Gui Anim0.png-23e334ba0d87fba12069744c4083e42a.s3tc.ctex"
+uid="uid://nq4bajtgdihd"
+path.s3tc="res://.godot/imported/V_hamm_spc.png-0f6b4dae2b22f71f7db8054dea39b3cd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/GUI/Sprites/BRUTALSLAP/Slap Gui Anim0.png"
-dest_files=["res://.godot/imported/Slap Gui Anim0.png-23e334ba0d87fba12069744c4083e42a.s3tc.ctex"]
+source_file="res://Assets/Meshes/Props/MagicArmor/V_hamm_spc.png"
+dest_files=["res://.godot/imported/V_hamm_spc.png-0f6b4dae2b22f71f7db8054dea39b3cd.s3tc.ctex"]
 
 [params]
 

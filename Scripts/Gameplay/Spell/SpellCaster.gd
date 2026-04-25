@@ -10,6 +10,7 @@ extends Node
 @export var xRange:Vector2 = Vector2(-4,4)
 @export var yRange:Vector2 = Vector2(0.75,2.5)
 @export_flags_3d_physics var targetMask = 1
+@export var groundOffset:float = 0.025
 
 @onready var spell_trail_vfx: Node3D = $SpellTrailVFX
 
@@ -55,7 +56,7 @@ func CastSpell(data:SpellData):
 		var target := data.targetType
 		match target:
 			SpellData.SpellTargetType.Random:
-				targetLocation = GetRandomPosition()
+				targetLocation = GetRandomPosition() + (Vector3.UP * groundOffset)
 				if(!data.spawnOnGround):
 					targetLocation = targetLocation + (Vector3.UP * randf_range(yRange.x,yRange.y))
 			SpellData.SpellTargetType.Player:

@@ -2,7 +2,8 @@ class_name Spell
 
 extends Node3D
 
-@export var lifeTime:float = 5.0
+## -1 to infinite lifetime
+@export var lifeTime:float = 5.0 
 var lifeTimeTimer:SceneTreeTimer
 var spellTarget:Node3D
 
@@ -19,6 +20,8 @@ func ProcessSpell(delta:float):
 	pass
 	
 func StartLifeTime():
+	if(lifeTime < 0.0):
+		return
 	lifeTimeTimer = get_tree().create_timer(lifeTime)
 	await  lifeTimeTimer.timeout
 	DestroySpell()
