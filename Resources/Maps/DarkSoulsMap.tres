@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Map" format=3 uid="uid://d282ym1u5ohem"]
+
+[ext_resource type="Script" uid="uid://cwdo4krnscq8b" path="res://Scripts/Level/map.gd" id="1_56ux1"]
+
+[resource]
+script = ExtResource("1_56ux1")
+mapName = &"DarkSouls"
+mapScenePath = &"res://Scenes/Maps/Maps/DarkSouls_map.tscn"
+stagePaths = Array[String](["res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_01.tscn", "res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_02.tscn"])

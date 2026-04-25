@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://rku5nbrgtd6i"]
+
+[ext_resource type="Script" uid="uid://c6lbhc0772dje" path="res://Scripts/Gameplay/Spell/magic_platform_spell.gd" id="1_v28dg"]
+[ext_resource type="Texture2D" uid="uid://psctkiwul87g" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/lightTex06_s3tc_fix.png" id="2_6a2ov"]
+[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/TRSEffects/visual_holder.gd" id="3_8i7dx"]
+
+[sub_resource type="Curve" id="Curve_amkae"]
+
+[sub_resource type="Curve" id="Curve_6a2ov"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.50000006, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_doyqo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_amkae"]
+size = Vector3(1, 0.3, 1)
+
+[sub_resource type="Curve" id="Curve_8i7dx"]
+
+[sub_resource type="Curve" id="Curve_ps5at"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8i7dx"]
+size = Vector3(1, 0.3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ps5at"]
+albedo_texture = ExtResource("2_6a2ov")
+emission_enabled = true
+emission_texture = ExtResource("2_6a2ov")
+
+[sub_resource type="Animation" id="Animation_1awqb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2m0ym"]
+resource_name = "ScaleIn"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.09602084, 0.77822495, 1.069695, -0.01864782, 0.834849, 0.015701769, -0.70295644, 1.1668516, -0.036031686, 0.3788921, 0.085002065, -0.8938413, 1.0243552, -0.048853982, 0.28717595, 0.03305632, -0.19431335, 1, -0.14896637, -0.15052682, 0, 0),
+"times": PackedFloat32Array(0, 0.4043053, 0.5286601, 0.67820084, 1.0003195)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w0ql6"]
+_data = {
+&"RESET": SubResource("Animation_1awqb"),
+&"ScaleIn": SubResource("Animation_2m0ym")
+}
+
+[node name="MagicPlatformSpell" type="Node3D" unique_id=1356057128]
+script = ExtResource("1_v28dg")
+metadata/_custom_type_script = "uid://di72jnv8gesxg"
+
+[node name="AnimatedBody3D" type="AnimatableBody3D" parent="." unique_id=1503331563 groups=["Ledgegrab"]]
+transform = Transform3D(0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+collision_layer = 193
+script = ExtResource("3_8i7dx")
+positionTime = 3.0
+positionTarget = Vector3(0, 0.5, 0)
+positionCurveX = SubResource("Curve_amkae")
+positionCurveY = SubResource("Curve_6a2ov")
+positionCurveZ = SubResource("Curve_doyqo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedBody3D" unique_id=431057251]
+shape = SubResource("BoxShape3D_amkae")
+
+[node name="Visual" type="Node3D" parent="." unique_id=723792068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+script = ExtResource("3_8i7dx")
+positionTime = 3.0
+positionTarget = Vector3(0, 0.5, 0)
+positionCurveX = SubResource("Curve_8i7dx")
+positionCurveY = SubResource("Curve_6a2ov")
+positionCurveZ = SubResource("Curve_ps5at")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual" unique_id=801647823]
+mesh = SubResource("BoxMesh_8i7dx")
+surface_material_override/0 = SubResource("StandardMaterial3D_ps5at")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visual" unique_id=2025831501]
+libraries/ = SubResource("AnimationLibrary_w0ql6")
+autoplay = &"ScaleIn"

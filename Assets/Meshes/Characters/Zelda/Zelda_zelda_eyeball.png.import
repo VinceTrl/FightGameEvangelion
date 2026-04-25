@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpc7hfpmjjicg"
-path.s3tc="res://.godot/imported/BrushMask.jpg-3f6c5073131337f34d47472227ac1e9c.s3tc.ctex"
+uid="uid://c4a4bx1tqgroj"
+path.s3tc="res://.godot/imported/Zelda_zelda_eyeball.png-2667a2a84ee2eff8045f487581bb32e4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "06ed839560b49c120d5ccee8cff2f7e8"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/Masks/BrushMask.jpg"
-dest_files=["res://.godot/imported/BrushMask.jpg-3f6c5073131337f34d47472227ac1e9c.s3tc.ctex"]
+source_file="res://Assets/Meshes/Characters/Zelda/Zelda_zelda_eyeball.png"
+dest_files=["res://.godot/imported/Zelda_zelda_eyeball.png-2667a2a84ee2eff8045f487581bb32e4.s3tc.ctex"]
 
 [params]
 

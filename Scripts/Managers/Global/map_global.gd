@@ -5,6 +5,7 @@ const EVANGELION_MAP = preload("res://Scenes/Maps/Maps/evangelion_map.tscn")
 const TEST_MAP = preload("res://Scenes/Maps/Maps/Test_map.tscn")
 const SILENT_HILL_MAP = preload("res://Scenes/Maps/Maps/SilentHill_map.tscn")
 const MINECRAFT_MAP = preload("res://Scenes/Maps/Maps/Minecraft_map.tscn")
+const DARK_SOULS_MAP = preload("uid://b8pb8jw1emg6v")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,5 +32,8 @@ func InstantiateMap(mapName:String) -> Node:
 		"Minecraft":
 			print("Minecraft map instance")
 			instance = MINECRAFT_MAP.instantiate()
+		"DarkSouls":
+			print("Dark Souls map instance")
+			instance = DARK_SOULS_MAP.instantiate()
 
 	return instance

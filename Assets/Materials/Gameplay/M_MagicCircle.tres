@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d2jlfbs7mq0hv"]
+
+[ext_resource type="Texture2D" uid="uid://co6dn6srwk12a" path="res://Assets/Textures/MagicCircle.png" id="1_6m01f"]
+[ext_resource type="Texture2D" uid="uid://bxsj3dd6t0keh" path="res://Assets/Textures/Masks/MagicCircleMask.png" id="2_5vb1a"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0, 1, 1, 1)
+albedo_texture = ExtResource("1_6m01f")
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_5vb1a")
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 4
+heightmap_max_layers = 16
+heightmap_texture = ExtResource("2_5vb1a")
+texture_filter = 0

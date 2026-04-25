@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://dpg80ckyq67o3"]
+
+[ext_resource type="Texture2D" uid="uid://dpee3f7haxdg8" path="res://Assets/Sprites/Vfx/Fire/Flare00.PNG" id="1_d8lty"]
+[ext_resource type="Material" uid="uid://d2jlfbs7mq0hv" path="res://Assets/Materials/Gameplay/M_MagicCircle.tres" id="2_ijt5l"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w0x6k"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.1
+emission_ring_radius = 0.8
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 8.106
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 0.99999774
+linear_accel_max = 1.9999977
+tangential_accel_min = 2.8399978
+tangential_accel_max = 7.0999975
+scale_min = 0.0
+scale_max = 8.29
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2fab"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 1)
+albedo_texture = ExtResource("1_d8lty")
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+emission_texture = ExtResource("1_d8lty")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_yqbiq"]
+material = SubResource("StandardMaterial3D_g2fab")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g2fab"]
+material = ExtResource("2_ijt5l")
+
+[sub_resource type="Animation" id="Animation_d8lty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w0x6k"]
+resource_name = "SpawnSpell"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g2fab"]
+_data = {
+&"RESET": SubResource("Animation_d8lty"),
+&"SpawnSpell": SubResource("Animation_w0x6k")
+}
+
+[node name="SpellCast_VFX" type="Node3D" unique_id=826934751]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1583690233]
+emitting = false
+amount = 100
+lifetime = 0.75
+one_shot = true
+explosiveness = 0.13
+visibility_aabb = AABB(-2, -2, -2, 4, 4, 4)
+trail_lifetime = 1.49
+process_material = SubResource("ParticleProcessMaterial_w0x6k")
+draw_pass_1 = SubResource("QuadMesh_yqbiq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1440738916]
+mesh = SubResource("PlaneMesh_g2fab")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1918842620]
+libraries/ = SubResource("AnimationLibrary_g2fab")

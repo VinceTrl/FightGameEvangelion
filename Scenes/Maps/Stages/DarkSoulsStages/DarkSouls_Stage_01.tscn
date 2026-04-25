@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://blffqfh5xstpd"]
+
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_b24w4"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_dr8sg"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_qo1s4"]
+[ext_resource type="PackedScene" uid="uid://ctb65dyncmbxe" path="res://Scenes/Meshes/wood_platform.tscn" id="5_8xhwn"]
+
+[node name="DarkSouls_Stage_01" type="Node3D" unique_id=407222934 node_paths=PackedStringArray("levelRoot")]
+script = ExtResource("1_b24w4")
+platformSpawnType = 1
+overrideMinCamZ = 4.0
+overrideMaxCamZ = 6.0
+levelRoot = NodePath("Level")
+
+[node name="Gameplay" type="Node3D" parent="." unique_id=837876375]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay" unique_id=1707638752]
+
+[node name="PlayerSpawn" type="Marker3D" parent="Gameplay/GameplayLogic" unique_id=2141920691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.439, 0)
+script = ExtResource("2_dr8sg")
+
+[node name="PlayerSpawn2" type="Marker3D" parent="Gameplay/GameplayLogic" unique_id=1977175876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.539, 0)
+script = ExtResource("2_dr8sg")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay" unique_id=901773701]
+
+[node name="Spawner" parent="Gameplay/Objects" unique_id=699863894 instance=ExtResource("3_qo1s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.998389, 4.3, 0)
+
+[node name="Spawner4" parent="Gameplay/Objects" unique_id=796773651 instance=ExtResource("3_qo1s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00957, 4.3, 0)
+
+[node name="Spawner2" parent="Gameplay/Objects" unique_id=111958652 instance=ExtResource("3_qo1s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00218, 4.3, 0)
+
+[node name="Spawner3" parent="Gameplay/Objects" unique_id=1273159409 instance=ExtResource("3_qo1s4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01174, 4.3, 0)
+
+[node name="Level" type="Node3D" parent="." unique_id=1621998700]
+
+[node name="ShipTargetPosition4" type="Node3D" parent="Level" unique_id=1947860736]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
+
+[node name="ShipTargetPosition5" type="Node3D" parent="Level" unique_id=1240400748]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
+
+[node name="ShipTargetPosition6" type="Node3D" parent="Level" unique_id=244046126]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
+
+[node name="WoodPlatform24" parent="Level" unique_id=989576098 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 0)
+
+[node name="WoodPlatform25" parent="Level" unique_id=1392824178 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 0)
+
+[node name="WoodPlatform23" parent="Level" unique_id=274681971 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -0.509915)
+
+[node name="WoodPlatform15" parent="Level" unique_id=1141431661 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -0.509915)
+
+[node name="WoodPlatform16" parent="Level" unique_id=1588580086 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, -0.509915)
+
+[node name="WoodPlatform17" parent="Level" unique_id=1815200716 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -0.509915)
+
+[node name="WoodPlatform18" parent="Level" unique_id=1032164654 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -0.509915)
+
+[node name="WoodPlatform19" parent="Level" unique_id=1024746678 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 0.00061357)
+
+[node name="WoodPlatform20" parent="Level" unique_id=1427344691 instance=ExtResource("5_8xhwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, 0.00061357)
+
+[node name="Art" type="Node3D" parent="Level" unique_id=2039608576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.113097)
+
+[node name="Lighting" type="Node3D" parent="." unique_id=1838689767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)

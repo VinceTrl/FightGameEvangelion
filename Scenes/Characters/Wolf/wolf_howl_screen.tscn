@@ -361,11 +361,13 @@ _data = {
 font = ExtResource("5_bxvbo")
 font_size = 70
 font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+outline_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_d3q6b"]
 font = ExtResource("5_bxvbo")
 font_size = 64
 font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+outline_size = 10
 
 [node name="WolfHowlScreen" type="Control" unique_id=269593752 node_paths=PackedStringArray("animation")]
 layout_mode = 3

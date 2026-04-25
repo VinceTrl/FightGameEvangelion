@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpc7hfpmjjicg"
-path.s3tc="res://.godot/imported/BrushMask.jpg-3f6c5073131337f34d47472227ac1e9c.s3tc.ctex"
+uid="uid://bxsj3dd6t0keh"
+path.s3tc="res://.godot/imported/MagicCircleMask.png-872d47525f3b293068463bf0abf45a07.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/Masks/BrushMask.jpg"
-dest_files=["res://.godot/imported/BrushMask.jpg-3f6c5073131337f34d47472227ac1e9c.s3tc.ctex"]
+source_file="res://Assets/Textures/Masks/MagicCircleMask.png"
+dest_files=["res://.godot/imported/MagicCircleMask.png-872d47525f3b293068463bf0abf45a07.s3tc.ctex"]
 
 [params]
 
