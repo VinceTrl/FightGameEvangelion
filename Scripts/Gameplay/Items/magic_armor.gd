@@ -38,19 +38,25 @@ func TakeDamage(hitbox:Hitbox):
 	animation_player.play("Hurt")
 	
 	if(health_component.isDead):
-		if(linkedHurtbox):
-			hurtbox.isActive = false
-			linkedHurtbox.isActive = true
 		DestroySpell()
 		return
 		
 	await animation_player.animation_finished
 	animation_player.play("Idle")
+	
+	
+func CastSpell(duration:float = lifeTime,target:Node3D = null):
+	super(duration,target)
+	animation_player.play("Spawn")
+	pass
 		
 func DestroySpell():
 	super()
 	animation_player.play("Death")
 	await animation_player.animation_finished
+	if(linkedHurtbox):
+		hurtbox.isActive = false
+		linkedHurtbox.isActive = true
 	queue_free()
 
 

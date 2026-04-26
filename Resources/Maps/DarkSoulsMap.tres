@@ -6,4 +6,4 @@
 script = ExtResource("1_56ux1")
 mapName = &"DarkSouls"
 mapScenePath = &"res://Scenes/Maps/Maps/DarkSouls_map.tscn"
-stagePaths = Array[String](["res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_01.tscn", "res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_02.tscn"])
+stagePaths = Array[String](["res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_01.tscn", "res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_02.tscn", "res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_03.tscn"])

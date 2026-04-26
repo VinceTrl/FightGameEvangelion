@@ -242,18 +242,6 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector3(100, 100, 100), Vector3(0, 0, 0)]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Visual/NodeShaker/magic_armor/ma_sphere:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.21093102, 0.39510214),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(100, 100, 100), Vector3(0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_xg065"]
 resource_name = "Hurt"
@@ -267,7 +255,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.06739888, 0.2880625, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.3137255), Color(1, 1, 1, 0.94509804), Color(1, 1, 1, 0.7294118), Color(1, 1, 1, 0.3137255)]
+"values": [Color(1, 1, 1, 0.3137255), Color(1, 1, 1, 1), Color(1, 1, 1, 0.7294118), Color(1, 1, 1, 0.3137255)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -292,18 +280,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, -3.1415927, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/NodeShaker/magic_armor/ma_sphere:mesh:surface_0/material:uv1_offset")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nsfo4"]
@@ -343,18 +319,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/NodeShaker/magic_armor/ma_sphere:mesh:surface_0/material:uv1_offset")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_pde6j"]
@@ -398,7 +362,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/NodeShaker/magic_armor/ma_sphere:mesh:surface_0/material:uv1_offset")
+tracks/3/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -410,7 +374,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:position")
+tracks/4/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -422,19 +386,19 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:position")
+tracks/5/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(100, 100, 100)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:scale")
+tracks/6/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -443,29 +407,93 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector3(100, 100, 100)]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
+
+[sub_resource type="Animation" id="Animation_rqtme"]
+resource_name = "Spawn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(100, 100, 100)]
+"values": [Color(1, 1, 1, 0.3137255)]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Visual/NodeShaker/magic_armor/ma_sphere:scale")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(100, 100, 100)]
+"values": [Vector3(-7.54979e-08, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -6.2831855, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:scale")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(100, 100, 100)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:scale")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(100, 100, 100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nspy7"]
@@ -473,7 +501,8 @@ _data = {
 &"Death": SubResource("Animation_nspy7"),
 &"Hurt": SubResource("Animation_xg065"),
 &"Idle": SubResource("Animation_nsfo4"),
-&"RESET": SubResource("Animation_pde6j")
+&"RESET": SubResource("Animation_pde6j"),
+&"Spawn": SubResource("Animation_rqtme")
 }
 
 [node name="MagicArmor" type="Node3D" unique_id=1719726591 node_paths=PackedStringArray("nodeShaker")]
