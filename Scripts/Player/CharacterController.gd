@@ -59,6 +59,7 @@ var gameManager: Manager
 var isDead: bool = false
 var isInvicible: bool = false
 
+
 @export_group("Sprite setting")
 @export var spritesheet:Texture2D
 @export_group("")
@@ -125,6 +126,11 @@ var ledgeDirection: Vector3 = Vector3.ZERO
 @export_group("Shoot")
 @export var chargeShootTime: float = 1.0
 @export var chargedShoothreshold = 0.8
+@export_group("")
+
+@export_group("Cheese setting")
+@export var cheeseStateDuration:float = 8.0
+var isCheese:bool = false
 @export_group("")
 
 var debugMode = false
@@ -421,7 +427,10 @@ func HandleJump():
 	if((keyJumpPressed or (JumpBufferTimer.time_left > 0)) and (jumps < maxJumps)):
 		jumps += 1
 		JumpBufferTimer.stop()
-		ChangeState(States.Jump)
+		if(isCheese):
+			ChangeState(States.CheeseJump)
+		else:
+			ChangeState(States.Jump)
 		
 		
 func HandleJumpBuffer():
@@ -604,6 +613,14 @@ func SetBounceState(_bounceDirection:Vector3, _bounceForceToAdd:float = 0):
 	States.Bounce.additionnalBounceForce = _bounceForceToAdd
 	States.Bounce.bounceDirection = _bounceDirection
 	ChangeState(States.Bounce)
+	
+func StartCheeseState():
+	if(isCheese):return
+	isCheese = true
+	await get_tree().create_timer(cheeseStateDuration).timeout
+	isCheese = false
+	if(currentState == States.Cheese or currentState == States.CheeseJump):
+		ChangeState(States.Idle)
 
 func TakeDamage(hitboxSource: Hitbox):
 	if(isInvicible):return

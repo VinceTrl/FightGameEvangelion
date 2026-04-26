@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://osyqa1xougy1"]
+
+[ext_resource type="Script" uid="uid://fltyy8e4315a" path="res://Scripts/Gameplay/Spell/SpellData.gd" id="1_i4cbt"]
+[ext_resource type="PackedScene" uid="uid://ce5qiduai3m4v" path="res://Scenes/Gameplay/Spell/magic_fire_spell.tscn" id="2_vq7kg"]
+
+[resource]
+script = ExtResource("1_i4cbt")
+lifeTime = 10.0
+spellScene = ExtResource("2_vq7kg")
+spawnOnGround = true
+metadata/_custom_type_script = "uid://fltyy8e4315a"

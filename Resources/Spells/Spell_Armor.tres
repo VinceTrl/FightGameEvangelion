@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://lwg8qs7rttch"]
+
+[ext_resource type="Script" uid="uid://fltyy8e4315a" path="res://Scripts/Gameplay/Spell/SpellData.gd" id="1_8v0w7"]
+[ext_resource type="PackedScene" uid="uid://d6y8hbx5iihi" path="res://Scenes/Gameplay/Spell/magic_armor.tscn" id="2_54yfv"]
+
+[resource]
+script = ExtResource("1_8v0w7")
+lifeTime = -1.0
+spellScene = ExtResource("2_54yfv")
+metadata/_custom_type_script = "uid://fltyy8e4315a"

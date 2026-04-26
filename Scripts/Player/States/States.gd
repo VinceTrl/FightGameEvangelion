@@ -18,3 +18,5 @@ extends Node
 @onready var Knockback= $KnockBack
 @onready var Taunt: Node = $Taunt
 @onready var Stun: Node = $Stun
+@onready var Cheese: Node = $Cheese
+@onready var CheeseJump: Node = $CheeseJump

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://dbfddscw160he"]
+
+[ext_resource type="Script" uid="uid://fltyy8e4315a" path="res://Scripts/Gameplay/Spell/SpellData.gd" id="1_4udsc"]
+[ext_resource type="PackedScene" uid="uid://biah4mgi7id1k" path="res://Scenes/Gameplay/Spell/magic_cheese_spell.tscn" id="2_8pneq"]
+
+[resource]
+script = ExtResource("1_4udsc")
+targetType = 1
+lifeTime = 4.0
+spellScene = ExtResource("2_8pneq")
+metadata/_custom_type_script = "uid://fltyy8e4315a"

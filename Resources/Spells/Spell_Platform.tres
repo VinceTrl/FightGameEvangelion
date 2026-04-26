@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://j6bbmmsv8hvt"]
+
+[ext_resource type="Script" uid="uid://fltyy8e4315a" path="res://Scripts/Gameplay/Spell/SpellData.gd" id="1_2v42v"]
+[ext_resource type="PackedScene" uid="uid://rku5nbrgtd6i" path="res://Scenes/Gameplay/Spell/magic_platform_spell.tscn" id="2_g1oca"]
+
+[resource]
+script = ExtResource("1_2v42v")
+spellScene = ExtResource("2_g1oca")
+metadata/_custom_type_script = "uid://fltyy8e4315a"

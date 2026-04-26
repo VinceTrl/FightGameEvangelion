@@ -1,19 +1,19 @@
 [gd_scene format=4 uid="uid://d6y8hbx5iihi"]
 
-[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="1_jg57t"]
-[ext_resource type="Script" uid="uid://crmj6vqjeltlr" path="res://Scripts/Gameplay/Items/magic_armor.gd" id="1_xg065"]
-[ext_resource type="Texture2D" uid="uid://cfnhftjakmrd8" path="res://Assets/Meshes/Props/MagicArmor/VmagS_shell.png" id="2_xrhgp"]
-[ext_resource type="Texture2D" uid="uid://qya02rcb2bx3" path="res://Assets/Meshes/Props/MagicArmor/VmagS_core.png" id="3_clvw6"]
-[ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="4_clvw6"]
-[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="5_xg065"]
+[ext_resource type="Script" uid="uid://crmj6vqjeltlr" path="res://Scripts/Gameplay/Items/magic_armor.gd" id="1_hmfh8"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_q6ccv"]
+[ext_resource type="Texture2D" uid="uid://cfnhftjakmrd8" path="res://Assets/Meshes/Props/MagicArmor/VmagS_shell.png" id="3_0f13x"]
+[ext_resource type="Texture2D" uid="uid://qya02rcb2bx3" path="res://Assets/Meshes/Props/MagicArmor/VmagS_core.png" id="4_546wm"]
+[ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="5_a4bpu"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="6_wj5qk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0742b"]
 resource_name = "VmagS_2_in_v"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_xrhgp")
+albedo_texture = ExtResource("3_0f13x")
 emission_enabled = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_e0bri"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hmfh8"]
 _surfaces = [{
 "aabb": AABB(-0.0017450905, -0.0022437559, -0.0017450905, 0.0034901812, 0.0044875117, 0.0034901812),
 "format": 34359742465,
@@ -43,25 +43,25 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/uZbL0DtpK+Fu+S6AAAAAPoLEztA7SSwhrvkOgAAAAAAAAAAhrvkOgAAAAAAAAAAAAAAAPoLEztA7SSw/ubbrkDtpC+Gu+Q6/ubbrkDtpC+Gu+Q6AAAAAPoLEztA7SSwhbvkugAAAID+5luvhbvkugAAAID+5luvAAAAAPoLEztA7SSw/uZbL0DtpK+Fu+S6hrvkOgAAAAAAAAAAAAAAAPoLE7tA7SQw/uZbL0DtpK+Fu+S6/ubbrkDtpC+Gu+Q6AAAAAPoLE7tA7SQwhrvkOgAAAAAAAAAAhbvkugAAAID+5luvAAAAAPoLE7tA7SQw/ubbrkDtpC+Gu+Q6/uZbL0DtpK+Fu+S6AAAAAPoLE7tA7SQwhbvkugAAAID+5luv61EoXP+3/5vrUShc/7f/m+tRKFz/t/+b1iMULv9//5vWIxQu/3//m9YjFC7/f/+bKNwULv9H/5so3BQu/0f/myjcFC7/R/+bE64oXP+3AIATrihc/7cAgBOuKFz/twCA61HWo/+3///rUdaj/7f//+tR1qP/t///1iPq0f+3/+PWI+rR/7f/49Yj6tH/t//jKNzq0f9//+Mo3OrR/3//4yjc6tH/f//jE67Wo/9H/+MTrtaj/0f/4xOu1qP/R//j")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_e0bri")
+shadow_mesh = SubResource("ArrayMesh_hmfh8")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pde6j"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q6ccv"]
 load_path = "res://.godot/imported/VmagS_shell.png-8a32c210e4a0e8a4072a659a18c66e1a.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nspy7"]
 resource_name = "VmagS_2_in_v"
 vertex_color_use_as_albedo = true
-albedo_texture = SubResource("CompressedTexture2D_pde6j")
+albedo_texture = SubResource("CompressedTexture2D_q6ccv")
 emission_enabled = true
 disable_receive_shadows = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ob8k"]
 resource_name = "VmagS_0_out_v"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_xrhgp")
+albedo_texture = ExtResource("3_0f13x")
 emission_enabled = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2740r"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0f13x"]
 _surfaces = [{
 "aabb": AABB(-0.0018277054, -0.0023499785, -0.0018277054, 0.0036554108, 0.0046999566, 0.0036554108),
 "format": 34359742465,
@@ -91,9 +91,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAABgCGjtA7SSw/uZbL0DtpK+ej++6no/vOgAAAAAAAAAAAAAAABgCGjtA7SSwno/vOgAAAAAAAAAA/ubbrkDtpC+ej+86AAAAABgCGjtA7SSw/ubbrkDtpC+ej+86no/vugAAAID+5luvAAAAABgCGjtA7SSwno/vugAAAID+5luv/uZbL0DtpK+ej++6AAAAABkCGrtA7SQwno/vOgAAAAAAAAAA/uZbL0DtpK+ej++6AAAAABkCGrtA7SQw/ubbrkDtpC+ej+86no/vOgAAAAAAAAAAAAAAABkCGrtA7SQwno/vugAAAID+5luv/ubbrkDtpC+ej+86AAAAABkCGrtA7SQw/uZbL0DtpK+ej++6no/vugAAAID+5luvKNzq0f+3/2Mo3OrR/7f/Yyjc6tH/t/9jE67Wo/9//2MTrtaj/3//YxOu1qP/f/9j61HWo/9H/2PrUdaj/0f/Y+tR1qP/R/9j1iPq0f+3/n/WI+rR/7f+f9Yj6tH/t/5/KNwULv+3AAAo3BQu/7cAACjcFC7/twAAE64oXP+3/xsTrihc/7f/GxOuKFz/t/8b61EoXP9//xvrUShc/3//G+tRKFz/f/8b1iMULv9H/xvWIxQu/0f/G9YjFC7/R/8b")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_2740r")
+shadow_mesh = SubResource("ArrayMesh_0f13x")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xg065"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_546wm"]
 load_path = "res://.godot/imported/VmagS_shell.png-8a32c210e4a0e8a4072a659a18c66e1a.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsfo4"]
@@ -101,7 +101,7 @@ resource_name = "VmagS_0_out_v"
 transparency = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.3137255)
-albedo_texture = SubResource("CompressedTexture2D_xg065")
+albedo_texture = SubResource("CompressedTexture2D_546wm")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkaoe"]
@@ -111,7 +111,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0, 0, 0, 1)
-albedo_texture = ExtResource("3_clvw6")
+albedo_texture = ExtResource("4_546wm")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0ec5w"]
@@ -158,343 +158,19 @@ size = Vector3(1.085, 1.375, 0.5)
 [sub_resource type="Animation" id="Animation_nspy7"]
 resource_name = "Death"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:surface_material_override/0:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.3137255)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.18231317),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-7.54979e-08, 0, 0), Vector3(0, 3.1415927, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.18231317),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -3.1415927, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.18259701, 0.2738955),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.25, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:position")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.17787467, 0.27704373),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.25, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:scale")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.21880159, 0.32584122),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(100, 100, 100), Vector3(0, 0, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:scale")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.21766631, 0.32741535),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(100, 100, 100), Vector3(0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_xg065"]
 resource_name = "Hurt"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:surface_material_override/0:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06739888, 0.2880625, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.3137255), Color(1, 1, 1, 1), Color(1, 1, 1, 0.7294118), Color(1, 1, 1, 0.3137255)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-7.54979e-08, 0, 0), Vector3(0, 3.1415927, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -3.1415927, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_nsfo4"]
 resource_name = "Idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:surface_material_override/0:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.3137255)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-7.54979e-08, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_pde6j"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:surface_material_override/0:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.3137255)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-7.54979e-08, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(100, 100, 100)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(100, 100, 100)]
-}
 
 [sub_resource type="Animation" id="Animation_rqtme"]
 resource_name = "Spawn"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:surface_material_override/0:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.3137255)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-7.54979e-08, 0, 0), Vector3(0, 6.2831855, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -6.2831855, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:position")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Visual/NodeShaker/magic_armor/ma_inside:scale")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(100, 100, 100)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Visual/NodeShaker/magic_armor/ma_outside:scale")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(100, 100, 100)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nspy7"]
 _data = {
@@ -506,13 +182,13 @@ _data = {
 }
 
 [node name="MagicArmor" type="Node3D" unique_id=1719726591 node_paths=PackedStringArray("nodeShaker")]
-script = ExtResource("1_xg065")
+script = ExtResource("1_hmfh8")
 nodeShaker = NodePath("Visual/NodeShaker")
 
 [node name="Visual" type="Node3D" parent="." unique_id=1501037746]
 
 [node name="NodeShaker" type="Node3D" parent="Visual" unique_id=2016610298 node_paths=PackedStringArray("nodeToShake")]
-script = ExtResource("1_jg57t")
+script = ExtResource("2_q6ccv")
 nodeToShake = NodePath(".")
 metadata/_custom_type_script = "uid://boswmyv0w3oxy"
 
@@ -547,12 +223,12 @@ shape = SubResource("BoxShape3D_jg57t")
 debug_color = Color(0.7098588, 0.26462606, 1, 0.41960785)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=681347486]
-script = ExtResource("4_clvw6")
+script = ExtResource("5_a4bpu")
 metadata/_custom_type_script = "uid://cw2bpx65nkj7h"
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=1330270292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2032277, 0)
-script = ExtResource("5_xg065")
+script = ExtResource("6_wj5qk")
 randomID = true
 isActive = false
 metadata/_custom_type_script = "uid://be4u7kwwov65g"
