@@ -6,6 +6,9 @@
 [ext_resource type="AnimationLibrary" uid="uid://jijwv6tw8ryw" path="res://Assets/Meshes/Characters/Zelda/ZeldaAnimLibrary.res" id="3_7l8ej"]
 [ext_resource type="Script" uid="uid://fltyy8e4315a" path="res://Scripts/Gameplay/Spell/SpellData.gd" id="3_a40iw"]
 [ext_resource type="PackedScene" uid="uid://bmktqinsrerkw" path="res://Scenes/VFX/spell_trail_vfx.tscn" id="5_qujs0"]
+[ext_resource type="Resource" uid="uid://j6bbmmsv8hvt" path="res://Resources/Spells/Spell_Platform.tres" id="6_1c1rq"]
+[ext_resource type="Resource" uid="uid://osyqa1xougy1" path="res://Resources/Spells/Spell_Fire.tres" id="7_g6cld"]
+[ext_resource type="Resource" uid="uid://lwg8qs7rttch" path="res://Resources/Spells/Spell_Armor.tres" id="8_yuqoi"]
 [ext_resource type="Resource" uid="uid://dbfddscw160he" path="res://Resources/Spells/Spell_Cheese.tres" id="9_rhiks"]
 
 [node name="Mage" type="Node3D" unique_id=646494372]
@@ -93,7 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1136.4, 1443.0001)
 
 [node name="SpellCaster" type="Node3D" parent="." unique_id=1598924479 node_paths=PackedStringArray("spellStartNode")]
 script = ExtResource("2_noksf")
-spells = Array[ExtResource("3_a40iw")]([ExtResource("9_rhiks")])
+spells = Array[ExtResource("3_a40iw")]([ExtResource("9_rhiks"), ExtResource("7_g6cld"), ExtResource("8_yuqoi"), ExtResource("6_1c1rq")])
 spellStartNode = NodePath("../Visual/Zelda/BoneAttachment3D/Marker3D")
 
 [node name="SpellTrailVFX" parent="SpellCaster" unique_id=254146121 instance=ExtResource("5_qujs0")]
