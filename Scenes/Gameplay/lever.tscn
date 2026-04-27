@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cbsy6k41vmmfx" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/deepslate_top.png" id="1_vrpkd"]
 [ext_resource type="Script" uid="uid://cinkuktsvf5cv" path="res://Scripts/Gameplay/Interact/lever.gd" id="1_x75jw"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="2_7ktul"]
+[ext_resource type="Texture2D" uid="uid://dpee3f7haxdg8" path="res://Assets/Sprites/Vfx/Fire/Flare00.PNG" id="2_vqd33"]
 [ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="4_vqd33"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ce6bq"]
@@ -83,13 +84,19 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ktul"]
 size = Vector3(0.3, 0.3432373, 0.3)
 
-[node name="Lever" type="Node3D" unique_id=1140781995 node_paths=PackedStringArray("hurtbox", "redstoneLink", "animationPlayer")]
+[node name="Lever" type="Node3D" unique_id=1140781995 node_paths=PackedStringArray("sprite", "hurtbox", "redstoneLink", "animationPlayer")]
 script = ExtResource("1_x75jw")
+sprite = NodePath("Visual/Sprite3D")
 hurtbox = NodePath("Hurtbox")
 redstoneLink = NodePath("RedstoneLinkArea")
 animationPlayer = NodePath("Visual/LeverMeshPivot/AnimationPlayer")
 
 [node name="Visual" type="Node3D" parent="." unique_id=2113062526]
+
+[node name="Sprite3D" type="Sprite3D" parent="Visual" unique_id=1054160120]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.1351286, -0.048223495)
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("2_vqd33")
 
 [node name="LeverBase" type="MeshInstance3D" parent="Visual" unique_id=2045129119]
 transform = Transform3D(1, 0, 0, 0, 1.4468347, 0, 0, 0, 1, 0, 0.040319383, 0)
@@ -129,3 +136,8 @@ shape = SubResource("BoxShape3D_7ktul")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 isActive = true
 isPowerSource = true
+
+[node name="RedstoneVisual" parent="RedstoneLinkArea" index="1" unique_id=1616474288]
+isInvisible = true
+
+[editable path="RedstoneLinkArea"]

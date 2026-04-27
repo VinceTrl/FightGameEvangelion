@@ -29,6 +29,8 @@ var originBlock:Block
 
 var isDead = false
 
+signal BlockDestroyed
+
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -37,8 +39,9 @@ func _ready() -> void:
 		pass
 	
 	ground_magnet.auto_align_on_ready = forceToGroundOnReady
-	if(redstoneActive and redstoneLink):
-		redstoneLink.isActive = true
+	
+	#if(redstoneActive and redstoneLink):
+		#redstoneLink.isActive = true
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -74,10 +77,12 @@ func ChangeHealth(healthAmount:int = -1):
 		if(spawner):
 			Spawn()
 			
-		if(redstoneActive):
-			redstoneLink.ChangePowerState(false)
-			redstoneLink.PropagatePowerFromSource(redstoneLink)
+		#if(redstoneActive):
+			#redstoneLink.ChangePowerState(false)
+			#redstoneLink.PropagatePowerFromSource(redstoneLink)
 			pass
+			
+		BlockDestroyed.emit()
 		
 		await get_tree().create_timer(destroyDelay).timeout
 		queue_free()

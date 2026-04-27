@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_2txt5"]
 [ext_resource type="Material" uid="uid://cn62pigf32hqp" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Redstone.tres" id="2_2txt5"]
+[ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="3_hkig2"]
 
 [node name="RedstoneBlock" unique_id=1588274387 instance=ExtResource("1_2txt5")]
 healthPoints = 6
@@ -12,7 +13,10 @@ surface_material_override/0 = ExtResource("2_2txt5")
 surface_material_override/1 = ExtResource("2_2txt5")
 surface_material_override/2 = ExtResource("2_2txt5")
 
-[node name="RedstoneLinkArea" parent="RedStone" parent_id_path=PackedInt32Array(2103545783) index="0" unique_id=1031951996]
+[node name="RedstoneLinkArea" parent="." index="6" unique_id=1031951996 instance=ExtResource("3_hkig2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 isActive = true
 isPowerOn = true
 isPowerSource = true
+
+[editable path="RedstoneLinkArea"]

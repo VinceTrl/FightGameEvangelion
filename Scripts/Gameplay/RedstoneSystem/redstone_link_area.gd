@@ -9,15 +9,15 @@ extends Area3D
 @export var updateTick:float = 0.25
 @export var radius:float = 0.15
 @export var castLength:float = 0.3
-
 @export var drawDebug:bool = false
-
 @export var linkDirections:Array[Vector3] = [Vector3.UP,Vector3.DOWN,Vector3.RIGHT,Vector3.LEFT]
 
 var parentRedstone:RedstoneLink = null
 var childRedstones:Array[RedstoneLink]
 var redstoneSource:RedstoneLink
 var redstoneLinks:Array[RedstoneLink]
+
+var linkedBlock:Block = null
 
 signal TurnedOn
 signal TurnedOff
@@ -35,6 +35,7 @@ func _ready() -> void:
 		PropagatePowerFromSource(self)
 	
 	call_deferred("RedstoneUpdate")
+	call_deferred("GetBlock")
 	
 func _process(delta: float) -> void:
 	DebugRedstoneState()
@@ -149,6 +150,33 @@ func CheckRestoneLink(castOrigin:Vector3,castLength:float,castDirection:Vector3)
 	else:
 		print("NO RESULT")
 		return null
+		
+func GetBlock():
+	
+	#create raycast
+	var queryStart: Vector3 = global_position
+	var queryEnd : Vector3 = global_position + Vector3.DOWN * 0.1
+	
+	var space_state = get_world_3d().direct_space_state
+	var queryMask = 1
+	var query = PhysicsRayQueryParameters3D.create(queryStart,queryEnd,queryMask)
+	query.collide_with_areas = false
+	query.collide_with_bodies = true
+	query.hit_from_inside = true
+	var result = space_state.intersect_ray(query)
+	
+	#DebugDraw3D.draw_line(queryStart,queryEnd,Color.REBECCA_PURPLE,60)
+	
+	if result:
+		if(result.collider.owner is Block):
+			linkedBlock = result.collider.owner
+			linkedBlock.BlockDestroyed.connect(DestroyRedstone)
+			#reparent(parentBlock,true)
+			
+func DestroyRedstone():
+	ChangePowerState(false)
+	PropagatePowerFromSource(self)
+	queue_free()
 
 func mask_from_layers(layers: Array[int]) -> int:
 	var mask := 0

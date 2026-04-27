@@ -7,6 +7,9 @@ extends Node3D
 @export_group("effect")
 @export var freezeFrameDuration:float = 0.05
 @export var cameraShake:String = "HitShake"
+@export var sprite:Sprite3D
+@export var onColor:Color = Color.GREEN
+@export var offColor:Color = Color.RED
 
 @export_group("reference")
 @export var hurtbox:Hurtbox
@@ -36,6 +39,10 @@ func UpdateRedstonePower():
 func UpdateAnimation():
 	if(isOn):
 		animationPlayer.play("TurnOn")
+		if(sprite):
+			sprite.modulate = onColor
 	else:
 		animationPlayer.play("TurnOff")
+		if(sprite):
+			sprite.modulate = offColor
 	pass

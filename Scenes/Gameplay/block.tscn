@@ -11,8 +11,6 @@
 [ext_resource type="Material" uid="uid://cqewyxwxhpex7" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Grass.tres" id="7_mm851"]
 [ext_resource type="Material" uid="uid://ck1hf5s8w0d2l" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Dirt.tres" id="8_3lxtp"]
 [ext_resource type="Material" uid="uid://dnac8phmk5c0p" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Grass_Top.tres" id="8_ii26g"]
-[ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="8_noedd"]
-[ext_resource type="PackedScene" uid="uid://hq437hff0hoh" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_visual.tscn" id="9_ii7fe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_50nyf"]
 size = Vector3(0.325, 0.325, 0.3)
@@ -22,7 +20,7 @@ size = Vector3(0.3, 0.3, 0.3)
 
 [node name="Block" type="Node3D" unique_id=219668706 node_paths=PackedStringArray("redstoneLink") groups=["PyramidHeadTarget"]]
 script = ExtResource("1_1mwp6")
-redstoneLink = NodePath("RedStone/RedstoneLinkArea")
+redstoneLink = NodePath("")
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=2074267378]
 script = ExtResource("1_rd00h")
@@ -68,11 +66,3 @@ bus = &"SFX"
 
 [node name="vfx_minecraft_bloc_hit" parent="." unique_id=502673370 instance=ExtResource("7_lcmxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153324, 0.176456)
-
-[node name="RedStone" type="Node3D" parent="." unique_id=2103545783]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-
-[node name="RedstoneLinkArea" parent="RedStone" unique_id=1031951996 instance=ExtResource("8_noedd")]
-
-[node name="RedstoneVisual" parent="RedStone" unique_id=1616474288 node_paths=PackedStringArray("redstoneLink") instance=ExtResource("9_ii7fe")]
-redstoneLink = NodePath("../RedstoneLinkArea")

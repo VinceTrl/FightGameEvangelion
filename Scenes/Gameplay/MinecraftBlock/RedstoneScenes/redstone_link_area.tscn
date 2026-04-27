@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3wxtxmcbjpi2"]
 
 [ext_resource type="Script" uid="uid://bt8jsyjekp4e2" path="res://Scripts/Gameplay/RedstoneSystem/redstone_link_area.gd" id="1_tlc2s"]
+[ext_resource type="PackedScene" uid="uid://hq437hff0hoh" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_visual.tscn" id="2_ispeu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ispeu"]
 radius = 0.15
@@ -14,3 +15,6 @@ castLength = 0.35
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=389159241]
 shape = SubResource("SphereShape3D_ispeu")
 debug_color = Color(0, 1, 0.5176471, 0.7176471)
+
+[node name="RedstoneVisual" parent="." unique_id=1616474288 node_paths=PackedStringArray("redstoneLink") instance=ExtResource("2_ispeu")]
+redstoneLink = NodePath("..")

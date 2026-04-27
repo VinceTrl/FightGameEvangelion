@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://cxtrb6p5wjbo6" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT_Bottom.tres" id="5_82h5j"]
 [ext_resource type="Resource" uid="uid://ccccsgtkw4xgd" path="res://Resources/Spawnables/Explosion.tres" id="5_805t3"]
 [ext_resource type="Script" uid="uid://k2dv5h2y57o0" path="res://Scripts/Gameplay/RedstoneSystem/Receiver/redstone_receiver_tnt.gd" id="6_805t3"]
+[ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="8_82h5j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ikq8d"]
 size = Vector3(0.35, 0.35, 0.35)
@@ -28,14 +29,17 @@ surface_material_override/2 = ExtResource("5_82h5j")
 items = Array[ExtResource("4_siisw")]([ExtResource("5_805t3")])
 registerOnManager = false
 
-[node name="RedstoneLinkArea" parent="RedStone" parent_id_path=PackedInt32Array(2103545783) index="0" unique_id=1031951996]
+[node name="RedstoneLinkArea" parent="." index="7" unique_id=1031951996 instance=ExtResource("8_82h5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 isActive = true
 
-[node name="RedstoneVisual" parent="RedStone" parent_id_path=PackedInt32Array(2103545783) index="1" unique_id=1616474288]
+[node name="RedstoneVisual" parent="RedstoneLinkArea" index="1" unique_id=1616474288]
 isInvisible = true
 
 [node name="RedstoneReceiver_TNT" type="Node3D" parent="." index="8" unique_id=715020794 node_paths=PackedStringArray("block", "redstoneLink")]
 script = ExtResource("6_805t3")
 block = NodePath("..")
 explosionDelay = 2.0
-redstoneLink = NodePath("../RedStone/RedstoneLinkArea")
+redstoneLink = NodePath("../RedstoneLinkArea")
+
+[editable path="RedstoneLinkArea"]
