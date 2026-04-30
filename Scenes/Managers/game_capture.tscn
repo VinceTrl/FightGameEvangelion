@@ -142,11 +142,17 @@ gameCapture = NodePath("GameCapture")
 gameReplay = NodePath("GameCapture/ReplayCanvasLayer/ControlRoot/GameReplayTexture")
 
 [node name="GameCapture" type="Node" parent="." unique_id=978267008 node_paths=PackedStringArray("viewport")]
+process_thread_group = 2
+process_thread_group_order = 1
+process_thread_messages = 0
 script = ExtResource("1_epxs1")
 captureInterval = 0.05
 viewport = NodePath("CaptureCanvasLayer/SubViewportContainer/SubViewport")
 
 [node name="CaptureCanvasLayer" type="CanvasLayer" parent="GameCapture" unique_id=846562602]
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="GameCapture/CaptureCanvasLayer" unique_id=292164534]
 anchors_preset = 5
@@ -169,6 +175,9 @@ render_target_update_mode = 4
 script = ExtResource("2_nv681")
 
 [node name="ReplayCanvasLayer" type="CanvasLayer" parent="GameCapture" unique_id=33262325]
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
 layer = 99
 
 [node name="ControlRoot" type="Control" parent="GameCapture/ReplayCanvasLayer" unique_id=1617133139]
