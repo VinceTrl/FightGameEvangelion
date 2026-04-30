@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/Camera/game_camera.tscn" id="4_sx5sm"]
 [ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiRed.png" id="5_kufng"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
+[ext_resource type="Resource" uid="uid://boi3j7g4uww5i" path="res://Resources/Maps/FairyFountainMap.tres" id="7_ewbju"]
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiYellow.png" id="7_j3bm8"]
 [ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="8_ewbju"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="Resource" uid="uid://d282ym1u5ohem" path="res://Resources/Maps/DarkSoulsMap.tres" id="9_85qyi"]
+[ext_resource type="Texture2D" uid="uid://cj4ccbpyd0w64" path="res://Assets/Meshes/Props/Cheese/CheeseTexture.png" id="12_nnt18"]
 [ext_resource type="PackedScene" uid="uid://ckteefgjio63s" path="res://Scenes/Managers/game_capture.tscn" id="15_nb51f"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 [ext_resource type="PackedScene" uid="uid://bpnn6fhicph64" path="res://Scenes/Utility/fps_counter.tscn" id="16_nnt18"]
@@ -26,6 +28,9 @@ shader_parameter/alpha = 1.0
 shader_parameter/secondLayerIntensity = 0.0
 shader_parameter/secondLayerUVScaling = 100.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewbju"]
+albedo_texture = ExtResource("12_nnt18")
+
 [node name="Game" type="Node3D" unique_id=1564307774]
 script = ExtResource("1_2jg1a")
 
@@ -34,7 +39,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" type="Node" parent="." unique_id=389733307]
 script = ExtResource("3_dv241")
-maps = Array[ExtResource("4_sjgtb")]([ExtResource("8_ewbju"), ExtResource("9_85qyi")])
+maps = Array[ExtResource("4_sjgtb")]([ExtResource("8_ewbju"), ExtResource("9_85qyi"), ExtResource("7_ewbju")])
 
 [node name="Gameplay" type="Node" parent="." unique_id=1867581352]
 
@@ -61,7 +66,7 @@ material_override = SubResource("ShaderMaterial_rfxrm")
 stream = null
 
 [node name="CutCheese" parent="Gameplay/Player2/KikiCheese/CheeseWheel" parent_id_path=PackedInt32Array(1754892820, 957600814) index="0" unique_id=948980915]
-surface_material_override/0 = null
+surface_material_override/0 = SubResource("StandardMaterial3D_ewbju")
 
 [node name="KillVolume" parent="Gameplay" unique_id=630851901 instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)

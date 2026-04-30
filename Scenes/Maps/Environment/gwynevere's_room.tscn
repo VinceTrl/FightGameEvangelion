@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b1qxipjljivqm" path="res://Assets/Meshes/Enviro/AnorLondo/AnorLondo.fbx" id="1_t7owx"]
 [ext_resource type="PackedScene" uid="uid://dlru2woa882mv" path="res://Assets/Meshes/Characters/Gwynevere/Gwynevere.fbx" id="2_wm3o7"]
 [ext_resource type="Texture2D" uid="uid://dbgko8cuteo1o" path="res://Assets/Shitpost/Source/RGmuKdh.jpeg" id="3_81jef"]
+[ext_resource type="PackedScene" uid="uid://cuv0ymymfo1jy" path="res://Sources/Meshes/SM_Plateforme_Big_01.fbx" id="4_wm3o7"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_kdscx"]
 
@@ -22,10 +23,11 @@ size = Vector3(4, 30, 30)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 13.620128, 0)
 
 [node name="Gwynevere" parent="AnorLondo" unique_id=863435591 instance=ExtResource("2_wm3o7")]
-transform = Transform3D(-0.1803647, 0, 0.98359984, 0, 1, 0, -0.98359984, 0, -0.1803647, -2.547433, -13.464365, -0.34767008)
+transform = Transform3D(-0.1803647, 0, 0.98359984, 0, 1, 0, -0.98359984, 0, -0.1803647, -2.547433, -13.639072, -0.34767008)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="AnorLondo/Gwynevere" unique_id=1806652316]
 transform = Transform3D(1.1604741, -0.33500004, -0.58023703, 0, 1.1604741, -0.6700001, 0.67, 0.5802371, 1.005, 2.1971178, 3.89515, 3.6351917)
+visible = false
 mesh = SubResource("QuadMesh_kdscx")
 surface_material_override/0 = SubResource("StandardMaterial3D_dal4u")
 
@@ -81,3 +83,6 @@ collision_layer = 193
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Wall_R" unique_id=651151292]
 shape = SubResource("BoxShape3D_t7owx")
+
+[node name="SM_Plateforme_Big_01" parent="." unique_id=153519689 instance=ExtResource("4_wm3o7")]
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0.3, -2.0735953, 1.9589026)

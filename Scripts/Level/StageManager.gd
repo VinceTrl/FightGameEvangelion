@@ -10,6 +10,11 @@ extends Node3D
 @export var overrideMinCamZ: float = 3.0
 @export var overrideMaxCamZ: float = 4.0
 @export var levelRoot: Node3D
+
+@export var overrideCameraClamp:bool = false
+@export var camClampMax:Vector2 = Vector2.ONE
+@export var camClampMin:Vector2 = -Vector2.ONE
+
 @onready var level: Node3D = $Level
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +31,10 @@ func _ready() -> void:
 func SetCamera():
 	if(fixedCameraZoom):
 		Manager.gameCamera.SetCameraOverrideZ(fixedCamZ)
+		
+	if(overrideCameraClamp):
+		Manager.gameCamera.cameraClampMin = camClampMin
+		Manager.gameCamera.cameraClampMax = camClampMax
 		
 func OverrideCamZ():
 	if(overrideCamZ):

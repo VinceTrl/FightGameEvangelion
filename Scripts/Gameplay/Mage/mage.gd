@@ -7,8 +7,8 @@ extends Node3D
 "MagicCast_Big_2H_02","MagicCast_Big_2H_03","MagicCast_Big_2H_04",
 "MagicCast_Big_1H_01","MagicCast_Small_1H_01","MagicCast_Area_2H_01"]
 
-@onready var spell_caster: Node3D = $SpellCaster
-@onready var animation_player: AnimationPlayer = $Visual/Zelda/AnimationPlayer
+@export var spell_caster: Node3D
+@export var animation_player: AnimationPlayer
 
 signal SpellLaunched
 

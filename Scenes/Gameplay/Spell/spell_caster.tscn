@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cgips5vcholfy"]
+
+[ext_resource type="Script" uid="uid://enxx8gqvxx7o" path="res://Scripts/Gameplay/Spell/SpellCaster.gd" id="1_nihrr"]
+[ext_resource type="Script" uid="uid://fltyy8e4315a" path="res://Scripts/Gameplay/Spell/SpellData.gd" id="2_38co4"]
+[ext_resource type="Resource" uid="uid://dbfddscw160he" path="res://Resources/Spells/Spell_Cheese.tres" id="3_yeorw"]
+[ext_resource type="Resource" uid="uid://osyqa1xougy1" path="res://Resources/Spells/Spell_Fire.tres" id="4_7y45v"]
+[ext_resource type="Resource" uid="uid://lwg8qs7rttch" path="res://Resources/Spells/Spell_Armor.tres" id="5_b4kbc"]
+[ext_resource type="Resource" uid="uid://j6bbmmsv8hvt" path="res://Resources/Spells/Spell_Platform.tres" id="6_13je3"]
+[ext_resource type="PackedScene" uid="uid://bmktqinsrerkw" path="res://Scenes/VFX/spell_trail_vfx.tscn" id="7_ulvoh"]
+
+[node name="SpellCaster" type="Node3D" unique_id=5639376 node_paths=PackedStringArray("spellStartNode")]
+script = ExtResource("1_nihrr")
+spells = Array[ExtResource("2_38co4")]([ExtResource("3_yeorw"), ExtResource("4_7y45v"), ExtResource("5_b4kbc"), ExtResource("6_13je3")])
+spellStartNode = NodePath("")
+
+[node name="SpellTrailVFX" parent="." unique_id=254146121 instance=ExtResource("7_ulvoh")]
+
+[editable path="SpellTrailVFX"]

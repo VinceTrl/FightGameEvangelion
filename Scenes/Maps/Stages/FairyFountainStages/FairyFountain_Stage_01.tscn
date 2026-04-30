@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://colyx38uqlxua"]
+
+[ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_6jh84"]
+[ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_6c3bk"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_xisab"]
+
+[node name="FairyFountain_Stage_01" type="Node3D" unique_id=407222934 node_paths=PackedStringArray("levelRoot")]
+script = ExtResource("1_6jh84")
+platformSpawnType = 1
+fixedCameraZoom = true
+fixedCamZ = 2.885
+overrideMinCamZ = 1.0
+overrideMaxCamZ = 1.0
+levelRoot = NodePath("Level")
+overrideCameraClamp = true
+camClampMax = Vector2(0.5, 1)
+camClampMin = Vector2(-0.5, 0)
+
+[node name="Gameplay" type="Node3D" parent="." unique_id=837876375]
+
+[node name="GameplayLogic" type="Node3D" parent="Gameplay" unique_id=1707638752]
+
+[node name="PlayerSpawn" type="Marker3D" parent="Gameplay/GameplayLogic" unique_id=2141920691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 2, 0)
+script = ExtResource("2_6c3bk")
+
+[node name="PlayerSpawn2" type="Marker3D" parent="Gameplay/GameplayLogic" unique_id=1977175876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 2, 0)
+script = ExtResource("2_6c3bk")
+playerID = 2
+
+[node name="Objects" type="Node3D" parent="Gameplay" unique_id=901773701]
+
+[node name="Spawner" parent="Gameplay/Objects" unique_id=699863894 instance=ExtResource("3_xisab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Spawner3" parent="Gameplay/Objects" unique_id=1304270749 instance=ExtResource("3_xisab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 5, 0)
+
+[node name="Spawner5" parent="Gameplay/Objects" unique_id=1645001309 instance=ExtResource("3_xisab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 5, 0)
+
+[node name="Spawner7" parent="Gameplay/Objects" unique_id=336130126 instance=ExtResource("3_xisab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 5, 0)
+
+[node name="Spawner9" parent="Gameplay/Objects" unique_id=1563288890 instance=ExtResource("3_xisab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000002, 5, 0)
+
+[node name="Spawner11" parent="Gameplay/Objects" unique_id=546320848 instance=ExtResource("3_xisab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 5, 0)
+
+[node name="Spawner13" parent="Gameplay/Objects" unique_id=1955394163 instance=ExtResource("3_xisab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6000002, 5, 0)
+
+[node name="Level" type="Node3D" parent="." unique_id=1621998700]
+
+[node name="Art" type="Node3D" parent="Level" unique_id=2039608576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.113097)
+
+[node name="Lighting" type="Node3D" parent="." unique_id=1838689767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)

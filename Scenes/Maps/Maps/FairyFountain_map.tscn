@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://e2s7xr2d7qt8"]
+
+[ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_ng3ke"]
+[ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="2_nmre5"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="3_rn5mo"]
+[ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="4_beqi4"]
+[ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="5_72fcl"]
+[ext_resource type="Resource" uid="uid://cfbnv8ptsfx7i" path="res://Resources/Spawnables/Poop.tres" id="6_rif5j"]
+[ext_resource type="Resource" uid="uid://cpcxajwa0bvie" path="res://Resources/Spawnables/Heart.tres" id="7_nd2vs"]
+[ext_resource type="Resource" uid="uid://bi5grxooavn04" path="res://Resources/Spawnables/Shrek.tres" id="8_11ms4"]
+[ext_resource type="Resource" uid="uid://4kux6idtqvus" path="res://Resources/Spawnables/TrapHeart.tres" id="9_vdbbp"]
+[ext_resource type="Resource" uid="uid://5mwafnwjmudh" path="res://Resources/Spawnables/Bloc.tres" id="10_jqcvw"]
+[ext_resource type="Resource" uid="uid://77puk2bik3ln" path="res://Resources/Spawnables/Censored.tres" id="11_vrtdl"]
+[ext_resource type="Resource" uid="uid://c6w14dtath5on" path="res://Resources/Spawnables/BumperRing.tres" id="12_6usgc"]
+[ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_ow084"]
+[ext_resource type="Resource" uid="uid://dpspq7qtc8pg3" path="res://Resources/Spawnables/Creeper.tres" id="14_ju2x3"]
+[ext_resource type="Resource" uid="uid://dmec4tqcdblkt" path="res://Resources/Spawnables/Block_TNT.tres" id="15_hjqh0"]
+[ext_resource type="Resource" uid="uid://b3erqvxb24nxq" path="res://Resources/Spawnables/Enderman.tres" id="16_psxf8"]
+[ext_resource type="Resource" uid="uid://bv022mcb3708n" path="res://Resources/Spawnables/Wolf.tres" id="17_85jhr"]
+[ext_resource type="PackedScene" uid="uid://dyx6jlaren7re" path="res://Scenes/Characters/Mage/mage.tscn" id="19_gx3wi"]
+[ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="19_nmre5"]
+[ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="20_3n61f"]
+[ext_resource type="PackedScene" uid="uid://v455hmr20j7h" path="res://Scenes/Maps/Environment/fairy_fountain.tscn" id="20_nmre5"]
+[ext_resource type="Resource" uid="uid://boi3j7g4uww5i" path="res://Resources/Maps/FairyFountainMap.tres" id="21_ng3ke"]
+[ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="22_uuf1f"]
+[ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="23_kgn8r"]
+[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="24_iothf"]
+[ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="25_h1hkp"]
+[ext_resource type="Texture2D" uid="uid://cb2vyra4ugsbb" path="res://Assets/Meshes/Props/Beyblade/all.png" id="27_rn5mo"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
+
+[sub_resource type="Environment" id="Environment_nmre5"]
+ambient_light_source = 2
+ambient_light_color = Color(0.66038847, 0.85405266, 0.8296387, 1)
+ambient_light_energy = 3.56
+adjustment_brightness = 1.33
+adjustment_color_correction = ExtResource("27_rn5mo")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_rn5mo"]
+exposure_multiplier = 1.96
+auto_exposure_scale = 3.69
+auto_exposure_speed = 0.01
+dof_blur_far_distance = 15.95
+dof_blur_near_transition = -1.0
+
+[node name="FairyFountainMap" type="Node3D" unique_id=557590797 node_paths=PackedStringArray("enviro", "lights")]
+script = ExtResource("1_ng3ke")
+enviro = [NodePath("Enviro")]
+lights = [NodePath("Lighting")]
+
+[node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_nmre5")]
+items = Array[ExtResource("3_rn5mo")]([ExtResource("4_beqi4"), ExtResource("5_72fcl"), ExtResource("6_rif5j"), ExtResource("7_nd2vs"), ExtResource("8_11ms4"), ExtResource("9_vdbbp"), ExtResource("10_jqcvw"), ExtResource("11_vrtdl"), ExtResource("12_6usgc"), ExtResource("13_ow084"), ExtResource("14_ju2x3"), ExtResource("15_hjqh0"), ExtResource("16_psxf8"), ExtResource("17_85jhr")])
+
+[node name="Enviro" type="Node3D" parent="." unique_id=510669441]
+
+[node name="Mage" parent="Enviro" unique_id=646494372 instance=ExtResource("19_gx3wi")]
+transform = Transform3D(1.39, 0, 0, 0, 1.39, 0, 0, 0, 1.39, 0, -1.226574, -8.400001)
+
+[node name="CameraTarget" parent="Enviro" unique_id=180700079 instance=ExtResource("19_nmre5")]
+transform = Transform3D(1, 0, 0, 0, 0.99027777, -0.13910396, 0, 0.13910396, 0.99027777, 0, 0.81902313, 0)
+
+[node name="Node3D" type="Node3D" parent="Enviro" unique_id=546065881]
+
+[node name="FairyFountain" parent="Enviro/Node3D" unique_id=710426734 instance=ExtResource("20_nmre5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.560989, -8.332879)
+
+[node name="Lighting" type="Node3D" parent="." unique_id=818802441]
+
+[node name="Stage" type="Node" parent="." unique_id=1921753935]
+
+[node name="Boundary_Bottom" type="StaticBody3D" parent="Stage" unique_id=815148033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom" unique_id=1874739394]
+shape = SubResource("WorldBoundaryShape3D_e2grd")
+
+[node name="StageSpawner" parent="Stage" unique_id=1769614628 instance=ExtResource("20_3n61f")]
+map = ExtResource("21_ng3ke")
+
+[node name="KillVolume" parent="Stage" unique_id=421022714 instance=ExtResource("22_uuf1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="BloodSea" parent="." unique_id=920480580 instance=ExtResource("23_kgn8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=1459144192]
+script = ExtResource("24_iothf")
+configuration = ExtResource("25_h1hkp")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=364057458]
+environment = SubResource("Environment_nmre5")
+camera_attributes = SubResource("CameraAttributesPractical_rn5mo")
