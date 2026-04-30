@@ -6,12 +6,9 @@
 [ext_resource type="Shader" uid="uid://c5kny5412ow0u" path="res://Assets/Shaders/KikiFighter_shader.gdshader" id="4_o5sha"]
 [ext_resource type="Script" uid="uid://cwdo4krnscq8b" path="res://Scripts/Level/map.gd" id="4_sjgtb"]
 [ext_resource type="PackedScene" uid="uid://diwhygl1ho1la" path="res://Scenes/Camera/game_camera.tscn" id="4_sx5sm"]
-[ext_resource type="Resource" uid="uid://b562ecwtwp5vd" path="res://Resources/Maps/EvangelionMap.tres" id="5_fwmiy"]
 [ext_resource type="Texture2D" uid="uid://dsupiopujsxmc" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiRed.png" id="5_kufng"]
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
-[ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/BeachMap.tres" id="6_3xkmj"]
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiYellow.png" id="7_j3bm8"]
-[ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="7_nb51f"]
 [ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="8_ewbju"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="Resource" uid="uid://d282ym1u5ohem" path="res://Resources/Maps/DarkSoulsMap.tres" id="9_85qyi"]
@@ -37,7 +34,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" type="Node" parent="." unique_id=389733307]
 script = ExtResource("3_dv241")
-maps = Array[ExtResource("4_sjgtb")]([ExtResource("5_fwmiy"), ExtResource("6_3xkmj"), ExtResource("7_nb51f"), ExtResource("8_ewbju"), ExtResource("9_85qyi")])
+maps = Array[ExtResource("4_sjgtb")]([ExtResource("8_ewbju"), ExtResource("9_85qyi")])
 
 [node name="Gameplay" type="Node" parent="." unique_id=1867581352]
 
@@ -62,6 +59,9 @@ material_override = SubResource("ShaderMaterial_rfxrm")
 
 [node name="Sfx_Contact" parent="Gameplay/Player2/PlayerAudio" parent_id_path=PackedInt32Array(1754892820, 805557854) index="2" unique_id=1851878681]
 stream = null
+
+[node name="CutCheese" parent="Gameplay/Player2/KikiCheese/CheeseWheel" parent_id_path=PackedInt32Array(1754892820, 957600814) index="0" unique_id=948980915]
+surface_material_override/0 = null
 
 [node name="KillVolume" parent="Gameplay" unique_id=630851901 instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)

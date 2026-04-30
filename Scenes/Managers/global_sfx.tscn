@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c4dvp3i53vm04"]
+
+[ext_resource type="Script" uid="uid://dc2wigyxsyb8e" path="res://Scripts/Managers/Global/GlobalAudio/global_sfx.gd" id="1_4kvon"]
+[ext_resource type="Script" uid="uid://c1ixbiarreir0" path="res://Scripts/Managers/Global/GlobalAudio/SoundData.gd" id="2_k1kt4"]
+[ext_resource type="AudioStream" uid="uid://bgrm5be8bl5gb" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocHit.wav" id="3_8gokc"]
+[ext_resource type="AudioStream" uid="uid://dbkjl72ar1jke" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestroy.wav" id="4_poha4"]
+
+[sub_resource type="Resource" id="Resource_4b5tg"]
+script = ExtResource("2_k1kt4")
+stream = ExtResource("3_8gokc")
+name = "S_BLOCK_HIT"
+metadata/_custom_type_script = "uid://c1ixbiarreir0"
+
+[sub_resource type="Resource" id="Resource_5kk0o"]
+script = ExtResource("2_k1kt4")
+stream = ExtResource("4_poha4")
+name = "S_BLOCK_DESTROYED"
+metadata/_custom_type_script = "uid://c1ixbiarreir0"
+
+[node name="GlobalSFX" type="Node" unique_id=1064546007]
+script = ExtResource("1_4kvon")
+sounds = Array[ExtResource("2_k1kt4")]([SubResource("Resource_4b5tg"), SubResource("Resource_5kk0o")])

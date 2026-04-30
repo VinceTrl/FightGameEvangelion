@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/MinecraftBlock/block.gd" id="1_1mwp6"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_rd00h"]
-[ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="3_57dtm"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="3_q3etx"]
 [ext_resource type="PackedScene" uid="uid://c0jcpjl67p6ni" path="res://Scenes/Gameplay/minecraft_grass_block.tscn" id="5_1hayc"]
 [ext_resource type="ArrayMesh" uid="uid://dt2uhuqsydft1" path="res://Assets/Meshes/Props/Minecraft/minecraft_cube_mesh.tres" id="6_mm851"]
@@ -18,9 +17,8 @@ size = Vector3(0.325, 0.325, 0.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_m21dq"]
 size = Vector3(0.3, 0.3, 0.3)
 
-[node name="Block" type="Node3D" unique_id=219668706 node_paths=PackedStringArray("redstoneLink") groups=["PyramidHeadTarget"]]
+[node name="Block" type="Node3D" unique_id=219668706 groups=["PyramidHeadTarget"]]
 script = ExtResource("1_1mwp6")
-redstoneLink = NodePath("")
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=2074267378]
 script = ExtResource("1_rd00h")
@@ -38,12 +36,6 @@ collision_layer = 193
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1851698335]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150232, 0)
 shape = SubResource("BoxShape3D_m21dq")
-
-[node name="GroundMagnet" parent="." unique_id=1075556167 instance=ExtResource("3_57dtm")]
-cast_distance = 5.0
-offset_above_ground = 0.01
-auto_align_on_ready = false
-auto_align_on_update = false
 
 [node name="NodeShaker" type="Node3D" parent="." unique_id=91840638 node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("3_q3etx")

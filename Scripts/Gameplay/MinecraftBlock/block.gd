@@ -12,7 +12,6 @@ const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
 const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestroy.wav")
 
 @onready var node_shaker: NodeShaker = $NodeShaker
-@onready var ground_magnet: ForceToGround = $GroundMagnet
 @onready var audio_hit: AudioStreamPlayer3D = $AudioHit
 @onready var vfx_minecraft_bloc_hit: VFXOneShot = $vfx_minecraft_bloc_hit
 
@@ -37,8 +36,6 @@ func _ready() -> void:
 	
 	if(originBlock):
 		pass
-	
-	ground_magnet.auto_align_on_ready = forceToGroundOnReady
 	
 	#if(redstoneActive and redstoneLink):
 		#redstoneLink.isActive = true
@@ -69,9 +66,10 @@ func ChangeHealth(healthAmount:int = -1):
 	if(healthPoints <= 0):
 		isDead = true
 		#Manager.gameManager.shitpost_gui.ShowRandomImage()
-		var audio = AUDIO_SCENE.instantiate()
-		get_tree().current_scene.add_child(audio)
-		audio.StartAudio(SD_BLOC_DESTROY,0.0)
+		GlobalSFX.EmitSoundFromName("S_BLOCK_DESTROYED",0.0)
+		#var audio = AUDIO_SCENE.instantiate()
+		#get_tree().current_scene.add_child(audio)
+		#audio.StartAudio(SD_BLOC_DESTROY,0.0)
 		
 		#Spawn item on death if spawner is referenced
 		if(spawner):

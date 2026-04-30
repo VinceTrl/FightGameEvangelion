@@ -31,6 +31,7 @@ Manager="*res://Scripts/Managers/Global/Manager.gd"
 Global="*res://Scripts/Managers/Global/Global.gd"
 GlobalPostProcessData="*res://Scripts/GameEffects/PostProcessAnimationParams/GlobalPostProcessData.gd"
 MapGlobal="*res://Scripts/Managers/Global/map_global.gd"
+GlobalSFX="*uid://c4dvp3i53vm04"
 
 [debug_draw_3d]
 
