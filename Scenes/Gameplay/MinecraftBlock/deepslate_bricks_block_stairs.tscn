@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bpuxox42q3l7u"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_i5fsx"]
+[ext_resource type="ArrayMesh" uid="uid://dcvtf250jh3el" path="res://Assets/Meshes/Props/Minecraft/minecraft_stair_mesh.tres" id="2_i5fsx"]
+
+[node name="DeepslateBricksBlock" unique_id=1588274387 instance=ExtResource("1_i5fsx")]
+healthPoints = 10
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
+mesh = ExtResource("2_i5fsx")
+surface_material_override/0 = null

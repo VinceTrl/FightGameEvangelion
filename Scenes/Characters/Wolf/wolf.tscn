@@ -44,7 +44,7 @@ point_count = 4
 size = Vector3(0.72924805, 0.48840332, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_acnup"]
-radius = 5.0
+radius = 9.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q7dhl"]
 size = Vector3(0.5, 0.35, 1)
@@ -180,9 +180,10 @@ metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="DashAttack" type="Node" parent="StateMachine" unique_id=1288067011 node_paths=PackedStringArray("hitbox", "attackFx")]
 script = ExtResource("12_q7dhl")
-stateDuration = 0.5
+stateDuration = 0.8
 dashDuration = 0.4
 dashDirections = Array[Vector3]([Vector3(1, 0, 0), Vector3(-1, 0, 0), Vector3(0, 1, 0), Vector3(0.5, 0.5, 0), Vector3(-0.5, 0.5, 0), Vector3(-0.5, -0.5, 0), Vector3(0.5, -0.5, 0)])
+dashSpeed = 12.0
 dashCurve = SubResource("Curve_q7dhl")
 hitbox = NodePath("../../Hitbox")
 attackFx = NodePath("../../Visual/VFX/TrailEmitter")
@@ -198,7 +199,7 @@ metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 [node name="Hurtbox" type="Area3D" parent="." unique_id=964224393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21938989, 0)
 script = ExtResource("7_hwwuk")
-randomID = true
+owner_id = 866
 metadata/_custom_type_script = "uid://be4u7kwwov65g"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1715884253]
@@ -222,9 +223,9 @@ debug_color = Color(0.47646523, 0.58567554, 0.17720592, 0.41960785)
 [node name="Hitbox" type="Area3D" parent="." unique_id=1672942845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13492775, 0.030022115, 0)
 script = ExtResource("22_3a31i")
+owner_id = 866
 type = 6
 isActive = false
-randomID = true
 metadata/_custom_type_script = "uid://chlkng7i45f53"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1391323361]

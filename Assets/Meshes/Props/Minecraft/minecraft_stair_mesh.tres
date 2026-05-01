@@ -1,0 +1,24 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://dcvtf250jh3el"]
+
+[ext_resource type="Texture2D" uid="uid://dmnmxprcnmghh" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/deepslate_bricks.png" id="1_tj3xc"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_ewsuo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qc5b"]
+albedo_texture = ExtResource("1_tj3xc")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_ewsuo")
+uv1_scale = Vector3(2, 2, 2)
+texture_filter = 0
+
+[resource]
+_surfaces = [{
+"aabb": AABB(-0.15, 0, -0.3, 0.3, 0.3, 0.3),
+"attribute_data": PackedByteArray("AAAAAFVV1T4AAIA/VVXVPgAAgD8AAAA/AACAP1VV1T4AAAAAVVXVPgAAAACrqqo+AABAPwAAQD8AAIA/AAAAPwAAgD8AAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD+rqqo9AABAPwAAQD8AAEA/AAAAPwAAgD8AAAA/AACAPwAAAD8AAAAAAAAAPwAAAABVVdU+AAAAAAAAgD8AAAAAAAAAPwAAgD4AAEA/AACAP6uqqj0AAAAAq6qqPQAAAAAAAAAAAAAAAAAAAD8AAIA+AAAAPwAAgD4AAEA/AACAPwAAgD8AAAA/AACAPwAAAD8AAEA/AAAAAKuqqj4AAIA/q6qqPgAAgD9VVdU+AACAPwAAgD8AAAA/AABAPwAAQD8AAEA/AAAAAAAAgD4AAIA/AACAPgAAgD+rqqo+AAAAPwAAQD8AAAA/AACAPwAAAAAAAIA/AACAPgAAQD8AAAA/AABAPwAAAAAAAIA/AACAP6uqqj4AAAAAq6qqPgAAAAAAAIA+AAAAAKuqKj4AAIA/q6oqPgAAgD8AAIA+AAAAAKuqqj0AAIA/q6qqPQAAgD+rqio+AACAP6uqKj4AAAAAq6oqPgAAAACrqqo9AACAPwAAgD4AAAAAAACAPgAAAACrqio+"),
+"format": 34359738391,
+"material": SubResource("StandardMaterial3D_8qc5b"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("mpkZvgAAAAAAAAAAmpkZvgAAAACamZm+mpkZvpqZmT6amZm+mpkZvgAAAACamZm+mpkZvgAAAAAAAAAAmpkZPgAAAAAAAAAAAAAAAJqZGT6amZm+mpkZvpqZmT6amZm+mpkZvgAAAACamZm+mpkZvpqZmT4AAAAAmpkZvpqZmT6amZm+AAAAAJqZmT6amZm+AAAAAJqZGT6amZm+AAAAAJqZmT6amZm+mpkZvpqZmT6amZm+mpkZvpqZmT6amZm+mpkZvpqZmT4AAAAAmpkZvgAAAAAAAAAAmpkZvgAAAAAAAAAAmpkZvpqZmT4AAAAAAAAAAJqZGT4AAAAAAAAAAJqZmT6amZm+AAAAAJqZmT4AAAAAmpkZvpqZmT4AAAAAmpkZvpqZmT4AAAAAAAAAAJqZmT4AAAAAAAAAAJqZGT4AAAAAmpkZvgAAAACamZm+mpkZPgAAAACamZm+mpkZPpqZGT6amZm+mpkZPgAAAAAAAAAAmpkZPgAAAACamZm+mpkZvgAAAACamZm+mpkZvgAAAACamZm+mpkZPpqZGT6amZm+AAAAAJqZGT6amZm+mpkZPpqZGT4AAAAAmpkZPpqZGT6amZm+mpkZPgAAAACamZm+mpkZPpqZGT4AAAAAmpkZPgAAAAAAAAAAmpkZvgAAAAAAAAAAAAAAAJqZGT4AAAAAmpkZPpqZGT4AAAAAmpkZvgAAAAAAAAAAmpkZPgAAAACamZm+mpkZPgAAAAAAAAAAmpkZPpqZGT4AAAAAAAAAAJqZGT4AAAAAAAAAAJqZGT6amZm+mpkZPpqZGT6amZm+AAAAAJqZmT4AAAAAAAAAAJqZmT6amZm+AAAAAJqZGT6amZm+AAAAAJqZGT6amZm+AAAAAJqZGT4AAAAAAAAAAJqZmT4AAAAAmpkZPpqZGT6amZm+mpkZPpqZGT4AAAAAAAAAAJqZGT4AAAAAAAD/f/////8AAP9//////wAA/3///////38AAP//////fwAA//////9/AAD//////////wAA/7//////AAD/v/////8AAP+//3//////////f/////////9//////////////wAA/7//////AAD/v/////8AAP+/AAD/f/////8AAP9//////wAA/3///////3//f////7//f/9/////v/9//3////+//3//////////f/////////9//////////3//f////7//f/9/////v/9//3////+//////wAA/7//////AAD/v/////8AAP+//38AAP//////fwAA//////9/AAD//////////wAA/7//////AAD/v/////8AAP+/////f/////////9//////////3///////3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+/////f/////////9//////////3///////3//////////f/////////9/////////////f/////////9//////////3//////////f/////////9//////////3///////3//////////f/////////9/////////")
+}]

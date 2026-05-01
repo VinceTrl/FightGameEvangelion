@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ctcac5c1nbdp5" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/oak_tree.tscn" id="15_ihkek"]
 [ext_resource type="PackedScene" uid="uid://bja86rnp5peep" path="res://Scenes/Gameplay/MinecraftBlock/lava_block.tscn" id="16_lmbgj"]
 
-[node name="MinecraftStage_02" type="Node3D" unique_id=176270937 node_paths=PackedStringArray("levelRoot")]
+[node name="MinecraftStage_05" type="Node3D" unique_id=176270937 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_4decn")
 platformSpawnType = 2
 levelRoot = NodePath("Level")
@@ -89,9 +89,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -2.3882425, 0)
 
 [node name="Platform_Cobblestone_5x15" parent="Level/Blocks" unique_id=506721848 instance=ExtResource("6_i4kef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999996, -1.7999997, 0)
-
-[node name="Platform_Cobblestone_5x16" parent="Level/Blocks" unique_id=504624528 instance=ExtResource("6_i4kef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -3, 0)
 
 [node name="Platform_Grass_7x2" parent="Level/Blocks" unique_id=158288893 instance=ExtResource("7_ta18i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, -0.3, 0)
@@ -327,335 +324,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000001, -0.90000004, 0)
 [node name="Platform_Dirt_7x6" parent="Level/Blocks" unique_id=726094527 instance=ExtResource("14_nmuvf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, 0, 0)
 
-[node name="LavaBlock" parent="Level/Blocks" unique_id=1911320481 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3.9, 0)
-
-[node name="LavaBlock43" parent="Level/Blocks" unique_id=587153922 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -4.5, 0)
-
-[node name="LavaBlock44" parent="Level/Blocks" unique_id=1940614480 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -4.2, 0)
-
-[node name="LavaBlock2" parent="Level/Blocks" unique_id=1864774898 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3.9, 0)
-
 [node name="LavaBlock29" parent="Level/Blocks" unique_id=74951834 instance=ExtResource("16_lmbgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -0.9, 0)
 
 [node name="LavaBlock42" parent="Level/Blocks" unique_id=425126150 instance=ExtResource("16_lmbgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5000005, -2.4, 0)
-
-[node name="LavaBlock27" parent="Level/Blocks" unique_id=1957207292 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -4.2, 0)
-
-[node name="LavaBlock28" parent="Level/Blocks" unique_id=613947254 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -4.2, 0)
-
-[node name="LavaBlock99" parent="Level/Blocks" unique_id=1596480395 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7, -4.5, 0)
-
-[node name="LavaBlock100" parent="Level/Blocks" unique_id=1476304225 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -4.5, 0)
-
-[node name="LavaBlock30" parent="Level/Blocks" unique_id=1754206866 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0999994, -4.5, 0)
-
-[node name="LavaBlock31" parent="Level/Blocks" unique_id=1160627239 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4999995, -4.5, 0)
-
-[node name="LavaBlock32" parent="Level/Blocks" unique_id=1226896797 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999996, -4.2, 0)
-
-[node name="LavaBlock33" parent="Level/Blocks" unique_id=1249317313 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999996, -4.5, 0)
-
-[node name="LavaBlock34" parent="Level/Blocks" unique_id=1928063402 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2999997, -4.5, 0)
-
-[node name="LavaBlock35" parent="Level/Blocks" unique_id=468545656 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2999997, -4.2, 0)
-
-[node name="LavaBlock38" parent="Level/Blocks" unique_id=2112247675 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000006, -4.5, 0)
-
-[node name="LavaBlock39" parent="Level/Blocks" unique_id=164491533 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000006, -4.2, 0)
-
-[node name="LavaBlock40" parent="Level/Blocks" unique_id=46429801 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000008, -4.5, 0)
-
-[node name="LavaBlock41" parent="Level/Blocks" unique_id=738702089 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7000008, -4.2, 0)
-
-[node name="LavaBlock36" parent="Level/Blocks" unique_id=255887353 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -4.2, 0)
-
-[node name="LavaBlock93" parent="Level/Blocks" unique_id=910706087 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1999993, -4.5, 0)
-
-[node name="LavaBlock94" parent="Level/Blocks" unique_id=1973564412 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -4.2, 0)
-
-[node name="LavaBlock95" parent="Level/Blocks" unique_id=1338687413 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.799999, -4.5, 0)
-
-[node name="LavaBlock96" parent="Level/Blocks" unique_id=1875391952 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7999997, -4.2, 0)
-
-[node name="LavaBlock97" parent="Level/Blocks" unique_id=1445962293 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.399999, -4.5, 0)
-
-[node name="LavaBlock98" parent="Level/Blocks" unique_id=1702699365 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3999996, -4.2, 0)
-
-[node name="LavaBlock37" parent="Level/Blocks" unique_id=1861726932 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, -4.2, 0)
-
-[node name="LavaBlock3" parent="Level/Blocks" unique_id=172466536 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, -3.9, 0)
-
-[node name="LavaBlock4" parent="Level/Blocks" unique_id=286339788 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -3.9, 0)
-
-[node name="LavaBlock5" parent="Level/Blocks" unique_id=724984066 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -3.9, 0)
-
-[node name="LavaBlock6" parent="Level/Blocks" unique_id=2061403458 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999996, -3.9, 0)
-
-[node name="LavaBlock7" parent="Level/Blocks" unique_id=547222159 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0999994, -3.9, 0)
-
-[node name="LavaBlock8" parent="Level/Blocks" unique_id=1257059101 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.799999, -3.9, 0)
-
-[node name="LavaBlock9" parent="Level/Blocks" unique_id=223586599 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.499999, -3.9, 0)
-
-[node name="LavaBlock10" parent="Level/Blocks" unique_id=1932893758 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.199999, -3.9, 0)
-
-[node name="LavaBlock11" parent="Level/Blocks" unique_id=532915188 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.899999, -3.9, 0)
-
-[node name="LavaBlock12" parent="Level/Blocks" unique_id=1028186645 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.599999, -3.9, 0)
-
-[node name="LavaBlock73" parent="Level/Blocks" unique_id=83193405 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, -4.2000003, 0)
-
-[node name="LavaBlock74" parent="Level/Blocks" unique_id=95581041 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -4.2000003, 0)
-
-[node name="LavaBlock75" parent="Level/Blocks" unique_id=1616117918 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -4.2000003, 0)
-
-[node name="LavaBlock76" parent="Level/Blocks" unique_id=39157549 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999996, -4.2000003, 0)
-
-[node name="LavaBlock77" parent="Level/Blocks" unique_id=1978956778 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0999994, -4.2000003, 0)
-
-[node name="LavaBlock78" parent="Level/Blocks" unique_id=1408883126 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.799999, -4.2000003, 0)
-
-[node name="LavaBlock79" parent="Level/Blocks" unique_id=1679725755 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.499999, -4.2000003, 0)
-
-[node name="LavaBlock80" parent="Level/Blocks" unique_id=261494985 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.199999, -4.2000003, 0)
-
-[node name="LavaBlock81" parent="Level/Blocks" unique_id=1959969880 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.899999, -4.2000003, 0)
-
-[node name="LavaBlock82" parent="Level/Blocks" unique_id=1639800037 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.599999, -4.2000003, 0)
-
-[node name="LavaBlock83" parent="Level/Blocks" unique_id=1881923886 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3000002, -4.5000005, 0)
-
-[node name="LavaBlock84" parent="Level/Blocks" unique_id=1888602227 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -4.5000005, 0)
-
-[node name="LavaBlock85" parent="Level/Blocks" unique_id=2143617173 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, -4.5000005, 0)
-
-[node name="LavaBlock86" parent="Level/Blocks" unique_id=1741253121 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3999996, -4.5000005, 0)
-
-[node name="LavaBlock87" parent="Level/Blocks" unique_id=1118172440 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0999994, -4.5000005, 0)
-
-[node name="LavaBlock88" parent="Level/Blocks" unique_id=971165259 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.799999, -4.5000005, 0)
-
-[node name="LavaBlock89" parent="Level/Blocks" unique_id=1893391138 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.499999, -4.5000005, 0)
-
-[node name="LavaBlock90" parent="Level/Blocks" unique_id=1121694996 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.199999, -4.5000005, 0)
-
-[node name="LavaBlock91" parent="Level/Blocks" unique_id=349070784 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.899999, -4.5000005, 0)
-
-[node name="LavaBlock92" parent="Level/Blocks" unique_id=431847678 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.599999, -4.5000005, 0)
-
-[node name="LavaBlock13" parent="Level/Blocks" unique_id=229630352 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1999989, -3.9, 0)
-
-[node name="LavaBlock14" parent="Level/Blocks" unique_id=662965974 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89999884, -3.9, 0)
-
-[node name="LavaBlock15" parent="Level/Blocks" unique_id=349627846 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59999883, -3.9, 0)
-
-[node name="LavaBlock16" parent="Level/Blocks" unique_id=1607430271 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999882, -3.9, 0)
-
-[node name="LavaBlock17" parent="Level/Blocks" unique_id=1856302219 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1920929e-06, -3.9, 0)
-
-[node name="LavaBlock18" parent="Level/Blocks" unique_id=250870782 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3000012, -3.9, 0)
-
-[node name="LavaBlock19" parent="Level/Blocks" unique_id=171948321 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000012, -3.9, 0)
-
-[node name="LavaBlock20" parent="Level/Blocks" unique_id=1677243918 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000012, -3.9, 0)
-
-[node name="LavaBlock21" parent="Level/Blocks" unique_id=392285551 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2000012, -3.9, 0)
-
-[node name="LavaBlock22" parent="Level/Blocks" unique_id=1718817619 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5000012, -3.9, 0)
-
-[node name="LavaBlock23" parent="Level/Blocks" unique_id=1350914048 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000011, -3.9, 0)
-
-[node name="LavaBlock24" parent="Level/Blocks" unique_id=256622638 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.100001, -3.9, 0)
-
-[node name="LavaBlock25" parent="Level/Blocks" unique_id=1818036227 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400001, -3.9, 0)
-
-[node name="LavaBlock101" parent="Level/Blocks" unique_id=95389105 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400001, -4.2000003, 0)
-
-[node name="LavaBlock102" parent="Level/Blocks" unique_id=1528821297 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.400001, -4.5000005, 0)
-
-[node name="LavaBlock26" parent="Level/Blocks" unique_id=1318044151 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.700001, -3.9, 0)
-
-[node name="LavaBlock45" parent="Level/Blocks" unique_id=417003903 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -4.2000003, 0)
-
-[node name="LavaBlock46" parent="Level/Blocks" unique_id=525543554 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4.2000003, 0)
-
-[node name="LavaBlock47" parent="Level/Blocks" unique_id=1818212733 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89999884, -4.2000003, 0)
-
-[node name="LavaBlock48" parent="Level/Blocks" unique_id=1366428426 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59999883, -4.2000003, 0)
-
-[node name="LavaBlock49" parent="Level/Blocks" unique_id=194625267 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999882, -4.2000003, 0)
-
-[node name="LavaBlock50" parent="Level/Blocks" unique_id=454963851 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1920929e-06, -4.2000003, 0)
-
-[node name="LavaBlock51" parent="Level/Blocks" unique_id=1721599963 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3000012, -4.2000003, 0)
-
-[node name="LavaBlock52" parent="Level/Blocks" unique_id=1736829633 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000012, -4.2000003, 0)
-
-[node name="LavaBlock53" parent="Level/Blocks" unique_id=142132985 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000012, -4.2000003, 0)
-
-[node name="LavaBlock54" parent="Level/Blocks" unique_id=1639331955 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2000012, -4.2000003, 0)
-
-[node name="LavaBlock55" parent="Level/Blocks" unique_id=483199198 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5000012, -4.2000003, 0)
-
-[node name="LavaBlock56" parent="Level/Blocks" unique_id=1153936439 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000011, -4.2000003, 0)
-
-[node name="LavaBlock57" parent="Level/Blocks" unique_id=904309990 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.100001, -4.2000003, 0)
-
-[node name="LavaBlock58" parent="Level/Blocks" unique_id=1786878219 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.700001, -4.2000003, 0)
-
-[node name="LavaBlock59" parent="Level/Blocks" unique_id=1001400995 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -4.5000005, 0)
-
-[node name="LavaBlock103" parent="Level/Blocks" unique_id=1597759038 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -4.2000003, 0)
-
-[node name="LavaBlock104" parent="Level/Blocks" unique_id=296385567 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -4.5000005, 0)
-
-[node name="LavaBlock105" parent="Level/Blocks" unique_id=779809571 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000001, -4.2000003, 0)
-
-[node name="LavaBlock106" parent="Level/Blocks" unique_id=723401975 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000001, -4.5000005, 0)
-
-[node name="LavaBlock107" parent="Level/Blocks" unique_id=455033686 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -4.2000003, 0)
-
-[node name="LavaBlock108" parent="Level/Blocks" unique_id=1917598775 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, -4.5000005, 0)
-
-[node name="LavaBlock109" parent="Level/Blocks" unique_id=268124145 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -4.2000003, 0)
-
-[node name="LavaBlock110" parent="Level/Blocks" unique_id=410381244 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -4.5000005, 0)
-
-[node name="LavaBlock60" parent="Level/Blocks" unique_id=1052373261 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4.5000005, 0)
-
-[node name="LavaBlock61" parent="Level/Blocks" unique_id=774829326 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89999884, -4.5000005, 0)
-
-[node name="LavaBlock62" parent="Level/Blocks" unique_id=720415307 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59999883, -4.5000005, 0)
-
-[node name="LavaBlock63" parent="Level/Blocks" unique_id=1113896167 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999882, -4.5000005, 0)
-
-[node name="LavaBlock64" parent="Level/Blocks" unique_id=2069947430 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1920929e-06, -4.5000005, 0)
-
-[node name="LavaBlock65" parent="Level/Blocks" unique_id=1919653564 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3000012, -4.5000005, 0)
-
-[node name="LavaBlock66" parent="Level/Blocks" unique_id=1392269708 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000012, -4.5000005, 0)
-
-[node name="LavaBlock67" parent="Level/Blocks" unique_id=1645075173 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000012, -4.5000005, 0)
-
-[node name="LavaBlock68" parent="Level/Blocks" unique_id=1186924072 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2000012, -4.5000005, 0)
-
-[node name="LavaBlock69" parent="Level/Blocks" unique_id=1706167178 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5000012, -4.5000005, 0)
-
-[node name="LavaBlock70" parent="Level/Blocks" unique_id=502323030 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8000011, -4.5000005, 0)
-
-[node name="LavaBlock71" parent="Level/Blocks" unique_id=836974285 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.100001, -4.5000005, 0)
-
-[node name="LavaBlock72" parent="Level/Blocks" unique_id=1846904188 instance=ExtResource("16_lmbgj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.700001, -4.5000005, 0)
 
 [node name="OakTree" parent="Level/Blocks" unique_id=859161625 instance=ExtResource("15_ihkek")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.5, 0)
@@ -689,6 +362,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000001, -3, 0)
 
 [node name="Platform_Stone_5x11" parent="Level" unique_id=741206417 instance=ExtResource("15_3qtj2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6000001, -3, 0)
+
+[node name="Platform_Stone_5x13" parent="Level" unique_id=1363792656 instance=ExtResource("15_3qtj2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1000004, -3, 0)
 
 [node name="Platform_Stone_5x12" parent="Level" unique_id=1670799325 instance=ExtResource("15_3qtj2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -1.8, 0)
