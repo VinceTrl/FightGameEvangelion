@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2e0t1s3imcee"
-path.s3tc="res://.godot/imported/mariooo.jpg-2bac7d3d680d62306096943d6d1276a9.s3tc.ctex"
+uid="uid://cs3kbhdj7pitn"
+path.s3tc="res://.godot/imported/smiling_face_with_tear.png-4e116a69acd4a5f76679d9355bfffbf0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Shitpost/Source/mariooo.jpg"
-dest_files=["res://.godot/imported/mariooo.jpg-2bac7d3d680d62306096943d6d1276a9.s3tc.ctex"]
+source_file="res://Assets/Sprites/Items/Emojis/smiling_face_with_tear.png"
+dest_files=["res://.godot/imported/smiling_face_with_tear.png-4e116a69acd4a5f76679d9355bfffbf0.s3tc.ctex"]
 
 [params]
 

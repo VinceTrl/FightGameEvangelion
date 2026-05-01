@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2e0t1s3imcee"
-path.s3tc="res://.godot/imported/mariooo.jpg-2bac7d3d680d62306096943d6d1276a9.s3tc.ctex"
+uid="uid://bwctbo4nskidi"
+path.s3tc="res://.godot/imported/dizzy_face.png-1f98128dd878e6741ec4fa60806c6548.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Shitpost/Source/mariooo.jpg"
-dest_files=["res://.godot/imported/mariooo.jpg-2bac7d3d680d62306096943d6d1276a9.s3tc.ctex"]
+source_file="res://Assets/Sprites/Items/Emojis/dizzy_face.png"
+dest_files=["res://.godot/imported/dizzy_face.png-1f98128dd878e6741ec4fa60806c6548.s3tc.ctex"]
 
 [params]
 

@@ -23,6 +23,8 @@ platformSpawnType = 1
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 6.0
 levelRoot = NodePath("Level")
+camClampMax = Vector2(3, 3)
+camClampMin = Vector2(-3, 0)
 
 [node name="Gameplay" type="Node3D" parent="." unique_id=837876375]
 

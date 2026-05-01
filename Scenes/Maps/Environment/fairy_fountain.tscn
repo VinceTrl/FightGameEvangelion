@@ -549,6 +549,26 @@ albedo_color = Color(0.28485027, 0.28485027, 0.28485027, 1)
 albedo_texture = ExtResource("3_ejrsx")
 uv1_scale = Vector3(2, 1, 1)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_ejrsx"]
+top_radius = 0.2
+bottom_radius = 1.0
+height = 8.0
+
+[sub_resource type="Gradient" id="Gradient_ktqmb"]
+offsets = PackedFloat32Array(0.53097343, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.5372549)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m5upj"]
+gradient = SubResource("Gradient_ktqmb")
+fill_from = Vector2(0.51282054, 0.60683763)
+fill_to = Vector2(0.51282054, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16rvm"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.9607843, 0.9843137, 0.78431374, 0.15294118)
+albedo_texture = SubResource("GradientTexture2D_m5upj")
+
 [sub_resource type="Gradient" id="Gradient_cnxqi"]
 colors = PackedColorArray(0.79607844, 1, 1, 1, 0.60784316, 0.8509804, 0.7411765, 1)
 
@@ -773,6 +793,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ktqmb")
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 1.4007471, 2.5762773, 9.297543)
 mesh = SubResource("QuadMesh_cnxqi")
 surface_material_override/0 = SubResource("StandardMaterial3D_ktqmb")
+
+[node name="GodRay" type="MeshInstance3D" parent="Meshes" unique_id=1447931426]
+transform = Transform3D(0.97141254, -0.2373977, 0, 0.2373977, 0.97141254, 0, 0, 0, 1, 0.009742767, 1.259732, 0.79334307)
+mesh = SubResource("CylinderMesh_ejrsx")
+surface_material_override/0 = SubResource("StandardMaterial3D_16rvm")
 
 [node name="FXs" type="Node3D" parent="." unique_id=1706566843]
 

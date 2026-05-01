@@ -13,8 +13,8 @@ overrideMinCamZ = 1.0
 overrideMaxCamZ = 1.0
 levelRoot = NodePath("Level")
 overrideCameraClamp = true
-camClampMax = Vector2(0.5, 1)
-camClampMin = Vector2(-0.5, 0)
+camClampMax = Vector2(1, 1.5)
+camClampMin = Vector2(-1, 0)
 
 [node name="Gameplay" type="Node3D" parent="." unique_id=837876375]
 

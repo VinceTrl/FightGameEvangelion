@@ -33,6 +33,7 @@ func SetCamera():
 		Manager.gameCamera.SetCameraOverrideZ(fixedCamZ)
 		
 	if(overrideCameraClamp):
+		Manager.gameCamera.canClampPosition = true
 		Manager.gameCamera.cameraClampMin = camClampMin
 		Manager.gameCamera.cameraClampMax = camClampMax
 		

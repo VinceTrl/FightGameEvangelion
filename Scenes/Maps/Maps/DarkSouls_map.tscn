@@ -19,7 +19,6 @@
 [ext_resource type="Resource" uid="uid://bv022mcb3708n" path="res://Resources/Spawnables/Wolf.tres" id="17_urvqb"]
 [ext_resource type="PackedScene" uid="uid://dxcaay2i51g33" path="res://Scenes/Maps/Environment/gwynevere's_room.tscn" id="18_5fwcu"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="19_6xnvc"]
-[ext_resource type="PackedScene" uid="uid://dyx6jlaren7re" path="res://Scenes/Characters/Mage/mage.tscn" id="19_kkmlt"]
 [ext_resource type="Resource" uid="uid://d282ym1u5ohem" path="res://Resources/Maps/DarkSoulsMap.tres" id="20_5fwcu"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="21_c4hgn"]
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="23_fv422"]
@@ -44,9 +43,6 @@ items = Array[ExtResource("3_f6ug2")]([ExtResource("4_klpx3"), ExtResource("5_c2
 
 [node name="Gwynevere\'s room" parent="Enviro" unique_id=9870905 instance=ExtResource("18_5fwcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23500633, 1.2, -10.200001)
-
-[node name="Mage" parent="Enviro" unique_id=646494372 instance=ExtResource("19_kkmlt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15412879, 0.57983863, -7.4776993)
 
 [node name="Lighting" type="Node3D" parent="." unique_id=818802441]
 
