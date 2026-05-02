@@ -83,11 +83,11 @@ func PlayDeathSFX():
 func StartBackgroundEffect():
 	if(Player.lastHitbox.type != Hitbox.DamageType.Melee): return
 	
-	Manager.gameManager.currentMap.SetEnviroVisibility(false)
-	Manager.gameManager.currentStage.SetLevelVisibility(false)
+	#Manager.gameManager.currentMap.SetEnviroVisibility(false)
+	#Manager.gameManager.currentStage.SetLevelVisibility(false)
 	Manager.gameManager.death_background.SetBackgroundOnPlayer(Player)
 	
 func StopBackgroundEffect():
-	Manager.gameManager.currentMap.SetEnviroVisibility(true)
-	Manager.gameManager.currentStage.SetLevelVisibility(true)
+	#Manager.gameManager.currentMap.SetEnviroVisibility(true)
+	#Manager.gameManager.currentStage.SetLevelVisibility(true)
 	Manager.gameManager.death_background.HideBackground()

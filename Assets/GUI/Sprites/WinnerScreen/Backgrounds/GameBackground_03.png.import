@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s6uc5038ngll"
-path.s3tc="res://.godot/imported/scream.png-f3637fbd6de541a23bfc78169292e87a.s3tc.ctex"
+uid="uid://c8seap41m1je7"
+path.s3tc="res://.godot/imported/GameBackground_03.png-acd69608c97e317544fc4f6fc4aafa31.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Sprites/Items/Emojis/scream.png"
-dest_files=["res://.godot/imported/scream.png-f3637fbd6de541a23bfc78169292e87a.s3tc.ctex"]
+source_file="res://Assets/GUI/Sprites/WinnerScreen/Backgrounds/GameBackground_03.png"
+dest_files=["res://.godot/imported/GameBackground_03.png-acd69608c97e317544fc4f6fc4aafa31.s3tc.ctex"]
 
 [params]
 

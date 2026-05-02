@@ -39,12 +39,12 @@ lights = [NodePath("Lighting")]
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_kkmlt")]
 items = Array[ExtResource("3_f6ug2")]([ExtResource("4_klpx3"), ExtResource("5_c2u7w"), ExtResource("6_0xu63"), ExtResource("7_c25xw"), ExtResource("8_u5di3"), ExtResource("9_kytsd"), ExtResource("10_cf5ql"), ExtResource("11_cypfp"), ExtResource("12_30ax8"), ExtResource("13_m4bvs"), ExtResource("14_ndx05"), ExtResource("15_chtq6"), ExtResource("16_jnqf7"), ExtResource("17_urvqb")])
 
-[node name="Enviro" type="Node3D" parent="." unique_id=510669441]
+[node name="Enviro" type="Node3D" parent="." unique_id=510669441 groups=["Enviro"]]
 
 [node name="Gwynevere\'s room" parent="Enviro" unique_id=9870905 instance=ExtResource("18_5fwcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23500633, 1.2, -10.200001)
 
-[node name="Lighting" type="Node3D" parent="." unique_id=818802441]
+[node name="Lighting" type="Node3D" parent="." unique_id=818802441 groups=["Enviro"]]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lighting" unique_id=144122790]
 transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071068, 0, -0.7071068, 0.7071067, 0, 3.9, 3.9)

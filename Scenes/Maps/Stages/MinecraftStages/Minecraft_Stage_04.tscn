@@ -293,70 +293,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.48985124, 0)
 [node name="Beyblade2" parent="Gameplay/Objects" unique_id=580019986 instance=ExtResource("4_r4nth")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.48985124, 0)
 
-[node name="MultiMeshGrid" type="MultiMeshInstance3D" parent="Gameplay" unique_id=577882088]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -4.05, 0)
-multimesh = SubResource("MultiMesh_7r3ee")
-script = ExtResource("6_7r3ee")
-surface = Vector2(10.3, 3)
-meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)
-instanceCount = 350
-metadata/_custom_type_script = "uid://b64mmjv66osb7"
-
-[node name="MultiMeshGrid4" type="MultiMeshInstance3D" parent="Gameplay" unique_id=481315227]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, 4.95, 0)
-multimesh = SubResource("MultiMesh_vie2o")
-script = ExtResource("6_7r3ee")
-surface = Vector2(10.3, 3)
-meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)
-instanceCount = 350
-metadata/_custom_type_script = "uid://b64mmjv66osb7"
-
-[node name="MultiMeshGrid2" type="MultiMeshInstance3D" parent="Gameplay" unique_id=793320582]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000001, -1.05, 0)
-multimesh = SubResource("MultiMesh_ocaax")
-script = ExtResource("6_7r3ee")
-surface = Vector2(1.7, 6)
-meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)
-instanceCount = 340
-metadata/_custom_type_script = "uid://b64mmjv66osb7"
-
-[node name="MultiMeshGrid3" type="MultiMeshInstance3D" parent="Gameplay" unique_id=2080885369]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1000004, -1.05, 0)
-multimesh = SubResource("MultiMesh_v1ogb")
-script = ExtResource("6_7r3ee")
-surface = Vector2(1.7, 6)
-meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)
-instanceCount = 340
-metadata/_custom_type_script = "uid://b64mmjv66osb7"
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Gameplay" unique_id=742414345]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3, 0)
-collision_layer = 193
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/StaticBody3D" unique_id=1248904822]
-shape = SubResource("BoxShape3D_ak24b")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Gameplay" unique_id=1538490937]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 1.8, 0)
-collision_layer = 193
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/StaticBody3D3" unique_id=1949673211]
-shape = SubResource("BoxShape3D_7r3ee")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Gameplay" unique_id=620295910]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.200001, 1.8, 0)
-collision_layer = 193
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/StaticBody3D4" unique_id=1903930362]
-shape = SubResource("BoxShape3D_7r3ee")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Gameplay" unique_id=1043963206]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7, 0)
-collision_layer = 193
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/StaticBody3D2" unique_id=1432591483]
-shape = SubResource("BoxShape3D_ak24b")
-
 [node name="Level" type="Node3D" parent="." unique_id=127464666]
 
 [node name="Blocks" type="Node3D" parent="Level" unique_id=579634443]
@@ -678,3 +614,67 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1999998, -0.59999996, 0)
 
 [node name="Platform_Deepslate_5x10" parent="Level/Blocks" unique_id=319272972 instance=ExtResource("9_r4nth")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, -0.59999996, 0)
+
+[node name="MultiMeshGrid" type="MultiMeshInstance3D" parent="Level" unique_id=577882088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, -4.05, 0)
+multimesh = SubResource("MultiMesh_7r3ee")
+script = ExtResource("6_7r3ee")
+surface = Vector2(10.3, 3)
+meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)
+instanceCount = 350
+metadata/_custom_type_script = "uid://b64mmjv66osb7"
+
+[node name="MultiMeshGrid4" type="MultiMeshInstance3D" parent="Level" unique_id=481315227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1, 4.95, 0)
+multimesh = SubResource("MultiMesh_vie2o")
+script = ExtResource("6_7r3ee")
+surface = Vector2(10.3, 3)
+meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)
+instanceCount = 350
+metadata/_custom_type_script = "uid://b64mmjv66osb7"
+
+[node name="MultiMeshGrid2" type="MultiMeshInstance3D" parent="Level" unique_id=793320582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000001, -1.05, 0)
+multimesh = SubResource("MultiMesh_ocaax")
+script = ExtResource("6_7r3ee")
+surface = Vector2(1.7, 6)
+meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)
+instanceCount = 340
+metadata/_custom_type_script = "uid://b64mmjv66osb7"
+
+[node name="MultiMeshGrid3" type="MultiMeshInstance3D" parent="Level" unique_id=2080885369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1000004, -1.05, 0)
+multimesh = SubResource("MultiMesh_v1ogb")
+script = ExtResource("6_7r3ee")
+surface = Vector2(1.7, 6)
+meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)
+instanceCount = 340
+metadata/_custom_type_script = "uid://b64mmjv66osb7"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level" unique_id=742414345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3, 0)
+collision_layer = 193
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D" unique_id=1248904822]
+shape = SubResource("BoxShape3D_ak24b")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Level" unique_id=1538490937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 1.8, 0)
+collision_layer = 193
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D3" unique_id=1949673211]
+shape = SubResource("BoxShape3D_7r3ee")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Level" unique_id=620295910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.200001, 1.8, 0)
+collision_layer = 193
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D4" unique_id=1903930362]
+shape = SubResource("BoxShape3D_7r3ee")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Level" unique_id=1043963206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7, 0)
+collision_layer = 193
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D2" unique_id=1432591483]
+shape = SubResource("BoxShape3D_ak24b")

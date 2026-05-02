@@ -22,6 +22,7 @@ func _ready() -> void:
 	Manager.gameManager.currentStage = self
 	Manager.gameManager.platform_manager.spawnScenario = platformSpawnType
 	Manager.gameManager.OnFightStart.connect(StartSpawnScenario)
+	Manager.gameManager.FightEnd.connect(HideLevel)
 	call_deferred("SetCamera")
 	call_deferred("OverrideCamZ")
 	
@@ -47,6 +48,10 @@ func StartSpawnScenario():
 	if(scenario != null):
 		var animations = scenario.get_animation_list()
 		scenario.play(animations[0])
+		
+func HideLevel():
+	SetLevelVisibility(false)
+	pass
 		
 func SetLevelVisibility(isVisible:bool):
 	levelRoot.visible = isVisible

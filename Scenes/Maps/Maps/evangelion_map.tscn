@@ -836,7 +836,7 @@ visible = false
 [node name="EyeUwu" parent="EVA/Robot Pivot/Robot_eva_03/Armature/Skeleton3D/BoneAttachment_Head" index="1"]
 visible = false
 
-[node name="AnimationPlayer" parent="EVA/Robot Pivot/Robot_eva_03" index="1"]
+[node name="AnimationPlayer" parent="EVA/Robot Pivot/Robot_eva_03" index="1" unique_id=1388465183]
 autoplay = &"Armature|Idle"
 
 [node name="Anim_Robot" parent="EVA/Robot Pivot" index="1"]

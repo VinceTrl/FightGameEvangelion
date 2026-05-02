@@ -50,7 +50,7 @@ lights = [NodePath("Lighting")]
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_nmre5")]
 items = Array[ExtResource("3_rn5mo")]([ExtResource("4_beqi4"), ExtResource("5_72fcl"), ExtResource("6_rif5j"), ExtResource("7_nd2vs"), ExtResource("8_11ms4"), ExtResource("9_vdbbp"), ExtResource("10_jqcvw"), ExtResource("11_vrtdl"), ExtResource("12_6usgc"), ExtResource("13_ow084"), ExtResource("14_ju2x3"), ExtResource("15_hjqh0")])
 
-[node name="Enviro" type="Node3D" parent="." unique_id=510669441]
+[node name="Enviro" type="Node3D" parent="." unique_id=510669441 groups=["Enviro"]]
 
 [node name="Mage" parent="Enviro" unique_id=646494372 instance=ExtResource("19_gx3wi")]
 transform = Transform3D(1.39, 0, 0, 0, 1.39, 0, 0, 0, 1.39, 0, -1.226574, -8.400001)
@@ -61,9 +61,9 @@ transform = Transform3D(1, 0, 0, 0, 0.99027777, -0.13910396, 0, 0.13910396, 0.99
 [node name="Node3D" type="Node3D" parent="Enviro" unique_id=546065881]
 
 [node name="FairyFountain" parent="Enviro/Node3D" unique_id=710426734 instance=ExtResource("20_nmre5")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.560989, -8.332879)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00137043, -1.6021525, -8.313295)
 
-[node name="Lighting" type="Node3D" parent="." unique_id=818802441]
+[node name="Lighting" type="Node3D" parent="." unique_id=818802441 groups=["Enviro"]]
 
 [node name="Stage" type="Node" parent="." unique_id=1921753935]
 

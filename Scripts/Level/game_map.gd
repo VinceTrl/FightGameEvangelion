@@ -8,14 +8,18 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Manager.gameManager.currentMap = self
+	Manager.gameManager.FightEnd.connect(HideMap)
 	
 func _process(delta: float) -> void:
 	pass
-	#if(Input.is_action_just_pressed("DebugKey")):
-		#SetEnviroVisibility(false)
-		#
-	#if(Input.is_action_just_released("DebugKey")):
-		#SetEnviroVisibility(true)
+	if(Input.is_action_just_pressed("DebugKey")):
+		SetEnviroVisibility(false)
+		
+	if(Input.is_action_just_released("DebugKey")):
+		SetEnviroVisibility(true)
+		
+func HideMap():
+	SetEnviroVisibility(false)
 	
 func SetEnviroVisibility(isVisible:bool):
 	for nodeInGroup in get_tree().get_nodes_in_group("Enviro"):
