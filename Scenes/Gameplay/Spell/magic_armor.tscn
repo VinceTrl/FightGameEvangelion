@@ -1,188 +1,186 @@
-[gd_scene format=4 uid="uid://d6y8hbx5iihi"]
+[gd_scene format=3 uid="uid://d6y8hbx5iihi"]
 
 [ext_resource type="Script" uid="uid://crmj6vqjeltlr" path="res://Scripts/Gameplay/Items/magic_armor.gd" id="1_hmfh8"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_q6ccv"]
-[ext_resource type="Texture2D" uid="uid://cfnhftjakmrd8" path="res://Assets/Meshes/Props/MagicArmor/VmagS_shell.png" id="3_0f13x"]
+[ext_resource type="PackedScene" uid="uid://b35wgsp2f27xv" path="res://Assets/Meshes/Props/HylianShield/HylianShield.fbx" id="5_0f13x"]
+[ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/TRSEffects/visual_holder.gd" id="5_546wm"]
 [ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="5_a4bpu"]
+[ext_resource type="Texture2D" uid="uid://ctjo3xftqeh72" path="res://Assets/Meshes/Props/HylianShield/i_ctex10a_0.png" id="6_546wm"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="6_wj5qk"]
 [ext_resource type="Texture2D" uid="uid://c0ph7x1vlhpbo" path="res://Assets/Sprites/Vfx/Glow/item_glow.png" id="7_q6ccv"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0742b"]
-resource_name = "VmagS_2_in_v"
+[sub_resource type="Curve" id="Curve_a4bpu"]
+
+[sub_resource type="Curve" id="Curve_wj5qk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4984894, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.12717727, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_0rvqs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4bpu"]
+resource_name = "material-128D773A"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_0f13x")
+albedo_color = Color(0.8474744, 0.84747446, 0.8474743, 1)
+metallic_specular = 1.0
+metallic_texture = ExtResource("6_546wm")
 emission_enabled = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_hmfh8"]
-_surfaces = [{
-"aabb": AABB(-0.0017450905, -0.0022437559, -0.0017450905, 0.0034901812, 0.0044875117, 0.0034901812),
-"format": 34359742465,
-"index_count": 24,
-"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAQAAgAFAAAAAwAFAAIAAAAFAAQABAAFAAMA"),
-"name": "VmagS_2_in_v",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 6,
-"vertex_data": PackedByteArray("/uZbL0DtpK+Fu+S6AAAAAPoLEztA7SSwhrvkOgAAAAAAAAAA/ubbrkDtpC+Gu+Q6hbvkugAAAID+5luvAAAAAPoLE7tA7SQw")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_rwv7x"]
-resource_name = "ma_inside"
-_surfaces = [{
-"aabb": AABB(-0.0017450905, -0.0022437559, -0.0017450905, 0.0034901812, 0.0044875117, 0.0034901812),
-"attribute_data": PackedByteArray("zvv/O/z/fD/O+/87APz/O/z/fD8A/P87zvv/O/z/fD/O+/87APz/O/z/fD8A/P87zvv/O/z/fD/O+/87APz/O/z/fD8A/P87zvv/O/z/fD/O+/87APz/O/z/fD8A/P87zvv/O/z/fD/O+/87APz/O/z/fD8A/P87zvv/O/z/fD/O+/87APz/O/z/fD8A/P87zvv/O/z/fD/O+/87APz/O/z/fD8A/P87zvv/O/z/fD/O+/87APz/O/z/fD8A/P87"),
-"format": 34359742487,
-"index_count": 24,
-"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcA"),
-"material": SubResource("StandardMaterial3D_0742b"),
-"name": "VmagS_2_in_v",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("/uZbL0DtpK+Fu+S6AAAAAPoLEztA7SSwhrvkOgAAAAAAAAAAhrvkOgAAAAAAAAAAAAAAAPoLEztA7SSw/ubbrkDtpC+Gu+Q6/ubbrkDtpC+Gu+Q6AAAAAPoLEztA7SSwhbvkugAAAID+5luvhbvkugAAAID+5luvAAAAAPoLEztA7SSw/uZbL0DtpK+Fu+S6hrvkOgAAAAAAAAAAAAAAAPoLE7tA7SQw/uZbL0DtpK+Fu+S6/ubbrkDtpC+Gu+Q6AAAAAPoLE7tA7SQwhrvkOgAAAAAAAAAAhbvkugAAAID+5luvAAAAAPoLE7tA7SQw/ubbrkDtpC+Gu+Q6/uZbL0DtpK+Fu+S6AAAAAPoLE7tA7SQwhbvkugAAAID+5luv61EoXP+3/5vrUShc/7f/m+tRKFz/t/+b1iMULv9//5vWIxQu/3//m9YjFC7/f/+bKNwULv9H/5so3BQu/0f/myjcFC7/R/+bE64oXP+3AIATrihc/7cAgBOuKFz/twCA61HWo/+3///rUdaj/7f//+tR1qP/t///1iPq0f+3/+PWI+rR/7f/49Yj6tH/t//jKNzq0f9//+Mo3OrR/3//4yjc6tH/f//jE67Wo/9H/+MTrtaj/0f/4xOu1qP/R//j")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_hmfh8")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q6ccv"]
-load_path = "res://.godot/imported/VmagS_shell.png-8a32c210e4a0e8a4072a659a18c66e1a.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nspy7"]
-resource_name = "VmagS_2_in_v"
-vertex_color_use_as_albedo = true
-albedo_texture = SubResource("CompressedTexture2D_q6ccv")
-emission_enabled = true
-disable_receive_shadows = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ob8k"]
-resource_name = "VmagS_0_out_v"
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_0f13x")
-emission_enabled = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_0f13x"]
-_surfaces = [{
-"aabb": AABB(-0.0018277054, -0.0023499785, -0.0018277054, 0.0036554108, 0.0046999566, 0.0036554108),
-"format": 34359742465,
-"index_count": 24,
-"index_data": PackedByteArray("AAABAAIAAwACAAEAAAACAAQAAwAEAAIAAAAFAAEAAwABAAUAAAAEAAUAAwAFAAQA"),
-"name": "VmagS_0_out_v",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 6,
-"vertex_data": PackedByteArray("AAAAABgCGjtA7SSw/uZbL0DtpK+ej++6no/vOgAAAAAAAAAAAAAAABkCGrtA7SQw/ubbrkDtpC+ej+86no/vugAAAID+5luv")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_ijh5k"]
-resource_name = "ma_outside"
-_surfaces = [{
-"aabb": AABB(-0.0018277054, -0.0023499785, -0.0018277054, 0.0036554108, 0.0046999566, 0.0036554108),
-"attribute_data": PackedByteArray("zvv/OwD8/zvO+/87/P98P/z/fD8A/P87zvv/OwD8/zvO+/87/P98P/z/fD8A/P87zvv/OwD8/zvO+/87/P98P/z/fD8A/P87zvv/OwD8/zvO+/87/P98P/z/fD8A/P87zvv/OwD8/zvO+/87/P98P/z/fD8A/P87zvv/OwD8/zvO+/87/P98P/z/fD8A/P87zvv/OwD8/zvO+/87/P98P/z/fD8A/P87zvv/OwD8/zvO+/87/P98P/z/fD8A/P87"),
-"format": 34359742487,
-"index_count": 24,
-"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAQABEAEgATABQAFQAWABcA"),
-"material": SubResource("StandardMaterial3D_8ob8k"),
-"name": "VmagS_0_out_v",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AAAAABgCGjtA7SSw/uZbL0DtpK+ej++6no/vOgAAAAAAAAAAAAAAABgCGjtA7SSwno/vOgAAAAAAAAAA/ubbrkDtpC+ej+86AAAAABgCGjtA7SSw/ubbrkDtpC+ej+86no/vugAAAID+5luvAAAAABgCGjtA7SSwno/vugAAAID+5luv/uZbL0DtpK+ej++6AAAAABkCGrtA7SQwno/vOgAAAAAAAAAA/uZbL0DtpK+ej++6AAAAABkCGrtA7SQw/ubbrkDtpC+ej+86no/vOgAAAAAAAAAAAAAAABkCGrtA7SQwno/vugAAAID+5luv/ubbrkDtpC+ej+86AAAAABkCGrtA7SQw/uZbL0DtpK+ej++6no/vugAAAID+5luvKNzq0f+3/2Mo3OrR/7f/Yyjc6tH/t/9jE67Wo/9//2MTrtaj/3//YxOu1qP/f/9j61HWo/9H/2PrUdaj/0f/Y+tR1qP/R/9j1iPq0f+3/n/WI+rR/7f+f9Yj6tH/t/5/KNwULv+3AAAo3BQu/7cAACjcFC7/twAAE64oXP+3/xsTrihc/7f/GxOuKFz/t/8b61EoXP9//xvrUShc/3//G+tRKFz/f/8b1iMULv9H/xvWIxQu/0f/G9YjFC7/R/8b")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_0f13x")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_546wm"]
-load_path = "res://.godot/imported/VmagS_shell.png-8a32c210e4a0e8a4072a659a18c66e1a.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsfo4"]
-resource_name = "VmagS_0_out_v"
-transparency = 1
-vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 0.3137255)
-albedo_texture = SubResource("CompressedTexture2D_546wm")
-emission_enabled = true
+emission_energy_multiplier = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jg57t"]
-size = Vector3(0.795, 1.15, 1)
+size = Vector3(0.7, 0.7, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nsfo4"]
-size = Vector3(1.085, 1.375, 0.5)
+size = Vector3(1, 1, 0.5)
 
 [sub_resource type="Animation" id="Animation_nspy7"]
 resource_name = "Death"
 length = 0.5
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor:rotation")
+tracks/0/path = NodePath("Visual/NodeShaker/HylianShield:rotation:z")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.01531049, -4.6539164, 6.3, -0.027713358, -9.726845, 0.0045332415, 0.0843691),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/NodeShaker/HylianShield:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.079775706, 0.19700082, 0, -0.036664594, 0.033333335, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/NodeShaker/HylianShield:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.08219315, 0.095173046, 0, 0, 0, -0.020413985, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.2755888, 0.39807272)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/NodeShaker/HylianShield:scale:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
 }
 
 [sub_resource type="Animation" id="Animation_xg065"]
 resource_name = "Hurt"
-tracks/0/type = "value"
+length = 0.5
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor:rotation")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Visual/NodeShaker/HylianShield:scale:x")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 0),
+"points": PackedFloat32Array(0.2, 0, 0, 0.0025517484, 0.033333335, 0.35969946, -0.015565047, 0.035155606, 0.01612923, -0.036429882, 0.32418033, -0.032053377, -0.0928325, 0.012893036, 0.03734061, 0.28410748, -0.05721289, -0.1593807, 0.014370036, 0.0400313, 0.2, 0, 0.034679234, 0.25, 0),
+"times": PackedFloat32Array(0, 0.04511273, 0.08863968, 0.20225963, 0.3)
 }
-tracks/1/type = "scale_3d"
+tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/NodeShaker/magic_armor")
+tracks/1/path = NodePath("Visual/NodeShaker/HylianShield:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 3, 3, 3, 0.058687285, 1, 4, 4, 4, 0.3691, 1, 3, 3, 3)
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.20328026, 0, 0, 0.0025517484, 0.033333335, 0.2, -0.25, 0, 0.014504675, 0.15491803, 0.35491803, -0.012880117, 0.0329414, 0.01612923, -0.036429882, 0.3274606, -0.032053377, -0.0928325, 0.012893036, 0.03734061, 0.28738773, -0.05721289, -0.1593807, 0.014370036, 0.0400313, 0.2, 0, 0.034679234, 0.25, 0),
+"times": PackedFloat32Array(-0.0008058153, 0, 0.047530174, 0.08783385, 0.2014538, 0.2991942)
+}
 
 [sub_resource type="Animation" id="Animation_nsfo4"]
 resource_name = "Idle"
 
 [sub_resource type="Animation" id="Animation_pde6j"]
 length = 0.001
-tracks/0/type = "value"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor:rotation")
+tracks/0/path = NodePath("Visual/NodeShaker/HylianShield:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
-tracks/1/type = "scale_3d"
+tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/NodeShaker/magic_armor")
+tracks/1/path = NodePath("Visual/NodeShaker/HylianShield:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 3, 3, 3)
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/NodeShaker/HylianShield:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_rqtme"]
 resource_name = "Spawn"
 length = 0.5
-tracks/0/type = "scale_3d"
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/NodeShaker/magic_armor")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Visual/NodeShaker/HylianShield:scale:x")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.5, 1, 3, 3, 3)
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.062047776, -0.06583747, 0.2, -0.1072918, 0.18745156, 0, 0),
+"times": PackedFloat32Array(0, 0.16853376)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/NodeShaker/HylianShield:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.15, -0.25, 0, 0.03384424, -0.5698439, 0.19695722, -0.06688267, 0.40286553, 0, 0),
+"times": PackedFloat32Array(0, 0.1953)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/NodeShaker/HylianShield:scale:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nspy7"]
 _data = {
@@ -195,6 +193,8 @@ _data = {
 
 [node name="MagicArmor" type="Node3D" unique_id=1719726591 node_paths=PackedStringArray("nodeShaker")]
 script = ExtResource("1_hmfh8")
+followOffset = Vector3(0, -0.15, 0)
+followWeight = 0.18
 nodeShaker = NodePath("Visual/NodeShaker")
 
 [node name="Visual" type="Node3D" parent="." unique_id=1501037746]
@@ -204,24 +204,21 @@ script = ExtResource("2_q6ccv")
 nodeToShake = NodePath(".")
 metadata/_custom_type_script = "uid://boswmyv0w3oxy"
 
-[node name="Sprite3D" type="Sprite3D" parent="Visual/NodeShaker" unique_id=504510426]
+[node name="GlowSprite" type="Sprite3D" parent="Visual/NodeShaker" unique_id=504510426]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.2, -0.5660068)
 texture = ExtResource("7_q6ccv")
 
-[node name="magic_armor" type="Node3D" parent="Visual/NodeShaker" unique_id=2067919078]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.2, 0)
+[node name="HylianShield" parent="Visual/NodeShaker" unique_id=1278995340 instance=ExtResource("5_0f13x")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.16338879, 0.18909758)
+script = ExtResource("5_546wm")
+positionTime = 5.0
+positionTarget = Vector3(0, 0.1, 0)
+positionCurveX = SubResource("Curve_a4bpu")
+positionCurveY = SubResource("Curve_wj5qk")
+positionCurveZ = SubResource("Curve_0rvqs")
 
-[node name="ma_inside" type="MeshInstance3D" parent="Visual/NodeShaker/magic_armor" unique_id=400491965]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
-mesh = SubResource("ArrayMesh_rwv7x")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_nspy7")
-
-[node name="ma_outside" type="MeshInstance3D" parent="Visual/NodeShaker/magic_armor" unique_id=1587374116]
-transform = Transform3D(100, 0, 0, 0, 100, 7.54979e-06, 0, -7.54979e-06, 100, 0, 0, 0)
-mesh = SubResource("ArrayMesh_ijh5k")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_nsfo4")
+[node name="node-08EDD173" parent="Visual/NodeShaker/HylianShield" index="0" unique_id=1370299166]
+surface_material_override/0 = SubResource("StandardMaterial3D_a4bpu")
 
 [node name="HurtBoxDetection" type="Area3D" parent="." unique_id=1946497292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20602947, 0)
@@ -251,3 +248,5 @@ debug_color = Color(0, 0.6481399, 0.19973937, 0.41960785)
 libraries/ = SubResource("AnimationLibrary_nspy7")
 
 [connection signal="area_entered" from="HurtBoxDetection" to="." method="_on_hurt_box_detection_area_entered"]
+
+[editable path="Visual/NodeShaker/HylianShield"]

@@ -4,8 +4,11 @@ extends Spell
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var glow_sprite: Sprite3D = $Visual/NodeShaker/GlowSprite
+
 
 @export var followOffset:Vector3 = Vector3.ZERO
+@export_range(0,1,0.01) var followWeight:float = 0.1
 
 @export_category("Effect")
 @export var freezeFrameDuration:float = 0.25
@@ -13,6 +16,7 @@ extends Spell
 @export var nodeShaker:NodeShaker
 
 var linkedHurtbox:Hurtbox
+var isLinked:bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,9 +29,11 @@ func _process(delta: float) -> void:
 	ProcessArmor()
 	
 func ProcessArmor():
-	if(linkedHurtbox):
-		global_position = linkedHurtbox.global_position + followOffset
-	pass
+	if(isLinked and linkedHurtbox):
+		var target_pos := linkedHurtbox.global_position + followOffset
+		global_position = lerp(global_position,target_pos,followWeight)
+	elif(isLinked):
+		DestroySpell()
 
 func TakeDamage(hitbox:Hitbox):
 	health_component.ChangeHealth(-hitbox.damage)
@@ -41,8 +47,8 @@ func TakeDamage(hitbox:Hitbox):
 		DestroySpell()
 		return
 		
-	await animation_player.animation_finished
-	animation_player.play("Idle")
+	#await animation_player.animation_finished
+	#animation_player.play("Idle")
 	
 	
 func CastSpell(duration:float = lifeTime,target:Node3D = null):
@@ -72,4 +78,6 @@ func _on_hurt_box_detection_area_entered(area: Area3D) -> void:
 		linkedHurtbox.isActive = false
 		hurtbox.isActive = true
 		hurtbox.owner_id = linkedHurtbox.owner_id
+		glow_sprite.visible = false
+		isLinked = true
 		pass
