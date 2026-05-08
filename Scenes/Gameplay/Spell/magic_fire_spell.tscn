@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://smf2gxqmp6jk" path="res://Scripts/Gameplay/Spell/magic_fire_spell.gd" id="1_jtb4s"]
 [ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/TRSEffects/visual_holder.gd" id="2_ds3en"]
-[ext_resource type="PackedScene" uid="uid://c0adcejocn12d" path="res://Scenes/VFX/vfx_fire_01_mecha.tscn" id="3_jtb4s"]
 [ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="4_jtb4s"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="4_q84i2"]
+[ext_resource type="PackedScene" uid="uid://bicy0cqeuuli6" path="res://Scenes/VFX/vfx_firewall.tscn" id="5_q84i2"]
 
 [sub_resource type="Curve" id="Curve_8i7dx"]
 
@@ -31,25 +31,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [true, false, true, false, true, false, true, false]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/VFX_Fire01_mecha:visible")
+tracks/1/path = NodePath("Visual/Hitbox")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/Hitbox")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -57,17 +45,29 @@ tracks/2/keys = {
 "method": &"ActiveHitBox"
 }]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/Hitbox/CollisionShape3D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/Hitbox/CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/VFX_Firewall:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_q84i2"]
@@ -84,25 +84,13 @@ tracks/0/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/VFX_Fire01_mecha:visible")
+tracks/1/path = NodePath("Visual/Hitbox")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/Hitbox")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -110,17 +98,29 @@ tracks/2/keys = {
 "method": &"InactiveHitBox"
 }]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/Hitbox/CollisionShape3D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/Hitbox/CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/VFX_Firewall:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_xalxw"]
@@ -140,26 +140,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/VFX_Fire01_mecha:visible")
+tracks/1/path = NodePath("Visual/Hitbox/CollisionShape3D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/Hitbox/CollisionShape3D:disabled")
+tracks/2/path = NodePath("Visual/VFX_Firewall:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q84i2"]
@@ -197,7 +197,7 @@ shape = SubResource("BoxShape3D_xalxw")
 disabled = true
 debug_color = Color(0.994685, 0, 0.22551799, 0.41960785)
 
-[node name="VFX_Fire01_mecha" parent="Visual" unique_id=864190979 instance=ExtResource("3_jtb4s")]
+[node name="VFX_Firewall" parent="Visual" unique_id=352002283 instance=ExtResource("5_q84i2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21167651, 0)
 visible = false
 

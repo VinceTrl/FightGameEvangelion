@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b06nvi4kcrwum"]
+
+[ext_resource type="Shader" uid="uid://cphq7e410lpps" path="res://Assets/Shaders/Flame.tres" id="1_hhg8c"]
+[ext_resource type="Texture2D" uid="uid://d3qt3lrfeao1p" path="res://Assets/Sprites/Vfx/Fire/noises.png" id="2_mn75a"]
+[ext_resource type="Texture2D" uid="uid://ds4i1mh2idfye" path="res://Assets/Sprites/Vfx/Fire/Flame01.png" id="3_iwv3m"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hhg8c")
+shader_parameter/MainTex = ExtResource("3_iwv3m")
+shader_parameter/DissolveTiling = Vector2(0.3, 0.3)
+shader_parameter/DissolveSpeed = Vector2(0, 0.3)
+shader_parameter/DissolveTexture = ExtResource("2_mn75a")
+shader_parameter/DissolveAmount = 1.0
