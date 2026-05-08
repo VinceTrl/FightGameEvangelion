@@ -7,8 +7,9 @@ extends Character
 @export var targetRaycast:RayCast3D
 @export var raycasts:Array[RayCast3D]
 
-const VFX_2D_PORTAL = preload("uid://pbkef8ngst4f")
+#@onready var vfxteleport:Node3D = $vfx_minecraft_enderman_teleport
 
+const VFX_TELEPORT = preload("res://Scenes/VFX/vfx_minecraft_enderman_teleport.tscn")
 
 var chaseTarget:Node3D
 
@@ -85,16 +86,16 @@ func SetTeleportToSafeLocation():
 
 
 func Teleport(targetPosition:Vector3):
-	SpawnPortalVFX(global_position)
+	SpawnTeleportVFX(global_position)
 	await get_tree().create_timer(teleportDelay).timeout
-	SpawnPortalVFX(targetPosition)
 	global_position = targetPosition
 	pass
 	
-func SpawnPortalVFX(pos:Vector3):
-	var portal := VFX_2D_PORTAL.instantiate()
-	get_tree().current_scene.add_child(portal)
-	portal.global_position = pos
+func SpawnTeleportVFX(pos:Vector3):
+	var teleportFX := VFX_TELEPORT.instantiate()
+	get_tree().current_scene.add_child(teleportFX)
+	teleportFX.global_position = pos
+	teleportFX.EmitAllParticles()
 	pass
 	
 #endregion
