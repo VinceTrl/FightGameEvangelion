@@ -1,0 +1,354 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b076h1xye7t4t"
+path="res://.godot/imported/minecraft_village.glb-bb9672abc5bf67985f29e61aee91d371.scn"
+
+[deps]
+
+source_file="res://Assets/Meshes/Props/Minecraft/Minecraft_exports/minecraft_village.glb"
+dest_files=["res://.godot/imported/minecraft_village.glb-bb9672abc5bf67985f29e61aee91d371.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"nodes": {
+"PATH:root/node_1": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_10": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_100": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_101": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_102": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_103": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_11": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_12": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_13": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_14": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_15": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_16": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_17": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_18": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_19": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_2": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_20": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_21": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_22": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_23": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_24": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_25": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_26": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_27": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_28": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_29": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_3": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_30": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_31": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_32": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_33": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_34": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_35": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_36": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_37": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_38": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_39": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_4": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_40": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_41": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_42": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_43": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_44": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_45": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_46": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_47": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_48": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_49": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_5": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_50": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_51": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_52": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_53": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_54": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_55": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_56": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_57": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_58": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_59": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_6": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_60": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_61": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_62": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_63": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_64": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_65": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_66": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_67": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_68": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_69": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_7": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_70": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_71": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_72": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_73": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_74": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_75": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_76": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_77": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_78": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_79": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_8": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_80": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_81": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_82": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_83": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_84": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_85": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_86": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_87": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_88": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_89": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_9": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_90": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_91": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_92": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_93": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_94": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_95": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_96": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_97": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_98": {
+"mesh_instance/layers": 2
+},
+"PATH:root/node_99": {
+"mesh_instance/layers": 2
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
