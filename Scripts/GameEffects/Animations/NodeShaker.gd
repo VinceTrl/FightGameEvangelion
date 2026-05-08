@@ -16,8 +16,8 @@ func _ready():
 		nodeToShake = self
 		print("AUTO ASSIGN NODE TO SHAKE IN NODESHAKER ON : " + str(owner.name))
 
-func _process(delta: float) -> void:
-	debugShake()
+#func _process(delta: float) -> void:
+	#debugShake()
 
 func debugShake() -> void:
 	if(debugMode):

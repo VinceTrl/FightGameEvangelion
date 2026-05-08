@@ -15,6 +15,7 @@ var folderPath:String
 
 var imageIndex:int = 0
 var canCapture:bool = false
+var isTakingScreenshot:bool = false
 
 var screenshotPaths:PackedStringArray
 
@@ -28,6 +29,7 @@ func _ready() -> void:
 
 
 func StartCapture():
+	if(canCapture):return
 	canCapture = true
 	Capture()
 	pass
@@ -44,6 +46,8 @@ func Capture():
 	Capture()
 	
 func TakeScreenshot():
+	if(isTakingScreenshot):return
+	isTakingScreenshot = true
 	await RenderingServer.frame_post_draw
 	var path := folderPath + GetImageName()
 
@@ -59,6 +63,8 @@ func TakeScreenshot():
 		screenshotPaths.append(path)
 	else:
 		print("ERROR WHILE TAKING SCREENSHOT")
+		
+	isTakingScreenshot = false
 	
 func DeleteScreenshot(path:String):
 	if(FileAccess.file_exists(path)):

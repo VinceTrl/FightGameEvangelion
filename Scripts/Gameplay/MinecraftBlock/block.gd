@@ -8,8 +8,8 @@ extends Node3D
 @export var destroyDelay:float = 0.1
 @export var explosionDamageMultiplier:float = 10.0
 
-const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
-const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestroy.wav")
+#const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
+#const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestroy.wav")
 
 @onready var node_shaker: NodeShaker = $NodeShaker
 @onready var audio_hit: AudioStreamPlayer3D = $AudioHit
@@ -85,7 +85,8 @@ func ChangeHealth(healthAmount:int = -1):
 		await get_tree().create_timer(destroyDelay).timeout
 		queue_free()
 	else:
-		audio_hit.play()
+		GlobalSFX.EmitSoundFromName("S_BLOCK_HIT",0.0,global_position)
+		#audio_hit.play()
 		
 func Spawn():
 	var spawnRng := randf_range(0.0,1.0)

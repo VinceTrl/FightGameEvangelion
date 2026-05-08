@@ -33,6 +33,12 @@ GlobalPostProcessData="*res://Scripts/GameEffects/PostProcessAnimationParams/Glo
 MapGlobal="*res://Scripts/Managers/Global/map_global.gd"
 GlobalSFX="*uid://c4dvp3i53vm04"
 
+[debug]
+
+settings/run_on_separate_thread=false
+settings/physics_ticks_per_second=60
+settings/glow/upscale_mode=1
+
 [debug_draw_3d]
 
 settings/addon_root_folder="res://addons/debug_draw_3d"

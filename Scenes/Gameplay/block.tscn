@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/MinecraftBlock/block.gd" id="1_1mwp6"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="1_rd00h"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="3_q3etx"]
-[ext_resource type="PackedScene" uid="uid://c0jcpjl67p6ni" path="res://Scenes/Gameplay/minecraft_grass_block.tscn" id="5_1hayc"]
 [ext_resource type="ArrayMesh" uid="uid://dt2uhuqsydft1" path="res://Assets/Meshes/Props/Minecraft/minecraft_cube_mesh.tres" id="6_mm851"]
 [ext_resource type="AudioStream" uid="uid://bgrm5be8bl5gb" path="res://Assets/Sounds/SFX/DoudouSFX/SD_blocHit.wav" id="6_yv8ff"]
 [ext_resource type="PackedScene" uid="uid://b1syavad6jdov" path="res://Scenes/VFX/vfx_minecraft_bloc_hit.tscn" id="7_lcmxf"]
@@ -12,9 +11,9 @@
 [ext_resource type="Material" uid="uid://dnac8phmk5c0p" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Grass_Top.tres" id="8_ii26g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_50nyf"]
-size = Vector3(0.325, 0.325, 0.3)
+size = Vector3(0.25, 0.25, 0.25)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m21dq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ii7fe"]
 size = Vector3(0.3, 0.3, 0.3)
 
 [node name="Block" type="Node3D" unique_id=219668706 groups=["PyramidHeadTarget"]]
@@ -28,22 +27,33 @@ playVfxOnHit = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=387102666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151065, 0)
 shape = SubResource("BoxShape3D_50nyf")
-debug_color = Color(0.6700784, 0.4698996, 0.53769726, 0.41960785)
+debug_color = Color(0.4627451, 0.54509807, 0, 0.7294118)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1373173204 groups=["Ledgegrab", "PyramidHeadTarget"]]
+process_mode = 4
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 2
+physics_interpolation_mode = 2
+disable_mode = 1
 collision_layer = 193
+collision_mask = 0
+input_ray_pickable = false
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1851698335]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150232, 0)
-shape = SubResource("BoxShape3D_m21dq")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1811051390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_ii7fe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="NodeShaker" type="Node3D" parent="." unique_id=91840638 node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("3_q3etx")
 nodeToShake = NodePath(".")
-
-[node name="minecraft_grass_block" parent="NodeShaker" unique_id=86836191 instance=ExtResource("5_1hayc")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
-visible = false
 
 [node name="BlockMesh" type="MeshInstance3D" parent="NodeShaker" unique_id=13657721]
 transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.15, 0)
