@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CameraBackground" format=3 uid="uid://28thrfgjmbkd"]
+
+[ext_resource type="Script" uid="uid://cyor7qlblf3k2" path="res://Scripts/GameEffects/FinishBackgroundEffects/CameraBackground.gd" id="1_jowxu"]
+[ext_resource type="Texture2D" uid="uid://bt08r62hbdut5" path="res://Assets/Shitpost/Source/GOCHISME1.jpg" id="2_pr4dc"]
+
+[resource]
+script = ExtResource("1_jowxu")
+texture = ExtResource("2_pr4dc")
+metadata/_custom_type_script = "uid://cyor7qlblf3k2"

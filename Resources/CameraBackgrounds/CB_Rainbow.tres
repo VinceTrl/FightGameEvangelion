@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CameraBackground" format=3 uid="uid://dmur5g21m54qm"]
+
+[ext_resource type="Script" uid="uid://cyor7qlblf3k2" path="res://Scripts/GameEffects/FinishBackgroundEffects/CameraBackground.gd" id="1_b3ls6"]
+[ext_resource type="Texture2D" uid="uid://psctkiwul87g" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/lightTex06_s3tc_fix.png" id="2_q6uet"]
+
+[resource]
+script = ExtResource("1_b3ls6")
+texture = ExtResource("2_q6uet")
+scrollDirection = 0
+metadata/_custom_type_script = "uid://cyor7qlblf3k2"

@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://cnmklkcai8xqc"]
 
-[ext_resource type="Script" uid="uid://d0fa60wueywhq" path="res://Scripts/GameEffects/victory_background.gd" id="1_1vlmp"]
+[ext_resource type="Script" uid="uid://d0fa60wueywhq" path="res://Scripts/GameEffects/FinishBackgroundEffects/victory_background.gd" id="1_1vlmp"]
 [ext_resource type="Texture2D" uid="uid://bq324of86i0h7" path="res://Sources/Textures/T_Pub_Placeholder.png" id="2_1vlmp"]
+[ext_resource type="Script" uid="uid://cyor7qlblf3k2" path="res://Scripts/GameEffects/FinishBackgroundEffects/CameraBackground.gd" id="2_stw14"]
+[ext_resource type="Resource" uid="uid://28thrfgjmbkd" path="res://Resources/CameraBackgrounds/CB_Palestine.tres" id="3_okcpt"]
+[ext_resource type="Resource" uid="uid://bim4dfdkqx6y4" path="res://Resources/CameraBackgrounds/CB_SpeedLines_Horizontal_Dark.tres" id="4_xu2wt"]
+[ext_resource type="Resource" uid="uid://c4cfdv0xtpu64" path="res://Resources/CameraBackgrounds/CB_BrtualSlapText.tres" id="5_25kat"]
+[ext_resource type="Resource" uid="uid://dmur5g21m54qm" path="res://Resources/CameraBackgrounds/CB_Rainbow.tres" id="6_jpmld"]
+[ext_resource type="Resource" uid="uid://clhx4iks3tsla" path="res://Resources/CameraBackgrounds/CB_SpeedLines_Horizontal_Red.tres" id="7_nfotp"]
+[ext_resource type="Resource" uid="uid://dbn5jnv21420h" path="res://Resources/CameraBackgrounds/CB_SpeedLines_Vertical_Purple.tres" id="8_okcpt"]
+[ext_resource type="Resource" uid="uid://d01s22udfddpw" path="res://Resources/CameraBackgrounds/CB_SpeedLines_Vertical_Blue.tres" id="9_okcpt"]
+[ext_resource type="Resource" uid="uid://vt3ppwvl8wbi" path="res://Resources/CameraBackgrounds/CB_SpeedLines_Vertical_Green.tres" id="10_xu2wt"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_dtysg"]
 size = Vector2(16, 9)
@@ -98,8 +107,13 @@ _data = {
 &"ScrollVertical_Up": SubResource("Animation_p6n1b")
 }
 
-[node name="VictoryBackground" type="Node3D" unique_id=318569785]
+[node name="VictoryBackground" type="Node3D" unique_id=318569785 node_paths=PackedStringArray("background_quad", "scrollAnimPlayer")]
 script = ExtResource("1_1vlmp")
+background_quad = NodePath("BackgroundQuad")
+victoryBackgrounds = Array[ExtResource("2_stw14")]([ExtResource("3_okcpt"), ExtResource("4_xu2wt"), ExtResource("5_25kat"), ExtResource("6_jpmld"), ExtResource("7_nfotp"), ExtResource("8_okcpt"), ExtResource("9_okcpt"), ExtResource("10_xu2wt")])
+deathBackgrounds = Array[ExtResource("2_stw14")]([ExtResource("4_xu2wt"), ExtResource("7_nfotp"), ExtResource("9_okcpt"), ExtResource("10_xu2wt"), ExtResource("8_okcpt")])
+scrollAnimPlayer = NodePath("BackgroundQuad/AnimationPlayer")
+forcedBackgroundIndex = 3
 
 [node name="BackgroundQuad" type="MeshInstance3D" parent="." unique_id=701365544]
 mesh = SubResource("QuadMesh_dtysg")

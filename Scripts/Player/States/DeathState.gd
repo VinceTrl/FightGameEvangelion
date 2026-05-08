@@ -19,7 +19,7 @@ func EnterState():
 	Manager.postProcessEffects.GlitchEffect(glitchEffect)
 	#await get_tree().create_timer(glitchEffect.glitchEffectTime,true,false,true).timeout
 	Manager.postProcessEffects.GlitchEffect(glitchEffect)
-	StartBackgroundEffect()
+	#StartBackgroundEffect()
 
 	Manager.timeManager.slowMotion(0.15,1.0)
 	PlayDeathAnimation()
@@ -35,7 +35,7 @@ func EnterState():
 		vfx.global_position = Player.global_position
 		get_tree().current_scene.add_child(vfx)
 
-	StopBackgroundEffect()
+	#StopBackgroundEffect()
 	Manager.gameCamera.RemoveCameraTarget(Player)
 	Manager.gameCamera.CameraZoom(Manager.gameManager.GetPlayerOpponent(Player),Manager.gameCamera.GetZoomParamFromName("VictoryZoom"))
 	

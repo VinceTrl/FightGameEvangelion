@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CameraBackground" format=3 uid="uid://bim4dfdkqx6y4"]
+
+[ext_resource type="Script" uid="uid://cyor7qlblf3k2" path="res://Scripts/GameEffects/FinishBackgroundEffects/CameraBackground.gd" id="1_fctks"]
+[ext_resource type="Texture2D" uid="uid://bkedv7i1br8fa" path="res://Assets/Sprites/BG/GameplayBackground/bg8.png" id="2_x114w"]
+
+[resource]
+script = ExtResource("1_fctks")
+texture = ExtResource("2_x114w")
+scrollDirection = 1
+metadata/_custom_type_script = "uid://cyor7qlblf3k2"

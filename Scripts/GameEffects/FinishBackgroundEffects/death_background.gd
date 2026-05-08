@@ -9,15 +9,18 @@ extends AnimatedSprite3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
-	pass
+	call_deferred("ConnectSignals")
 	
-func _process(delta: float) -> void:
+func ConnectSignals():
+	Manager.replayManager.ReplayStart.connect(HideBackground)
+	
+#func _process(delta: float) -> void:
 	#if(Input.is_action_just_pressed("DebugKey")):
 		#SetBackgroundOnPlayer(Manager.gameManager.players[0])
 #
 	#if(Input.is_action_just_released("DebugKey")):
 		#HideBackground()
-	pass
+	#pass
 		
 func PlayRandomAnim():
 	var animations = animation_player.get_animation_list()

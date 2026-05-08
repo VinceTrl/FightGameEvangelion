@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=3 uid="uid://bah62ne6gthmy"]
+[gd_scene format=3 uid="uid://bah62ne6gthmy"]
 
 [ext_resource type="Texture2D" uid="uid://dxfk5y4jgsje2" path="res://Assets/Sprites/BG/GameplayBackground/bg10.png" id="1_2baq0"]
 [ext_resource type="Texture2D" uid="uid://bh33nqg0kgeeb" path="res://Assets/Sprites/BG/GameplayBackground/anim11.png" id="1_6ukei"]
@@ -1591,15 +1591,13 @@ _data = {
 &"RESET": SubResource("Animation_qd0u5")
 }
 
-[node name="DeathBackground" type="AnimatedSprite3D"]
+[node name="DeathBackground" type="AnimatedSprite3D" unique_id=407288433]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_mbtka")
 animation = &"Background010"
 script = ExtResource("2_2jolm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_awmsx")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1663381923]
+libraries/ = SubResource("AnimationLibrary_awmsx")
 script = ExtResource("5_hekow")
