@@ -32,6 +32,7 @@ Global="*res://Scripts/Managers/Global/Global.gd"
 GlobalPostProcessData="*res://Scripts/GameEffects/PostProcessAnimationParams/GlobalPostProcessData.gd"
 MapGlobal="*res://Scripts/Managers/Global/map_global.gd"
 GlobalSFX="*uid://c4dvp3i53vm04"
+WolfManager="*uid://cgqnvual82r2m"
 
 [debug]
 

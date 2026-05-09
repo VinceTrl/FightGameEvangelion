@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dlupcnf7dnsb5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qncad"]
+size = Vector2(0.5, 1)
+
+[sub_resource type="Gradient" id="Gradient_kjq0r"]
+colors = PackedColorArray(1, 0, 0, 0.7254902, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lh7d6"]
+gradient = SubResource("Gradient_kjq0r")
+fill_from = Vector2(0, 0.8076923)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65kpx"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = SubResource("GradientTexture2D_lh7d6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsipu"]
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.47479695, 1.1130236e-06, 3.6098064e-07, 1)
+
+[sub_resource type="Animation" id="Animation_poyxk"]
+resource_name = "Glow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualRoot/MeshInstance3D:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 0.30588236), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t8u3h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VisualRoot/MeshInstance3D:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7c8yv"]
+_data = {
+&"Glow": SubResource("Animation_poyxk"),
+&"RESET": SubResource("Animation_t8u3h")
+}
+
+[node name="AttackAnticipationSign" type="Node3D" unique_id=193520835]
+
+[node name="VisualRoot" type="Node3D" parent="." unique_id=2143904696]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VisualRoot" unique_id=1521449902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2577497e-09, 0.5996196, 0)
+mesh = SubResource("QuadMesh_qncad")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_65kpx")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="VisualRoot" unique_id=1777112257]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.2577497e-09, 0.29280895, 0.05)
+polygon = PackedVector2Array(0.075, 0, 0.075, 0.5, 0.25, 0.5, 0, 1, -0.25, 0.5, -0.075, 0.5, -0.075, 0)
+depth = 0.1
+material = SubResource("StandardMaterial3D_wsipu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=107937932]
+libraries/ = SubResource("AnimationLibrary_7c8yv")
+autoplay = &"Glow"

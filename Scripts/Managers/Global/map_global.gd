@@ -8,6 +8,7 @@ const MINECRAFT_MAP = preload("res://Scenes/Maps/Maps/Minecraft_map.tscn")
 const DARK_SOULS_MAP = preload("uid://b8pb8jw1emg6v")
 const FAIRY_FOUNTAIN_MAP = preload("uid://e2s7xr2d7qt8")
 
+var currentMapName:String = "NULL"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,4 +41,5 @@ func InstantiateMap(mapName:String) -> Node:
 			print("Fairy Fountain map instance")
 			instance = FAIRY_FOUNTAIN_MAP.instantiate()
 
+	currentMapName = mapName
 	return instance

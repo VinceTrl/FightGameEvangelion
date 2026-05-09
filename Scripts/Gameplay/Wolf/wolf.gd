@@ -2,7 +2,8 @@ class_name Wolf
 
 extends Character
 
-@export var angryStateDuration:float = 15.0
+##NOT USED
+@export var angryStateDuration:float = 15.0 
 @export var noHurtStates:Array[CharacterState]
 
 @export_group("Visual")
@@ -20,6 +21,7 @@ func _ready() -> void:
 	currentState = stateMachine.Idle
 	stateMachine.currentState = currentState
 	ChangeState(stateMachine.Idle)
+	WolfManager.RegisterWolf(self)
 	
 	
 func TakeDamage(hitbox:Hitbox):
@@ -35,8 +37,6 @@ func StartAngryState(target:Node3D):
 	chaseTarget = target
 	isAngry = true
 	ChangeMeshMaterial(angryMaterial)
-	await get_tree().create_timer(angryStateDuration).timeout
-	StopAngryState()
 	
 	
 func StopAngryState():

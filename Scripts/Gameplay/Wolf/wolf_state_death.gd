@@ -6,6 +6,7 @@ func EnterState():
 	stateName = "DEATH"
 	character.movement.currentDirection = Vector3.ZERO # stop moving
 	character.animation.play("Idle")
+	WolfManager.RemoveWolf(character)
 	character.queue_free()
 	pass
 	

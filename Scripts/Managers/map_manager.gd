@@ -4,7 +4,7 @@ extends Node
 var debugMode = false
 var debugSpawnIndex = 0
 var mapsLoaded: Array
-var currentMap
+var currentMap:Map
 
 func PreloadAllResources():
 	for map in maps: 	

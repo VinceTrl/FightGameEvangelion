@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://boe4peeex6mo5" path="res://Scripts/Components/Movement/movement_component.gd" id="4_qymo3"]
 [ext_resource type="Script" uid="uid://davkegmks5tqe" path="res://Scripts/Components/Movement/flip_component.gd" id="5_hwwuk"]
 [ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="6_sc7l6"]
+[ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="6_unnx5"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="7_hwwuk"]
 [ext_resource type="Script" uid="uid://qsu1knp0w8eq" path="res://Scripts/Gameplay/Wolf/wolf_state_machine.gd" id="7_k4o3e"]
 [ext_resource type="Script" uid="uid://5uo1cfh1v2of" path="res://Scripts/Gameplay/Wolf/wolf_state_idle.gd" id="8_k4o3e"]
@@ -17,6 +18,7 @@
 [ext_resource type="Script" uid="uid://xr8u8st75w4n" path="res://Scripts/Gameplay/Wolf/wolf_state_howl.gd" id="12_jwurm"]
 [ext_resource type="Script" uid="uid://c76obi0icmr8d" path="res://Scripts/Gameplay/Wolf/wolf_state_dash_attack.gd" id="12_q7dhl"]
 [ext_resource type="PackedScene" uid="uid://1pvfkl5jtwwb" path="res://Scenes/Characters/Wolf/wolf_howl_screen.tscn" id="15_2gapl"]
+[ext_resource type="PackedScene" uid="uid://dlupcnf7dnsb5" path="res://Scenes/VFX/attack_anticipation_sign.tscn" id="16_acnup"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="22_3a31i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qymo3"]
@@ -42,9 +44,6 @@ point_count = 4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sc7l6"]
 size = Vector3(0.72924805, 0.48840332, 1)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_acnup"]
-radius = 9.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q7dhl"]
 size = Vector3(0.5, 0.35, 1)
@@ -105,6 +104,21 @@ noise_scale = 0.165
 size = 0.15
 update_interval = 0.005
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.19218421, 0.024299145, 0)
+visible = false
+
+[node name="WarningSprite" type="Sprite3D" parent="Visual/VFX" unique_id=199417990]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.12067044, 0.39702097, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("6_unnx5")
+vframes = 7
+frame = 2
+
+[node name="AttackAnticipationSign" parent="Visual/VFX" unique_id=193520835 instance=ExtResource("16_acnup")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, -0.18945313, 0.027031869, 0)
 visible = false
 
 [node name="Raycasts" type="Node3D" parent="." unique_id=1402960340]
@@ -178,7 +192,7 @@ metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 script = ExtResource("11_acnup")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
-[node name="DashAttack" type="Node" parent="StateMachine" unique_id=1288067011 node_paths=PackedStringArray("hitbox", "attackFx")]
+[node name="DashAttack" type="Node" parent="StateMachine" unique_id=1288067011 node_paths=PackedStringArray("hitbox", "attackFx", "attackSignSprite", "attackSign")]
 script = ExtResource("12_q7dhl")
 stateDuration = 0.8
 dashDuration = 0.4
@@ -187,12 +201,13 @@ dashSpeed = 12.0
 dashCurve = SubResource("Curve_q7dhl")
 hitbox = NodePath("../../Hitbox")
 attackFx = NodePath("../../Visual/VFX/TrailEmitter")
+attackSignSprite = NodePath("../../Visual/VFX/WarningSprite")
+attackSign = NodePath("../../Visual/VFX/AttackAnticipationSign")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
-[node name="Howl" type="Node" parent="StateMachine" unique_id=1079943216 node_paths=PackedStringArray("castSphereShape", "howlScreen")]
+[node name="Howl" type="Node" parent="StateMachine" unique_id=1079943216 node_paths=PackedStringArray("howlScreen")]
 script = ExtResource("12_jwurm")
 howlDuration = 2.75
-castSphereShape = NodePath("../../HowlArea/CollisionShape3D")
 howlScreen = NodePath("../../HowlScreen")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
@@ -209,16 +224,6 @@ debug_color = Color(0.9798612, 0, 0.38843694, 0.41960785)
 
 [node name="HowlScreen" parent="." unique_id=269593752 instance=ExtResource("15_2gapl")]
 visible = false
-
-[node name="HowlArea" type="Area3D" parent="." unique_id=2105379388]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21938989, 0)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HowlArea" unique_id=1318314303]
-shape = SubResource("SphereShape3D_acnup")
-disabled = true
-debug_color = Color(0.47646523, 0.58567554, 0.17720592, 0.41960785)
 
 [node name="Hitbox" type="Area3D" parent="." unique_id=1672942845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13492775, 0.030022115, 0)
