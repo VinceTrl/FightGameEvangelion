@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dbfddscw160he" path="res://Resources/Spells/Spell_Cheese.tres" id="6_7l8ej"]
 [ext_resource type="Resource" uid="uid://lwg8qs7rttch" path="res://Resources/Spells/Spell_Armor.tres" id="7_1c1rq"]
 [ext_resource type="Resource" uid="uid://j6bbmmsv8hvt" path="res://Resources/Spells/Spell_Platform.tres" id="8_g6cld"]
+[ext_resource type="Resource" uid="uid://2k336qxmgt3i" path="res://Resources/Spells/Spell_Camera.tres" id="9_7l8ej"]
 
 [node name="Mage" type="Node3D" unique_id=646494372 node_paths=PackedStringArray("spell_caster", "animation_player")]
 script = ExtResource("1_d4wrx")
@@ -96,7 +97,7 @@ external_skeleton = NodePath("../Armature/Skeleton3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1136.4, 1443.0001)
 
 [node name="SpellCaster" parent="." unique_id=5639376 node_paths=PackedStringArray("spellStartNode") instance=ExtResource("4_a40iw")]
-spells = Array[ExtResource("5_d4wrx")]([ExtResource("6_7l8ej"), ExtResource("7_1c1rq"), ExtResource("8_g6cld")])
+spells = Array[ExtResource("5_d4wrx")]([ExtResource("6_7l8ej"), ExtResource("7_1c1rq"), ExtResource("8_g6cld"), ExtResource("9_7l8ej")])
 spellStartNode = NodePath("../Visual/Zelda/BoneAttachment3D/Marker3D")
 xRange = Vector2(-1.5, 1.5)
 yRange = Vector2(0.5, 1.25)

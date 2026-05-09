@@ -6,12 +6,12 @@
 [ext_resource type="Resource" uid="uid://osyqa1xougy1" path="res://Resources/Spells/Spell_Fire.tres" id="4_7y45v"]
 [ext_resource type="Resource" uid="uid://lwg8qs7rttch" path="res://Resources/Spells/Spell_Armor.tres" id="5_b4kbc"]
 [ext_resource type="Resource" uid="uid://j6bbmmsv8hvt" path="res://Resources/Spells/Spell_Platform.tres" id="6_13je3"]
+[ext_resource type="Resource" uid="uid://2k336qxmgt3i" path="res://Resources/Spells/Spell_Camera.tres" id="7_38co4"]
 [ext_resource type="PackedScene" uid="uid://bmktqinsrerkw" path="res://Scenes/VFX/spell_trail_vfx.tscn" id="7_ulvoh"]
 
-[node name="SpellCaster" type="Node3D" unique_id=5639376 node_paths=PackedStringArray("spellStartNode")]
+[node name="SpellCaster" type="Node3D" unique_id=5639376]
 script = ExtResource("1_nihrr")
-spells = Array[ExtResource("2_38co4")]([ExtResource("3_yeorw"), ExtResource("4_7y45v"), ExtResource("5_b4kbc"), ExtResource("6_13je3")])
-spellStartNode = NodePath("")
+spells = Array[ExtResource("2_38co4")]([ExtResource("3_yeorw"), ExtResource("4_7y45v"), ExtResource("5_b4kbc"), ExtResource("6_13je3"), ExtResource("7_38co4")])
 
 [node name="SpellTrailVFX" parent="." unique_id=254146121 instance=ExtResource("7_ulvoh")]
 

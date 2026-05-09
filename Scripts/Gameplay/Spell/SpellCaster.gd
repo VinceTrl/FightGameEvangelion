@@ -62,6 +62,9 @@ func CastSpell(data:SpellData):
 			SpellData.SpellTargetType.Player:
 				targetNode = Manager.gameManager.GetRandomPlayer()
 				targetLocation = targetNode.global_position
+			SpellData.SpellTargetType.Camera:
+				targetNode = Manager.gameCamera
+				targetLocation = Manager.gameCamera.global_position
 				
 		#Vfx and delay
 		spell_trail_vfx.StartTrail(spellStartNode.global_position,targetLocation)

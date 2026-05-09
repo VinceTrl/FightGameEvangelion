@@ -2,7 +2,7 @@ class_name SpellData
 
 extends Resource
 
-enum SpellTargetType{Random,Player,SpecificTarget}
+enum SpellTargetType{Random,Player,SpecificTarget,Camera}
 @export var targetType:SpellTargetType
 @export var castDelay:float = 1.0
 ## -1 to infinite lifetime

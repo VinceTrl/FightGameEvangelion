@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d6y8hbx5iihi"]
 
-[ext_resource type="Script" uid="uid://crmj6vqjeltlr" path="res://Scripts/Gameplay/Items/magic_armor.gd" id="1_hmfh8"]
+[ext_resource type="Script" uid="uid://crmj6vqjeltlr" path="res://Scripts/Gameplay/Spell/magic_armor.gd" id="1_hmfh8"]
 [ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_q6ccv"]
 [ext_resource type="Script" uid="uid://2cmwy6epv03r" path="res://Scripts/Components/scale_with_health.gd" id="5_0f13x"]
 [ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/TRSEffects/visual_holder.gd" id="5_546wm"]

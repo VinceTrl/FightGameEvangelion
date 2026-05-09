@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://bdg7oxf5kjk3b" path="res://Resources/CameraShakes/ImpactShake.tres" id="8_yyu2d"]
 [ext_resource type="Resource" uid="uid://dbruj4m2iyqrh" path="res://Resources/CameraShakes/DestroyProjectileShake.tres" id="14_p6ck8"]
 [ext_resource type="Environment" uid="uid://nily06bi73yt" path="res://Resources/Environement/enviro_game_camera.tres" id="16_3rs5q"]
+[ext_resource type="Script" uid="uid://itiutkcchixs" path="res://Scripts/Camera/camera_roll.gd" id="16_5g0f1"]
 [ext_resource type="PackedScene" uid="uid://cnmklkcai8xqc" path="res://Scenes/VFX/victory_background.tscn" id="17_ebtb0"]
 
 [sub_resource type="Curve" id="Curve_qrsff"]
@@ -50,12 +51,15 @@ script = ExtResource("2_xo7ej")
 magnitudeOverTime = SubResource("Curve_t0je2")
 shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d"), ExtResource("14_p6ck8")])
 
-[node name="Camera3D" type="Camera3D" parent="CameraShake" unique_id=718838934]
+[node name="CameraRoll" type="Node3D" parent="CameraShake" unique_id=1148907142]
+script = ExtResource("16_5g0f1")
+
+[node name="Camera3D" type="Camera3D" parent="CameraShake/CameraRoll" unique_id=718838934]
 environment = ExtResource("16_3rs5q")
 size = 4.896
 near = 0.005
 
-[node name="VictoryBackground" parent="CameraShake/Camera3D" unique_id=318569785 instance=ExtResource("17_ebtb0")]
+[node name="VictoryBackground" parent="CameraShake/CameraRoll/Camera3D" unique_id=318569785 instance=ExtResource("17_ebtb0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.8)
 
 [node name="CENTER_DEBUG_LABEL" type="Label3D" parent="." unique_id=1096614814]

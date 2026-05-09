@@ -3,7 +3,7 @@ class_name Spell
 extends Node3D
 
 ## -1 to infinite lifetime
-@export var lifeTime:float = 5.0 
+var lifeTime:float = 5.0 
 var lifeTimeTimer:SceneTreeTimer
 var spellTarget:Node3D
 

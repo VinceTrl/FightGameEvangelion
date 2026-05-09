@@ -36,7 +36,9 @@ const CAMERA_DISTANCE_CURVE = preload("res://Resources/Curves/CameraDistanceCurv
 
 
 @onready var camShake: CameraShake = $CameraShake
-@onready var camera: Camera3D = $CameraShake/Camera3D
+@onready var camera: Camera3D = $CameraShake/CameraRoll/Camera3D
+@onready var camera_roll: Node3D = $CameraShake/CameraRoll
+
 
 var debugMode = false
 @onready var center_debug_label: Label3D = $CENTER_DEBUG_LABEL

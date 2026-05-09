@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpellData" format=3 uid="uid://2k336qxmgt3i"]
+
+[ext_resource type="Script" uid="uid://fltyy8e4315a" path="res://Scripts/Gameplay/Spell/SpellData.gd" id="1_kkrgc"]
+[ext_resource type="PackedScene" uid="uid://cjrwxw3r63eh6" path="res://Scenes/Gameplay/Spell/magic_camera_roll.tscn" id="2_dbudx"]
+
+[resource]
+script = ExtResource("1_kkrgc")
+targetType = 3
+lifeTime = 8.0
+spellScene = ExtResource("2_dbudx")
+metadata/_custom_type_script = "uid://fltyy8e4315a"

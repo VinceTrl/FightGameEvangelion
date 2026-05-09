@@ -1,0 +1,586 @@
+[gd_scene format=3 uid="uid://cjrwxw3r63eh6"]
+
+[ext_resource type="Script" uid="uid://dt5ryjy68iwtw" path="res://Scripts/Gameplay/Spell/magic_camera_roll.gd" id="1_akilf"]
+[ext_resource type="Texture2D" uid="uid://xrnlvwgqcyln" path="res://Assets/Meshes/Enviro/Sonic/ChaosLobbyExit/Tex_0024_0.png" id="2_0bkh4"]
+[ext_resource type="Texture2D" uid="uid://s6uc5038ngll" path="res://Assets/Sprites/Items/Emojis/scream.png" id="2_ac0f7"]
+[ext_resource type="FontFile" uid="uid://4vkwi6n6xoco" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9.ttf" id="3_0bkh4"]
+[ext_resource type="Texture2D" uid="uid://dpee3f7haxdg8" path="res://Assets/Sprites/Vfx/Fire/Flare00.PNG" id="5_hs2tr"]
+[ext_resource type="Texture2D" uid="uid://dk8lg7mt3ys62" path="res://Assets/Sprites/Vfx/Arrows/ColorArrow.png" id="6_cr4qb"]
+
+[sub_resource type="Animation" id="Animation_7ljfn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_m6tbs"]
+resource_name = "Roll"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5eb8c"]
+_data = {
+&"RESET": SubResource("Animation_7ljfn"),
+&"Roll": SubResource("Animation_m6tbs")
+}
+
+[sub_resource type="Animation" id="Animation_xubof"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lklt2"]
+resource_name = "Roll"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0vwv"]
+_data = {
+&"RESET": SubResource("Animation_xubof"),
+&"Roll": SubResource("Animation_lklt2")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_hs2tr"]
+font = ExtResource("3_0bkh4")
+font_size = 100
+
+[sub_resource type="Animation" id="Animation_ac0f7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScreenTexture:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.31764707)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["CAMERA ROLL"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EmojiTexture:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EmojiTexture2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hs2tr"]
+resource_name = "SpellIdle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScreenTexture:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.31764707), Color(1, 1, 1, 0.19607843), Color(1, 1, 1, 0.31764707)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.28088346, 0.33276638, 0.56534505, 0.7442517, 0.9446271),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["CAMERA ROLL", "CAMERA ROLL", "WTF", "CAMERA ROLL", "MEWAAAAT", "ACAB"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EmojiTexture:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EmojiTexture2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "animation"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EmojiTexture/EmojiAnimationPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": PackedStringArray("Roll"),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "animation"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EmojiTexture2/EmojiAnimationPlayer_2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": PackedStringArray("Roll"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0bkh4"]
+resource_name = "SpellSpawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScreenTexture:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.31764707), Color(1, 1, 1, 0.23529412)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09839866, 0.17031705, 0.22589037, 0.2880397, 0.34886798, 0.40432903, 0.45442292, 0.51525116, 0.5599778, 0.5957592),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "C", "CA", "CAM", "CAME", "CAMER", "CAMERA", "CAMERA R", "CAMERA RO", "CAMERA ROL", "CAMERA ROLL"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EmojiTexture:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.81986743),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EmojiTexture2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8180784),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "animation"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/AnimationPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": PackedStringArray("Roll"),
+"times": PackedFloat32Array(1.1175871e-08)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hs2tr"]
+_data = {
+&"RESET": SubResource("Animation_ac0f7"),
+&"SpellIdle": SubResource("Animation_hs2tr"),
+&"SpellSpawn": SubResource("Animation_0bkh4")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_govsn"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ljfn"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6tbs"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eb8c"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xubof"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lklt2"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0vwv"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s610"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlnjk"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otbic"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reww6"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odpun"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgk7h"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to70w"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ln0e"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jog38"]
+atlas = ExtResource("6_cr4qb")
+region = Rect2(0, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6eyp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_govsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ljfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6tbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eb8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xubof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lklt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0vwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s610")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlnjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otbic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reww6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odpun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgk7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to70w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ln0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jog38")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="Animation" id="Animation_cr4qb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_govsn"]
+resource_name = "Roll"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.37928212, -4.793447, 10, -0.44896752, 3.725071, 0, 0),
+"times": PackedFloat32Array(-0.0053672, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ljfn"]
+_data = {
+&"RESET": SubResource("Animation_cr4qb"),
+&"Roll": SubResource("Animation_govsn")
+}
+
+[node name="MagicCameraRoll" type="Node3D" unique_id=1356057128 node_paths=PackedStringArray("animation")]
+script = ExtResource("1_akilf")
+animation = NodePath("Control/AnimationPlayer")
+metadata/_custom_type_script = "uid://di72jnv8gesxg"
+
+[node name="Control" type="Control" parent="." unique_id=1105147436]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ScreenTexture" type="TextureRect" parent="Control" unique_id=1906142551]
+modulate = Color(1, 1, 1, 0.31764707)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0bkh4")
+expand_mode = 1
+
+[node name="EmojiTexture" type="TextureRect" parent="Control" unique_id=209172915]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -280.0
+offset_right = -428.0
+offset_bottom = -208.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_ac0f7")
+
+[node name="EmojiAnimationPlayer" type="AnimationPlayer" parent="Control/EmojiTexture" unique_id=1880101565]
+libraries/ = SubResource("AnimationLibrary_5eb8c")
+
+[node name="EmojiTexture2" type="TextureRect" parent="Control" unique_id=4479850]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 420.0
+offset_top = -280.0
+offset_right = 492.0
+offset_bottom = -208.0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_ac0f7")
+
+[node name="EmojiAnimationPlayer_2" type="AnimationPlayer" parent="Control/EmojiTexture2" unique_id=1008845025]
+libraries/ = SubResource("AnimationLibrary_c0vwv")
+
+[node name="Label" type="Label" parent="Control" unique_id=275969040]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -415.0
+offset_top = -313.0
+offset_right = 415.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "CAMERA ROLL"
+label_settings = SubResource("LabelSettings_hs2tr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=1348387193]
+libraries/ = SubResource("AnimationLibrary_hs2tr")
+
+[node name="Control" type="Control" parent="Control" unique_id=677417279]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Control" unique_id=1054532475]
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("5_hs2tr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/Control/Sprite2D" unique_id=1682087694]
+position = Vector2(2527.2727, -2527.2727)
+rotation = -2.3561945
+scale = Vector2(271.18182, 271.18182)
+sprite_frames = SubResource("SpriteFrames_l6eyp")
+autoplay = "default"
+frame_progress = 0.6152844
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Control/Control/Sprite2D" unique_id=1465257025]
+position = Vector2(-2381.818, 2381.818)
+rotation = 0.7853982
+scale = Vector2(271.18182, 271.18182)
+sprite_frames = SubResource("SpriteFrames_l6eyp")
+autoplay = "default"
+frame_progress = 0.910162
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Control" unique_id=1918494740]
+libraries/ = SubResource("AnimationLibrary_7ljfn")
