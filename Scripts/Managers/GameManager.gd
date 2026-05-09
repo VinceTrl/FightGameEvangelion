@@ -6,7 +6,7 @@ extends Node
 @onready var timeManager: TimeManager = $TimeManager
 @onready var game_timer: Timer = $GameTimer
 @onready var platform_manager: Node = $PlatformManager
-@onready var death_background: DeathBackground = $DeathBackground
+#@onready var death_background: DeathBackground = $DeathBackground
 @onready var block_manager: BlockManager = $BlockManager
 
 

@@ -79,15 +79,15 @@ func PlayDeathSFX():
 			sfx_mi.play()
 	else:
 		sfx_mi.play()
-		
-func StartBackgroundEffect():
-	if(Player.lastHitbox.type != Hitbox.DamageType.Melee): return
+
+#func StartBackgroundEffect():
+	#if(Player.lastHitbox.type != Hitbox.DamageType.Melee): return
 	
 	#Manager.gameManager.currentMap.SetEnviroVisibility(false)
 	#Manager.gameManager.currentStage.SetLevelVisibility(false)
-	Manager.gameManager.death_background.SetBackgroundOnPlayer(Player)
+	#Manager.gameManager.death_background.SetBackgroundOnPlayer(Player)
 	
-func StopBackgroundEffect():
+#func StopBackgroundEffect():
 	#Manager.gameManager.currentMap.SetEnviroVisibility(true)
 	#Manager.gameManager.currentStage.SetLevelVisibility(true)
-	Manager.gameManager.death_background.HideBackground()
+	#Manager.gameManager.death_background.HideBackground()

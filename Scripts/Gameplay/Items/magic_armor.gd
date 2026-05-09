@@ -36,6 +36,7 @@ func ProcessArmor():
 		DestroySpell()
 
 func TakeDamage(hitbox:Hitbox):
+	if(health_component.isDead):return
 	health_component.ChangeHealth(-hitbox.damage)
 	
 	Manager.timeManager.freezeFrame(0.001,freezeFrameDuration)

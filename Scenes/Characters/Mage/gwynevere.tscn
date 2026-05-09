@@ -1145,6 +1145,9 @@ albedo_texture = ExtResource("18_6lik6")
 texture_filter = 0
 billboard_keep_scale = true
 
+[sub_resource type="Animation" id="Animation_iaio0"]
+resource_name = "Idle"
+
 [sub_resource type="Animation" id="Animation_nm1gg"]
 resource_name = "MagicSpellWarning"
 length = 3.0
@@ -1230,6 +1233,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2k6gk"]
 _data = {
+&"Idle": SubResource("Animation_iaio0"),
 &"MagicSpellWarning": SubResource("Animation_nm1gg"),
 &"RESET": SubResource("Animation_knsbh")
 }

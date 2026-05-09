@@ -24,7 +24,7 @@ translateOffset = Vector3(0, 20, 0)
 translateDuration = 30.0
 translateCurve = SubResource("Curve_0e0ue")
 
-[node name="BloodPlane" type="MeshInstance3D" parent="." unique_id=904634860]
+[node name="BloodPlane" type="MeshInstance3D" parent="." unique_id=904634860 groups=["Enviro"]]
 mesh = SubResource("PlaneMesh_tinxj")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("1_xanhi")

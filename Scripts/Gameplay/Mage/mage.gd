@@ -6,6 +6,7 @@ extends Node3D
 @export var spellAnimations:Array[String] = ["MagicCast_Big_2H_01",
 "MagicCast_Big_2H_02","MagicCast_Big_2H_03","MagicCast_Big_2H_04",
 "MagicCast_Big_1H_01","MagicCast_Small_1H_01","MagicCast_Area_2H_01"]
+@export var idleAnimations:Array[String] = ["Idle"]
 
 @export var spell_caster: Node3D
 @export var animation_player: AnimationPlayer
@@ -22,10 +23,17 @@ func SpellLoop():
 	SpellAnimation()
 	await SpellLaunched
 	spell_caster.RandomSpell()
+	await animation_player.animation_finished
+	IdleAnimation()
 	SpellLoop()
 
 func SpellAnimation():
 	var anim:String = spellAnimations.pick_random()
+	animation_player.play(anim)
+	pass
+	
+func IdleAnimation():
+	var anim:String = idleAnimations.pick_random()
 	animation_player.play(anim)
 	pass
 	
