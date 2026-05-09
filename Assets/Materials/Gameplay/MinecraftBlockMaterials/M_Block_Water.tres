@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://by1nj1uy2w0rs" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/water_still.png" id="1_dwgme"]
 
 [resource]
-albedo_color = Color(0.15294118, 0.26666668, 0.827451, 1)
+transparency = 1
+albedo_color = Color(0.22745098, 0.42745098, 0.9882353, 1)
 albedo_texture = ExtResource("1_dwgme")
 uv1_scale = Vector3(1, 0.094, 1)
 texture_filter = 0

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://gs376iion8t8"]
+
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="1_ou8oq"]
+[ext_resource type="Texture2D" uid="uid://cjrtmsq3nsp0r" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/torch.png" id="2_qs32h"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ex0iu"]
+lightmap_size_hint = Vector2i(3, 3)
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynyfj"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_qs32h")
+emission_enabled = true
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("2_qs32h")
+texture_filter = 0
+
+[node name="Torch" unique_id=2078838959 instance=ExtResource("1_ou8oq")]
+
+[node name="MeshInstance3D" parent="." index="0" unique_id=1379156052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("QuadMesh_ex0iu")
+surface_material_override/0 = SubResource("StandardMaterial3D_ynyfj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=1354678098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10906868, 0)
+light_color = Color(0.9019608, 0.8156863, 0.03529412, 1)
+omni_range = 0.9

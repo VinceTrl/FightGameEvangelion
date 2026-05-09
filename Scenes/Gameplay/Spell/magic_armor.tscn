@@ -231,6 +231,7 @@ debug_color = Color(0.7098588, 0.26462606, 1, 0.41960785)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=681347486]
 script = ExtResource("5_a4bpu")
+healthPoints = 2
 metadata/_custom_type_script = "uid://cw2bpx65nkj7h"
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=1330270292]

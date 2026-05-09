@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dkktro3t333dq"]
+
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="1_lp40b"]
+[ext_resource type="Texture2D" uid="uid://bt3y3q28251mw" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/rose_bush_bottom.png" id="2_5ix2c"]
+[ext_resource type="Texture2D" uid="uid://ucreohsmx23d" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/rose_bush_top.png" id="3_4gyx0"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_abbgm"]
+lightmap_size_hint = Vector2i(3, 3)
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvklp"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_5ix2c")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_0svc5"]
+lightmap_size_hint = Vector2i(3, 3)
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isk4b"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("3_4gyx0")
+texture_filter = 0
+
+[node name="MinecraftRose" unique_id=2078838959 instance=ExtResource("1_lp40b")]
+
+[node name="MeshInstance3D" parent="." index="0" unique_id=1379156052]
+mesh = SubResource("QuadMesh_abbgm")
+surface_material_override/0 = SubResource("StandardMaterial3D_xvklp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1" unique_id=2047455077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("QuadMesh_0svc5")
+surface_material_override/0 = SubResource("StandardMaterial3D_isk4b")

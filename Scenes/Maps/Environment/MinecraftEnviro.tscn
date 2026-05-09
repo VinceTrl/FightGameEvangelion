@@ -11,29 +11,24 @@ shading_mode = 0
 albedo_texture = ExtResource("1_rk54l")
 disable_receive_shadows = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_rk54l"]
-size = Vector2(200, 200)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31a1l"]
-shading_mode = 0
-albedo_color = Color(0.5372549, 0.69803923, 0.92156863, 1)
-
 [node name="MinecraftEnviro" type="Node3D" unique_id=1476158531]
 
 [node name="PlaceholderBackground" type="MeshInstance3D" parent="." unique_id=427118259]
-transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 2.1855695e-07, -57.54071)
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 1.3113416e-06, -82.54071)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_31a1l")
 surface_material_override/0 = SubResource("StandardMaterial3D_uw7j3")
 
-[node name="PlaceholderBackground2" type="MeshInstance3D" parent="." unique_id=45388807]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.9999995, -61.863186)
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_rk54l")
-surface_material_override/0 = SubResource("StandardMaterial3D_31a1l")
+[node name="Node3D" type="Node3D" parent="." unique_id=1637407776]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.9209347, 7.8965034, -9.887775)
 
-[node name="scene_0" parent="." unique_id=535474957 instance=ExtResource("2_31a1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5209346, 23.046505, -33.587776)
+[node name="scene_0" parent="Node3D" unique_id=535474957 instance=ExtResource("2_31a1l")]
+
+[node name="scene_1" parent="Node3D" unique_id=1803807372 instance=ExtResource("2_31a1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
+
+[node name="scene_2" parent="Node3D" unique_id=935453772 instance=ExtResource("2_31a1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1879724455]
 transform = Transform3D(0.5957521, -0.46865964, -0.6522558, 0.79858196, 0.43230835, 0.41877964, 0.08571047, -0.7703686, 0.63181174, 0, 1.5211067, -9.12594)

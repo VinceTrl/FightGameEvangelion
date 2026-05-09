@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ck65txwn45jd2"]
+
+[ext_resource type="Texture2D" uid="uid://bcgm8056y87cu" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/tall_grass_bottom.png" id="1_tbrvv"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.703885, 0.98273605, 0.3591977, 1)
+albedo_texture = ExtResource("1_tbrvv")
+texture_filter = 0

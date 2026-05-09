@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cjtmoa56o6hxv" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/Minecart.tscn" id="8_clpey"]
 [ext_resource type="PackedScene" uid="uid://ch56ldgqymwtm" path="res://Scenes/Gameplay/poop.tscn" id="8_y4233"]
 [ext_resource type="PackedScene" uid="uid://c2ejqg735aq6g" path="res://Scenes/Gameplay/MinecraftBlock/rail_area.tscn" id="9_1osut"]
-[ext_resource type="PackedScene" uid="uid://dr8uiky4jkepx" path="res://Scenes/Gameplay/MinecraftBlock/water_block.tscn" id="9_xvoje"]
 [ext_resource type="PackedScene" uid="uid://bja86rnp5peep" path="res://Scenes/Gameplay/MinecraftBlock/lava_block.tscn" id="10_adgui"]
 [ext_resource type="PackedScene" uid="uid://c7ivof013fbpe" path="res://Scenes/Characters/Enderman/enderman.tscn" id="10_h266m"]
 [ext_resource type="PackedScene" uid="uid://b3rsfwcpln6hm" path="res://Scenes/Characters/Wolf/wolf.tscn" id="11_243hi"]
@@ -24,8 +23,18 @@
 [ext_resource type="PackedScene" uid="uid://d8avdqua7ovj" path="res://Scenes/Gameplay/MinecraftBlock/grass_block.tscn" id="14_a377a"]
 [ext_resource type="PackedScene" uid="uid://cbrnhabrfiklv" path="res://Scenes/Gameplay/MinecraftBlock/barrel_block.tscn" id="18_m3306"]
 [ext_resource type="PackedScene" uid="uid://xkjrt0g6fmqp" path="res://Scenes/Gameplay/MinecraftBlock/OakDoor_block.tscn" id="19_ne36o"]
+[ext_resource type="PackedScene" uid="uid://omqpxk6sa08h" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_water.tscn" id="23_dgmmt"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="23_r6wuc"]
 [ext_resource type="Material" uid="uid://bpwv7bubet4" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Bedrock.tres" id="24_8fa7y"]
+[ext_resource type="PackedScene" uid="uid://byw6x50nmqlek" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_long.tscn" id="24_m7ihg"]
+[ext_resource type="PackedScene" uid="uid://dpq0pgfrctcqi" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_dandelion.tscn" id="25_k3uph"]
 [ext_resource type="Script" uid="uid://b64mmjv66osb7" path="res://Scripts/Utilities/multi_mesh_grid.gd" id="25_r6wuc"]
+[ext_resource type="PackedScene" uid="uid://bjog5yfxcdevw" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_poppy.tscn" id="26_16uvr"]
+[ext_resource type="PackedScene" uid="uid://dkktro3t333dq" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_rose_long.tscn" id="27_16uvr"]
+[ext_resource type="PackedScene" uid="uid://gs376iion8t8" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_torch.tscn" id="28_acbp5"]
+[ext_resource type="PackedScene" uid="uid://c7yaxstrr5qic" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_bush_3.tscn" id="29_pl4hn"]
+[ext_resource type="PackedScene" uid="uid://34bk08ifvvh8" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_bush_1.tscn" id="30_dgmmt"]
+[ext_resource type="PackedScene" uid="uid://spwvq6fmh5ll" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_bush_0.tscn" id="31_l86xw"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fp3fa"]
 _surfaces = [{
@@ -61,7 +70,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8fa7y"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_pl4hn"]
 resource_local_to_scene = true
 resource_name = "Cube"
 _surfaces = [{
@@ -103,10 +112,10 @@ _surfaces = [{
 }]
 shadow_mesh = SubResource("ArrayMesh_fp3fa")
 
-[sub_resource type="MultiMesh" id="MultiMesh_r6wuc"]
+[sub_resource type="MultiMesh" id="MultiMesh_dgmmt"]
 transform_format = 1
 instance_count = 400
-mesh = SubResource("ArrayMesh_8fa7y")
+mesh = SubResource("ArrayMesh_pl4hn")
 buffer = PackedFloat32Array(50, 0, 0, 0, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 0, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 0.3, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 0.6, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 0.90000004, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 1.2, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 1.5, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 1.8000001, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 2.1000001, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 2.4, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 2.7, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 3, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 3.3000002, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 3.6000001, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 3.9, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 4.2000003, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 4.5, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 4.8, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 5.1000004, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 5.4, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 5.7000003, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 6, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 6.3, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 6.6000004, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 6.9, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 7.2000003, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 7.5000005, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 7.8, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 8.1, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 8.400001, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 8.700001, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 9, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 9.3, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 9.6, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 9.900001, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 10.200001, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 10.5, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 10.8, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 11.1, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 11.400001, 0, 50, 0, 2.7, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 0, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 0.3, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 0.6, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 0.90000004, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 1.2, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 1.5, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 1.8000001, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 2.1000001, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 2.4, 0, 0, 50, 0, 50, 0, 0, 11.700001, 0, 50, 0, 2.7, 0, 0, 50, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m7ihg"]
@@ -272,7 +281,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8186247, 1.0050749, 0)
 [node name="Wolf3" parent="Gameplay/Objects" unique_id=2068099741 instance=ExtResource("11_243hi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.739919, 2.3573754, 0)
 
-[node name="Blocks" type="Node3D" parent="Gameplay" unique_id=579634443]
+[node name="Blocks" type="Node3D" parent="Gameplay" unique_id=579634443 groups=["Enviro"]]
 
 [node name="CobblestoneRow" type="Node3D" parent="Gameplay/Blocks" unique_id=1157447530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, -0.7392701, 0)
@@ -857,177 +866,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000001, 1.3607321, 0)
 [node name="TntBlock4" parent="Gameplay/Blocks" unique_id=2041028489 instance=ExtResource("8_adgui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 3.460732, 0)
 
-[node name="WaterBlock" parent="Gameplay/Blocks" unique_id=770757744 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1000004, -0.439268, 0)
-
-[node name="WaterBlock2" parent="Gameplay/Blocks" unique_id=1350478948 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -0.439268, 0)
-
-[node name="WaterBlock3" parent="Gameplay/Blocks" unique_id=1294944704 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -0.439268, 0)
-
-[node name="WaterBlock4" parent="Gameplay/Blocks" unique_id=1331405935 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, -0.739268, 0)
-
-[node name="WaterBlock5" parent="Gameplay/Blocks" unique_id=969604817 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -0.739268, 0)
-
-[node name="WaterBlock6" parent="Gameplay/Blocks" unique_id=1573109110 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1000004, -0.739268, 0)
-
-[node name="WaterBlock25" parent="Gameplay/Blocks" unique_id=671471902 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -0.13926798, 0)
-
-[node name="WaterBlock26" parent="Gameplay/Blocks" unique_id=2021999253 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, -0.13926798, 0)
-
-[node name="WaterBlock27" parent="Gameplay/Blocks" unique_id=1226849349 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4000006, -0.13926798, 0)
-
-[node name="WaterBlock28" parent="Gameplay/Blocks" unique_id=1598897743 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4000006, -0.439268, 0)
-
-[node name="WaterBlock29" parent="Gameplay/Blocks" unique_id=61866274 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, -0.439268, 0)
-
-[node name="WaterBlock30" parent="Gameplay/Blocks" unique_id=8346110 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -0.439268, 0)
-
-[node name="WaterBlock31" parent="Gameplay/Blocks" unique_id=1005704116 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7000003, -0.13926798, 0)
-
-[node name="WaterBlock32" parent="Gameplay/Blocks" unique_id=292767520 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0000005, -0.13926798, 0)
-
-[node name="WaterBlock33" parent="Gameplay/Blocks" unique_id=1476515568 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3000007, -0.13926798, 0)
-
-[node name="WaterBlock34" parent="Gameplay/Blocks" unique_id=1647785009 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3000007, -0.439268, 0)
-
-[node name="WaterBlock35" parent="Gameplay/Blocks" unique_id=1062577496 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0000005, -0.439268, 0)
-
-[node name="WaterBlock36" parent="Gameplay/Blocks" unique_id=891834701 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7000003, -0.439268, 0)
-
-[node name="WaterBlock37" parent="Gameplay/Blocks" unique_id=1841363473 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -0.739268, 0)
-
-[node name="WaterBlock38" parent="Gameplay/Blocks" unique_id=1097897091 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, -0.739268, 0)
-
-[node name="WaterBlock39" parent="Gameplay/Blocks" unique_id=81897879 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4000006, -0.739268, 0)
-
-[node name="WaterBlock40" parent="Gameplay/Blocks" unique_id=388321751 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4000006, -1.039268, 0)
-
-[node name="WaterBlock41" parent="Gameplay/Blocks" unique_id=1360896785 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, -1.039268, 0)
-
-[node name="WaterBlock42" parent="Gameplay/Blocks" unique_id=2044131205 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -1.039268, 0)
-
-[node name="WaterBlock43" parent="Gameplay/Blocks" unique_id=675253678 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -1.339268, 0)
-
-[node name="WaterBlock44" parent="Gameplay/Blocks" unique_id=236008971 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, -1.339268, 0)
-
-[node name="WaterBlock45" parent="Gameplay/Blocks" unique_id=1570654861 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4000006, -1.339268, 0)
-
-[node name="WaterBlock46" parent="Gameplay/Blocks" unique_id=1118377613 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4000006, -1.639268, 0)
-
-[node name="WaterBlock47" parent="Gameplay/Blocks" unique_id=754018341 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, -1.639268, 0)
-
-[node name="WaterBlock48" parent="Gameplay/Blocks" unique_id=1051286172 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, -1.639268, 0)
-
-[node name="WaterBlock50" parent="Gameplay/Blocks" unique_id=1018315444 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1000004, -1.939268, 0)
-
-[node name="WaterBlock51" parent="Gameplay/Blocks" unique_id=44421905 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4000006, -1.939268, 0)
-
-[node name="WaterBlock67" parent="Gameplay/Blocks" unique_id=1637129789 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.700001, -1.939268, 0)
-
-[node name="WaterBlock52" parent="Gameplay/Blocks" unique_id=1430477356 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4000006, -2.239268, 0)
-
-[node name="WaterBlock55" parent="Gameplay/Blocks" unique_id=1000141702 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7000003, -0.73926795, 0)
-
-[node name="WaterBlock56" parent="Gameplay/Blocks" unique_id=509828871 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0000005, -0.73926795, 0)
-
-[node name="WaterBlock57" parent="Gameplay/Blocks" unique_id=1430500941 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3000007, -0.73926795, 0)
-
-[node name="WaterBlock58" parent="Gameplay/Blocks" unique_id=2116757721 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3000007, -1.039268, 0)
-
-[node name="WaterBlock59" parent="Gameplay/Blocks" unique_id=1352434358 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0000005, -1.039268, 0)
-
-[node name="WaterBlock60" parent="Gameplay/Blocks" unique_id=378513563 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7000003, -1.039268, 0)
-
-[node name="WaterBlock61" parent="Gameplay/Blocks" unique_id=1673279469 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7000003, -1.339268, 0)
-
-[node name="WaterBlock62" parent="Gameplay/Blocks" unique_id=1603990541 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0000005, -1.339268, 0)
-
-[node name="WaterBlock63" parent="Gameplay/Blocks" unique_id=1052782184 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3000007, -1.339268, 0)
-
-[node name="WaterBlock64" parent="Gameplay/Blocks" unique_id=1530712982 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3000007, -1.639268, 0)
-
-[node name="WaterBlock65" parent="Gameplay/Blocks" unique_id=895978674 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0000005, -1.639268, 0)
-
-[node name="WaterBlock66" parent="Gameplay/Blocks" unique_id=1527331596 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7000003, -1.639268, 0)
-
-[node name="WaterBlock7" parent="Gameplay/Blocks" unique_id=1080073503 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, -2.539268, 0)
-
-[node name="WaterBlock8" parent="Gameplay/Blocks" unique_id=1741641634 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -2.539268, 0)
-
-[node name="WaterBlock9" parent="Gameplay/Blocks" unique_id=1743642408 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, -2.539268, 0)
-
-[node name="WaterBlock10" parent="Gameplay/Blocks" unique_id=2051015358 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, -2.539268, 0)
-
-[node name="WaterBlock11" parent="Gameplay/Blocks" unique_id=2088240495 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, -2.539268, 0)
-
-[node name="WaterBlock12" parent="Gameplay/Blocks" unique_id=956063233 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6999998, -2.539268, 0)
-
-[node name="WaterBlock13" parent="Gameplay/Blocks" unique_id=1739455439 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9999998, -2.539268, 0)
-
-[node name="WaterBlock14" parent="Gameplay/Blocks" unique_id=1324219327 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0999997, -2.539268, 0)
-
-[node name="WaterBlock15" parent="Gameplay/Blocks" unique_id=728258721 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999996, -2.539268, 0)
-
-[node name="WaterBlock16" parent="Gameplay/Blocks" unique_id=1648748837 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7999996, -2.539268, 0)
-
-[node name="WaterBlock17" parent="Gameplay/Blocks" unique_id=551284073 instance=ExtResource("9_xvoje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4999995, -2.539268, 0)
-
 [node name="DirtBlock36" parent="Gameplay/Blocks" unique_id=925517003 instance=ExtResource("12_5ji8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.439268, 0)
 
@@ -1328,6 +1166,74 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2000003, 1.660732, 0)
 [node name="OakDoorBlock" parent="Gameplay/Blocks" unique_id=1889901036 instance=ExtResource("19_ne36o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000001, 0.17398345, 0)
 
+[node name="MinecraftWater" parent="Gameplay/Blocks" unique_id=1480401377 instance=ExtResource("23_dgmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.35, 0.16100025, 0.15)
+
+[node name="MinecraftWater2" parent="Gameplay/Blocks" unique_id=1462444763 instance=ExtResource("23_dgmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.65, 0.16100019, 0.152)
+
+[node name="BlockPlants" type="Node3D" parent="Gameplay" unique_id=932408904 groups=["Enviro"]]
+
+[node name="MinecraftCosmetic" parent="Gameplay/BlockPlants" unique_id=2078838959 instance=ExtResource("23_r6wuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3607298, 0)
+
+[node name="MinecraftCosmetic2" parent="Gameplay/BlockPlants" unique_id=752273581 instance=ExtResource("23_r6wuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.3607298, 0)
+
+[node name="MinecraftCosmetic3" parent="Gameplay/BlockPlants" unique_id=2060075565 instance=ExtResource("23_r6wuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0.7607298, 0)
+
+[node name="MinecraftCosmetic4" parent="Gameplay/BlockPlants" unique_id=642645103 instance=ExtResource("23_r6wuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9000001, 1.3607298, 0)
+
+[node name="MinecraftCosmetic5" parent="Gameplay/BlockPlants" unique_id=1929803071 instance=ExtResource("24_m7ihg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.3607298, 0)
+
+[node name="Dandelion" parent="Gameplay/BlockPlants" unique_id=404560408 instance=ExtResource("25_k3uph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.6607322, 0)
+
+[node name="Poppy" parent="Gameplay/BlockPlants" unique_id=660713815 instance=ExtResource("26_16uvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.3607298, 0)
+
+[node name="Poppy2" parent="Gameplay/BlockPlants" unique_id=1766987272 instance=ExtResource("26_16uvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3000002, 1.6607299, 0)
+
+[node name="MinecraftGrass" parent="Gameplay/BlockPlants" unique_id=1412876966 instance=ExtResource("27_16uvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 1.660732, 0)
+
+[node name="MinecraftGrass2" parent="Gameplay/BlockPlants" unique_id=989593349 instance=ExtResource("27_16uvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000001, 1.660732, 0)
+
+[node name="Torch" parent="Gameplay/BlockPlants" unique_id=1849254100 instance=ExtResource("28_acbp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5000005, 1.660732, 0)
+
+[node name="Torch2" parent="Gameplay/BlockPlants" unique_id=1643096332 instance=ExtResource("28_acbp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1000004, 0.16073203, 0)
+
+[node name="Torch3" parent="Gameplay/BlockPlants" unique_id=503874512 instance=ExtResource("28_acbp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6000004, 0.16073203, 0)
+
+[node name="Torch4" parent="Gameplay/BlockPlants" unique_id=1270222022 instance=ExtResource("28_acbp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999977, -0.739268, 0)
+
+[node name="Torch5" parent="Gameplay/BlockPlants" unique_id=2057161895 instance=ExtResource("28_acbp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60000026, -1.339268, 0)
+
+[node name="Torch6" parent="Gameplay/BlockPlants" unique_id=107007675 instance=ExtResource("28_acbp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8999996, 0.16073203, 0)
+
+[node name="MinecraftBush_Stage3_" parent="Gameplay/BlockPlants" unique_id=1575911767 instance=ExtResource("29_pl4hn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3607302, 0.12710182)
+
+[node name="MinecraftBush_Stage1_" parent="Gameplay/BlockPlants" unique_id=468012648 instance=ExtResource("30_dgmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.3607298, 0.1250839)
+
+[node name="MinecraftBush_Stage0_" parent="Gameplay/BlockPlants/MinecraftBush_Stage1_" unique_id=904217913 instance=ExtResource("31_l86xw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0)
+
+[node name="MinecraftBush_Stage3_2" parent="Gameplay/BlockPlants" unique_id=1300285979 instance=ExtResource("29_pl4hn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 1.3607302, 0.12710182)
+
 [node name="PenpenLocations" type="Node3D" parent="Gameplay" unique_id=1236989997]
 
 [node name="PenpenLocation" type="Node3D" parent="Gameplay/PenpenLocations" unique_id=802364910]
@@ -1356,7 +1262,7 @@ script = ExtResource("5_cq35q")
 
 [node name="MultiMeshGrid" type="MultiMeshInstance3D" parent="Gameplay" unique_id=1381838828]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -5.4000006, 0)
-multimesh = SubResource("MultiMesh_r6wuc")
+multimesh = SubResource("MultiMesh_dgmmt")
 script = ExtResource("25_r6wuc")
 surface = Vector2(12, 3)
 meshBasis = Basis(50, 0, 0, 0, 50, 0, 0, 0, 50)

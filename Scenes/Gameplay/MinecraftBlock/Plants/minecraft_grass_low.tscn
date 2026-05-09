@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ddy2qhl3y5tq1"]
+
+[ext_resource type="Material" uid="uid://ck65txwn45jd2" path="res://Assets/Materials/Gameplay/MinecraftPlants/M_Plant_Grass_Bottom.tres" id="2_bqgdu"]
+[ext_resource type="Script" uid="uid://r4oitbq4ac83" path="res://Scripts/Gameplay/MinecraftBlock/block_link.gd" id="2_s0fda"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_s0fda"]
+lightmap_size_hint = Vector2i(3, 3)
+size = Vector2(0.3, 0.2)
+
+[node name="MinecraftGrassLow" type="Node3D" unique_id=2078838959 node_paths=PackedStringArray("root")]
+script = ExtResource("2_s0fda")
+root = NodePath(".")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1379156052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("QuadMesh_s0fda")
+surface_material_override/0 = ExtResource("2_bqgdu")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d0w1hu7tcbr61"]
+
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="1_80kac"]
+[ext_resource type="Texture2D" uid="uid://cso3ywwna8sk2" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/orange_tulip.png" id="2_80kac"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ex0iu"]
+lightmap_size_hint = Vector2i(3, 3)
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynyfj"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_80kac")
+texture_filter = 0
+
+[node name="TulipOrange" unique_id=2078838959 instance=ExtResource("1_80kac")]
+
+[node name="MeshInstance3D" parent="." index="0" unique_id=1379156052]
+mesh = SubResource("QuadMesh_ex0iu")
+surface_material_override/0 = SubResource("StandardMaterial3D_ynyfj")
