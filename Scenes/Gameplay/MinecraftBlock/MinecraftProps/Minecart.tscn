@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://cjtmoa56o6hxv"]
 
-[ext_resource type="Script" uid="uid://rijharimj3h8" path="res://Scripts/GameEffects/PhysicObject.gd" id="1_0te1p"]
+[ext_resource type="Script" uid="uid://bjm58t58fwfp4" path="res://Scripts/Gameplay/Physics/physics_damage_object.gd" id="1_telgw"]
 [ext_resource type="Texture2D" uid="uid://bdcaad58jrf1g" path="res://Assets/Meshes/Props/Minecraft/minecraft-minecart-2nd/source/model_0.png" id="2_telgw"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="3_1qrtw"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="4_telgw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0te1p"]
 friction = 0.11
@@ -187,7 +188,10 @@ shadow_mesh = SubResource("ArrayMesh_narju")
 [sub_resource type="BoxShape3D" id="BoxShape3D_uffgu"]
 size = Vector3(0.4199707, 0.24022657, 0.685)
 
-[node name="Minecart" type="RigidBody3D" unique_id=1587775244]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qrtw"]
+size = Vector3(0.4, 0.26, 0.5)
+
+[node name="Minecart" type="RigidBody3D" unique_id=1587775244 node_paths=PackedStringArray("hitbox")]
 collision_layer = 193
 collision_mask = 19
 axis_lock_linear_z = true
@@ -196,7 +200,8 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_0te1p")
-script = ExtResource("1_0te1p")
+script = ExtResource("1_telgw")
+hitbox = NodePath("Hitbox")
 impulseForce = 2.0
 freezeOnHit = true
 metadata/_custom_type_script = "uid://rijharimj3h8"
@@ -252,3 +257,14 @@ metadata/_custom_type_script = "uid://be4u7kwwov65g"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00063478947, 0.10913476, 0)
 shape = SubResource("BoxShape3D_uffgu")
 debug_color = Color(0.9514573, 0.15469226, 0.4079886, 0.41960785)
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=332317218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+script = ExtResource("4_telgw")
+isActive = false
+randomID = true
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=242238685]
+shape = SubResource("BoxShape3D_1qrtw")
+debug_color = Color(0.91031486, 0.00010819793, 0.7321756, 0.41960785)

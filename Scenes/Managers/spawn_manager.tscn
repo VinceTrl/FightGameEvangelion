@@ -16,9 +16,10 @@
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="15_ngmeq"]
 [ext_resource type="Resource" uid="uid://dpspq7qtc8pg3" path="res://Resources/Spawnables/Creeper.tres" id="15_ypawy"]
 [ext_resource type="Resource" uid="uid://dmec4tqcdblkt" path="res://Resources/Spawnables/Block_TNT.tres" id="16_8cqpp"]
+[ext_resource type="Resource" uid="uid://dkxu7n3k0f3pg" path="res://Resources/Spawnables/Minecart.tres" id="17_8cqpp"]
 
 [node name="SpawnManager" type="Node" unique_id=2111106374]
 script = ExtResource("1_1gdln")
 randomSpawnDelayMin = 5.0
 randomSpawnDelayMax = 8.0
-items = Array[ExtResource("2_4p3j3")]([ExtResource("4_x0qvi"), ExtResource("5_qj470"), ExtResource("6_g752w"), ExtResource("7_evm1a"), ExtResource("8_hfedu"), ExtResource("9_bscx2"), ExtResource("10_psy00"), ExtResource("11_d15k6"), ExtResource("12_gpbyq"), ExtResource("13_kwyu3"), ExtResource("14_h3te8"), ExtResource("15_ngmeq"), ExtResource("15_ypawy"), ExtResource("16_8cqpp")])
+items = Array[ExtResource("2_4p3j3")]([ExtResource("4_x0qvi"), ExtResource("5_qj470"), ExtResource("6_g752w"), ExtResource("7_evm1a"), ExtResource("8_hfedu"), ExtResource("9_bscx2"), ExtResource("10_psy00"), ExtResource("11_d15k6"), ExtResource("12_gpbyq"), ExtResource("13_kwyu3"), ExtResource("14_h3te8"), ExtResource("15_ngmeq"), ExtResource("15_ypawy"), ExtResource("16_8cqpp"), ExtResource("17_8cqpp")])
