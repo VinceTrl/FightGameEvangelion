@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dty33n1gq7o06"]
+
+[ext_resource type="PackedScene" uid="uid://bbcfoc5h0uq71" path="res://Assets/Meshes/Characters/SonicMinecraft/Sonic.fbx" id="1_tdwvv"]
+[ext_resource type="Texture2D" uid="uid://clk8s4dhr68xh" path="res://Assets/Meshes/Characters/SonicMinecraft/character_sonic.png" id="2_enubu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqqox"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_enubu")
+texture_filter = 0
+
+[node name="SonicMinecraft" type="Node3D" unique_id=1590759938]
+
+[node name="Visual" type="Node3D" parent="." unique_id=602725081]
+
+[node name="SonicMesh" parent="Visual" unique_id=2097844313 instance=ExtResource("1_tdwvv")]
+transform = Transform3D(-1.3113417e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.3113417e-08, 0, 0, 0)
+
+[node name="a" parent="Visual/SonicMesh" index="0" unique_id=335638502]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="arm_left" parent="Visual/SonicMesh" index="1" unique_id=2067433172]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="arm_right" parent="Visual/SonicMesh" index="2" unique_id=1349883454]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="ear_left" parent="Visual/SonicMesh" index="3" unique_id=1516390871]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="ear_right" parent="Visual/SonicMesh" index="4" unique_id=2065445083]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="eye_lid_open_left" parent="Visual/SonicMesh" index="5" unique_id=1432008412]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="eye_lid_open_right" parent="Visual/SonicMesh" index="6" unique_id=999079172]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="eyes" parent="Visual/SonicMesh" index="7" unique_id=819612488]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="foot_left" parent="Visual/SonicMesh" index="8" unique_id=984784689]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="foot_left_001" parent="Visual/SonicMesh" index="9" unique_id=325575522]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="foot_right" parent="Visual/SonicMesh" index="10" unique_id=1308383853]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="foot_right_001" parent="Visual/SonicMesh" index="11" unique_id=1385933784]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="forearm_left" parent="Visual/SonicMesh" index="12" unique_id=601697018]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="forearm_left_001" parent="Visual/SonicMesh" index="13" unique_id=1152768166]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="forearm_right" parent="Visual/SonicMesh" index="14" unique_id=290892392]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="forearm_right_001" parent="Visual/SonicMesh" index="15" unique_id=574408104]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="hand_left" parent="Visual/SonicMesh" index="16" unique_id=1232545948]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="hand_right" parent="Visual/SonicMesh" index="17" unique_id=1212243612]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="leg_left" parent="Visual/SonicMesh" index="18" unique_id=662025388]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="leg_left_001" parent="Visual/SonicMesh" index="19" unique_id=1107489070]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="leg_right" parent="Visual/SonicMesh" index="20" unique_id=1726931083]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="leg_right_001" parent="Visual/SonicMesh" index="21" unique_id=1906074789]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull" parent="Visual/SonicMesh" index="22" unique_id=387747165]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull_001" parent="Visual/SonicMesh" index="23" unique_id=2140526762]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull_002" parent="Visual/SonicMesh" index="24" unique_id=276171415]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull_spike_back" parent="Visual/SonicMesh" index="25" unique_id=2037669613]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull_spike_bottom_left" parent="Visual/SonicMesh" index="26" unique_id=149861887]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull_spike_bottom_right" parent="Visual/SonicMesh" index="27" unique_id=466866373]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull_spike_middle" parent="Visual/SonicMesh" index="28" unique_id=213861918]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull_spike_top_left" parent="Visual/SonicMesh" index="29" unique_id=1617168138]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="skull_spike_top_right" parent="Visual/SonicMesh" index="30" unique_id=586198473]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="spike_left" parent="Visual/SonicMesh" index="31" unique_id=1113837807]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="spike_right" parent="Visual/SonicMesh" index="32" unique_id=617546380]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="tail" parent="Visual/SonicMesh" index="33" unique_id=1395010627]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="thigh_left" parent="Visual/SonicMesh" index="34" unique_id=1872674756]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="thigh_right" parent="Visual/SonicMesh" index="35" unique_id=600796944]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="thumb_left" parent="Visual/SonicMesh" index="36" unique_id=84218133]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[node name="thumb_right" parent="Visual/SonicMesh" index="37" unique_id=1156096178]
+surface_material_override/0 = SubResource("StandardMaterial3D_yqqox")
+
+[editable path="Visual/SonicMesh"]

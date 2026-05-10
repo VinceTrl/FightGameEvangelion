@@ -15,8 +15,6 @@
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_m4bvs"]
 [ext_resource type="Resource" uid="uid://dpspq7qtc8pg3" path="res://Resources/Spawnables/Creeper.tres" id="14_ndx05"]
 [ext_resource type="Resource" uid="uid://dmec4tqcdblkt" path="res://Resources/Spawnables/Block_TNT.tres" id="15_chtq6"]
-[ext_resource type="Resource" uid="uid://b3erqvxb24nxq" path="res://Resources/Spawnables/Enderman.tres" id="16_jnqf7"]
-[ext_resource type="Resource" uid="uid://bv022mcb3708n" path="res://Resources/Spawnables/Wolf.tres" id="17_urvqb"]
 [ext_resource type="PackedScene" uid="uid://dxcaay2i51g33" path="res://Scenes/Maps/Environment/gwynevere's_room.tscn" id="18_5fwcu"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="19_6xnvc"]
 [ext_resource type="Resource" uid="uid://d282ym1u5ohem" path="res://Resources/Maps/DarkSoulsMap.tres" id="20_5fwcu"]
@@ -37,7 +35,7 @@ enviro = [NodePath("Enviro")]
 lights = [NodePath("Lighting")]
 
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_kkmlt")]
-items = Array[ExtResource("3_f6ug2")]([ExtResource("4_klpx3"), ExtResource("5_c2u7w"), ExtResource("6_0xu63"), ExtResource("7_c25xw"), ExtResource("8_u5di3"), ExtResource("9_kytsd"), ExtResource("10_cf5ql"), ExtResource("11_cypfp"), ExtResource("12_30ax8"), ExtResource("13_m4bvs"), ExtResource("14_ndx05"), ExtResource("15_chtq6"), ExtResource("16_jnqf7"), ExtResource("17_urvqb")])
+items = Array[ExtResource("3_f6ug2")]([ExtResource("4_klpx3"), ExtResource("5_c2u7w"), ExtResource("6_0xu63"), ExtResource("7_c25xw"), ExtResource("8_u5di3"), ExtResource("9_kytsd"), ExtResource("10_cf5ql"), ExtResource("11_cypfp"), ExtResource("12_30ax8"), ExtResource("13_m4bvs"), ExtResource("14_ndx05"), ExtResource("15_chtq6")])
 
 [node name="Enviro" type="Node3D" parent="." unique_id=510669441 groups=["Enviro"]]
 

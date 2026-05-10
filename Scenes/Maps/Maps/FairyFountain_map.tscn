@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_ow084"]
 [ext_resource type="Resource" uid="uid://dpspq7qtc8pg3" path="res://Resources/Spawnables/Creeper.tres" id="14_ju2x3"]
 [ext_resource type="Resource" uid="uid://dmec4tqcdblkt" path="res://Resources/Spawnables/Block_TNT.tres" id="15_hjqh0"]
+[ext_resource type="Resource" uid="uid://dkxu7n3k0f3pg" path="res://Resources/Spawnables/Minecart.tres" id="16_nmre5"]
 [ext_resource type="PackedScene" uid="uid://dyx6jlaren7re" path="res://Scenes/Characters/Mage/mage.tscn" id="19_gx3wi"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="19_nmre5"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="20_3n61f"]
@@ -50,7 +51,7 @@ lights = [NodePath("Lighting")]
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_nmre5")]
 randomSpawnDelayMin = 15.0
 randomSpawnDelayMax = 25.0
-items = Array[ExtResource("3_rn5mo")]([ExtResource("4_beqi4"), ExtResource("5_72fcl"), ExtResource("6_rif5j"), ExtResource("7_nd2vs"), ExtResource("8_11ms4"), ExtResource("9_vdbbp"), ExtResource("10_jqcvw"), ExtResource("11_vrtdl"), ExtResource("12_6usgc"), ExtResource("13_ow084"), ExtResource("14_ju2x3"), ExtResource("15_hjqh0")])
+items = Array[ExtResource("3_rn5mo")]([ExtResource("4_beqi4"), ExtResource("5_72fcl"), ExtResource("6_rif5j"), ExtResource("7_nd2vs"), ExtResource("8_11ms4"), ExtResource("9_vdbbp"), ExtResource("10_jqcvw"), ExtResource("11_vrtdl"), ExtResource("12_6usgc"), ExtResource("13_ow084"), ExtResource("14_ju2x3"), ExtResource("15_hjqh0"), ExtResource("16_nmre5")])
 
 [node name="Enviro" type="Node3D" parent="." unique_id=510669441 groups=["Enviro"]]
 
