@@ -46,14 +46,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lighting" unique_id=1801303179]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 7.303301, 7.596194)
+visible = false
 light_energy = 3.178
 spot_range = 26.0
 spot_angle = 34.55176
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lighting" unique_id=1260499988]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 8.992409)
+visible = false
 light_energy = 5.0
 omni_range = 13.5
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" unique_id=916427045]
+transform = Transform3D(0.8543682, -0.27174243, -0.44295734, 0.50555444, 0.23732147, 0.829514, -0.120290875, -0.9326493, 0.34014046, 0, 2.114633, 0)
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_opacity = 0.8
+shadow_caster_mask = 4294967293
+directional_shadow_split_2 = 0.0
+directional_shadow_split_3 = 0.0
 
 [node name="Stage" type="Node" parent="." unique_id=1921753935]
 
