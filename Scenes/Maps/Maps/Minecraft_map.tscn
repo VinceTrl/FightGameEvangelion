@@ -32,6 +32,7 @@
 script = ExtResource("1_oxu42")
 enviro = [NodePath("Enviro")]
 lights = [NodePath("Lighting")]
+overrideEnvironment = ExtResource("25_hg4j4")
 
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_biqso")]
 items = Array[ExtResource("3_hg4j4")]([ExtResource("4_a6fen"), ExtResource("5_bajn7"), ExtResource("6_isrjx"), ExtResource("7_444ut"), ExtResource("8_r3chl"), ExtResource("9_oaeey"), ExtResource("10_yhn4n"), ExtResource("11_vtb3s"), ExtResource("12_ui2uj"), ExtResource("13_4b3j0"), ExtResource("14_biqso"), ExtResource("15_hg4j4"), ExtResource("16_a6fen"), ExtResource("17_bajn7")])
