@@ -18,8 +18,13 @@ shader_parameter/outline_opacity = 0.5
 
 [resource]
 next_pass = SubResource("ShaderMaterial_2otax")
+diffuse_mode = 3
+specular_mode = 1
 albedo_texture = ExtResource("1_n1q70")
 roughness = 0.25
 emission_enabled = true
 emission_energy_multiplier = 0.25
 emission_texture = ExtResource("1_n1q70")
+stencil_flags = 2
+stencil_color = Color(1.572, 1.084, 0, 1)
+stencil_outline_thickness = 0.05

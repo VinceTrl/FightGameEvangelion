@@ -52,13 +52,13 @@ func createGrid():
 	multimesh.mesh = meshInstance
 	#multimesh.
 	
-	print("A_POSITIONS : " + str(pos.size()))
+	#print("A_POSITIONS : " + str(pos.size()))
 	var t:Transform3D = Transform3D(meshBasis, Vector3.ZERO)
 	for i in multimesh.instance_count:
 		if(i >= pos.size()):
 			push_error("NOT ENOUGH SURFACE FOR THIS INSTANCE COUNT")
 			return
-		print("MULTIMESH SET AT POSITION : " + str(t))
+		#print("MULTIMESH SET AT POSITION : " + str(t))
 		t = Transform3D(meshBasis, Vector3(pos[i].x,pos[i].y, 0))
 		multimesh.set_instance_transform(i,t)
 		

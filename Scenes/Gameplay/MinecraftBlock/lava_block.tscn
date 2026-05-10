@@ -160,9 +160,9 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2dxx8"]
-size = Vector3(0.31, 0.31, 0.3)
+size = Vector3(0.28, 0.28, 0.28)
 
-[node name="LavaBlock" unique_id=1588274387 node_paths=PackedStringArray("sideSpread", "bottomSpread", "leftRaycast", "rightRaycast", "downRaycast", "upRaycast", "leftGroundRaycast", "rightGroundRaycast") groups=["Enviro"] instance=ExtResource("1_eihy3")]
+[node name="LavaBlock" unique_id=1588274387 node_paths=PackedStringArray("sideSpread", "bottomSpread", "leftRaycast", "rightRaycast", "downRaycast", "upRaycast", "leftGroundRaycast", "rightGroundRaycast") instance=ExtResource("1_eihy3")]
 script = ExtResource("2_50xhm")
 isSide = false
 canSpread = true
@@ -212,6 +212,7 @@ autoplay = &"LavaFlow"
 
 [node name="BoxMeshInstanceSide" type="MeshInstance3D" parent="NodeShaker/LiquidScaleController/LiquidScaleController_Up" index="1" unique_id=745308190]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.3, 0.15)
+visible = false
 mesh = ExtResource("5_50xhm")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("2_eihy3")

@@ -16,9 +16,26 @@ texture_filter = 0
 [sub_resource type="BoxMesh" id="BoxMesh_vrpkd"]
 size = Vector3(0.035, 0.3, 0.035)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg5vo"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1.572, 1.084, 0, 1)
+grow = true
+grow_amount = 0.01
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si7v2"]
+next_pass = SubResource("StandardMaterial3D_bg5vo")
+diffuse_mode = 3
 albedo_color = Color(0.5254902, 0.3529412, 0.24313726, 1)
 texture_filter = 0
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(1.572, 1.084, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_x75jw"]
 size = Vector3(0.04, 0.06, 0.04)

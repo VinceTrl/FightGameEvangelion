@@ -19,8 +19,21 @@ shader_parameter/outline_color = Color(1, 0.188235, 0.156863, 1)
 shader_parameter/outline_width = 1.0
 shader_parameter/outline_opacity = 0.5
 
-[resource]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f8usq"]
+render_priority = 1
 next_pass = SubResource("ShaderMaterial_pi1c4")
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.04673576, 1.5720325, 0, 1)
+grow = true
+grow_amount = 0.001
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_f8usq")
 albedo_texture = ExtResource("1_cpi62")
 metallic = 1.0
 metallic_texture = ExtResource("2_yyjhb")
@@ -30,3 +43,7 @@ emission_energy_multiplier = 0.5
 emission_texture = ExtResource("1_cpi62")
 normal_enabled = true
 normal_texture = ExtResource("3_ikew6")
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.04673576, 1.5720325, 0, 1)
+stencil_outline_thickness = 0.001
