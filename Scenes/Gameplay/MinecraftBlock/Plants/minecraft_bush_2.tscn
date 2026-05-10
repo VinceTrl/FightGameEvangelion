@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5cfd6n6c3jc"]
 
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="1_7njpk"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_7njpk"]
 [ext_resource type="Texture2D" uid="uid://dofrnrbdbq2pw" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/sweet_berry_bush_stage2.png" id="2_7njpk"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_s0fda"]

@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://c7finsa37y56m" path="res://Scenes/Gameplay/MinecraftBlock/stone_block.tscn" id="14_k01o1"]
 [ext_resource type="PackedScene" uid="uid://d4no6dhxpdfui" path="res://Scenes/Gameplay/MinecraftBlock/concrete_gray_block.tscn" id="14_se6un"]
 [ext_resource type="PackedScene" uid="uid://ckf3p25anxo86" path="res://Scenes/Gameplay/MinecraftBlock/dirt_block.tscn" id="15_hpjn7"]
-[ext_resource type="PackedScene" uid="uid://omqpxk6sa08h" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_water.tscn" id="15_k01o1"]
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="16_koy8j"]
 [ext_resource type="PackedScene" uid="uid://cbrnhabrfiklv" path="res://Scenes/Gameplay/MinecraftBlock/barrel_block.tscn" id="20_vei40"]
 
@@ -898,12 +897,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.400001, -0.8999999, 0)
 
 [node name="StoneBlock16" parent="Level/Blocks" unique_id=34679908 instance=ExtResource("14_k01o1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.200001, -0.8999999, 0)
-
-[node name="MinecraftWater" parent="Level/Blocks" unique_id=1480401377 instance=ExtResource("15_k01o1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.6999998, 0.15)
-
-[node name="MinecraftWater2" parent="Level/Blocks" unique_id=1840928593 instance=ExtResource("15_k01o1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.6999998, 0.15)
-
-[node name="MinecraftWater3" parent="Level/Blocks" unique_id=1318789689 instance=ExtResource("15_k01o1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, -2.6999998, 0.15)
