@@ -450,7 +450,7 @@ nodeToShake = NodePath(".")
 metadata/_custom_type_script = "uid://boswmyv0w3oxy"
 
 [node name="GlowSprite" type="Sprite3D" parent="Visual/NodeShaker" unique_id=504510426]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.2, -0.5)
+transform = Transform3D(1.24, 0, 0, 0, 1.24, 0, 0, 0, 1.24, 0, 0.2, -0.27385297)
 texture = ExtResource("7_q6ccv")
 script = ExtResource("5_546wm")
 positionTime = 5.0
@@ -471,7 +471,7 @@ positionCurveZ = SubResource("Curve_0rvqs")
 [node name="ScaleRoot" type="Node3D" parent="Visual/NodeShaker/HylianShield" unique_id=1182480788 node_paths=PackedStringArray("health")]
 script = ExtResource("5_0f13x")
 health = NodePath("../../../../HealthComponent")
-minScale = Vector3(0.3, 0.3, 0.3)
+minScale = Vector3(0.6, 0.6, 0.6)
 scaleWhenDead = false
 scaleCurve = SubResource("Curve_0f13x")
 transType = 10

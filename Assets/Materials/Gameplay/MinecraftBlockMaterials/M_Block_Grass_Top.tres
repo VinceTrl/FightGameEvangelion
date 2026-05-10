@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ju0u0tmqpf3" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/grass_block_top.png" id="1_t16lp"]
 
 [resource]
-albedo_color = Color(0.23529412, 0.4117647, 0.19215687, 1)
+albedo_color = Color(0.6351938, 0.9123023, 0.5026505, 1)
 albedo_texture = ExtResource("1_t16lp")
 emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
 emission_energy_multiplier = 0.48
