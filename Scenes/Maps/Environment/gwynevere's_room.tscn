@@ -2888,36 +2888,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1
 [node name="Gwynevere" parent="AnorLondo" unique_id=544251750 instance=ExtResource("2_t7owx")]
 transform = Transform3D(-4.3711385e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.3711385e-08, -2.547433, -13.62194, -0.34767008)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=99266608]
-transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, 0, 12.495396, -10.345177)
-light_color = Color(0.89374214, 0.64688003, 3.85046e-07, 1)
-light_energy = 5.61
-light_negative = true
-spot_range = 33.165676
-spot_attenuation = 0.55
-spot_angle = 31.842173
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=297289307]
-transform = Transform3D(1, 0, 0, 0, 0.6262364, 0.7796332, 0, -0.7796332, 0.6262364, -1.9073486e-06, 17.636429, 15.309386)
-light_color = Color(0.7607843, 1, 0.9882353, 1)
-spot_range = 35.322906
-spot_attenuation = 0.13
-spot_angle = 25.196436
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=408286084]
-transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, -5.4330163, -0.21956825, 9.273907)
-light_color = Color(1, 0.43137255, 0, 1)
-shadow_enabled = true
-omni_range = 2.59
-omni_attenuation = 1.904
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1050176839]
-transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, 5.616464, -0.2195673, 9.273909)
-light_color = Color(1, 0.43137255, 0, 1)
-shadow_enabled = true
-omni_range = 2.59
-omni_attenuation = 1.904
-
 [node name="Collisions" type="Node3D" parent="." unique_id=1677179468]
 
 [node name="StaticBody_Ground" type="StaticBody3D" parent="Collisions" unique_id=1116280734]

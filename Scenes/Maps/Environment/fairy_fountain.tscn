@@ -670,44 +670,6 @@ collision_layer = 193
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09951174, 0.25)
 shape = SubResource("BoxShape3D_jpocv")
 
-[node name="Lights" type="Node3D" parent="." unique_id=888120348]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=1599242009]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0266783, 0.5342524)
-visible = false
-omni_range = 10.24236
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Lights" unique_id=1592452232]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.7000003, 0)
-light_color = Color(0.57254905, 1, 1, 1)
-light_energy = 14.023
-shadow_enabled = true
-spot_range = 12.329949
-spot_attenuation = 0.0
-spot_angle = 28.929644
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="Lights" unique_id=1584148219]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.8247533, 0)
-light_color = Color(0.6666667, 1, 1, 1)
-light_energy = 38.462
-spot_range = 15.342052
-spot_angle = 86.82137
-spot_angle_attenuation = 1.624505
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Lights" unique_id=1660889377]
-transform = Transform3D(1, 0, 0, 0, 0.8855801, 0.4644866, 0, -0.4644866, 0.8855801, 0, 3.297985, 11.161557)
-light_energy = 7.605
-light_indirect_energy = 16.0
-spot_range = 8.576818
-spot_attenuation = 0.19
-spot_angle = 32.44
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights" unique_id=244606394]
-transform = Transform3D(1, 0, 0, 0, -0.019842803, 0.9998031, 0, -0.9998031, -0.019842803, 0, 4, 0)
-visible = false
-light_color = Color(0.8430797, 1.1291975, 1.1291975, 1)
-directional_shadow_mode = 0
-
 [node name="Meshes" type="Node3D" parent="." unique_id=328536412]
 
 [node name="water" type="MeshInstance3D" parent="Meshes" unique_id=408337979]
@@ -727,7 +689,7 @@ skeleton = NodePath("")
 [node name="FairyFountain" parent="Meshes" unique_id=1042651082 instance=ExtResource("12_jpocv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0.40027127, 7.5)
 
-[node name="water" parent="Meshes/FairyFountain" index="1" unique_id=692109081]
+[node name="water" parent="Meshes/FairyFountain" index="1" unique_id=1896266268]
 surface_material_override/0 = SubResource("StandardMaterial3D_7p4ma")
 surface_material_override/1 = SubResource("StandardMaterial3D_1geit")
 surface_material_override/2 = SubResource("StandardMaterial3D_hyfov")

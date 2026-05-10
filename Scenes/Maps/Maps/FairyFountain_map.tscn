@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://v6ct6gssond7" path="res://Scripts/Level/game_map.gd" id="1_ng3ke"]
 [ext_resource type="PackedScene" uid="uid://belfhcyyhg3fg" path="res://Scenes/Managers/spawn_manager.tscn" id="2_nmre5"]
+[ext_resource type="Environment" uid="uid://c2yxxbc5nmoc5" path="res://Resources/Environement/enviro_Zelda_game_camera.tres" id="2_rn5mo"]
 [ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="3_rn5mo"]
 [ext_resource type="Resource" uid="uid://bk43ljy20p3yl" path="res://Resources/Spawnables/MiddleFinger.tres" id="4_beqi4"]
 [ext_resource type="Resource" uid="uid://c0h453axwrbc1" path="res://Resources/Spawnables/Pickup.tres" id="5_72fcl"]
@@ -15,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://qh6r3mcx1l4u" path="res://Resources/Spawnables/Beyblade.tres" id="13_ow084"]
 [ext_resource type="Resource" uid="uid://dpspq7qtc8pg3" path="res://Resources/Spawnables/Creeper.tres" id="14_ju2x3"]
 [ext_resource type="Resource" uid="uid://dmec4tqcdblkt" path="res://Resources/Spawnables/Block_TNT.tres" id="15_hjqh0"]
-[ext_resource type="Resource" uid="uid://dkxu7n3k0f3pg" path="res://Resources/Spawnables/Minecart.tres" id="16_nmre5"]
+[ext_resource type="Resource" path="res://Resources/Spawnables/Minecart.tres" id="16_nmre5"]
 [ext_resource type="PackedScene" uid="uid://dyx6jlaren7re" path="res://Scenes/Characters/Mage/mage.tscn" id="19_gx3wi"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="19_nmre5"]
 [ext_resource type="PackedScene" uid="uid://b3g16dul2x0ta" path="res://Scenes/Maps/stage_spawner.tscn" id="20_3n61f"]
@@ -23,21 +24,13 @@
 [ext_resource type="Resource" uid="uid://boi3j7g4uww5i" path="res://Resources/Maps/FairyFountainMap.tres" id="21_ng3ke"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="22_uuf1f"]
 [ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="23_kgn8r"]
-[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="24_iothf"]
+[ext_resource type="Script" uid="uid://df4x3l4luvmk4" path="res://addons/post_processing/node/post_process.gd" id="24_iothf"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="25_h1hkp"]
-[ext_resource type="Texture2D" uid="uid://cb2vyra4ugsbb" path="res://Assets/Meshes/Props/Beyblade/all.png" id="27_rn5mo"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
-[sub_resource type="Environment" id="Environment_nmre5"]
-ambient_light_source = 2
-ambient_light_color = Color(0.66038847, 0.85405266, 0.8296387, 1)
-ambient_light_energy = 3.56
-adjustment_brightness = 1.33
-adjustment_color_correction = ExtResource("27_rn5mo")
-
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_rn5mo"]
-exposure_multiplier = 1.96
+exposure_multiplier = 2.0
 auto_exposure_scale = 3.69
 auto_exposure_speed = 0.01
 dof_blur_far_distance = 15.95
@@ -47,6 +40,7 @@ dof_blur_near_transition = -1.0
 script = ExtResource("1_ng3ke")
 enviro = [NodePath("Enviro")]
 lights = [NodePath("Lighting")]
+overrideEnvironment = ExtResource("2_rn5mo")
 
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_nmre5")]
 randomSpawnDelayMin = 15.0
@@ -91,5 +85,31 @@ script = ExtResource("24_iothf")
 configuration = ExtResource("25_h1hkp")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=364057458]
-environment = SubResource("Environment_nmre5")
+environment = ExtResource("2_rn5mo")
 camera_attributes = SubResource("CameraAttributesPractical_rn5mo")
+
+[node name="Lights" type="Node3D" parent="." unique_id=556938850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00137043, -1.6021525, -8.313295)
+
+[node name="FillLight" type="OmniLight3D" parent="Lights" unique_id=2101071102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0266783, 0.5342524)
+omni_range = 10.24236
+
+[node name="HighLight" type="SpotLight3D" parent="Lights" unique_id=1541444766]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.7000003, 0)
+light_color = Color(0.57254905, 1, 1, 1)
+light_energy = 7.0
+shadow_enabled = true
+spot_range = 7.833
+spot_attenuation = 0.0
+spot_angle = 28.929644
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights" unique_id=937986719]
+transform = Transform3D(1, 0, 0, 0, -0.20907247, 0.97790015, 0, -0.97790015, -0.20907247, 0, 10.259108, 0)
+light_color = Color(0.6666667, 1, 1, 1)
+light_energy = 0.5
+shadow_enabled = true
+spot_range = 16.101
+spot_attenuation = -0.45
+spot_angle = 40.33
+spot_angle_attenuation = 1.624505
