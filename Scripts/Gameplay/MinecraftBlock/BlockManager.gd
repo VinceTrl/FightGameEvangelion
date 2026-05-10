@@ -10,7 +10,7 @@ var currentTickIndex:int = 0
 var maxTickIndex:int = 3
 
 var clampPositionX:float = 6
-var clampPositionY:float = 4
+var clampPositionY:float = 4.5
 
 
 var spawnedBlocksPositions:Array[Vector3]
