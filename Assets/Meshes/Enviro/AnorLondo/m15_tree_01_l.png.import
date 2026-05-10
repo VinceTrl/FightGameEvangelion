@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yqd8nilrhndv"
-path.s3tc="res://.godot/imported/m15_tree_01_l.png-0cd64df3b0359dfd881512b8dea3ac29.s3tc.ctex"
+path.s3tc="res://.godot/imported/m15_tree_01_L.png-fa8224f23020f0527e398db40a08d709.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/Enviro/AnorLondo/m15_tree_01_l.png"
-dest_files=["res://.godot/imported/m15_tree_01_l.png-0cd64df3b0359dfd881512b8dea3ac29.s3tc.ctex"]
+source_file="res://Assets/Meshes/Enviro/AnorLondo/m15_tree_01_L.png"
+dest_files=["res://.godot/imported/m15_tree_01_L.png-fa8224f23020f0527e398db40a08d709.s3tc.ctex"]
 
 [params]
 

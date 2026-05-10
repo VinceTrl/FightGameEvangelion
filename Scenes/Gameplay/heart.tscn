@@ -1,12 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdvwx0kkjddp"]
+[gd_scene format=3 uid="uid://bdvwx0kkjddp"]
 
 [ext_resource type="Script" uid="uid://tkmll3wbq37u" path="res://Scripts/GameEffects/TRSEffects/visual_holder.gd" id="1_dwokd"]
 [ext_resource type="Script" uid="uid://bovawk4lew2it" path="res://Scripts/Gameplay/Items/heart.gd" id="1_jef0d"]
 [ext_resource type="PackedScene" uid="uid://2whp7jbymhuk" path="res://Assets/Meshes/Props/Heart/ItemHeartContainer.fbx" id="2_0yx3e"]
-[ext_resource type="PackedScene" uid="uid://bg6cgt1w4kuov" path="res://Scenes/VFX/item_glow.tscn" id="4_dvh17"]
+[ext_resource type="PackedScene" path="res://Scenes/VFX/item_glow.tscn" id="4_dvh17"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="4_lhiya"]
 [ext_resource type="Script" uid="uid://cvtsnlxtxaxyx" path="res://Scripts/Gameplay/Fishing/FishHookTarget.gd" id="5_71r1n"]
-
 
 [sub_resource type="Curve" id="Curve_h76pr"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -33,12 +32,12 @@ size = Vector3(0.396851, 0.326416, 0.374512)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dcj7"]
 size = Vector3(0.395, 0.32, 1)
 
-[node name="Heart" type="Node3D"]
+[node name="Heart" type="Node3D" unique_id=1097289165]
 script = ExtResource("1_jef0d")
 
-[node name="Visual" type="Node3D" parent="."]
+[node name="Visual" type="Node3D" parent="." unique_id=364324549]
 
-[node name="Animation" type="Node3D" parent="Visual"]
+[node name="Animation" type="Node3D" parent="Visual" unique_id=621754943]
 script = ExtResource("1_dwokd")
 positionTime = 5.0
 positionTarget = Vector3(0, 0.1, 0)
@@ -46,39 +45,42 @@ positionCurveX = SubResource("Curve_h76pr")
 positionCurveY = SubResource("Curve_r0w6q")
 positionCurveZ = SubResource("Curve_kdd56")
 
-[node name="ItemHeartContainer" parent="Visual/Animation" instance=ExtResource("2_0yx3e")]
+[node name="ItemHeartContainer" parent="Visual/Animation" unique_id=19492904 instance=ExtResource("2_0yx3e")]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Visual/Animation/ItemHeartContainer"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Visual/Animation/ItemHeartContainer" unique_id=1395805972]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+visible = false
 collision_layer = 16
 collision_mask = 8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual/Animation/ItemHeartContainer/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visual/Animation/ItemHeartContainer/StaticBody3D" unique_id=564076494]
+visible = false
 shape = SubResource("BoxShape3D_mlopj")
 
-[node name="ItemGlow" parent="Visual/Animation/ItemHeartContainer" instance=ExtResource("4_dvh17")]
+[node name="ItemGlow" parent="Visual/Animation/ItemHeartContainer" unique_id=1861070493 instance=ExtResource("4_dvh17")]
 transform = Transform3D(0.038, 0, 0, 0, 0.038, 0, 0, 0, 0.038, 0, 0, -0.0022168)
+visible = false
 
-[node name="Hurtbox" type="Area3D" parent="."]
+[node name="Hurtbox" type="Area3D" parent="." unique_id=2022611215]
 script = ExtResource("4_lhiya")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=690751036]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05176e-05, -0.0067749, 0)
 shape = SubResource("BoxShape3D_gosxm")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=673879672]
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=321477153]
 shape = SubResource("BoxShape3D_iumn5")
 
-[node name="FishHookTarget" type="Area3D" parent="."]
+[node name="FishHookTarget" type="Area3D" parent="." unique_id=1412533984]
 collision_layer = 16
 collision_mask = 16
 script = ExtResource("5_71r1n")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FishHookTarget"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FishHookTarget" unique_id=1399960217]
 shape = SubResource("BoxShape3D_7dcj7")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_entered"]

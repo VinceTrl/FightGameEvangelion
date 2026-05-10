@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctn0ijdhhkhpc"]
+[gd_scene format=3 uid="uid://ctn0ijdhhkhpc"]
 
 [ext_resource type="PackedScene" uid="uid://cliqfj6ilrcp2" path="res://Assets/Meshes/Props/Beyblade/beybladeSnake.fbx" id="1_pw2p3"]
 [ext_resource type="Material" uid="uid://yot2ynlsf6q4" path="res://Assets/Materials/Gameplay/M_Beyblade.tres" id="2_g1hlc"]
 
-[node name="beybladeSnake" instance=ExtResource("1_pw2p3")]
+[node name="beybladeSnake" unique_id=983893288 instance=ExtResource("1_pw2p3")]
 
-[node name="Secondary Base_013" parent="." index="0"]
+[node name="Secondary Base_013" parent="." index="0" unique_id=845730923]
 surface_material_override/0 = ExtResource("2_g1hlc")

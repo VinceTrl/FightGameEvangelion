@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cngp7x80lhlug"]
+[gd_scene format=3 uid="uid://cngp7x80lhlug"]
 
 [ext_resource type="Script" uid="uid://bfkbo26yidr2w" path="res://Scripts/Gameplay/Sasuke/sasuke.gd" id="1_8n61w"]
 [ext_resource type="PackedScene" uid="uid://do46pqas0qhyv" path="res://Assets/Meshes/Characters/Sasuke/Sasuke.fbx" id="2_hvg54"]
@@ -22,13 +22,13 @@ shader_parameter/outline_color = Color(0.3355, 0, 0.61, 1)
 shader_parameter/fresnel_power = 3.0
 shader_parameter/hue_speed = 0.0
 
-[node name="Sasuke" type="Node3D"]
+[node name="Sasuke" type="Node3D" unique_id=1134716372]
 script = ExtResource("1_8n61w")
 
-[node name="Sasuke" parent="." instance=ExtResource("2_hvg54")]
+[node name="Sasuke" parent="." unique_id=2114177113 instance=ExtResource("2_hvg54")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Sasuke" index="0"]
+[node name="Skeleton3D" parent="Sasuke" index="0" unique_id=700294458]
 bones/0/position = Vector3(3.58991e-05, 0.0100609, -0.000183116)
 bones/0/rotation = Quaternion(0.0658846, 0.281315, -0.0512134, 0.95598)
 bones/1/rotation = Quaternion(-0.016643, -0.000650359, 0.084426, 0.996291)
@@ -51,31 +51,31 @@ bones/21/rotation = Quaternion(-0.0402614, -0.00369559, 0.0626367, 0.997217)
 bones/22/rotation = Quaternion(-0.042083, 0.0719388, -0.0086025, 0.996484)
 bones/23/rotation = Quaternion(-0.11727, 0.0203669, -0.0029511, 0.992887)
 
-[node name="mesh1_001" parent="Sasuke/Skeleton3D" index="0"]
+[node name="mesh1_001" parent="Sasuke/Skeleton3D" index="0" unique_id=1083116897]
 material_overlay = SubResource("ShaderMaterial_nq1ck")
 
-[node name="mesh0" parent="Sasuke/Skeleton3D" index="1"]
+[node name="mesh0" parent="Sasuke/Skeleton3D" index="1" unique_id=1386383565]
 material_overlay = SubResource("ShaderMaterial_nq1ck")
 
-[node name="mesh27" parent="Sasuke/Skeleton3D" index="2"]
+[node name="mesh27" parent="Sasuke/Skeleton3D" index="2" unique_id=590849810]
 material_overlay = SubResource("ShaderMaterial_nq1ck")
 
-[node name="mesh15" parent="Sasuke/Skeleton3D" index="3"]
+[node name="mesh15" parent="Sasuke/Skeleton3D" index="3" unique_id=1454179843]
 material_overlay = SubResource("ShaderMaterial_nq1ck")
 
-[node name="AnimationPlayer" parent="Sasuke" index="1"]
-autoplay = "mixamo_com"
+[node name="AnimationPlayer" parent="Sasuke" index="1" unique_id=1938449900]
+autoplay = &"mixamo_com"
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1795766466]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Control" unique_id=920317581]
 layer = 60
 
-[node name="Textures" type="Control" parent="Control/CanvasLayer"]
+[node name="Textures" type="Control" parent="Control/CanvasLayer" unique_id=338122693]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,7 +83,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/CanvasLayer/Textures"]
+[node name="TextureRect" type="TextureRect" parent="Control/CanvasLayer/Textures" unique_id=1197603982]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,7 +94,7 @@ texture = ExtResource("3_m1hf3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="Control/CanvasLayer/Textures"]
+[node name="TextureRect2" type="TextureRect" parent="Control/CanvasLayer/Textures" unique_id=1133961809]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,7 +109,7 @@ texture = ExtResource("4_o8mf6")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="Control/CanvasLayer/Textures"]
+[node name="TextureRect3" type="TextureRect" parent="Control/CanvasLayer/Textures" unique_id=1518748917]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,7 +123,7 @@ texture = ExtResource("5_3uvk7")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect4" type="TextureRect" parent="Control/CanvasLayer/Textures"]
+[node name="TextureRect4" type="TextureRect" parent="Control/CanvasLayer/Textures" unique_id=245177237]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -140,7 +140,7 @@ texture = ExtResource("6_oqirl")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="TextureRect7" type="TextureRect" parent="Control/CanvasLayer/Textures"]
+[node name="TextureRect7" type="TextureRect" parent="Control/CanvasLayer/Textures" unique_id=28893979]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -151,7 +151,7 @@ texture = ExtResource("9_biljc")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect9" type="TextureRect" parent="Control/CanvasLayer/Textures"]
+[node name="TextureRect9" type="TextureRect" parent="Control/CanvasLayer/Textures" unique_id=2059500299]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,7 +166,7 @@ texture = ExtResource("11_1pbvk")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect11" type="TextureRect" parent="Control/CanvasLayer/Textures"]
+[node name="TextureRect11" type="TextureRect" parent="Control/CanvasLayer/Textures" unique_id=1760283432]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -181,7 +181,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("13_cqu0a")
 
-[node name="Background" type="TextureRect" parent="Control/CanvasLayer"]
+[node name="Background" type="TextureRect" parent="Control/CanvasLayer" unique_id=1828258322]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -191,13 +191,13 @@ grow_vertical = 2
 texture = ExtResource("3_sjsqs")
 expand_mode = 1
 
-[node name="Vfx2DSpawnSmoke" parent="." instance=ExtResource("17_n0cej")]
+[node name="Vfx2DSpawnSmoke" parent="." unique_id=528673150 instance=ExtResource("17_n0cej")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.366921, 0.0605105)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1720441664]
 stream = ExtResource("18_h33u1")
 autoplay = true
 
-[node name="GroundMagnet" parent="." instance=ExtResource("13_hcph4")]
+[node name="GroundMagnet" parent="." unique_id=1675506997 instance=ExtResource("13_hcph4")]
 
 [editable path="Sasuke"]
