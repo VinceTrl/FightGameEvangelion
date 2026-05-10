@@ -201,10 +201,10 @@ tracks/6/path = NodePath("Visual/NodeShaker/TrickEffect/FlyingCheese/CheeseSlice
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.93333334, 1.4, 1.9333333, 2.5, 3.13, 3.62, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.9, 1.3666667, 1.8333334, 2.3000002, 2.8, 3.3666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.062465243, 0.12752381, -0.07186527), Vector3(-0.062, 0.128, 0.243), Vector3(-0.062465243, 0.12752381, -0.07186527), Vector3(-0.062, 0.128, 0.243), Vector3(-0.062465243, 0.12752381, -0.07186527), Vector3(-0.062, 0.128, 0.243), Vector3(-0.062465243, 0.12752381, -0.07186527), Vector3(-0.062, 0.128, 0.243), Vector3(-0.062465243, 0.12752381, -0.07186527)]
+"values": [Vector3(-0.062465243, 0.12752381, -0.07186527), Vector3(-0.062, 0.128, 0.243), Vector3(-0.062465243, 0.12752381, -0.07186527), Vector3(-0.062, 0.128, 0.243), Vector3(-0.062465243, 0.12752381, -0.07186527), Vector3(-0.062, 0.128, 0.238), Vector3(-0.062465243, 0.12752381, -0.07186527), Vector3(-0.062, 0.128, 0.243)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -213,10 +213,10 @@ tracks/7/path = NodePath("Visual/NodeShaker/TrickEffect/FlyingCheese/CheeseSlice
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.93333334, 1.4, 1.9333333, 2.5, 3.13, 3.62, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.9, 1.3666667, 1.8333334, 2.3000002, 2.8, 3.3666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.2808815, -0.31003013, -0.071865246), Vector3(-0.281, -0.31, 0.228), Vector3(-0.2808815, -0.31003013, -0.071865246), Vector3(-0.281, -0.31, 0.228), Vector3(-0.2808815, -0.31003013, -0.071865246), Vector3(-0.281, -0.31, 0.228), Vector3(-0.2808815, -0.31003013, -0.071865246), Vector3(-0.281, -0.31, 0.228), Vector3(-0.2808815, -0.31003013, -0.071865246)]
+"values": [Vector3(-0.2808815, -0.31003013, -0.071865246), Vector3(-0.281, -0.31, 0.228), Vector3(-0.2808815, -0.31003013, -0.071865246), Vector3(-0.281, -0.31, 0.228), Vector3(-0.2808815, -0.31003013, -0.071865246), Vector3(-0.281, -0.31, 0.228), Vector3(-0.2808815, -0.31003013, -0.071865246), Vector3(-0.281, -0.31, 0.228)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -225,10 +225,10 @@ tracks/8/path = NodePath("Visual/NodeShaker/TrickEffect/FlyingCheese/CheeseSlice
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.93333334, 1.4, 1.9333333, 2.5, 3.13, 3.62, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.9, 1.3666667, 1.8333334, 2.3000002, 2.8, 3.3666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.015859311, -0.46535048, -0.071865246), Vector3(-0.016, -0.465, -0.347), Vector3(-0.015859311, -0.46535048, -0.071865246), Vector3(-0.016, -0.465, -0.347), Vector3(-0.015859311, -0.46535048, -0.071865246), Vector3(0.684, -0.21, -0.347), Vector3(-0.015859311, -0.46535048, -0.071865246), Vector3(-0.016, -0.465, -0.347), Vector3(-0.015859311, -0.46535048, -0.071865246)]
+"values": [Vector3(-0.015859311, -0.46535048, -0.071865246), Vector3(-0.016, -0.465, -0.347), Vector3(-0.015859311, -0.46535048, -0.071865246), Vector3(-0.016, -0.465, -0.347), Vector3(-0.015859311, -0.46535048, -0.071865246), Vector3(0.414, -0.615, -0.347), Vector3(-0.015859311, -0.46535048, -0.071865246), Vector3(-0.016, -0.465, -0.347)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -237,10 +237,10 @@ tracks/9/path = NodePath("Visual/NodeShaker/TrickEffect/FlyingCheese/CheeseSlice
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.93333334, 1.4, 1.9333333, 2.5, 3.13, 3.62, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.9, 1.3666667, 1.8333334, 2.3000002, 2.8, 3.3666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.6298719, 0.80608565, -0.0718653), Vector3(0.63, 0.806, -0.462), Vector3(0.6298719, 0.80608565, -0.0718653), Vector3(0.63, 0.806, -0.462), Vector3(0.6298719, 0.80608565, -0.0718653), Vector3(0.63, 0.806, -0.097), Vector3(0.6298719, 0.80608565, -0.0718653), Vector3(0.63, 0.806, -0.462), Vector3(0.6298719, 0.80608565, -0.0718653)]
+"values": [Vector3(0.6298719, 0.80608565, -0.0718653), Vector3(0.63, 0.806, -0.462), Vector3(0.6298719, 0.80608565, -0.0718653), Vector3(0.63, 0.806, -0.462), Vector3(0.6298719, 0.80608565, -0.0718653), Vector3(0.7, 0.816, -0.422), Vector3(0.6298719, 0.80608565, -0.0718653), Vector3(0.63, 0.806, -0.462)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -249,10 +249,10 @@ tracks/10/path = NodePath("Visual/NodeShaker/TrickEffect/FlyingCheese/CheeseSlic
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.93333334, 1.4, 1.9333333, 2.5, 3.13, 3.62, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.9, 1.3666667, 1.8333334, 2.3000002, 2.8, 3.3666666, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.70445913, 0.87628, -0.0718653), Vector3(-0.704, 0.876, -0.327), Vector3(-0.70445913, 0.87628, -0.0718653), Vector3(-0.704, 0.876, -0.327), Vector3(-0.70445913, 0.87628, -0.0718653), Vector3(-0.394, 0.776, -0.207), Vector3(-0.70445913, 0.87628, -0.0718653), Vector3(-0.704, 0.876, -0.327), Vector3(-0.70445913, 0.87628, -0.0718653)]
+"values": [Vector3(-0.70445913, 0.87628, -0.0718653), Vector3(-0.704, 0.876, -0.327), Vector3(-0.70445913, 0.87628, -0.0718653), Vector3(-0.704, 0.876, -0.327), Vector3(-0.70445913, 0.87628, -0.0718653), Vector3(-0.899, 0.601, -0.252), Vector3(-0.70445913, 0.87628, -0.0718653), Vector3(-0.704, 0.876, -0.327)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -261,7 +261,7 @@ tracks/11/path = NodePath("Visual/NodeShaker/TrickEffect/FlyingCheese:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.9, 1.7, 2.8, 4),
+"times": PackedFloat32Array(0, 0.9, 1.8333334, 2.8, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1), Vector3(0, 0, 0)]
@@ -530,7 +530,7 @@ mesh = SubResource("CylinderMesh_lfrfa")
 surface_material_override/0 = SubResource("StandardMaterial3D_ryhgx")
 
 [node name="FlyingCheese" type="Node3D" parent="Visual/NodeShaker/TrickEffect" unique_id=1352453881]
-transform = Transform3D(1, -3.1982978e-08, 1.906334e-15, 3.1982978e-08, 1, 6.097024e-23, -1.906334e-15, 0, 1, 0, 0, 0.1)
+transform = Transform3D(1, -3.1982978e-08, 1.906334e-15, 3.1982978e-08, 1, 6.097024e-23, -1.906334e-15, 0, 1, 0, 0, 0)
 
 [node name="CheeseSlice" type="MeshInstance3D" parent="Visual/NodeShaker/TrickEffect/FlyingCheese" unique_id=1278490435]
 physics_interpolation_mode = 2

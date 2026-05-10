@@ -1,9 +1,27 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b5mvmts0o7f3e"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5mvmts0o7f3e"]
 
 [ext_resource type="Texture2D" uid="uid://qhjn7vrcvaq6" path="res://Assets/Meshes/Characters/Shrek/Shrek_0.png" id="1_vrkm5"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t18pc"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1.5720325, 0.1840427, 0, 1)
+grow = true
+grow_amount = 0.001
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
 [resource]
+next_pass = SubResource("StandardMaterial3D_t18pc")
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
 albedo_texture = ExtResource("1_vrkm5")
 emission_enabled = true
 emission_energy_multiplier = 0.05
 emission_texture = ExtResource("1_vrkm5")
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(1.5720325, 0.1840427, 0, 1)
+stencil_outline_thickness = 0.001
