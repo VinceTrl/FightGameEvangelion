@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cbrnhabrfiklv" path="res://Scenes/Gameplay/MinecraftBlock/barrel_block.tscn" id="18_m3306"]
 [ext_resource type="PackedScene" uid="uid://xkjrt0g6fmqp" path="res://Scenes/Gameplay/MinecraftBlock/OakDoor_block.tscn" id="19_ne36o"]
 [ext_resource type="PackedScene" uid="uid://omqpxk6sa08h" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_water.tscn" id="23_dgmmt"]
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="23_r6wuc"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="23_r6wuc"]
 [ext_resource type="Material" uid="uid://bpwv7bubet4" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Bedrock.tres" id="24_8fa7y"]
 [ext_resource type="PackedScene" uid="uid://byw6x50nmqlek" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_long.tscn" id="24_m7ihg"]
 [ext_resource type="PackedScene" uid="uid://dpq0pgfrctcqi" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_dandelion.tscn" id="25_k3uph"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://34bk08ifvvh8" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_bush_1.tscn" id="30_dgmmt"]
 [ext_resource type="PackedScene" uid="uid://spwvq6fmh5ll" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_bush_0.tscn" id="31_l86xw"]
 [ext_resource type="PackedScene" uid="uid://di0w6jx44xreq" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_torch_wall.tscn" id="32_dgmmt"]
+
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fp3fa"]
 _surfaces = [{

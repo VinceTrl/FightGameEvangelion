@@ -1,17 +1,18 @@
-[gd_scene format=3 uid="uid://ddy2qhl3y5tq1"]
+[gd_scene format=3 uid="uid://814jnaxs03vm"]
 
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_2pu7m"]
 [ext_resource type="Material" uid="uid://ck65txwn45jd2" path="res://Assets/Materials/Gameplay/MinecraftPlants/M_Plant_Grass_Bottom.tres" id="2_bqgdu"]
-[ext_resource type="Script" uid="uid://r4oitbq4ac83" path="res://Scripts/Gameplay/MinecraftBlock/block_link.gd" id="2_s0fda"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_s0fda"]
 lightmap_size_hint = Vector2i(3, 3)
 size = Vector2(0.3, 0.2)
 
-[node name="MinecraftGrassLow" type="Node3D" unique_id=2078838959 node_paths=PackedStringArray("root")]
-script = ExtResource("2_s0fda")
-root = NodePath(".")
+[node name="MinecraftGrassLow" unique_id=2078838959 instance=ExtResource("1_2pu7m")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1379156052]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+[node name="MeshInstance3D" parent="." index="0" unique_id=1379156052]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0.1, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1" unique_id=323093683]
+transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 0, 0.1, 0)
 mesh = SubResource("QuadMesh_s0fda")
 surface_material_override/0 = ExtResource("2_bqgdu")

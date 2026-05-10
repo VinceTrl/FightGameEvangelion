@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckk6wflbwxnkb"]
 
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="1_8mons"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_8mons"]
 [ext_resource type="Texture2D" uid="uid://bwvuypy8s78o" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/allium.png" id="2_8mons"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ex0iu"]

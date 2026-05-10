@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqq2ycf30g8lb"]
 
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="1_emjl2"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_emjl2"]
 [ext_resource type="Texture2D" uid="uid://ceoyg8gso16ph" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/white_tulip.png" id="2_emjl2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ex0iu"]

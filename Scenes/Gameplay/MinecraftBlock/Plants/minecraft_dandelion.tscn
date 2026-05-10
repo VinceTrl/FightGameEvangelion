@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpq0pgfrctcqi"]
 
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_grass_low.tscn" id="1_bq7ol"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_bq7ol"]
 [ext_resource type="Texture2D" uid="uid://tw541gnbl8np" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/dandelion.png" id="2_fvvsr"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ex0iu"]
