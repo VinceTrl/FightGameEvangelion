@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bla1bvkvy68xo"]
 
 [ext_resource type="Texture2D" uid="uid://pts5k34rl635" path="res://Assets/Sprites/Placeholders/MinecraftBackgroundPlaceholder.jpg" id="1_rk54l"]
-[ext_resource type="PackedScene" uid="uid://b076h1xye7t4t" path="res://Assets/Meshes/Props/Minecraft/Minecraft_exports/minecraft_village.glb" id="2_31a1l"]
+[ext_resource type="PackedScene" uid="uid://blhnohfyk6bxk" path="res://Assets/Meshes/Props/Minecraft/Minecraft_exports/MiniecraftBackground.glb" id="3_uw7j3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_31a1l"]
 size = Vector2(30, 16)
@@ -14,25 +14,21 @@ disable_receive_shadows = true
 [node name="MinecraftEnviro" type="Node3D" unique_id=1476158531]
 
 [node name="PlaceholderBackground" type="MeshInstance3D" parent="." unique_id=427118259]
-transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 1.3113416e-06, -82.54071)
+transform = Transform3D(30, 0, 0, 0, -1.3113416e-06, -30, 0, 30, -1.3113416e-06, 0, -5.1264954, -325.64355)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_31a1l")
 surface_material_override/0 = SubResource("StandardMaterial3D_uw7j3")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1637407776]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.9209347, 7.8965034, -9.887775)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.9209347, 3.4880471, -9.887775)
 
-[node name="scene_0" parent="Node3D" unique_id=535474957 instance=ExtResource("2_31a1l")]
-
-[node name="scene_1" parent="Node3D" unique_id=1803807372 instance=ExtResource("2_31a1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
-
-[node name="scene_2" parent="Node3D" unique_id=935453772 instance=ExtResource("2_31a1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
+[node name="MiniecraftBackground" parent="Node3D" unique_id=1856487539 instance=ExtResource("3_uw7j3")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -37.198074, -25.1095, -37.743053)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1879724455]
-transform = Transform3D(0.5957521, -0.46865964, -0.6522558, 0.79858196, 0.43230835, 0.41877967, 0.08571047, -0.7703686, 0.63181174, 1, 9.021107, -0.12594032)
+transform = Transform3D(0.8474048, -0.29904348, -0.43872356, 0.5062491, 0.2059912, 0.8374242, -0.16005313, -0.9317407, 0.32594836, 1, 9.021107, -0.12594032)
 layers = 2
+light_energy = 3.0
 light_cull_mask = 4293918722
 shadow_enabled = true
 shadow_opacity = 0.8
