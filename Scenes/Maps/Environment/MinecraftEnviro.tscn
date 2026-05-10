@@ -31,9 +31,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1879724455]
-transform = Transform3D(0.5957521, -0.46865964, -0.6522558, 0.79858196, 0.43230835, 0.41877964, 0.08571047, -0.7703686, 0.63181174, 0, 1.5211067, -9.12594)
+transform = Transform3D(0.5957521, -0.46865964, -0.6522558, 0.79858196, 0.43230835, 0.41877967, 0.08571047, -0.7703686, 0.63181174, 1, 9.021107, -0.12594032)
 layers = 2
-light_energy = 3.0
 light_cull_mask = 4293918722
 shadow_enabled = true
 shadow_opacity = 0.8

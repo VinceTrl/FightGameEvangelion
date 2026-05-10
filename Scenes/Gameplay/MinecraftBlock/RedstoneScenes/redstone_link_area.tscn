@@ -6,10 +6,11 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_ispeu"]
 radius = 0.15
 
-[node name="RedstoneLinkArea" type="Area3D" unique_id=1031951996 groups=["Redstone"]]
+[node name="RedstoneLinkArea" type="Area3D" unique_id=1031951996 groups=["Enviro", "Redstone"]]
 collision_layer = 256
 collision_mask = 256
 script = ExtResource("1_tlc2s")
+isActive = true
 castLength = 0.35
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=389159241]

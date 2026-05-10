@@ -22,7 +22,7 @@ extends RedstoneReceiver
 @export var verticalRot:Vector3 = Vector3(90,90,90)
 
 var material:Material
-
+var heightAlignmentThreshold:float = 0.1
 var materials:Array[Material]
 
 func _ready() -> void:
@@ -70,7 +70,8 @@ func UpdateMeshes():
 	for link in links:
 		#if up or down
 		if(link.isActive):
-			if(link.global_position.y != redstoneLink.global_position.y):
+			var heightDiff:float = abs(link.global_position.y - redstoneLink.global_position.y)
+			if(heightDiff > heightAlignmentThreshold):
 				if(link.global_position.y > redstoneLink.global_position.y):
 					topLine.visible = true
 				else:
@@ -110,6 +111,7 @@ func UpdateMaterialEmission():
 		mat.emission_energy_multiplier = energy
 		mat.albedo_color = color
 	
+#OLD FUNCTION >>> NOT USED
 func UpdateMaterialTexture():
 	if(redstoneLink.redstoneSource):
 		material.albedo_texture = LinkTexture

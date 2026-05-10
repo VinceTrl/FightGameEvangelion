@@ -25,6 +25,14 @@
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="20_r32yb"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="21_5rrsv"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_biqso"]
+size = Vector2(100, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hg4j4"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 0.34117648)
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
 
 [sub_resource type="Environment" id="Environment_p4aet"]
@@ -42,6 +50,12 @@ items = Array[ExtResource("3_hg4j4")]([ExtResource("4_a6fen"), ExtResource("5_ba
 [node name="Enviro" type="Node3D" parent="." unique_id=510669441]
 
 [node name="MinecraftEnviro" parent="Enviro" unique_id=1476158531 instance=ExtResource("15_oxu42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enviro" unique_id=1502108869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2842631)
+mesh = SubResource("QuadMesh_biqso")
+surface_material_override/0 = SubResource("StandardMaterial3D_hg4j4")
 
 [node name="Lighting" type="Node3D" parent="." unique_id=818802441]
 

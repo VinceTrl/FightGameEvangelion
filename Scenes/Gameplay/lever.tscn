@@ -84,7 +84,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ktul"]
 size = Vector3(0.3, 0.3432373, 0.3)
 
-[node name="Lever" type="Node3D" unique_id=1140781995 node_paths=PackedStringArray("sprite", "hurtbox", "redstoneLink", "animationPlayer")]
+[node name="Lever" type="Node3D" unique_id=1140781995 node_paths=PackedStringArray("sprite", "hurtbox", "redstoneLink", "animationPlayer") groups=["Enviro"]]
 script = ExtResource("1_x75jw")
 sprite = NodePath("Visual/Sprite3D")
 hurtbox = NodePath("Hurtbox")
@@ -134,7 +134,6 @@ shape = SubResource("BoxShape3D_7ktul")
 
 [node name="RedstoneLinkArea" parent="." unique_id=1031951996 instance=ExtResource("4_vqd33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-isActive = true
 isPowerSource = true
 
 [node name="RedstoneVisual" parent="RedstoneLinkArea" index="1" unique_id=1616474288]
