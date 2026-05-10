@@ -4,7 +4,86 @@
 [ext_resource type="Script" uid="uid://dhrcftuno7fkc" path="res://Scripts/Gameplay/Items/shrek_item.gd" id="1_xekkg"]
 [ext_resource type="PackedScene" uid="uid://cdv55byodmt2m" path="res://Assets/Meshes/Characters/Shrek/shrek.tscn" id="2_j27qo"]
 [ext_resource type="PackedScene" uid="uid://bpnv51teg4qq5" path="res://Scenes/Camera/camera_target.tscn" id="4_1w6qf"]
+[ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="4_dairh"]
 [ext_resource type="PackedScene" uid="uid://dg5sc0ov3gcag" path="res://Scenes/Utility/ground_magnet.tscn" id="5_hl676"]
+
+[sub_resource type="Animation" id="Animation_dairh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/WarningSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_s63ri"]
+resource_name = "ShrekSpawn"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/NodeShaker/Shrek/VFX_Fire01_mecha")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.80230194),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"EmitParticles"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/WarningSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/NodeShaker/Shrek/Skeleton3D/HandR/Hitbox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9680454),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ActiveHitBox"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/NodeShaker/Shrek/Skeleton3D/HandL/Hitbox")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.96804535),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ActiveHitBox"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wk5k4"]
+_data = {
+&"RESET": SubResource("Animation_dairh"),
+&"ShrekSpawn": SubResource("Animation_s63ri")
+}
 
 [node name="ShrekItem" type="Node3D" unique_id=1189814528]
 script = ExtResource("1_xekkg")
@@ -17,8 +96,68 @@ script = ExtResource("1_ats3x")
 [node name="Shrek" parent="Visual/NodeShaker" unique_id=1387736800 instance=ExtResource("2_j27qo")]
 transform = Transform3D(35, 0, 0, 0, 35, 0, 0, 0, 35, 0, 0, 0)
 
+[node name="Skeleton3D" parent="Visual/NodeShaker/Shrek" index="0" unique_id=1310819209]
+bones/0/position = Vector3(-0.0002937743, 0.007968852, -0.00043773584)
+bones/0/rotation = Quaternion(-0.06321469, 0.030718854, -0.085771315, 0.99383277)
+bones/1/rotation = Quaternion(0.07268714, -0.080816865, -0.008984464, 0.9940345)
+bones/2/rotation = Quaternion(0.038938206, -0.012281638, 0.06733803, 0.9968945)
+bones/3/rotation = Quaternion(0.040140618, -0.011683324, 0.0667342, 0.99689466)
+bones/4/rotation = Quaternion(0.003164574, -0.0387848, 0.014130216, 0.99914277)
+bones/5/rotation = Quaternion(-0.063289285, -0.084283374, -0.1271519, 0.9862674)
+bones/7/rotation = Quaternion(0.6062069, 0.40085158, -0.49601564, 0.4751838)
+bones/8/rotation = Quaternion(0.24106404, 0.45583707, 0.03121493, 0.856228)
+bones/9/rotation = Quaternion(-0.02426991, 4.4913726e-05, 0.38774806, 0.92144585)
+bones/10/rotation = Quaternion(-0.05080727, 0.11020038, 0.0017388401, 0.9926085)
+bones/11/rotation = Quaternion(0.0044691483, 0.9974215, 0.042874638, 0.05737793)
+bones/12/rotation = Quaternion(0.1763438, 0.001473086, -0.00054426346, 0.9843274)
+bones/13/rotation = Quaternion(0.027905913, 0.01604212, 0.026773237, 0.99912316)
+bones/15/rotation = Quaternion(0.6578863, -0.34544593, 0.5006271, 0.44410056)
+bones/16/rotation = Quaternion(0.22836229, -0.16068985, 0.10974431, 0.9539317)
+bones/17/rotation = Quaternion(-0.025262438, -5.346758e-05, -0.4552702, 0.8899949)
+bones/18/rotation = Quaternion(-0.03415032, -0.11160818, 0.06078592, 0.99130344)
+bones/19/rotation = Quaternion(0.03110594, 0.96855026, 0.05571854, -0.24049616)
+bones/20/rotation = Quaternion(0.13645872, -0.012333137, -0.18232182, 0.97364557)
+bones/21/rotation = Quaternion(-0.046175316, 0.014104968, 0.061810687, 0.9969195)
+bones/23/rotation = Quaternion(0.046369944, 0.2518731, 0.9034232, -0.34385544)
+bones/24/rotation = Quaternion(-0.7235867, 0.13797283, -0.03349096, 0.6754734)
+bones/25/rotation = Quaternion(0.8343931, -0.07618899, -0.16100317, 0.52159524)
+bones/26/rotation = Quaternion(0.31565663, -0.024476709, 0.004941391, 0.9485449)
+bones/28/rotation = Quaternion(-0.13929318, 0.16097175, 0.9718244, 0.10120727)
+bones/29/rotation = Quaternion(-0.67557347, -0.020018015, -0.0019149755, 0.73701835)
+bones/30/rotation = Quaternion(0.820751, 0.038501, 0.14460921, 0.55133814)
+bones/31/rotation = Quaternion(0.32809827, 0.024402356, -0.0045322846, 0.9443176)
+
+[node name="HandR" parent="Visual/NodeShaker/Shrek/Skeleton3D" index="5"]
+transform = Transform3D(0.6996155, -0.40997598, 0.585199, 0.05670917, -0.7845671, -0.6174452, 0.71226555, 0.46516025, -0.52564603, -0.008552803, 0.0071586473, 0.00041394169)
+
+[node name="HandL" parent="Visual/NodeShaker/Shrek/Skeleton3D" index="6"]
+transform = Transform3D(0.9706809, 0.20147608, 0.13109437, 0.23477164, -0.9116935, -0.33719, 0.051582128, 0.35808122, -0.9322644, 0.009986461, 0.008568195, 0.0024715853)
+
+[node name="AnimationPlayer" parent="Visual/NodeShaker/Shrek" index="1" unique_id=1896385336]
+autoplay = &""
+
+[node name="VFX_Fire01_mecha" parent="Visual/NodeShaker/Shrek" index="2"]
+startEmitting = false
+
+[node name="WarningSprite" type="Sprite3D" parent="Visual" unique_id=1628084407]
+transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, 0, 0.3163554, 0.24427795)
+visible = false
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("4_dairh")
+vframes = 7
+frame = 2
+
 [node name="CameraTarget" parent="." unique_id=733406383 instance=ExtResource("4_1w6qf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.469818, 0)
+autoRegister = false
 
 [node name="GroundMagnet" parent="." unique_id=2039001465 instance=ExtResource("5_hl676")]
 auto_align_on_update = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1843000940]
+libraries/ = SubResource("AnimationLibrary_wk5k4")
+
+[editable path="Visual/NodeShaker/Shrek"]

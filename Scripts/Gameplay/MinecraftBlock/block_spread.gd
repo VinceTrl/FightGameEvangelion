@@ -27,6 +27,7 @@ func _ready() -> void:
 	for cast in raycasts:
 		cast.add_exception(excludeCollisions)
 	blockManager = Manager.gameManager.block_manager
+	Manager.gameManager.FightEnd.connect(StopSpread)
 	#blockScene = load(blockScene.resource_path)
 	#blockManager.BlockTicked.connect(SpreadUpdate)
 
@@ -76,4 +77,8 @@ func SpawnBlock(spawnPosition:Vector3):
 	scene.global_position = spawnPosition
 	
 	print("Spawned New Block : " + str(scene.name))
+	pass
+	
+func StopSpread():
+	canUpdate = false
 	pass
