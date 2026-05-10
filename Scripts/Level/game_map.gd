@@ -4,6 +4,7 @@ extends Node3D
 
 @export var enviro: Array[Node3D]
 @export var lights: Array[Node3D]
+@export var overrideEnvironment:Environment
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

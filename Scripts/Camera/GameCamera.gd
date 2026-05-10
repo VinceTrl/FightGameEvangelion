@@ -74,6 +74,7 @@ func _ready() -> void:
 	Manager.gameCamera = self
 	Manager.OnFightFinish.connect(OnFightFinished)
 	currentOffset = cameraOffset
+	OverrideCameraEnvironment()
 	call_deferred("GetPlayers")
 	call_deferred("ResetCameraPosition")
 	
@@ -360,3 +361,7 @@ func OverrideMinMaxDist(newMinZ:float,newMaxZ:float):
 	minDistZ = newMinZ
 	maxDistZ = newMaxZ
 	
+func OverrideCameraEnvironment():
+	var map := Manager.gameManager.currentMap
+	if(map.overrideEnvironment):
+		camera.environment = map.overrideEnvironment

@@ -44,7 +44,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p35j8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_m2awa"]
 resource_local_to_scene = true
 resource_name = "Cube"
 _surfaces = [{
@@ -181,7 +181,10 @@ collision_layer = 1
 
 [node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=13657721]
 visible = false
-mesh = SubResource("ArrayMesh_p35j8")
+mesh = SubResource("ArrayMesh_m2awa")
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
 
 [node name="LiquidAnimationPlayer" type="AnimationPlayer" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=288686585]
 root_node = NodePath("../LiquidScaleController")
