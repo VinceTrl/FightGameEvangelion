@@ -1,0 +1,97 @@
+[gd_scene format=4 uid="uid://dy5ot600pe5tu"]
+
+[ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_jbmog"]
+[ext_resource type="Material" uid="uid://bpwv7bubet4" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Bedrock.tres" id="2_6kqtf"]
+[ext_resource type="Material" uid="uid://c37wyw5pdfggp" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_DiamondOre.tres" id="3_ev0c7"]
+[ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="6_6nysd"]
+[ext_resource type="Resource" uid="uid://jrye2sfxeegh" path="res://Resources/Spawnables/DiamondArmor.tres" id="6_lwm3x"]
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="7_nv00b"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fp3fa"]
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAQAFAAMABgAAAAQABwADAAUABQAGAAcABAAHAAYA"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lwm3x"]
+resource_local_to_scene = true
+resource_name = "Cube"
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"attribute_data": PackedByteArray("AACAvwAAgLQAAAAAAAAAAAAAAAD+/38/AACAvwAAgD8AAABAAAAANAAAQEAAAAAAAABAQAIAgD8AAABAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAD+/38/AACAPwAAAAAAAABAAAAANAAAAEAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": ExtResource("2_6kqtf"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEu6abRLumm0S7pptEu6abRDumm0Q7pptEu6abRLumm0Q7pptEu6abRLumm0S7pptEu6abRDumm0S7pptEO6abRLumm0Q7pptEO6abRDumm0Q7pptEO6abRDumm0S7pptEO6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7pptEO6abRDumm0S7/38AAP///7//fwAA/v//v/9/AAD///+//38AAP///78AAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP///3//f///////f/9///////9//3///////3//f////3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgL8BAIA/AACAvwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_6kqtf"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7/3//f/9/////f/9//3////9//3//f////3//f/9///8=")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAP7/fz8AAIA/AACAP/7/fz8AAABAAAAAtAAAAEA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_6kqtf"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7//////9//////////3//////////f/////////9///8=")
+}]
+shadow_mesh = SubResource("ArrayMesh_fp3fa")
+
+[node name="DiamondOreBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_jbmog")]
+spawner = NodePath("Spawner")
+
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=13657721]
+mesh = SubResource("ArrayMesh_lwm3x")
+surface_material_override/0 = ExtResource("3_ev0c7")
+surface_material_override/1 = ExtResource("3_ev0c7")
+surface_material_override/2 = ExtResource("3_ev0c7")
+
+[node name="Spawner" parent="." index="5" unique_id=1716012024 instance=ExtResource("6_6nysd")]
+items = Array[ExtResource("7_nv00b")]([ExtResource("6_lwm3x"), ExtResource("6_lwm3x")])
+registerOnManager = false

@@ -9,8 +9,10 @@ extends Spell
 
 @export var followOffset:Vector3 = Vector3.ZERO
 @export_range(0,1,0.01) var followWeight:float = 0.1
+@export var onlyForCharacters:bool = false
 
 @export_category("Effect")
+@export var idleOnReady:bool = false
 @export var freezeFrameDuration:float = 0.25
 @export var cameraShake:String = "HitShake"
 @export var nodeShaker:NodeShaker
@@ -21,6 +23,8 @@ var isLinked:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if(idleOnReady):
+		animation_player.play("Idle")
 	pass # Replace with function body.
 
 
@@ -75,10 +79,15 @@ func _on_hurt_box_detection_area_entered(area: Area3D) -> void:
 		if(!area.isActive): return
 		if(area.owner is Spell):return
 		
+		if(onlyForCharacters):
+			if(area.owner is not PlayerCharacter and area.owner is not Character):
+				return
+		
 		linkedHurtbox = area
 		linkedHurtbox.isActive = false
 		hurtbox.isActive = true
 		hurtbox.owner_id = linkedHurtbox.owner_id
 		glow_sprite.visible = false
+		animation_player.play("PickUp")
 		isLinked = true
 		pass

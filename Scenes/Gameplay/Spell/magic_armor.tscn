@@ -354,6 +354,9 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_nsfo4"]
 resource_name = "Idle"
 
+[sub_resource type="Animation" id="Animation_0f13x"]
+resource_name = "PickUp"
+
 [sub_resource type="Animation" id="Animation_pde6j"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -432,6 +435,7 @@ _data = {
 &"Death": SubResource("Animation_nspy7"),
 &"Hurt": SubResource("Animation_xg065"),
 &"Idle": SubResource("Animation_nsfo4"),
+&"PickUp": SubResource("Animation_0f13x"),
 &"RESET": SubResource("Animation_pde6j"),
 &"Spawn": SubResource("Animation_rqtme")
 }

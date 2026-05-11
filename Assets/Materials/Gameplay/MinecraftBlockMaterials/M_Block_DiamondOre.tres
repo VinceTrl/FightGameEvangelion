@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c37wyw5pdfggp"]
+
+[ext_resource type="Texture2D" uid="uid://btwaefw88iq1j" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/diamond_ore.png" id="1_fjia2"]
+
+[resource]
+albedo_texture = ExtResource("1_fjia2")
+texture_filter = 0

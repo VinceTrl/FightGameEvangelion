@@ -1,0 +1,320 @@
+[gd_scene format=3 uid="uid://dy37mgrsjlqeq"]
+
+[ext_resource type="Script" uid="uid://crmj6vqjeltlr" path="res://Scripts/Gameplay/Spell/magic_armor.gd" id="1_i1w8f"]
+[ext_resource type="Script" uid="uid://boswmyv0w3oxy" path="res://Scripts/GameEffects/Animations/NodeShaker.gd" id="2_3gwuw"]
+[ext_resource type="Texture2D" uid="uid://c0ph7x1vlhpbo" path="res://Assets/Sprites/Vfx/Glow/item_glow.png" id="3_xjcgw"]
+[ext_resource type="Texture2D" uid="uid://c1b5lua6urman" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/diamond_chestplate.png" id="4_7aqm7"]
+[ext_resource type="Texture2D" uid="uid://lhr3pgwcxct4" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/diamond_helmet.png" id="4_i1w8f"]
+[ext_resource type="Texture2D" uid="uid://butjq6wsrl2fr" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/diamond_leggings.png" id="5_3gwuw"]
+[ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="7_x1nyf"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="8_planv"]
+
+[sub_resource type="Animation" id="Animation_7aqm7"]
+resource_name = "Loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bdmbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1w8f"]
+_data = {
+&"Loop": SubResource("Animation_7aqm7"),
+&"RESET": SubResource("Animation_bdmbk")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jg57t"]
+size = Vector3(0.5, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsfo4"]
+size = Vector3(0.75, 0.75, 0.5)
+
+[sub_resource type="Animation" id="Animation_nspy7"]
+resource_name = "Death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/NodeShaker/ArmorCircleRoot/ArmorSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.049233638, 0.19701347),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.75, 1.75, 1.75), Vector3(2.5, 2.5, 2.5), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/NodeShaker/ArmorCircleRoot/ArmorSprite3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.049233638, 0.19701347),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.75, 1.75, 1.75), Vector3(2.5, 2.5, 2.5), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/NodeShaker/ArmorCircleRoot/ArmorSprite2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.049233638, 0.19701347),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.75, 1.75, 1.75), Vector3(2.5, 2.5, 2.5), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xg065"]
+resource_name = "Hurt"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_nsfo4"]
+resource_name = "Idle"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/NodeShaker/ArmorIdleRoot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/NodeShaker/ArmorCircleRoot:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_i1w8f"]
+resource_name = "PickUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/NodeShaker/ArmorCircleRoot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/NodeShaker/ArmorIdleRoot:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pde6j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/NodeShaker/ArmorCircleRoot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/NodeShaker/ArmorIdleRoot:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/NodeShaker/ArmorCircleRoot/ArmorSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.75, 1.75, 1.75)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/NodeShaker/ArmorCircleRoot/ArmorSprite3:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.75, 1.75, 1.75)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visual/NodeShaker/ArmorCircleRoot/ArmorSprite2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.75, 1.75, 1.75)]
+}
+
+[sub_resource type="Animation" id="Animation_rqtme"]
+resource_name = "Spawn"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nspy7"]
+_data = {
+&"Death": SubResource("Animation_nspy7"),
+&"Hurt": SubResource("Animation_xg065"),
+&"Idle": SubResource("Animation_nsfo4"),
+&"PickUp": SubResource("Animation_i1w8f"),
+&"RESET": SubResource("Animation_pde6j"),
+&"Spawn": SubResource("Animation_rqtme")
+}
+
+[node name="MagicArmorDiamond" type="Node3D" unique_id=1719726591 node_paths=PackedStringArray("nodeShaker")]
+script = ExtResource("1_i1w8f")
+followWeight = 0.75
+onlyForCharacters = true
+idleOnReady = true
+nodeShaker = NodePath("Visual/NodeShaker")
+
+[node name="Visual" type="Node3D" parent="." unique_id=1501037746]
+
+[node name="NodeShaker" type="Node3D" parent="Visual" unique_id=2016610298 node_paths=PackedStringArray("nodeToShake")]
+script = ExtResource("2_3gwuw")
+nodeToShake = NodePath(".")
+metadata/_custom_type_script = "uid://boswmyv0w3oxy"
+
+[node name="ArmorCircleRoot" type="Node3D" parent="Visual/NodeShaker" unique_id=604164547]
+visible = false
+
+[node name="ArmorSprite" type="Sprite3D" parent="Visual/NodeShaker/ArmorCircleRoot" unique_id=535744626]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -0.17730594, 0, 0.22283936)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_7aqm7")
+
+[node name="ArmorSprite3" type="Sprite3D" parent="Visual/NodeShaker/ArmorCircleRoot" unique_id=1918288926]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0.25, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_i1w8f")
+
+[node name="ArmorSprite2" type="Sprite3D" parent="Visual/NodeShaker/ArmorCircleRoot" unique_id=2024927396]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -0.17730594, 0, -0.2788086)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("5_3gwuw")
+
+[node name="ArmorAnimationPlayer" type="AnimationPlayer" parent="Visual/NodeShaker/ArmorCircleRoot" unique_id=1852094076]
+libraries/ = SubResource("AnimationLibrary_i1w8f")
+autoplay = &"Loop"
+
+[node name="ArmorIdleRoot" type="Node3D" parent="Visual/NodeShaker" unique_id=156065956]
+
+[node name="ArmorSprite" type="Sprite3D" parent="Visual/NodeShaker/ArmorIdleRoot" unique_id=57807858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0054335445, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_7aqm7")
+
+[node name="ArmorSprite3" type="Sprite3D" parent="Visual/NodeShaker/ArmorIdleRoot" unique_id=1232543172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118949994, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_i1w8f")
+
+[node name="ArmorSprite2" type="Sprite3D" parent="Visual/NodeShaker/ArmorIdleRoot" unique_id=26302797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13282803, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("5_3gwuw")
+
+[node name="GlowSprite" type="Sprite3D" parent="Visual/NodeShaker" unique_id=504510426]
+transform = Transform3D(1.24, 0, 0, 0, 1.24, 0, 0, 0, 1.24, 0, 0, -0.2)
+texture = ExtResource("3_xjcgw")
+
+[node name="HurtBoxDetection" type="Area3D" parent="." unique_id=1946497292]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBoxDetection" unique_id=45876001]
+shape = SubResource("BoxShape3D_jg57t")
+debug_color = Color(0.7098588, 0.26462606, 1, 0.41960785)
+
+[node name="HealthComponent" type="Node" parent="." unique_id=681347486]
+script = ExtResource("7_x1nyf")
+healthPoints = 2
+metadata/_custom_type_script = "uid://cw2bpx65nkj7h"
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1330270292]
+script = ExtResource("8_planv")
+randomID = true
+isActive = false
+metadata/_custom_type_script = "uid://be4u7kwwov65g"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=2110327854]
+shape = SubResource("BoxShape3D_nsfo4")
+debug_color = Color(0, 0.6481399, 0.19973937, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=159914037]
+libraries/ = SubResource("AnimationLibrary_nspy7")
+
+[connection signal="area_entered" from="HurtBoxDetection" to="." method="_on_hurt_box_detection_area_entered"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SpawnableItem" format=3 uid="uid://jrye2sfxeegh"]
+
+[ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="1_ayxwo"]
+
+[resource]
+script = ExtResource("1_ayxwo")
+itemName = &"DIAMOND_ARMOR"
+scenePath = &"res://Scenes/Gameplay/Spell/magic_armor_diamond.tscn"
+spawnChance = 1
