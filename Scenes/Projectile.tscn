@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://difa1tbhr27vn"]
+[gd_scene format=3 uid="uid://difa1tbhr27vn"]
 
 [ext_resource type="Script" uid="uid://dgfhro4eut85b" path="res://Scripts/Gameplay/Projectiles/Projectile.gd" id="1_imuxp"]
 [ext_resource type="Curve" uid="uid://bb47w0dbu6x4n" path="res://Resources/Curves/projectileSpeedParry.tres" id="2_h0nys"]
@@ -479,13 +479,13 @@ animations = [{
 "speed": 60.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yorw8"]
-size = Vector3(0.0918731, 0.0906219, 1)
+[sub_resource type="SphereShape3D" id="SphereShape3D_ekur6"]
+radius = 0.07975559
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kc145"]
 size = Vector3(0.239748, 0.132919, 1)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ekur6"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xxsyy"]
 resource_local_to_scene = true
 direction = Vector3(0, 1, 0)
 spread = 0.0
@@ -514,7 +514,7 @@ albedo_texture = SubResource("GradientTexture1D_xxsyy")
 _data = [Vector2(0, 1), 0.0, -2.75782, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Projectile" type="RigidBody3D"]
+[node name="Projectile" type="RigidBody3D" unique_id=553280013]
 collision_layer = 8
 collision_mask = 17
 axis_lock_linear_z = true
@@ -530,45 +530,47 @@ projectileMaxSpeed = 7.0
 parrySpeedCurve = ExtResource("2_h0nys")
 explodeWhenDestroyed = false
 
-[node name="CollisionShape2D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=1704209745]
 shape = SubResource("SphereShape3D_dkyrq")
 
-[node name="BulletSprite" type="AnimatedSprite3D" parent="."]
+[node name="BulletSprite" type="AnimatedSprite3D" parent="." unique_id=236478674]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_lalks")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.59496
+frame_progress = 0.63095915
 
-[node name="Hitbox" type="Area3D" parent="."]
+[node name="Hitbox" type="Area3D" parent="." unique_id=960793571]
 script = ExtResource("10_cujeu")
 type = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=2049857842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050583, -0.00524139, 0)
-shape = SubResource("BoxShape3D_yorw8")
+shape = SubResource("SphereShape3D_ekur6")
+debug_color = Color(0.980508, 0, 0.3830535, 0.41960785)
 
-[node name="Hurtbox" type="Area3D" parent="."]
+[node name="Hurtbox" type="Area3D" parent="." unique_id=419575335]
 script = ExtResource("11_w1rla")
 
-[node name="CollisionShape2D" type="CollisionShape3D" parent="Hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape3D" parent="Hurtbox" unique_id=149078368]
 shape = SubResource("BoxShape3D_kc145")
+debug_color = Color(0.30637094, 0.6276135, 2.117753e-06, 0.41960785)
 
-[node name="Sfx" type="AudioStreamPlayer3D" parent="."]
+[node name="Sfx" type="AudioStreamPlayer3D" parent="." unique_id=830992717]
 stream = ExtResource("6_0ldrt")
 volume_db = -15.0
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=2111449437]
 target_position = Vector3(1, 0, 0)
 collision_mask = 9
 debug_shape_custom_color = Color(1.46799e-06, 0.490135, 0, 1)
 
-[node name="TrailFX" parent="." instance=ExtResource("9_ekur6")]
+[node name="TrailFX" parent="." unique_id=1583657472 instance=ExtResource("9_ekur6")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.046, 0, 0)
-process_material = SubResource("ParticleProcessMaterial_ekur6")
+process_material = SubResource("ParticleProcessMaterial_xxsyy")
 
-[node name="TrailEmitter" type="TrailEmitter" parent="."]
+[node name="TrailEmitter" type="TrailEmitter" parent="." unique_id=1381088722]
 material = SubResource("StandardMaterial3D_ekur6")
 curve = SubResource("Curve_xxsyy")
 num_points = 4

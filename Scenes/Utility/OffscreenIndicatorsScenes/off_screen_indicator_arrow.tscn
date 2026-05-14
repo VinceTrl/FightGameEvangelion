@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3mlswdumg8l5"]
+
+[ext_resource type="PackedScene" uid="uid://dsmh6iwshesja" path="res://Scenes/Utility/off_screen_indicator.tscn" id="1_v4he2"]
+
+[node name="OffScreenIndicator_Arrow" unique_id=364675942 instance=ExtResource("1_v4he2")]
+px_offset = 160

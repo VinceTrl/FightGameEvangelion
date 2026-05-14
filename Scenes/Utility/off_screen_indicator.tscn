@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dsmh6iwshesja"]
+
+[ext_resource type="Script" uid="uid://dfd83ixyed0jl" path="res://Scripts/Utilities/off_screen_indicator.gd" id="1_pnsw6"]
+[ext_resource type="Texture2D" uid="uid://0v7fgbhw05j4" path="res://Assets/Sprites/Vfx/Arrows/WhiteArrows.png" id="2_pnsw6"]
+
+[node name="OffScreenIndicator" type="VisibleOnScreenNotifier3D" unique_id=364675942 node_paths=PackedStringArray("sprite")]
+process_mode = 1
+script = ExtResource("1_pnsw6")
+sprite = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1099475850]
+scale = Vector2(3, 3)
+texture = ExtResource("2_pnsw6")
+hframes = 4
+vframes = 4
+frame = 2
+region_rect = Rect2(32, 0, 15, 16)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bmm1spigj2q6f"]
+
+[ext_resource type="PackedScene" uid="uid://dsmh6iwshesja" path="res://Scenes/Utility/off_screen_indicator.tscn" id="1_7jqxf"]
+[ext_resource type="Texture2D" uid="uid://ckuqbn6akd7ae" path="res://Assets/GUI/Sprites/HUD/WashBrosHUD/GUI_Kiki_Head_1.png" id="2_xrep7"]
+
+[node name="OffScreenIndicator_Kiki" unique_id=364675942 instance=ExtResource("1_7jqxf")]
+px_offset = 210
+rotateSprite = false
+
+[node name="Sprite" parent="." index="0" unique_id=1099475850]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_xrep7")
+hframes = 1
+vframes = 1
+frame = 0

@@ -53,6 +53,8 @@
 [ext_resource type="Script" uid="uid://sopw88wf50pf" path="res://Scripts/Player/kiki_cheese.gd" id="50_icj4s"]
 [ext_resource type="Material" uid="uid://cglvq2emhncjs" path="res://Assets/Materials/Gameplay/mat_Cheese_kiki2.tres" id="52_0bapn"]
 [ext_resource type="Material" uid="uid://c4uibfx7vbjbf" path="res://Assets/Materials/Gameplay/mat_Cheese_kiki1.tres" id="52_rtkj7"]
+[ext_resource type="PackedScene" uid="uid://bmm1spigj2q6f" path="res://Scenes/Utility/OffscreenIndicatorsScenes/off_screen_indicator_kiki.tscn" id="54_1yvbr"]
+[ext_resource type="PackedScene" uid="uid://d3mlswdumg8l5" path="res://Scenes/Utility/OffscreenIndicatorsScenes/off_screen_indicator_arrow.tscn" id="54_i40i4"]
 
 [sub_resource type="Curve" id="Curve_qv1t1"]
 _data = [Vector2(0, 0), 0.0, 0.0342598, 0, 0, Vector2(1, 1), 0.174008, 0.0, 0, 0]
@@ -1313,6 +1315,14 @@ transform = Transform3D(25, 0, 0, 0, 25, 1.8874478e-06, 0, -1.8874478e-06, 25, 0
 mesh = SubResource("ArrayMesh_wytji")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("52_rtkj7")
+
+[node name="OffscreenIndicators" type="Node3D" parent="." unique_id=438606914]
+
+[node name="OffScreenIndicator_Arrow" parent="OffscreenIndicators" unique_id=364675942 instance=ExtResource("54_i40i4")]
+aabb = AABB(-0.09472879, -0.12628913, -0.20408031, 0.18945758, 0.25257826, 0.40816063)
+
+[node name="OffScreenIndicator_Kiki" parent="OffscreenIndicators" unique_id=827913161 instance=ExtResource("54_1yvbr")]
+aabb = AABB(-0.06507864, -0.04670185, -0.2218384, 0.13015728, 0.0934037, 0.4436768)
 
 [connection signal="timeout" from="Timers/RecoilTimer" to="StateMachine/Shoot" method="_on_recoil_timer_timeout"]
 [connection signal="timeout" from="Timers/ChargeAttackTimer" to="StateMachine/ChargingAttack" method="_on_charge_attack_timer_timeout"]

@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="8_ewbju"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
 [ext_resource type="Resource" uid="uid://d282ym1u5ohem" path="res://Resources/Maps/DarkSoulsMap.tres" id="9_85qyi"]
+[ext_resource type="Texture2D" uid="uid://bm3edlyew80g" path="res://Assets/GUI/Sprites/HUD/WashBrosHUD/GUI_Kiki_Head_2.png" id="13_ewbju"]
 [ext_resource type="PackedScene" uid="uid://ckteefgjio63s" path="res://Scenes/Managers/game_capture.tscn" id="15_nb51f"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
 [ext_resource type="PackedScene" uid="uid://bpnn6fhicph64" path="res://Scenes/Utility/fps_counter.tscn" id="16_nnt18"]
@@ -64,6 +65,9 @@ stream = null
 [node name="CutCheese" parent="Gameplay/Player2/KikiCheese/CheeseWheel" parent_id_path=PackedInt32Array(1754892820, 957600814) index="0" unique_id=948980915]
 surface_material_override/0 = null
 
+[node name="Sprite" parent="Gameplay/Player2/OffscreenIndicators/OffScreenIndicator_Kiki" parent_id_path=PackedInt32Array(1754892820, 827913161) index="0" unique_id=1099475850]
+texture = ExtResource("13_ewbju")
+
 [node name="KillVolume" parent="Gameplay" unique_id=630851901 instance=ExtResource("8_u84ky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 
@@ -76,3 +80,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 [node name="FPSCounter" parent="." unique_id=1458728735 instance=ExtResource("16_nnt18")]
 
 [editable path="Gameplay/Player2"]
+[editable path="Gameplay/Player2/OffscreenIndicators/OffScreenIndicator_Kiki"]
