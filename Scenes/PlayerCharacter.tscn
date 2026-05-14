@@ -525,6 +525,24 @@ tracks/0/keys = {
 "values": [45]
 }
 
+[sub_resource type="Animation" id="Animation_0bapn"]
+resource_name = "Held"
+length = 0.6
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [189, 190, 191, 192, 193, 194]
+}
+
 [sub_resource type="Animation" id="Animation_c7nph"]
 resource_name = "Hurt"
 length = 0.5
@@ -691,6 +709,24 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_1yvbr"]
+resource_name = "OuinOuin"
+length = 0.5
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [180, 181, 182, 183, 184]
+}
+
 [sub_resource type="Animation" id="Animation_dvjaj"]
 length = 0.001
 tracks/0/type = "value"
@@ -816,12 +852,14 @@ _data = {
 &"Death": SubResource("Animation_su0wr"),
 &"DeathLoop": SubResource("Animation_hk6gi"),
 &"Fall": SubResource("Animation_kla1b"),
+&"Held": SubResource("Animation_0bapn"),
 &"Hurt": SubResource("Animation_c7nph"),
 &"Idle": SubResource("Animation_fq32u"),
 &"Jump": SubResource("Animation_spgss"),
 &"JumpStart": SubResource("Animation_sw63w"),
 &"Ledgegrab": SubResource("Animation_uhhuy"),
 &"Move": SubResource("Animation_ltgkn"),
+&"OuinOuin": SubResource("Animation_1yvbr"),
 &"RESET": SubResource("Animation_dvjaj"),
 &"Shoot": SubResource("Animation_qjx5s"),
 &"StartChargeShoot": SubResource("Animation_rysxc"),
@@ -963,7 +1001,7 @@ material_override = ExtResource("3_4fxgw")
 texture_filter = 0
 texture = ExtResource("5_a28o5")
 hframes = 9
-vframes = 20
+vframes = 22
 script = ExtResource("4_1nn6i")
 hitColor = Color(1, 1, 1, 1)
 

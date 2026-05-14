@@ -39,8 +39,11 @@ extends CharacterBody3D
 
 const landingSfx = preload("res://Assets/Sounds/SFX/FGHTBf_Anime Land 6_01.wav")
 const SD_GROUND_HIT = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_GroundHit.wav")
-const VFX_2D_LANDING = preload("res://Scenes/VFX/VFX2D/vfx_2d_landing.tscn")
+#const VFX_2D_LANDING = preload("res://Scenes/VFX/VFX2D/vfx_2d_landing.tscn")
 const VFX_2D_HEAL = preload("res://Scenes/VFX/VFX2D/vfx_2d_heal.tscn")
+
+const VFX_2D_LANDING_KIKI_RED = preload("uid://nr6s57qmawoc")
+const VFX_2D_LANDING_KIKI_YELLOW = preload("uid://4wmoge6u27bu")
 
 
 @export_group("References")
@@ -398,10 +401,16 @@ func LandingEffect():
 	sfx.stream = SD_GROUND_HIT
 	sfx.play()
 	Manager.gameManager.vibrationManager.LaunchVibration(playerID-1,"LandingVibration")
-	var vfx = VFX_2D_LANDING.instantiate()
+	
+	var vfx
+	if(playerID == 1):
+		vfx = VFX_2D_LANDING_KIKI_YELLOW.instantiate()
+	else:
+		vfx = VFX_2D_LANDING_KIKI_RED.instantiate()
+		
 	vfx.global_position = ground_location.global_position
 	get_tree().current_scene.add_child(vfx)
-			
+
 func ResetDash():
 	dashes = 0
 	

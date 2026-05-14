@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://4wmoge6u27bu"]
+
+[ext_resource type="Texture2D" uid="uid://bkdkale714hod" path="res://Assets/Sprites/Vfx/KikiVFX/Fx J2 V1.png" id="1_de6q1"]
+[ext_resource type="Script" uid="uid://bqsvlb8owoo24" path="res://Scripts/VFX/Vfx2D.gd" id="2_mj431"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj431"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(0, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aivag"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(90, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtec6"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(180, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghyln"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(270, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2181"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(360, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsv1s"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(450, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l47vg"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(540, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ix4x"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(630, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk3ke"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(720, 360, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kva1"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(0, 450, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjdfj"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(90, 450, 90, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htwjj"]
+atlas = ExtResource("1_de6q1")
+region = Rect2(180, 450, 90, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jc5bv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj431")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aivag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtec6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghyln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2181")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsv1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l47vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ix4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk3ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kva1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjdfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htwjj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Vfx2DLanding_KikiYellow" type="AnimatedSprite3D" unique_id=315522993]
+offset = Vector2(0, 12)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jc5bv")
+autoplay = "default"
+frame = 11
+frame_progress = 1.0
+script = ExtResource("2_mj431")
+instanceScale = Vector3(1.5, 1.5, 1.5)

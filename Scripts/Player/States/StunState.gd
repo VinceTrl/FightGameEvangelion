@@ -3,13 +3,16 @@ extends PlayerState
 const PHYSICS_SPEAR_P1 = preload("uid://v5unfgtoa4w0")
 const PHYSICS_SPEAR_P2 = preload("uid://caxqeic6uhe0m")
 
+@export var stunAnimation:Array[String] = ["OuinOuin","Held"]
+
 
 func EnterState():
 	Name = "Stun"
 	
 	Player.velocity = Vector3.ZERO
 	
-	Player.animator.play("Taunt")
+	
+	Player.animator.play(stunAnimation.pick_random())
 	DropSpear()
 	
 	Player.ResetJump()
