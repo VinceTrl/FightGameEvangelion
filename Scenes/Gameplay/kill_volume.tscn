@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bem23jj1utect"]
+[gd_scene format=3 uid="uid://bem23jj1utect"]
 
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="1_ym5ic"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_abnlu"]
-size = Vector3(52.651, 1.93637, 20.7153)
+size = Vector3(52.651, 8.216232, 20.7153)
 
-[node name="KillVolume" type="Area3D"]
+[node name="KillVolume" type="Area3D" unique_id=1227670651]
 script = ExtResource("1_ym5ic")
 damage = 99
 owner_id = 99
 type = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.968338, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1788813825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.108269, 0)
 shape = SubResource("BoxShape3D_abnlu")

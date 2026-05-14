@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyhxqy5bmoxav" path="res://Scripts/Gameplay/Physics/physic_item.gd" id="1_vnlq7"]
 [ext_resource type="SpriteFrames" uid="uid://c25nx1dtn00n2" path="res://Assets/Sprites/Vfx/KikiVFX/kiki_vfx_P1_sprite_frames.tres" id="2_vnlq7"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="3_1k104"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vnlq7"]
 friction = 0.65
@@ -88,7 +89,10 @@ _data = {
 &"RESET": SubResource("Animation_ogrw0")
 }
 
-[node name="PhysicsSpear_P1" type="RigidBody3D" unique_id=327543984 node_paths=PackedStringArray("animation_player")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7k56"]
+size = Vector3(0.617, 0.14, 0.2)
+
+[node name="PhysicsSpear_P1" type="RigidBody3D" unique_id=327543984 node_paths=PackedStringArray("animation_player", "hitbox")]
 collision_layer = 16
 collision_mask = 19
 axis_lock_linear_z = true
@@ -103,6 +107,7 @@ script = ExtResource("1_vnlq7")
 impulseForce = 4.0
 animation_player = NodePath("Sprite3D/AnimationPlayer")
 destroyAnimation = "Destroy"
+hitbox = NodePath("Hitbox")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1588228437]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.033203125, -1.4513547e-09, 0)
@@ -117,3 +122,14 @@ animation = &"Idle"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=304904517]
 libraries/ = SubResource("AnimationLibrary_m33sh")
 autoplay = &"Idle"
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=739630295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024444073, 0)
+script = ExtResource("3_1k104")
+isActive = false
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=2029178251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025024414, 0.0048291013, 0)
+shape = SubResource("BoxShape3D_p7k56")
+debug_color = Color(0.9899542, 0, 0.28984275, 0.41960785)

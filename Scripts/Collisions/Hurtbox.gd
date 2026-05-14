@@ -36,12 +36,14 @@ func _on_area_entered(hitbox : Hitbox) -> void:
 
 	hitbox.emit_signal("OnHitWithHurtbox",self)
 	hitbox.OnHitSuccess.emit()
+	
+	TakeDamage(hitbox)
 
-	if owner.has_method("TakeDamage"):
-		owner.TakeDamage(hitbox)
-		
-	emit_signal("OnHurtboxTakeDamage",hitbox)
-	emit_signal("OnHurtboxHit")
+	#if owner.has_method("TakeDamage"):
+		#owner.TakeDamage(hitbox)
+		#
+	#emit_signal("OnHurtboxTakeDamage",hitbox)
+	#emit_signal("OnHurtboxHit")
 	
 	
 func HitVfx(hitbox:Hitbox):
@@ -58,3 +60,11 @@ func HitVfx(hitbox:Hitbox):
 	
 	vfx.global_position = targetPosition
 	get_tree().current_scene.add_child(vfx)
+	
+func TakeDamage(hitbox:Hitbox):
+	if (hitbox == null): return
+	if owner.has_method("TakeDamage"):
+		owner.TakeDamage(hitbox)
+		
+	emit_signal("OnHurtboxTakeDamage",hitbox)
+	emit_signal("OnHurtboxHit")

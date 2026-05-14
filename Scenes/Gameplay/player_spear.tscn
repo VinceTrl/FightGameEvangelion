@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://62jphhwnawdu"]
+[gd_scene format=3 uid="uid://62jphhwnawdu"]
 
 [ext_resource type="Script" uid="uid://ehbmr8wrnltc" path="res://Scripts/Player/player_spear.gd" id="1_bluxh"]
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiYellow.png" id="2_wcb7u"]
@@ -21,7 +21,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_68sb7"]
 resource_name = "SpearChargeReady"
-length = 0.200003
+length = 0.25
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -38,7 +38,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_77k2e"]
 resource_name = "SpearCharging"
-length = 0.533337
+length = 0.45
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -47,7 +47,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [81, 82, 83, 84, 85, 86, 87, 88, 89]
@@ -80,7 +80,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"times": PackedFloat32Array(0, 0.06538017, 0.13588706, 0.2004128, 0.26408407),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [99, 100, 101, 102, 103]
@@ -95,25 +95,23 @@ _data = {
 &"SpearShoot": SubResource("Animation_yrn73")
 }
 
-[node name="PlayerSpear" type="Node3D"]
+[node name="PlayerSpear" type="Node3D" unique_id=1943534013]
 script = ExtResource("1_bluxh")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=731206918]
 texture_filter = 0
 texture = ExtResource("2_wcb7u")
 hframes = 9
-vframes = 20
+vframes = 22
 frame = 81
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_jd5tt")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=837728666]
+libraries/ = SubResource("AnimationLibrary_jd5tt")
 
-[node name="ProjectileSpawnLocation" type="Marker3D" parent="."]
+[node name="ProjectileSpawnLocation" type="Marker3D" parent="." unique_id=1948004229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336817, 0, 0)
 gizmo_extents = 0.67
 
-[node name="DEBUG_SPRITE" type="Sprite3D" parent="ProjectileSpawnLocation"]
+[node name="DEBUG_SPRITE" type="Sprite3D" parent="ProjectileSpawnLocation" unique_id=987082869]
 visible = false
 texture = ExtResource("3_ua2go")

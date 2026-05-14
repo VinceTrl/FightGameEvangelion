@@ -101,3 +101,6 @@ sprite_frames = ExtResource("2_xvw12")
 [node name="AnimationPlayer" parent="Sprite3D" index="0" unique_id=304904517]
 libraries/ = SubResource("AnimationLibrary_4qkjt")
 autoplay = &""
+
+[node name="Hitbox" parent="." index="2" unique_id=739630295]
+owner_id = 2

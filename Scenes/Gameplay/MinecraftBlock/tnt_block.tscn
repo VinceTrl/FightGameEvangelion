@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://btgknalnysacc"]
+[gd_scene format=4 uid="uid://btgknalnysacc"]
 
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_tcp44"]
+[ext_resource type="Material" uid="uid://bpwv7bubet4" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Bedrock.tres" id="2_difwy"]
 [ext_resource type="Material" uid="uid://b1o0gn56dvpof" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT.tres" id="2_tcp44"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_1swjw"]
 [ext_resource type="Material" uid="uid://ct0x7tjpyokcu" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT_Top.tres" id="4_ikq8d"]
@@ -13,30 +14,149 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ikq8d"]
 size = Vector3(0.35, 0.35, 0.35)
 
-[node name="TntBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_tcp44")]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fp3fa"]
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAQAFAAMABgAAAAQABwADAAUABQAGAAcABAAHAAYA"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i5aa5"]
+resource_local_to_scene = true
+resource_name = "Cube"
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"attribute_data": PackedByteArray("AACAvwAAgLQAAAAAAAAAAAAAAAD+/38/AACAvwAAgD8AAABAAAAANAAAQEAAAAAAAABAQAIAgD8AAABAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAD+/38/AACAPwAAAAAAAABAAAAANAAAAEAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": ExtResource("2_difwy"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEu6abRLumm0S7pptEu6abRDumm0Q7pptEu6abRLumm0Q7pptEu6abRLumm0S7pptEu6abRDumm0S7pptEO6abRLumm0Q7pptEO6abRDumm0Q7pptEO6abRDumm0S7pptEO6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7pptEO6abRDumm0S7/38AAP///7//fwAA/v//v/9/AAD///+//38AAP///78AAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP///3//f///////f/9///////9//3///////3//f////3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgL8BAIA/AACAvwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_difwy"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7/3//f/9/////f/9//3////9//3//f////3//f/9///8=")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAP7/fz8AAIA/AACAP/7/fz8AAABAAAAAtAAAAEA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_difwy"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7//////9//////////3//////////f/////////9///8=")
+}]
+shadow_mesh = SubResource("ArrayMesh_fp3fa")
+
+[sub_resource type="Animation" id="Animation_difwy"]
+resource_name = "Destroy"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.40265316, 0.5026531, 0.60265315, 0.70265317),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.69919544, 2.0816549e-06, 6.738305e-07, 1), Color(1, 1, 1, 1), Color(0.69919544, 2.0816549e-06, 6.738305e-07, 1), Color(1, 1, 1, 1), Color(0.69919544, 2.0816549e-06, 6.738305e-07, 1), Color(1, 1, 1, 1), Color(0.69919544, 2.0816549e-06, 6.738305e-07, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i5aa5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_am2vm"]
+_data = {
+&"Destroy": SubResource("Animation_difwy"),
+&"RESET": SubResource("Animation_i5aa5")
+}
+
+[node name="TntBlock" unique_id=1588274387 node_paths=PackedStringArray("destroyAnimation", "spawner") instance=ExtResource("1_tcp44")]
 healthPoints = 1
+destroyDelay = 0.8
+destroyAnimation = NodePath("NodeShaker/BlockMesh/AnimationPlayer")
 spawner = NodePath("Spawner")
 
 [node name="CollisionShape3D" parent="Hurtbox" parent_id_path=PackedInt32Array(2074267378) index="0" unique_id=387102666]
 shape = SubResource("BoxShape3D_ikq8d")
 
-[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="1" unique_id=13657721]
+[node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=13657721]
+mesh = SubResource("ArrayMesh_i5aa5")
 surface_material_override/0 = ExtResource("2_tcp44")
 surface_material_override/1 = ExtResource("4_ikq8d")
 surface_material_override/2 = ExtResource("5_82h5j")
 
-[node name="Spawner" parent="." index="6" unique_id=1716012024 instance=ExtResource("3_1swjw")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NodeShaker/BlockMesh" index="0" unique_id=550733737]
+libraries/ = SubResource("AnimationLibrary_am2vm")
+
+[node name="Spawner" parent="." index="5" unique_id=1716012024 instance=ExtResource("3_1swjw")]
 items = Array[ExtResource("4_siisw")]([ExtResource("5_805t3")])
 registerOnManager = false
 
-[node name="RedstoneLinkArea" parent="." index="7" unique_id=1031951996 instance=ExtResource("8_82h5j")]
+[node name="RedstoneLinkArea" parent="." index="6" unique_id=1031951996 instance=ExtResource("8_82h5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-isActive = true
 
 [node name="RedstoneVisual" parent="RedstoneLinkArea" index="1" unique_id=1616474288]
 isInvisible = true
 
-[node name="RedstoneReceiver_TNT" type="Node3D" parent="." index="8" unique_id=715020794 node_paths=PackedStringArray("block", "redstoneLink")]
+[node name="RedstoneReceiver_TNT" type="Node3D" parent="." index="7" unique_id=715020794 node_paths=PackedStringArray("block", "redstoneLink")]
 script = ExtResource("6_805t3")
 block = NodePath("..")
 explosionDelay = 2.0

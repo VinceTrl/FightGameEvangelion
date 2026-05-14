@@ -22,7 +22,8 @@
 [ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="17_oxu42"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="18_lbjjn"]
 [ext_resource type="PackedScene" uid="uid://ssuqamymma7s" path="res://Scenes/Gameplay/lava_block_sea.tscn" id="18_stoph"]
-[ext_resource type="Script" uid="uid://df4x3l4luvmk4" path="res://addons/post_processing/node/post_process.gd" id="20_r32yb"]
+[ext_resource type="Resource" uid="uid://dkxu7n3k0f3pg" path="res://Resources/Spawnables/Minecart.tres" id="19_a6fen"]
+[ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="20_r32yb"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="21_5rrsv"]
 [ext_resource type="Environment" uid="uid://blwfuoua3kxwx" path="res://Resources/Environement/enviro_minecraft_game_camera.tres" id="25_hg4j4"]
 
@@ -35,7 +36,7 @@ lights = [NodePath("Lighting")]
 overrideEnvironment = ExtResource("25_hg4j4")
 
 [node name="SpawnManager" parent="." unique_id=1693916911 instance=ExtResource("2_biqso")]
-items = Array[ExtResource("3_hg4j4")]([ExtResource("4_a6fen"), ExtResource("5_bajn7"), ExtResource("6_isrjx"), ExtResource("7_444ut"), ExtResource("8_r3chl"), ExtResource("9_oaeey"), ExtResource("10_yhn4n"), ExtResource("11_vtb3s"), ExtResource("12_ui2uj"), ExtResource("13_4b3j0"), ExtResource("14_biqso"), ExtResource("15_hg4j4"), ExtResource("16_a6fen"), ExtResource("17_bajn7")])
+items = Array[ExtResource("3_hg4j4")]([ExtResource("4_a6fen"), ExtResource("5_bajn7"), ExtResource("6_isrjx"), ExtResource("7_444ut"), ExtResource("8_r3chl"), ExtResource("9_oaeey"), ExtResource("10_yhn4n"), ExtResource("11_vtb3s"), ExtResource("12_ui2uj"), ExtResource("13_4b3j0"), ExtResource("14_biqso"), ExtResource("15_hg4j4"), ExtResource("16_a6fen"), ExtResource("17_bajn7"), ExtResource("19_a6fen")])
 
 [node name="Enviro" type="Node3D" parent="." unique_id=510669441]
 
@@ -70,6 +71,7 @@ directional_shadow_split_3 = 0.0
 
 [node name="Boundary_Bottom" type="StaticBody3D" parent="Stage" unique_id=815148033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
+collision_layer = 193
 collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary_Bottom" unique_id=1874739394]
@@ -79,7 +81,7 @@ shape = SubResource("WorldBoundaryShape3D_e2grd")
 map = ExtResource("17_oxu42")
 
 [node name="KillVolume" parent="Stage" unique_id=421022714 instance=ExtResource("18_lbjjn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
 [node name="LavaBlockSea" parent="." unique_id=920480580 instance=ExtResource("18_stoph")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)

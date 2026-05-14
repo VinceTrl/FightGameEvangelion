@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://i1fgr8rarmy6" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/tnt_side.png" id="1_gs2qk"]
 
 [resource]
+resource_local_to_scene = true
 albedo_texture = ExtResource("1_gs2qk")
 texture_filter = 0

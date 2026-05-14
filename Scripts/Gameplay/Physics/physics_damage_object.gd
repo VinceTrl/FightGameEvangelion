@@ -21,7 +21,7 @@ func TakeDamage(hitboxSource: Hitbox):
 
 func ProcessHitbox():
 	var vel:float = abs(linear_velocity.length())
-	DebugDraw3D.draw_text(global_position + (Vector3.BACK * 0.5),str(vel),50)
+	#DebugDraw3D.draw_text(global_position + (Vector3.BACK * 0.5),str(vel),50)
 	
 	if(vel > activeHitVelocityThreshold):
 		hitbox.ActiveHitBox()

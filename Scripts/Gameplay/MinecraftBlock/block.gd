@@ -7,6 +7,7 @@ extends Node3D
 @export var forceToGroundOnReady = true
 @export var destroyDelay:float = 0.1
 @export var explosionDamageMultiplier:float = 10.0
+@export var destroyAnimation:AnimationPlayer
 
 #const AUDIO_SCENE = preload("res://Scenes/Audio/audio_scene.tscn")
 #const SD_BLOC_DESTROY = preload("res://Assets/Sounds/SFX/DoudouSFX/SD_blocDestroy.wav")
@@ -66,23 +67,29 @@ func ChangeHealth(healthAmount:int = -1):
 	if(healthPoints <= 0):
 		isDead = true
 		#Manager.gameManager.shitpost_gui.ShowRandomImage()
-		GlobalSFX.EmitSoundFromName("S_BLOCK_DESTROYED",0.0)
+		
 		#var audio = AUDIO_SCENE.instantiate()
 		#get_tree().current_scene.add_child(audio)
 		#audio.StartAudio(SD_BLOC_DESTROY,0.0)
 		
-		#Spawn item on death if spawner is referenced
-		if(spawner):
-			Spawn()
+
 			
 		#if(redstoneActive):
 			#redstoneLink.ChangePowerState(false)
 			#redstoneLink.PropagatePowerFromSource(redstoneLink)
-			pass
 			
-		BlockDestroyed.emit()
+		if(destroyAnimation):
+			destroyAnimation.play("Destroy")
 		
 		await get_tree().create_timer(destroyDelay).timeout
+		GlobalSFX.EmitSoundFromName("S_BLOCK_DESTROYED",0.0)
+		
+		BlockDestroyed.emit()
+		
+		#Spawn item on death if spawner is referenced
+		if(spawner):
+			Spawn()
+		
 		queue_free()
 	else:
 		GlobalSFX.EmitSoundFromName("S_BLOCK_HIT",0.0,global_position)

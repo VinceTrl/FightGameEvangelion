@@ -49,7 +49,10 @@ func TakeDamage(hitbox:Hitbox):
 	animation_player.play("Hurt")
 	
 	if(health_component.isDead):
+		if(hitbox.type == Hitbox.DamageType.Volume and linkedHurtbox):
+			linkedHurtbox.TakeDamage(hitbox)
 		DestroySpell()
+		
 		return
 		
 	#await animation_player.animation_finished
