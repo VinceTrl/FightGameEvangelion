@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://caxqeic6uhe0m"]
+
+[ext_resource type="PackedScene" uid="uid://v5unfgtoa4w0" path="res://Scenes/VFX/physics_spear_P1.tscn" id="1_xvw12"]
+[ext_resource type="SpriteFrames" uid="uid://be1uy1hj7p2u1" path="res://Assets/Sprites/Vfx/KikiVFX/kiki_vfx_P2_sprite_frames.tres" id="2_xvw12"]
+
+[sub_resource type="Animation" id="Animation_4qkjt"]
+resource_name = "Destroy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Disapear"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_0p544"]
+resource_name = "Idle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xvw12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4qkjt"]
+_data = {
+&"Destroy": SubResource("Animation_4qkjt"),
+&"Idle": SubResource("Animation_0p544"),
+&"RESET": SubResource("Animation_xvw12")
+}
+
+[node name="PhysicsSpear_P2" unique_id=327543984 instance=ExtResource("1_xvw12")]
+
+[node name="Sprite3D" parent="." index="1" unique_id=642399474]
+sprite_frames = ExtResource("2_xvw12")
+
+[node name="AnimationPlayer" parent="Sprite3D" index="0" unique_id=304904517]
+libraries/ = SubResource("AnimationLibrary_4qkjt")
+autoplay = &""

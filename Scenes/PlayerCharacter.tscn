@@ -971,6 +971,7 @@ hitColor = Color(1, 1, 1, 1)
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0308377, 0)
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=1851627904]
+process_mode = 1
 root_node = NodePath("../Sprite2D")
 libraries/ = SubResource("AnimationLibrary_jxbaw")
 next/JumpStart = &"Jump"

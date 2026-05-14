@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="13_0poxc"]
 [ext_resource type="Texture2D" uid="uid://d13vmhiwk655s" path="res://Assets/GUI/Sprites/TitleScreen/BlackLodgeTitleScreen/fight.png" id="13_0vduw"]
 [ext_resource type="Resource" uid="uid://ddt3bdsesulh5" path="res://Resources/PostProcessConfig/title_screen_postprocess.tres" id="14_0poxc"]
+[ext_resource type="Texture2D" uid="uid://clegt0y755aok" path="res://Assets/GUI/Sprites/TitleScreen/FantasyTitleScreen/CreeperUpdateTitleScreen.jpg" id="14_0vduw"]
 
 [sub_resource type="Animation" id="Animation_vdg6d"]
 length = 0.001
@@ -306,6 +307,23 @@ stretch_mode = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/BlackLodge/FightText" unique_id=1541708074]
 libraries/ = SubResource("AnimationLibrary_reu31")
 autoplay = &"TitleBlink"
+
+[node name="CreeperUpdate" type="Control" parent="CanvasLayer/Control" unique_id=687083871]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureBackground_Placeholder" type="TextureRect" parent="CanvasLayer/Control/CreeperUpdate" unique_id=1270991882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_0vduw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=221564763]
 stream = ExtResource("3_57ycc")

@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://v5unfgtoa4w0"]
+
+[ext_resource type="Script" uid="uid://cyhxqy5bmoxav" path="res://Scripts/Gameplay/Physics/physic_item.gd" id="1_vnlq7"]
+[ext_resource type="SpriteFrames" uid="uid://c25nx1dtn00n2" path="res://Assets/Sprites/Vfx/KikiVFX/kiki_vfx_P1_sprite_frames.tres" id="2_vnlq7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vnlq7"]
+friction = 0.65
+bounce = 0.35
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ogrw0"]
+height = 0.43359375
+radius = 0.032226563
+
+[sub_resource type="Animation" id="Animation_vnlq7"]
+resource_name = "Destroy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Disapear"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_lifcb"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+
+[sub_resource type="Animation" id="Animation_ogrw0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m33sh"]
+_data = {
+&"Destroy": SubResource("Animation_vnlq7"),
+&"Idle": SubResource("Animation_lifcb"),
+&"RESET": SubResource("Animation_ogrw0")
+}
+
+[node name="PhysicsSpear_P1" type="RigidBody3D" unique_id=327543984 node_paths=PackedStringArray("animation_player")]
+collision_layer = 16
+collision_mask = 19
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+mass = 0.607
+physics_material_override = SubResource("PhysicsMaterial_vnlq7")
+contact_monitor = true
+max_contacts_reported = 2
+constant_torque = Vector3(0, 0, 3)
+script = ExtResource("1_vnlq7")
+impulseForce = 4.0
+animation_player = NodePath("Sprite3D/AnimationPlayer")
+destroyAnimation = "Destroy"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1588228437]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.033203125, -1.4513547e-09, 0)
+shape = SubResource("CylinderShape3D_ogrw0")
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="." unique_id=642399474]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 0, 0)
+texture_filter = 0
+sprite_frames = ExtResource("2_vnlq7")
+animation = &"Idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D" unique_id=304904517]
+libraries/ = SubResource("AnimationLibrary_m33sh")
+autoplay = &"Idle"
