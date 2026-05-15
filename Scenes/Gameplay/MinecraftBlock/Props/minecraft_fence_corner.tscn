@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bvu5xdyu0qwsx"]
+
+[ext_resource type="Script" uid="uid://r4oitbq4ac83" path="res://Scripts/Gameplay/MinecraftBlock/block_link.gd" id="1_sjtlo"]
+[ext_resource type="Texture2D" uid="uid://isy7l0ap3847" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_planks.png" id="2_ckcs8"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="3_hnk30"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0x7aq"]
+size = Vector3(0.075, 0.3, 0.075)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_poup0"]
+albedo_texture = ExtResource("2_ckcs8")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("3_hnk30")
+uv1_scale = Vector3(2, 2, 2)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_sjtlo"]
+size = Vector3(0.15, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oajgb"]
+albedo_texture = ExtResource("2_ckcs8")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("3_hnk30")
+uv1_scale = Vector3(2, 0.5, 1)
+texture_filter = 0
+
+[node name="Fence_Corner" type="Node3D" unique_id=1291814700 node_paths=PackedStringArray("root")]
+script = ExtResource("1_sjtlo")
+root = NodePath(".")
+
+[node name="FenceBlock" type="MeshInstance3D" parent="." unique_id=1454300610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("BoxMesh_0x7aq")
+surface_material_override/0 = SubResource("StandardMaterial3D_poup0")
+
+[node name="FenceBlock_Hor3" type="MeshInstance3D" parent="." unique_id=1473427744]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.256, 0.075)
+mesh = SubResource("BoxMesh_sjtlo")
+surface_material_override/0 = SubResource("StandardMaterial3D_oajgb")
+
+[node name="FenceBlock_Hor5" type="MeshInstance3D" parent="." unique_id=402266638]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.106, 0.075)
+mesh = SubResource("BoxMesh_sjtlo")
+surface_material_override/0 = SubResource("StandardMaterial3D_oajgb")
+
+[node name="FenceBlock_Hor6" type="MeshInstance3D" parent="." unique_id=216514615]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.075, 0.106, 0)
+mesh = SubResource("BoxMesh_sjtlo")
+surface_material_override/0 = SubResource("StandardMaterial3D_oajgb")
+
+[node name="FenceBlock_Hor7" type="MeshInstance3D" parent="." unique_id=835704277]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.075, 0.256, 0)
+mesh = SubResource("BoxMesh_sjtlo")
+surface_material_override/0 = SubResource("StandardMaterial3D_oajgb")

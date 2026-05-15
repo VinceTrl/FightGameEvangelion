@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dihda3qvalilb"]
+
+[ext_resource type="Script" uid="uid://b25chex8q4dmg" path="res://Scripts/Gameplay/MinecraftBlock/trap_door.gd" id="1_0lpk0"]
+[ext_resource type="Texture2D" uid="uid://btc5sb83jvwbs" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_trapdoor.png" id="2_vx1ep"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="3_dwq2o"]
+[ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="4_4j1uh"]
+[ext_resource type="PackedScene" uid="uid://d3wxtxmcbjpi2" path="res://Scenes/Gameplay/MinecraftBlock/RedstoneScenes/redstone_link_area.tscn" id="5_vx1ep"]
+[ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="6_dwq2o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dbpp2"]
+size = Vector3(0.3, 0.05, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v85rn"]
+albedo_texture = ExtResource("2_vx1ep")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("3_dwq2o")
+uv1_scale = Vector3(2.98, 1.995, 3.015)
+texture_filter = 0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7tmbr"]
+points = PackedVector3Array(-0.13966602, -0.024999999, -0.13968253, 0.15238094, 0.029761903, 0.15238094, 0.13968325, -0.024999999, 0.13968253, -0.15236372, 0.029761903, 0.15238094, 0.15238094, 0.029761903, -0.15238094, -0.15236372, 0.029761903, -0.15238094, 0.13968325, -0.024999999, -0.13968253, -0.13966602, -0.024999999, 0.13968253)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dwq2o"]
+points = PackedVector3Array(-0.13966602, -0.024999999, -0.13968253, 0.15238094, 0.029761903, 0.15238094, 0.13968325, -0.024999999, 0.13968253, -0.15236372, 0.029761903, 0.15238094, 0.15238094, 0.029761903, -0.15238094, -0.15236372, 0.029761903, -0.15238094, 0.13968325, -0.024999999, -0.13968253, -0.13966602, -0.024999999, 0.13968253)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7wqd"]
+size = Vector3(0.25, 0.25, 0.3)
+
+[node name="TrapDoor" type="Node3D" unique_id=496962820 node_paths=PackedStringArray("openMesh", "closeMesh", "redstoneLink")]
+script = ExtResource("1_0lpk0")
+openMesh = NodePath("OpenMesh")
+closeMesh = NodePath("CloseMesh")
+redstoneLink = NodePath("RedstoneLinkArea")
+
+[node name="CloseMesh" type="MeshInstance3D" parent="." unique_id=845685682 groups=["Enviro"]]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2703922, 0.01)
+mesh = SubResource("BoxMesh_dbpp2")
+surface_material_override/0 = SubResource("StandardMaterial3D_v85rn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CloseMesh" unique_id=592692671 groups=["Ledgegrab"]]
+collision_layer = 193
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CloseMesh/StaticBody3D" unique_id=469029546]
+shape = SubResource("ConvexPolygonShape3D_7tmbr")
+
+[node name="OpenMesh" type="MeshInstance3D" parent="." unique_id=735599877 groups=["Enviro"]]
+process_mode = 1
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.125, 0.14504233, 0.01)
+mesh = SubResource("BoxMesh_dbpp2")
+surface_material_override/0 = SubResource("StandardMaterial3D_v85rn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OpenMesh" unique_id=1319588337]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OpenMesh/StaticBody3D" unique_id=1730906873]
+shape = SubResource("ConvexPolygonShape3D_dwq2o")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1738023109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+script = ExtResource("4_4j1uh")
+owner_id = 910
+metadata/_custom_type_script = "uid://be4u7kwwov65g"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=1878956574]
+shape = SubResource("BoxShape3D_b7wqd")
+debug_color = Color(0.26265147, 0.62487274, 0.31367764, 0.41960785)
+
+[node name="RedstoneLinkArea" parent="." unique_id=1031951996 instance=ExtResource("5_vx1ep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+canPropagatePower = false
+
+[node name="RedstoneVisual" parent="RedstoneLinkArea" index="1" unique_id=1616474288]
+isInvisible = true
+
+[node name="HealthComponent" type="Node" parent="." unique_id=969150748]
+script = ExtResource("6_dwq2o")
+metadata/_custom_type_script = "uid://cw2bpx65nkj7h"
+
+[editable path="RedstoneLinkArea"]

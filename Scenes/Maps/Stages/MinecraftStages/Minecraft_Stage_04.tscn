@@ -7,7 +7,7 @@
 [ext_resource type="Material" uid="uid://bpwv7bubet4" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Bedrock.tres" id="5_ak24b"]
 [ext_resource type="Script" uid="uid://b64mmjv66osb7" path="res://Scripts/Utilities/multi_mesh_grid.gd" id="6_7r3ee"]
 [ext_resource type="PackedScene" uid="uid://bnudpxlxiudb" path="res://Scenes/Gameplay/MinecraftBlock/cobblestone_block.tscn" id="9_pcno1"]
-[ext_resource type="PackedScene" uid="uid://dpygy6dyyfqtx" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/platform_deepslate_5x4.tscn" id="9_r4nth"]
+[ext_resource type="PackedScene" uid="uid://dpygy6dyyfqtx" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftBlockProps/platform_deepslate_5x4.tscn" id="9_r4nth"]
 [ext_resource type="PackedScene" uid="uid://c0xc7ty5ji5uw" path="res://Scenes/Gameplay/MinecraftBlock/deepslate_bricks_block.tscn" id="11_2r7q7"]
 [ext_resource type="PackedScene" uid="uid://btgknalnysacc" path="res://Scenes/Gameplay/MinecraftBlock/tnt_block.tscn" id="12_ocaax"]
 [ext_resource type="Texture2D" uid="uid://b6q1uprrujwm0" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/stone.png" id="12_r4nth"]

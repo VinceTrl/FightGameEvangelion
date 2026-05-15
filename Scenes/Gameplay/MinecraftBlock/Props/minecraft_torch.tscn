@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gs376iion8t8"]
 
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_ou8oq"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Props/minecraft_props_base.tscn" id="1_ou8oq"]
 [ext_resource type="Texture2D" uid="uid://cjrtmsq3nsp0r" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/torch.png" id="2_qs32h"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ex0iu"]

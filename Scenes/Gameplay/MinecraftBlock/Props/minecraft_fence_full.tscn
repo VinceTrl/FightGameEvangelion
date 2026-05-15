@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://sfgcolj6ie4a"]
 
+[ext_resource type="Script" uid="uid://r4oitbq4ac83" path="res://Scripts/Gameplay/MinecraftBlock/block_link.gd" id="1_bpkj3"]
 [ext_resource type="Texture2D" uid="uid://isy7l0ap3847" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_planks.png" id="1_cda2j"]
 [ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_bpkj3"]
 
@@ -25,16 +26,12 @@ emission_texture = ExtResource("2_bpkj3")
 uv1_scale = Vector3(2, 0.5, 1)
 texture_filter = 0
 
-[node name="Fence_Full" type="Node3D" unique_id=1291814700]
+[node name="Fence_Kit" type="Node3D" unique_id=1291814700 node_paths=PackedStringArray("root")]
+script = ExtResource("1_bpkj3")
+root = NodePath(".")
 
 [node name="FenceBlock" type="MeshInstance3D" parent="." unique_id=1454300610]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-mesh = SubResource("BoxMesh_0x7aq")
-surface_material_override/0 = SubResource("StandardMaterial3D_poup0")
-
-[node name="FenceBlock2" type="MeshInstance3D" parent="." unique_id=825231370]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11181477, 0.15, 0)
-visible = false
 mesh = SubResource("BoxMesh_0x7aq")
 surface_material_override/0 = SubResource("StandardMaterial3D_poup0")
 

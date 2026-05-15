@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://ckk6wflbwxnkb"]
+[gd_scene format=3 uid="uid://bjog5yfxcdevw"]
 
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_8mons"]
-[ext_resource type="Texture2D" uid="uid://bwvuypy8s78o" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/allium.png" id="2_8mons"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Props/minecraft_props_base.tscn" id="1_nc4dq"]
+[ext_resource type="Texture2D" uid="uid://bt7qvc3ckrxjh" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/poppy.png" id="2_nc4dq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ex0iu"]
 lightmap_size_hint = Vector2i(3, 3)
@@ -11,10 +11,10 @@ size = Vector2(0.2, 0.2)
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_8mons")
+albedo_texture = ExtResource("2_nc4dq")
 texture_filter = 0
 
-[node name="Poppy" unique_id=2078838959 instance=ExtResource("1_8mons")]
+[node name="Poppy" unique_id=2078838959 instance=ExtResource("1_nc4dq")]
 
 [node name="MeshInstance3D" parent="." index="0" unique_id=1379156052]
 mesh = SubResource("QuadMesh_ex0iu")

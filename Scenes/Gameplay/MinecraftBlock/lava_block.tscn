@@ -176,6 +176,10 @@ leftGroundRaycast = NodePath("Raycasts/RayCast_Ground_L")
 rightGroundRaycast = NodePath("Raycasts/RayCast_Ground_R")
 canTakeDamage = false
 
+[node name="Hurtbox" parent="." index="0" unique_id=2074267378]
+owner_id = 910
+randomID = false
+
 [node name="StaticBody3D" parent="." index="1" unique_id=1373173204]
 collision_layer = 1
 

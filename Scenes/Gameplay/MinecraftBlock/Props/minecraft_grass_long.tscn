@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byw6x50nmqlek"]
 
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_yn0a5"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Props/minecraft_props_base.tscn" id="1_yn0a5"]
 [ext_resource type="Material" uid="uid://cpd3amvcbr664" path="res://Assets/Materials/Gameplay/MinecraftPlants/M_Plant_Grass_Top.tres" id="2_e5cls"]
 [ext_resource type="Material" uid="uid://ck65txwn45jd2" path="res://Assets/Materials/Gameplay/MinecraftPlants/M_Plant_Grass_Bottom.tres" id="3_e5cls"]
 

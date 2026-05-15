@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0xc7ty5ji5uw" path="res://Scenes/Gameplay/MinecraftBlock/deepslate_bricks_block.tscn" id="7_3gwqu"]
 [ext_resource type="PackedScene" uid="uid://b36t01f3wjtbu" path="res://Scenes/Gameplay/lever.tscn" id="7_qpmwr"]
 [ext_resource type="PackedScene" uid="uid://btgknalnysacc" path="res://Scenes/Gameplay/MinecraftBlock/tnt_block.tscn" id="13_j5xe1"]
-[ext_resource type="PackedScene" uid="uid://w4goana6642i" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/platform_stone_5x4.tscn" id="13_se6un"]
+[ext_resource type="PackedScene" uid="uid://w4goana6642i" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftBlockProps/platform_stone_5x4.tscn" id="13_se6un"]
 [ext_resource type="PackedScene" uid="uid://c7finsa37y56m" path="res://Scenes/Gameplay/MinecraftBlock/stone_block.tscn" id="14_k01o1"]
 [ext_resource type="PackedScene" uid="uid://d4no6dhxpdfui" path="res://Scenes/Gameplay/MinecraftBlock/concrete_gray_block.tscn" id="14_se6un"]
 [ext_resource type="PackedScene" uid="uid://ckf3p25anxo86" path="res://Scenes/Gameplay/MinecraftBlock/dirt_block.tscn" id="15_hpjn7"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6p66cymef5ad"]
 
 [ext_resource type="Texture2D" uid="uid://isy7l0ap3847" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_planks.png" id="1_d0yy7"]
+[ext_resource type="Script" uid="uid://r4oitbq4ac83" path="res://Scripts/Gameplay/MinecraftBlock/block_link.gd" id="1_o7ri8"]
 [ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_o7ri8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0x7aq"]
@@ -14,7 +15,9 @@ emission_texture = ExtResource("2_o7ri8")
 uv1_scale = Vector3(2, 2, 2)
 texture_filter = 0
 
-[node name="Fence_Pole" type="Node3D" unique_id=1291814700]
+[node name="Fence_Pole" type="Node3D" unique_id=1291814700 node_paths=PackedStringArray("root")]
+script = ExtResource("1_o7ri8")
+root = NodePath(".")
 
 [node name="FenceBlock" type="MeshInstance3D" parent="." unique_id=1454300610]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)

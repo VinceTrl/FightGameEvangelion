@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cm4hw66fffxbu" path="res://Scenes/Gameplay/MinecraftBlock/cactus_block.tscn" id="5_j303q"]
 [ext_resource type="PackedScene" uid="uid://c7finsa37y56m" path="res://Scenes/Gameplay/MinecraftBlock/stone_block.tscn" id="8_6h22u"]
 [ext_resource type="PackedScene" uid="uid://bja86rnp5peep" path="res://Scenes/Gameplay/MinecraftBlock/lava_block.tscn" id="13_2kfga"]
-[ext_resource type="PackedScene" uid="uid://w4goana6642i" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/platform_stone_5x4.tscn" id="15_hr3tx"]
+[ext_resource type="PackedScene" uid="uid://w4goana6642i" path="res://Scenes/Gameplay/MinecraftBlock/MinecraftBlockProps/platform_stone_5x4.tscn" id="15_hr3tx"]
 
 [node name="MinecraftStage_07" type="Node3D" unique_id=176270937 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_xh1ld")

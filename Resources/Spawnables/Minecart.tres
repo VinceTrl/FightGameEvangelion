@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_415hd")
 itemName = &"MINECART"
-scenePath = &"res://Scenes/Gameplay/MinecraftBlock/MinecraftProps/Minecart.tscn"
+scenePath = &"res://Scenes/Gameplay/MinecraftBlock/MinecraftBlockProps/Minecart.tscn"
 spawnChance = 4

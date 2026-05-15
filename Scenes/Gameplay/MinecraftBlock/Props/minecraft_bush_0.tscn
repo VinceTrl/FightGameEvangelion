@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://34bk08ifvvh8"]
+[gd_scene format=3 uid="uid://spwvq6fmh5ll"]
 
-[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Plants/minecraft_props_base.tscn" id="1_cua2w"]
-[ext_resource type="Texture2D" uid="uid://cxt4oegyxo6cr" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/sweet_berry_bush_stage1.png" id="2_cua2w"]
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Props/minecraft_props_base.tscn" id="1_jedu2"]
+[ext_resource type="Texture2D" uid="uid://d3l7nn5mfy512" path="res://Assets/Meshes/Props/Minecraft/PlantsTextures/sweet_berry_bush_stage0.png" id="2_jedu2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_s0fda"]
 lightmap_size_hint = Vector2i(3, 3)
@@ -11,10 +11,10 @@ size = Vector2(0.3, 0.3)
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_cua2w")
+albedo_texture = ExtResource("2_jedu2")
 texture_filter = 0
 
-[node name="MinecraftBush_Stage1_" unique_id=2078838959 instance=ExtResource("1_cua2w")]
+[node name="MinecraftBush_Stage0_" unique_id=2078838959 instance=ExtResource("1_jedu2")]
 
 [node name="MeshInstance3D" parent="." index="0" unique_id=1379156052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
