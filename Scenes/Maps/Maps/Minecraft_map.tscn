@@ -21,10 +21,10 @@
 [ext_resource type="Resource" uid="uid://bv022mcb3708n" path="res://Resources/Spawnables/Wolf.tres" id="17_bajn7"]
 [ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="17_oxu42"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="18_lbjjn"]
-[ext_resource type="PackedScene" uid="uid://ssuqamymma7s" path="res://Scenes/Gameplay/lava_block_sea.tscn" id="18_stoph"]
 [ext_resource type="Resource" uid="uid://dkxu7n3k0f3pg" path="res://Resources/Spawnables/Minecart.tres" id="19_a6fen"]
 [ext_resource type="Script" uid="uid://b5paj253lonlf" path="res://addons/post_processing/node/post_process.gd" id="20_r32yb"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="21_5rrsv"]
+[ext_resource type="PackedScene" uid="uid://m4y8m8c70o62" path="res://Scenes/Gameplay/timer_out_spawners.tscn" id="24_bajn7"]
 [ext_resource type="Environment" uid="uid://blwfuoua3kxwx" path="res://Resources/Environement/enviro_minecraft_game_camera.tres" id="25_hg4j4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
@@ -83,8 +83,8 @@ map = ExtResource("17_oxu42")
 [node name="KillVolume" parent="Stage" unique_id=421022714 instance=ExtResource("18_lbjjn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
-[node name="LavaBlockSea" parent="." unique_id=920480580 instance=ExtResource("18_stoph")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+[node name="TimerOutSpawners" parent="." unique_id=770675964 instance=ExtResource("24_bajn7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1459144192]
 script = ExtResource("20_r32yb")

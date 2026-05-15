@@ -4,25 +4,35 @@ extends VisibleOnScreenNotifier3D
 @export var px_offset := 200
 @export var rotateSprite:bool = true
 const EPSILON = 0.0001
+var forceHide:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_entered.connect(on_screen_entered)
 	screen_exited.connect(on_screen_exited)
+	Manager.OnFightFinish.connect(ForceHide)
 
 func on_screen_entered():
+	if(forceHide):return
 	set_process(false)
 	sprite.visible = false
 
 func on_screen_exited():
+	if(forceHide):return
 	set_process(true)
 	sprite.visible = true
+	
+func ForceHide():
+	forceHide = true
+	set_process(false)
+	sprite.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	ProcessIndicator()
 	
 func ProcessIndicator():
+	if(forceHide):return
 	var viewport_center := get_viewport().get_visible_rect().size * 0.5
 	var cam_to_pos := get_viewport().get_camera_3d().to_local(global_transform.origin)
 	var center_to_edge := Vector2(cam_to_pos.x, -cam_to_pos.y)

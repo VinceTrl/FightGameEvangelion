@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://sfgcolj6ie4a"]
+
+[ext_resource type="Texture2D" uid="uid://isy7l0ap3847" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/oak_planks.png" id="1_cda2j"]
+[ext_resource type="Texture2D" uid="uid://lhh6cxog3jef" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/dirt.png" id="2_bpkj3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0x7aq"]
+size = Vector3(0.075, 0.3, 0.075)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_poup0"]
+albedo_texture = ExtResource("1_cda2j")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_bpkj3")
+uv1_scale = Vector3(2, 2, 2)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_b1rhw"]
+size = Vector3(0.3, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oajgb"]
+albedo_texture = ExtResource("1_cda2j")
+emission = Color(0.23137255, 0.23137255, 0.23137255, 1)
+emission_energy_multiplier = 0.48
+emission_texture = ExtResource("2_bpkj3")
+uv1_scale = Vector3(2, 0.5, 1)
+texture_filter = 0
+
+[node name="Fence_Full" type="Node3D" unique_id=1291814700]
+
+[node name="FenceBlock" type="MeshInstance3D" parent="." unique_id=1454300610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("BoxMesh_0x7aq")
+surface_material_override/0 = SubResource("StandardMaterial3D_poup0")
+
+[node name="FenceBlock2" type="MeshInstance3D" parent="." unique_id=825231370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11181477, 0.15, 0)
+visible = false
+mesh = SubResource("BoxMesh_0x7aq")
+surface_material_override/0 = SubResource("StandardMaterial3D_poup0")
+
+[node name="FenceBlock_Hor" type="MeshInstance3D" parent="." unique_id=543641276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25617218, 0)
+mesh = SubResource("BoxMesh_b1rhw")
+surface_material_override/0 = SubResource("StandardMaterial3D_oajgb")
+
+[node name="FenceBlock_Hor2" type="MeshInstance3D" parent="." unique_id=1220236550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10588637, 0)
+mesh = SubResource("BoxMesh_b1rhw")
+surface_material_override/0 = SubResource("StandardMaterial3D_oajgb")
