@@ -23,8 +23,9 @@ func StopLookAt():
 func _process(delta: float) -> void:
 	LookAtTarget()
 	
+	
 func LookAtTarget():
 	if(!rotateToTarget): return
 	if(lookTarget == null): return
 
-	nodeToRotate.look_at(lookTarget.global_position,Vector3.UP,true)
+	nodeToRotate.look_at(lookTarget.global_position,Vector3.UP,false)

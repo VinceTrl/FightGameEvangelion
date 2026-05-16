@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bm51u584lwwls"]
+
+[ext_resource type="Texture2D" uid="uid://27mb4o3e41s" path="res://Assets/Meshes/Characters/Steve/steve.png" id="1_gfwht"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_gfwht")
+texture_filter = 0

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjefldioc3rj7"]
+
+[ext_resource type="Texture2D" uid="uid://cqeu8mgpvb51p" path="res://Assets/Meshes/Characters/Steve/SteveSonic.png" id="1_afd5n"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_afd5n")
+texture_filter = 0

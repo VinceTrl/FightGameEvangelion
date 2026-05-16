@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://coucnj7gaor05"]
+
+[ext_resource type="Texture2D" uid="uid://c74kauvkw7k42" path="res://Assets/Meshes/Characters/EnderDragon/dragon.png" id="1_2u0od"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_2u0od")
+texture_filter = 0

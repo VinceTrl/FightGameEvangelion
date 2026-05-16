@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dnissd1g3gmmb"]
+
+[ext_resource type="Texture2D" uid="uid://df3mryitgf2oo" path="res://Assets/Meshes/Characters/EnderDragon/dragon_fireball.png" id="1_nxub4"]
+[ext_resource type="Script" uid="uid://c5mhbu468fiee" path="res://Scripts/Gameplay/Projectiles/dragon_fireball.gd" id="1_vf5mw"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="2_vf5mw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3vf5"]
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6117647, 0.31764707, 0.64705884, 1)
+emission_enabled = true
+emission = Color(0.80784315, 0.45882353, 0.90588236, 1)
+billboard_mode = 1
+
+[sub_resource type="Curve" id="Curve_qu2bl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eslod"]
+radius = 0.09542796
+
+[node name="DragonFireball" type="Node3D" unique_id=1112135817 node_paths=PackedStringArray("hitbox") groups=["Enviro"]]
+script = ExtResource("1_vf5mw")
+hitbox = NodePath("Hitbox")
+timeToReachTarget = 1.5
+moveTransType = 2
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=247700282]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_nxub4")
+
+[node name="TrailEmitter" type="TrailEmitter" parent="." unique_id=2045740460]
+material = SubResource("StandardMaterial3D_m3vf5")
+curve = SubResource("Curve_qu2bl")
+num_points = 5
+noise_scale = 0.14
+size = 0.03
+update_interval = 0.05
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=448926652]
+script = ExtResource("2_vf5mw")
+owner_id = 620
+type = 1
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1401971661]
+shape = SubResource("SphereShape3D_eslod")
+debug_color = Color(0.9904826, 0, 0.2834962, 0.41960785)
