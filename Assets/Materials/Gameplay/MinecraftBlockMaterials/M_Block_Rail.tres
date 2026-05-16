@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://4d8adeql5u3q"]
+
+[ext_resource type="Texture2D" uid="uid://c1u16f55bm2gc" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/rail.png" id="1_oywe1"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_oywe1")
+texture_filter = 0

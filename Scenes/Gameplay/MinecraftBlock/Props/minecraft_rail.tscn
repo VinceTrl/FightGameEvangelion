@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b8k3vmy5y3ti3"]
+
+[ext_resource type="PackedScene" uid="uid://ddy2qhl3y5tq1" path="res://Scenes/Gameplay/MinecraftBlock/Props/minecraft_props_base.tscn" id="1_tfkng"]
+[ext_resource type="Material" uid="uid://4d8adeql5u3q" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Rail.tres" id="2_tfkng"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ex0iu"]
+lightmap_size_hint = Vector2i(3, 3)
+size = Vector2(0.3, 0.3)
+
+[node name="MinecraftRail" unique_id=2078838959 instance=ExtResource("1_tfkng")]
+
+[node name="MeshInstance3D" parent="." index="0" unique_id=1379156052]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0.001, 0)
+mesh = SubResource("QuadMesh_ex0iu")
+surface_material_override/0 = ExtResource("2_tfkng")

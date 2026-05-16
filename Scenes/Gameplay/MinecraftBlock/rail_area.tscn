@@ -2,19 +2,13 @@
 
 [ext_resource type="Script" uid="uid://eb8h7gk6rj7s" path="res://Scripts/Gameplay/MinecraftBlock/Rail_Area.gd" id="1_b1sni"]
 [ext_resource type="Texture2D" uid="uid://c1u16f55bm2gc" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/rail.png" id="2_c2t1l"]
+[ext_resource type="Material" uid="uid://4d8adeql5u3q" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Rail.tres" id="2_g738o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g738o"]
 size = Vector3(0.3, 0.20090333, 0.3)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wqd72"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_c2t1l")
-texture_filter = 0
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_p2n2l"]
-material = SubResource("StandardMaterial3D_wqd72")
+material = ExtResource("2_g738o")
 size = Vector2(0.3, 0.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1sni"]

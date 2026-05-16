@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://du76jt88d7l5o"]
+
+[ext_resource type="Texture2D" uid="uid://cns3y0tf1hyem" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/coal_ore.png" id="1_0dvjp"]
+
+[resource]
+albedo_texture = ExtResource("1_0dvjp")
+texture_filter = 0

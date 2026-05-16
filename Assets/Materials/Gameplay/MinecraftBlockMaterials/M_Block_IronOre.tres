@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bw1am7pbpndgc"]
+
+[ext_resource type="Texture2D" uid="uid://d354rq8jp1c27" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/iron_ore.png" id="1_y4io0"]
+
+[resource]
+albedo_texture = ExtResource("1_y4io0")
+texture_filter = 0

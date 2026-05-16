@@ -36,7 +36,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" type="Node" parent="." unique_id=389733307]
 script = ExtResource("3_dv241")
-maps = Array[ExtResource("4_sjgtb")]([ExtResource("8_ewbju"), ExtResource("9_85qyi"), ExtResource("7_ewbju")])
+maps = Array[ExtResource("4_sjgtb")]([ExtResource("8_ewbju"), ExtResource("9_85qyi"), ExtResource("7_ewbju"), ExtResource("8_ewbju")])
 
 [node name="Gameplay" type="Node" parent="." unique_id=1867581352]
 

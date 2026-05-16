@@ -277,7 +277,7 @@ roamTimeMax = 5.0
 
 [node name="Chase" type="Node" parent="CreeperStateMachine" unique_id=179715904 node_paths=PackedStringArray("characterCenter")]
 script = ExtResource("10_55lj0")
-igniteRange = 0.7
+igniteRange = 0.45
 characterCenter = NodePath("../../Center")
 
 [node name="Ignite" type="Node" parent="CreeperStateMachine" unique_id=1482684930]
@@ -286,7 +286,7 @@ igniteTime = 1.5
 
 [node name="Explode" type="Node" parent="CreeperStateMachine" unique_id=852927519]
 script = ExtResource("12_b22qc")
-explosionScale = Vector3(2, 2, 2)
+explosionScale = Vector3(2.5, 2.5, 2.5)
 
 [node name="Hurt" type="Node" parent="CreeperStateMachine" unique_id=1264256846 node_paths=PackedStringArray("nodeShaker")]
 script = ExtResource("13_mj3uu")

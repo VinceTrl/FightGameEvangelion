@@ -68,7 +68,6 @@ debug_color = Color(0.26265147, 0.62487274, 0.31367764, 0.41960785)
 
 [node name="RedstoneLinkArea" parent="." unique_id=1031951996 instance=ExtResource("5_vx1ep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-canPropagatePower = false
 
 [node name="RedstoneVisual" parent="RedstoneLinkArea" index="1" unique_id=1616474288]
 isInvisible = true

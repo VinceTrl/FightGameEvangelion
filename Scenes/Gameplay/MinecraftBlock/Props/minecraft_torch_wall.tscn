@@ -11,6 +11,7 @@ size = Vector2(0.3, 0.3)
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
+cull_mode = 2
 albedo_texture = ExtResource("2_i00ui")
 emission_enabled = true
 emission_energy_multiplier = 0.5
@@ -27,5 +28,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ynyfj")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=1354678098]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07830429, 0.12286262, 0)
-light_color = Color(0.9019608, 0.8156863, 0.03529412, 1)
+light_color = Color(0.9019608, 0.6, 0.03529412, 1)
 omni_range = 0.9

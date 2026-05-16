@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce2tjl78qku63"]
+[gd_scene format=3 uid="uid://ce2tjl78qku63"]
 
 [ext_resource type="Script" uid="uid://c2tafpkt7x7d0" path="res://Scripts/Gameplay/Projectiles/Explosion.gd" id="1_h560l"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="2_ep7vm"]
@@ -99,18 +99,18 @@ _data = {
 &"RESET": SubResource("Animation_kwwns")
 }
 
-[node name="ExplosionPoop" type="Node3D"]
+[node name="ExplosionPoop" type="Node3D" unique_id=295015856]
 script = ExtResource("1_h560l")
 
-[node name="Hitbox" type="Area3D" parent="."]
+[node name="Hitbox" type="Area3D" parent="." unique_id=854767301]
 script = ExtResource("2_ep7vm")
 owner_id = 1000
-type = 1
+type = 6
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1602640061]
 shape = SubResource("SphereShape3D_srisn")
 
-[node name="Sprite" type="Sprite3D" parent="."]
+[node name="Sprite" type="Sprite3D" parent="." unique_id=2130434498]
 modulate = Color(0.315326, 0.127712, 0.0356751, 1)
 no_depth_test = true
 render_priority = 1
@@ -118,10 +118,8 @@ texture = ExtResource("3_tj5jk")
 hframes = 10
 vframes = 7
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=42017541]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_0s04j")
-}
-autoplay = "Explosion"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=249410328]
+libraries/ = SubResource("AnimationLibrary_0s04j")
+autoplay = &"Explosion"

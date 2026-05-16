@@ -7,3 +7,4 @@ script = ExtResource("1_th7bs")
 itemName = &"CREEPER"
 scenePath = &"res://Scenes/Gameplay/creeper.tscn"
 spawnOnGround = true
+spawnChance = 5
