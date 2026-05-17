@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://dbruj4m2iyqrh" path="res://Resources/CameraShakes/DestroyProjectileShake.tres" id="14_p6ck8"]
 [ext_resource type="Environment" uid="uid://nily06bi73yt" path="res://Resources/Environement/enviro_game_camera.tres" id="16_3rs5q"]
 [ext_resource type="Script" uid="uid://itiutkcchixs" path="res://Scripts/Camera/camera_roll.gd" id="16_5g0f1"]
+[ext_resource type="Resource" uid="uid://bjnja7u23h7kc" path="res://Resources/CameraShakes/HitDragonShake.tres" id="16_d0i3x"]
 [ext_resource type="PackedScene" uid="uid://cnmklkcai8xqc" path="res://Scenes/VFX/victory_background.tscn" id="17_ebtb0"]
 
 [sub_resource type="Curve" id="Curve_qrsff"]
@@ -49,7 +50,7 @@ distanceInMargin = 10.0
 [node name="CameraShake" type="Node3D" parent="." unique_id=2091339316]
 script = ExtResource("2_xo7ej")
 magnitudeOverTime = SubResource("Curve_t0je2")
-shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d"), ExtResource("14_p6ck8")])
+shakeParams = Array[ExtResource("3_m2yog")]([ExtResource("4_3bh2q"), ExtResource("5_lh302"), ExtResource("6_83sxp"), ExtResource("7_vrig3"), ExtResource("8_yyu2d"), ExtResource("14_p6ck8"), ExtResource("16_d0i3x")])
 
 [node name="CameraRoll" type="Node3D" parent="CameraShake" unique_id=1148907142]
 script = ExtResource("16_5g0f1")

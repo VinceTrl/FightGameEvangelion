@@ -11,7 +11,9 @@ enum DamageType {Melee,projectile,Volume,Slap,Beyblade,Tooth,Explosion}
 @export var hitDirection:Vector3 = Vector3.RIGHT
 @export var hitForce:float = 1.0
 @export var playFxOnHit:bool = true
+@export var forceFxOnHurtbox:bool = false
 
+@export_group("DEBUG")
 @export var debugShape: bool = false
 @export var debugText: bool = false
 

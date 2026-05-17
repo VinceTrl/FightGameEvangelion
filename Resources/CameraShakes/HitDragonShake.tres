@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShakeParameters" format=3 uid="uid://bjnja7u23h7kc"]
+
+[ext_resource type="Script" uid="uid://c411xrcd3f3th" path="res://Scripts/Camera/ShakeParams.gd" id="1_ycc8f"]
+
+[sub_resource type="Curve" id="Curve_ycc8f"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.2707908, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_ycc8f")
+shakeName = &"HitDragonShake"
+shakeTime = 0.85
+minMagnitude = 0.01
+magnitudeOverTime = SubResource("Curve_ycc8f")

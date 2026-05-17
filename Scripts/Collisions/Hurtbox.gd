@@ -57,6 +57,9 @@ func HitVfx(hitbox:Hitbox):
 	
 	if(hitbox.type == Hitbox.DamageType.Slap):
 		targetPosition = owner.global_position
+		
+	if(hitbox.forceFxOnHurtbox):
+		targetPosition = owner.global_position
 	
 	vfx.global_position = targetPosition
 	get_tree().current_scene.add_child(vfx)

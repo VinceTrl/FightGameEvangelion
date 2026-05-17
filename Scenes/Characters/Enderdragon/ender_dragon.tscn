@@ -2628,7 +2628,6 @@ cap_top = false
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbvag"]
 transparency = 1
 cull_mode = 2
-no_depth_test = true
 shading_mode = 0
 albedo_texture = SubResource("GradientTexture2D_ciing")
 texture_filter = 0
@@ -2642,7 +2641,6 @@ cap_top = false
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmp72"]
 transparency = 1
 cull_mode = 1
-no_depth_test = true
 shading_mode = 0
 albedo_color = Color(0.7921569, 0, 0.5764706, 1)
 albedo_texture = ExtResource("7_ciing")
@@ -2657,7 +2655,6 @@ cap_bottom = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7ips"]
 transparency = 1
-no_depth_test = true
 shading_mode = 0
 albedo_texture = ExtResource("8_hbvag")
 texture_filter = 0
@@ -3744,6 +3741,7 @@ _data = {
 [node name="EnderDragon" type="Node3D" unique_id=768587010 node_paths=PackedStringArray("warning", "beam", "beamHitbox", "headAnimation", "dragonAnimation", "materialAnimation", "headRotation", "defaultLookTarget", "fireballMarker", "health", "shaker")]
 script = ExtResource("1_ebomb")
 targetResetDelay = 4.0
+cameraShake = "HitDragonShake"
 warning = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamWarning")
 beam = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot")
 beamHitbox = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot/Hitbox")
@@ -4176,7 +4174,6 @@ frame = 2
 
 [node name="BeamRoot" type="Marker3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot" unique_id=1273142304]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 7.4505825e-11, 0, -7.4505825e-11, 0.01, 0, -0.003707332, -0.021154525)
-visible = false
 
 [node name="Hitbox" type="Area3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=1688680068]
 script = ExtResource("10_x3tys")
@@ -4184,6 +4181,7 @@ owner_id = 620
 type = 6
 isActive = false
 hitForce = 2.0
+forceFxOnHurtbox = true
 metadata/_custom_type_script = "uid://chlkng7i45f53"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot/Hitbox" unique_id=1664307689]

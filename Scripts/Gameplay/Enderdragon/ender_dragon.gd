@@ -6,7 +6,14 @@ extends Node3D
 @export var maxFireball:int = 3
 @export_range(0.0,1.0,0.001) var lookWeight:float = 0.1
 
-@export_group("beam settings")
+@export_group("Damage Effects")
+@export var freezeFrameDuration:float = 0.1
+@export var cameraShake:String = "HitShake"
+@export var glitch:GlitchParameters = preload("uid://bgvu6c31k2dbe")
+
+
+
+@export_group("Beam settings")
 @export var warningTime:float = 1.5
 @export var attackTime:float = 2.0
 @export_range(0.0,1.0,0.001) var attackLookWeight:float = 0.01
@@ -74,8 +81,14 @@ func SetTargetRotation():
 
 func TakeDamage(hitbox:Hitbox):
 	health.ChangeHealth(-hitbox.damage)
+	
+	#effects
 	shaker.NodeShake()
 	materialAnimation.play("Hurt")
+	Manager.timeManager.freezeFrame(0.001,freezeFrameDuration)
+	Manager.gameCamera.camShake.AskCamShake(cameraShake)
+	Manager.postProcessEffects.GlitchEffect(glitch)
+	
 	
 	
 	if(hitbox.owner):
