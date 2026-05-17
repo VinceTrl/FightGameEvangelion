@@ -4,7 +4,15 @@ extends Node3D
 @export var targetResetDelay:float = 3
 @export var minFireball:int = 1
 @export var maxFireball:int = 3
-@export_range(0.0,1.0,0.05) var lookWeight:float = 0.1
+@export_range(0.0,1.0,0.001) var lookWeight:float = 0.1
+
+@export_group("beam settings")
+@export var warningTime:float = 1.5
+@export var attackTime:float = 2.0
+@export_range(0.0,1.0,0.001) var attackLookWeight:float = 0.01
+@export var warning:Node3D
+@export var beam:Node3D
+@export var beamHitbox:Hitbox
 
 @export_group("References")
 @export var headAnimation:AnimationPlayer
@@ -22,12 +30,14 @@ var isLookingAtTarget:bool = true
 var hasTarget:bool = false
 var isFiring:bool = false
 var defaultTargetPosition:Vector3
+var currentLookWeight:float
 
 const DRAGON_FIREBALL = preload("uid://dnissd1g3gmmb")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	defaultTargetPosition = defaultLookTarget.global_position
+	currentLookWeight = lookWeight
 	#call_deferred("SetTargetRotation")
 	pass # Replace with function body.
 
@@ -43,17 +53,19 @@ func ProcessTarget():
 	if(hasTarget):
 		if(target):
 			targetLastPosition = target.global_position
-			defaultLookTarget.global_position = lerp(defaultLookTarget.global_position,targetLastPosition,0.1)
+			ProcessLookTarget(targetLastPosition)
+			#defaultLookTarget.global_position = lerp(defaultLookTarget.global_position,targetLastPosition,0.1)
 			#DebugDraw3D.draw_sphere(targetLastPosition,0.1)
 		else:
 			ResetTarget()
 	else:
-		defaultLookTarget.global_position = lerp(defaultLookTarget.global_position,defaultTargetPosition,0.1)
+		ProcessLookTarget(defaultTargetPosition)
+		#defaultLookTarget.global_position = lerp(defaultLookTarget.global_position,defaultTargetPosition,0.1)
 		#DebugDraw3D.draw_sphere(defaultTargetPosition,0.1)
 		
 func ProcessLookTarget(targetPos:Vector3):
 	if(!isLookingAtTarget):return
-	defaultLookTarget.global_position = lerp(defaultLookTarget.global_position,targetPos,lookWeight)
+	defaultLookTarget.global_position = lerp(defaultLookTarget.global_position,targetPos,currentLookWeight)
 	
 func SetTargetRotation():
 	headRotation.lookTarget = Manager.gameManager.GetRandomPlayer()
@@ -70,7 +82,8 @@ func TakeDamage(hitbox:Hitbox):
 		target = hitbox.owner
 		#headRotation.lookTarget = target
 		hasTarget = true
-		FireBall()
+		ThrowBeam()
+		#FireBall()
 		
 func FireBall():
 	if(isFiring):return
@@ -100,3 +113,37 @@ func ResetTarget():
 	headRotation.lookTarget = defaultLookTarget
 	target = null
 	hasTarget = false
+	
+func ThrowBeam():
+	if(!target):return
+	if(isFiring):return
+	
+	isFiring = true
+	
+	#warning phase
+	warning.visible = true
+	await get_tree().create_timer(warningTime).timeout
+	
+	
+	
+	#isLookingAtTarget = false
+	currentLookWeight = attackLookWeight
+	headAnimation.play("Scream")
+	warning.visible = false
+	beam.visible = true
+	beamHitbox.ActiveHitBox()
+	await get_tree().create_timer(attackTime).timeout
+	
+	beamHitbox.InactiveHitBox()
+	beam.visible = false
+	#isLookingAtTarget = true
+	currentLookWeight = lookWeight
+	headAnimation.play("Idle")
+	
+	isFiring = false
+	ResetLookTargetDelay()
+	
+func ResetLookTargetDelay():
+	await get_tree().create_timer(targetResetDelay).timeout 
+	if(isFiring):return
+	ResetTarget()

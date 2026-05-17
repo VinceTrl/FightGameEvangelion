@@ -7,6 +7,11 @@
 [ext_resource type="Script" uid="uid://cwemm5t08s40v" path="res://Scripts/GameEffects/TRSEffects/rotation_to_target.gd" id="3_dab8l"]
 [ext_resource type="Script" uid="uid://be4u7kwwov65g" path="res://Scripts/Collisions/Hurtbox.gd" id="5_uckao"]
 [ext_resource type="Script" uid="uid://cw2bpx65nkj7h" path="res://Scripts/Components/HealthComponent.gd" id="6_8ufi1"]
+[ext_resource type="Texture2D" uid="uid://c0ph7x1vlhpbo" path="res://Assets/Sprites/Vfx/Glow/item_glow.png" id="7_ciing"]
+[ext_resource type="Texture2D" uid="uid://co6dn6srwk12a" path="res://Assets/Textures/MagicCircle.png" id="7_hbvag"]
+[ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="7_kmp72"]
+[ext_resource type="Texture2D" uid="uid://d3qt3lrfeao1p" path="res://Assets/Sprites/Vfx/Fire/noises.png" id="8_hbvag"]
+[ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="10_x3tys"]
 
 [sub_resource type="Curve" id="Curve_dab8l"]
 
@@ -2539,6 +2544,257 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ufi1"]
 size = Vector3(1.2, 1.6, 1.875)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_38cwl"]
+top_radius = 0.1
+bottom_radius = 0.35
+height = 8.0
+cap_top = false
+
+[sub_resource type="Gradient" id="Gradient_7k68u"]
+colors = PackedColorArray(1, 0, 0, 0.5882353, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ciing"]
+gradient = SubResource("Gradient_7k68u")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3tys"]
+transparency = 1
+cull_mode = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_ciing")
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_h551e"]
+resource_name = "BeamWarning"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/0:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ga3nh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/0:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ouo4m"]
+_data = {
+&"BeamWarning": SubResource("Animation_h551e"),
+&"RESET": SubResource("Animation_ga3nh")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmp72"]
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_x3tys"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrv53"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.89411765, 0.30980393, 0.972549, 1)
+albedo_texture = ExtResource("7_hbvag")
+emission_enabled = true
+emission = Color(0.827451, 0.26666668, 0.9137255, 1)
+emission_texture = ExtResource("7_hbvag")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kmp72"]
+top_radius = 0.1
+bottom_radius = 0.25
+height = 8.0
+cap_top = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbvag"]
+transparency = 1
+cull_mode = 2
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture2D_ciing")
+texture_filter = 0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x3tys"]
+top_radius = 0.1
+bottom_radius = 0.275
+height = 8.0
+cap_top = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kmp72"]
+transparency = 1
+cull_mode = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.7921569, 0, 0.5764706, 1)
+albedo_texture = ExtResource("7_ciing")
+texture_filter = 0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xrv53"]
+top_radius = 0.1
+bottom_radius = 0.25
+height = 8.0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7ips"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("8_hbvag")
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_15dpt"]
+resource_name = "BeamAttackLoop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BeamFlow:surface_material_override/0:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.49648893, 0.7464889, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1, 0), Vector3(0, 0, 0), Vector3(0, -1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Beam:surface_material_override/0:uv1_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MagicCircle:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.2831855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BeamRed:surface_material_override/0:albedo_color")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4477266, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hitbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -5)]
+}
+
+[sub_resource type="Animation" id="Animation_khyq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BeamFlow:surface_material_override/0:uv1_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Beam:surface_material_override/0:uv1_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MagicCircle:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BeamRed:surface_material_override/0:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hitbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h551e"]
+_data = {
+&"BeamAttackLoop": SubResource("Animation_15dpt"),
+&"RESET": SubResource("Animation_khyq2")
+}
+
 [sub_resource type="Animation" id="Animation_hbvag"]
 resource_name = "NeckIdle"
 length = 3.0
@@ -3485,8 +3741,12 @@ _data = {
 &"RESET": SubResource("Animation_hqkmf")
 }
 
-[node name="EnderDragon" type="Node3D" unique_id=768587010 node_paths=PackedStringArray("headAnimation", "dragonAnimation", "materialAnimation", "headRotation", "defaultLookTarget", "fireballMarker", "health", "shaker")]
+[node name="EnderDragon" type="Node3D" unique_id=768587010 node_paths=PackedStringArray("warning", "beam", "beamHitbox", "headAnimation", "dragonAnimation", "materialAnimation", "headRotation", "defaultLookTarget", "fireballMarker", "health", "shaker")]
 script = ExtResource("1_ebomb")
+targetResetDelay = 4.0
+warning = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamWarning")
+beam = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot")
+beamHitbox = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot/Hitbox")
 headAnimation = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/HeadAnimationPlayer")
 dragonAnimation = NodePath("NodeShaker/EnderDragonRoot/DragonAnimationPlayer")
 materialAnimation = NodePath("NodeShaker/EnderDragonRoot/DragonAnimationPlayer/MaterialAnimationPlayer")
@@ -3892,6 +4152,70 @@ metadata/_custom_type_script = "uid://be4u7kwwov65g"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.9604645e-08, -0.18750095)
 shape = SubResource("BoxShape3D_8ufi1")
 debug_color = Color(0.9999998, 0.013378207, 0.042557828, 0.41960785)
+
+[node name="BeamWarning" type="MeshInstance3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot" unique_id=47432994]
+transform = Transform3D(0.01, 0, 0, 0, -3.6260805e-10, -0.01, 0, 0.01, -3.6260805e-10, 0, -0.0037073297, -0.058654528)
+visible = false
+mesh = SubResource("CylinderMesh_38cwl")
+skeleton = NodePath("../../../../../../../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3tys")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamWarning" unique_id=1951841751]
+libraries/ = SubResource("AnimationLibrary_ouo4m")
+autoplay = &"BeamWarning"
+
+[node name="WarningSprite" type="Sprite3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamWarning" unique_id=515515717]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 3.5893955, -0.087124944)
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("7_kmp72")
+vframes = 7
+frame = 2
+
+[node name="BeamRoot" type="Marker3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot" unique_id=1273142304]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 7.4505825e-11, 0, -7.4505825e-11, 0.01, 0, -0.003707332, -0.021154525)
+visible = false
+
+[node name="Hitbox" type="Area3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=1688680068]
+script = ExtResource("10_x3tys")
+owner_id = 620
+type = 6
+isActive = false
+hitForce = 2.0
+metadata/_custom_type_script = "uid://chlkng7i45f53"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot/Hitbox" unique_id=1664307689]
+shape = SubResource("BoxShape3D_kmp72")
+debug_color = Color(0.9490196, 0, 0.5686275, 1)
+
+[node name="MagicCircle" type="MeshInstance3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=696826527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.20786667)
+mesh = SubResource("QuadMesh_x3tys")
+surface_material_override/0 = SubResource("StandardMaterial3D_xrv53")
+
+[node name="BeamRed" type="MeshInstance3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=545564495]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.0116815e-07, -3.75)
+mesh = SubResource("CylinderMesh_kmp72")
+skeleton = NodePath("../../../../../../../../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_hbvag")
+
+[node name="BeamFlow" type="MeshInstance3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=367839575]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -3.75)
+mesh = SubResource("CylinderMesh_x3tys")
+skeleton = NodePath("../../../../../../../../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_kmp72")
+
+[node name="Beam" type="MeshInstance3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=415351867]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -3.75)
+mesh = SubResource("CylinderMesh_xrv53")
+skeleton = NodePath("../../../../../../../../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f7ips")
+
+[node name="BeamAnimationPlayer" type="AnimationPlayer" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=750062667]
+libraries/ = SubResource("AnimationLibrary_h551e")
+autoplay = &"BeamAttackLoop"
 
 [node name="NeckAnimationPlayer" type="AnimationPlayer" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot" unique_id=1068918786]
 libraries/ = SubResource("AnimationLibrary_f7ips")
