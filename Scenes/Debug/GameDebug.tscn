@@ -5,8 +5,6 @@
 [node name="GameDebug" type="Node" unique_id=1767165627]
 script = ExtResource("1_ag8n1")
 debugFPS = true
-debugMap = true
-debugStage = true
-stageIndex = 2
+stageIndex = 12
 playerDebugID = Array[int]([1])
 debugActiveLineThickness = 0.025

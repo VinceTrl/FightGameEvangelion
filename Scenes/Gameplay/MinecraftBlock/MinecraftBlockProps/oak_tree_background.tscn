@@ -1,0 +1,693 @@
+[gd_scene format=4 uid="uid://bablp833dngqc"]
+
+[ext_resource type="Script" uid="uid://da2octxu0s271" path="res://Scripts/Gameplay/MinecraftBlock/block.gd" id="1_vk36p"]
+[ext_resource type="Material" uid="uid://bpwv7bubet4" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Bedrock.tres" id="2_rjlox"]
+[ext_resource type="Material" uid="uid://bguudkcmydlau" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_OakLog.tres" id="3_j345g"]
+[ext_resource type="Material" uid="uid://1vnbvsrjl8ik" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_OakLog_Top.tres" id="4_ba041"]
+[ext_resource type="Material" uid="uid://nsy0qydxrren" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_OakLeaf.tres" id="5_0d73t"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fp3fa"]
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAQAFAAMABgAAAAQABwADAAUABQAGAAcABAAHAAYA"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n4gou"]
+resource_local_to_scene = true
+resource_name = "Cube"
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"attribute_data": PackedByteArray("AACAvwAAgLQAAAAAAAAAAAAAAAD+/38/AACAvwAAgD8AAABAAAAANAAAQEAAAAAAAABAQAIAgD8AAABAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAD+/38/AACAPwAAAAAAAABAAAAANAAAAEAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": ExtResource("2_rjlox"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEu6abRLumm0S7pptEu6abRDumm0Q7pptEu6abRLumm0Q7pptEu6abRLumm0S7pptEu6abRDumm0S7pptEO6abRLumm0Q7pptEO6abRDumm0Q7pptEO6abRDumm0S7pptEO6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7pptEO6abRDumm0S7/38AAP///7//fwAA/v//v/9/AAD///+//38AAP///78AAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP///3//f///////f/9///////9//3///////3//f////3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgL8BAIA/AACAvwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_rjlox"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7/3//f/9/////f/9//3////9//3//f////3//f/9///8=")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAP7/fz8AAIA/AACAP/7/fz8AAABAAAAAtAAAAEA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_rjlox"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7//////9//////////3//////////f/////////9///8=")
+}]
+shadow_mesh = SubResource("ArrayMesh_fp3fa")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mjgwj"]
+resource_local_to_scene = true
+resource_name = "Cube"
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"attribute_data": PackedByteArray("AACAvwAAgLQAAAAAAAAAAAAAAAD+/38/AACAvwAAgD8AAABAAAAANAAAQEAAAAAAAABAQAIAgD8AAABAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAD+/38/AACAPwAAAAAAAABAAAAANAAAAEAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": ExtResource("2_rjlox"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEu6abRLumm0S7pptEu6abRDumm0Q7pptEu6abRLumm0Q7pptEu6abRLumm0S7pptEu6abRDumm0S7pptEO6abRLumm0Q7pptEO6abRDumm0Q7pptEO6abRDumm0S7pptEO6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7pptEO6abRDumm0S7/38AAP///7//fwAA/v//v/9/AAD///+//38AAP///78AAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP///3//f///////f/9///////9//3///////3//f////3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgL8BAIA/AACAvwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_rjlox"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7/3//f/9/////f/9//3////9//3//f////3//f/9///8=")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAP7/fz8AAIA/AACAP/7/fz8AAABAAAAAtAAAAEA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_rjlox"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7//////9//////////3//////////f/////////9///8=")
+}]
+shadow_mesh = SubResource("ArrayMesh_fp3fa")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8qnf5"]
+resource_local_to_scene = true
+resource_name = "Cube"
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"attribute_data": PackedByteArray("AACAvwAAgLQAAAAAAAAAAAAAAAD+/38/AACAvwAAgD8AAABAAAAANAAAQEAAAAAAAABAQAIAgD8AAABAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAD+/38/AACAPwAAAAAAAABAAAAANAAAAEAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": ExtResource("2_rjlox"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEu6abRLumm0S7pptEu6abRDumm0Q7pptEu6abRLumm0Q7pptEu6abRLumm0S7pptEu6abRDumm0S7pptEO6abRLumm0Q7pptEO6abRDumm0Q7pptEO6abRDumm0S7pptEO6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7pptEO6abRDumm0S7/38AAP///7//fwAA/v//v/9/AAD///+//38AAP///78AAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP///3//f///////f/9///////9//3///////3//f////3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgL8BAIA/AACAvwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_rjlox"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7/3//f/9/////f/9//3////9//3//f////3//f/9///8=")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAP7/fz8AAIA/AACAP/7/fz8AAABAAAAAtAAAAEA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_rjlox"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7//////9//////////3//////////f/////////9///8=")
+}]
+shadow_mesh = SubResource("ArrayMesh_fp3fa")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1r4ea"]
+resource_local_to_scene = true
+resource_name = "Cube"
+_surfaces = [{
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 0.006),
+"attribute_data": PackedByteArray("AACAvwAAgLQAAAAAAAAAAAAAAAD+/38/AACAvwAAgD8AAABAAAAANAAAQEAAAAAAAABAQAIAgD8AAABAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAD+/38/AACAPwAAAAAAAABAAAAANAAAAEAAAIA/AACAPwAAgD8="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": ExtResource("2_rjlox"),
+"name": "Sides",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEO6abRLumm0Q7pptEO6abRLumm0S7pptEu6abRLumm0S7pptEu6abRDumm0Q7pptEu6abRLumm0Q7pptEu6abRLumm0S7pptEu6abRDumm0S7pptEO6abRLumm0Q7pptEO6abRDumm0Q7pptEO6abRDumm0S7pptEO6abRLumm0S7pptEO6abRDumm0Q7pptEu6abRDumm0Q7pptEu6abRDumm0S7pptEO6abRDumm0S7/38AAP///7//fwAA/v//v/9/AAD///+//38AAP///78AAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgP///3//f///////f/9///////9//3///////3//f////3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/78=")
+}, {
+"aabb": AABB(-0.003, -0.003, 0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgL8BAIA/AACAvwAAgD8AAAAAAAAAAAAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_rjlox"),
+"name": "Top",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEu6abRLumm0Q7pptEu6abRDumm0Q7pptEO6abRDumm0Q7pptEO6abRLumm0Q7/3//f/9/////f/9//3////9//3//f////3//f/9///8=")
+}, {
+"aabb": AABB(-0.003, -0.003, -0.003, 0.006, 0.006, 1e-05),
+"attribute_data": PackedByteArray("AAAAAP7/fz8AAIA/AACAP/7/fz8AAABAAAAAtAAAAEA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": ExtResource("2_rjlox"),
+"name": "Bottom",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("pptEO6abRLumm0S7pptEO6abRDumm0S7pptEu6abRDumm0S7pptEu6abRLumm0S7//////9//////////3//////////f/////////9///8=")
+}]
+shadow_mesh = SubResource("ArrayMesh_fp3fa")
+
+[node name="OakTreeBackground" type="Node3D" unique_id=771492839]
+
+[node name="OakLogBlock" type="Node3D" parent="." unique_id=1588274387 groups=["Enviro", "PyramidHeadTarget"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+script = ExtResource("1_vk36p")
+healthPoints = 4
+
+[node name="BlockMesh" type="MeshInstance3D" parent="OakLogBlock" unique_id=13657721]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.15, 0)
+mesh = SubResource("ArrayMesh_n4gou")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_j345g")
+surface_material_override/1 = ExtResource("4_ba041")
+surface_material_override/2 = ExtResource("4_ba041")
+
+[node name="BlockMesh2" type="MeshInstance3D" parent="OakLogBlock" unique_id=768137794]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, -0.15, 0)
+mesh = SubResource("ArrayMesh_mjgwj")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_j345g")
+surface_material_override/1 = ExtResource("4_ba041")
+surface_material_override/2 = ExtResource("4_ba041")
+
+[node name="BlockMesh3" type="MeshInstance3D" parent="OakLogBlock" unique_id=2070478855]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.45, 0)
+mesh = SubResource("ArrayMesh_mjgwj")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_j345g")
+surface_material_override/1 = ExtResource("4_ba041")
+surface_material_override/2 = ExtResource("4_ba041")
+
+[node name="BlockMesh4" type="MeshInstance3D" parent="OakLogBlock" unique_id=1227879916]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.74999994, 0)
+mesh = SubResource("ArrayMesh_mjgwj")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_j345g")
+surface_material_override/1 = ExtResource("4_ba041")
+surface_material_override/2 = ExtResource("4_ba041")
+
+[node name="BlockMesh5" type="MeshInstance3D" parent="OakLogBlock" unique_id=2124857854]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 1.05, 0)
+mesh = SubResource("ArrayMesh_mjgwj")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_j345g")
+surface_material_override/1 = ExtResource("4_ba041")
+surface_material_override/2 = ExtResource("4_ba041")
+
+[node name="BlockMesh6" type="MeshInstance3D" parent="OakLogBlock" unique_id=1434358759]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 1.3499999, 0)
+mesh = SubResource("ArrayMesh_mjgwj")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_j345g")
+surface_material_override/1 = ExtResource("4_ba041")
+surface_material_override/2 = ExtResource("4_ba041")
+
+[node name="OakLeafBlock" type="Node3D" parent="." unique_id=716240674 groups=["Enviro", "PyramidHeadTarget"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.90000004, 0)
+script = ExtResource("1_vk36p")
+healthPoints = 2
+
+[node name="BlockMesh" type="MeshInstance3D" parent="OakLeafBlock" unique_id=2044767308]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.15000004, 0)
+mesh = SubResource("ArrayMesh_8qnf5")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh37" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1676128880]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.15000004, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh50" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1475360465]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.15000004, -0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh51" type="MeshInstance3D" parent="OakLeafBlock" unique_id=2102767312]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.15000004, -0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh52" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1956676294]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.15000004, -0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh53" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1055081608]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.15000004, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh2" type="MeshInstance3D" parent="OakLeafBlock" unique_id=335138325]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.15000004, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh3" type="MeshInstance3D" parent="OakLeafBlock" unique_id=674454792]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.4500001, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh25" type="MeshInstance3D" parent="OakLeafBlock" unique_id=527192296]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.4500001, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh30" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1745634017]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.4500001, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh26" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1382524286]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.4500001, 0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh27" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1816609412]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.4500001, 0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh28" type="MeshInstance3D" parent="OakLeafBlock" unique_id=203924968]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.4500001, 0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh29" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1707450377]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.4500001, 0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh31" type="MeshInstance3D" parent="OakLeafBlock" unique_id=872940839]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.4500001, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh32" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1843785732]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.15000015, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh33" type="MeshInstance3D" parent="OakLeafBlock" unique_id=358196009]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.15000015, 0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh34" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1963272195]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.15000015, 0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh35" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1644786743]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.15000015, 0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh36" type="MeshInstance3D" parent="OakLeafBlock" unique_id=538614886]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.15000015, 0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh38" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1658977821]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.15000015, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh47" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1394693344]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.15000015, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh48" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1470960972]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.15000015, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh49" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1585468850]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.15000015, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh39" type="MeshInstance3D" parent="OakLeafBlock" unique_id=309988836]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.15000015, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh40" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1699240593]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.15000015, -0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh41" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1948253913]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.4500001, -0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh42" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1897371269]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0.3, 0.4500001, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh4" type="MeshInstance3D" parent="OakLeafBlock" unique_id=2086966668]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.75000006, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh20" type="MeshInstance3D" parent="OakLeafBlock" unique_id=854938234]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.75000006, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh21" type="MeshInstance3D" parent="OakLeafBlock" unique_id=60436437]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.75000006, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh22" type="MeshInstance3D" parent="OakLeafBlock" unique_id=4384427]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.75000006, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh23" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1024834674]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.75000006, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh24" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1500386581]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.75000006, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh12" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1644447218]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.75000006, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh13" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1512794776]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.15000004, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh14" type="MeshInstance3D" parent="OakLeafBlock" unique_id=2082964097]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.4500001, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh15" type="MeshInstance3D" parent="OakLeafBlock" unique_id=841140618]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 0.75000006, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh5" type="MeshInstance3D" parent="OakLeafBlock" unique_id=6890846]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 1.05, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh16" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1143316214]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 1.05, 0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh17" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1419120516]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.3, 1.05, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh18" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1619969494]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 1.05, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh19" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1684886986]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 1.05, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh6" type="MeshInstance3D" parent="OakLeafBlock" unique_id=989289583]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.45, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh7" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1370543995]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.14999992, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh43" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1471643844]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.14999992, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh44" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1751727570]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.14999992, -0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh45" type="MeshInstance3D" parent="OakLeafBlock" unique_id=2059975892]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.44999987, -0.6)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh46" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1093624120]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.90000004, 0.44999987, -0.3)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh8" type="MeshInstance3D" parent="OakLeafBlock" unique_id=389022632]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.14999992, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh9" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1218604844]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, -0.6, 0.44999987, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh10" type="MeshInstance3D" parent="OakLeafBlock" unique_id=308229724]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.44999987, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
+
+[node name="BlockMesh11" type="MeshInstance3D" parent="OakLeafBlock" unique_id=1828128712]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0.44999987, 0)
+mesh = SubResource("ArrayMesh_1r4ea")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("5_0d73t")
+surface_material_override/1 = ExtResource("5_0d73t")
+surface_material_override/2 = ExtResource("5_0d73t")
