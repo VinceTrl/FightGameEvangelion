@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8kqnefy3vkr2"]
+[gd_scene format=3 uid="uid://c8kqnefy3vkr2"]
 
 [ext_resource type="Script" uid="uid://cskhht8kpq2oj" path="res://Scripts/GameEffects/Vibration/VibrationManager.gd" id="1_25pwv"]
 [ext_resource type="Script" uid="uid://cfx6xx0cjmmm1" path="res://Scripts/GameEffects/Vibration/VibrationParameters.gd" id="2_ni5su"]
@@ -11,7 +11,8 @@
 [ext_resource type="Resource" uid="uid://b03rv1pfthcso" path="res://Resources/Vibrations/JumpVibration.tres" id="9_gxe42"]
 [ext_resource type="Resource" uid="uid://dtq3b4plp6eou" path="res://Resources/Vibrations/DashVibration.tres" id="10_1s5xg"]
 [ext_resource type="Resource" uid="uid://buf8fgvov2fu2" path="res://Resources/Vibrations/ChargeShootVibration.tres" id="11_7dlni"]
+[ext_resource type="Resource" uid="uid://dyu6dysiiv4ud" path="res://Resources/Vibrations/BeamVibration.tres" id="12_b8xws"]
 
-[node name="VibrationManager" type="Node"]
+[node name="VibrationManager" type="Node" unique_id=46523499]
 script = ExtResource("1_25pwv")
-vibrations = Array[ExtResource("2_ni5su")]([ExtResource("3_jq854"), ExtResource("4_yl6bb"), ExtResource("5_ex2lo"), ExtResource("6_3555u"), ExtResource("7_vrb6f"), ExtResource("8_pp122"), ExtResource("9_gxe42"), ExtResource("10_1s5xg"), ExtResource("11_7dlni")])
+vibrations = Array[ExtResource("2_ni5su")]([ExtResource("3_jq854"), ExtResource("4_yl6bb"), ExtResource("5_ex2lo"), ExtResource("6_3555u"), ExtResource("7_vrb6f"), ExtResource("8_pp122"), ExtResource("9_gxe42"), ExtResource("10_1s5xg"), ExtResource("11_7dlni"), ExtResource("12_b8xws")])

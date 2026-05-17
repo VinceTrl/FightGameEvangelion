@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShakeParameters" format=3 uid="uid://cehx4he10mxmx"]
+
+[ext_resource type="Script" uid="uid://c411xrcd3f3th" path="res://Scripts/Camera/ShakeParams.gd" id="1_sj73k"]
+
+[sub_resource type="Curve" id="Curve_sj73k"]
+_data = [Vector2(0, 0.48663425), 0.0, -0.076192215, 0, 0, Vector2(0.25304878, 1), 0.0, 0.0, 0, 0, Vector2(0.75914633, 1), -5.283873e-07, -5.283873e-07, 0, 0, Vector2(1, 0), -8.29464, 0.0, 0, 0]
+point_count = 4
+
+[resource]
+script = ExtResource("1_sj73k")
+shakeName = &"DragonBeamShake"
+minMagnitude = 0.025
+maxMagnitude = 0.085
+magnitudeOverTime = SubResource("Curve_sj73k")

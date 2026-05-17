@@ -8,6 +8,7 @@ extends CharacterState
 @export var freezeFrameDuration:float = 0.1
 @export var cameraShake:String = "HitShake"
 @export var nodeShaker:NodeShaker
+@export var audioStream:AudioStreamRandomizer
 
 
 var hitbox:Hitbox
@@ -22,6 +23,7 @@ func EnterState():
 		hitbox = character.lastHitbox
 
 	#effect
+	GlobalSFX.EmitSound(audioStream,-10,character.global_position)
 	Manager.timeManager.freezeFrame(0.001,freezeFrameDuration)
 	Manager.gameCamera.camShake.AskCamShake(cameraShake)
 	nodeShaker.NodeShake()

@@ -12,6 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="7_kmp72"]
 [ext_resource type="Texture2D" uid="uid://d3qt3lrfeao1p" path="res://Assets/Sprites/Vfx/Fire/noises.png" id="8_hbvag"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="10_x3tys"]
+[ext_resource type="AudioStream" uid="uid://dh4udi88bwit7" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_flap1.ogg" id="13_15dpt"]
+[ext_resource type="AudioStream" uid="uid://dfrin6po700jj" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_flap2.ogg" id="14_khyq2"]
+[ext_resource type="AudioStream" uid="uid://0xmaxkmrhre7" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_flap3.ogg" id="15_h551e"]
+[ext_resource type="AudioStream" uid="uid://dityt5axpyocv" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_flap4.ogg" id="16_ga3nh"]
+[ext_resource type="AudioStream" uid="uid://qhuvrf1iix6n" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_idle2.ogg" id="17_c4cof"]
+[ext_resource type="AudioStream" uid="uid://dc3k4ryd71d31" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_idle3.ogg" id="18_ss1tl"]
+[ext_resource type="AudioStream" uid="uid://ckso77ms4r7uo" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_idle4.ogg" id="19_vrmj7"]
+[ext_resource type="AudioStream" uid="uid://db5os35uoeeuf" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_hurt1.ogg" id="20_2wnn8"]
+[ext_resource type="AudioStream" uid="uid://bcnudt26orgpr" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_hurt2.ogg" id="21_0nakr"]
 
 [sub_resource type="Curve" id="Curve_dab8l"]
 
@@ -3369,6 +3378,13 @@ _data = {
 &"WingIdle": SubResource("Animation_dab8l")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ouo4m"]
+streams_count = 4
+stream_0/stream = ExtResource("13_15dpt")
+stream_1/stream = ExtResource("14_khyq2")
+stream_2/stream = ExtResource("15_h551e")
+stream_3/stream = ExtResource("16_ga3nh")
+
 [sub_resource type="Animation" id="Animation_x3tys"]
 resource_name = "Flying"
 length = 1.75
@@ -3547,6 +3563,21 @@ tracks/14/keys = {
 "clips": PackedStringArray("NeckIdle"),
 "times": PackedFloat32Array(0)
 }
+tracks/15/type = "audio"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../../Audio/AudioWingFlap")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ouo4m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/15/use_blend = true
 
 [sub_resource type="Animation" id="Animation_kmp72"]
 length = 0.001
@@ -3738,10 +3769,22 @@ _data = {
 &"RESET": SubResource("Animation_hqkmf")
 }
 
-[node name="EnderDragon" type="Node3D" unique_id=768587010 node_paths=PackedStringArray("warning", "beam", "beamHitbox", "headAnimation", "dragonAnimation", "materialAnimation", "headRotation", "defaultLookTarget", "fireballMarker", "health", "shaker")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iwd2q"]
+streams_count = 3
+stream_0/stream = ExtResource("17_c4cof")
+stream_1/stream = ExtResource("18_ss1tl")
+stream_2/stream = ExtResource("19_vrmj7")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c4cof"]
+streams_count = 2
+stream_0/stream = ExtResource("20_2wnn8")
+stream_1/stream = ExtResource("21_0nakr")
+
+[node name="EnderDragon" type="Node3D" unique_id=768587010 node_paths=PackedStringArray("hurtAudioPlayer", "warning", "beam", "beamHitbox", "headAnimation", "dragonAnimation", "materialAnimation", "headRotation", "defaultLookTarget", "fireballMarker", "health", "shaker", "attackAudioPlayer")]
 script = ExtResource("1_ebomb")
 targetResetDelay = 4.0
 cameraShake = "HitDragonShake"
+hurtAudioPlayer = NodePath("Audio/AudioHurt")
 warning = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamWarning")
 beam = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot")
 beamHitbox = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot/Hitbox")
@@ -3753,6 +3796,7 @@ defaultLookTarget = NodePath("LookAtTarget")
 fireballMarker = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/head_000/JawRoot/FireballMarker")
 health = NodePath("HealthComponent")
 shaker = NodePath("NodeShaker")
+attackAudioPlayer = NodePath("Audio/AudioScream")
 
 [node name="NodeShaker" type="Node3D" parent="." unique_id=621588427 node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("2_uckao")
@@ -4287,3 +4331,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.625, -7.5)
 script = ExtResource("6_8ufi1")
 healthPoints = 99
 metadata/_custom_type_script = "uid://cw2bpx65nkj7h"
+
+[node name="Audio" type="Node3D" parent="." unique_id=1032328900]
+
+[node name="AudioWingFlap" type="AudioStreamPlayer3D" parent="Audio" unique_id=400720169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55391943, -5.7313533)
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="AudioScream" type="AudioStreamPlayer3D" parent="Audio" unique_id=1046621982]
+stream = SubResource("AudioStreamRandomizer_iwd2q")
+bus = &"SFX"
+
+[node name="AudioHurt" type="AudioStreamPlayer3D" parent="Audio" unique_id=1150642920]
+stream = SubResource("AudioStreamRandomizer_c4cof")
+bus = &"SFX"

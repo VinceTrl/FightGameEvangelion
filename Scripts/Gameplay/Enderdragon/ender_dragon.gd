@@ -10,7 +10,7 @@ extends Node3D
 @export var freezeFrameDuration:float = 0.1
 @export var cameraShake:String = "HitShake"
 @export var glitch:GlitchParameters = preload("uid://bgvu6c31k2dbe")
-
+@export var hurtAudioPlayer:AudioStreamPlayer3D
 
 
 @export_group("Beam settings")
@@ -30,6 +30,7 @@ extends Node3D
 @export var fireballMarker:Marker3D
 @export var health:HealthComponent
 @export var shaker:NodeShaker
+@export var attackAudioPlayer:AudioStreamPlayer3D
 
 var target:Node3D = null
 var targetLastPosition:Vector3
@@ -45,6 +46,8 @@ const DRAGON_FIREBALL = preload("uid://dnissd1g3gmmb")
 func _ready() -> void:
 	defaultTargetPosition = defaultLookTarget.global_position
 	currentLookWeight = lookWeight
+	beam.visible = false
+	warning.visible = false
 	#call_deferred("SetTargetRotation")
 	pass # Replace with function body.
 
@@ -88,6 +91,7 @@ func TakeDamage(hitbox:Hitbox):
 	Manager.timeManager.freezeFrame(0.001,freezeFrameDuration)
 	Manager.gameCamera.camShake.AskCamShake(cameraShake)
 	Manager.postProcessEffects.GlitchEffect(glitch)
+	hurtAudioPlayer.play()
 	
 	
 	
@@ -138,7 +142,10 @@ func ThrowBeam():
 	await get_tree().create_timer(warningTime).timeout
 	
 	
-	
+	Manager.gameCamera.camShake.AskCamShake("DragonBeamShake")
+	Manager.gameManager.vibrationManager.LaunchVibration(0,"BeamVibration")
+	Manager.gameManager.vibrationManager.LaunchVibration(1,"BeamVibration")
+	attackAudioPlayer.play()
 	#isLookingAtTarget = false
 	currentLookWeight = attackLookWeight
 	headAnimation.play("Scream")

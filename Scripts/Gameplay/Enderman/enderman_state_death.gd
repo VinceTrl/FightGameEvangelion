@@ -2,6 +2,7 @@ extends CharacterState
 
 var deathDelay:float = 0.25
 var timer:SceneTreeTimer
+@export var audio:AudioStream
 
 func EnterState():
 	stateName = "Death"
@@ -16,4 +17,5 @@ func ProcessState(delta: float):
 	
 func DeathDelay():
 	await get_tree().create_timer(deathDelay).timeout
+	GlobalSFX.EmitSound(audio,-10,character.global_position)
 	character.queue_free()

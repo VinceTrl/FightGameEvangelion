@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="VibrationParameters" format=3 uid="uid://dyu6dysiiv4ud"]
+
+[ext_resource type="Script" uid="uid://cfx6xx0cjmmm1" path="res://Scripts/GameEffects/Vibration/VibrationParameters.gd" id="1_y8jqr"]
+
+[sub_resource type="Curve" id="Curve_y8jqr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13109756, 0.56561357), 0.0, 0.0, 0, 0, Vector2(0.23780486, 0.052247882), 0.212309, 0.212309, 0, 0, Vector2(0.3262195, 0.95261234), 0.0, 0.0, 0, 0, Vector2(0.40853658, 0), -0.1328466, -0.1328466, 0, 0, Vector2(0.44817072, 0.992102), 0.0, 0.0, 0, 0, Vector2(0.5487805, 0), -0.751964, -0.751964, 0, 0, Vector2(0.60975605, 1), 0.0, 0.0, 0, 0, Vector2(0.68292683, 0), 0.0, 0.0, 0, 0, Vector2(0.7469512, 1), 0.0, 0.0, 0, 0, Vector2(0.82012194, 0), 0.0, 0.0, 0, 0, Vector2(0.875, 0.60510325), 0.0, 0.0, 0, 0, Vector2(0.9359756, 0.12332928), 0.0, 0.0, 0, 0, Vector2(1, 0.499093), 0.0, 0.0, 0, 0]
+point_count = 14
+
+[sub_resource type="Curve" id="Curve_w832j"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15243903, 0.37606317), 0.08635117, 0.08635117, 0, 0, Vector2(0.2957317, 0), 0.0, 0.0, 0, 0, Vector2(0.4207317, 0.43134868), 0.0, 0.0, 0, 0, Vector2(0.5609756, 0.04434991), 0.0, 0.0, 0, 0, Vector2(0.6493902, 0.49453217), 0.351004, 0.351004, 0, 0, Vector2(0.79573166, 0.004860282), 0.0, 0.0, 0, 0, Vector2(0.88414633, 0.5498177), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 9
+
+[resource]
+script = ExtResource("1_y8jqr")
+vibrationName = &"BeamVibration"
+duration = 2.0
+weakMagnitude = SubResource("Curve_w832j")
+strongMagnitude = SubResource("Curve_y8jqr")

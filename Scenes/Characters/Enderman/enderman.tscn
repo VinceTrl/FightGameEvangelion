@@ -12,9 +12,15 @@
 [ext_resource type="Script" uid="uid://ipvy5w7bxn6h" path="res://Scripts/Gameplay/Enderman/enderman_state_hurt.gd" id="11_bltcs"]
 [ext_resource type="Script" uid="uid://ms87mcetni62" path="res://Scripts/Gameplay/Enderman/enderman_state_wander.gd" id="11_euk8p"]
 [ext_resource type="Script" uid="uid://cbo3lnxd2nkbw" path="res://Scripts/Gameplay/Enderman/enderman_state_chase.gd" id="12_j54lw"]
+[ext_resource type="AudioStream" uid="uid://cshpuqiatl3un" path="res://Assets/Sounds/SFX/MinecraftSounds/Enderman_hurt1.ogg" id="13_47yei"]
 [ext_resource type="Script" uid="uid://ro35fkk6mg6o" path="res://Scripts/Gameplay/Enderman/enderman_state_steal.gd" id="13_j54lw"]
 [ext_resource type="Script" uid="uid://dr1we3c54po2f" path="res://Scripts/Gameplay/Enderman/enderman_state_death.gd" id="14_8d8yn"]
+[ext_resource type="AudioStream" uid="uid://dc5j8bg82p8uh" path="res://Assets/Sounds/SFX/MinecraftSounds/Enderman_hurt2.ogg" id="14_jtara"]
 [ext_resource type="Script" uid="uid://b58urx2i80ebx" path="res://Scripts/Gameplay/Enderman/enderman_state_drop.gd" id="15_8d8yn"]
+[ext_resource type="AudioStream" uid="uid://dtthcbs0xitnq" path="res://Assets/Sounds/SFX/MinecraftSounds/Enderman_idle1.ogg" id="16_ahvhb"]
+[ext_resource type="AudioStream" uid="uid://buay7uhrsc2wk" path="res://Assets/Sounds/SFX/MinecraftSounds/Enderman_idle2.ogg" id="17_68bch"]
+[ext_resource type="AudioStream" uid="uid://n5anvaqvexrt" path="res://Assets/Sounds/SFX/MinecraftSounds/Enderman_idle3.ogg" id="18_egdyt"]
+[ext_resource type="AudioStream" uid="uid://gxw2mlqjya3h" path="res://Assets/Sounds/SFX/MinecraftSounds/Enderman_death.ogg" id="20_68bch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_clp4r"]
 radius = 0.076660156
@@ -22,6 +28,17 @@ height = 0.725
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j54lw"]
 size = Vector3(0.3, 1.114, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uyjfw"]
+streams_count = 2
+stream_0/stream = ExtResource("13_47yei")
+stream_1/stream = ExtResource("14_jtara")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_81oxy"]
+streams_count = 3
+stream_0/stream = ExtResource("16_ahvhb")
+stream_1/stream = ExtResource("17_68bch")
+stream_2/stream = ExtResource("18_egdyt")
 
 [node name="Enderman" type="CharacterBody3D" unique_id=880268240 node_paths=PackedStringArray("holdSocket", "targetRaycast", "raycasts", "stateMachine", "movement", "flip", "animation", "health")]
 axis_lock_linear_z = true
@@ -157,16 +174,19 @@ metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 [node name="Hurt" type="Node" parent="CharacterStateMachine" unique_id=511376089 node_paths=PackedStringArray("nodeShaker")]
 script = ExtResource("11_bltcs")
 nodeShaker = NodePath("../../Visual/NodeShaker")
+audioStream = SubResource("AudioStreamRandomizer_uyjfw")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="Steal" type="Node" parent="CharacterStateMachine" unique_id=1040749714 node_paths=PackedStringArray("stealRaycast")]
 script = ExtResource("13_j54lw")
 stealRaycast = NodePath("../../FlipableNodes/Raycasts/TargetRaycast")
 stealDelay = 1.0
+audio = SubResource("AudioStreamRandomizer_81oxy")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="Death" type="Node" parent="CharacterStateMachine" unique_id=2025316392]
 script = ExtResource("14_8d8yn")
+audio = ExtResource("20_68bch")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="Drop" type="Node" parent="CharacterStateMachine" unique_id=131415797 node_paths=PackedStringArray("targetRaycast")]

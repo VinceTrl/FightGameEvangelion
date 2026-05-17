@@ -2,6 +2,7 @@ extends CharacterState
 
 @export var stealRaycast:RayCast3D
 @export var stealDelay:float = 0.5
+@export var audio:AudioStreamRandomizer
 
 
 func EnterState():
@@ -31,10 +32,12 @@ func StealTarget():
 		var target = stealRaycast.get_collider()
 		if(target.owner is Block):
 			character.StealTarget(target.owner,target)
+			GlobalSFX.EmitSound(audio,-10,character.global_position)
 		elif(target is CharacterBody3D):
 			if(target is PlayerCharacter):
 				target.ChangeState(target.States.Stun)
 			character.StealTarget(target,target)
+			GlobalSFX.EmitSound(audio,-10,character.global_position)
 			
 			
 			
