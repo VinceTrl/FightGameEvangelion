@@ -22,7 +22,6 @@
 [ext_resource type="Script" uid="uid://df4x3l4luvmk4" path="res://addons/post_processing/node/post_process.gd" id="23_fv422"]
 [ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="23_kkmlt"]
 [ext_resource type="Environment" uid="uid://nily06bi73yt" path="res://Resources/Environement/enviro_game_camera.tres" id="23_v2i2p"]
-[ext_resource type="PackedScene" uid="uid://d3jxessarft7q" path="res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_02.tscn" id="24_5fwcu"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="24_xmn4j"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
@@ -38,21 +37,21 @@ items = Array[ExtResource("3_f6ug2")]([ExtResource("4_klpx3"), ExtResource("5_c2
 [node name="Enviro" type="Node3D" parent="." unique_id=510669441 groups=["Enviro"]]
 
 [node name="Gwynevere\'s room" parent="Enviro" unique_id=9870905 instance=ExtResource("18_5fwcu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23500633, 1.2, -7.4995356)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23500633, 1.2, -10.200001)
 
 [node name="Lighting" type="Node3D" parent="." unique_id=818802441 groups=["Enviro"]]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lighting" unique_id=144122790]
-transform = Transform3D(1, 0, 0, 0, 0.940092, -0.34092098, 0, 0.34092098, 0.940092, 0, -0.25909454, 3.1077027)
+transform = Transform3D(1, 0, 0, 0, 0.79744697, 0.6033891, 0, -0.6033891, 0.79744697, 0, 1.6293979, 2.5097547)
 light_color = Color(1, 0.5487979, 0.48485827, 1)
 light_energy = 0.12
 shadow_enabled = true
 spot_range = 8.869
 spot_attenuation = -1.18
-spot_angle = 65.5
+spot_angle = 79.69
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Lighting" unique_id=524006773]
-transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, -0.23500633, 13.695395, -17.844713)
+transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, -0.23500633, 13.695395, -20.545177)
 light_color = Color(0.89374214, 0.64688003, 3.85046e-07, 1)
 light_energy = 5.61
 light_negative = true
@@ -61,21 +60,21 @@ spot_attenuation = 0.55
 spot_angle = 31.842173
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Lighting" unique_id=1273401838]
-transform = Transform3D(1, 0, 0, 0, 0.6262364, 0.7796332, 0, -0.7796332, 0.6262364, -0.23500824, 18.83643, 7.8098507)
+transform = Transform3D(1, 0, 0, 0, 0.6262364, 0.7796332, 0, -0.7796332, 0.6262364, -0.23500824, 18.83643, 5.1093855)
 light_color = Color(0.7607843, 1, 0.9882353, 1)
 spot_range = 35.322906
 spot_attenuation = 0.13
 spot_angle = 25.196436
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lighting" unique_id=777931540]
-transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, -5.6680226, 0.9804318, 1.7743711)
+transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, -5.6680226, 0.9804318, -0.92609406)
 light_color = Color(1, 0.43137255, 0, 1)
 shadow_enabled = true
 omni_range = 2.59
 omni_attenuation = 1.904
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lighting" unique_id=656197721]
-transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, 5.381458, 0.98043275, 1.774373)
+transform = Transform3D(1, 0, 0, 0, -0.7108486, 0.703345, 0, -0.703345, -0.7108486, 5.381458, 0.98043275, -0.92609215)
 light_color = Color(1, 0.43137255, 0, 1)
 shadow_enabled = true
 omni_range = 2.59
@@ -105,5 +104,3 @@ configuration = ExtResource("24_xmn4j")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=364057458]
 environment = ExtResource("23_v2i2p")
-
-[node name="DarkSouls_Stage_02" parent="." unique_id=407222934 instance=ExtResource("24_5fwcu")]
