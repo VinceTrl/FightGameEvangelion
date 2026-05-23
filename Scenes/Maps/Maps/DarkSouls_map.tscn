@@ -22,7 +22,6 @@
 [ext_resource type="Script" uid="uid://df4x3l4luvmk4" path="res://addons/post_processing/node/post_process.gd" id="23_fv422"]
 [ext_resource type="PackedScene" uid="uid://byba7fkh2hq5p" path="res://Scenes/Gameplay/blood_sea.tscn" id="23_kkmlt"]
 [ext_resource type="Environment" uid="uid://nily06bi73yt" path="res://Resources/Environement/enviro_game_camera.tres" id="23_v2i2p"]
-[ext_resource type="PackedScene" uid="uid://d3jxessarft7q" path="res://Scenes/Maps/Stages/DarkSoulsStages/DarkSouls_Stage_02.tscn" id="24_5fwcu"]
 [ext_resource type="Resource" uid="uid://btqekgqovx3lm" path="res://Assets/PostPro/PostProcess_Basic_Pilou_01.tres" id="24_xmn4j"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e2grd"]
@@ -43,11 +42,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23500633, 1.2, -7.4995356)
 [node name="Lighting" type="Node3D" parent="." unique_id=818802441 groups=["Enviro"]]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lighting" unique_id=144122790]
-transform = Transform3D(1, 0, 0, 0, 0.940092, -0.34092098, 0, 0.34092098, 0.940092, 0, -0.25909454, 3.1077027)
+transform = Transform3D(1, 0, 0, 0, 0.98694867, 0.16103557, 0, -0.16103557, 0.98694867, 0, 0.55510396, 4.228936)
 light_color = Color(1, 0.5487979, 0.48485827, 1)
-light_energy = 0.12
+light_energy = 0.17
 shadow_enabled = true
-spot_range = 8.869
+spot_range = 7.565
 spot_attenuation = -1.18
 spot_angle = 65.5
 
@@ -105,5 +104,3 @@ configuration = ExtResource("24_xmn4j")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=364057458]
 environment = ExtResource("23_v2i2p")
-
-[node name="DarkSouls_Stage_02" parent="." unique_id=407222934 instance=ExtResource("24_5fwcu")]
