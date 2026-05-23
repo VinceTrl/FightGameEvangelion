@@ -25,7 +25,9 @@ func GetItem(_body: Node3D):
 	if(_body is PlayerCharacter):
 		_body as PlayerCharacter
 		_body.Ammo.AddAmmo(ammoCount)
+		_body.MunLabel.Appear()
 		DestroyItem()
+		
 		
 func DestroyItem():
 	used = true

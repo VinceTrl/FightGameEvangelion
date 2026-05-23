@@ -10,10 +10,10 @@
 [ext_resource type="Script" uid="uid://be58ged7iq63w" path="res://Scripts/Player/States/LockedState.gd" id="6_85275"]
 [ext_resource type="AudioStream" uid="uid://b8qtxdl0qqfer" path="res://Assets/Sounds/SFX/DoudouSFX/SD_attack.wav" id="6_sqn8w"]
 [ext_resource type="PackedScene" uid="uid://62jphhwnawdu" path="res://Scenes/Gameplay/player_spear.tscn" id="6_vx25g"]
-[ext_resource type="Script" uid="uid://ckevcubiuryl1" path="res://Scripts/Player/States/RunState.gd" id="7_y4pfp"]
+[ext_resource type="Script" uid="uid://b8sug41kx03dg" path="res://Scripts/Player/States/RunState.gd" id="7_y4pfp"]
 [ext_resource type="Script" uid="uid://2unw62jj87fq" path="res://Scripts/Player/States/JumpState.gd" id="8_g4l1g"]
 [ext_resource type="AudioStream" uid="uid://dcyeawnvw6u68" path="res://Assets/Sounds/SFX/DoudouSFX/SD_chargementdetir.wav" id="9_17uti"]
-[ext_resource type="Script" uid="uid://j2g64lx6f7lv" path="res://Scripts/Player/States/JumpPeakState.gd" id="9_qpdmo"]
+[ext_resource type="Script" uid="uid://bjfs4jja80wsa" path="res://Scripts/Player/States/JumpPeakState.gd" id="9_qpdmo"]
 [ext_resource type="Script" uid="uid://cpkrm3huuvddv" path="res://Scripts/Player/States/FallState.gd" id="10_cy8xa"]
 [ext_resource type="AudioStream" uid="uid://cwx36fgediwv0" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Dash.wav" id="11_bbblq"]
 [ext_resource type="Script" uid="uid://c5lg1nob3adkr" path="res://Scripts/Player/States/AttackState.gd" id="13_utoig"]
@@ -35,7 +35,7 @@
 [ext_resource type="Script" uid="uid://bj73gxr23ym4" path="res://Scripts/Player/PlayerAmmo.gd" id="28_oqnrj"]
 [ext_resource type="Resource" uid="uid://bgvu6c31k2dbe" path="res://Resources/PostProcessAnims/Glitch/DamageGlitch.tres" id="30_k65qb"]
 [ext_resource type="Script" uid="uid://dbjmhfaxymplt" path="res://Scripts/Player/States/TauntState.gd" id="32_b3v0a"]
-[ext_resource type="Script" uid="uid://bfof8kv2n4uny" path="res://Scripts/Player/States/ChargingAttackState.gd" id="32_r0xa3"]
+[ext_resource type="Script" uid="uid://ef5x8hqgy4qw" path="res://Scripts/Player/States/ChargingAttackState.gd" id="32_r0xa3"]
 [ext_resource type="Resource" uid="uid://b1kr6ya4e857u" path="res://Resources/PostProcessAnims/Glitch/DeathGlitch.tres" id="33_hpf16"]
 [ext_resource type="Script" uid="uid://bnak6m8wqvbxw" path="res://Scripts/Player/States/ChargeShootState.gd" id="35_8paei"]
 [ext_resource type="AudioStream" uid="uid://blusygh4ja0nt" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Contact.wav" id="35_32tav"]
@@ -55,6 +55,8 @@
 [ext_resource type="Material" uid="uid://c4uibfx7vbjbf" path="res://Assets/Materials/Gameplay/mat_Cheese_kiki1.tres" id="52_rtkj7"]
 [ext_resource type="PackedScene" uid="uid://bmm1spigj2q6f" path="res://Scenes/Utility/OffscreenIndicatorsScenes/off_screen_indicator_kiki.tscn" id="54_1yvbr"]
 [ext_resource type="PackedScene" uid="uid://d3mlswdumg8l5" path="res://Scenes/Utility/OffscreenIndicatorsScenes/off_screen_indicator_arrow.tscn" id="54_i40i4"]
+[ext_resource type="FontFile" uid="uid://cjxwtlu1dgvak" path="res://Assets/GUI/Fonts/PRESSSTART2P-REGULAR.TTF" id="56_jw7ji"]
+[ext_resource type="Script" uid="uid://k3xgaspm21aa" path="res://Scenes/LabelAppearAndDisappear.gd" id="57_qeqaj"]
 
 [sub_resource type="Curve" id="Curve_qv1t1"]
 _data = [Vector2(0, 0), 0.0, 0.0342598, 0, 0, Vector2(1, 1), 0.174008, 0.0, 0, 0]
@@ -1323,6 +1325,16 @@ aabb = AABB(-0.09472879, -0.12628913, -0.20408031, 0.18945758, 0.25257826, 0.408
 
 [node name="OffScreenIndicator_Kiki" parent="OffscreenIndicators" unique_id=827913161 instance=ExtResource("54_1yvbr")]
 aabb = AABB(-0.06507864, -0.04670185, -0.2218384, 0.13015728, 0.0934037, 0.4436768)
+
+[node name="MunLabel" type="Label3D" parent="." unique_id=1214609744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007800877, 0.45465493, 0.08478093)
+visible = false
+pixel_size = 0.003
+alpha_cut = 2
+texture_filter = 0
+text = "+1 MUN"
+font = ExtResource("56_jw7ji")
+script = ExtResource("57_qeqaj")
 
 [connection signal="timeout" from="Timers/RecoilTimer" to="StateMachine/Shoot" method="_on_recoil_timer_timeout"]
 [connection signal="timeout" from="Timers/ChargeAttackTimer" to="StateMachine/ChargingAttack" method="_on_charge_attack_timer_timeout"]

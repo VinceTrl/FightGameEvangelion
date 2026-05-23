@@ -29,6 +29,7 @@ extends CharacterBody3D
 @onready var ground_location: Marker3D = $GroundLocation
 @onready var player_spear: Spear = $PlayerSpear
 @onready var one_way_platform_ray_cast: OneWayPlatformRaycast = $RaycastHolder/OneWayPlatformRayCast
+@onready var MunLabel: Label3D = $MunLabel
 
 @onready var ledge_right_upper_cast: RayCast3D = $LedgegrabRaycasts/LedgeRightUpper
 @onready var ledge_left_upper_cast: RayCast3D = $LedgegrabRaycasts/LedgeLeftUpper
