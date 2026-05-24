@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://nsqkqa3nm3h6" path="res://Scenes/Gameplay/block.tscn" id="1_tcp44"]
 [ext_resource type="Material" uid="uid://bpwv7bubet4" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_Bedrock.tres" id="2_difwy"]
-[ext_resource type="Material" uid="uid://b1o0gn56dvpof" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT.tres" id="2_tcp44"]
 [ext_resource type="PackedScene" uid="uid://djdb3ocf1uv0i" path="res://Scenes/Gameplay/spawner.tscn" id="3_1swjw"]
+[ext_resource type="Texture2D" uid="uid://i1fgr8rarmy6" path="res://Assets/Meshes/Props/Minecraft/BlockTextures/tnt_side.png" id="3_difwy"]
 [ext_resource type="Material" uid="uid://ct0x7tjpyokcu" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT_Top.tres" id="4_ikq8d"]
 [ext_resource type="Script" uid="uid://srb0k0cwbgc7" path="res://Scripts/Gameplay/Spawn/SpawnableItem.gd" id="4_siisw"]
 [ext_resource type="Material" uid="uid://cxtrb6p5wjbo6" path="res://Assets/Materials/Gameplay/MinecraftBlockMaterials/M_Block_TNT_Bottom.tres" id="5_82h5j"]
@@ -90,6 +90,12 @@ _surfaces = [{
 }]
 shadow_mesh = SubResource("ArrayMesh_fp3fa")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_am2vm"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("3_difwy")
+emission_enabled = true
+texture_filter = 0
+
 [sub_resource type="Animation" id="Animation_difwy"]
 resource_name = "Destroy"
 length = 0.8
@@ -106,6 +112,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.69919544, 2.0816549e-06, 6.738305e-07, 1), Color(1, 1, 1, 1), Color(0.69919544, 2.0816549e-06, 6.738305e-07, 1), Color(1, 1, 1, 1), Color(0.69919544, 2.0816549e-06, 6.738305e-07, 1), Color(1, 1, 1, 1), Color(0.69919544, 2.0816549e-06, 6.738305e-07, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:surface_material_override/0:emission")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1004799, 0.18913864, 0.3, 0.4, 0.50092185, 0.6028794, 0.7033593),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_i5aa5"]
 length = 0.001
@@ -120,6 +138,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:surface_material_override/0:emission")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_am2vm"]
@@ -139,7 +169,7 @@ shape = SubResource("BoxShape3D_ikq8d")
 
 [node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=13657721]
 mesh = SubResource("ArrayMesh_i5aa5")
-surface_material_override/0 = ExtResource("2_tcp44")
+surface_material_override/0 = SubResource("StandardMaterial3D_am2vm")
 surface_material_override/1 = ExtResource("4_ikq8d")
 surface_material_override/2 = ExtResource("5_82h5j")
 
