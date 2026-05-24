@@ -36,8 +36,8 @@ func Update(delta: float):
 	Player.HandleGravity(delta)
 	Player.HandleDash()
 	Player.HandleJump()
-	Player.player_spear.UpdateSpearRotation(Player.GetDirectionOn8Axis())
 	HandleChargeShoot()
+	Player.player_spear.UpdateSpearRotation(Player.shootDirection)
 	HandleAnimations()
 	
 func HandleAnimations():
@@ -56,9 +56,11 @@ func HandleChargeShoot():
 	if(Player.keyShoot):
 		
 		Player.SetChargeShootValue(GetChargeRatio())
-		Player.shootDirection = Player.GetDirectionOn8Axis()
+		#Player.shootDirection = Player.GetDirectionOn8Axis()
 		hideSpearOnExit = false
 		Player.ChangeState(States.Shoot)
+	else:
+		Player.shootDirection = Player.GetDirectionOn8Axis()
 		
 func HandleFall():
 	if(!onGround and Player.is_on_floor()):

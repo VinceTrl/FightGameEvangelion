@@ -153,7 +153,7 @@ var airAttack = 0
 var currentAttackForce = 0.0
 var currentChargeRatio = 0.0
 
-var shootDirection
+var shootDirection:Vector3 = Vector3.ZERO
 var currentShootChargeForce = 0.0
 var currentShootChargeRatio = 0.0
 
@@ -278,6 +278,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	DebugPlayer()
+	DebugShootDirection()
 
 func ChangeState(nextState):
 	if(!canChangeState):
@@ -685,3 +686,8 @@ func _on_melee_hitbox_on_hit() -> void:
 
 func _on_hurtbox_area_entered(area: Area3D) -> void:
 	pass # Replace with function body.
+	
+func DebugShootDirection():
+	if(!debugMode):return
+	DebugDraw3D.draw_arrow(global_position,global_position + shootDirection ,Color.NAVY_BLUE,0.1)
+	DebugDraw3D.draw_arrow(global_position,global_position + (GetDirectionOn8Axis() * 0.5) ,Color.RED,0.1)

@@ -18,6 +18,7 @@ size = Vector3(0.3, 0.3, 0.3)
 
 [node name="Block" type="Node3D" unique_id=219668706 groups=["Enviro", "PyramidHeadTarget"]]
 script = ExtResource("1_1mwp6")
+healthPoints = 2
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=2074267378]
 script = ExtResource("1_rd00h")
