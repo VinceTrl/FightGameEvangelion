@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bs0ipo7l025ph"]
+
+[ext_resource type="Texture2D" uid="uid://dhcha0kfvlens" path="res://Assets/Sprites/Vfx/Smoke/big_smoke_0.png" id="1_m65hv"]
+
+[sub_resource type="Gradient" id="Gradient_76n8h"]
+offsets = PackedFloat32Array(0, 0.48, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.44666666, 0.44666666, 0.44666666, 1, 0.18000486, 0.18000486, 0.18000486, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gta4o"]
+gradient = SubResource("Gradient_76n8h")
+
+[sub_resource type="Curve" id="Curve_xc0dy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.252142), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dca0p"]
+curve = SubResource("Curve_xc0dy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_34r4r"]
+angle_min = -28.099989
+angle_max = 93.500015
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = -2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_dca0p")
+color_ramp = SubResource("GradientTexture1D_gta4o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qcai"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_m65hv")
+texture_filter = 0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_aud6i"]
+material = SubResource("StandardMaterial3D_2qcai")
+
+[node name="DragonBeamImpactVFX" type="GPUParticles3D" unique_id=670233351]
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_34r4r")
+draw_pass_1 = SubResource("QuadMesh_aud6i")

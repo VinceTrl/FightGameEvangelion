@@ -19,7 +19,10 @@
 [ext_resource type="Script" uid="uid://c76obi0icmr8d" path="res://Scripts/Gameplay/Wolf/wolf_state_dash_attack.gd" id="12_q7dhl"]
 [ext_resource type="PackedScene" uid="uid://1pvfkl5jtwwb" path="res://Scenes/Characters/Wolf/wolf_howl_screen.tscn" id="15_2gapl"]
 [ext_resource type="PackedScene" uid="uid://dlupcnf7dnsb5" path="res://Scenes/VFX/attack_anticipation_sign.tscn" id="16_acnup"]
+[ext_resource type="AudioStream" uid="uid://b3uron0xdwby4" path="res://Assets/Sounds/SFX/DoudouSFX/SD_MewhatLesLoups.wav" id="21_jwurm"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="22_3a31i"]
+[ext_resource type="AudioStream" uid="uid://dlh1bu3gr1y3n" path="res://Assets/Sounds/SFX/DoudouSFX/SD_AtkLoup_1.wav" id="22_q7dhl"]
+[ext_resource type="AudioStream" uid="uid://15cdd0l48ftj" path="res://Assets/Sounds/SFX/DoudouSFX/SD_AtkLoup_2.wav" id="23_knn2h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qymo3"]
 size = Vector3(0.6, 0.43701172, 0.5)
@@ -47,6 +50,11 @@ size = Vector3(0.72924805, 0.48840332, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q7dhl"]
 size = Vector3(0.5, 0.35, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8av88"]
+streams_count = 2
+stream_0/stream = ExtResource("22_q7dhl")
+stream_1/stream = ExtResource("23_knn2h")
 
 [node name="Wolf" type="CharacterBody3D" unique_id=1470715843 node_paths=PackedStringArray("noHurtStates", "meshes", "stateMachine", "movement", "flip", "animation", "health")]
 collision_layer = 195
@@ -192,7 +200,7 @@ metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 script = ExtResource("11_acnup")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
-[node name="DashAttack" type="Node" parent="StateMachine" unique_id=1288067011 node_paths=PackedStringArray("hitbox", "attackFx", "attackSignSprite", "attackSign")]
+[node name="DashAttack" type="Node" parent="StateMachine" unique_id=1288067011 node_paths=PackedStringArray("hitbox", "attackFx", "attackSignSprite", "attackSign", "dashAudio")]
 script = ExtResource("12_q7dhl")
 stateDuration = 0.8
 dashDuration = 0.4
@@ -203,12 +211,14 @@ hitbox = NodePath("../../Hitbox")
 attackFx = NodePath("../../Visual/VFX/TrailEmitter")
 attackSignSprite = NodePath("../../Visual/VFX/WarningSprite")
 attackSign = NodePath("../../Visual/VFX/AttackAnticipationSign")
+dashAudio = NodePath("../../Audio/AudioDash")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
-[node name="Howl" type="Node" parent="StateMachine" unique_id=1079943216 node_paths=PackedStringArray("howlScreen")]
+[node name="Howl" type="Node" parent="StateMachine" unique_id=1079943216 node_paths=PackedStringArray("howlScreen", "howlAudio")]
 script = ExtResource("12_jwurm")
 howlDuration = 2.75
 howlScreen = NodePath("../../HowlScreen")
+howlAudio = NodePath("../../Audio/AudioMeWaat")
 metadata/_custom_type_script = "uid://ciqi0vk5qh7yn"
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=964224393]
@@ -236,5 +246,15 @@ metadata/_custom_type_script = "uid://chlkng7i45f53"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1391323361]
 shape = SubResource("BoxShape3D_q7dhl")
 debug_color = Color(0.9965449, 0, 0.19349316, 0.41960785)
+
+[node name="Audio" type="Node3D" parent="." unique_id=492242670]
+
+[node name="AudioMeWaat" type="AudioStreamPlayer3D" parent="Audio" unique_id=128404800]
+stream = ExtResource("21_jwurm")
+bus = &"SFX"
+
+[node name="AudioDash" type="AudioStreamPlayer3D" parent="Audio" unique_id=798765804]
+stream = SubResource("AudioStreamRandomizer_8av88")
+bus = &"SFX"
 
 [editable path="Visual/NodeShaker/Wolf"]

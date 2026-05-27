@@ -42,8 +42,10 @@ func _on_hurt_box_detection_area_entered(area: Area3D) -> void:
 			#change to cheese state
 			var player = area.owner as PlayerCharacter
 			player.ChangeState(player.States.Cheese)
+			GlobalSFX.EmitSoundFromName("S_CHEESE_TRANSFORMATION",0.0,player.global_position)
 			pass
 		else:
+			GlobalSFX.EmitSoundFromName("S_CHEESE_TRANSFORMATION",0.0,area.global_position)
 			var cheese = CHEESE_WHEEL.instantiate()
 			get_tree().current_scene.add_child(cheese)
 			cheese.global_position = area.global_position

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="4_lfrfa"]
 [ext_resource type="Texture2D" uid="uid://duon7ucy8hv71" path="res://Assets/Meshes/Props/Effects/TrickEffect/tric00_01.png" id="4_ra6ic"]
 [ext_resource type="Material" uid="uid://dbbcv55dnr4tc" path="res://Assets/Materials/Gameplay/mat_Cheese.tres" id="4_ryhgx"]
-[ext_resource type="Material" uid="uid://de13l7jp6nfgp" path="res://Assets/Materials/Gameplay/mat_Cheese_VFX.tres" id="5_6mcxi"]
+[ext_resource type="Material" path="res://Assets/Materials/Gameplay/mat_Cheese_VFX.tres" id="5_6mcxi"]
 [ext_resource type="Texture2D" uid="uid://b0qio0gbfogx6" path="res://Assets/Meshes/Props/Effects/TrickEffect/tric00_02.png" id="5_lfrfa"]
 [ext_resource type="Texture2D" uid="uid://bx3ot6lrklogh" path="res://Assets/Meshes/Props/Effects/TrickEffect/tric00_03.png" id="6_hwedf"]
 

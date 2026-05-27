@@ -3,11 +3,13 @@ extends CharacterState
 @export var howlDuration:float = 1.5
 @export var howlScreenDelay:float = 0.5
 @export var howlScreen:Control
+@export var howlAudio:AudioStreamPlayer3D
 
 func EnterState():
 	stateName = "HOWL"
 	character.movement.currentDirection = Vector3.ZERO # stop moving
 	character.animation.play("Howl")
+	howlAudio.play()
 	StartHowlScreen()
 	await get_tree().create_timer(howlDuration).timeout
 	if(character.currentState == self):

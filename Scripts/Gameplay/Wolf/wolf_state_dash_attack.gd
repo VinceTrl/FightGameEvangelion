@@ -10,6 +10,7 @@ extends CharacterState
 @export var attackFx:Node3D
 @export var attackSignSprite:Sprite3D
 @export var attackSign:Node3D
+@export var dashAudio:AudioStreamPlayer3D
 var isAttacking:bool = false
 var timer:SceneTreeTimer
 var dashDirection:Vector3
@@ -25,7 +26,7 @@ func EnterState():
 	await character.animation.animation_finished
 	attackSign.visible = false
 	attackSignSprite.visible = false
-	
+	dashAudio.play()
 	character.animation.play("Attack")
 	attackFx.visible = true
 	timer = get_tree().create_timer(stateDuration)

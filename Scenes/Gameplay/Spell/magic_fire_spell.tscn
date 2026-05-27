@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="4_jtb4s"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="4_q84i2"]
 [ext_resource type="PackedScene" uid="uid://bicy0cqeuuli6" path="res://Scenes/VFX/vfx_firewall.tscn" id="5_q84i2"]
+[ext_resource type="AudioStream" uid="uid://dv4g1ulun1uky" path="res://Assets/Sounds/SFX/DoudouSFX/SD_Feu_6sec.wav" id="6_q84i2"]
 
 [sub_resource type="Curve" id="Curve_8i7dx"]
 
@@ -68,6 +69,20 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FireAudioPlayer3D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_q84i2"]
@@ -214,3 +229,8 @@ frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1581893779]
 libraries/ = SubResource("AnimationLibrary_q84i2")
+
+[node name="FireAudioPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=109544839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+stream = ExtResource("6_q84i2")
+bus = &"SFX"

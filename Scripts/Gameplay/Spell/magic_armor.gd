@@ -46,6 +46,9 @@ func TakeDamage(hitbox:Hitbox):
 	Manager.timeManager.freezeFrame(0.001,freezeFrameDuration)
 	Manager.gameCamera.camShake.AskCamShake(cameraShake)
 	nodeShaker.NodeShake()
+	GlobalSFX.EmitSoundFromName("S_SHIELD_HIT",0.0,global_position)
+	
+	
 	animation_player.play("Hurt")
 	
 	if(health_component.isDead):

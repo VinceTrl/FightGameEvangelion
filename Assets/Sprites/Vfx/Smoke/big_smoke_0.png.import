@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm5avvtabch80"
-path.s3tc="res://.godot/imported/SmokeFX Lite SpriteSheet 1A-3.png-f663e8480fa20983d2ab9eaf450d8849.s3tc.ctex"
+uid="uid://dhcha0kfvlens"
+path.s3tc="res://.godot/imported/big_smoke_0.png-59480d5860c960b9d8db3b6ecacff4ff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Sprites/Vfx/Smoke/SmokeFX Lite SpriteSheet 1A-3.png"
-dest_files=["res://.godot/imported/SmokeFX Lite SpriteSheet 1A-3.png-f663e8480fa20983d2ab9eaf450d8849.s3tc.ctex"]
+source_file="res://Assets/Sprites/Vfx/Smoke/big_smoke_0.png"
+dest_files=["res://.godot/imported/big_smoke_0.png-59480d5860c960b9d8db3b6ecacff4ff.s3tc.ctex"]
 
 [params]
 

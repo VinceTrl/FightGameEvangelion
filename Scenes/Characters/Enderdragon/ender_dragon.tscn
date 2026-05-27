@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cdepu1tlv10x6" path="res://Assets/GUI/Sprites/BRUTALSLAP/GUI_Slap_Cible.png" id="7_kmp72"]
 [ext_resource type="Texture2D" uid="uid://d3qt3lrfeao1p" path="res://Assets/Sprites/Vfx/Fire/noises.png" id="8_hbvag"]
 [ext_resource type="Script" uid="uid://chlkng7i45f53" path="res://Scripts/Collisions/Hitbox.gd" id="10_x3tys"]
+[ext_resource type="PackedScene" uid="uid://bs0ipo7l025ph" path="res://Scenes/VFX/dragon_beam_impact_vfx.tscn" id="12_ss1tl"]
 [ext_resource type="AudioStream" uid="uid://dh4udi88bwit7" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_flap1.ogg" id="13_15dpt"]
 [ext_resource type="AudioStream" uid="uid://dfrin6po700jj" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_flap2.ogg" id="14_khyq2"]
 [ext_resource type="AudioStream" uid="uid://0xmaxkmrhre7" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_flap3.ogg" id="15_h551e"]
@@ -21,6 +22,9 @@
 [ext_resource type="AudioStream" uid="uid://ckso77ms4r7uo" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_idle4.ogg" id="19_vrmj7"]
 [ext_resource type="AudioStream" uid="uid://db5os35uoeeuf" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_hurt1.ogg" id="20_2wnn8"]
 [ext_resource type="AudioStream" uid="uid://bcnudt26orgpr" path="res://Assets/Sounds/SFX/MinecraftSounds/Ender_dragon_hurt2.ogg" id="21_0nakr"]
+[ext_resource type="AudioStream" uid="uid://dl68r5vfohw1w" path="res://Assets/Sounds/SFX/DoudouSFX/SD_AngryDragon.wav" id="23_0nakr"]
+[ext_resource type="AudioStream" uid="uid://cpjcbchm8eg0r" path="res://Assets/Sounds/SFX/DoudouSFX/SD_LaserDragon.wav" id="23_2wnn8"]
+[ext_resource type="AudioStream" uid="uid://6ahe5jy0dan8" path="res://Assets/Sounds/SFX/DoudouSFX/SD_LoadGrosBlast.wav" id="23_vrmj7"]
 
 [sub_resource type="Curve" id="Curve_dab8l"]
 
@@ -2496,6 +2500,11 @@ _data = {
 &"TailUp": SubResource("Animation_ciing")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4cof"]
+size = Vector3(0.1, 0.055126954, 0.20241699)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ss1tl"]
+
 [sub_resource type="Animation" id="Animation_ebomb"]
 resource_name = "Idle"
 loop_mode = 2
@@ -3776,11 +3785,12 @@ stream_1/stream = ExtResource("18_ss1tl")
 stream_2/stream = ExtResource("19_vrmj7")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c4cof"]
-streams_count = 2
+streams_count = 3
 stream_0/stream = ExtResource("20_2wnn8")
 stream_1/stream = ExtResource("21_0nakr")
+stream_2/stream = ExtResource("23_0nakr")
 
-[node name="EnderDragon" type="Node3D" unique_id=768587010 node_paths=PackedStringArray("hurtAudioPlayer", "warning", "beam", "beamHitbox", "headAnimation", "dragonAnimation", "materialAnimation", "headRotation", "defaultLookTarget", "fireballMarker", "health", "shaker", "attackAudioPlayer")]
+[node name="EnderDragon" type="Node3D" unique_id=768587010 node_paths=PackedStringArray("hurtAudioPlayer", "warning", "beam", "beamHitbox", "headAnimation", "dragonAnimation", "materialAnimation", "headRotation", "defaultLookTarget", "fireballMarker", "health", "shaker", "characterArea", "beamVFX", "attackAudioPlayer", "loadBeamAudioPlayer", "blastBeamAudioPlayer")]
 script = ExtResource("1_ebomb")
 targetResetDelay = 4.0
 cameraShake = "HitDragonShake"
@@ -3796,7 +3806,11 @@ defaultLookTarget = NodePath("LookAtTarget")
 fireballMarker = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/head_000/JawRoot/FireballMarker")
 health = NodePath("HealthComponent")
 shaker = NodePath("NodeShaker")
+characterArea = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/head_000/Body3D/CharacterArea3D")
+beamVFX = NodePath("NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot/DragonBeamImpactVFX")
 attackAudioPlayer = NodePath("Audio/AudioScream")
+loadBeamAudioPlayer = NodePath("Audio/AudioBeamLoad")
+blastBeamAudioPlayer = NodePath("Audio/AudioBeamBlast")
 
 [node name="NodeShaker" type="Node3D" parent="." unique_id=621588427 node_paths=PackedStringArray("nodeToShake")]
 script = ExtResource("2_uckao")
@@ -4180,6 +4194,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0025139595, 0.044999998
 mesh = SubResource("ArrayMesh_eofti")
 skeleton = NodePath("")
 
+[node name="Body3D" type="StaticBody3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/head_000" unique_id=1529505654 groups=["Ledgegrab"]]
+transform = Transform3D(0.099999994, 0, 0, 0, 0.099999994, 0, 0, 0, 0.099999994, 0, 0.005035104, -0.03491267)
+collision_layer = 193
+input_ray_pickable = false
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/head_000/Body3D" unique_id=288608648]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, -0.022192396, -0.087756366)
+shape = SubResource("BoxShape3D_c4cof")
+debug_color = Color(0.13739574, 0.5195408, 1, 1)
+
+[node name="CharacterArea3D" type="Area3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/head_000/Body3D" unique_id=222368056]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.018234888, -0.13802807)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/head_000/Body3D/CharacterArea3D" unique_id=154277413]
+shape = SubResource("BoxShape3D_ss1tl")
+debug_color = Color(0, 0.63041776, 0.47598165, 0.41960785)
+
 [node name="HeadAnimationPlayer" type="AnimationPlayer" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot" unique_id=62220360]
 libraries/ = SubResource("AnimationLibrary_38cwl")
 autoplay = &"Idle"
@@ -4234,6 +4271,7 @@ debug_color = Color(0.9490196, 0, 0.5686275, 1)
 
 [node name="MagicCircle" type="MeshInstance3D" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=696826527]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.20786667)
+visible = false
 mesh = SubResource("QuadMesh_x3tys")
 surface_material_override/0 = SubResource("StandardMaterial3D_xrv53")
 
@@ -4258,6 +4296,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f7ips")
 [node name="BeamAnimationPlayer" type="AnimationPlayer" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=750062667]
 libraries/ = SubResource("AnimationLibrary_h551e")
 autoplay = &"BeamAttackLoop"
+
+[node name="DragonBeamImpactVFX" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot/NeckRoot2/NeckRoot3/NeckRoot4/NeckRoot5/HeadRotation/HeadRoot/BeamRoot" unique_id=825629602 instance=ExtResource("12_ss1tl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.9250937)
 
 [node name="NeckAnimationPlayer" type="AnimationPlayer" parent="NodeShaker/EnderDragonRoot/BodyRoot/NeckRoot" unique_id=1068918786]
 libraries/ = SubResource("AnimationLibrary_f7ips")
@@ -4340,9 +4381,21 @@ volume_db = -10.0
 bus = &"SFX"
 
 [node name="AudioScream" type="AudioStreamPlayer3D" parent="Audio" unique_id=1046621982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 stream = SubResource("AudioStreamRandomizer_iwd2q")
 bus = &"SFX"
 
 [node name="AudioHurt" type="AudioStreamPlayer3D" parent="Audio" unique_id=1150642920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 stream = SubResource("AudioStreamRandomizer_c4cof")
+bus = &"SFX"
+
+[node name="AudioBeamBlast" type="AudioStreamPlayer3D" parent="Audio" unique_id=1728456886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+stream = ExtResource("23_2wnn8")
+bus = &"SFX"
+
+[node name="AudioBeamLoad" type="AudioStreamPlayer3D" parent="Audio" unique_id=1313623279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+stream = ExtResource("23_vrmj7")
 bus = &"SFX"
