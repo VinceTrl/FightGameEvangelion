@@ -38,7 +38,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6k5w2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_w8krv"]
 resource_local_to_scene = true
 resource_name = "Cube"
 _surfaces = [{
@@ -81,10 +81,10 @@ _surfaces = [{
 shadow_mesh = SubResource("ArrayMesh_fp3fa")
 
 [node name="GoldOreBlock" unique_id=1588274387 instance=ExtResource("1_w8krv")]
-healthPoints = 6
+healthPoints = 3
 
 [node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=13657721]
-mesh = SubResource("ArrayMesh_6k5w2")
+mesh = SubResource("ArrayMesh_w8krv")
 surface_material_override/0 = ExtResource("3_w8krv")
 surface_material_override/1 = ExtResource("3_w8krv")
 surface_material_override/2 = ExtResource("3_w8krv")

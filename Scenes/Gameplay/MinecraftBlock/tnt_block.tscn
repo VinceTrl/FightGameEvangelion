@@ -48,7 +48,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_i5aa5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_difwy"]
 resource_local_to_scene = true
 resource_name = "Cube"
 _surfaces = [{
@@ -90,7 +90,7 @@ _surfaces = [{
 }]
 shadow_mesh = SubResource("ArrayMesh_fp3fa")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_am2vm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5aa5"]
 resource_local_to_scene = true
 albedo_texture = ExtResource("3_difwy")
 emission_enabled = true
@@ -168,8 +168,8 @@ spawner = NodePath("Spawner")
 shape = SubResource("BoxShape3D_ikq8d")
 
 [node name="BlockMesh" parent="NodeShaker" parent_id_path=PackedInt32Array(91840638) index="0" unique_id=13657721]
-mesh = SubResource("ArrayMesh_i5aa5")
-surface_material_override/0 = SubResource("StandardMaterial3D_am2vm")
+mesh = SubResource("ArrayMesh_difwy")
+surface_material_override/0 = SubResource("StandardMaterial3D_i5aa5")
 surface_material_override/1 = ExtResource("4_ikq8d")
 surface_material_override/2 = ExtResource("5_82h5j")
 
@@ -189,7 +189,7 @@ isInvisible = true
 [node name="RedstoneReceiver_TNT" type="Node3D" parent="." index="7" unique_id=715020794 node_paths=PackedStringArray("block", "redstoneLink")]
 script = ExtResource("6_805t3")
 block = NodePath("..")
-explosionDelay = 2.0
+explosionDelay = 1.0
 redstoneLink = NodePath("../RedstoneLinkArea")
 
 [editable path="RedstoneLinkArea"]

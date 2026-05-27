@@ -2920,6 +2920,7 @@ transform = Transform3D(1.315, 0, 0, 0, 1.315, 0, 0, 0, 1.315, -0.11889315, -1.5
 
 [node name="Dancers" type="Node3D" parent="." unique_id=508833063]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0.08433062, -1.6770147, 5.024404)
+visible = false
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Dancers" unique_id=1331231906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08433062, 0.43999982, -0.18512201)
@@ -2927,7 +2928,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_5r76v")
 autoplay = "default"
-frame_progress = 0.4374556
+frame = 5
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Dancers" unique_id=598818782]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1785657, 0.43999982, -0.022247314)
@@ -2935,7 +2936,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_psc6v")
 autoplay = "default"
-frame_progress = 0.16380943
+frame = 18
 
 [node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="Dancers" unique_id=829680508]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900752, 0.43999982, -0.37124777)
@@ -2952,7 +2953,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_p4mmm")
 autoplay = "default"
-frame_progress = 0.60342586
+frame = 10
 
 [node name="AnimatedSprite3D5" type="AnimatedSprite3D" parent="Dancers" unique_id=768190250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1945174, 0.43999982, 0.08964348)
@@ -2969,7 +2970,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_qf0g8")
 autoplay = "default"
-frame_progress = 0.23645493
+frame = 2
 
 [node name="AnimatedSprite3D7" type="AnimatedSprite3D" parent="Dancers" unique_id=1772615124]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93964547, 0.43999982, -0.12128544)
@@ -2977,7 +2978,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_0bggg")
 autoplay = "default"
-frame_progress = 0.99515635
+frame = 35
 
 [node name="Dancers2" type="Node3D" parent="." unique_id=895744856]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -2.3287168, -1.6770147, 4.4960127)
@@ -2988,7 +2989,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_5r76v")
 autoplay = "default"
-frame_progress = 0.4374556
+frame = 14
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Dancers2" unique_id=1083063896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1785657, 0.43999982, -0.022247314)
@@ -2996,7 +2997,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_psc6v")
 autoplay = "default"
-frame_progress = 0.14374231
+frame = 39
 
 [node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="Dancers2" unique_id=886872564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900752, 0.43999982, -0.37124777)
@@ -3004,8 +3005,6 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_gsd1j")
 autoplay = "default"
-frame = 22
-frame_progress = 0.15473829
 
 [node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="Dancers2" unique_id=1500935873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3600573, 0.43999982, 0.08964348)
@@ -3013,7 +3012,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_p4mmm")
 autoplay = "default"
-frame_progress = 0.58335775
+frame = 18
 
 [node name="AnimatedSprite3D5" type="AnimatedSprite3D" parent="Dancers2" unique_id=524467573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1945174, 0.43999982, 0.08964348)
@@ -3021,8 +3020,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_gk48o")
 autoplay = "default"
-frame = 25
-frame_progress = 0.07838764
+frame = 10
 
 [node name="AnimatedSprite3D6" type="AnimatedSprite3D" parent="Dancers2" unique_id=351026135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5522736, 0.43999982, 0.16555977)
@@ -3030,7 +3028,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_qf0g8")
 autoplay = "default"
-frame_progress = 0.21638943
+frame = 25
 
 [node name="AnimatedSprite3D7" type="AnimatedSprite3D" parent="Dancers2" unique_id=623581898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93964547, 0.43999982, -0.12128544)
@@ -3038,7 +3036,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_0bggg")
 autoplay = "default"
-frame_progress = 0.9750904
+frame = 14
 
 [node name="Dancers3" type="Node3D" parent="." unique_id=1193380815]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -3.1013985, -1.6770147, 5.202238)
@@ -3049,7 +3047,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_5r76v")
 autoplay = "default"
-frame_progress = 0.4374556
+frame = 20
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Dancers3" unique_id=30452511]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1785657, 0.43999982, -0.022247314)
@@ -3057,7 +3055,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_psc6v")
 autoplay = "default"
-frame_progress = 0.14374231
+frame = 7
 
 [node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="Dancers3" unique_id=143090988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900752, 0.43999982, -0.37124777)
@@ -3074,7 +3072,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_p4mmm")
 autoplay = "default"
-frame_progress = 0.58335775
+frame = 48
 
 [node name="AnimatedSprite3D5" type="AnimatedSprite3D" parent="Dancers3" unique_id=1137577021]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1945174, 0.43999982, 0.08964348)
@@ -3082,8 +3080,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_gk48o")
 autoplay = "default"
-frame = 25
-frame_progress = 0.07838764
+frame = 60
 
 [node name="AnimatedSprite3D6" type="AnimatedSprite3D" parent="Dancers3" unique_id=2030656360]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5522736, 0.43999982, 0.16555977)
@@ -3091,7 +3088,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_qf0g8")
 autoplay = "default"
-frame_progress = 0.21638943
+frame = 17
 
 [node name="AnimatedSprite3D7" type="AnimatedSprite3D" parent="Dancers3" unique_id=320929256]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93964547, 0.43999982, -0.12128544)
@@ -3099,7 +3096,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_0bggg")
 autoplay = "default"
-frame_progress = 0.9750904
+frame = 41
 
 [node name="Dancers4" type="Node3D" parent="." unique_id=1359860888]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 1.3485365, -1.6770147, 5.202238)
@@ -3110,7 +3107,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_5r76v")
 autoplay = "default"
-frame_progress = 0.4374556
+frame = 46
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Dancers4" unique_id=980034722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1785657, 0.43999982, -0.022247314)
@@ -3118,7 +3115,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_psc6v")
 autoplay = "default"
-frame_progress = 0.14374231
+frame = 11
 
 [node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="Dancers4" unique_id=1122098523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900752, 0.43999982, -0.37124777)
@@ -3126,8 +3123,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_gsd1j")
 autoplay = "default"
-frame = 22
-frame_progress = 0.15473829
+frame = 56
 
 [node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="Dancers4" unique_id=1291508661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3600573, 0.43999982, 0.08964348)
@@ -3135,7 +3131,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_p4mmm")
 autoplay = "default"
-frame_progress = 0.58335775
+frame = 13
 
 [node name="AnimatedSprite3D5" type="AnimatedSprite3D" parent="Dancers4" unique_id=1853918037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1945174, 0.43999982, 0.08964348)
@@ -3143,8 +3139,6 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_gk48o")
 autoplay = "default"
-frame = 25
-frame_progress = 0.07838764
 
 [node name="AnimatedSprite3D6" type="AnimatedSprite3D" parent="Dancers4" unique_id=1125121464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5522736, 0.43999982, 0.16555977)
@@ -3152,7 +3146,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_qf0g8")
 autoplay = "default"
-frame_progress = 0.21638943
+frame = 28
 
 [node name="AnimatedSprite3D7" type="AnimatedSprite3D" parent="Dancers4" unique_id=846625474]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93964547, 0.43999982, -0.12128544)
@@ -3160,7 +3154,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_0bggg")
 autoplay = "default"
-frame_progress = 0.9750904
+frame = 19
 
 [node name="Dancers5" type="Node3D" parent="." unique_id=303615080]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 2.480915, -1.6770147, 4.8365846)
@@ -3171,7 +3165,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_5r76v")
 autoplay = "default"
-frame_progress = 0.4374556
+frame = 33
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Dancers5" unique_id=739061231]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1785657, 0.43999982, -0.022247314)
@@ -3179,7 +3173,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_psc6v")
 autoplay = "default"
-frame_progress = 0.14374231
+frame = 31
 
 [node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="Dancers5" unique_id=721078476]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900752, 0.43999982, -0.37124777)
@@ -3187,8 +3181,6 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_gsd1j")
 autoplay = "default"
-frame = 22
-frame_progress = 0.15473829
 
 [node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="Dancers5" unique_id=921919332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3600573, 0.43999982, 0.08964348)
@@ -3196,7 +3188,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_p4mmm")
 autoplay = "default"
-frame_progress = 0.58335775
+frame = 37
 
 [node name="AnimatedSprite3D5" type="AnimatedSprite3D" parent="Dancers5" unique_id=789331168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1945174, 0.43999982, 0.08964348)
@@ -3204,8 +3196,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_gk48o")
 autoplay = "default"
-frame = 25
-frame_progress = 0.07838764
+frame = 42
 
 [node name="AnimatedSprite3D6" type="AnimatedSprite3D" parent="Dancers5" unique_id=1607845751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5522736, 0.43999982, 0.16555977)
@@ -3213,7 +3204,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_qf0g8")
 autoplay = "default"
-frame_progress = 0.21638943
+frame = 39
 
 [node name="AnimatedSprite3D7" type="AnimatedSprite3D" parent="Dancers5" unique_id=1754988478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93964547, 0.43999982, -0.12128544)
@@ -3221,7 +3212,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_0bggg")
 autoplay = "default"
-frame_progress = 0.9750904
+frame = 7
 
 [node name="Dancers6" type="Node3D" parent="." unique_id=1677277784]
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 4.126812, -1.6770145, 5.2855053)
@@ -3232,7 +3223,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_5r76v")
 autoplay = "default"
-frame_progress = 0.4374556
+frame = 17
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Dancers6" unique_id=891899430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1785657, 0.43999982, -0.022247314)
@@ -3240,7 +3231,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_psc6v")
 autoplay = "default"
-frame_progress = 0.14374231
+frame = 15
 
 [node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="Dancers6" unique_id=1325268171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900752, 0.43999982, -0.37124777)
@@ -3248,8 +3239,7 @@ modulate = Color(0.34781694, 0.34781697, 0.3478169, 1)
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_gsd1j")
 autoplay = "default"
-frame = 22
-frame_progress = 0.15473829
+frame = 12
 
 [node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="Dancers6" unique_id=922164240]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3600573, 0.43999982, 0.08964348)

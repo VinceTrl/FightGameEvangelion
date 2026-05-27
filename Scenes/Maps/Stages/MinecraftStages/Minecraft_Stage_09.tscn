@@ -404,6 +404,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 2.7, 0)
 [node name="StoneBlock69" parent="Level/Blocks" unique_id=96002364 instance=ExtResource("2_n5jng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2.7, 0)
 
+[node name="StoneBlock82" parent="Level/Blocks" unique_id=1598625585 instance=ExtResource("2_n5jng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
+
 [node name="StoneBlock20" parent="Level/Blocks" unique_id=2120804233 instance=ExtResource("2_n5jng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 

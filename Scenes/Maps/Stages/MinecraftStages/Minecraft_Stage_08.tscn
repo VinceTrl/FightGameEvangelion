@@ -962,4 +962,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9000003, 0, -0.90000004)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9000003, 0, 0)
 
 [node name="EnderDragon" parent="Level" unique_id=768587010 instance=ExtResource("25_vgjoa")]
-transform = Transform3D(-1, -2.262668e-08, 8.444392e-08, 0, 0.9659258, 0.25881904, -8.742278e-08, 0.25881904, -0.9659258, 0, 4.5, -4.8000016)
+transform = Transform3D(-1, -2.262668e-08, 8.444392e-08, 0, 0.9659258, 0.25881904, -8.742278e-08, 0.25881904, -0.9659258, 0, 4.5, -4.5)

@@ -90,6 +90,7 @@ _surfaces = [{
 shadow_mesh = SubResource("ArrayMesh_fp3fa")
 
 [node name="BarrelBlock" unique_id=1588274387 node_paths=PackedStringArray("spawner") instance=ExtResource("1_qe8pi")]
+healthPoints = 3
 spawner = NodePath("Spawner")
 spawnChance = 0.5
 

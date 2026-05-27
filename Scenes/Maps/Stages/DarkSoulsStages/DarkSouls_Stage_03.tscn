@@ -10,7 +10,6 @@ platformSpawnType = 1
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 6.0
 levelRoot = NodePath("Level")
-overrideCameraClamp = true
 camClampMax = Vector2(3, 3)
 camClampMin = Vector2(-3, 0)
 
