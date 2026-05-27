@@ -229,7 +229,7 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Level" type="Node3D" parent="." unique_id=1123102094]
 
-[node name="Art" type="Node3D" parent="Level" unique_id=635932883]
+[node name="Art" type="Node3D" parent="Level" unique_id=635932883 groups=["Enviro"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.113097)
 
 [node name="Lights" type="Node3D" parent="Level/Art" unique_id=1761828140]
@@ -282,40 +282,39 @@ light_color = Color(1, 0.7213333, 0.56, 1)
 spot_range = 4.985
 spot_angle = 70.8
 
-[node name="Slap_SH_DOOR" parent="Level/Art/Lights" unique_id=842914717 instance=ExtResource("7_2cbhi")]
+[node name="Slap_SH_DOOR" parent="Level/Art/Lights" unique_id=842914717 groups=["Enviro"] instance=ExtResource("7_2cbhi")]
 transform = Transform3D(1.1637944, 0, 0, 0, 1.1637944, 0, 0, 0, 1.1637944, -0.6631666, 2, -0.08618134)
 
-[node name="Slap_SH_DOOR2" parent="Level/Art/Lights" unique_id=511382829 instance=ExtResource("7_2cbhi")]
+[node name="Slap_SH_DOOR2" parent="Level/Art/Lights" unique_id=511382829 groups=["Enviro"] instance=ExtResource("7_2cbhi")]
 transform = Transform3D(1.1637944, 0, 0, 0, 1.1637944, 0, 0, 0, 1.1637944, -0.08126938, 2, -0.08618134)
 
-[node name="Slap_SH_Add_clim" parent="Level/Art/Lights" unique_id=1151901606 instance=ExtResource("8_21gdy")]
+[node name="Slap_SH_Add_clim" parent="Level/Art/Lights" unique_id=1151901606 groups=["Enviro"] instance=ExtResource("8_21gdy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.627523, 2.807413, 0.6130971)
 
-[node name="Slap_SH_Add_clim2" parent="Level/Art/Lights" unique_id=1719948847 instance=ExtResource("8_21gdy")]
+[node name="Slap_SH_Add_clim2" parent="Level/Art/Lights" unique_id=1719948847 groups=["Enviro"] instance=ExtResource("8_21gdy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.770506, 0.7911513, 0.6130971)
 
 [node name="Background" type="MeshInstance3D" parent="Level/Art" unique_id=560103726]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5)
-visible = false
 mesh = SubResource("PlaneMesh_il36h")
 surface_material_override/0 = SubResource("StandardMaterial3D_fbbp7")
 
-[node name="bg_bg_fre_resized" parent="Level/Art" unique_id=1923664650 instance=ExtResource("9_21gdy")]
+[node name="bg_bg_fre_resized" parent="Level/Art" unique_id=1923664650 groups=["Enviro"] instance=ExtResource("9_21gdy")]
 transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -0.00089883804, 27.4858, 0.14507703)
 
-[node name="bg_bg_fre_resized2" parent="Level/Art" unique_id=391187358 instance=ExtResource("9_21gdy")]
+[node name="bg_bg_fre_resized2" parent="Level/Art" unique_id=391187358 groups=["Enviro"] instance=ExtResource("9_21gdy")]
 transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 23.4858, 0.14507703)
 
-[node name="bg_bg_fre_resized3" parent="Level/Art" unique_id=1857889185 instance=ExtResource("9_21gdy")]
+[node name="bg_bg_fre_resized3" parent="Level/Art" unique_id=1857889185 groups=["Enviro"] instance=ExtResource("9_21gdy")]
 transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, -5.484175, 20.4858, 0.14507703)
 
-[node name="bg_bg_fre_resized4" parent="Level/Art" unique_id=1200291485 instance=ExtResource("9_21gdy")]
+[node name="bg_bg_fre_resized4" parent="Level/Art" unique_id=1200291485 groups=["Enviro"] instance=ExtResource("9_21gdy")]
 transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 23.4858, 0.14507703)
 
-[node name="bg_bg_fre_resized5" parent="Level/Art" unique_id=582658852 instance=ExtResource("9_21gdy")]
+[node name="bg_bg_fre_resized5" parent="Level/Art" unique_id=582658852 groups=["Enviro"] instance=ExtResource("9_21gdy")]
 transform = Transform3D(-0.5, 7.54979e-08, 0, -7.54979e-08, -0.5, 0, 0, 0, 0.5, 5.4990706, 20.4858, 0.14507703)
 
-[node name="Blockout" type="Node3D" parent="Level" unique_id=1597386834]
+[node name="Blockout" type="Node3D" parent="Level" unique_id=1597386834 groups=["Enviro"]]
 
 [node name="Ground" type="CSGMesh3D" parent="Level/Blockout" unique_id=1352657506]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -353,7 +352,7 @@ collision_mask = 0
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Level/Blockout/Ground3/StaticBody3D" unique_id=1932499660]
 shape = SubResource("ConcavePolygonShape3D_pfgos")
 
-[node name="Lighting" type="Node3D" parent="." unique_id=1606325515]
+[node name="Lighting" type="Node3D" parent="." unique_id=1606325515 groups=["Enviro"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
 
 [node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting" unique_id=8830469]
@@ -384,7 +383,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.161, 3.4969678, 0.5582794)
 [node name="SLAP_SH_Lamp04" parent="Lighting" unique_id=204064871 instance=ExtResource("10_j1t1v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9826722, 3.4969678, 0.5582794)
 
-[node name="Enviro" type="Node3D" parent="." unique_id=128883466]
+[node name="Enviro" type="Node3D" parent="." unique_id=128883466 groups=["Enviro"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
 
 [node name="Slap_SH_Cheminee_01" parent="Enviro" unique_id=91271986 instance=ExtResource("11_mnhab")]
@@ -549,14 +548,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.191174)
 [node name="Slap_SH_Wall_05" parent="Enviro" unique_id=468684391 instance=ExtResource("16_j1t1v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1.191174)
 
-[node name="Slap_SH_Wall_01" parent="." unique_id=1333882796 instance=ExtResource("14_hlgw5")]
+[node name="Slap_SH_Wall_01" parent="." unique_id=1333882796 groups=["Enviro"] instance=ExtResource("14_hlgw5")]
 transform = Transform3D(1.0765854, 0, 0, 0, 1.0765854, 0, 0, 0, 1.0765854, -2.1820755, 3.5073419, -0.24669792)
 
-[node name="Slap_SH_Wall_02" parent="." unique_id=1479523980 instance=ExtResource("14_hlgw5")]
+[node name="Slap_SH_Wall_02" parent="." unique_id=1479523980 groups=["Enviro"] instance=ExtResource("14_hlgw5")]
 transform = Transform3D(1.0765854, 0, 0, 0, 1.0765854, 0, 0, 0, 1.0765854, -6.488417, 3.5073419, -0.24669792)
 
-[node name="Slap_SH_Wall_04" parent="." unique_id=1315097713 instance=ExtResource("14_hlgw5")]
+[node name="Slap_SH_Wall_04" parent="." unique_id=1315097713 groups=["Enviro"] instance=ExtResource("14_hlgw5")]
 transform = Transform3D(1.0765854, 0, 0, 0, 1.0765854, 0, 0, 0, 1.0765854, 2.1242661, 3.5073419, -0.24669792)
 
-[node name="Slap_SH_Wall_03" parent="." unique_id=1975480996 instance=ExtResource("13_i2atu")]
+[node name="Slap_SH_Wall_03" parent="." unique_id=1975480996 groups=["Enviro"] instance=ExtResource("13_i2atu")]
 transform = Transform3D(1.0765854, 0, 0, 0, 1.0765854, 0, 0, 0, 1.0765854, -2.1820755, 1.6223202, -0.24805641)

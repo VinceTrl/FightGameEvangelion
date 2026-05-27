@@ -699,7 +699,7 @@ transform = Transform3D(0.882625, 0, 0, 0, 0.882625, 0, 0, 0, 0.882625, 0, -3.74
 [node name="AnimationPlayer" parent="Enviro/Meshes/SM_Road" index="2"]
 autoplay = &"Road"
 
-[node name="LightingOld" type="Node3D" parent="." unique_id=1844371049]
+[node name="LightingOld" type="Node3D" parent="." unique_id=1844371049 groups=["Enviro"]]
 
 [node name="Old" type="Node3D" parent="LightingOld" unique_id=35693103]
 visible = false
@@ -801,7 +801,7 @@ spot_attenuation = -0.57
 spot_angle = 48.24
 spot_angle_attenuation = 303.142
 
-[node name="EVA" parent="." unique_id=1446312520 node_paths=PackedStringArray("animPlayerChore") instance=ExtResource("5_82r76")]
+[node name="EVA" parent="." unique_id=1446312520 node_paths=PackedStringArray("animPlayerChore") groups=["Enviro"] instance=ExtResource("5_82r76")]
 transform = Transform3D(0.998719, -0.0305181, -0.0403521, 0, 0.797584, -0.603208, 0.0505929, 0.602436, 0.796562, 0.410762, 0.446429, -26.7202)
 animPlayerChore = NodePath("../SLAP_Choregraphie/AnimLight_Slap")
 slapStartPauseDuration = 1.0
@@ -842,7 +842,7 @@ autoplay = &"Armature|Idle"
 [node name="Anim_Robot" parent="EVA/Robot Pivot" index="1"]
 autoplay = &"Anim_Robot"
 
-[node name="SLAP_Choregraphie" type="Node3D" parent="." unique_id=763326764]
+[node name="SLAP_Choregraphie" type="Node3D" parent="." unique_id=763326764 groups=["Enviro"]]
 
 [node name="Light_Slap_Intro_Scat" type="SpotLight3D" parent="SLAP_Choregraphie" unique_id=908975008]
 transform = Transform3D(1, 0, 0, 0, -0.719631, -0.694357, 0, 0.694357, -0.719631, 2.66887, -1.72133, -23.5076)

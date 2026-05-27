@@ -600,7 +600,13 @@ transform = Transform3D(0.411325, 0, 0.0177143, 0, 0.411706, 0, -0.0177143, 0, 0
 transform = Transform3D(0.663195, 0, -0.748447, 0, 1, 0, 0.748447, 0, 0.663195, 4.59925, 0, 4.60753)
 
 [node name="duck" parent="Level/Art/Duck/Node3D2" unique_id=746603022 instance=ExtResource("9_kqkkl")]
-transform = Transform3D(-2.5339718e-06, -0.01845141, -0.69975704, -8.08317e-10, 0.69975704, -0.01845141, 0.7, -6.598532e-08, -2.5331135e-06, -5.06496, 1.37028, -6.94447)
+transform = Transform3D(-2.5339718e-06, -0.01845141, -0.6997571, -8.08317e-10, 0.6997571, -0.01845141, 0.7, -6.598532e-08, -2.5331137e-06, -5.06496, 1.37028, -6.94447)
+
+[node name="mesh0" parent="Level/Art/Duck/Node3D2/duck" index="0" unique_id=1900481616]
+cast_shadow = 0
+
+[node name="mesh1" parent="Level/Art/Duck/Node3D2/duck" index="1" unique_id=1376183602]
+cast_shadow = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Level/Art/Duck/Node3D2/duck" unique_id=1309119514]
 libraries/ = SubResource("AnimationLibrary_afw6v")
@@ -610,7 +616,13 @@ autoplay = &"Duck"
 transform = Transform3D(0.661142, 0, 0.750261, 0, 1, 0, -0.750261, 0, 0.661142, 1.67222, 0, -2.81794)
 
 [node name="duck" parent="Level/Art/Duck/Node3D3" unique_id=179025267 instance=ExtResource("9_kqkkl")]
-transform = Transform3D(-2.5339718e-06, -0.01845141, -0.69975704, -8.08317e-10, 0.69975704, -0.01845141, 0.7, -6.598532e-08, -2.5331135e-06, -5.06496, 1.37028, -6.94447)
+transform = Transform3D(-2.5339718e-06, -0.01845141, -0.6997571, -8.08317e-10, 0.6997571, -0.01845141, 0.7, -6.598532e-08, -2.5331137e-06, -5.06496, 1.37028, -6.94447)
+
+[node name="mesh0" parent="Level/Art/Duck/Node3D3/duck" index="0" unique_id=1900481616]
+cast_shadow = 0
+
+[node name="mesh1" parent="Level/Art/Duck/Node3D3/duck" index="1" unique_id=1376183602]
+cast_shadow = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Level/Art/Duck/Node3D3/duck" unique_id=1274811709]
 libraries/ = SubResource("AnimationLibrary_afw6v")
@@ -626,3 +638,6 @@ spot_range = 16.4003
 spot_angle = 57.86
 
 [node name="DuckText" parent="." unique_id=229138835 instance=ExtResource("8_cyjor")]
+
+[editable path="Level/Art/Duck/Node3D2/duck"]
+[editable path="Level/Art/Duck/Node3D3/duck"]

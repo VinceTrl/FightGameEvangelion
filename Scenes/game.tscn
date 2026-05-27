@@ -10,9 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://c38gsdfy72awb" path="res://Scenes/Managers/game_manager.tscn" id="5_r45th"]
 [ext_resource type="Resource" uid="uid://boi3j7g4uww5i" path="res://Resources/Maps/FairyFountainMap.tres" id="7_ewbju"]
 [ext_resource type="Texture2D" uid="uid://bvl4xor4e52e4" path="res://Assets/Sprites/Characters/KikiFighters/SpriteKikiYellow.png" id="7_j3bm8"]
+[ext_resource type="Resource" uid="uid://b562ecwtwp5vd" path="res://Resources/Maps/EvangelionMap.tres" id="8_85qyi"]
 [ext_resource type="Resource" uid="uid://bxwdteo5j3cp8" path="res://Resources/Maps/MinecraftMap.tres" id="8_ewbju"]
 [ext_resource type="PackedScene" uid="uid://bem23jj1utect" path="res://Scenes/Gameplay/kill_volume.tscn" id="8_u84ky"]
+[ext_resource type="Resource" uid="uid://d4fpeppot8y16" path="res://Resources/Maps/BeachMap.tres" id="9_7nbq1"]
 [ext_resource type="Resource" uid="uid://d282ym1u5ohem" path="res://Resources/Maps/DarkSoulsMap.tres" id="9_85qyi"]
+[ext_resource type="Resource" uid="uid://cf21c4ssnlcyp" path="res://Resources/Maps/SilentHillMap.tres" id="10_exi56"]
 [ext_resource type="Texture2D" uid="uid://bm3edlyew80g" path="res://Assets/GUI/Sprites/HUD/WashBrosHUD/GUI_Kiki_Head_2.png" id="13_ewbju"]
 [ext_resource type="PackedScene" uid="uid://ckteefgjio63s" path="res://Scenes/Managers/game_capture.tscn" id="15_nb51f"]
 [ext_resource type="PackedScene" uid="uid://c5amqm6jpeons" path="res://Scenes/GUI/master_gui.tscn" id="16_cim6e"]
@@ -36,7 +39,7 @@ unique_name_in_owner = true
 
 [node name="MapManager" type="Node" parent="." unique_id=389733307]
 script = ExtResource("3_dv241")
-maps = Array[ExtResource("4_sjgtb")]([ExtResource("8_ewbju"), ExtResource("9_85qyi"), ExtResource("7_ewbju"), ExtResource("8_ewbju"), ExtResource("8_ewbju")])
+maps = Array[ExtResource("4_sjgtb")]([ExtResource("8_ewbju"), ExtResource("9_85qyi"), ExtResource("7_ewbju"), ExtResource("8_ewbju"), ExtResource("8_ewbju"), ExtResource("8_ewbju"), ExtResource("8_85qyi"), ExtResource("9_7nbq1"), ExtResource("10_exi56"), ExtResource("9_85qyi"), ExtResource("7_ewbju")])
 
 [node name="Gameplay" type="Node" parent="." unique_id=1867581352]
 

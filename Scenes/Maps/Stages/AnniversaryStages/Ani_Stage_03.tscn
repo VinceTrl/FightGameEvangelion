@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqoibe403b6hy"]
+[gd_scene format=3 uid="uid://bqoibe403b6hy"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_k0tsr"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_dufh1"]
@@ -16,20 +16,20 @@ size = Vector3(3.98096, 1, 1.96704)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j24wt"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ngn2h"]
-as_normal_map = true
 noise = SubResource("FastNoiseLite_j24wt")
+as_normal_map = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cqo42"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_verwq"]
-as_normal_map = true
 noise = SubResource("FastNoiseLite_cqo42")
+as_normal_map = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_hag3a"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j24wt"]
-seamless = true
 noise = SubResource("FastNoiseLite_hag3a")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ngn2h"]
 render_priority = 0
@@ -66,49 +66,49 @@ subdivide_depth = 100
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fvu6"]
 size = Vector3(0.25, 9, 1.815)
 
-[node name="Ani_Stage_03" type="Node3D" node_paths=PackedStringArray("levelRoot")]
+[node name="Ani_Stage_03" type="Node3D" unique_id=891985971 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_k0tsr")
 platformSpawnType = 1
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 6.0
 levelRoot = NodePath("Level")
 
-[node name="Gameplay" type="Node3D" parent="."]
+[node name="Gameplay" type="Node3D" parent="." unique_id=1335208490]
 
-[node name="GameplayLogic" type="Node3D" parent="Gameplay"]
+[node name="GameplayLogic" type="Node3D" parent="Gameplay" unique_id=909231635]
 
-[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=81275586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.439, 0)
 script = ExtResource("2_dufh1")
 
-[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=1965065667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.439, 0)
 script = ExtResource("2_dufh1")
 playerID = 2
 
-[node name="Objects" type="Node3D" parent="Gameplay"]
+[node name="Objects" type="Node3D" parent="Gameplay" unique_id=1263245670]
 
-[node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+[node name="Spawner" parent="Gameplay/Objects" unique_id=1475924249 instance=ExtResource("3_1d2pd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.31007, 3.3, 0)
 
-[node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+[node name="Spawner2" parent="Gameplay/Objects" unique_id=997801705 instance=ExtResource("3_1d2pd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31007, 3.3, 0)
 
-[node name="Spawner3" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+[node name="Spawner3" parent="Gameplay/Objects" unique_id=362691669 instance=ExtResource("3_1d2pd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00443, 5.27803, 0)
 
-[node name="Spawner4" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+[node name="Spawner4" parent="Gameplay/Objects" unique_id=1061705417 instance=ExtResource("3_1d2pd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01193, 5.3, 0)
 
-[node name="Spawner5" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+[node name="Spawner5" parent="Gameplay/Objects" unique_id=2034446785 instance=ExtResource("3_1d2pd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11347, 3.3, 0)
 
-[node name="Spawner6" parent="Gameplay/Objects" instance=ExtResource("3_1d2pd")]
+[node name="Spawner6" parent="Gameplay/Objects" unique_id=1507028892 instance=ExtResource("3_1d2pd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11347, 3.3, 0)
 
-[node name="Rings" type="Node3D" parent="Gameplay/Objects"]
+[node name="Rings" type="Node3D" parent="Gameplay/Objects" unique_id=331487624]
 
-[node name="BouncyRing_Static" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static" parent="Gameplay/Objects/Rings" unique_id=460850926 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83105, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -116,7 +116,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static3" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static3" parent="Gameplay/Objects/Rings" unique_id=502191703 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17952, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -124,7 +124,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static2" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static2" parent="Gameplay/Objects/Rings" unique_id=844439963 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48376, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -132,7 +132,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static4" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static4" parent="Gameplay/Objects/Rings" unique_id=729598987 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.870375, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -140,7 +140,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static5" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static5" parent="Gameplay/Objects/Rings" unique_id=661127790 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21884, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -148,7 +148,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static6" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static6" parent="Gameplay/Objects/Rings" unique_id=201043380 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52308, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -156,7 +156,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static7" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static7" parent="Gameplay/Objects/Rings" unique_id=874099701 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08901, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -164,7 +164,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static8" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static8" parent="Gameplay/Objects/Rings" unique_id=304373520 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74055, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -172,7 +172,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static9" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static9" parent="Gameplay/Objects/Rings" unique_id=1880379781 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436307, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -180,7 +180,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static10" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static10" parent="Gameplay/Objects/Rings" unique_id=1752761417 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04395, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -188,7 +188,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static11" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static11" parent="Gameplay/Objects/Rings" unique_id=389791948 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.69549, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -196,7 +196,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing_Static12" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing_Static12" parent="Gameplay/Objects/Rings" unique_id=941863904 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39125, 1.13497, 0)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -204,98 +204,95 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 
-[node name="BouncyRing13" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing13" parent="Gameplay/Objects/Rings" unique_id=115349567 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15823, 2.75827, 0)
 
-[node name="BouncyRing18" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing18" parent="Gameplay/Objects/Rings" unique_id=995973753 instance=ExtResource("4_k3uol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42619, 2.82885, 0)
 
-[node name="BouncyRing20" parent="Gameplay/Objects/Rings" instance=ExtResource("4_k3uol")]
+[node name="BouncyRing20" parent="Gameplay/Objects/Rings" unique_id=1356478468 instance=ExtResource("4_k3uol")]
 transform = Transform3D(0.808072, 0.589084, 0, -0.589084, 0.808072, 0, 0, 0, 1, -1.95296, 3.99606, 0)
 
-[node name="PenPenLocations" type="Node3D" parent="Gameplay"]
+[node name="PenPenLocations" type="Node3D" parent="Gameplay" unique_id=427781346]
 
-[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1765834078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37871, 0.252657, 0)
 script = ExtResource("5_fag7v")
 
-[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=2053978233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.627961, 0)
 script = ExtResource("5_fag7v")
 
-[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1144224890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38339, 2.54319, 0)
 script = ExtResource("5_fag7v")
 
-[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1496966953]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25588, 2.73042, 0)
 script = ExtResource("5_fag7v")
 
-[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1281981318]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07223, 0.466167, 0)
 script = ExtResource("5_fag7v")
 
-[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=337954437]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95277, 2.53234, 0)
 script = ExtResource("5_fag7v")
 
-[node name="swimming_pool" parent="Gameplay" instance=ExtResource("6_4t43o")]
+[node name="swimming_pool" parent="Gameplay" unique_id=1106410205 instance=ExtResource("6_4t43o")]
 transform = Transform3D(2.255, 0, 0, 0, 2.14061, -0.709099, 0, 0.709099, 2.14061, 0.581694, 0.29134, 0.0900879)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Gameplay/swimming_pool"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Gameplay/swimming_pool" unique_id=1319743694]
 collision_layer = 193
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/StaticBody3D" unique_id=1575596959]
 transform = Transform3D(1, 0, 0, 0, 1, -1.43051e-06, 0, 1.43051e-06, 1, -0.199219, -0.129779, -0.0250246)
 shape = SubResource("BoxShape3D_chbuj")
 
-[node name="WaterPlane" type="MeshInstance3D" parent="Gameplay/swimming_pool/StaticBody3D"]
+[node name="WaterPlane" type="MeshInstance3D" parent="Gameplay/swimming_pool/StaticBody3D" unique_id=54876559]
 transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, -0.143334, 0.276093, -0.0914586)
 material_override = SubResource("ShaderMaterial_ngn2h")
 mesh = SubResource("PlaneMesh_j24wt")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Gameplay/swimming_pool"]
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Gameplay/swimming_pool" unique_id=647945498]
 transform = Transform3D(1.72002, 0, 0, 0, 1, 0, 0, 0, 0.913212, -0.167984, 0.242347, 7.45058e-09)
 mesh = SubResource("PlaneMesh_0m7tc")
 material = ExtResource("7_gwjxb")
 
-[node name="Wall" type="StaticBody3D" parent="Gameplay/swimming_pool"]
+[node name="Wall" type="StaticBody3D" parent="Gameplay/swimming_pool" unique_id=1917873253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6647, 0.519058, 1.49012e-08)
 collision_layer = 192
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/Wall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/Wall" unique_id=63640640]
 shape = SubResource("BoxShape3D_5fvu6")
 
-[node name="Wall2" type="StaticBody3D" parent="Gameplay/swimming_pool"]
+[node name="Wall2" type="StaticBody3D" parent="Gameplay/swimming_pool" unique_id=1715874236]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07245, 0.519058, 1.49012e-08)
 collision_layer = 192
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/Wall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/swimming_pool/Wall2" unique_id=1714742557]
 shape = SubResource("BoxShape3D_5fvu6")
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="." unique_id=196816004]
 
-[node name="ShipTargetPosition4" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition4" type="Node3D" parent="Level" unique_id=627470430]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
 
-[node name="ShipTargetPosition5" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition5" type="Node3D" parent="Level" unique_id=209846917]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
 
-[node name="ShipTargetPosition6" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition6" type="Node3D" parent="Level" unique_id=760682392]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
 
-[node name="WoodPlatform9" parent="Level" instance=ExtResource("6_h6ksb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
-
-[node name="WoodPlatform10" parent="Level" instance=ExtResource("6_h6ksb")]
+[node name="WoodPlatform10" parent="Level" unique_id=1187996993 instance=ExtResource("6_h6ksb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, 0)
 
-[node name="WoodPlatform12" parent="Level" instance=ExtResource("6_h6ksb")]
+[node name="WoodPlatform12" parent="Level" unique_id=1907308087 instance=ExtResource("6_h6ksb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.5, 0)
 
-[node name="Lighting" type="Node3D" parent="."]
+[node name="Lighting" type="Node3D" parent="." unique_id=1125484778]
 
-[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting"]
+[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting" unique_id=1450086043]
 transform = Transform3D(1, 0, 0, 0, 0.0107859, 0.999942, 0, -0.999942, 0.0107859, 0, 6.62258, 1.46718)
 light_energy = 3.0
 shadow_enabled = true

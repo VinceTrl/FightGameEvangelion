@@ -46,7 +46,7 @@ lights = [NodePath("Lighting")]
 [node name="SpawnManager" parent="." unique_id=1575374684 instance=ExtResource("1_3v2v2")]
 items = Array[ExtResource("3_0s7yt")]([ExtResource("5_2ndgt"), ExtResource("6_egxmt"), ExtResource("7_3dkcm"), ExtResource("8_oqd8u"), ExtResource("9_a77w8"), ExtResource("10_fwq1n"), ExtResource("12_r4gs8"), ExtResource("13_mj8fs"), ExtResource("14_5j2rv"), ExtResource("15_u5o35")])
 
-[node name="Enviro" type="Node3D" parent="." unique_id=1794683627]
+[node name="Enviro" type="Node3D" parent="." unique_id=1794683627 groups=["Enviro"]]
 
 [node name="PeachBeachMap" parent="Enviro" unique_id=369944411 instance=ExtResource("3_2ndgt")]
 transform = Transform3D(0.0382237, 0.00114923, 0.145044, 0.00735124, 0.149787, -0.00312413, -0.144861, 0.00790446, 0.0381134, -2.4032, 1.62675, -44.6887)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhaye72kx2pug"]
+[gd_scene format=3 uid="uid://bhaye72kx2pug"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_ot161"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_6ugkb"]
@@ -55,7 +55,7 @@ size = Vector3(4.2, 2.495, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_oddy2"]
 size = Vector3(4.2, 2.495, 4)
 
-[node name="Ani_Stage_07" type="Node3D" node_paths=PackedStringArray("levelRoot")]
+[node name="Ani_Stage_07" type="Node3D" unique_id=1661093013 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_ot161")
 platformSpawnType = 1
 fixedCamZ = 3.0
@@ -63,303 +63,301 @@ overrideCamZ = true
 overrideMaxCamZ = 5.0
 levelRoot = NodePath("Level")
 
-[node name="Gameplay" type="Node3D" parent="."]
+[node name="Gameplay" type="Node3D" parent="." unique_id=450480507]
 
-[node name="GameplayLogic" type="Node3D" parent="Gameplay"]
+[node name="GameplayLogic" type="Node3D" parent="Gameplay" unique_id=385842851]
 
-[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=104209509]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01013, 1.439, 0)
 script = ExtResource("2_6ugkb")
 
-[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=1243263831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00677, 1.71849, 0)
 script = ExtResource("2_6ugkb")
 playerID = 2
 
-[node name="Objects" type="Node3D" parent="Gameplay"]
+[node name="Objects" type="Node3D" parent="Gameplay" unique_id=1977807855]
 
-[node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_oddy2")]
+[node name="Spawner" parent="Gameplay/Objects" unique_id=1098600322 instance=ExtResource("3_oddy2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00161, 3.3, 0)
 
-[node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_oddy2")]
+[node name="Spawner2" parent="Gameplay/Objects" unique_id=1660512853 instance=ExtResource("3_oddy2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99782, 3.3, 0)
 
-[node name="RotationRoot" type="Node3D" parent="Gameplay/Objects"]
+[node name="RotationRoot" type="Node3D" parent="Gameplay/Objects" unique_id=445352618 groups=["Enviro"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.5, -0.19)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Gameplay/Objects/RotationRoot"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Gameplay/Objects/RotationRoot" unique_id=473268027]
 root_node = NodePath("../Wash")
-libraries = {
-&"": SubResource("AnimationLibrary_oddy2")
-}
-autoplay = "Floating"
+libraries/ = SubResource("AnimationLibrary_oddy2")
+autoplay = &"Floating"
 
-[node name="Root" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=912617575]
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root" unique_id=100109019 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="SlapBros_Beach_Plateform_1" parent="Gameplay/Objects/RotationRoot/Root" instance=ExtResource("5_5ebhv")]
+[node name="SlapBros_Beach_Plateform_1" parent="Gameplay/Objects/RotationRoot/Root" unique_id=1711616004 instance=ExtResource("5_5ebhv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.78842e-08, -3.84947, -0.487134)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Gameplay/Objects/RotationRoot/Root/SlapBros_Beach_Plateform_1" groups=["Ledgegrab"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="Gameplay/Objects/RotationRoot/Root/SlapBros_Beach_Plateform_1" unique_id=1084791745 groups=["Ledgegrab"]]
 transform = Transform3D(1.02972, 0, 0, 0, 1.02972, 0, 0, 0, 0.514861, 0.0957729, -0.0983952, 0.984302)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/RotationRoot/Root/SlapBros_Beach_Plateform_1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/RotationRoot/Root/SlapBros_Beach_Plateform_1/StaticBody3D" unique_id=875145005]
 shape = SubResource("BoxShape3D_o54ie")
 
-[node name="Root2" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root2" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1298130423]
 transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root2" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root2" unique_id=294445928 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root5" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root5" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=902350134]
 transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root5" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root5" unique_id=561140383 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root6" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root6" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1307344964]
 transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root6" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root6" unique_id=1031296914 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root10" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root10" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1380454252]
 transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root10" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root10" unique_id=297478349 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root7" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root7" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1760620084]
 transform = Transform3D(-5.96046e-08, -1, 0, 1, -5.96046e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root7" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root7" unique_id=1690896656 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root8" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root8" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=695439978]
 transform = Transform3D(-0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root8" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root8" unique_id=348444823 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root9" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root9" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=878979034]
 transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root9" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root9" unique_id=1887832218 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root12" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root12" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1923525500]
 transform = Transform3D(-0.965926, -0.258819, 0, 0.258819, -0.965926, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root12" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root12" unique_id=102833660 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root15" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root15" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=711526587]
 transform = Transform3D(-0.866026, -0.5, 0, 0.5, -0.866026, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root15" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root15" unique_id=1805127360 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root13" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root13" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=245846938]
 transform = Transform3D(-1, 2.98023e-08, 0, -2.98023e-08, -1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root13" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root13" unique_id=2089260239 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root14" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root14" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=353885481]
 transform = Transform3D(-0.965926, 0.258819, 0, -0.258819, -0.965926, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root14" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root14" unique_id=1518366726 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root16" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root16" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1390776114]
 transform = Transform3D(-0.866026, 0.5, 0, -0.5, -0.866026, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root16" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root16" unique_id=506856795 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root17" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root17" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=806320731]
 transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root17" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root17" unique_id=1323056191 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root18" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root18" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1015417505]
 transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root18" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root18" unique_id=1656751728 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root19" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root19" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1803853058]
 transform = Transform3D(2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root19" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root19" unique_id=766901836 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root20" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root20" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1474165226]
 transform = Transform3D(0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root20" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root20" unique_id=1416484439 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root21" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root21" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=1975565827]
 transform = Transform3D(0.5, 0.866026, 0, -0.866026, 0.5, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root21" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root21" unique_id=1397238108 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root23" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root23" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=223204464]
 transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root23" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root23" unique_id=1200402288 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Root24" type="Node3D" parent="Gameplay/Objects/RotationRoot"]
+[node name="Root24" type="Node3D" parent="Gameplay/Objects/RotationRoot" unique_id=666284082]
 transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root24" instance=ExtResource("6_5ebhv")]
+[node name="WoodPlatform7" parent="Gameplay/Objects/RotationRoot/Root24" unique_id=1555489829 instance=ExtResource("6_5ebhv")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -4, 0)
 
-[node name="Wash" parent="Gameplay/Objects/RotationRoot" instance=ExtResource("4_f4ubu")]
+[node name="Wash" parent="Gameplay/Objects/RotationRoot" unique_id=874831266 instance=ExtResource("4_f4ubu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.731164, 0)
 
-[node name="Sprite3D" type="Sprite3D" parent="Gameplay/Objects/RotationRoot/Wash"]
+[node name="Sprite3D" type="Sprite3D" parent="Gameplay/Objects/RotationRoot/Wash" unique_id=1298170887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70727, 0)
 pixel_size = 0.015
 texture = ExtResource("6_6ugkb")
 
-[node name="Coll" type="Node3D" parent="Gameplay/Objects"]
+[node name="Coll" type="Node3D" parent="Gameplay/Objects" unique_id=1642096868]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=1396702179 groups=["Ledgegrab"]]
 transform = Transform3D(0.52101, -0.853551, 0, 0.853551, 0.52101, 0, 0, 0, 1, 3.87104, -0.230124, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D" unique_id=1901327470]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=1271709647 groups=["Ledgegrab"]]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.42938, 1.76988, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D2" unique_id=2108352338]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D3" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=1303340832 groups=["Ledgegrab"]]
 transform = Transform3D(-0.395449, -0.918488, 0, 0.918488, -0.395449, 0, 0, 0, 1, 4.03004, 3.80497, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D3" unique_id=189837560]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D4" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=1953323641 groups=["Ledgegrab"]]
 transform = Transform3D(-0.676645, -0.73631, 0, 0.73631, -0.676645, 0, 0, 0, 1, 2.70504, 5.48327, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D4" unique_id=921275625]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="StaticBody3D5" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D5" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=1321784434 groups=["Ledgegrab"]]
 transform = Transform3D(-0.977383, -0.211478, 0, 0.211478, -0.977383, 0, 0, 0, 1, 0.467811, 6.43232, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D5" unique_id=1580630878]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="StaticBody3D6" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D6" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=980391798 groups=["Ledgegrab"]]
 transform = Transform3D(-0.964262, 0.26495, 0, -0.26495, -0.964262, 0, 0, 0, 1, -1.53128, 6.22094, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D6" unique_id=1044139288]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="StaticBody3D7" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D7" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=1828640068 groups=["Ledgegrab"]]
 transform = Transform3D(-0.696401, 0.717652, 0, -0.717652, -0.696401, 0, 0, 0, 1, -2.79098, 5.62386, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D7"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D7" unique_id=1283691412]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="StaticBody3D8" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D8" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=1269183491 groups=["Ledgegrab"]]
 transform = Transform3D(-0.088025, 0.996118, 0, -0.996118, -0.088025, 0, 0, 0, 1, -4.30579, 3.67482, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D8"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D8" unique_id=1795013645]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="StaticBody3D9" type="StaticBody3D" parent="Gameplay/Objects/Coll" groups=["Ledgegrab"]]
+[node name="StaticBody3D9" type="StaticBody3D" parent="Gameplay/Objects/Coll" unique_id=417305185 groups=["Ledgegrab"]]
 transform = Transform3D(0.463435, 0.886131, 0, -0.886131, 0.463435, 0, 0, 0, 1, -3.95142, -0.107246, -0.902232)
 collision_layer = 193
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D9"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gameplay/Objects/Coll/StaticBody3D9" unique_id=1810213526]
 shape = SubResource("BoxShape3D_oddy2")
 
-[node name="PenPenLocations" type="Node3D" parent="Gameplay"]
+[node name="PenPenLocations" type="Node3D" parent="Gameplay" unique_id=1292773597]
 
-[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1579018227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37871, 0.252657, 0)
 script = ExtResource("5_4fjne")
 
-[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1042842905]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.627961, 0)
 script = ExtResource("5_4fjne")
 
-[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=474822645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38339, 2.54319, 0)
 script = ExtResource("5_4fjne")
 
-[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1190197295]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25588, 2.73042, 0)
 script = ExtResource("5_4fjne")
 
-[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=972077445]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07223, 0.466167, 0)
 script = ExtResource("5_4fjne")
 
-[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1287858347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95277, 2.53234, 0)
 script = ExtResource("5_4fjne")
 
-[node name="CameraTarget" parent="Gameplay" instance=ExtResource("8_f4ubu")]
+[node name="CameraTarget" parent="Gameplay" unique_id=1785012144 instance=ExtResource("8_f4ubu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.53033, 0)
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="." unique_id=142677638]
 
-[node name="ShipTargetPosition4" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition4" type="Node3D" parent="Level" unique_id=1249882466]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
 
-[node name="ShipTargetPosition5" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition5" type="Node3D" parent="Level" unique_id=988579774]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
 
-[node name="ShipTargetPosition6" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition6" type="Node3D" parent="Level" unique_id=1369395149]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
 
-[node name="SM_WashMachine_Open" parent="Level" instance=ExtResource("8_oddy2")]
+[node name="SM_WashMachine_Open" parent="Level" unique_id=1141705029 instance=ExtResource("8_oddy2")]
 transform = Transform3D(-1.15955e-07, 0, 3.86671, 0, 3.86671, 0, -2.65274, 0, -1.6902e-07, -0.232334, -4.18065, -2.81967)
 
-[node name="Lighting" type="Node3D" parent="."]
+[node name="Lighting" type="Node3D" parent="." unique_id=897468838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
 
-[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting"]
+[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting" unique_id=1505034286]
 transform = Transform3D(1, 0, 0, 0, 0.0107859, 0.999942, 0, -0.999942, 0.0107859, 0, 6.62258, 1.46718)
 light_energy = 3.0
 shadow_enabled = true
 spot_range = 15.0
 spot_angle = 57.86
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Lighting"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting" unique_id=795070984]
 transform = Transform3D(0.986713, 0.143947, 0.07534, -0.162222, 0.847194, 0.505911, 0.00899697, -0.511411, 0.859289, 0.499481, 4.38448, 3.1789)
 light_energy = 0.551
 light_indirect_energy = 0.0

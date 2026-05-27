@@ -6,4 +6,4 @@
 script = ExtResource("1_x0id5")
 mapName = &"Beach"
 mapScenePath = &"res://Scenes/Maps/Maps/Test_map.tscn"
-stagePaths = Array[String](["res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_01.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_02.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_03.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_04.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_05.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_06.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_07.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_08.tscn"])
+stagePaths = Array[String](["res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_01.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_02.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_04.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_06.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_07.tscn", "res://Scenes/Maps/Stages/AnniversaryStages/Ani_Stage_08.tscn"])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://lqp4gj0p1nt7"]
+[gd_scene format=3 uid="uid://lqp4gj0p1nt7"]
 
 [ext_resource type="Script" uid="uid://diqylwwpfwocw" path="res://Scripts/Level/StageManager.gd" id="1_hqxp8"]
 [ext_resource type="Script" uid="uid://r0iocqv3kb1s" path="res://Scripts/Player/player_spawn.gd" id="2_yhxr1"]
@@ -19,185 +19,185 @@
 [ext_resource type="PackedScene" uid="uid://dqfgwv7cspf8o" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_4.tscn" id="17_jyqcr"]
 [ext_resource type="PackedScene" uid="uid://cwv4s0n65s5mm" path="res://Assets/Meshes/Enviro/PeachBeach/Peach Beach/Kits/slap_bros_beach_plank_3.tscn" id="18_7qi5j"]
 
-[node name="Ani_Stage_02" type="Node3D" node_paths=PackedStringArray("levelRoot")]
+[node name="Ani_Stage_02" type="Node3D" unique_id=1821049217 node_paths=PackedStringArray("levelRoot")]
 script = ExtResource("1_hqxp8")
 platformSpawnType = 1
 overrideMinCamZ = 4.0
 overrideMaxCamZ = 6.0
 levelRoot = NodePath("Level")
 
-[node name="Gameplay" type="Node3D" parent="."]
+[node name="Gameplay" type="Node3D" parent="." unique_id=855036966]
 
-[node name="GameplayLogic" type="Node3D" parent="Gameplay"]
+[node name="GameplayLogic" type="Node3D" parent="Gameplay" unique_id=1656385226]
 
-[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic"]
+[node name="PlayerSpawn" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=1720613271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.439, 0)
 script = ExtResource("2_yhxr1")
 
-[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic"]
+[node name="PlayerSpawn2" type="Node3D" parent="Gameplay/GameplayLogic" unique_id=366725760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.439, 0)
 script = ExtResource("2_yhxr1")
 playerID = 2
 
-[node name="Objects" type="Node3D" parent="Gameplay"]
+[node name="Objects" type="Node3D" parent="Gameplay" unique_id=635380444]
 
-[node name="Spawner" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
+[node name="Spawner" parent="Gameplay/Objects" unique_id=2037639631 instance=ExtResource("3_uvq2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48911, 4.3, 0)
 
-[node name="Spawner2" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
+[node name="Spawner2" parent="Gameplay/Objects" unique_id=876263694 instance=ExtResource("3_uvq2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03561, 4.3, 0)
 
-[node name="Spawner3" parent="Gameplay/Objects" instance=ExtResource("3_uvq2c")]
+[node name="Spawner3" parent="Gameplay/Objects" unique_id=1519210292 instance=ExtResource("3_uvq2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49128, 4.3, 0)
 
-[node name="WarioMouth" parent="Gameplay/Objects" instance=ExtResource("5_x8xyy")]
+[node name="WarioMouth" parent="Gameplay/Objects" unique_id=428572940 instance=ExtResource("5_x8xyy")]
 transform = Transform3D(0.75, 0, -7.99361e-15, 0, 0.75, 0, 7.99361e-15, 0, 0.75, 3.75, 2.403, 0.493)
 
-[node name="WarioMouth2" parent="Gameplay/Objects" instance=ExtResource("5_x8xyy")]
+[node name="WarioMouth2" parent="Gameplay/Objects" unique_id=675070297 instance=ExtResource("5_x8xyy")]
 transform = Transform3D(-0.75, -6.55671e-08, -6.55671e-08, -6.55671e-08, 0.75, 0, -6.55671e-08, -5.73206e-15, 0.75, -3.75, 2.4, 0.4)
 
-[node name="PenPenLocations" type="Node3D" parent="Gameplay"]
+[node name="PenPenLocations" type="Node3D" parent="Gameplay" unique_id=1465944784]
 
-[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1034071902]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37871, 0.252657, 0)
 script = ExtResource("6_2dd1u")
 
-[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation2" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=980942903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.627961, 0)
 script = ExtResource("6_2dd1u")
 
-[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation3" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1950836180]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38339, 2.54319, 0)
 script = ExtResource("6_2dd1u")
 
-[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation4" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=1242473948]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25588, 2.73042, 0)
 script = ExtResource("6_2dd1u")
 
-[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation6" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=21303525]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07223, 0.466167, 0)
 script = ExtResource("6_2dd1u")
 
-[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations"]
+[node name="PenpenLocation9" type="Node3D" parent="Gameplay/PenPenLocations" unique_id=25040669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95277, 2.53234, 0)
 script = ExtResource("6_2dd1u")
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="." unique_id=1215151485]
 
-[node name="ShipTargetPosition4" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition4" type="Node3D" parent="Level" unique_id=754981419]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.143196, -0.179845, 0.147627)
 
-[node name="ShipTargetPosition5" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition5" type="Node3D" parent="Level" unique_id=239415286]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 3.7056, 1.29483, 0.147627)
 
-[node name="ShipTargetPosition6" type="Node3D" parent="Level"]
+[node name="ShipTargetPosition6" type="Node3D" parent="Level" unique_id=476378027]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -3.52944, 1.42187, 0.147627)
 
-[node name="WoodPlatform" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform" parent="Level" unique_id=1766088374 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="WoodPlatform2" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform2" parent="Level" unique_id=386054873 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
 
-[node name="WoodPlatform3" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform3" parent="Level" unique_id=1378221545 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 0)
 
-[node name="WoodPlatform4" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform4" parent="Level" unique_id=1965384060 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)
 
-[node name="WoodPlatform5" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform5" parent="Level" unique_id=1078405537 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
 
-[node name="WoodPlatform6" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform6" parent="Level" unique_id=1623439800 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 0)
 
-[node name="WoodPlatform7" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform7" parent="Level" unique_id=2032365735 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, 0)
 
-[node name="WoodPlatform11" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform11" parent="Level" unique_id=1877557667 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50401, 2.5, 0)
 
-[node name="WoodPlatform12" parent="Level" instance=ExtResource("7_gvulw")]
+[node name="WoodPlatform12" parent="Level" unique_id=1180390260 instance=ExtResource("7_gvulw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49599, 2.5, 0)
 
-[node name="Art" type="Node3D" parent="Level"]
+[node name="Art" type="Node3D" parent="Level" unique_id=379704750]
 
-[node name="SlapBros_Beach_Beam_1" parent="Level/Art" instance=ExtResource("7_no4eh")]
+[node name="SlapBros_Beach_Beam_1" parent="Level/Art" unique_id=464108583 instance=ExtResource("7_no4eh")]
 transform = Transform3D(0.520198, 0, 0, 0, 0.520198, 0, 0, 0, 0.520198, -3.27757, 0.775259, 0.458365)
 
-[node name="SlapBros_Beach_Beam_4" parent="Level/Art" instance=ExtResource("7_no4eh")]
+[node name="SlapBros_Beach_Beam_4" parent="Level/Art" unique_id=1700355188 instance=ExtResource("7_no4eh")]
 transform = Transform3D(-0.478003, 0, 0.205228, 0, 0.520198, 0, -0.205228, 0, -0.478003, -2.07518, 0.840155, 0.458365)
 
-[node name="SlapBros_Beach_Beam_8" parent="Level/Art" instance=ExtResource("7_no4eh")]
+[node name="SlapBros_Beach_Beam_8" parent="Level/Art" unique_id=386728788 instance=ExtResource("7_no4eh")]
 transform = Transform3D(0.0744199, 0, 0.514847, 0, 0.618984, 0, -0.514847, 0, 0.0744199, -0.402781, 0.88416, 0.383237)
 
-[node name="SlapBros_Beach_Beam_11" parent="Level/Art" instance=ExtResource("7_no4eh")]
+[node name="SlapBros_Beach_Beam_11" parent="Level/Art" unique_id=252600892 instance=ExtResource("7_no4eh")]
 transform = Transform3D(0.0713257, -0.17663, 0.493441, 0.021236, 0.593248, 0.146913, -0.514847, 0, 0.0744199, 3.29276, 0.88416, 0.383237)
 
-[node name="SlapBros_Beach_Beam_6" parent="Level/Art" instance=ExtResource("8_dvp2t")]
+[node name="SlapBros_Beach_Beam_6" parent="Level/Art" unique_id=1638180819 instance=ExtResource("8_dvp2t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.44578, 1.59088, -0.764874)
 
-[node name="SlapBros_Beach_Beam_2" parent="Level/Art" instance=ExtResource("9_nx31o")]
+[node name="SlapBros_Beach_Beam_2" parent="Level/Art" unique_id=575108554 instance=ExtResource("9_nx31o")]
 transform = Transform3D(0.490875, 0, 0, 0, 0.47722, -0.114976, 0, 0.114976, 0.47722, -1.3722, 1.65711, -0.767714)
 
-[node name="SlapBros_Beach_rope_1" parent="Level/Art" instance=ExtResource("10_sbjch")]
+[node name="SlapBros_Beach_rope_1" parent="Level/Art" unique_id=1173194624 instance=ExtResource("10_sbjch")]
 transform = Transform3D(0.345344, 0, 0, 0, 0.345344, 0, 0, 0, 0.345344, -2.40684, 1.27662, -0.792308)
 
-[node name="SlapBros_Beach_rope_3" parent="Level/Art" instance=ExtResource("10_sbjch")]
+[node name="SlapBros_Beach_rope_3" parent="Level/Art" unique_id=1697212597 instance=ExtResource("10_sbjch")]
 transform = Transform3D(0.345257, -0.0077807, 0, 0.0077807, 0.345257, 0, 0, 0, 0.345344, 1.23933, 1.39625, -0.777398)
 
-[node name="SlapBros_Beach_rope_2" parent="Level/Art" instance=ExtResource("11_coo6b")]
+[node name="SlapBros_Beach_rope_2" parent="Level/Art" unique_id=1142881905 instance=ExtResource("11_coo6b")]
 transform = Transform3D(0.338989, 0.0641201, 0, -0.0641201, 0.338989, 0, 0, 0, 0.345, -0.585799, 1.18891, -0.777193)
 
-[node name="SlapBros_Beach_rope_4" parent="Level/Art" instance=ExtResource("11_coo6b")]
+[node name="SlapBros_Beach_rope_4" parent="Level/Art" unique_id=1220089697 instance=ExtResource("11_coo6b")]
 transform = Transform3D(0.276673, 0.188514, 0, -0.188514, 0.276673, 0, 0, 0, 0.334792, 2.8701, 1.26983, -0.777193)
 
-[node name="SlapBros_Beach_Beam_5" parent="Level/Art" instance=ExtResource("12_tfls4")]
+[node name="SlapBros_Beach_Beam_5" parent="Level/Art" unique_id=1039465744 instance=ExtResource("12_tfls4")]
 transform = Transform3D(0.342822, 0, 0, 0, 0.492229, -0.0577163, 0, 0.0878122, 0.323527, 0.185489, 1.80882, -0.683471)
 
-[node name="SlapBros_Beach_Beam_10" parent="Level/Art" instance=ExtResource("12_tfls4")]
+[node name="SlapBros_Beach_Beam_10" parent="Level/Art" unique_id=494149815 instance=ExtResource("12_tfls4")]
 transform = Transform3D(0.342822, 0, 0, 0, 0.499722, 0.010959, 0, -0.0166735, 0.328452, 2.69611, 0.871944, 0.348931)
 
-[node name="SlapBros_Beach_Beam_7" parent="Level/Art" instance=ExtResource("8_dvp2t")]
+[node name="SlapBros_Beach_Beam_7" parent="Level/Art" unique_id=1008940382 instance=ExtResource("8_dvp2t")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.25178, 1.93899, -0.795489)
 
-[node name="SlapBros_Beach_Beam_3" parent="Level/Art" instance=ExtResource("7_no4eh")]
+[node name="SlapBros_Beach_Beam_3" parent="Level/Art" unique_id=1271983344 instance=ExtResource("7_no4eh")]
 transform = Transform3D(0.495149, 0.0694828, 0, -0.0690173, 0.491831, -0.0577806, -0.00802953, 0.05722, 0.49665, 3.68961, 1.54448, -0.760456)
 
-[node name="SlapBros_Beach_Beam_9" parent="Level/Art" instance=ExtResource("13_kb7su")]
+[node name="SlapBros_Beach_Beam_9" parent="Level/Art" unique_id=1674842171 instance=ExtResource("13_kb7su")]
 transform = Transform3D(0.49794, -0.0453424, 0, 0.0453424, 0.49794, 0, 0, 0, 0.5, 1.40373, 0.741796, 0.375199)
 
-[node name="SlapBros_Beach_Plank_1" parent="Level/Art" instance=ExtResource("14_5v4ub")]
+[node name="SlapBros_Beach_Plank_1" parent="Level/Art" unique_id=48117178 instance=ExtResource("14_5v4ub")]
 transform = Transform3D(0.386296, -0.102867, 0.0139151, 0.1028, 0.386547, 0.00370303, -0.0143993, 0, 0.399741, -1.94327, 0.406527, 0.597212)
 
-[node name="SlapBros_Beach_Plank_3" parent="Level/Art" instance=ExtResource("14_5v4ub")]
+[node name="SlapBros_Beach_Plank_3" parent="Level/Art" unique_id=1532386372 instance=ExtResource("14_5v4ub")]
 transform = Transform3D(0.393033, -0.0743284, 0, 0.0743284, 0.393033, 0, 0, 0, 0.4, -2.01888, 0.765495, -0.61964)
 
-[node name="SlapBros_Beach_Plank_4" parent="Level/Art" instance=ExtResource("14_5v4ub")]
+[node name="SlapBros_Beach_Plank_4" parent="Level/Art" unique_id=656703529 instance=ExtResource("14_5v4ub")]
 transform = Transform3D(0.477172, -0.0573694, 0, 0.0691526, 0.395865, 0, 0, 0, 0.4, 1.38015, 0.735612, -0.61964)
 
-[node name="SlapBros_Beach_Plank_2" parent="Level/Art" instance=ExtResource("15_kdvbf")]
+[node name="SlapBros_Beach_Plank_2" parent="Level/Art" unique_id=675079550 instance=ExtResource("15_kdvbf")]
 transform = Transform3D(0.371697, 0, 0, 0, 0.417578, 0, 0, 0, 0.3, -1.84288, -0.680637, 0.640005)
 
-[node name="SlapBros_Beach_Plank_5" parent="Level/Art" instance=ExtResource("15_kdvbf")]
+[node name="SlapBros_Beach_Plank_5" parent="Level/Art" unique_id=1873951125 instance=ExtResource("15_kdvbf")]
 transform = Transform3D(-0.370824, 0.0286052, 0, -0.0254623, -0.416597, 0, 0, 0, 0.3, 1.13718, -0.488317, 0.665641)
 
-[node name="SlapBros_Beach_Plank_6" parent="Level/Art" instance=ExtResource("16_he10h")]
+[node name="SlapBros_Beach_Plank_6" parent="Level/Art" unique_id=449143589 instance=ExtResource("16_he10h")]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.562976, 0.165885, 0.554337)
 
-[node name="SlapBros_Beach_Plank_7" parent="Level/Art" instance=ExtResource("17_jyqcr")]
+[node name="SlapBros_Beach_Plank_7" parent="Level/Art" unique_id=278167870 instance=ExtResource("17_jyqcr")]
 transform = Transform3D(0.236482, -0.126183, 0.0216176, 0.0841612, 0.353948, 0.0124655, -0.0137129, -0.00374879, 0.449308, -1.17123, -0.217786, 0.362334)
 
-[node name="SlapBros_Beach_Plank_9" parent="Level/Art" instance=ExtResource("17_jyqcr")]
+[node name="SlapBros_Beach_Plank_9" parent="Level/Art" unique_id=1163227655 instance=ExtResource("17_jyqcr")]
 transform = Transform3D(-0.304797, 0.0428044, -0.020393, -0.0407478, -0.320234, -0.002509, -0.0140545, 0.000154478, 0.449531, 1.86766, 0.525004, 0.678227)
 
-[node name="SlapBros_Beach_Plank_8" parent="Level/Art" instance=ExtResource("18_7qi5j")]
+[node name="SlapBros_Beach_Plank_8" parent="Level/Art" unique_id=970531001 instance=ExtResource("18_7qi5j")]
 transform = Transform3D(0.411325, 0, 0.0177143, 0, 0.411706, 0, -0.0177143, 0, 0.411325, -2.60113, 0.00257204, 0.625988)
 
-[node name="Lighting" type="Node3D" parent="."]
+[node name="Lighting" type="Node3D" parent="." unique_id=1821668080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.691174)
 
-[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting"]
+[node name="Spotlight_Pool" type="SpotLight3D" parent="Lighting" unique_id=1094900395]
 transform = Transform3D(1, 0, 0, 0, 0.251917, 0.967749, 0, -0.967749, 0.251917, 0, 6.59078, 4.41533)
 light_energy = 3.0
 shadow_enabled = true
