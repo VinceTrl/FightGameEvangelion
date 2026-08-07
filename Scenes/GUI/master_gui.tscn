@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bnnr6dw1o8jcu" path="res://Scripts/GUI/MasterUI.gd" id="1_xuadb"]
 [ext_resource type="PackedScene" uid="uid://4gyr47wo2g0o" path="res://Scenes/GUI/timer_ui.tscn" id="3_cd8f7"]
 [ext_resource type="Texture2D" uid="uid://b2747kwoiwoet" path="res://Assets/GUI/Sprites/HUD/GUI_TopBanner_SwSq.png" id="4_dph56"]
+[ext_resource type="FontFile" uid="uid://4vkwi6n6xoco" path="res://Assets/GUI/Fonts/NIS-JTC-Win-M9.ttf" id="5_5qj23"]
 [ext_resource type="PackedScene" uid="uid://cv0ukcamovfyt" path="res://Scenes/GUI/result_screen_ui.tscn" id="5_dvxp5"]
 [ext_resource type="Texture2D" uid="uid://dv6u3t40a0f0x" path="res://Assets/GUI/Placeholders/test_ui_copie.png" id="6_8ak8g"]
 [ext_resource type="Texture2D" uid="uid://ijbpiebcm62y" path="res://Assets/GUI/Sprites/HUD/GUI_TopBanner.png" id="6_s0lox"]
@@ -12,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://ccq8u40edk25l" path="res://Scenes/GUI/life_bar_top_right.tscn" id="9_wcwep"]
 [ext_resource type="FontFile" uid="uid://cp0r1d01w0cc7" path="res://Assets/GUI/Fonts/medium.otf" id="10_p756i"]
 [ext_resource type="Script" uid="uid://rypcejv8gl2c" path="res://Scripts/GUI/PlayerRoundUI.gd" id="11_dph56"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_88ip5"]
+font = ExtResource("5_5qj23")
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_5qj23"]
 font = ExtResource("10_p756i")
@@ -66,6 +71,37 @@ offset_right = 1143.0
 offset_bottom = 43.95
 grow_horizontal = 2
 texture = ExtResource("4_dph56")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/TopBanner_BlackLodge" unique_id=64932451]
+custom_minimum_size = Vector2(450, 90)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -45.0
+offset_right = 150.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/TopBanner_BlackLodge/ColorRect" unique_id=2117801534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 45.05
+grow_horizontal = 2
+grow_vertical = 2
+text = "Kiki  Slap"
+label_settings = SubResource("LabelSettings_88ip5")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="LifeBarRoot_TopLeft" parent="." unique_id=976420155 instance=ExtResource("8_ehwck")]
 layout_mode = 0

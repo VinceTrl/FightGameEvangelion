@@ -17,6 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://d13vmhiwk655s" path="res://Assets/GUI/Sprites/TitleScreen/BlackLodgeTitleScreen/fight.png" id="13_0vduw"]
 [ext_resource type="Resource" uid="uid://ddt3bdsesulh5" path="res://Resources/PostProcessConfig/title_screen_postprocess.tres" id="14_0poxc"]
 [ext_resource type="Texture2D" uid="uid://clegt0y755aok" path="res://Assets/GUI/Sprites/TitleScreen/FantasyTitleScreen/CreeperUpdateTitleScreen.jpg" id="14_0vduw"]
+[ext_resource type="Texture2D" uid="uid://c2w4btr50886d" path="res://Assets/GUI/Sprites/TitleScreen/KikiTitleScreen/Kiki_BG_01.png" id="15_plkfk"]
+[ext_resource type="Texture2D" uid="uid://hfqoo0d47lvq" path="res://Assets/GUI/Sprites/TitleScreen/KikiTitleScreen/LightingSpriteSheet.png" id="16_2tqwm"]
+[ext_resource type="Texture2D" uid="uid://ckuqbn6akd7ae" path="res://Assets/GUI/Sprites/HUD/WashBrosHUD/GUI_Kiki_Head_1.png" id="16_p71xm"]
+[ext_resource type="Shader" uid="uid://rr2chl48c5b2" path="res://Assets/Shaders/Pixelated_Warped_Fractal_Noise.gdshader" id="16_qwt6m"]
+[ext_resource type="Texture2D" uid="uid://bm3edlyew80g" path="res://Assets/GUI/Sprites/HUD/WashBrosHUD/GUI_Kiki_Head_2.png" id="17_2tqwm"]
+[ext_resource type="Texture2D" uid="uid://bke0rflpfwhgw" path="res://Assets/GUI/Sprites/TitleScreen/KikiTitleScreen/kiki_logo_white_02.png" id="17_jbryc"]
+[ext_resource type="FontFile" uid="uid://cp0r1d01w0cc7" path="res://Assets/GUI/Fonts/medium.otf" id="18_p71xm"]
 
 [sub_resource type="Animation" id="Animation_vdg6d"]
 length = 0.001
@@ -130,6 +137,307 @@ _data = {
 &"RESET": SubResource("Animation_00l3v"),
 &"TitleBlink": SubResource("Animation_snmfp")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_plkfk"]
+shader = ExtResource("16_qwt6m")
+shader_parameter/speed = 0.34
+shader_parameter/pixelation = 8.0
+shader_parameter/zoom = 2.825
+shader_parameter/gradient_pixelation = 0.0490000023275
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_low_threshold = 0.0090000004275
+shader_parameter/color_mid_threshold = 0.4850000230375
+shader_parameter/color_low = Color(0.003921569, 0.19215687, 0.24313726, 0.8)
+shader_parameter/color_mid = Color(0.5, 0.1, 0.3, 1)
+shader_parameter/color_high = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mllf2"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwn7e"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sintu"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrjqp"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r80y"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr8yo"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_560c2"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poib4"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ap3l"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgo3r"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfi2r"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aygej"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di4rr"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0vt8"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(1536, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0qx0"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(1792, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1vhr"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(1920, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju5gt"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktmse"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(1664, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y5md"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uhku"]
+atlas = ExtResource("16_2tqwm")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tqwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mllf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwn7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sintu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrjqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r80y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr8yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_560c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poib4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ap3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgo3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfi2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aygej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di4rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0vt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0qx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1vhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju5gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktmse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y5md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uhku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfi2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfi2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sintu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_560c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r80y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrjqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr8yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mllf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poib4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgo3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aygej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ap3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di4rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0vt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktmse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0qx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1vhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju5gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uhku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y5md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwn7e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n3h1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r80y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_560c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrjqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sintu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr8yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfi2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di4rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poib4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgo3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aygej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ap3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mllf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0vt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju5gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uhku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktmse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0qx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1vhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwn7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y5md")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2tqwm"]
+font = ExtResource("18_p71xm")
+font_size = 128
 
 [node name="TitleScreen" type="Control" unique_id=598334919]
 layout_mode = 3
@@ -324,6 +632,163 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_0vduw")
+
+[node name="KikiDefault" type="Control" parent="CanvasLayer/Control" unique_id=1285219372]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/Control/KikiDefault" unique_id=2055278790]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("15_plkfk")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/KikiDefault" unique_id=1244647897]
+material = SubResource("ShaderMaterial_plkfk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/KikiDefault/ColorRect" unique_id=1172353438]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -201.5
+offset_right = 613.0
+offset_bottom = 201.5
+grow_vertical = 2
+texture = ExtResource("16_p71xm")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/KikiDefault/ColorRect" unique_id=2038500931]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -613.0
+offset_top = -201.5
+offset_right = -66.0
+offset_bottom = 201.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("17_2tqwm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/KikiDefault" unique_id=1642404506]
+self_modulate = Color(1, 0.3372549, 0.654902, 1)
+position = Vector2(915.00006, 540)
+rotation = 0.16231562
+scale = Vector2(8.466, 10.515)
+sprite_frames = SubResource("SpriteFrames_2tqwm")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/Control/KikiDefault/AnimatedSprite2D" unique_id=1577924784]
+scale = Vector2(0.3609733, 1)
+sprite_frames = SubResource("SpriteFrames_kfi2r")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/Control/KikiDefault/AnimatedSprite2D/AnimatedSprite2D3" unique_id=1074160531]
+self_modulate = Color(1, 0.78039217, 0, 1)
+position = Vector2(16.361237, 1.8888855)
+scale = Vector2(2.770288, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_n3h1l")
+autoplay = "default"
+frame_progress = 0.9081167
+
+[node name="Kiki_Logo2" type="TextureRect" parent="CanvasLayer/Control/KikiDefault" unique_id=1705954624]
+modulate = Color(0.9882353, 0, 0.8039216, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_top = 94.0
+offset_right = 445.0
+offset_bottom = 552.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("17_jbryc")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/KikiDefault/Kiki_Logo2" unique_id=381356352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.5
+offset_top = 344.0
+offset_right = -21.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SLAP"
+label_settings = SubResource("LabelSettings_2tqwm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kiki_Logo" type="TextureRect" parent="CanvasLayer/Control/KikiDefault" unique_id=382766506]
+modulate = Color(1, 0.99607843, 0, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -447.5
+offset_top = 80.0
+offset_right = 447.5
+offset_bottom = 538.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("17_jbryc")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/KikiDefault/Kiki_Logo" unique_id=709465758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -21.5
+offset_top = 344.0
+offset_right = -21.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SLAP"
+label_settings = SubResource("LabelSettings_2tqwm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FightText" type="TextureRect" parent="CanvasLayer/Control/KikiDefault" unique_id=459341344]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -261.0
+offset_top = -318.0
+offset_right = 261.66187
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_bid6k")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/KikiDefault/FightText" unique_id=13313434]
+libraries/ = SubResource("AnimationLibrary_reu31")
+autoplay = &"TitleBlink"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=221564763]
 stream = ExtResource("3_57ycc")
